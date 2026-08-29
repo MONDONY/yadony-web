@@ -1,0 +1,12 @@
+:root {
+  --primary: 11 95 255;
+  --primary-hover: 10 77 217;
+  --terra: 217 106 58;
+  --ink: 10 37 64;
+  --ink-muted: 84 80 74;
+  --sand: 247 243 237;
+  --sand-deep: 237 230 216;
+  --line: 232 229 223;
+  --surface: 255 255 255;
+  --success: 12 122 84;
+}

@@ -11,7 +11,8 @@
     "menu": "Menu"
   },
   "a11y": {
-    "skipToContent": "Aller au contenu"
+    "skipToContent": "Aller au contenu",
+    "opensNewTab": "(nouvel onglet)"
   },
   "language": {
     "label": "Langue",
@@ -105,7 +106,7 @@
       "insurance": {
         "figure": "500 €",
         "label": "Valeur déclarée plafonnée",
-        "text": "Vous déclarez la valeur du colis, dans la limite de 500 €. C'est le montant de référence sur lequel nous arbitrons si un litige est ouvert. Indépendamment de cette valeur déclarée, le paiement reste bloqué jusqu'au scan de livraison confirmé."
+        "text": "Vous déclarez la valeur du colis, dans la limite de 500 €. C'est le montant de référence sur lequel nous arbitrons si un litige est ouvert."
       }
     },
     "traveler": {
@@ -456,5 +457,14 @@
     "terms": "Conditions générales d'utilisation",
     "privacy": "Politique de confidentialité",
     "copyright": "© yadony. Service de mise en relation, pas de transport."
+  },
+  "error": {
+    "seo": {
+      "title": "Page introuvable",
+      "description": "Cette page n'existe pas ou plus. Retournez à l'accueil pour continuer votre navigation sur yadony."
+    },
+    "title": "Cette page n'existe pas",
+    "lead": "Le lien est peut-être obsolète, ou l'adresse comporte une erreur. Retournez à l'accueil pour continuer votre navigation.",
+    "cta": "Retour à l'accueil"
   }
 }

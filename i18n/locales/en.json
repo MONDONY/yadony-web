@@ -11,7 +11,8 @@
     "menu": "Menu"
   },
   "a11y": {
-    "skipToContent": "Skip to content"
+    "skipToContent": "Skip to content",
+    "opensNewTab": "(new tab)"
   },
   "language": {
     "label": "Language",
@@ -105,7 +106,7 @@
       "insurance": {
         "figure": "€500",
         "label": "Cap on declared value",
-        "text": "You declare the value of the parcel, up to €500. That is the reference amount we rule on if a dispute is opened. Whatever the declared value, the payment stays held until the delivery scan is confirmed."
+        "text": "You declare the value of the parcel, up to €500. That is the reference amount we rule on if a dispute is opened."
       }
     },
     "traveler": {
@@ -456,5 +457,14 @@
     "terms": "Terms of use",
     "privacy": "Privacy policy",
     "copyright": "© yadony. A matching service, not a carrier."
+  },
+  "error": {
+    "seo": {
+      "title": "Page not found",
+      "description": "This page no longer exists. Head back to the homepage to keep browsing yadony."
+    },
+    "title": "This page does not exist",
+    "lead": "The link may be outdated, or the address may contain a typo. Head back to the homepage to keep browsing.",
+    "cta": "Back to homepage"
   }
 }

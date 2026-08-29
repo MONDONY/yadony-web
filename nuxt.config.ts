@@ -1,7 +1,7 @@
 export default defineNuxtConfig({
   compatibilityDate: '2026-05-15',
   devtools: { enabled: true },
-  modules: ['@nuxt/eslint', '@nuxtjs/tailwindcss', '@nuxtjs/i18n'],
+  modules: ['@nuxt/eslint', '@nuxtjs/tailwindcss', '@nuxtjs/i18n', '@nuxtjs/sitemap'],
   components: [{ path: '~/components', pathPrefix: false }],
   typescript: { strict: true, typeCheck: false },
   i18n: {
@@ -18,6 +18,16 @@ export default defineNuxtConfig({
     vueI18n: './i18n.config.ts',
   },
   ssr: true,
+  site: { url: 'https://yadony.com', name: 'yadony' },
+  sitemap: {
+    autoLastmod: false,
+    exclude: ['/404'],
+    // Le module @nuxtjs/sitemap scinde automatiquement le sitemap en un
+    // sitemap-index avec un fichier par langue dès qu'il détecte @nuxtjs/i18n
+    // avec plusieurs locales. On force un seul fichier `sitemap.xml` listant
+    // les 18 URLs (9 pages x 2 langues) avec leurs alternates hreflang.
+    sitemaps: false,
+  },
   css: ['~/assets/css/main.css'],
   vite: {
     vue: {

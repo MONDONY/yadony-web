@@ -21,7 +21,12 @@ describe('TrackingWalkthrough', () => {
   it('donne un texte alternatif à chaque capture', () => {
     const wrapper = mount(TrackingWalkthrough, { global: { plugins: [i18n] } })
     const alts = wrapper.findAll('img').map((img) => img.attributes('alt'))
-    expect(alts.every((alt) => typeof alt === 'string' && alt.length > 10)).toBe(true)
+    expect(alts).toEqual([
+      fr.home.tracking.steps.deposit.alt,
+      fr.home.tracking.steps.airport.alt,
+      fr.home.tracking.steps.transit.alt,
+      fr.home.tracking.steps.delivery.alt,
+    ])
   })
 
   it('déclare les dimensions des images pour éviter le décalage de mise en page', () => {

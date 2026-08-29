@@ -65,6 +65,7 @@
     "tracking": {
       "title": "Quatre scans entre Paris et Dakar",
       "lead": "À chaque étape, un QR code est scanné. L'expéditeur et le destinataire voient la même chose, au même moment.",
+      "scrollLabel": "Étapes du parcours, de Paris à Dakar. Faites défiler pour voir les quatre écrans.",
       "steps": {
         "deposit": {
           "label": "Dépôt à Paris",

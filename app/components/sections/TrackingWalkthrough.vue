@@ -18,36 +18,39 @@ const steps = [
       <p class="mt-5 max-w-prose text-lg text-ink-muted">{{ t('home.tracking.lead') }}</p>
     </UiContainer>
 
-    <div
+    <ol
       class="mt-14 flex snap-x snap-mandatory gap-6 overflow-x-auto px-5 pb-6 sm:px-8 lg:px-12"
-      role="list"
+      tabindex="0"
+      :aria-label="t('home.tracking.scrollLabel')"
     >
-      <UiRevealOnScroll
+      <li
         v-for="step in steps"
         :key="step.key"
-        class="w-[268px] shrink-0 snap-start sm:w-[300px]"
+        class="w-[268px] shrink-0 snap-start list-none sm:w-[300px]"
       >
-        <article data-step role="listitem">
-          <img
-            :src="step.image"
-            :alt="t(`home.tracking.steps.${step.key}.alt`)"
-            width="1170"
-            height="2532"
-            loading="lazy"
-            decoding="async"
-            class="w-full rounded-card border border-line bg-sand"
-          >
-          <p data-step-number class="mt-5 font-display text-sm font-bold text-terra tabular-nums">
-            {{ step.number }}
-          </p>
-          <h3 class="mt-1 font-display text-lg font-semibold">
-            {{ t(`home.tracking.steps.${step.key}.label`) }}
-          </h3>
-          <p class="mt-2 text-sm text-ink-muted">
-            {{ t(`home.tracking.steps.${step.key}.text`) }}
-          </p>
-        </article>
-      </UiRevealOnScroll>
-    </div>
+        <UiRevealOnScroll>
+          <article data-step>
+            <img
+              :src="step.image"
+              :alt="t(`home.tracking.steps.${step.key}.alt`)"
+              width="1170"
+              height="2532"
+              loading="lazy"
+              decoding="async"
+              class="w-full rounded-card border border-line bg-sand"
+            >
+            <p data-step-number class="mt-5 font-display text-sm font-bold text-terra tabular-nums">
+              {{ step.number }}
+            </p>
+            <h3 class="mt-1 font-display text-lg font-semibold">
+              {{ t(`home.tracking.steps.${step.key}.label`) }}
+            </h3>
+            <p class="mt-2 text-sm text-ink-muted">
+              {{ t(`home.tracking.steps.${step.key}.text`) }}
+            </p>
+          </article>
+        </UiRevealOnScroll>
+      </li>
+    </ol>
   </UiSection>
 </template>

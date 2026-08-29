@@ -2,9 +2,9 @@
 import { useI18n } from 'vue-i18n'
 import { useRoute } from 'vue-router'
 import { buildSeoMeta } from '@/lib/seo'
-import { organizationJsonLd, mobileAppJsonLd } from '@/lib/structured-data'
+import { organizationJsonLd, mobileAppJsonLd, faqJsonLd } from '@/lib/structured-data'
 
-const { t, locale } = useI18n()
+const { t, tm, rt, locale } = useI18n()
 const route = useRoute()
 
 useSeoMeta(
@@ -16,10 +16,16 @@ useSeoMeta(
   }),
 )
 
+const faqItems = (tm('home.faq.items') as unknown[]).map((raw) => {
+  const entry = raw as { question: unknown; answer: unknown }
+  return { question: rt(entry.question as never), answer: rt(entry.answer as never) }
+})
+
 useHead({
   script: [
     { type: 'application/ld+json', innerHTML: JSON.stringify(organizationJsonLd()) },
     { type: 'application/ld+json', innerHTML: JSON.stringify(mobileAppJsonLd()) },
+    { type: 'application/ld+json', innerHTML: JSON.stringify(faqJsonLd(faqItems)) },
   ],
 })
 </script>
@@ -29,5 +35,9 @@ useHead({
     <HeroDownload />
     <ProblemComparison />
     <TrackingWalkthrough />
+    <TrustPillars />
+    <TravelerBanner />
+    <HomeFaq />
+    <DownloadCta />
   </div>
 </template>

@@ -19,18 +19,19 @@ const steps = computed(() =>
 </script>
 
 <template>
-  <ol
+  <div
     :id="`panneau-${role}`"
     role="tabpanel"
     :aria-labelledby="`onglet-${role}`"
-    class="mt-12 divide-y divide-line border-y border-line"
   >
-    <li v-for="step in steps" :key="step.number" class="grid gap-3 py-8 sm:grid-cols-[5rem_1fr] sm:gap-8">
-      <p class="font-display text-sm font-bold text-ink-muted tabular-nums">{{ step.number }}</p>
-      <div>
-        <h3 class="font-display text-xl font-semibold">{{ step.title }}</h3>
-        <p class="mt-2 max-w-prose text-ink-muted">{{ step.text }}</p>
-      </div>
-    </li>
-  </ol>
+    <ol class="mt-12 divide-y divide-line border-y border-line">
+      <li v-for="step in steps" :key="step.number" class="grid gap-3 py-8 sm:grid-cols-[5rem_1fr] sm:gap-8">
+        <p class="font-display text-sm font-bold text-ink-muted tabular-nums">{{ step.number }}</p>
+        <div>
+          <h3 class="font-display text-xl font-semibold">{{ step.title }}</h3>
+          <p class="mt-2 max-w-prose text-ink-muted">{{ step.text }}</p>
+        </div>
+      </li>
+    </ol>
+  </div>
 </template>

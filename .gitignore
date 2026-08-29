@@ -11,6 +11,9 @@ node_modules
 
 # Tests
 coverage
+test-results
+playwright-report
+.lighthouseci
 
 # Logs
 logs

@@ -17,10 +17,12 @@ const pillars = ['identity', 'escrow', 'insurance'] as const
           class="sm:px-8"
           :class="index > 0 ? 'sm:border-l sm:border-line' : 'sm:pl-0'"
         >
-          <p class="font-display text-4xl font-bold tabular-nums" :class="pillar === 'escrow' ? 'text-terra' : 'text-ink'">
-            {{ t(`home.trust.${pillar}.figure`) }}
-          </p>
-          <dt class="mt-3 font-display text-lg font-semibold">{{ t(`home.trust.${pillar}.label`) }}</dt>
+          <dt>
+            <p class="font-display text-4xl font-bold tabular-nums" :class="pillar === 'escrow' ? 'text-terra' : 'text-ink'">
+              {{ t(`home.trust.${pillar}.figure`) }}
+            </p>
+            <span class="mt-3 block font-display text-lg font-semibold">{{ t(`home.trust.${pillar}.label`) }}</span>
+          </dt>
           <dd class="mt-2 text-sm text-ink-muted">{{ t(`home.trust.${pillar}.text`) }}</dd>
         </div>
       </dl>

@@ -10,7 +10,7 @@ const rows = ['whatsapp', 'carrier', 'yadony'] as const
     <UiContainer>
       <h2 id="home-problem-title" class="max-w-[20ch] text-display-lg">{{ t('home.problem.title') }}</h2>
 
-      <div class="mt-10 overflow-x-auto">
+      <div class="mt-10 overflow-x-auto" tabindex="0" aria-labelledby="home-problem-title">
         <table
           class="w-full min-w-[560px] border-collapse text-left text-sm"
           aria-labelledby="home-problem-title"

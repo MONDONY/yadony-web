@@ -1,7 +1,9 @@
 :root {
   --primary: 11 95 255;
   --primary-hover: 10 77 217;
-  --terra: 217 106 58;
+  /* Assombri par rapport au terracotta d'origine (217 106 58, contraste
+     3.45:1 sur blanc) pour atteindre 4.5:1 en texte sur fond clair. */
+  --terra: 184 90 49;
   --ink: 10 37 64;
   --ink-muted: 84 80 74;
   --sand: 247 243 237;

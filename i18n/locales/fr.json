@@ -27,7 +27,7 @@
     "hero": {
       "title": "Votre colis part avec quelqu'un de confiance",
       "lead": "Un voyageur vérifié emporte votre colis Paris → Dakar. Vous payez à la livraison confirmée, pas avant.",
-      "note": "Sans frais cachés. Vous ne payez qu'à la livraison confirmée.",
+      "note": "Au départ de Paris, Lyon et Marseille, vers Dakar, Abidjan, Bamako et Douala.",
       "appStore": "Télécharger sur l'App Store",
       "playStore": "Disponible sur Google Play",
       "screenshotAlt": "Écran d'accueil de l'application yadony montrant les trajets disponibles"
@@ -76,9 +76,9 @@
           "alt": "Écran de scan à l'aéroport avec confirmation d'embarquement"
         },
         "transit": {
-          "label": "En vol",
-          "text": "Le trajet est visible sur la fiche de suivi partageable par lien.",
-          "alt": "Écran de suivi affichant le colis en transit"
+          "label": "Scan à l'arrivée",
+          "text": "Troisième scan à l'atterrissage, dès que le voyageur a récupéré son bagage. La fiche de suivi, partageable par lien, passe en « arrivé » pour tout le monde en même temps.",
+          "alt": "Écran de scan à l'arrivée confirmant que le colis a atterri"
         },
         "delivery": {
           "label": "Livraison à Dakar",
@@ -102,8 +102,8 @@
       },
       "insurance": {
         "figure": "500 €",
-        "label": "Valeur couverte",
-        "text": "Chaque colis est couvert jusqu'à 500 € de valeur déclarée, assurance incluse dans la commission."
+        "label": "Valeur déclarée plafonnée",
+        "text": "Vous déclarez la valeur du colis, dans la limite de 500 €. C'est le montant de référence sur lequel nous arbitrons si un litige est ouvert, et la raison pour laquelle le paiement n'est pas encaissé avant le scan de livraison."
       }
     },
     "traveler": {
@@ -132,12 +132,12 @@
         {
           "id": "paiement",
           "question": "À quel moment suis-je débité ?",
-          "answer": "Quand le voyageur accepte votre colis, le montant est réservé sur votre carte sans être prélevé. Le prélèvement n'a lieu qu'après le scan de livraison, et c'est ce même scan qui déclenche le versement au voyageur. Si le colis ne part pas, la réservation est levée et rien ne vous est débité."
+          "answer": "Vous n'êtes débité qu'après la livraison. Quand le voyageur accepte votre colis, votre moyen de paiement est enregistré ; l'encaissement, lui, n'a lieu qu'une fois le scan de livraison validé par le destinataire, et c'est ce même scan qui déclenche le versement au voyageur. Si le colis ne part pas, ou s'il n'arrive pas, rien ne vous est prélevé."
         },
         {
           "id": "perte",
           "question": "Et si le colis n'arrive jamais ?",
-          "answer": "Vous ouvrez un litige depuis l'application. Le versement au voyageur reste suspendu pendant l'instruction. Nous reprenons l'historique des scans, qui indique la dernière étape validée, à quelle heure, et avec quelle photo. Si la perte est établie, vous êtes remboursé, dans la limite de la valeur que vous aviez déclarée et du plafond de 500 €."
+          "answer": "Vous ouvrez un litige depuis l'application. Le versement au voyageur reste suspendu pendant l'instruction. Nous reprenons l'historique des scans, qui indique la dernière étape validée, à quelle heure et avec quelle photo. Si la perte est établie, le paiement n'est pas encaissé et le voyageur ne perçoit rien. La valeur que vous avez déclarée, plafonnée à 500 €, sert de montant de référence au dossier : elle ne vaut pas engagement d'indemnisation de notre part."
         },
         {
           "id": "gain-voyageur",
@@ -174,11 +174,11 @@
       "steps": [
         {
           "title": "Vous décrivez le colis",
-          "text": "Ville de départ, ville d'arrivée, poids, contenu, photos. Vous déclarez une valeur, plafonnée à 500 €, qui détermine la couverture en cas de problème."
+          "text": "Ville de départ, ville d'arrivée, poids, contenu, photos. Vous déclarez une valeur, plafonnée à 500 € : c'est le montant de référence retenu si un litige doit être instruit."
         },
         {
           "title": "Vous choisissez un voyageur",
-          "text": "L'application affiche qui part sur votre corridor, à quelle date, avec combien de kilos libres et à quel prix au kilo. Vous voyez son identité vérifiée et ses évaluations, s'il en a déjà. À la réservation, le montant est réservé sur votre carte, pas prélevé."
+          "text": "L'application affiche qui part sur votre corridor, à quelle date, avec combien de kilos libres et à quel prix au kilo. Vous voyez son identité vérifiée et ses évaluations, s'il en a déjà. À la réservation, votre moyen de paiement est enregistré : il ne sera encaissé qu'à la livraison confirmée."
         },
         {
           "title": "Vous remettez le colis",
@@ -186,7 +186,7 @@
         },
         {
           "title": "Vous suivez les scans",
-          "text": "Embarquement, transit, arrivée. Chaque scan déclenche une notification pour vous et pour la personne qui attend le colis. Un lien de suivi partageable lui permet de regarder sans installer l'application."
+          "text": "Embarquement, puis arrivée. Chaque scan déclenche une notification pour vous et pour la personne qui attend le colis. Un lien de suivi partageable lui permet de regarder sans installer l'application."
         },
         {
           "title": "La livraison libère le paiement",
@@ -227,7 +227,7 @@
     },
     "title": "Le voyageur fixe son prix. Nous prenons 12 % par-dessus.",
     "lead": "Il n'y a pas de grille tarifaire chez yadony, parce que ce n'est pas nous qui transportons. Le prix au kilo est celui qu'annonce le voyageur. La seule chose que nous facturons est une commission de 12 %, ajoutée au moment du paiement et payée par l'expéditeur.",
-    "cap": "La valeur déclarée d'un colis est plafonnée à {amount} €, assurance comprise.",
+    "cap": "La valeur déclarée d'un colis est plafonnée à {amount} €. C'est le montant de référence retenu pour arbitrer un litige ; l'assurance du colis n'est pas comprise dans la commission.",
     "example": {
       "caption": "Un colis de 5 kg, Paris → Dakar, chez un voyageur à 12 € le kilo",
       "travelerPrice": "Prix demandé par le voyageur",
@@ -243,7 +243,7 @@
   "trust": {
     "seo": {
       "title": "Sécurité : identité vérifiée, paiement séquestre, litiges",
-      "description": "Comment yadony sécurise un envoi entre particuliers : vérification d'identité Stripe Identity, fonds bloqués jusqu'à la livraison confirmée, valeur déclarée plafonnée à 500 €, procédure de litige et traitement des données."
+      "description": "Comment yadony sécurise un envoi entre particuliers : vérification d'identité Stripe Identity, paiement encaissé seulement après la livraison confirmée, valeur déclarée plafonnée à 500 €, procédure de litige et traitement des données."
     },
     "title": "Ce que la plateforme garantit, et ce qu'elle ne garantit pas",
     "lead": "Cette page décrit les mécanismes en place, sans les enjoliver. Si un point vous paraît insuffisant, écrivez-nous : c'est plus utile de le dire maintenant que de le découvrir au moment d'un problème.",
@@ -254,11 +254,11 @@
       },
       "escrow": {
         "title": "Paiement séquestre",
-        "text": "Quand un voyageur accepte votre colis, le montant est autorisé sur votre moyen de paiement mais n'est pas prélevé. Il est prélevé, puis versé au voyageur, uniquement après le scan de livraison validé par le destinataire. Entre les deux, les fonds sont conservés par notre prestataire de paiement, Stripe : ils ne sont ni sur le compte du voyageur, ni sur le nôtre. Si l'envoi n'a pas lieu, l'autorisation est levée."
+        "text": "Quand un voyageur accepte votre colis, votre moyen de paiement est enregistré, mais aucune somme n'est encaissée. L'encaissement n'intervient qu'après le scan de livraison validé par le destinataire, et c'est lui qui déclenche le versement au voyageur. Tant que la livraison n'est pas confirmée, rien ne vous est prélevé et le voyageur ne perçoit rien. Si l'envoi n'a pas lieu, la demande de paiement est abandonnée."
       },
       "cap": {
         "title": "Plafond de valeur déclarée",
-        "text": "La valeur déclarée d'un colis ne peut pas dépasser 500 €. C'est le montant maximal couvert en cas de perte établie, et c'est aussi une limite volontaire : au-delà, un envoi accompagné par un particulier n'est plus le bon canal, et un transporteur assuré l'est davantage. Déclarer une valeur inférieure à la valeur réelle réduit d'autant l'indemnisation."
+        "text": "La valeur déclarée d'un colis ne peut pas dépasser 500 €. Ce plafond est volontaire : au-delà, un envoi accompagné par un particulier n'est plus le bon canal, et un transporteur professionnel l'est davantage. La valeur déclarée est le montant de référence que nous retenons pour instruire un litige ; la sous-déclarer se retourne contre vous. La commission de 12 % ne comprend aucune assurance du colis."
       },
       "tracking": {
         "title": "Quatre scans, et la preuve qui va avec",
@@ -274,7 +274,7 @@
       },
       "limits": {
         "title": "Ce que nous ne garantissons pas",
-        "text": "Nous ne transportons pas : le colis reste dans le bagage d'un voyageur, soumis aux aléas de son vol et de sa compagnie. Un retard d'avion, une grève ou un contrôle douanier ne relèvent pas de nous. Nous ne fouillons pas les colis à votre place : c'est le voyageur qui vérifie le contenu au dépôt, et l'expéditeur qui répond de sa déclaration. Nous ne couvrons ni au-delà de 500 €, ni les envois convenus en dehors de l'application — sans scan et sans paiement passé par la plateforme, il n'y a ni preuve ni recours."
+        "text": "Nous ne transportons pas : le colis reste dans le bagage d'un voyageur, soumis aux aléas de son vol et de sa compagnie. Un retard d'avion, une grève ou un contrôle douanier ne relèvent pas de nous. Nous ne fouillons pas les colis à votre place : c'est le voyageur qui vérifie le contenu au dépôt, et l'expéditeur qui répond de sa déclaration. Nous ne sommes pas assureur non plus : la commission de 12 % ne comprend aucune assurance du colis, et nos conditions générales n'engagent aucun montant d'indemnisation. Ce que nous garantissons est plus étroit et plus vérifiable : le paiement n'est pas encaissé tant que la livraison n'est pas confirmée, et un litige est instruit sur des preuves horodatées. Enfin, un envoi convenu en dehors de l'application n'ouvre aucun recours : sans scan et sans paiement passé par la plateforme, il n'y a ni trace ni levier."
       }
     }
   },
@@ -286,9 +286,9 @@
     "title": "Pourquoi on a fini par le construire",
     "paragraphs": [
       "Il y a un message que tout le monde dans la diaspora a déjà écrit, ou lu : « quelqu'un part à Dakar cette semaine ? »",
-      "Ça se passe dans un groupe WhatsApp de deux cents personnes. Quelqu'un répond, on échange un numéro, on se retrouve un samedi sur un parking. On confie un carton à un inconnu recommandé par un cousin, on paie en liquide, et on attend. La plupart du temps, ça marche. Ça marche même remarquablement bien : c'est comme ça que circulent les médicaments, les papiers, les vêtements et les cadeaux depuis trente ans.",
+      "Ça se passe dans un groupe WhatsApp de deux cents personnes. Quelqu'un répond, on échange un numéro, on se retrouve un samedi sur un parking. On confie un carton à un inconnu recommandé par un cousin, on paie en liquide, et on attend. La plupart du temps, ça marche. Ça marche même remarquablement bien : c'est comme ça que circulent les vêtements, le matériel scolaire, les pièces détachées et les cadeaux depuis trente ans.",
       "Le problème n'apparaît que le jour où ça ne marche pas. Le colis n'arrive pas. Le numéro ne répond plus. Il n'y a pas de trace, pas de preuve de remise, pas de reçu, personne à appeler. On ne peut même pas dire ce qui s'est passé : perdu, oublié, gardé. Et comme la personne rendait service, on n'ose pas insister. On perd le colis, et souvent on perd aussi la relation.",
-      "En face, il y a les transporteurs. Ils sont fiables et ils sont chers : trois à cinq fois le prix, et ils ne livrent pas partout. Pour faire parvenir cinq kilos à quelqu'un qu'on connaît, ce n'est pas une solution, c'est un renoncement.",
+      "En face, il y a les transporteurs. Ils sont fiables, ils sont nettement plus chers, et ils ne livrent pas partout. Pour faire parvenir cinq kilos à quelqu'un qu'on connaît, ce n'est pas une solution, c'est un renoncement.",
       "yadony ne cherche pas à remplacer le voyageur par un camion. Le voyageur existe déjà, il part déjà, sa valise est déjà à moitié vide. Ce qui manquait n'était pas le transport : c'était la trace. Savoir qui porte, quand, et pouvoir le prouver. D'où la vérification d'identité, les quatre scans, les photos horodatées, et un paiement qui ne part pas tant que le colis n'est pas dans les mains du destinataire.",
       "Nous ouvrons sur quatre villes d'arrivée, pas quarante, parce que nous préférons qu'un corridor fonctionne réellement plutôt qu'une carte fasse illusion. Nous n'avons pas de chiffres à afficher : nous commençons. Si vous utilisez l'application et qu'une chose vous paraît bancale, écrivez-nous. À ce stade, c'est le retour le plus utile qu'on puisse recevoir."
     ]
@@ -299,7 +299,7 @@
       "description": "Support utilisateur, presse et partenariats : à qui écrire, ce qu'il faut indiquer, et par quel canal la réponse arrive le plus vite."
     },
     "title": "Nous écrire",
-    "lead": "Une seule adresse, deux types de demandes. Précisez laquelle dans l'objet, cela nous fait gagner du temps à tous les deux.",
+    "lead": "Une seule adresse, deux types de demandes. Précisez lequel dans l'objet, cela nous fait gagner du temps à tous les deux.",
     "emailLabel": "Adresse email",
     "support": {
       "title": "Support utilisateur",
@@ -317,7 +317,7 @@
       "submit": "Ouvrir mon logiciel de messagerie",
       "note": "Ce site est statique et n'enregistre rien. Le bouton ouvre votre logiciel de messagerie avec le message déjà rédigé ; vous restez maître de l'envoi.",
       "errors": {
-        "name": "Indiquez le nom sous lequel vous répondre.",
+        "name": "Indiquez le nom sous lequel nous devons vous répondre.",
         "email": "Cette adresse email ne semble pas valide.",
         "message": "Décrivez votre demande en quelques lignes."
       }
@@ -333,7 +333,7 @@
       "sections": {
         "editor": {
           "title": "Éditeur du site",
-          "text": "Le site yadony.com est édité par la société qui développe et exploite l'application mobile dony, immatriculée en France. Toute demande relative à l'identification de l'éditeur peut être adressée à contact@yadony.com et reçoit une réponse écrite."
+          "text": "Le site yadony.com est édité par la société qui développe et exploite l'application mobile yadony, immatriculée en France. Toute demande relative à l'identification de l'éditeur peut être adressée à contact@yadony.com et reçoit une réponse écrite."
         },
         "publication": {
           "title": "Directeur de la publication",
@@ -363,7 +363,7 @@
         "description": "Règles d'utilisation de yadony : rôle de la plateforme, vérification d'identité, obligations de l'expéditeur et du voyageur, prix, annulation et litiges."
       },
       "title": "Conditions générales d'utilisation",
-      "intro": "Ces conditions régissent l'utilisation de l'application dony et du site yadony.com. Elles sont acceptées à la création du compte et peuvent être relues à tout moment depuis l'application.",
+      "intro": "Ces conditions régissent l'utilisation de l'application yadony et du site yadony.com. Elles sont acceptées à la création du compte et peuvent être relues à tout moment depuis l'application.",
       "sections": {
         "object": {
           "title": "Objet du service",
@@ -383,11 +383,11 @@
         },
         "price": {
           "title": "Prix, commission et paiement",
-          "text": "Le prix du transport est fixé librement par le voyageur. yadony perçoit une commission de 12 % de ce prix, à la charge de l'expéditeur et facturée en supplément. Le montant total est autorisé sur le moyen de paiement de l'expéditeur au moment de l'acceptation, puis prélevé après validation du scan de livraison. Les fonds sont conservés par notre prestataire de paiement jusqu'à cette validation."
+          "text": "Le prix du transport est fixé librement par le voyageur. yadony perçoit une commission de 12 % de ce prix, à la charge de l'expéditeur et facturée en supplément. Le moyen de paiement de l'expéditeur est enregistré à l'acceptation du colis ; le montant n'est encaissé qu'après validation du scan de livraison, et le versement au voyageur intervient ensuite. Aucun encaissement n'a lieu si la livraison n'est pas confirmée."
         },
         "cancellation": {
           "title": "Annulation",
-          "text": "L'expéditeur comme le voyageur peuvent annuler avant la remise du colis : l'autorisation de paiement est alors levée et aucun montant n'est prélevé. Une annulation après la remise du colis relève de la procédure de litige. Les annulations répétées et tardives peuvent entraîner une restriction du compte."
+          "text": "L'expéditeur comme le voyageur peuvent annuler avant la remise du colis : aucun montant n'est alors encaissé. Une annulation après la remise du colis relève de la procédure de litige. Les annulations répétées et tardives peuvent entraîner une restriction du compte."
         },
         "dispute": {
           "title": "Litiges",
@@ -409,7 +409,7 @@
         "description": "Quelles données yadony collecte, pourquoi, avec qui elles sont partagées, combien de temps elles sont conservées et comment exercer vos droits."
       },
       "title": "Politique de confidentialité",
-      "intro": "Cette page décrit les données que nous traitons dans l'application dony et sur le site yadony.com, leur finalité et vos droits. Elle est écrite pour être lue, pas pour être acceptée sans être lue.",
+      "intro": "Cette page décrit les données que nous traitons dans l'application yadony et sur le site yadony.com, leur finalité et vos droits. Elle est écrite pour être lue, pas pour être acceptée sans être lue.",
       "sections": {
         "responsible": {
           "title": "Responsable du traitement",

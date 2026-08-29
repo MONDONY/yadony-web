@@ -15,6 +15,7 @@
     "test:coverage": "vitest run --coverage"
   },
   "dependencies": {
+    "@nuxtjs/i18n": "^10.6.0",
     "nuxt": "^4.5.2",
     "vue": "^3.5.42",
     "vue-router": "^5.3.0"

@@ -1,0 +1,458 @@
+{
+  "nav": {
+    "howItWorks": "Comment ça marche",
+    "pricing": "Tarifs",
+    "trust": "Sécurité",
+    "about": "À propos",
+    "contact": "Contact",
+    "download": "Télécharger l'app",
+    "mainLabel": "Navigation principale",
+    "mobileLabel": "Navigation mobile",
+    "menu": "Menu"
+  },
+  "a11y": {
+    "skipToContent": "Aller au contenu"
+  },
+  "language": {
+    "label": "Langue",
+    "switchLabel": "Changer de langue",
+    "fr": "Français",
+    "en": "English"
+  },
+  "home": {
+    "seo": {
+      "title": "Envoyer un colis en Afrique, par un voyageur vérifié",
+      "description": "yadony met en relation les voyageurs qui ont de la place dans leur valise et les expéditeurs de la diaspora. Identité vérifiée, paiement séquestre, suivi par QR code."
+    },
+    "hero": {
+      "title": "Votre colis part avec quelqu'un de confiance",
+      "lead": "Un voyageur vérifié emporte votre colis Paris → Dakar. Vous payez à la livraison confirmée, pas avant.",
+      "note": "Sans frais cachés. Vous ne payez qu'à la livraison confirmée.",
+      "appStore": "Télécharger sur l'App Store",
+      "playStore": "Disponible sur Google Play",
+      "screenshotAlt": "Écran d'accueil de l'application yadony montrant les trajets disponibles"
+    },
+    "problem": {
+      "title": "Trois façons d'envoyer un colis. Une seule est traçable.",
+      "columns": {
+        "channel": "Canal",
+        "price": "Prix pour 5 kg",
+        "tracking": "Suivi",
+        "recourse": "Recours"
+      },
+      "rows": {
+        "whatsapp": {
+          "channel": "Groupe WhatsApp",
+          "price": "Variable",
+          "tracking": "Aucun",
+          "recourse": "Aucun"
+        },
+        "carrier": {
+          "channel": "Transporteur classique",
+          "price": "150 € et plus",
+          "tracking": "Complet",
+          "recourse": "Contractuel"
+        },
+        "yadony": {
+          "channel": "yadony",
+          "price": "Fixé par le voyageur",
+          "tracking": "QR à chaque étape",
+          "recourse": "Séquestre et litige"
+        }
+      }
+    },
+    "tracking": {
+      "title": "Quatre scans entre Paris et Dakar",
+      "lead": "À chaque étape, un QR code est scanné. L'expéditeur et le destinataire voient la même chose, au même moment.",
+      "steps": {
+        "deposit": {
+          "label": "Dépôt à Paris",
+          "text": "Vous remettez le colis au voyageur. Il scanne le QR code, une photo est prise, l'horodatage est enregistré.",
+          "alt": "Écran de dépôt affichant le QR code du colis"
+        },
+        "airport": {
+          "label": "Scan à l'aéroport",
+          "text": "Second scan avant l'embarquement. Votre famille reçoit la notification.",
+          "alt": "Écran de scan à l'aéroport avec confirmation d'embarquement"
+        },
+        "transit": {
+          "label": "En vol",
+          "text": "Le trajet est visible sur la fiche de suivi partageable par lien.",
+          "alt": "Écran de suivi affichant le colis en transit"
+        },
+        "delivery": {
+          "label": "Livraison à Dakar",
+          "text": "Scan final, photo de remise en main propre. Le paiement est alors libéré au voyageur.",
+          "alt": "Écran de livraison avec photo de confirmation de remise"
+        }
+      }
+    },
+    "trust": {
+      "title": "Trois choses qu'un groupe WhatsApp ne peut pas vous garantir",
+      "lead": "Vous confiez un colis à quelqu'un que vous ne connaissez pas. Voici ce que la plateforme met en place pour que ce ne soit pas un pari.",
+      "identity": {
+        "figure": "100 %",
+        "label": "Identités vérifiées",
+        "text": "Voyageurs et expéditeurs passent une vérification d'identité Stripe Identity. Aucun compte anonyme sur la plateforme."
+      },
+      "escrow": {
+        "figure": "0 €",
+        "label": "Payé avant livraison",
+        "text": "Votre paiement est bloqué et n'est versé au voyageur qu'après le scan de livraison confirmé."
+      },
+      "insurance": {
+        "figure": "500 €",
+        "label": "Valeur couverte",
+        "text": "Chaque colis est couvert jusqu'à 500 € de valeur déclarée, assurance incluse dans la commission."
+      }
+    },
+    "traveler": {
+      "title": "Votre valise a de la place. Elle peut financer une partie du voyage.",
+      "text": "Vous partez à Abidjan et vous n'utiliserez que la moitié de votre franchise bagage. Dix kilos libres, à 12 € le kilo, cela fait 120 € sur un vol que vous preniez déjà. Vous fixez votre prix, vous choisissez ce que vous acceptez de porter, et vous touchez la totalité : la commission est payée par l'expéditeur, en plus.",
+      "cta": "Voir le parcours voyageur"
+    },
+    "faq": {
+      "title": "Les questions qu'on nous pose avant de télécharger",
+      "items": [
+        {
+          "id": "delai",
+          "question": "Combien de temps met un colis pour arriver ?",
+          "answer": "Le temps du vol, plus le temps de convenir d'un rendez-vous avec le destinataire. Vous voyez la date de départ et la date d'arrivée du voyageur avant de réserver : c'est vous qui choisissez le trajet qui vous arrange. Nous n'affichons pas de délai standard, parce qu'il n'y a pas de tournée derrière : il y a un vol, celui d'une personne réelle."
+        },
+        {
+          "id": "prix",
+          "question": "Combien coûte un envoi ?",
+          "answer": "Le voyageur fixe son prix au kilo selon son trajet et ce qu'il accepte de porter. yadony ajoute 12 % par-dessus. Pour un colis de 5 kg chez un voyageur à 12 € le kilo : 60 € pour lui, 7,20 € de commission, 67,20 € à votre charge. Le détail figure sur la page Tarifs."
+        },
+        {
+          "id": "interdits",
+          "question": "Qu'est-ce que je n'ai pas le droit d'envoyer ?",
+          "answer": "Espèces, bijoux, documents d'identité, médicaments, denrées périssables, produits stupéfiants, armes, et tout ce que la réglementation douanière du pays d'arrivée interdit ou réglemente. Le voyageur ouvre le colis devant vous au moment du dépôt : il engage sa responsabilité en le portant dans son propre bagage, il a le droit de savoir ce qu'il transporte."
+        },
+        {
+          "id": "paiement",
+          "question": "À quel moment suis-je débité ?",
+          "answer": "Quand le voyageur accepte votre colis, le montant est réservé sur votre carte sans être prélevé. Le prélèvement n'a lieu qu'après le scan de livraison, et c'est ce même scan qui déclenche le versement au voyageur. Si le colis ne part pas, la réservation est levée et rien ne vous est débité."
+        },
+        {
+          "id": "perte",
+          "question": "Et si le colis n'arrive jamais ?",
+          "answer": "Vous ouvrez un litige depuis l'application. Le versement au voyageur reste suspendu pendant l'instruction. Nous reprenons l'historique des scans, qui indique la dernière étape validée, à quelle heure, et avec quelle photo. Si la perte est établie, vous êtes remboursé, dans la limite de la valeur que vous aviez déclarée et du plafond de 500 €."
+        },
+        {
+          "id": "gain-voyageur",
+          "question": "Combien gagne un voyageur ?",
+          "answer": "Exactement le prix qu'il a annoncé. La commission de 12 % s'ajoute au-dessus et elle est payée par l'expéditeur : elle ne se prélève pas sur ce que touche le voyageur. Dix kilos à 12 € le kilo, ce sont 120 € versés après la livraison, sur un billet déjà acheté."
+        },
+        {
+          "id": "douane",
+          "question": "Que se passe-t-il en cas de contrôle douanier ?",
+          "answer": "Le voyageur déclare ce qu'il transporte. Chaque colis est associé dans l'application à une description et aux photos prises au dépôt, qu'il peut présenter. Les droits et taxes éventuels restent à la charge de l'expéditeur. C'est aussi la raison des contenus interdits : un colis qui bloque à la douane immobilise la personne qui le porte."
+        },
+        {
+          "id": "villes",
+          "question": "Quelles villes sont desservies ?",
+          "answer": "Au départ de Paris, Lyon et Marseille, vers Dakar, Abidjan, Bamako et Douala. Ce sont les corridors où il y a assez de vols et assez de monde pour que le service tienne dès le premier jour. D'autres viendront. Nous préférons ouvrir une ville quand elle fonctionne plutôt qu'afficher une carte pleine de destinations sans voyageurs."
+        }
+      ]
+    },
+    "download": {
+      "title": "Le reste se passe dans l'application",
+      "text": "Publier un colis, comparer les voyageurs, scanner, suivre, payer : tout s'y trouve. Ce site ne sert qu'à vous expliquer le fonctionnement avant que vous la téléchargiez."
+    }
+  },
+  "howItWorks": {
+    "seo": {
+      "title": "Comment envoyer ou transporter un colis avec yadony",
+      "description": "Les cinq étapes d'un envoi, côté expéditeur et côté voyageur : publication, mise en relation, dépôt scanné, transport, livraison confirmée et paiement libéré."
+    },
+    "title": "Deux parcours, cinq étapes chacun",
+    "lead": "Un envoi met en jeu deux personnes qui ne se connaissent pas. Voici ce que chacune fait, dans l'ordre, et à quel moment l'argent bouge.",
+    "tabsLabel": "Choisir un parcours",
+    "expediteur": {
+      "tab": "Je suis expéditeur",
+      "steps": [
+        {
+          "title": "Vous décrivez le colis",
+          "text": "Ville de départ, ville d'arrivée, poids, contenu, photos. Vous déclarez une valeur, plafonnée à 500 €, qui détermine la couverture en cas de problème."
+        },
+        {
+          "title": "Vous choisissez un voyageur",
+          "text": "L'application affiche qui part sur votre corridor, à quelle date, avec combien de kilos libres et à quel prix au kilo. Vous voyez son identité vérifiée et ses évaluations, s'il en a déjà. À la réservation, le montant est réservé sur votre carte, pas prélevé."
+        },
+        {
+          "title": "Vous remettez le colis",
+          "text": "Rendez-vous convenu dans l'application. Le voyageur ouvre le colis devant vous, scanne le QR code, prend une photo. L'horodatage est enregistré : c'est votre preuve de dépôt."
+        },
+        {
+          "title": "Vous suivez les scans",
+          "text": "Embarquement, transit, arrivée. Chaque scan déclenche une notification pour vous et pour la personne qui attend le colis. Un lien de suivi partageable lui permet de regarder sans installer l'application."
+        },
+        {
+          "title": "La livraison libère le paiement",
+          "text": "Le destinataire reçoit le colis en main propre, le scan final est validé, une photo de remise est prise. C'est cet événement, et lui seul, qui déclenche le prélèvement et le versement au voyageur."
+        }
+      ]
+    },
+    "voyageur": {
+      "tab": "Je suis voyageur",
+      "steps": [
+        {
+          "title": "Vous publiez votre trajet",
+          "text": "Villes, dates, kilos disponibles, prix au kilo. Vous restez libre de refuser un colis sans avoir à vous en justifier."
+        },
+        {
+          "title": "Vous passez la vérification d'identité",
+          "text": "Pièce d'identité et selfie, contrôlés par Stripe Identity. C'est obligatoire avant de transporter quoi que ce soit, et c'est ce qui rassure la personne qui vous confie son colis."
+        },
+        {
+          "title": "Vous acceptez un colis",
+          "text": "Description, photos et valeur déclarée vous sont montrées avant que vous acceptiez. Au dépôt, vous ouvrez le colis devant l'expéditeur et vous scannez le QR code : ce que vous transportez est acté."
+        },
+        {
+          "title": "Vous voyagez normalement",
+          "text": "Un scan avant l'embarquement, un autre à l'arrivée. Le colis part dans votre bagage, dans la limite de la franchise accordée par votre compagnie."
+        },
+        {
+          "title": "Vous livrez et vous êtes payé",
+          "text": "Remise en main propre, scan final, photo. Le versement est déclenché dans la foulée. Vous percevez la totalité du prix que vous aviez fixé : les 12 % de commission sont payés par l'expéditeur, en plus."
+        }
+      ]
+    }
+  },
+  "pricing": {
+    "seo": {
+      "title": "Tarifs yadony : 12 % de commission, et rien d'autre",
+      "description": "Le voyageur fixe son prix au kilo, yadony ajoute 12 % payés par l'expéditeur. Exemple chiffré complet pour un colis de 5 kg Paris → Dakar et comparaison avec un transporteur classique."
+    },
+    "title": "Le voyageur fixe son prix. Nous prenons 12 % par-dessus.",
+    "lead": "Il n'y a pas de grille tarifaire chez yadony, parce que ce n'est pas nous qui transportons. Le prix au kilo est celui qu'annonce le voyageur. La seule chose que nous facturons est une commission de 12 %, ajoutée au moment du paiement et payée par l'expéditeur.",
+    "cap": "La valeur déclarée d'un colis est plafonnée à {amount} €, assurance comprise.",
+    "example": {
+      "caption": "Un colis de 5 kg, Paris → Dakar, chez un voyageur à 12 € le kilo",
+      "travelerPrice": "Prix demandé par le voyageur",
+      "commission": "Commission yadony (12 %)",
+      "senderPays": "Total payé par l'expéditeur",
+      "travelerEarns": "Versé au voyageur après livraison"
+    },
+    "comparison": {
+      "title": "Le même colis chez un transporteur classique",
+      "text": "Cinq kilos Paris → Dakar démarrent autour de 150 € chez un transporteur international, hors options de délai, avec une livraison qui ne dessert pas tous les quartiers. Nous ne prétendons pas les remplacer : pour un envoi volumineux, urgent ou de grande valeur, ils restent le bon choix. Pour quelques kilos qu'un proche attend, la question du prix ne se pose plus de la même façon."
+    }
+  },
+  "trust": {
+    "seo": {
+      "title": "Sécurité : identité vérifiée, paiement séquestre, litiges",
+      "description": "Comment yadony sécurise un envoi entre particuliers : vérification d'identité Stripe Identity, fonds bloqués jusqu'à la livraison confirmée, valeur déclarée plafonnée à 500 €, procédure de litige et traitement des données."
+    },
+    "title": "Ce que la plateforme garantit, et ce qu'elle ne garantit pas",
+    "lead": "Cette page décrit les mécanismes en place, sans les enjoliver. Si un point vous paraît insuffisant, écrivez-nous : c'est plus utile de le dire maintenant que de le découvrir au moment d'un problème.",
+    "sections": {
+      "identity": {
+        "title": "Vérification d'identité",
+        "text": "Aucun compte anonyme ne peut expédier ni transporter un colis. Avant sa première annonce, chaque utilisateur transmet une pièce d'identité et un selfie à Stripe Identity, qui contrôle la validité du document et sa correspondance avec le visage. Ces documents sont conservés chiffrés et cloisonnés du reste de la base : ils ne sont jamais visibles par les autres utilisateurs, et l'accès interne y est restreint et journalisé. Le nom affiché à l'autre partie est le nom vérifié."
+      },
+      "escrow": {
+        "title": "Paiement séquestre",
+        "text": "Quand un voyageur accepte votre colis, le montant est autorisé sur votre moyen de paiement mais n'est pas prélevé. Il est prélevé, puis versé au voyageur, uniquement après le scan de livraison validé par le destinataire. Entre les deux, les fonds sont conservés par notre prestataire de paiement, Stripe : ils ne sont ni sur le compte du voyageur, ni sur le nôtre. Si l'envoi n'a pas lieu, l'autorisation est levée."
+      },
+      "cap": {
+        "title": "Plafond de valeur déclarée",
+        "text": "La valeur déclarée d'un colis ne peut pas dépasser 500 €. C'est le montant maximal couvert en cas de perte établie, et c'est aussi une limite volontaire : au-delà, un envoi accompagné par un particulier n'est plus le bon canal, et un transporteur assuré l'est davantage. Déclarer une valeur inférieure à la valeur réelle réduit d'autant l'indemnisation."
+      },
+      "tracking": {
+        "title": "Quatre scans, et la preuve qui va avec",
+        "text": "Dépôt, embarquement, arrivée, remise. Chaque scan enregistre un horodatage et, au dépôt comme à la remise, une photo. Cet historique n'est pas décoratif : c'est la pièce sur laquelle un litige est instruit. Il est visible en permanence par l'expéditeur et le destinataire, et il ne peut pas être modifié après coup."
+      },
+      "dispute": {
+        "title": "Procédure de litige",
+        "text": "Un litige s'ouvre depuis l'application, à partir du moment où une étape ne se déroule pas comme prévu. Le versement au voyageur est immédiatement suspendu. Nous examinons l'historique des scans, les photos horodatées et les échanges tenus dans l'application, puis nous tranchons : remboursement de l'expéditeur, versement au voyageur, ou répartition. La décision est motivée et communiquée aux deux parties."
+      },
+      "data": {
+        "title": "Vos données",
+        "text": "Les pièces d'identité sont traitées par Stripe Identity, stockées chiffrées et cloisonnées du reste de la base. L'autre partie d'un envoi voit votre prénom, votre photo de profil, le statut de votre vérification et les informations du colis concerné — rien de plus. Les données d'un envoi sont conservées le temps nécessaire au traitement d'un éventuel litige, puis archivées. Le détail figure dans la politique de confidentialité."
+      },
+      "limits": {
+        "title": "Ce que nous ne garantissons pas",
+        "text": "Nous ne transportons pas : le colis reste dans le bagage d'un voyageur, soumis aux aléas de son vol et de sa compagnie. Un retard d'avion, une grève ou un contrôle douanier ne relèvent pas de nous. Nous ne fouillons pas les colis à votre place : c'est le voyageur qui vérifie le contenu au dépôt, et l'expéditeur qui répond de sa déclaration. Nous ne couvrons ni au-delà de 500 €, ni les envois convenus en dehors de l'application — sans scan et sans paiement passé par la plateforme, il n'y a ni preuve ni recours."
+      }
+    }
+  },
+  "about": {
+    "seo": {
+      "title": "À propos de yadony",
+      "description": "Pourquoi nous avons construit yadony : le récit d'un problème que la diaspora règle depuis trente ans dans des groupes WhatsApp, sans aucune trace."
+    },
+    "title": "Pourquoi on a fini par le construire",
+    "paragraphs": [
+      "Il y a un message que tout le monde dans la diaspora a déjà écrit, ou lu : « quelqu'un part à Dakar cette semaine ? »",
+      "Ça se passe dans un groupe WhatsApp de deux cents personnes. Quelqu'un répond, on échange un numéro, on se retrouve un samedi sur un parking. On confie un carton à un inconnu recommandé par un cousin, on paie en liquide, et on attend. La plupart du temps, ça marche. Ça marche même remarquablement bien : c'est comme ça que circulent les médicaments, les papiers, les vêtements et les cadeaux depuis trente ans.",
+      "Le problème n'apparaît que le jour où ça ne marche pas. Le colis n'arrive pas. Le numéro ne répond plus. Il n'y a pas de trace, pas de preuve de remise, pas de reçu, personne à appeler. On ne peut même pas dire ce qui s'est passé : perdu, oublié, gardé. Et comme la personne rendait service, on n'ose pas insister. On perd le colis, et souvent on perd aussi la relation.",
+      "En face, il y a les transporteurs. Ils sont fiables et ils sont chers : trois à cinq fois le prix, et ils ne livrent pas partout. Pour faire parvenir cinq kilos à quelqu'un qu'on connaît, ce n'est pas une solution, c'est un renoncement.",
+      "yadony ne cherche pas à remplacer le voyageur par un camion. Le voyageur existe déjà, il part déjà, sa valise est déjà à moitié vide. Ce qui manquait n'était pas le transport : c'était la trace. Savoir qui porte, quand, et pouvoir le prouver. D'où la vérification d'identité, les quatre scans, les photos horodatées, et un paiement qui ne part pas tant que le colis n'est pas dans les mains du destinataire.",
+      "Nous ouvrons sur quatre villes d'arrivée, pas quarante, parce que nous préférons qu'un corridor fonctionne réellement plutôt qu'une carte fasse illusion. Nous n'avons pas de chiffres à afficher : nous commençons. Si vous utilisez l'application et qu'une chose vous paraît bancale, écrivez-nous. À ce stade, c'est le retour le plus utile qu'on puisse recevoir."
+    ]
+  },
+  "contact": {
+    "seo": {
+      "title": "Contacter yadony",
+      "description": "Support utilisateur, presse et partenariats : à qui écrire, ce qu'il faut indiquer, et par quel canal la réponse arrive le plus vite."
+    },
+    "title": "Nous écrire",
+    "lead": "Une seule adresse, deux types de demandes. Précisez laquelle dans l'objet, cela nous fait gagner du temps à tous les deux.",
+    "emailLabel": "Adresse email",
+    "support": {
+      "title": "Support utilisateur",
+      "text": "Un colis bloqué, un paiement qui ne se débloque pas, un litige en cours, une vérification d'identité qui échoue. Le plus rapide reste le support intégré à l'application : votre envoi y est déjà identifié, vous n'avez pas à le redécrire. Si vous n'avez pas encore l'application, écrivez-nous ici en indiquant la ville de départ, la ville d'arrivée et la date concernée."
+    },
+    "press": {
+      "title": "Presse et partenariats",
+      "text": "Journalistes, agences de voyage, associations de la diaspora, compagnies aériennes. Dites-nous qui vous êtes et ce que vous avez en tête. Nous lisons tout."
+    },
+    "form": {
+      "legend": "Votre message",
+      "name": "Votre nom",
+      "email": "Votre adresse email",
+      "message": "Votre message",
+      "submit": "Ouvrir mon logiciel de messagerie",
+      "note": "Ce site est statique et n'enregistre rien. Le bouton ouvre votre logiciel de messagerie avec le message déjà rédigé ; vous restez maître de l'envoi.",
+      "errors": {
+        "name": "Indiquez le nom sous lequel vous répondre.",
+        "email": "Cette adresse email ne semble pas valide.",
+        "message": "Décrivez votre demande en quelques lignes."
+      }
+    }
+  },
+  "legal": {
+    "mentionsLegales": {
+      "seo": {
+        "title": "Mentions légales",
+        "description": "Éditeur, directeur de la publication, hébergeur et propriété intellectuelle du site yadony.com."
+      },
+      "title": "Mentions légales",
+      "sections": {
+        "editor": {
+          "title": "Éditeur du site",
+          "text": "Le site yadony.com est édité par la société qui développe et exploite l'application mobile dony, immatriculée en France. Toute demande relative à l'identification de l'éditeur peut être adressée à contact@yadony.com et reçoit une réponse écrite."
+        },
+        "publication": {
+          "title": "Directeur de la publication",
+          "text": "Le directeur de la publication est le représentant légal de la société éditrice. Il est joignable à l'adresse contact@yadony.com."
+        },
+        "hosting": {
+          "title": "Hébergement",
+          "text": "Le site est hébergé par Cloudflare, Inc., 101 Townsend Street, San Francisco, CA 94107, États-Unis. Les pages sont générées à l'avance et servies depuis le réseau de diffusion de Cloudflare : aucune base de données ni traitement applicatif ne tourne derrière ce site."
+        },
+        "ip": {
+          "title": "Propriété intellectuelle",
+          "text": "La marque yadony, le logo, la charte graphique, les textes et les captures d'écran de l'application sont la propriété de la société éditrice. Toute reproduction, même partielle, sans autorisation écrite préalable est interdite. Les citations dans un cadre journalistique restent libres, sous réserve de mentionner la source."
+        },
+        "liability": {
+          "title": "Responsabilité",
+          "text": "Les informations publiées ici décrivent le fonctionnement de l'application à la date de leur mise en ligne. Elles n'ont pas de valeur contractuelle : seules les conditions générales d'utilisation acceptées dans l'application engagent la société et ses utilisateurs. Les liens vers des sites tiers, notamment l'App Store et Google Play, ne sont pas sous notre contrôle."
+        },
+        "report": {
+          "title": "Signaler un problème sur ce site",
+          "text": "Pour signaler un contenu illicite, une erreur factuelle ou un dysfonctionnement, écrivez à contact@yadony.com en indiquant l'adresse de la page concernée et, si possible, votre navigateur."
+        }
+      }
+    },
+    "cgu": {
+      "seo": {
+        "title": "Conditions générales d'utilisation",
+        "description": "Règles d'utilisation de yadony : rôle de la plateforme, vérification d'identité, obligations de l'expéditeur et du voyageur, prix, annulation et litiges."
+      },
+      "title": "Conditions générales d'utilisation",
+      "intro": "Ces conditions régissent l'utilisation de l'application dony et du site yadony.com. Elles sont acceptées à la création du compte et peuvent être relues à tout moment depuis l'application.",
+      "sections": {
+        "object": {
+          "title": "Objet du service",
+          "text": "yadony met en relation des voyageurs disposant d'espace bagage et des expéditeurs souhaitant faire acheminer un colis. yadony n'est pas transporteur : la société ne prend jamais possession des colis, ne les manipule pas et n'assure pas leur acheminement. Elle fournit l'outil de mise en relation, de traçabilité et de paiement."
+        },
+        "account": {
+          "title": "Compte et vérification d'identité",
+          "text": "L'inscription requiert un numéro de téléphone vérifié. Toute personne souhaitant expédier ou transporter un colis doit avoir complété une vérification d'identité auprès de notre prestataire Stripe Identity. Le compte est personnel : il ne peut être ni prêté ni cédé. Les informations transmises doivent être exactes et tenues à jour."
+        },
+        "sender": {
+          "title": "Obligations de l'expéditeur",
+          "text": "L'expéditeur déclare le contenu réel du colis, sans omission, et accepte qu'il soit ouvert devant lui au moment du dépôt. Il s'interdit d'expédier des espèces, des bijoux, des documents d'identité, des médicaments, des denrées périssables, des produits stupéfiants, des armes, ainsi que tout bien dont l'importation est interdite ou réglementée dans le pays de destination. La valeur déclarée ne peut excéder 500 €. Les droits et taxes exigibles à l'arrivée restent à sa charge."
+        },
+        "traveler": {
+          "title": "Obligations du voyageur",
+          "text": "Le voyageur transporte le colis dans son bagage personnel, dans la limite de la franchise accordée par sa compagnie aérienne. Il procède aux quatre scans prévus — dépôt, embarquement, arrivée, remise — et remet le colis en main propre au destinataire désigné, avec photo de remise. Il peut refuser un colis à tout moment avant le dépôt, sans avoir à se justifier."
+        },
+        "price": {
+          "title": "Prix, commission et paiement",
+          "text": "Le prix du transport est fixé librement par le voyageur. yadony perçoit une commission de 12 % de ce prix, à la charge de l'expéditeur et facturée en supplément. Le montant total est autorisé sur le moyen de paiement de l'expéditeur au moment de l'acceptation, puis prélevé après validation du scan de livraison. Les fonds sont conservés par notre prestataire de paiement jusqu'à cette validation."
+        },
+        "cancellation": {
+          "title": "Annulation",
+          "text": "L'expéditeur comme le voyageur peuvent annuler avant la remise du colis : l'autorisation de paiement est alors levée et aucun montant n'est prélevé. Une annulation après la remise du colis relève de la procédure de litige. Les annulations répétées et tardives peuvent entraîner une restriction du compte."
+        },
+        "dispute": {
+          "title": "Litiges",
+          "text": "Un litige s'ouvre depuis l'application. Le versement au voyageur est suspendu pendant l'instruction. yadony statue sur la base de l'historique des scans, des photos horodatées et des échanges tenus dans l'application, et motive sa décision auprès des deux parties. Les envois convenus en dehors de la plateforme ne peuvent donner lieu à aucun recours."
+        },
+        "termination": {
+          "title": "Suspension et résiliation",
+          "text": "Un compte peut être suspendu en cas de fausse déclaration de contenu, de tentative de paiement hors plateforme, de récidive de litiges non justifiés ou de comportement mettant en danger un autre utilisateur. L'utilisateur peut supprimer son compte à tout moment depuis l'application ; les envois en cours doivent être menés à leur terme."
+        },
+        "law": {
+          "title": "Droit applicable et médiation",
+          "text": "Ces conditions sont soumises au droit français. En cas de différend, une solution amiable est recherchée en priorité. Le consommateur peut recourir gratuitement à un médiateur de la consommation avant toute action judiciaire. À défaut d'accord, le litige relève des juridictions françaises compétentes."
+        }
+      }
+    },
+    "confidentialite": {
+      "seo": {
+        "title": "Politique de confidentialité",
+        "description": "Quelles données yadony collecte, pourquoi, avec qui elles sont partagées, combien de temps elles sont conservées et comment exercer vos droits."
+      },
+      "title": "Politique de confidentialité",
+      "intro": "Cette page décrit les données que nous traitons dans l'application dony et sur le site yadony.com, leur finalité et vos droits. Elle est écrite pour être lue, pas pour être acceptée sans être lue.",
+      "sections": {
+        "responsible": {
+          "title": "Responsable du traitement",
+          "text": "La société éditrice de yadony est responsable des traitements décrits ci-dessous. Toute question relative à vos données peut être adressée à contact@yadony.com."
+        },
+        "collected": {
+          "title": "Données collectées",
+          "text": "Compte : numéro de téléphone, prénom, nom, photo de profil. Vérification d'identité : pièce d'identité et selfie, transmis à Stripe Identity et conservés chiffrés, jamais visibles par les autres utilisateurs et d'accès interne restreint. Envois : villes, dates, poids, description et photos du colis, valeur déclarée, historique des scans avec horodatage. Paiements : les données bancaires sont traitées directement par Stripe et ne transitent pas par nos serveurs."
+        },
+        "purposes": {
+          "title": "Finalités et bases légales",
+          "text": "L'exécution du contrat justifie la gestion du compte, la mise en relation, le suivi des colis et le paiement. Une obligation légale justifie la vérification d'identité et la conservation des pièces comptables. Notre intérêt légitime justifie la prévention de la fraude et la sécurité de la plateforme. Les notifications non liées à un envoi en cours reposent sur votre consentement, retirable à tout moment dans les réglages."
+        },
+        "recipients": {
+          "title": "Destinataires",
+          "text": "Vos données ne sont ni vendues ni louées. Elles sont transmises à nos sous-traitants techniques dans la stricte mesure nécessaire : Stripe pour le paiement et la vérification d'identité, notre hébergeur, et nos prestataires de notification et de SMS. L'autre partie d'un envoi voit uniquement votre prénom, votre photo de profil, le statut de votre vérification et les informations du colis concerné."
+        },
+        "retention": {
+          "title": "Durée de conservation",
+          "text": "Les données de compte sont conservées tant que le compte existe, puis supprimées ou anonymisées. Les données d'un envoi sont conservées le temps nécessaire au traitement d'un éventuel litige, puis archivées pour répondre aux obligations comptables. Les pièces d'identité sont conservées par notre prestataire de vérification pendant la durée imposée par la réglementation applicable, puis supprimées."
+        },
+        "rights": {
+          "title": "Vos droits",
+          "text": "Vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation, d'opposition et de portabilité sur vos données. Ces droits s'exercent depuis les réglages de l'application ou par écrit à contact@yadony.com. Vous pouvez également introduire une réclamation auprès de la Commission nationale de l'informatique et des libertés."
+        },
+        "cookies": {
+          "title": "Cookies sur ce site",
+          "text": "yadony.com est un site statique. Il ne dépose aucun cookie publicitaire, n'embarque aucun traceur tiers et ne charge aucune police depuis un serveur externe : les polices sont servies depuis notre propre domaine. La langue affichée est déterminée par l'adresse de la page, pas par un cookie."
+        },
+        "security": {
+          "title": "Sécurité",
+          "text": "Les échanges avec l'application sont chiffrés en transit. Les données de vérification d'identité sont chiffrées au repos et cloisonnées du reste de la base. L'accès aux données d'un envoi est restreint aux deux parties concernées et, en cas de litige, à l'équipe qui l'instruit. Toute action sensible est journalisée."
+        }
+      }
+    }
+  },
+  "footer": {
+    "pitch": "yadony met en relation les voyageurs qui ont de la place dans leur valise et les personnes qui ont un colis à faire partir. Identité vérifiée, quatre scans, paiement libéré à la livraison.",
+    "navLabel": "Navigation du pied de page",
+    "legalLabel": "Informations légales",
+    "legalNotice": "Mentions légales",
+    "terms": "Conditions générales d'utilisation",
+    "privacy": "Politique de confidentialité",
+    "copyright": "© yadony. Service de mise en relation, pas de transport."
+  }
+}

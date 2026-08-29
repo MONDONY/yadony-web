@@ -46,11 +46,13 @@ pnpm lint && pnpm typecheck && pnpm test:coverage && pnpm generate && pnpm e2e &
 
 Pourquoi advisory pour l'instant : mesuré dans le bac à sable de développement de ce projet, le score de performance reste sous le seuil de façon reproductible — 0,93-0,94 sur `/` et sur `/tarifs` — aussi bien sous forte charge système (load average 20 à 23 sur 8 cœurs) que sous charge faible (load average ~3, même machine, même code, aucun changement entre les deux mesures). L'écart au seuil est donc réel, pas seulement un artefact de contention, même s'il reste faible (quelques centièmes) ; la charge système aggrave la dispersion des scores mais n'explique pas à elle seule le score sous le seuil. L'intention est de rendre cette étape bloquante une fois la question tranchée sur des données propres : une mesure sur le runner GitHub Actions lui-même, dédié et non partagé — cette mesure reste à faire, et rien ne permet d'affirmer par avance qu'elle passera. D'ici là, `continue-on-error: true` évite un pipeline rouge pour un écart déjà identifié mais non actionnable dans l'immédiat.
 
+**Budget JavaScript.** La spec fixe un budget JavaScript de 100 ko (`resource-summary:script:size` dans `lighthouserc.json`, seuil `error` à 102 400 octets). Mesuré en local sur ce même bac à sable : **119 948 octets transférés (~117,1 ko gzip) sur `/`, 121 392 octets (~118,6 ko gzip) sur `/tarifs`** — soit environ 1,17 à 1,19 fois le budget. Cette assertion échoue donc actuellement, comme le budget de performance, et pour la même raison elle reste dans l'étape `pnpm lighthouse` en `continue-on-error: true` plutôt que d'être supprimée ou assouplie : l'écart doit rester visible, pas maquillé. Ne pas baisser ce seuil pour le faire passer.
+
 ## Procédure de mise à jour des captures d'écran
 
 Les captures affichées sur le site vivent dans `public/screenshots/`, servies telles quelles (jamais retraitées au build). Pour les mettre à jour :
 
-1. Déposer les fichiers `.webp` aux dimensions **1170 × 2532** dans `public/screenshots/`, avec exactement ces noms :
+1. Déposer les fichiers `.webp` aux dimensions **640 × 1385** dans `public/screenshots/`, avec exactement ces noms :
    - `app-accueil.webp`
    - `app-depot.webp`
    - `app-scan.webp`
@@ -58,6 +60,8 @@ Les captures affichées sur le site vivent dans `public/screenshots/`, servies t
    - `app-livraison.webp`
 2. Relancer `pnpm generate` puis vérifier visuellement les pages concernées.
 3. Relancer `pnpm lighthouse` — remplacer les captures peut légèrement modifier le score de performance (poids total des images).
+
+**Pourquoi 640 px et pas la résolution native du téléphone (1170 px) :** ces images ne sont jamais retraitées au build (pas de module image), et le plus grand rendu à l'écran est `320px` de large (`lg:w-[320px]` dans `HeroDownload.vue` et `TrackingWalkthrough.vue`). Une largeur source de 640 px couvre ce rendu à 2x (écran Retina/DPR 2) sans le dépasser inutilement — livrer du 1170 px revenait à suréchantillonner de 3,6x sur desktop et 4,5x sur mobile, cinq fois sur la seule page d'accueil, pour un public cible « diaspora sur Android, souvent en 4G » (voir la spec). Garder le même ratio que l'original (1170 × 2532, soit 195:422) donne 640 × 1385.
 
 ## Déploiement — Cloudflare Pages
 
@@ -76,7 +80,7 @@ La connexion du dépôt GitHub au projet Cloudflare Pages est une action manuell
 
 Le site est fonctionnellement complet (neuf pages en français et en anglais, tests unitaires et de bout en bout au vert, zéro violation d'accessibilité critique ou sérieuse) — étant entendu que le budget de performance Lighthouse échoue actuellement (0,93-0,94 contre un seuil de 0,95, voir « Intégration continue » ci-dessus). Par ailleurs, **six éléments dépendent encore du porteur du projet** avant une publication en production :
 
-1. **Captures d'écran réelles de l'application.** Emplacement : `public/screenshots/`, noms attendus `app-accueil.webp`, `app-depot.webp`, `app-scan.webp`, `app-transit.webp`, `app-livraison.webp`, toutes en 1170 × 2532. Elles n'existent pas aujourd'hui — ces images renvoient une 404 dans le navigateur en l'état actuel du dépôt (le dossier ne contient qu'un `.gitkeep`).
+1. **Captures d'écran réelles de l'application.** Emplacement : `public/screenshots/`, noms attendus `app-accueil.webp`, `app-depot.webp`, `app-scan.webp`, `app-transit.webp`, `app-livraison.webp`, toutes en 640 × 1385 (voir « Procédure de mise à jour des captures d'écran » ci-dessus). Elles n'existent pas aujourd'hui — ces images renvoient une 404 dans le navigateur en l'état actuel du dépôt (le dossier ne contient qu'un `.gitkeep`).
 2. **Texte juridique définitif des trois pages légales** (`app/pages/mentions-legales.vue`, `app/pages/cgu.vue`, `app/pages/confidentialite.vue`, et leurs équivalents anglais). Le contenu actuel est une structure complète et réaliste, mais il ne contient délibérément **aucun identifiant d'entreprise** — pas de SIREN, pas de numéro RCS, pas de capital social, pas d'adresse de siège social. Ces informations doivent être renseignées avant que le site soit légalement publiable en France.
 3. **Les vraies URLs App Store et Google Play.** Elles sont aujourd'hui des placeholders, confinés à un seul fichier : `app/components/StoreBadges.vue` (constantes `APP_STORE_URL` et `PLAY_STORE_URL`).
 4. **Une adresse e-mail de contact et les coordonnées légales de la société**, à intégrer dans la page contact et les pages légales.

@@ -38,22 +38,22 @@ export default defineNuxtConfig({
       crawlLinks: true,
       routes: ['/'],
       failOnError: true,
-      // TEMPORAIRE — routes créées par les tâches 10 et 11. Le header et le
-      // footer (tâche 6) lient déjà /comment-ca-marche, /tarifs, /securite,
-      // /a-propos, /contact, /mentions-legales, /cgu et /confidentialite,
-      // mais aucune page n'existe encore pour ces chemins : le crawler les
-      // suit et échoue en 404. Tant qu'elles n'existent pas, localePath()
-      // ne peut pas non plus produire de chemin anglais préfixé pour elles
-      // (defineI18nRoute n'a rien à mapper) : le header et le footer de la
-      // page /en émettent donc le même chemin français non préfixé, ce
-      // qu'on peut vérifier dans la sortie d'erreur de `pnpm generate`
-      // avant cette liste — aucune variante /en/... n'y apparaît. Cette
-      // liste ne doit donc contenir que ces huit chemins, sans préfixe.
-      // Elle doit être vide — et donc supprimée — à la fin de la tâche 11 :
-      // si elle existe encore après, c'est qu'une page liée par le header
-      // ou le footer manque toujours.
+      // TEMPORAIRE — routes créées par la tâche 11. Le header et le footer
+      // (tâche 6) lient déjà /tarifs, /securite, /a-propos, /contact,
+      // /mentions-legales, /cgu et /confidentialite, mais aucune page
+      // n'existe encore pour ces chemins : le crawler les suit et échoue
+      // en 404. Tant qu'elles n'existent pas, localePath() ne peut pas non
+      // plus produire de chemin anglais préfixé pour elles (defineI18nRoute
+      // n'a rien à mapper) : le header et le footer de la page /en émettent
+      // donc le même chemin français non préfixé, ce qu'on peut vérifier
+      // dans la sortie d'erreur de `pnpm generate` avant cette liste —
+      // aucune variante /en/... n'y apparaît. Cette liste ne doit donc
+      // contenir que ces sept chemins, sans préfixe. Elle doit être vide —
+      // et donc supprimée — à la fin de la tâche 11 : si elle existe
+      // encore après, c'est qu'une page liée par le header ou le footer
+      // manque toujours. (/comment-ca-marche, construite par la tâche 10,
+      // a déjà été retirée de cette liste.)
       ignore: [
-        '/comment-ca-marche',
         '/tarifs',
         '/securite',
         '/a-propos',

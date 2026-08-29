@@ -32,8 +32,8 @@ describe('TrackingWalkthrough', () => {
   it('déclare les dimensions des images pour éviter le décalage de mise en page', () => {
     const wrapper = mount(TrackingWalkthrough, { global: { plugins: [i18n] } })
     for (const img of wrapper.findAll('img')) {
-      expect(img.attributes('width')).toBe('1170')
-      expect(img.attributes('height')).toBe('2532')
+      expect(img.attributes('width')).toBe('640')
+      expect(img.attributes('height')).toBe('1385')
     }
   })
 })

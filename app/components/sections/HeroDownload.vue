@@ -19,9 +19,9 @@ const { t } = useI18n()
             <img
               src="/screenshots/app-accueil.webp"
               :alt="t('home.hero.screenshotAlt')"
-              width="1170"
-              height="2532"
-              class="mx-auto w-[260px] rounded-card border border-line bg-sand lg:w-[320px]"
+              width="640"
+              height="1385"
+              class="ml-auto w-[260px] rounded-card border border-line bg-sand lg:w-[320px]"
               loading="eager"
               fetchpriority="high"
             >

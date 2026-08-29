@@ -33,8 +33,8 @@ const steps = [
             <img
               :src="step.image"
               :alt="t(`home.tracking.steps.${step.key}.alt`)"
-              width="1170"
-              height="2532"
+              width="640"
+              height="1385"
               loading="lazy"
               decoding="async"
               class="w-full rounded-card border border-line bg-sand"

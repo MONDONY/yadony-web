@@ -1,460 +1,460 @@
 {
   "nav": {
-    "howItWorks": "Comment ça marche",
-    "pricing": "Tarifs",
-    "trust": "Sécurité",
-    "about": "À propos",
+    "howItWorks": "How it works",
+    "pricing": "Pricing",
+    "trust": "Trust and safety",
+    "about": "About",
     "contact": "Contact",
-    "download": "Télécharger l'app",
-    "mainLabel": "Navigation principale",
-    "mobileLabel": "Navigation mobile",
+    "download": "Download the app",
+    "mainLabel": "Main navigation",
+    "mobileLabel": "Mobile navigation",
     "menu": "Menu"
   },
   "a11y": {
-    "skipToContent": "Aller au contenu"
+    "skipToContent": "Skip to content"
   },
   "language": {
-    "label": "Langue",
-    "switchLabel": "Changer de langue",
-    "switchTo": "Lire cette page en {language}",
+    "label": "Language",
+    "switchLabel": "Change language",
+    "switchTo": "Read this page in {language}",
     "fr": "Français",
     "en": "English"
   },
   "home": {
     "seo": {
-      "title": "Envoyer un colis en Afrique, par un voyageur vérifié",
-      "description": "yadony met en relation les voyageurs qui ont de la place dans leur valise et les expéditeurs de la diaspora. Identité vérifiée, paiement séquestre, suivi par QR code."
+      "title": "Send a parcel to Africa with a verified traveller",
+      "description": "yadony connects travellers who have room in their suitcase with senders in the diaspora. Verified identity, payment held in escrow, QR code tracking."
     },
     "hero": {
-      "title": "Votre colis part avec quelqu'un de confiance",
-      "lead": "Un voyageur vérifié emporte votre colis Paris → Dakar. Vous payez à la livraison confirmée, pas avant.",
-      "note": "Au départ de Paris, Lyon et Marseille, vers Dakar, Abidjan, Bamako et Douala.",
-      "appStore": "Télécharger sur l'App Store",
-      "playStore": "Disponible sur Google Play",
-      "screenshotAlt": "Écran d'accueil de l'application yadony montrant les trajets disponibles"
+      "title": "Your parcel travels with someone you can trust",
+      "lead": "A verified traveller takes your parcel Paris → Dakar. You pay once delivery is confirmed, not before.",
+      "note": "Departing from Paris, Lyon and Marseille, to Dakar, Abidjan, Bamako and Douala.",
+      "appStore": "Download on the App Store",
+      "playStore": "Get it on Google Play",
+      "screenshotAlt": "Home screen of the yadony app showing the available trips"
     },
     "problem": {
-      "title": "Trois façons d'envoyer un colis. Une seule est traçable.",
+      "title": "Three ways to send a parcel. Only one of them is traceable.",
       "columns": {
-        "channel": "Canal",
-        "price": "Prix pour 5 kg",
-        "tracking": "Suivi",
-        "recourse": "Recours"
+        "channel": "Channel",
+        "price": "Price for 5 kg",
+        "tracking": "Tracking",
+        "recourse": "Recourse"
       },
       "rows": {
         "whatsapp": {
-          "channel": "Groupe WhatsApp",
-          "price": "Variable",
-          "tracking": "Aucun",
-          "recourse": "Aucun"
+          "channel": "WhatsApp group",
+          "price": "Varies",
+          "tracking": "None",
+          "recourse": "None"
         },
         "carrier": {
-          "channel": "Transporteur classique",
-          "price": "150 € et plus",
-          "tracking": "Complet",
-          "recourse": "Contractuel"
+          "channel": "Conventional carrier",
+          "price": "€150 and up",
+          "tracking": "Full",
+          "recourse": "Contractual"
         },
         "yadony": {
           "channel": "yadony",
-          "price": "Fixé par le voyageur",
-          "tracking": "QR à chaque étape",
-          "recourse": "Séquestre et litige"
+          "price": "Set by the traveller",
+          "tracking": "QR scan at every step",
+          "recourse": "Escrow and disputes"
         }
       }
     },
     "tracking": {
-      "title": "Quatre scans entre Paris et Dakar",
-      "lead": "À chaque étape, un QR code est scanné. L'expéditeur et le destinataire voient la même chose, au même moment.",
-      "scrollLabel": "Étapes du parcours, de Paris à Dakar. Faites défiler pour voir les quatre écrans.",
+      "title": "Four scans between Paris and Dakar",
+      "lead": "At every step, a QR code is scanned. The sender and the recipient see the same thing, at the same time.",
+      "scrollLabel": "Steps of the journey, from Paris to Dakar. Scroll to see the four screens.",
       "steps": {
         "deposit": {
-          "label": "Dépôt à Paris",
-          "text": "Vous remettez le colis au voyageur. Il scanne le QR code, une photo est prise, l'horodatage est enregistré.",
-          "alt": "Écran de dépôt affichant le QR code du colis"
+          "label": "Handover in Paris",
+          "text": "You hand the parcel to the traveller. They scan the QR code, a photo is taken, the timestamp is recorded.",
+          "alt": "Handover screen showing the QR code for the parcel"
         },
         "airport": {
-          "label": "Scan à l'aéroport",
-          "text": "Second scan avant l'embarquement. Votre famille reçoit la notification.",
-          "alt": "Écran de scan à l'aéroport avec confirmation d'embarquement"
+          "label": "Scan at the airport",
+          "text": "Second scan before boarding. Your family gets the notification.",
+          "alt": "Airport scan screen with boarding confirmation"
         },
         "transit": {
-          "label": "Scan à l'arrivée",
-          "text": "Troisième scan à l'atterrissage, dès que le voyageur a récupéré son bagage. La fiche de suivi, partageable par lien, passe en « arrivé » pour tout le monde en même temps.",
-          "alt": "Écran de scan à l'arrivée confirmant que le colis a atterri"
+          "label": "Scan on arrival",
+          "text": "Third scan on landing, as soon as the traveller has collected their luggage. The tracking page, which can be shared as a link, switches to “arrived” for everyone at the same moment.",
+          "alt": "Arrival scan screen confirming that the parcel has landed"
         },
         "delivery": {
-          "label": "Livraison à Dakar",
-          "text": "Scan final, photo de remise en main propre. Le paiement est alors libéré au voyageur.",
-          "alt": "Écran de livraison avec photo de confirmation de remise"
+          "label": "Delivery in Dakar",
+          "text": "Final scan, photo of the hand-delivery. The payment is released to the traveller at that point.",
+          "alt": "Delivery screen with the hand-over confirmation photo"
         }
       }
     },
     "trust": {
-      "title": "Trois choses qu'un groupe WhatsApp ne peut pas vous garantir",
-      "lead": "Vous confiez un colis à quelqu'un que vous ne connaissez pas. Voici ce que la plateforme met en place pour que ce ne soit pas un pari.",
+      "title": "Three things a WhatsApp group cannot guarantee you",
+      "lead": "You are handing a parcel to someone you do not know. Here is what the platform puts in place so that it is not a gamble.",
       "identity": {
-        "figure": "100 %",
-        "label": "Identités vérifiées",
-        "text": "Voyageurs et expéditeurs passent une vérification d'identité Stripe Identity. Aucun compte anonyme sur la plateforme."
+        "figure": "100%",
+        "label": "Identities verified",
+        "text": "Travellers and senders both go through a Stripe Identity check. No anonymous accounts on the platform."
       },
       "escrow": {
-        "figure": "0 €",
-        "label": "Payé avant livraison",
-        "text": "Votre paiement est bloqué et n'est versé au voyageur qu'après le scan de livraison confirmé."
+        "figure": "€0",
+        "label": "Paid before delivery",
+        "text": "Your payment is held and is only released to the traveller after the delivery scan is confirmed."
       },
       "insurance": {
-        "figure": "500 €",
-        "label": "Valeur déclarée plafonnée",
-        "text": "Vous déclarez la valeur du colis, dans la limite de 500 €. C'est le montant de référence sur lequel nous arbitrons si un litige est ouvert. Indépendamment de cette valeur déclarée, le paiement reste bloqué jusqu'au scan de livraison confirmé."
+        "figure": "€500",
+        "label": "Cap on declared value",
+        "text": "You declare the value of the parcel, up to €500. That is the reference amount we rule on if a dispute is opened. Whatever the declared value, the payment stays held until the delivery scan is confirmed."
       }
     },
     "traveler": {
-      "title": "Votre valise a de la place. Elle peut financer une partie du voyage.",
-      "text": "Vous partez à Abidjan et vous n'utiliserez que la moitié de votre franchise bagage. Dix kilos libres, à 12 € le kilo, cela fait 120 € sur un vol que vous preniez déjà. Vous fixez votre prix, vous choisissez ce que vous acceptez de porter, et vous touchez la totalité : la commission est payée par l'expéditeur, en plus.",
-      "cta": "Voir le parcours voyageur"
+      "title": "Your suitcase has room to spare. It can pay for part of the trip.",
+      "text": "You are flying to Abidjan and you will use only half of your baggage allowance. Ten kilos free, at €12 a kilo, comes to €120 on a flight you were taking anyway. You set your price, you choose what you agree to carry, and you keep all of it: the commission is paid by the sender, on top.",
+      "cta": "See how it works for travellers"
     },
     "faq": {
-      "title": "Les questions qu'on nous pose avant de télécharger",
+      "title": "The questions people ask us before downloading",
       "items": [
         {
-          "id": "delai",
-          "question": "Combien de temps met un colis pour arriver ?",
-          "answer": "Le temps du vol, plus le temps de convenir d'un rendez-vous avec le destinataire. Vous voyez la date de départ et la date d'arrivée du voyageur avant de réserver : c'est vous qui choisissez le trajet qui vous arrange. Nous n'affichons pas de délai standard, parce qu'il n'y a pas de tournée derrière : il y a un vol, celui d'une personne réelle."
+          "id": "delivery-time",
+          "question": "How long does a parcel take to arrive?",
+          "answer": "The length of the flight, plus the time it takes to agree a meeting with the recipient. You see the traveller's departure and arrival dates before you book: you are the one choosing the trip that suits you. We do not advertise a standard delivery time, because there is no delivery round behind it: there is a flight, taken by a real person."
         },
         {
-          "id": "prix",
-          "question": "Combien coûte un envoi ?",
-          "answer": "Le voyageur fixe son prix au kilo selon son trajet et ce qu'il accepte de porter. yadony ajoute 12 % par-dessus. Pour un colis de 5 kg chez un voyageur à 12 € le kilo : 60 € pour lui, 7,20 € de commission, 67,20 € à votre charge. Le détail figure sur la page Tarifs."
+          "id": "price",
+          "question": "How much does it cost to send something?",
+          "answer": "The traveller sets their price per kilo according to their route and what they agree to carry. yadony adds 12% on top. For a 5 kg parcel with a traveller charging €12 a kilo: €60 for them, €7.20 commission, €67.20 for you to pay. The full breakdown is on the Pricing page."
         },
         {
-          "id": "interdits",
-          "question": "Qu'est-ce que je n'ai pas le droit d'envoyer ?",
-          "answer": "Espèces, bijoux, documents d'identité, médicaments, denrées périssables, produits stupéfiants, armes, et tout ce que la réglementation douanière du pays d'arrivée interdit ou réglemente. Le voyageur ouvre le colis devant vous au moment du dépôt : il engage sa responsabilité en le portant dans son propre bagage, il a le droit de savoir ce qu'il transporte."
+          "id": "prohibited-items",
+          "question": "What am I not allowed to send?",
+          "answer": "Cash, jewellery, identity documents, medicines, perishable food, narcotics, weapons, and anything the customs rules of the destination country prohibit or restrict. The traveller opens the parcel in front of you at handover: they take on the liability by carrying it in their own luggage, so they have the right to know what they are carrying."
         },
         {
-          "id": "paiement",
-          "question": "À quel moment suis-je débité ?",
-          "answer": "Vous n'êtes débité qu'après la livraison. Quand le voyageur accepte votre colis, votre moyen de paiement est enregistré ; l'encaissement, lui, n'a lieu qu'une fois le scan de livraison validé par le destinataire, et c'est ce même scan qui déclenche le versement au voyageur. Si le colis ne part pas, ou s'il n'arrive pas, rien ne vous est prélevé."
+          "id": "payment",
+          "question": "When am I charged?",
+          "answer": "You are only charged after delivery. When the traveller accepts your parcel, your payment method is registered; the charge itself happens only once the delivery scan has been validated by the recipient, and it is that same scan that triggers the payout to the traveller. If the parcel never leaves, or never arrives, nothing is taken from you."
         },
         {
-          "id": "perte",
-          "question": "Et si le colis n'arrive jamais ?",
-          "answer": "Vous ouvrez un litige depuis l'application. Le versement au voyageur reste suspendu pendant l'instruction. Nous reprenons l'historique des scans, qui indique la dernière étape validée, à quelle heure et avec quelle photo. Si la perte est établie, le paiement n'est pas encaissé et le voyageur ne perçoit rien. La valeur que vous avez déclarée, plafonnée à 500 €, sert de montant de référence au dossier : elle ne vaut pas engagement d'indemnisation de notre part."
+          "id": "loss",
+          "question": "What if the parcel never arrives?",
+          "answer": "You open a dispute from the app. The payout to the traveller stays suspended while the case is examined. We go back through the scan history, which shows the last validated step, at what time and with which photo. If the loss is established, the payment is not charged and the traveller receives nothing. The value you declared, capped at €500, is the reference amount for the case: it is not a promise of compensation on our part."
         },
         {
-          "id": "gain-voyageur",
-          "question": "Combien gagne un voyageur ?",
-          "answer": "Exactement le prix qu'il a annoncé. La commission de 12 % s'ajoute au-dessus et elle est payée par l'expéditeur : elle ne se prélève pas sur ce que touche le voyageur. Dix kilos à 12 € le kilo, ce sont 120 € versés après la livraison, sur un billet déjà acheté."
+          "id": "traveller-earnings",
+          "question": "How much does a traveller earn?",
+          "answer": "Exactly the price they advertised. The 12% commission is added on top and is paid by the sender: it is not taken out of what the traveller receives. Ten kilos at €12 a kilo means €120 paid out after delivery, on a ticket already bought."
         },
         {
-          "id": "douane",
-          "question": "Que se passe-t-il en cas de contrôle douanier ?",
-          "answer": "Le voyageur déclare ce qu'il transporte. Chaque colis est associé dans l'application à une description et aux photos prises au dépôt, qu'il peut présenter. Les droits et taxes éventuels restent à la charge de l'expéditeur. C'est aussi la raison des contenus interdits : un colis qui bloque à la douane immobilise la personne qui le porte."
+          "id": "customs",
+          "question": "What happens if there is a customs check?",
+          "answer": "The traveller declares what they are carrying. In the app, every parcel comes with a description and the photos taken at handover, which they can show. Any duties and taxes remain payable by the sender. That is also the reason for the prohibited items: a parcel held up at customs holds up the person carrying it."
         },
         {
-          "id": "villes",
-          "question": "Quelles villes sont desservies ?",
-          "answer": "Au départ de Paris, Lyon et Marseille, vers Dakar, Abidjan, Bamako et Douala. Ce sont les corridors où il y a assez de vols et assez de monde pour que le service tienne dès le premier jour. D'autres viendront. Nous préférons ouvrir une ville quand elle fonctionne plutôt qu'afficher une carte pleine de destinations sans voyageurs."
+          "id": "cities",
+          "question": "Which cities are covered?",
+          "answer": "Departing from Paris, Lyon and Marseille, to Dakar, Abidjan, Bamako and Douala. These are the corridors with enough flights and enough people for the service to hold up from day one. Others will follow. We would rather open a city when it works than show a map full of destinations with no travellers on them."
         }
       ]
     },
     "download": {
-      "title": "Le reste se passe dans l'application",
-      "text": "Publier un colis, comparer les voyageurs, scanner, suivre, payer : tout s'y trouve. Ce site ne sert qu'à vous expliquer le fonctionnement avant que vous la téléchargiez."
+      "title": "The rest happens in the app",
+      "text": "Posting a parcel, comparing travellers, scanning, tracking, paying: it is all in there. This site exists only to explain how it works before you download it."
     }
   },
   "howItWorks": {
     "seo": {
-      "title": "Comment envoyer ou transporter un colis avec yadony",
-      "description": "Les cinq étapes d'un envoi, côté expéditeur et côté voyageur : publication, mise en relation, dépôt scanné, transport, livraison confirmée et paiement libéré."
+      "title": "How to send or carry a parcel with yadony",
+      "description": "The five steps of a shipment, on the sender's side and on the traveller's side: posting, matching, scanned handover, carriage, confirmed delivery and released payment."
     },
-    "title": "Deux parcours, cinq étapes chacun",
-    "lead": "Un envoi met en jeu deux personnes qui ne se connaissent pas. Voici ce que chacune fait, dans l'ordre, et à quel moment l'argent bouge.",
-    "tabsLabel": "Choisir un parcours",
+    "title": "Two journeys, five steps each",
+    "lead": "A shipment involves two people who do not know each other. Here is what each of them does, in order, and when the money moves.",
+    "tabsLabel": "Choose a journey",
     "expediteur": {
-      "tab": "Je suis expéditeur",
+      "tab": "I am a sender",
       "steps": [
         {
-          "title": "Vous décrivez le colis",
-          "text": "Ville de départ, ville d'arrivée, poids, contenu, photos. Vous déclarez une valeur, plafonnée à 500 € : c'est le montant de référence retenu si un litige doit être instruit."
+          "title": "You describe the parcel",
+          "text": "Departure city, arrival city, weight, contents, photos. You declare a value, capped at €500: that is the reference amount used if a dispute has to be examined."
         },
         {
-          "title": "Vous choisissez un voyageur",
-          "text": "L'application affiche qui part sur votre corridor, à quelle date, avec combien de kilos libres et à quel prix au kilo. Vous voyez son identité vérifiée et ses évaluations, s'il en a déjà. À la réservation, votre moyen de paiement est enregistré : il ne sera encaissé qu'à la livraison confirmée."
+          "title": "You choose a traveller",
+          "text": "The app shows who is flying your corridor, on what date, with how many kilos free and at what price per kilo. You see their verified identity and their ratings, if they already have any. When you book, your payment method is registered: it will be charged only once delivery is confirmed."
         },
         {
-          "title": "Vous remettez le colis",
-          "text": "Rendez-vous convenu dans l'application. Le voyageur ouvre le colis devant vous, scanne le QR code, prend une photo. L'horodatage est enregistré : c'est votre preuve de dépôt."
+          "title": "You hand over the parcel",
+          "text": "You agree a meeting point in the app. The traveller opens the parcel in front of you, scans the QR code, takes a photo. The timestamp is recorded: that is your proof of handover."
         },
         {
-          "title": "Vous suivez les scans",
-          "text": "Embarquement, puis arrivée. Chaque scan déclenche une notification pour vous et pour la personne qui attend le colis. Un lien de suivi partageable lui permet de regarder sans installer l'application."
+          "title": "You follow the scans",
+          "text": "Boarding, then arrival. Each scan sends a notification to you and to the person waiting for the parcel. A shareable tracking link lets them watch without installing the app."
         },
         {
-          "title": "La livraison libère le paiement",
-          "text": "Le destinataire reçoit le colis en main propre, le scan final est validé, une photo de remise est prise. C'est cet événement, et lui seul, qui déclenche le prélèvement et le versement au voyageur."
+          "title": "Delivery releases the payment",
+          "text": "The recipient receives the parcel in person, the final scan is validated, a hand-over photo is taken. That event, and nothing else, triggers the charge and the payout to the traveller."
         }
       ]
     },
     "voyageur": {
-      "tab": "Je suis voyageur",
+      "tab": "I am a traveller",
       "steps": [
         {
-          "title": "Vous publiez votre trajet",
-          "text": "Villes, dates, kilos disponibles, prix au kilo. Vous restez libre de refuser un colis sans avoir à vous en justifier."
+          "title": "You post your trip",
+          "text": "Cities, dates, kilos available, price per kilo. You stay free to turn down a parcel without having to explain yourself."
         },
         {
-          "title": "Vous passez la vérification d'identité",
-          "text": "Pièce d'identité et selfie, contrôlés par Stripe Identity. C'est obligatoire avant de transporter quoi que ce soit, et c'est ce qui rassure la personne qui vous confie son colis."
+          "title": "You go through the identity check",
+          "text": "An ID document and a selfie, checked by Stripe Identity. It is compulsory before you carry anything, and it is what reassures the person handing you their parcel."
         },
         {
-          "title": "Vous acceptez un colis",
-          "text": "Description, photos et valeur déclarée vous sont montrées avant que vous acceptiez. Au dépôt, vous ouvrez le colis devant l'expéditeur et vous scannez le QR code : ce que vous transportez est acté."
+          "title": "You accept a parcel",
+          "text": "The description, the photos and the declared value are shown to you before you accept. At handover, you open the parcel in front of the sender and scan the QR code: what you are carrying is on the record."
         },
         {
-          "title": "Vous voyagez normalement",
-          "text": "Un scan avant l'embarquement, un autre à l'arrivée. Le colis part dans votre bagage, dans la limite de la franchise accordée par votre compagnie."
+          "title": "You travel as usual",
+          "text": "One scan before boarding, another on arrival. The parcel goes in your luggage, within the allowance granted by your airline."
         },
         {
-          "title": "Vous livrez et vous êtes payé",
-          "text": "Remise en main propre, scan final, photo. Le versement est déclenché dans la foulée. Vous percevez la totalité du prix que vous aviez fixé : les 12 % de commission sont payés par l'expéditeur, en plus."
+          "title": "You deliver and you get paid",
+          "text": "Hand-delivery, final scan, photo. The payout is triggered straight after. You receive the full price you set: the 12% commission is paid by the sender, on top."
         }
       ]
     }
   },
   "pricing": {
     "seo": {
-      "title": "Tarifs yadony : 12 % de commission, et rien d'autre",
-      "description": "Le voyageur fixe son prix au kilo, yadony ajoute 12 % payés par l'expéditeur. Exemple chiffré complet pour un colis de 5 kg Paris → Dakar et comparaison avec un transporteur classique."
+      "title": "yadony pricing: 12% commission, and nothing else",
+      "description": "The traveller sets their price per kilo, yadony adds 12% paid by the sender. A full worked example for a 5 kg parcel Paris → Dakar and a comparison with a conventional carrier."
     },
-    "title": "Le voyageur fixe son prix. Nous prenons 12 % par-dessus.",
-    "lead": "Il n'y a pas de grille tarifaire chez yadony, parce que ce n'est pas nous qui transportons. Le prix au kilo est celui qu'annonce le voyageur. La seule chose que nous facturons est une commission de 12 %, ajoutée au moment du paiement et payée par l'expéditeur.",
-    "cap": "La valeur déclarée d'un colis est plafonnée à {amount} €. C'est le montant de référence retenu pour arbitrer un litige ; l'assurance du colis n'est pas comprise dans la commission.",
+    "title": "The traveller sets the price. We take 12% on top.",
+    "lead": "There is no rate card at yadony, because we are not the ones doing the carrying. The price per kilo is the one the traveller advertises. The only thing we charge is a commission of 12%, added at the time of payment and paid by the sender.",
+    "cap": "The declared value of a parcel is capped at €{amount}. That is the reference amount used to settle a dispute; insurance for the parcel is not included in the commission.",
     "example": {
-      "caption": "Un colis de 5 kg, Paris → Dakar, chez un voyageur à 12 € le kilo",
-      "travelerPrice": "Prix demandé par le voyageur",
-      "commission": "Commission yadony (12 %)",
-      "senderPays": "Total payé par l'expéditeur",
-      "travelerEarns": "Versé au voyageur après livraison"
+      "caption": "A 5 kg parcel, Paris → Dakar, with a traveller charging €12 a kilo",
+      "travelerPrice": "Price asked by the traveller",
+      "commission": "yadony commission (12%)",
+      "senderPays": "Total paid by the sender",
+      "travelerEarns": "Paid to the traveller after delivery"
     },
     "comparison": {
-      "title": "Le même colis chez un transporteur classique",
-      "text": "Cinq kilos Paris → Dakar démarrent autour de 150 € chez un transporteur international, hors options de délai, avec une livraison qui ne dessert pas tous les quartiers. Nous ne prétendons pas les remplacer : pour un envoi volumineux, urgent ou de grande valeur, ils restent le bon choix. Pour quelques kilos qu'un proche attend, la question du prix ne se pose plus de la même façon."
+      "title": "The same parcel with a conventional carrier",
+      "text": "Five kilos Paris → Dakar start at around €150 with an international carrier, before any express options, and delivery does not reach every neighbourhood. We do not claim to replace them: for a bulky, urgent or high-value shipment, they remain the right choice. For a few kilos that someone close to you is waiting for, the price question no longer looks the same."
     }
   },
   "trust": {
     "seo": {
-      "title": "Sécurité : identité vérifiée, paiement séquestre, litiges",
-      "description": "Comment yadony sécurise un envoi entre particuliers : vérification d'identité Stripe Identity, paiement encaissé seulement après la livraison confirmée, valeur déclarée plafonnée à 500 €, procédure de litige et traitement des données."
+      "title": "Trust and safety: verified identity, escrow payment, disputes",
+      "description": "How yadony secures a shipment between private individuals: Stripe Identity verification, payment charged only after delivery is confirmed, declared value capped at €500, dispute procedure and data handling."
     },
-    "title": "Ce que la plateforme garantit, et ce qu'elle ne garantit pas",
-    "lead": "Cette page décrit les mécanismes en place, sans les enjoliver. Si un point vous paraît insuffisant, écrivez-nous : c'est plus utile de le dire maintenant que de le découvrir au moment d'un problème.",
+    "title": "What the platform guarantees, and what it does not",
+    "lead": "This page describes the mechanisms in place, without dressing them up. If something here looks insufficient to you, write to us: it is more useful to say so now than to find out when something goes wrong.",
     "sections": {
       "identity": {
-        "title": "Vérification d'identité",
-        "text": "Aucun compte anonyme ne peut expédier ni transporter un colis. Avant sa première annonce, chaque utilisateur transmet une pièce d'identité et un selfie à Stripe Identity, qui contrôle la validité du document et sa correspondance avec le visage. Ces documents sont conservés chiffrés et cloisonnés du reste de la base : ils ne sont jamais visibles par les autres utilisateurs, et l'accès interne y est restreint et journalisé. Le nom affiché à l'autre partie est le nom vérifié."
+        "title": "Identity verification",
+        "text": "No anonymous account can send or carry a parcel. Before their first listing, every user submits an ID document and a selfie to Stripe Identity, which checks that the document is valid and that it matches the face. These documents are stored encrypted and kept apart from the rest of the database: they are never visible to other users, and internal access to them is restricted and logged. The name shown to the other party is the verified name."
       },
       "escrow": {
-        "title": "Paiement séquestre",
-        "text": "Quand un voyageur accepte votre colis, votre moyen de paiement est enregistré, mais aucune somme n'est encaissée. L'encaissement n'intervient qu'après le scan de livraison validé par le destinataire, et c'est lui qui déclenche le versement au voyageur. Tant que la livraison n'est pas confirmée, rien ne vous est prélevé et le voyageur ne perçoit rien. Si l'envoi n'a pas lieu, la demande de paiement est abandonnée."
+        "title": "Payment held in escrow",
+        "text": "When a traveller accepts your parcel, your payment method is registered, but no money is taken. The charge happens only after the delivery scan validated by the recipient, and it is that scan that triggers the payout to the traveller. Until delivery is confirmed, nothing is taken from you and the traveller receives nothing. If the shipment does not go ahead, the payment request is dropped."
       },
       "cap": {
-        "title": "Plafond de valeur déclarée",
-        "text": "La valeur déclarée d'un colis ne peut pas dépasser 500 €. Ce plafond est volontaire : au-delà, un envoi accompagné par un particulier n'est plus le bon canal, et un transporteur professionnel l'est davantage. La valeur déclarée est le montant de référence que nous retenons pour instruire un litige ; la sous-déclarer se retourne contre vous. La commission de 12 % ne comprend aucune assurance du colis."
+        "title": "Cap on declared value",
+        "text": "The declared value of a parcel cannot exceed €500. That cap is deliberate: above it, a shipment carried by a private individual is no longer the right channel, and a professional carrier is a better one. The declared value is the reference amount we use to examine a dispute; under-declaring it works against you. The 12% commission includes no insurance for the parcel."
       },
       "tracking": {
-        "title": "Quatre scans, et la preuve qui va avec",
-        "text": "Dépôt, embarquement, arrivée, remise. Chaque scan enregistre un horodatage et, au dépôt comme à la remise, une photo. Cet historique n'est pas décoratif : c'est la pièce sur laquelle un litige est instruit. Il est visible en permanence par l'expéditeur et le destinataire, et il ne peut pas être modifié après coup."
+        "title": "Four scans, and the evidence that comes with them",
+        "text": "Handover, boarding, arrival, hand-delivery. Each scan records a timestamp and, at handover and at hand-delivery, a photo. This history is not decorative: it is the material a dispute is examined on. It is visible to the sender and the recipient at all times, and it cannot be altered afterwards."
       },
       "dispute": {
-        "title": "Procédure de litige",
-        "text": "Un litige s'ouvre depuis l'application, à partir du moment où une étape ne se déroule pas comme prévu. Le versement au voyageur est immédiatement suspendu. Nous examinons l'historique des scans, les photos horodatées et les échanges tenus dans l'application, puis nous tranchons : remboursement de l'expéditeur, versement au voyageur, ou répartition. La décision est motivée et communiquée aux deux parties."
+        "title": "Dispute procedure",
+        "text": "A dispute is opened from the app, from the moment a step does not go as planned. The payout to the traveller is suspended immediately. We examine the scan history, the timestamped photos and the messages exchanged in the app, then we decide: refund to the sender, payout to the traveller, or a split. The decision is explained and given to both parties."
       },
       "data": {
-        "title": "Vos données",
-        "text": "Les pièces d'identité sont traitées par Stripe Identity, stockées chiffrées et cloisonnées du reste de la base. L'autre partie d'un envoi voit votre prénom, votre photo de profil, le statut de votre vérification et les informations du colis concerné — rien de plus. Les données d'un envoi sont conservées le temps nécessaire au traitement d'un éventuel litige, puis archivées. Le détail figure dans la politique de confidentialité."
+        "title": "Your data",
+        "text": "ID documents are handled by Stripe Identity, stored encrypted and kept apart from the rest of the database. The other party to a shipment sees your first name, your profile photo, the status of your verification and the details of the parcel concerned — nothing more. The data for a shipment is kept as long as handling a possible dispute requires, then archived. The details are in the privacy policy."
       },
       "limits": {
-        "title": "Ce que nous ne garantissons pas",
-        "text": "Nous ne transportons pas : le colis reste dans le bagage d'un voyageur, soumis aux aléas de son vol et de sa compagnie. Un retard d'avion, une grève ou un contrôle douanier ne relèvent pas de nous. Nous ne fouillons pas les colis à votre place : c'est le voyageur qui vérifie le contenu au dépôt, et l'expéditeur qui répond de sa déclaration. Nous ne sommes pas assureur non plus : la commission de 12 % ne comprend aucune assurance du colis, et nos conditions générales n'engagent aucun montant d'indemnisation. Ce que nous garantissons est plus étroit et plus vérifiable : le paiement n'est pas encaissé tant que la livraison n'est pas confirmée, et un litige est instruit sur des preuves horodatées. Enfin, un envoi convenu en dehors de l'application n'ouvre aucun recours : sans scan et sans paiement passé par la plateforme, il n'y a ni trace ni levier."
+        "title": "What we do not guarantee",
+        "text": "We do not carry anything: the parcel stays in a traveller's luggage, subject to whatever happens to their flight and their airline. A delayed plane, a strike or a customs check are not down to us. We do not search parcels on your behalf: it is the traveller who checks the contents at handover, and the sender who answers for their declaration. We are not an insurer either: the 12% commission includes no insurance for the parcel, and our terms commit us to no compensation amount. What we do guarantee is narrower and easier to check: the payment is not charged until delivery is confirmed, and a dispute is examined on timestamped evidence. Finally, a shipment arranged outside the app opens no recourse at all: with no scans and no payment through the platform, there is neither a record nor any leverage."
       }
     }
   },
   "about": {
     "seo": {
-      "title": "À propos de yadony",
-      "description": "Pourquoi nous avons construit yadony : le récit d'un problème que la diaspora règle depuis trente ans dans des groupes WhatsApp, sans aucune trace."
+      "title": "About yadony",
+      "description": "Why we built yadony: the story of a problem the diaspora has been solving for thirty years in WhatsApp groups, with no record of any of it."
     },
-    "title": "Pourquoi on a fini par le construire",
+    "title": "Why we ended up building it",
     "paragraphs": [
-      "Il y a un message que tout le monde dans la diaspora a déjà écrit, ou lu : « quelqu'un part à Dakar cette semaine ? »",
-      "Ça se passe dans un groupe WhatsApp de deux cents personnes. Quelqu'un répond, on échange un numéro, on se retrouve un samedi sur un parking. On confie un carton à un inconnu recommandé par un cousin, on paie en liquide, et on attend. La plupart du temps, ça marche. Ça marche même remarquablement bien : c'est comme ça que circulent les vêtements, le matériel scolaire, les pièces détachées et les cadeaux depuis trente ans.",
-      "Le problème n'apparaît que le jour où ça ne marche pas. Le colis n'arrive pas. Le numéro ne répond plus. Il n'y a pas de trace, pas de preuve de remise, pas de reçu, personne à appeler. On ne peut même pas dire ce qui s'est passé : perdu, oublié, gardé. Et comme la personne rendait service, on n'ose pas insister. On perd le colis, et souvent on perd aussi la relation.",
-      "En face, il y a les transporteurs. Ils sont fiables, ils sont nettement plus chers, et ils ne livrent pas partout. Pour faire parvenir cinq kilos à quelqu'un qu'on connaît, ce n'est pas une solution, c'est un renoncement.",
-      "yadony ne cherche pas à remplacer le voyageur par un camion. Le voyageur existe déjà, il part déjà, sa valise est déjà à moitié vide. Ce qui manquait n'était pas le transport : c'était la trace. Savoir qui porte, quand, et pouvoir le prouver. D'où la vérification d'identité, les quatre scans, les photos horodatées, et un paiement qui ne part pas tant que le colis n'est pas dans les mains du destinataire.",
-      "Nous ouvrons sur quatre villes d'arrivée, pas quarante, parce que nous préférons qu'un corridor fonctionne réellement plutôt qu'une carte fasse illusion. Nous n'avons pas de chiffres à afficher : nous commençons. Si vous utilisez l'application et qu'une chose vous paraît bancale, écrivez-nous. À ce stade, c'est le retour le plus utile qu'on puisse recevoir."
+      "There is one message everyone in the diaspora has written, or read: “is anyone flying to Dakar this week?”",
+      "It happens in a WhatsApp group of two hundred people. Someone answers, you swap numbers, you meet on a Saturday in a car park. You hand a box to a stranger vouched for by a cousin, you pay in cash, and you wait. Most of the time, it works. It works remarkably well, in fact: that is how clothes, school supplies, spare parts and presents have been moving for thirty years.",
+      "The problem only shows up the day it does not work. The parcel does not arrive. The number stops answering. There is no record, no proof of handover, no receipt, nobody to call. You cannot even say what happened: lost, forgotten, kept. And because the person was doing you a favour, you do not dare push. You lose the parcel, and often you lose the relationship as well.",
+      "On the other side, there are the carriers. They are reliable, they are considerably more expensive, and they do not deliver everywhere. To get five kilos to someone you know, that is not a solution, it is giving up.",
+      "yadony is not trying to replace the traveller with a lorry. The traveller already exists, is already flying, and their suitcase is already half empty. What was missing was not the transport: it was the record. Knowing who is carrying, when, and being able to prove it. Hence the identity check, the four scans, the timestamped photos, and a payment that does not move until the parcel is in the recipient's hands.",
+      "We are opening with four arrival cities, not forty, because we would rather have one corridor that genuinely works than a map that looks impressive. We have no figures to show: we are starting out. If you use the app and something strikes you as shaky, write to us. At this stage, that is the most useful feedback we can get."
     ]
   },
   "contact": {
     "seo": {
-      "title": "Contacter yadony",
-      "description": "Support utilisateur, presse et partenariats : à qui écrire, ce qu'il faut indiquer, et par quel canal la réponse arrive le plus vite."
+      "title": "Contact yadony",
+      "description": "User support, press and partnerships: who to write to, what to include, and which channel gets you an answer fastest."
     },
-    "title": "Nous écrire",
-    "lead": "Une seule adresse, deux types de demandes. Précisez lequel dans l'objet, cela nous fait gagner du temps à tous les deux.",
-    "emailLabel": "Adresse email",
+    "title": "Write to us",
+    "lead": "One address, two kinds of request. Say which one in the subject line; it saves us both time.",
+    "emailLabel": "Email address",
     "support": {
-      "title": "Support utilisateur",
-      "text": "Un colis bloqué, un paiement qui ne se débloque pas, un litige en cours, une vérification d'identité qui échoue. Le plus rapide reste le support intégré à l'application : votre envoi y est déjà identifié, vous n'avez pas à le redécrire. Si vous n'avez pas encore l'application, écrivez-nous ici en indiquant la ville de départ, la ville d'arrivée et la date concernée."
+      "title": "User support",
+      "text": "A parcel stuck somewhere, a payment that will not release, an open dispute, an identity check that fails. The fastest route is still the support built into the app: your shipment is already identified there, so you do not have to describe it again. If you do not have the app yet, write to us here and give the departure city, the arrival city and the date concerned."
     },
     "press": {
-      "title": "Presse et partenariats",
-      "text": "Journalistes, agences de voyage, associations de la diaspora, compagnies aériennes. Dites-nous qui vous êtes et ce que vous avez en tête. Nous lisons tout."
+      "title": "Press and partnerships",
+      "text": "Journalists, travel agencies, diaspora associations, airlines. Tell us who you are and what you have in mind. We read everything."
     },
     "form": {
-      "legend": "Votre message",
-      "name": "Votre nom",
-      "email": "Votre adresse email",
-      "message": "Votre message",
-      "submit": "Ouvrir mon logiciel de messagerie",
-      "note": "Ce site est statique et n'enregistre rien. Le bouton ouvre votre logiciel de messagerie avec le message déjà rédigé ; vous restez maître de l'envoi.",
+      "legend": "Your message",
+      "name": "Your name",
+      "email": "Your email address",
+      "message": "Your message",
+      "submit": "Open my email client",
+      "note": "This site is static and records nothing. The button opens your email client with the message already written; sending it stays up to you.",
       "errors": {
-        "name": "Indiquez le nom sous lequel nous devons vous répondre.",
-        "email": "Cette adresse email ne semble pas valide.",
-        "message": "Décrivez votre demande en quelques lignes."
+        "name": "Tell us the name we should use to reply to you.",
+        "email": "This email address does not look valid.",
+        "message": "Describe your request in a few lines."
       }
     }
   },
   "legal": {
     "mentionsLegales": {
       "seo": {
-        "title": "Mentions légales",
-        "description": "Éditeur, directeur de la publication, hébergeur et propriété intellectuelle du site yadony.com."
+        "title": "Legal notice",
+        "description": "Publisher, publication director, host and intellectual property of the yadony.com site."
       },
-      "title": "Mentions légales",
+      "title": "Legal notice",
       "sections": {
         "editor": {
-          "title": "Éditeur du site",
-          "text": "Le site yadony.com est édité par la société qui développe et exploite l'application mobile yadony, immatriculée en France. Toute demande relative à l'identification de l'éditeur peut être adressée à contact{'@'}yadony.com et reçoit une réponse écrite."
+          "title": "Site publisher",
+          "text": "The yadony.com site is published by the company that develops and operates the yadony mobile app, registered in France. Any request concerning the identification of the publisher can be sent to contact{'@'}yadony.com and receives a written reply."
         },
         "publication": {
-          "title": "Directeur de la publication",
-          "text": "Le directeur de la publication est le représentant légal de la société éditrice. Il est joignable à l'adresse contact{'@'}yadony.com."
+          "title": "Publication director",
+          "text": "The publication director is the legal representative of the publishing company. They can be reached at contact{'@'}yadony.com."
         },
         "hosting": {
-          "title": "Hébergement",
-          "text": "Le site est hébergé par Cloudflare, Inc., 101 Townsend Street, San Francisco, CA 94107, États-Unis. Les pages sont générées à l'avance et servies depuis le réseau de diffusion de Cloudflare : aucune base de données ni traitement applicatif ne tourne derrière ce site."
+          "title": "Hosting",
+          "text": "The site is hosted by Cloudflare, Inc., 101 Townsend Street, San Francisco, CA 94107, United States. The pages are generated in advance and served from Cloudflare's delivery network: no database and no application logic runs behind this site."
         },
         "ip": {
-          "title": "Propriété intellectuelle",
-          "text": "La marque yadony, le logo, la charte graphique, les textes et les captures d'écran de l'application sont la propriété de la société éditrice. Toute reproduction, même partielle, sans autorisation écrite préalable est interdite. Les citations dans un cadre journalistique restent libres, sous réserve de mentionner la source."
+          "title": "Intellectual property",
+          "text": "The yadony trade mark, the logo, the visual identity, the texts and the app screenshots are the property of the publishing company. Any reproduction, even partial, without prior written permission is prohibited. Quotation in a journalistic context remains free, provided the source is named."
         },
         "liability": {
-          "title": "Responsabilité",
-          "text": "Les informations publiées ici décrivent le fonctionnement de l'application à la date de leur mise en ligne. Elles n'ont pas de valeur contractuelle : seules les conditions générales d'utilisation acceptées dans l'application engagent la société et ses utilisateurs. Les liens vers des sites tiers, notamment l'App Store et Google Play, ne sont pas sous notre contrôle."
+          "title": "Liability",
+          "text": "The information published here describes how the app works as at the date it was put online. It has no contractual value: only the terms of use accepted in the app bind the company and its users. Links to third-party sites, notably the App Store and Google Play, are outside our control."
         },
         "report": {
-          "title": "Signaler un problème sur ce site",
-          "text": "Pour signaler un contenu illicite, une erreur factuelle ou un dysfonctionnement, écrivez à contact{'@'}yadony.com en indiquant l'adresse de la page concernée et, si possible, votre navigateur."
+          "title": "Report a problem with this site",
+          "text": "To report unlawful content, a factual error or a malfunction, write to contact{'@'}yadony.com giving the address of the page concerned and, if you can, your browser."
         }
       }
     },
     "cgu": {
       "seo": {
-        "title": "Conditions générales d'utilisation",
-        "description": "Règles d'utilisation de yadony : rôle de la plateforme, vérification d'identité, obligations de l'expéditeur et du voyageur, prix, annulation et litiges."
+        "title": "Terms of use",
+        "description": "The rules for using yadony: the role of the platform, identity verification, the obligations of the sender and of the traveller, price, cancellation and disputes."
       },
-      "title": "Conditions générales d'utilisation",
-      "intro": "Ces conditions régissent l'utilisation de l'application yadony et du site yadony.com. Elles sont acceptées à la création du compte et peuvent être relues à tout moment depuis l'application.",
+      "title": "Terms of use",
+      "intro": "These terms govern the use of the yadony app and of the yadony.com site. They are accepted when the account is created and can be read again at any time from the app.",
       "sections": {
         "object": {
-          "title": "Objet du service",
-          "text": "yadony met en relation des voyageurs disposant d'espace bagage et des expéditeurs souhaitant faire acheminer un colis. yadony n'est pas transporteur : la société ne prend jamais possession des colis, ne les manipule pas et n'assure pas leur acheminement. Elle fournit l'outil de mise en relation, de traçabilité et de paiement."
+          "title": "Purpose of the service",
+          "text": "yadony connects travellers who have spare luggage space with senders who want a parcel carried. yadony is not a carrier: the company never takes possession of parcels, does not handle them and does not carry them. It provides the tool for matching, tracking and payment."
         },
         "account": {
-          "title": "Compte et vérification d'identité",
-          "text": "L'inscription requiert un numéro de téléphone vérifié. Toute personne souhaitant expédier ou transporter un colis doit avoir complété une vérification d'identité auprès de notre prestataire Stripe Identity. Le compte est personnel : il ne peut être ni prêté ni cédé. Les informations transmises doivent être exactes et tenues à jour."
+          "title": "Account and identity verification",
+          "text": "Signing up requires a verified phone number. Anyone wishing to send or carry a parcel must have completed an identity check with our provider Stripe Identity. The account is personal: it may not be lent or transferred. The information provided must be accurate and kept up to date."
         },
         "sender": {
-          "title": "Obligations de l'expéditeur",
-          "text": "L'expéditeur déclare le contenu réel du colis, sans omission, et accepte qu'il soit ouvert devant lui au moment du dépôt. Il s'interdit d'expédier des espèces, des bijoux, des documents d'identité, des médicaments, des denrées périssables, des produits stupéfiants, des armes, ainsi que tout bien dont l'importation est interdite ou réglementée dans le pays de destination. La valeur déclarée ne peut excéder 500 €. Les droits et taxes exigibles à l'arrivée restent à sa charge."
+          "title": "Obligations of the sender",
+          "text": "The sender declares the actual contents of the parcel, with no omission, and agrees to it being opened in front of them at handover. They must not send cash, jewellery, identity documents, medicines, perishable food, narcotics, weapons, or any goods whose import is prohibited or restricted in the destination country. The declared value may not exceed €500. Any duties and taxes payable on arrival remain their responsibility."
         },
         "traveler": {
-          "title": "Obligations du voyageur",
-          "text": "Le voyageur transporte le colis dans son bagage personnel, dans la limite de la franchise accordée par sa compagnie aérienne. Il procède aux quatre scans prévus — dépôt, embarquement, arrivée, remise — et remet le colis en main propre au destinataire désigné, avec photo de remise. Il peut refuser un colis à tout moment avant le dépôt, sans avoir à se justifier."
+          "title": "Obligations of the traveller",
+          "text": "The traveller carries the parcel in their personal luggage, within the allowance granted by their airline. They carry out the four required scans — handover, boarding, arrival, hand-delivery — and give the parcel in person to the named recipient, with a hand-over photo. They may turn down a parcel at any time before handover, without having to give a reason."
         },
         "price": {
-          "title": "Prix, commission et paiement",
-          "text": "Le prix du transport est fixé librement par le voyageur. yadony perçoit une commission de 12 % de ce prix, à la charge de l'expéditeur et facturée en supplément. Le moyen de paiement de l'expéditeur est enregistré à l'acceptation du colis ; le montant n'est encaissé qu'après validation du scan de livraison, et le versement au voyageur intervient ensuite. Aucun encaissement n'a lieu si la livraison n'est pas confirmée."
+          "title": "Price, commission and payment",
+          "text": "The price of carriage is set freely by the traveller. yadony charges a commission of 12% of that price, payable by the sender and billed in addition. The sender's payment method is registered when the parcel is accepted; the amount is charged only after the delivery scan has been validated, and the payout to the traveller follows. No charge is made if delivery is not confirmed."
         },
         "cancellation": {
-          "title": "Annulation",
-          "text": "L'expéditeur comme le voyageur peuvent annuler avant la remise du colis : aucun montant n'est alors encaissé. Une annulation après la remise du colis relève de la procédure de litige. Les annulations répétées et tardives peuvent entraîner une restriction du compte."
+          "title": "Cancellation",
+          "text": "The sender and the traveller may both cancel before the parcel is handed over: no amount is charged in that case. A cancellation after the parcel has been handed over falls under the dispute procedure. Repeated late cancellations may lead to a restriction on the account."
         },
         "dispute": {
-          "title": "Litiges",
-          "text": "Un litige s'ouvre depuis l'application. Le versement au voyageur est suspendu pendant l'instruction. yadony statue sur la base de l'historique des scans, des photos horodatées et des échanges tenus dans l'application, et motive sa décision auprès des deux parties. Les envois convenus en dehors de la plateforme ne peuvent donner lieu à aucun recours."
+          "title": "Disputes",
+          "text": "A dispute is opened from the app. The payout to the traveller is suspended while the case is examined. yadony decides on the basis of the scan history, the timestamped photos and the messages exchanged in the app, and explains its decision to both parties. Shipments arranged outside the platform give rise to no recourse."
         },
         "termination": {
-          "title": "Suspension et résiliation",
-          "text": "Un compte peut être suspendu en cas de fausse déclaration de contenu, de tentative de paiement hors plateforme, de récidive de litiges non justifiés ou de comportement mettant en danger un autre utilisateur. L'utilisateur peut supprimer son compte à tout moment depuis l'application ; les envois en cours doivent être menés à leur terme."
+          "title": "Suspension and termination",
+          "text": "An account may be suspended for a false declaration of contents, an attempt to pay outside the platform, repeated unfounded disputes, or behaviour that puts another user at risk. A user may delete their account at any time from the app; shipments in progress must be seen through to the end."
         },
         "law": {
-          "title": "Droit applicable et médiation",
-          "text": "Ces conditions sont soumises au droit français. En cas de différend, une solution amiable est recherchée en priorité. Le consommateur peut recourir gratuitement à un médiateur de la consommation avant toute action judiciaire. À défaut d'accord, le litige relève des juridictions françaises compétentes."
+          "title": "Governing law and mediation",
+          "text": "These terms are governed by French law. In the event of a disagreement, an amicable solution is sought first. A consumer may refer the matter free of charge to a consumer mediator before taking any legal action. Failing agreement, the dispute falls to the competent French courts."
         }
       }
     },
     "confidentialite": {
       "seo": {
-        "title": "Politique de confidentialité",
-        "description": "Quelles données yadony collecte, pourquoi, avec qui elles sont partagées, combien de temps elles sont conservées et comment exercer vos droits."
+        "title": "Privacy policy",
+        "description": "What data yadony collects, why, who it is shared with, how long it is kept and how to exercise your rights."
       },
-      "title": "Politique de confidentialité",
-      "intro": "Cette page décrit les données que nous traitons dans l'application yadony et sur le site yadony.com, leur finalité et vos droits. Elle est écrite pour être lue, pas pour être acceptée sans être lue.",
+      "title": "Privacy policy",
+      "intro": "This page describes the data we process in the yadony app and on the yadony.com site, what it is used for and what your rights are. It is written to be read, not to be accepted without being read.",
       "sections": {
         "responsible": {
-          "title": "Responsable du traitement",
-          "text": "La société éditrice de yadony est responsable des traitements décrits ci-dessous. Toute question relative à vos données peut être adressée à contact{'@'}yadony.com."
+          "title": "Data controller",
+          "text": "The company that publishes yadony is the controller for the processing described below. Any question about your data can be sent to contact{'@'}yadony.com."
         },
         "collected": {
-          "title": "Données collectées",
-          "text": "Compte : numéro de téléphone, prénom, nom, photo de profil. Vérification d'identité : pièce d'identité et selfie, transmis à Stripe Identity et conservés chiffrés, jamais visibles par les autres utilisateurs et d'accès interne restreint. Envois : villes, dates, poids, description et photos du colis, valeur déclarée, historique des scans avec horodatage. Paiements : les données bancaires sont traitées directement par Stripe et ne transitent pas par nos serveurs."
+          "title": "Data collected",
+          "text": "Account: phone number, first name, surname, profile photo. Identity verification: ID document and selfie, sent to Stripe Identity and stored encrypted, never visible to other users and with restricted internal access. Shipments: cities, dates, weight, description and photos of the parcel, declared value, scan history with timestamps. Payments: card details are handled directly by Stripe and never pass through our servers."
         },
         "purposes": {
-          "title": "Finalités et bases légales",
-          "text": "L'exécution du contrat justifie la gestion du compte, la mise en relation, le suivi des colis et le paiement. Une obligation légale justifie la vérification d'identité et la conservation des pièces comptables. Notre intérêt légitime justifie la prévention de la fraude et la sécurité de la plateforme. Les notifications non liées à un envoi en cours reposent sur votre consentement, retirable à tout moment dans les réglages."
+          "title": "Purposes and legal bases",
+          "text": "Performance of the contract is the basis for account management, matching, parcel tracking and payment. A legal obligation is the basis for identity verification and for keeping accounting records. Our legitimate interest is the basis for fraud prevention and platform security. Notifications unrelated to a shipment in progress rely on your consent, which you can withdraw at any time in the settings."
         },
         "recipients": {
-          "title": "Destinataires",
-          "text": "Vos données ne sont ni vendues ni louées. Elles sont transmises à nos sous-traitants techniques dans la stricte mesure nécessaire : Stripe pour le paiement et la vérification d'identité, notre hébergeur, et nos prestataires de notification et de SMS. L'autre partie d'un envoi voit uniquement votre prénom, votre photo de profil, le statut de votre vérification et les informations du colis concerné."
+          "title": "Recipients",
+          "text": "Your data is neither sold nor rented. It is passed to our technical processors strictly as far as necessary: Stripe for payment and identity verification, our host, and our notification and SMS providers. The other party to a shipment sees only your first name, your profile photo, the status of your verification and the details of the parcel concerned."
         },
         "retention": {
-          "title": "Durée de conservation",
-          "text": "Les données de compte sont conservées tant que le compte existe, puis supprimées ou anonymisées. Les données d'un envoi sont conservées le temps nécessaire au traitement d'un éventuel litige, puis archivées pour répondre aux obligations comptables. Les pièces d'identité sont conservées par notre prestataire de vérification pendant la durée imposée par la réglementation applicable, puis supprimées."
+          "title": "Retention period",
+          "text": "Account data is kept as long as the account exists, then deleted or anonymised. The data for a shipment is kept as long as handling a possible dispute requires, then archived to meet accounting obligations. ID documents are kept by our verification provider for the period imposed by the applicable regulations, then deleted."
         },
         "rights": {
-          "title": "Vos droits",
-          "text": "Vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation, d'opposition et de portabilité sur vos données. Ces droits s'exercent depuis les réglages de l'application ou par écrit à contact{'@'}yadony.com. Vous pouvez également introduire une réclamation auprès de la Commission nationale de l'informatique et des libertés."
+          "title": "Your rights",
+          "text": "You have a right of access, rectification, erasure, restriction, objection and portability over your data. These rights are exercised from the app settings or in writing to contact{'@'}yadony.com. You may also lodge a complaint with the CNIL, the French data protection authority."
         },
         "cookies": {
-          "title": "Cookies sur ce site",
-          "text": "yadony.com est un site statique. Il ne dépose aucun cookie publicitaire, n'embarque aucun traceur tiers et ne charge aucune police depuis un serveur externe : les polices sont servies depuis notre propre domaine. La langue affichée est déterminée par l'adresse de la page, pas par un cookie."
+          "title": "Cookies on this site",
+          "text": "yadony.com is a static site. It sets no advertising cookie, embeds no third-party tracker and loads no font from an external server: the fonts are served from our own domain. The language shown is determined by the address of the page, not by a cookie."
         },
         "security": {
-          "title": "Sécurité",
-          "text": "Les échanges avec l'application sont chiffrés en transit. Les données de vérification d'identité sont chiffrées au repos et cloisonnées du reste de la base. L'accès aux données d'un envoi est restreint aux deux parties concernées et, en cas de litige, à l'équipe qui l'instruit. Toute action sensible est journalisée."
+          "title": "Security",
+          "text": "Traffic to and from the app is encrypted in transit. Identity verification data is encrypted at rest and kept apart from the rest of the database. Access to the data for a shipment is restricted to the two parties involved and, in the event of a dispute, to the team examining it. Every sensitive action is logged."
         }
       }
     }
   },
   "footer": {
-    "pitch": "yadony met en relation les voyageurs qui ont de la place dans leur valise et les personnes qui ont un colis à faire partir. Identité vérifiée, quatre scans, paiement libéré à la livraison.",
-    "navLabel": "Navigation du pied de page",
-    "legalLabel": "Informations légales",
-    "legalNotice": "Mentions légales",
-    "terms": "Conditions générales d'utilisation",
-    "privacy": "Politique de confidentialité",
-    "copyright": "© yadony. Service de mise en relation, pas de transport."
+    "pitch": "yadony connects travellers who have room in their suitcase with people who have a parcel to send. Verified identity, four scans, payment released on delivery.",
+    "navLabel": "Footer navigation",
+    "legalLabel": "Legal information",
+    "legalNotice": "Legal notice",
+    "terms": "Terms of use",
+    "privacy": "Privacy policy",
+    "copyright": "© yadony. A matching service, not a carrier."
   }
 }

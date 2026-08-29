@@ -33,6 +33,33 @@ const locales: Array<[string, unknown]> = [
   ['en', en],
 ]
 
+/**
+ * Chemins des endonymes, exemptés du contrôle « plus aucun français dans
+ * `en.json` ».
+ *
+ * Un nom de langue s'écrit dans sa propre langue : « Français » reste
+ * « Français » dans la version anglaise, cédille comprise, et « English »
+ * reste « English » dans la version française. C'est la convention attendue
+ * par les lecteurs d'écran et par les utilisateurs, et elle a été tranchée à
+ * la relecture de la tâche 6.
+ *
+ * L'exemption porte sur le chemin de la clé, jamais sur la valeur : une phrase
+ * française oubliée ailleurs dans le fichier reste détectée, et personne ne
+ * peut faire passer un texte non traduit en le faisant ressembler à un
+ * endonyme.
+ */
+const endonymPaths = new Set(['language.fr', 'language.en'])
+
+/**
+ * Marqueurs de texte resté en français : mots-outils qui n'existent pas en
+ * anglais (bornés sur les limites de mot pour ne pas se déclencher au milieu
+ * d'un mot anglais) et lettres accentuées, absentes de la copie anglaise.
+ */
+const frenchMarkers: RegExp[] = [
+  /\b(le|la|les|un|une|des|du|au|aux|vous|votre|nous|notre|dans|avec|pour|est|sont|qui|que|ce|cette|ne|pas)\b/i,
+  /[àâäçéèêëîïôöùûü]/i,
+]
+
 describe('fichiers de locale', () => {
   it('fr et en exposent exactement les mêmes clés', () => {
     const frKeys = flatten(fr).sort()
@@ -54,5 +81,21 @@ describe('fichiers de locale', () => {
       expect(paths.filter(p => p.startsWith('howItWorks.expediteur.steps[')).length).toBe(5 * 2)
       expect(paths.filter(p => p.startsWith('howItWorks.voyageur.steps[')).length).toBe(5 * 2)
     }
+  })
+
+  it('écrit chaque nom de langue dans sa propre langue', () => {
+    for (const [, messages] of locales) {
+      const values = new Map(flattenEntries(messages))
+      expect(values.get('language.fr')).toBe('Français')
+      expect(values.get('language.en')).toBe('English')
+    }
+  })
+
+  it('en.json ne contient plus de texte resté en français', () => {
+    const untranslated = flattenEntries(en)
+      .filter(([path]) => !endonymPaths.has(path))
+      .filter(([, value]) => typeof value === 'string' && frenchMarkers.some(marker => marker.test(value)))
+      .map(([path, value]) => `${path} → ${String(value)}`)
+    expect(untranslated).toEqual([])
   })
 })

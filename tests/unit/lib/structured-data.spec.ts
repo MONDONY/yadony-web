@@ -13,7 +13,7 @@ describe('organizationJsonLd', () => {
 
 describe('mobileAppJsonLd', () => {
   it('déclare une MobileApplication gratuite', () => {
-    const data = mobileAppJsonLd() as Record<string, any>
+    const data = mobileAppJsonLd()
     expect(data['@type']).toBe('MobileApplication')
     expect(data.applicationCategory).toBe('TravelApplication')
     expect(data.offers.price).toBe('0')
@@ -22,7 +22,7 @@ describe('mobileAppJsonLd', () => {
 
 describe('faqJsonLd', () => {
   it('convertit les questions en FAQPage', () => {
-    const data = faqJsonLd([{ question: 'Q1 ?', answer: 'R1.' }]) as Record<string, any>
+    const data = faqJsonLd([{ question: 'Q1 ?', answer: 'R1.' }])
     expect(data['@type']).toBe('FAQPage')
     expect(data.mainEntity).toHaveLength(1)
     expect(data.mainEntity[0].name).toBe('Q1 ?')
@@ -30,7 +30,7 @@ describe('faqJsonLd', () => {
   })
 
   it('retourne une liste vide sans question', () => {
-    const data = faqJsonLd([]) as Record<string, any>
+    const data = faqJsonLd([])
     expect(data.mainEntity).toEqual([])
   })
 })

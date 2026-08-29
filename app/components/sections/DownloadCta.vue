@@ -6,12 +6,13 @@ const { t } = useI18n()
 <template>
   <UiSection id="telecharger" tone="sand">
     <UiContainer>
-      <div class="grid items-center gap-10 lg:grid-cols-2">
-        <div>
-          <h2 class="max-w-[16ch] text-display-lg">{{ t('home.download.title') }}</h2>
-          <p class="mt-5 max-w-prose text-ink-muted">{{ t('home.download.text') }}</p>
-          <StoreBadges size="lg" class="mt-9" />
-        </div>
+      <!-- Un QR code vers l'app viendra ici une fois les URL réelles des
+           fiches App Store et Play Store connues (colonne réservée par le
+           porteur de contenu). -->
+      <div class="max-w-xl">
+        <h2 class="max-w-[16ch] text-display-lg">{{ t('home.download.title') }}</h2>
+        <p class="mt-5 max-w-prose text-ink-muted">{{ t('home.download.text') }}</p>
+        <StoreBadges size="lg" class="mt-9" />
       </div>
     </UiContainer>
   </UiSection>

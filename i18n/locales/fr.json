@@ -335,11 +335,11 @@
       "sections": {
         "editor": {
           "title": "Éditeur du site",
-          "text": "Le site yadony.com est édité par la société qui développe et exploite l'application mobile yadony, immatriculée en France. Toute demande relative à l'identification de l'éditeur peut être adressée à contact@yadony.com et reçoit une réponse écrite."
+          "text": "Le site yadony.com est édité par la société qui développe et exploite l'application mobile yadony, immatriculée en France. Toute demande relative à l'identification de l'éditeur peut être adressée à contact{'@'}yadony.com et reçoit une réponse écrite."
         },
         "publication": {
           "title": "Directeur de la publication",
-          "text": "Le directeur de la publication est le représentant légal de la société éditrice. Il est joignable à l'adresse contact@yadony.com."
+          "text": "Le directeur de la publication est le représentant légal de la société éditrice. Il est joignable à l'adresse contact{'@'}yadony.com."
         },
         "hosting": {
           "title": "Hébergement",
@@ -355,7 +355,7 @@
         },
         "report": {
           "title": "Signaler un problème sur ce site",
-          "text": "Pour signaler un contenu illicite, une erreur factuelle ou un dysfonctionnement, écrivez à contact@yadony.com en indiquant l'adresse de la page concernée et, si possible, votre navigateur."
+          "text": "Pour signaler un contenu illicite, une erreur factuelle ou un dysfonctionnement, écrivez à contact{'@'}yadony.com en indiquant l'adresse de la page concernée et, si possible, votre navigateur."
         }
       }
     },
@@ -415,7 +415,7 @@
       "sections": {
         "responsible": {
           "title": "Responsable du traitement",
-          "text": "La société éditrice de yadony est responsable des traitements décrits ci-dessous. Toute question relative à vos données peut être adressée à contact@yadony.com."
+          "text": "La société éditrice de yadony est responsable des traitements décrits ci-dessous. Toute question relative à vos données peut être adressée à contact{'@'}yadony.com."
         },
         "collected": {
           "title": "Données collectées",
@@ -435,7 +435,7 @@
         },
         "rights": {
           "title": "Vos droits",
-          "text": "Vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation, d'opposition et de portabilité sur vos données. Ces droits s'exercent depuis les réglages de l'application ou par écrit à contact@yadony.com. Vous pouvez également introduire une réclamation auprès de la Commission nationale de l'informatique et des libertés."
+          "text": "Vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation, d'opposition et de portabilité sur vos données. Ces droits s'exercent depuis les réglages de l'application ou par écrit à contact{'@'}yadony.com. Vous pouvez également introduire une réclamation auprès de la Commission nationale de l'informatique et des libertés."
         },
         "cookies": {
           "title": "Cookies sur ce site",

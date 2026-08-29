@@ -8,10 +8,13 @@ const rows = ['whatsapp', 'carrier', 'yadony'] as const
 <template>
   <UiSection tone="sand">
     <UiContainer>
-      <h2 class="max-w-[20ch] text-display-lg">{{ t('home.problem.title') }}</h2>
+      <h2 id="home-problem-title" class="max-w-[20ch] text-display-lg">{{ t('home.problem.title') }}</h2>
 
       <div class="mt-10 overflow-x-auto">
-        <table class="w-full min-w-[560px] border-collapse text-left text-sm">
+        <table
+          class="w-full min-w-[560px] border-collapse text-left text-sm"
+          aria-labelledby="home-problem-title"
+        >
           <thead>
             <tr class="border-b border-line text-ink-muted">
               <th scope="col" class="py-3 pr-6 font-medium">{{ t('home.problem.columns.channel') }}</th>

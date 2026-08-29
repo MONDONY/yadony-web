@@ -27,17 +27,21 @@ jobs:
       # Budget Lighthouse : ADVISORY pour le moment, volontairement.
       #
       # Le seuil de performance (categories:performance >= 0.95 dans lighthouserc.json)
-      # n'a pas pu être validé de façon fiable sur la machine de développement utilisée
-      # pour cette tâche : la charge système concurrente (load average 20-23 sur 8 coeurs)
-      # a fait osciller le score entre 0.93 et 0.96 sur la page d'accueil, sans changement
-      # de code entre les mesures. Le seuil lui-même n'est pas remis en cause — il reste
-      # à 0.95, tel que décidé — seule sa mesure était polluée par l'environnement.
+      # échoue de façon reproductible : score mesuré à 0.93-0.94 sur la page d'accueil
+      # et sur /tarifs, aussi bien sous forte charge système (load average 20-23 sur
+      # 8 coeurs) que sous charge faible (load average ~3, même machine, même code).
+      # L'écart au seuil est donc réel, pas seulement un artefact de contention — même
+      # s'il reste faible (quelques centièmes). La contention aggrave la dispersion des
+      # scores mais n'explique pas à elle seule le score sous le seuil.
       #
-      # L'intention est de rendre cette étape bloquante dès qu'elle aura été mesurée sur
-      # un runner non chargé (ce runner GitHub Actions, justement) et confirmée stable.
-      # D'ici là, `continue-on-error: true` empêche un run rouge pour une seule raison déjà
-      # comprise et non actionnable dans l'immédiat. Le seuil ne doit jamais être abaissé
-      # pour faire passer cette étape au vert : un budget assoupli pour satisfaire un test
-      # ne mesure plus rien.
+      # Le seuil lui-même n'est pas remis en cause — il reste à 0.95, tel que décidé.
+      # Il ne doit jamais être abaissé pour faire passer cette étape au vert : un budget
+      # assoupli pour satisfaire un test ne mesure plus rien.
+      #
+      # L'intention est de rendre cette étape bloquante une fois la question tranchée sur
+      # des données propres : une mesure sur ce runner GitHub Actions lui-même, dédié et
+      # non partagé. Cette mesure n'est pas présumée passer — elle doit encore être faite.
+      # D'ici là, `continue-on-error: true` évite un pipeline rouge pour un écart déjà
+      # identifié mais non actionnable dans l'immédiat.
       - run: pnpm lighthouse
         continue-on-error: true

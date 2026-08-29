@@ -80,12 +80,14 @@ Depuis la racine du worktree :
 ```bash
 pnpm dlx nuxi@latest init . --force --package-manager pnpm --no-install --no-gitInit
 pnpm add nuxt@^4.5.2 vue@^3.5.34 vue-router@^5.0.6
-pnpm add -D @nuxt/eslint @nuxtjs/tailwindcss@^6.14.0 typescript @types/node
+pnpm add -D @nuxt/eslint @nuxtjs/tailwindcss@^6.14.0 typescript@^5.9.3 vue-tsc@^3.3.11 @types/node
 pnpm add -D vitest @vitest/coverage-v8 @vue/test-utils @vitejs/plugin-vue happy-dom
 pnpm install
 ```
 
 Écrire `.nvmrc` avec le contenu `22`.
+
+TypeScript est épinglé volontairement : la dernière version publiée sur npm est incompatible avec `typescript-eslint` et casse `pnpm lint`. `vue-tsc` est requis par `nuxi typecheck`, que la CI de la Tâche 15 exécute — sans lui, le script `typecheck` échoue.
 
 - [ ] **Step 2: Écrire `nuxt.config.ts`**
 

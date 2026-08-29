@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
+
 const props = withDefaults(
   defineProps<{
     variant?: 'primary' | 'ghost'
@@ -33,6 +37,6 @@ const classes = [base, variants[props.variant], sizes[props.size]].join(' ')
     target="_blank"
     rel="noopener noreferrer"
     :class="classes"
-  ><slot /></a>
+  ><slot /><span class="sr-only">{{ ` ${t('a11y.opensNewTab')}` }}</span></a>
   <button v-else type="button" :class="classes"><slot /></button>
 </template>

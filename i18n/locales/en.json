@@ -16,6 +16,7 @@
   "language": {
     "label": "Langue",
     "switchLabel": "Changer de langue",
+    "switchTo": "Lire cette page en {language}",
     "fr": "Français",
     "en": "English"
   },

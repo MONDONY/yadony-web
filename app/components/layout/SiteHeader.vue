@@ -10,6 +10,9 @@ const open = ref(false)
 
 const targetLocale = computed<Locale>(() => (locale.value === 'fr' ? 'en' : 'fr'))
 const switchHref = computed(() => switchLocalePath(targetLocale.value))
+const switchLabel = computed(() =>
+  t('language.switchTo', { language: t(`language.${targetLocale.value}`) }),
+)
 
 const links = computed(() => [
   { to: '/comment-ca-marche', label: t('nav.howItWorks') },
@@ -37,7 +40,7 @@ const links = computed(() => [
         </nav>
 
         <div class="flex items-center gap-3">
-          <LanguageSwitcher :href="switchHref" :target-locale="targetLocale" />
+          <LanguageSwitcher :href="switchHref" :target-locale="targetLocale" :label="switchLabel" />
           <UiButton :to="`${localePath('/')}#telecharger`" class="hidden sm:inline-flex">
             {{ t('nav.download') }}
           </UiButton>

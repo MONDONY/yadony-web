@@ -44,7 +44,7 @@ Ces règles s'appliquent à **toutes** les tâches. Chaque tâche les hérite im
 | `app/assets/css/main.css` | Base Tailwind, styles globaux, `prefers-reduced-motion` |
 | `app/lib/ui-types.ts` | Types partagés entre composants (`AccordionItem`) |
 | `app/lib/seo.ts` | `buildSeoMeta()` — fonction pure, construit les métadonnées d'une page |
-| `app/lib/locale.ts` | `localizedPath()`, `alternateLinks()` — fonctions pures de routage de langue |
+| `app/lib/locale.ts` | Type `Locale`, constantes de langues, `absoluteUrl()` |
 | `app/lib/pricing.ts` | `computeQuote()` — fonction pure, calcul de l'exemple tarifaire |
 | `app/lib/roles.ts` | `resolveRole()` — fonction pure, lit le rôle depuis la query string |
 | `app/lib/structured-data.ts` | `organizationJsonLd()`, `mobileAppJsonLd()`, `faqJsonLd()` — fonctions pures |
@@ -97,7 +97,6 @@ export default defineNuxtConfig({
   components: [{ path: '~/components', pathPrefix: false }],
   typescript: { strict: true, typeCheck: false },
   ssr: true,
-  css: ['~/assets/css/main.css'],
   nitro: {
     prerender: { crawlLinks: true, routes: ['/'], failOnError: true },
   },
@@ -154,11 +153,19 @@ export default defineConfig({
 ```ts
 import { config } from '@vue/test-utils'
 
+const passthrough = { template: '<div><slot /></div>' }
+
 config.global.stubs = {
   NuxtLink: { props: ['to'], template: '<a :href="to"><slot /></a>' },
-  ClientOnly: { template: '<slot />' },
+  ClientOnly: passthrough,
+  UiContainer: passthrough,
+  UiSection: passthrough,
+  UiRevealOnScroll: passthrough,
+  StoreBadges: { template: '<div data-store-badges />' },
 }
 ```
+
+Ces composants sont auto-importés par Nuxt à l'exécution, mais Vitest tourne sans Nuxt : sans stub, Vue échoue à les résoudre et le contenu de leurs slots ne serait pas fiable dans les assertions. Les stubs laissent passer le slot par défaut, ce qui suffit à tous les tests du plan. `UiButton` et `UiAccordion` ne sont volontairement pas stubbés : ils sont testés pour eux-mêmes.
 
 - [ ] **Step 4: Ajouter les scripts dans `package.json`**
 
@@ -333,7 +340,7 @@ Attendu : les deux fichiers `.woff2` sont présents. On les copie plutôt que d'
     text-wrap: pretty;
   }
   :focus-visible {
-    @apply outline-2 outline-offset-2 outline-primary;
+    @apply outline outline-2 outline-offset-2 outline-primary;
   }
 }
 
@@ -346,6 +353,10 @@ Attendu : les deux fichiers `.woff2` sont présents. On les copie plutôt que d'
   }
 }
 ```
+
+- [ ] **Step 4b: Déclarer la feuille de style dans `nuxt.config.ts`**
+
+Ajouter la ligne `css: ['~/assets/css/main.css'],` juste après `ssr: true,`. Elle n'existait pas en Tâche 1 : le fichier n'était pas encore écrit et le build aurait échoué.
 
 - [ ] **Step 5: Écrire `tailwind.config.ts`**
 
@@ -648,7 +659,9 @@ const visible = ref(false)
 let observer: IntersectionObserver | null = null
 
 onMounted(() => {
-  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  const reduced =
+    typeof window.matchMedia === 'function' &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches
   if (reduced || typeof IntersectionObserver === 'undefined') {
     visible.value = true
     return
@@ -704,54 +717,49 @@ git commit -m "feat: primitives UI conteneur, section, bouton, accordeon et reve
 **Interfaces:**
 - Consumes: `siteName`, `siteUrl` de `app/lib/site.ts` (Tâche 1).
 - Produces:
-  - `buildSeoMeta(input: SeoInput): SeoMeta` où `SeoInput = { title: string; description: string; path: string; locale: 'fr' | 'en'; image?: string }` et `SeoMeta = { title: string; description: string; ogTitle: string; ogDescription: string; ogImage: string; ogUrl: string; ogType: 'website'; ogLocale: string; twitterCard: 'summary_large_image' }`.
-  - `canonicalUrl(path: string, locale: 'fr' | 'en'): string`
-  - `localizedPath(path: string, locale: 'fr' | 'en'): string`
-  - `alternateLinks(path: string): Array<{ rel: 'alternate'; hreflang: string; href: string }>`
+  - `buildSeoMeta(input: SeoInput): SeoMeta` où `SeoInput = { title: string; description: string; path: string; locale: 'fr' | 'en'; image?: string }` et `SeoMeta = { title: string; description: string; ogTitle: string; ogDescription: string; ogImage: string; ogUrl: string; ogType: 'website'; ogLocale: string; twitterCard: 'summary_large_image' }`. **`path` est le chemin réel de la route courante, déjà localisé** (`useRoute().path`), par exemple `/en/pricing`. La fonction ne calcule aucune traduction d'URL.
+  - `absoluteUrl(path: string): string`
+  - `type Locale = 'fr' | 'en'`, `locales`, `defaultLocale`
   - `organizationJsonLd(): object`, `mobileAppJsonLd(): object`, `faqJsonLd(items: Array<{ question: string; answer: string }>): object`
 
 Ces fonctions sont pures — aucun appel à une API Nuxt. C'est ce qui rend la cible de 90 % de couverture atteignable sans mocker le framework.
+
+**Les `hreflang` et l'URL canonique ne sont PAS construits ici.** Les chemins anglais diffèrent des chemins français (`/tarifs` contre `/en/pricing`, définis par `defineI18nRoute` en Tâches 10 et 11) : une fonction qui préfixerait `/en` produirait des URL inexistantes. C'est `useLocaleHead()` de `@nuxtjs/i18n`, appelé une fois dans le layout (Tâche 6), qui génère `hreflang` et canonique à partir de la table de routes réelle.
 
 - [ ] **Step 1: Écrire `tests/unit/lib/locale.spec.ts`**
 
 ```ts
 import { describe, it, expect } from 'vitest'
-import { localizedPath, canonicalUrl, alternateLinks } from '@/lib/locale'
+import { absoluteUrl, locales, defaultLocale } from '@/lib/locale'
 
-describe('localizedPath', () => {
-  it('laisse le français à la racine', () => {
-    expect(localizedPath('/tarifs', 'fr')).toBe('/tarifs')
+describe('locales', () => {
+  it('expose les deux langues du site', () => {
+    expect(locales).toEqual(['fr', 'en'])
   })
 
-  it('préfixe l’anglais par /en', () => {
-    expect(localizedPath('/tarifs', 'en')).toBe('/en/tarifs')
-  })
-
-  it('gère la page d’accueil', () => {
-    expect(localizedPath('/', 'fr')).toBe('/')
-    expect(localizedPath('/', 'en')).toBe('/en')
-  })
-
-  it('normalise une barre oblique finale', () => {
-    expect(localizedPath('/tarifs/', 'en')).toBe('/en/tarifs')
+  it('le français est la langue par défaut', () => {
+    expect(defaultLocale).toBe('fr')
   })
 })
 
-describe('canonicalUrl', () => {
-  it('produit une URL absolue', () => {
-    expect(canonicalUrl('/tarifs', 'fr')).toBe('https://yadony.com/tarifs')
-    expect(canonicalUrl('/tarifs', 'en')).toBe('https://yadony.com/en/tarifs')
+describe('absoluteUrl', () => {
+  it('préfixe le chemin par l’origine du site', () => {
+    expect(absoluteUrl('/tarifs')).toBe('https://yadony.com/tarifs')
+    expect(absoluteUrl('/en/pricing')).toBe('https://yadony.com/en/pricing')
   })
-})
 
-describe('alternateLinks', () => {
-  it('produit fr, en et x-default', () => {
-    const links = alternateLinks('/tarifs')
-    expect(links).toEqual([
-      { rel: 'alternate', hreflang: 'fr', href: 'https://yadony.com/tarifs' },
-      { rel: 'alternate', hreflang: 'en', href: 'https://yadony.com/en/tarifs' },
-      { rel: 'alternate', hreflang: 'x-default', href: 'https://yadony.com/tarifs' },
-    ])
+  it('gère la racine', () => {
+    expect(absoluteUrl('/')).toBe('https://yadony.com/')
+  })
+
+  it('supprime une barre oblique finale superflue', () => {
+    expect(absoluteUrl('/tarifs/')).toBe('https://yadony.com/tarifs')
+  })
+
+  it('ignore la query string', () => {
+    expect(absoluteUrl('/comment-ca-marche?role=voyageur')).toBe(
+      'https://yadony.com/comment-ca-marche',
+    )
   })
 })
 ```
@@ -783,8 +791,10 @@ describe('buildSeoMeta', () => {
     expect(buildSeoMeta(input).ogDescription).toBe('Commission de 12 %, sans frais cachés.')
   })
 
-  it('construit une og:url absolue et localisée', () => {
-    expect(buildSeoMeta({ ...input, locale: 'en' }).ogUrl).toBe('https://yadony.com/en/tarifs')
+  it('construit une og:url absolue à partir du chemin réel', () => {
+    expect(buildSeoMeta({ ...input, locale: 'en', path: '/en/pricing' }).ogUrl).toBe(
+      'https://yadony.com/en/pricing',
+    )
   })
 
   it('retombe sur l’image Open Graph par défaut', () => {
@@ -860,35 +870,18 @@ export type Locale = 'fr' | 'en'
 export const locales: Locale[] = ['fr', 'en']
 export const defaultLocale: Locale = 'fr'
 
-function normalize(path: string): string {
-  const trimmed = path.replace(/\/+$/, '')
-  return trimmed === '' ? '/' : trimmed
-}
-
-export function localizedPath(path: string, locale: Locale): string {
-  const clean = normalize(path)
-  if (locale === defaultLocale) return clean
-  return clean === '/' ? '/en' : `/en${clean}`
-}
-
-export function canonicalUrl(path: string, locale: Locale): string {
-  return `${siteUrl}${localizedPath(path, locale)}`
-}
-
-export function alternateLinks(path: string) {
-  return [
-    { rel: 'alternate' as const, hreflang: 'fr', href: canonicalUrl(path, 'fr') },
-    { rel: 'alternate' as const, hreflang: 'en', href: canonicalUrl(path, 'en') },
-    { rel: 'alternate' as const, hreflang: 'x-default', href: canonicalUrl(path, 'fr') },
-  ]
+export function absoluteUrl(path: string): string {
+  const withoutQuery = path.split('?')[0] ?? '/'
+  const trimmed = withoutQuery.replace(/\/+$/, '')
+  return `${siteUrl}${trimmed === '' ? '/' : trimmed}`
 }
 ```
 
 - [ ] **Step 6: Implémenter `app/lib/seo.ts`**
 
 ```ts
-import { siteName, siteUrl } from './site'
-import { canonicalUrl, type Locale } from './locale'
+import { siteName } from './site'
+import { absoluteUrl, type Locale } from './locale'
 
 export interface SeoInput {
   title: string
@@ -914,7 +907,7 @@ const OG_LOCALES: Record<Locale, string> = { fr: 'fr_FR', en: 'en_GB' }
 
 export function buildSeoMeta(input: SeoInput): SeoMeta {
   const title = input.title === siteName ? siteName : `${input.title} — ${siteName}`
-  const image = `${siteUrl}${input.image ?? '/og/default.png'}`
+  const image = absoluteUrl(input.image ?? '/og/default.png')
 
   return {
     title,
@@ -922,7 +915,7 @@ export function buildSeoMeta(input: SeoInput): SeoMeta {
     ogTitle: title,
     ogDescription: input.description,
     ogImage: image,
-    ogUrl: canonicalUrl(input.path, input.locale),
+    ogUrl: absoluteUrl(input.path),
     ogType: 'website',
     ogLocale: OG_LOCALES[input.locale],
     twitterCard: 'summary_large_image',
@@ -1007,15 +1000,17 @@ i18n: {
   defaultLocale: 'fr',
   strategy: 'prefix_except_default',
   langDir: 'locales',
+  baseUrl: 'https://yadony.com',
   locales: [
     { code: 'fr', language: 'fr-FR', name: 'Français', file: 'fr.json' },
     { code: 'en', language: 'en-GB', name: 'English', file: 'en.json' },
   ],
   customRoutes: 'page',
   detectBrowserLanguage: false,
-  bundle: { optimizeTranslationDirective: false },
 },
 ```
+
+`baseUrl` est indispensable : c'est lui qui permet à `useLocaleHead()` (Tâche 6) de produire des `hreflang` en URL absolues, seule forme acceptée par Google.
 
 `detectBrowserLanguage: false` est volontaire : une redirection automatique casserait le prérendu et brouillerait l'indexation.
 
@@ -1131,8 +1126,10 @@ git commit -m "feat: internationalisation FR/EN et contenu redactionnel francais
 - Test: `tests/unit/components/LanguageSwitcher.spec.ts`
 
 **Interfaces:**
-- Consumes: `localizedPath` (Tâche 4), clés `nav.*` et `footer.*` (Tâche 5), `UiContainer`, `UiButton` (Tâche 3).
-- Produces: `<SiteHeader>`, `<SiteFooter>`, layout `default` utilisé par toutes les pages. `LanguageSwitcher` reçoit `:currentPath` et `:currentLocale` en props et émet des liens vers l'autre langue — il ne lit pas la route lui-même, ce qui le rend testable sans Nuxt.
+- Consumes: clés `nav.*`, `footer.*` et `a11y.*` (Tâche 5), `UiContainer`, `UiButton` (Tâche 3).
+- Produces: `<SiteHeader>`, `<SiteFooter>`, layout `default` utilisé par toutes les pages. `LanguageSwitcher` reçoit `:href` et `:targetLocale` en props — il ne calcule aucune URL, ce qui le rend testable sans Nuxt.
+
+**Règle non négociable pour cette tâche : tous les liens internes passent par `localePath()` de `@nuxtjs/i18n` (composable `useLocalePath()`), et le changement de langue par `switchLocalePath()`.** Ne jamais préfixer une URL par `/en` à la main. Les chemins anglais ne sont pas les chemins français préfixés : `/tarifs` devient `/en/pricing`, `/comment-ca-marche` devient `/en/how-it-works` (déclarés par `defineI18nRoute` en Tâches 10 et 11). Un préfixe manuel produirait des liens morts sur tout le site anglais.
 
 - [ ] **Step 1: Écrire le test qui échoue**
 
@@ -1144,35 +1141,36 @@ import { mount } from '@vue/test-utils'
 import LanguageSwitcher from '@/components/layout/LanguageSwitcher.vue'
 
 describe('LanguageSwitcher', () => {
-  it('pointe vers la page équivalente en anglais quand on est en français', () => {
+  it('affiche le code de la langue cible', () => {
     const wrapper = mount(LanguageSwitcher, {
-      props: { currentPath: '/tarifs', currentLocale: 'fr' },
+      props: { href: '/en/pricing', targetLocale: 'en' },
     })
-    expect(wrapper.find('a').attributes('href')).toBe('/en/tarifs')
     expect(wrapper.find('a').text()).toBe('EN')
+    expect(wrapper.find('a').attributes('href')).toBe('/en/pricing')
   })
 
-  it('pointe vers la page équivalente en français quand on est en anglais', () => {
+  it('affiche FR quand la cible est le français', () => {
     const wrapper = mount(LanguageSwitcher, {
-      props: { currentPath: '/tarifs', currentLocale: 'en' },
+      props: { href: '/tarifs', targetLocale: 'fr' },
     })
-    expect(wrapper.find('a').attributes('href')).toBe('/tarifs')
     expect(wrapper.find('a').text()).toBe('FR')
-  })
-
-  it('gère la page d’accueil', () => {
-    const wrapper = mount(LanguageSwitcher, {
-      props: { currentPath: '/', currentLocale: 'fr' },
-    })
-    expect(wrapper.find('a').attributes('href')).toBe('/en')
+    expect(wrapper.find('a').attributes('href')).toBe('/tarifs')
   })
 
   it('annonce la langue cible aux lecteurs d’écran', () => {
     const wrapper = mount(LanguageSwitcher, {
-      props: { currentPath: '/', currentLocale: 'fr' },
+      props: { href: '/en', targetLocale: 'en' },
     })
     expect(wrapper.find('a').attributes('hreflang')).toBe('en')
     expect(wrapper.find('a').attributes('aria-label')).toContain('English')
+  })
+
+  it('provoque un chargement complet plutôt qu’une navigation cliente', () => {
+    const wrapper = mount(LanguageSwitcher, {
+      props: { href: '/en', targetLocale: 'en' },
+    })
+    expect(wrapper.element.tagName).toBe('A')
+    expect(wrapper.findComponent({ name: 'NuxtLink' }).exists()).toBe(false)
   })
 })
 ```
@@ -1187,40 +1185,40 @@ Attendu : ÉCHEC, module introuvable.
 ```vue
 <script setup lang="ts">
 import { computed } from 'vue'
-import { localizedPath, type Locale } from '@/lib/locale'
+import type { Locale } from '@/lib/locale'
 
-const props = defineProps<{ currentPath: string; currentLocale: Locale }>()
+const props = defineProps<{ href: string; targetLocale: Locale }>()
 
-const target = computed<Locale>(() => (props.currentLocale === 'fr' ? 'en' : 'fr'))
-const href = computed(() => localizedPath(props.currentPath, target.value))
-const label = computed(() => (target.value === 'en' ? 'English' : 'Français'))
+const label = computed(() => (props.targetLocale === 'en' ? 'English' : 'Français'))
 </script>
 
 <template>
   <a
     :href="href"
-    :hreflang="target"
+    :hreflang="targetLocale"
     :aria-label="`Lire cette page en ${label}`"
     class="rounded-el border border-line px-3 py-1.5 text-sm font-semibold text-ink-muted transition-colors duration-150 hover:bg-sand hover:text-ink"
-  >{{ target.toUpperCase() }}</a>
+  >{{ targetLocale.toUpperCase() }}</a>
 </template>
 ```
 
-On utilise un `<a>` natif et non `<NuxtLink>` : le changement de langue doit provoquer un chargement complet, pour que la balise `lang` du document et les métadonnées soient rendues par le serveur.
+Deux décisions volontaires. Le composant ne calcule pas l'URL : le header la lui passe via `switchLocalePath()`, seul moyen d'obtenir le chemin anglais réel. Et c'est un `<a>` natif, pas un `<NuxtLink>` : le changement de langue doit provoquer un chargement complet, pour que l'attribut `lang` du document et les métadonnées soient rendus par le serveur.
 
 - [ ] **Step 4: Implémenter `SiteHeader.vue`**
 
 ```vue
 <script setup lang="ts">
 import { computed, ref } from 'vue'
-import { useRoute } from 'vue-router'
 import { useI18n } from 'vue-i18n'
+import type { Locale } from '@/lib/locale'
 
 const { t, locale } = useI18n()
-const route = useRoute()
+const localePath = useLocalePath()
+const switchLocalePath = useSwitchLocalePath()
 const open = ref(false)
 
-const unprefixed = computed(() => route.path.replace(/^\/en(?=\/|$)/, '') || '/')
+const targetLocale = computed<Locale>(() => (locale.value === 'fr' ? 'en' : 'fr'))
+const switchHref = computed(() => switchLocalePath(targetLocale.value))
 
 const links = computed(() => [
   { to: '/comment-ca-marche', label: t('nav.howItWorks') },
@@ -1234,22 +1232,22 @@ const links = computed(() => [
   <header class="sticky top-0 z-40 border-b border-line bg-surface/90 backdrop-blur">
     <UiContainer>
       <div class="flex h-16 items-center justify-between gap-6">
-        <NuxtLink :to="locale === 'fr' ? '/' : '/en'" class="font-display text-xl font-bold tracking-tight">
+        <NuxtLink :to="localePath('/')" class="font-display text-xl font-bold tracking-tight">
           yadony
         </NuxtLink>
 
-        <nav class="hidden items-center gap-7 md:flex" :aria-label="t('nav.howItWorks')">
+        <nav class="hidden items-center gap-7 md:flex" :aria-label="t('nav.mainLabel')">
           <NuxtLink
             v-for="link in links"
             :key="link.to"
-            :to="locale === 'fr' ? link.to : `/en${link.to}`"
+            :to="localePath(link.to)"
             class="text-sm text-ink-muted transition-colors duration-150 hover:text-ink"
           >{{ link.label }}</NuxtLink>
         </nav>
 
         <div class="flex items-center gap-3">
-          <LanguageSwitcher :current-path="unprefixed" :current-locale="locale as 'fr' | 'en'" />
-          <UiButton :to="locale === 'fr' ? '/#telecharger' : '/en/#telecharger'" class="hidden sm:inline-flex">
+          <LanguageSwitcher :href="switchHref" :target-locale="targetLocale" />
+          <UiButton :to="`${localePath('/')}#telecharger`" class="hidden sm:inline-flex">
             {{ t('nav.download') }}
           </UiButton>
           <button
@@ -1258,15 +1256,15 @@ const links = computed(() => [
             :aria-expanded="open"
             aria-controls="menu-mobile"
             @click="open = !open"
-          >Menu</button>
+          >{{ t('nav.menu') }}</button>
         </div>
       </div>
 
-      <nav v-show="open" id="menu-mobile" class="border-t border-line py-4 md:hidden">
+      <nav v-show="open" id="menu-mobile" class="border-t border-line py-4 md:hidden" :aria-label="t('nav.mobileLabel')">
         <NuxtLink
           v-for="link in links"
           :key="link.to"
-          :to="locale === 'fr' ? link.to : `/en${link.to}`"
+          :to="localePath(link.to)"
           class="block py-2.5 text-ink-muted"
           @click="open = false"
         >{{ link.label }}</NuxtLink>
@@ -1275,6 +1273,8 @@ const links = computed(() => [
   </header>
 </template>
 ```
+
+`localePath('/tarifs')` retourne `/tarifs` en français et `/en/pricing` en anglais : c'est la table de routes qui décide, pas une concaténation. Ajouter les clés `nav.mainLabel` (« Navigation principale »), `nav.mobileLabel` (« Navigation mobile ») et `nav.menu` (« Menu ») aux deux fichiers de locale — le bouton « Menu » était le dernier texte en dur du composant.
 
 - [ ] **Step 5: Implémenter `SiteFooter.vue`**
 
@@ -1285,8 +1285,8 @@ Footer sur fond sable, en trois colonnes sur desktop et empilées sur mobile : i
 import { useI18n } from 'vue-i18n'
 import { contactEmail } from '@/lib/site'
 
-const { t, locale } = useI18n()
-const p = (path: string) => (locale.value === 'fr' ? path : `/en${path}`)
+const { t } = useI18n()
+const p = useLocalePath()
 </script>
 
 <template>
@@ -1321,7 +1321,16 @@ const p = (path: string) => (locale.value === 'fr' ? path : `/en${path}`)
 ```vue
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
+
 const { t } = useI18n()
+
+const head = useLocaleHead({ addSeoAttributes: true })
+
+useHead(() => ({
+  htmlAttrs: head.value.htmlAttrs,
+  link: head.value.link,
+  meta: head.value.meta,
+}))
 </script>
 
 <template>
@@ -1349,6 +1358,10 @@ Mettre à jour `app/app.vue` :
 ```
 
 Ajouter la clé `a11y.skipToContent` (« Aller au contenu ») dans les deux fichiers de locale.
+
+`useLocaleHead({ addSeoAttributes: true })` est appelé **une seule fois, ici**. Il génère pour chaque page l'attribut `lang` du document, les `link[hreflang]` vers `fr`, `en` et `x-default`, et le `link[rel=canonical]` — le tout à partir de la table de routes réelle, donc avec les chemins anglais corrects. Aucune page ne doit refaire ce travail.
+
+Retirer aussi de `nuxt.config.ts` la ligne `htmlAttrs: { lang: 'fr' }` héritée de la Tâche 1 : elle figerait le français sur les pages anglaises.
 
 - [ ] **Step 7: Lancer les tests et vérifier qu'ils passent**
 
@@ -1505,23 +1518,23 @@ const rows = ['whatsapp', 'carrier', 'yadony'] as const
 ```vue
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
+import { useRoute } from 'vue-router'
 import { buildSeoMeta } from '@/lib/seo'
-import { alternateLinks } from '@/lib/locale'
 import { organizationJsonLd, mobileAppJsonLd } from '@/lib/structured-data'
 
 const { t, locale } = useI18n()
+const route = useRoute()
 
 useSeoMeta(
   buildSeoMeta({
     title: t('home.seo.title'),
     description: t('home.seo.description'),
-    path: '/',
+    path: route.path,
     locale: locale.value as 'fr' | 'en',
   }),
 )
 
 useHead({
-  link: alternateLinks('/'),
   script: [
     { type: 'application/ld+json', innerHTML: JSON.stringify(organizationJsonLd()) },
     { type: 'application/ld+json', innerHTML: JSON.stringify(mobileAppJsonLd()) },
@@ -1658,13 +1671,12 @@ const steps = [
       class="mt-14 flex snap-x snap-mandatory gap-6 overflow-x-auto px-5 pb-6 sm:px-8 lg:px-12"
       role="list"
     >
-      <article
+      <UiRevealOnScroll
         v-for="step in steps"
         :key="step.key"
-        data-step
-        role="listitem"
         class="w-[268px] shrink-0 snap-start sm:w-[300px]"
       >
+      <article data-step role="listitem">
         <img
           :src="step.image"
           :alt="t(`home.tracking.steps.${step.key}.alt`)"
@@ -1684,10 +1696,13 @@ const steps = [
           {{ t(`home.tracking.steps.${step.key}.text`) }}
         </p>
       </article>
+      </UiRevealOnScroll>
     </div>
   </UiSection>
 </template>
 ```
+
+C'est ici que `UiRevealOnScroll` (Tâche 3) est consommé : les quatre étapes apparaissent en décalé à l'entrée dans le viewport, animation annulée sous `prefers-reduced-motion`. Le test monte le composant sans plugin Nuxt : `UiRevealOnScroll` doit donc être importé explicitement dans le fichier de test via `global.components`, ou stubbé dans `tests/setup.ts` — retenir le stub, plus simple et sans effet sur les assertions.
 
 Le numéro d'étape en terracotta est **la seule** occurrence de l'accent dans cette section — conforme à la règle « un accent par écran ».
 
@@ -1735,26 +1750,30 @@ import { mount } from '@vue/test-utils'
 import { createI18n } from 'vue-i18n'
 import fr from '../../../i18n/locales/fr.json'
 import HomeFaq from '@/components/sections/HomeFaq.vue'
+import UiAccordion from '@/components/ui/UiAccordion.vue'
 
 const i18n = createI18n({ legacy: false, locale: 'fr', messages: { fr } })
+const global = { plugins: [i18n], components: { UiAccordion } }
 
 describe('HomeFaq', () => {
   it('rend huit questions', () => {
-    const wrapper = mount(HomeFaq, { global: { plugins: [i18n] } })
+    const wrapper = mount(HomeFaq, { global })
     expect(wrapper.findAll('details')).toHaveLength(8)
   })
 
   it('rend les réponses dans le DOM même repliées, pour l’indexation', () => {
-    const wrapper = mount(HomeFaq, { global: { plugins: [i18n] } })
+    const wrapper = mount(HomeFaq, { global })
     expect(wrapper.findAll('details p')).toHaveLength(8)
   })
 
   it('n’ouvre aucune question par défaut', () => {
-    const wrapper = mount(HomeFaq, { global: { plugins: [i18n] } })
+    const wrapper = mount(HomeFaq, { global })
     expect(wrapper.findAll('details[open]')).toHaveLength(0)
   })
 })
 ```
+
+`UiAccordion` est enregistré explicitement : c'est le composant réel dont on veut vérifier le rendu, contrairement aux conteneurs stubbés dans `tests/setup.ts`.
 
 - [ ] **Step 2: Lancer le test et vérifier qu'il échoue**
 
@@ -2129,7 +2148,6 @@ import { useI18n } from 'vue-i18n'
 import { useRoute, useRouter } from 'vue-router'
 import { resolveRole, type Role } from '@/lib/roles'
 import { buildSeoMeta } from '@/lib/seo'
-import { alternateLinks } from '@/lib/locale'
 
 defineI18nRoute({
   paths: { fr: '/comment-ca-marche', en: '/how-it-works' },
@@ -2149,11 +2167,10 @@ useSeoMeta(
   buildSeoMeta({
     title: t('howItWorks.seo.title'),
     description: t('howItWorks.seo.description'),
-    path: '/comment-ca-marche',
+    path: route.path,
     locale: locale.value as 'fr' | 'en',
   }),
 )
-useHead({ link: alternateLinks('/comment-ca-marche') })
 </script>
 
 <template>
@@ -2370,28 +2387,30 @@ Puis référencer ce fichier dans la configuration i18n de `nuxt.config.ts` via 
 
 - [ ] **Step 7: Implémenter les six pages restantes**
 
-Toutes suivent le même gabarit. Voici `app/pages/tarifs.vue` en entier — les cinq autres s'en déduisent en changeant le chemin, les clés de locale et le corps du template :
+Toutes suivent le même gabarit : `defineI18nRoute` pour le chemin anglais, `buildSeoMeta` avec `route.path` pour les métadonnées, puis le contenu. **Aucune page ne gère les `hreflang` ni le canonique** — le layout s'en charge (Tâche 6).
+
+Voici `app/pages/tarifs.vue` en entier — les cinq autres s'en déduisent en changeant le chemin, les clés de locale et le corps du template :
 
 ```vue
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
+import { useRoute } from 'vue-router'
 import { buildSeoMeta } from '@/lib/seo'
-import { alternateLinks } from '@/lib/locale'
 import { MAX_DECLARED_VALUE_EUR } from '@/lib/pricing'
 
 defineI18nRoute({ paths: { fr: '/tarifs', en: '/pricing' } })
 
 const { t, locale } = useI18n()
+const route = useRoute()
 
 useSeoMeta(
   buildSeoMeta({
     title: t('pricing.seo.title'),
     description: t('pricing.seo.description'),
-    path: '/tarifs',
+    path: route.path,
     locale: locale.value as 'fr' | 'en',
   }),
 )
-useHead({ link: alternateLinks('/tarifs') })
 </script>
 
 <template>

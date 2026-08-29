@@ -28,5 +28,6 @@ useHead({
   <div>
     <HeroDownload />
     <ProblemComparison />
+    <TrackingWalkthrough />
   </div>
 </template>

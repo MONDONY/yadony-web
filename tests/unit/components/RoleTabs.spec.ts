@@ -35,4 +35,35 @@ describe('RoleTabs', () => {
     await wrapper.findAll('[role="tab"]')[0]!.trigger('click')
     expect(wrapper.emitted('update:modelValue')).toBeUndefined()
   })
+
+  it('un seul onglet porte tabindex="0" à un instant donné', () => {
+    const wrapper = mountTabs('voyageur')
+    const tabs = wrapper.findAll('[role="tab"]')
+    expect(tabs[0]!.attributes('tabindex')).toBe('-1')
+    expect(tabs[1]!.attributes('tabindex')).toBe('0')
+  })
+
+  it('la flèche droite sélectionne l’onglet suivant', async () => {
+    const wrapper = mountTabs('expediteur')
+    await wrapper.findAll('[role="tab"]')[0]!.trigger('keydown', { key: 'ArrowRight' })
+    expect(wrapper.emitted('update:modelValue')).toEqual([['voyageur']])
+  })
+
+  it('la flèche gauche depuis le premier onglet boucle sur le dernier', async () => {
+    const wrapper = mountTabs('expediteur')
+    await wrapper.findAll('[role="tab"]')[0]!.trigger('keydown', { key: 'ArrowLeft' })
+    expect(wrapper.emitted('update:modelValue')).toEqual([['voyageur']])
+  })
+
+  it('End sélectionne le dernier onglet', async () => {
+    const wrapper = mountTabs('expediteur')
+    await wrapper.findAll('[role="tab"]')[0]!.trigger('keydown', { key: 'End' })
+    expect(wrapper.emitted('update:modelValue')).toEqual([['voyageur']])
+  })
+
+  it('Home ramène au premier onglet', async () => {
+    const wrapper = mountTabs('voyageur')
+    await wrapper.findAll('[role="tab"]')[1]!.trigger('keydown', { key: 'Home' })
+    expect(wrapper.emitted('update:modelValue')).toEqual([['expediteur']])
+  })
 })

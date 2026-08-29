@@ -51,6 +51,29 @@ const locales: Array<[string, unknown]> = [
 const endonymPaths = new Set(['language.fr', 'language.en'])
 
 /**
+ * Chemins des identifiants techniques, eux aussi exemptés du contrôle.
+ *
+ * Les `id` de la FAQ ne sont pas du texte : ils ne sont jamais affichés et
+ * n'apparaissent pas dans le HTML généré. `HomeFaq.vue` les transmet à
+ * `UiAccordion`, qui les utilise comme `:key` du `v-for`. Ils restent donc
+ * identiques dans les deux langues, pour qu'une question précise puisse être
+ * désignée indépendamment de la locale — ancre partageable si le composant en
+ * expose une un jour, événement d'analytique, test de bout en bout qui vérifie
+ * la même entrée en français et en anglais. Les traduire ferait diverger les
+ * deux fichiers sans bénéfice pour personne.
+ *
+ * L'exemption ne crée pas d'angle mort : le test « conserve les identifiants
+ * de FAQ identiques entre les deux langues » les épingle un par un sur
+ * `fr.json`, donc aucun texte ne peut se cacher derrière ces chemins.
+ */
+const identifierPaths = new Set(
+  Array.from({ length: 8 }, (_, index) => `home.faq.items[${index}].id`),
+)
+
+/** Chemins dont la valeur est volontairement identique dans les deux fichiers. */
+const untranslatedPaths = new Set([...endonymPaths, ...identifierPaths])
+
+/**
  * Marqueurs de texte resté en français : mots-outils qui n'existent pas en
  * anglais (bornés sur les limites de mot pour ne pas se déclencher au milieu
  * d'un mot anglais) et lettres accentuées, absentes de la copie anglaise.
@@ -91,9 +114,17 @@ describe('fichiers de locale', () => {
     }
   })
 
+  it('conserve les identifiants de FAQ identiques entre les deux langues', () => {
+    const frValues = new Map(flattenEntries(fr))
+    const enValues = new Map(flattenEntries(en))
+    for (const path of identifierPaths) {
+      expect(enValues.get(path)).toBe(frValues.get(path))
+    }
+  })
+
   it('en.json ne contient plus de texte resté en français', () => {
     const untranslated = flattenEntries(en)
-      .filter(([path]) => !endonymPaths.has(path))
+      .filter(([path]) => !untranslatedPaths.has(path))
       .filter(([, value]) => typeof value === 'string' && frenchMarkers.some(marker => marker.test(value)))
       .map(([path, value]) => `${path} → ${String(value)}`)
     expect(untranslated).toEqual([])

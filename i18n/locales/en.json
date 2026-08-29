@@ -117,42 +117,42 @@
       "title": "The questions people ask us before downloading",
       "items": [
         {
-          "id": "delivery-time",
+          "id": "delai",
           "question": "How long does a parcel take to arrive?",
           "answer": "The length of the flight, plus the time it takes to agree a meeting with the recipient. You see the traveller's departure and arrival dates before you book: you are the one choosing the trip that suits you. We do not advertise a standard delivery time, because there is no delivery round behind it: there is a flight, taken by a real person."
         },
         {
-          "id": "price",
+          "id": "prix",
           "question": "How much does it cost to send something?",
           "answer": "The traveller sets their price per kilo according to their route and what they agree to carry. yadony adds 12% on top. For a 5 kg parcel with a traveller charging €12 a kilo: €60 for them, €7.20 commission, €67.20 for you to pay. The full breakdown is on the Pricing page."
         },
         {
-          "id": "prohibited-items",
+          "id": "interdits",
           "question": "What am I not allowed to send?",
           "answer": "Cash, jewellery, identity documents, medicines, perishable food, narcotics, weapons, and anything the customs rules of the destination country prohibit or restrict. The traveller opens the parcel in front of you at handover: they take on the liability by carrying it in their own luggage, so they have the right to know what they are carrying."
         },
         {
-          "id": "payment",
+          "id": "paiement",
           "question": "When am I charged?",
           "answer": "You are only charged after delivery. When the traveller accepts your parcel, your payment method is registered; the charge itself happens only once the delivery scan has been validated by the recipient, and it is that same scan that triggers the payout to the traveller. If the parcel never leaves, or never arrives, nothing is taken from you."
         },
         {
-          "id": "loss",
+          "id": "perte",
           "question": "What if the parcel never arrives?",
           "answer": "You open a dispute from the app. The payout to the traveller stays suspended while the case is examined. We go back through the scan history, which shows the last validated step, at what time and with which photo. If the loss is established, the payment is not charged and the traveller receives nothing. The value you declared, capped at €500, is the reference amount for the case: it is not a promise of compensation on our part."
         },
         {
-          "id": "traveller-earnings",
+          "id": "gain-voyageur",
           "question": "How much does a traveller earn?",
           "answer": "Exactly the price they advertised. The 12% commission is added on top and is paid by the sender: it is not taken out of what the traveller receives. Ten kilos at €12 a kilo means €120 paid out after delivery, on a ticket already bought."
         },
         {
-          "id": "customs",
+          "id": "douane",
           "question": "What happens if there is a customs check?",
           "answer": "The traveller declares what they are carrying. In the app, every parcel comes with a description and the photos taken at handover, which they can show. Any duties and taxes remain payable by the sender. That is also the reason for the prohibited items: a parcel held up at customs holds up the person carrying it."
         },
         {
-          "id": "cities",
+          "id": "villes",
           "question": "Which cities are covered?",
           "answer": "Departing from Paris, Lyon and Marseille, to Dakar, Abidjan, Bamako and Douala. These are the corridors with enough flights and enough people for the service to hold up from day one. Others will follow. We would rather open a city when it works than show a map full of destinations with no travellers on them."
         }

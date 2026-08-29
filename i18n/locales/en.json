@@ -149,7 +149,7 @@
         {
           "id": "douane",
           "question": "What happens if there is a customs check?",
-          "answer": "The traveller declares what they are carrying. In the app, every parcel comes with a description and the photos taken at handover, which they can show. Any duties and taxes remain payable by the sender. That is also the reason for the prohibited items: a parcel held up at customs holds up the person carrying it."
+          "answer": "The traveller declares what they are carrying. In the app, every parcel comes with a description and the photos taken at handover, which they can show. Any duties and taxes remain payable by the sender. That is also the reason for the list of prohibited items: a parcel held up at customs holds up the person carrying it."
         },
         {
           "id": "villes",
@@ -201,7 +201,7 @@
       "steps": [
         {
           "title": "You post your trip",
-          "text": "Cities, dates, kilos available, price per kilo. You stay free to turn down a parcel without having to explain yourself."
+          "text": "Cities, dates, kilos available, price per kilo. You are still free to turn down a parcel without having to explain yourself."
         },
         {
           "title": "You go through the identity check",
@@ -256,7 +256,7 @@
       },
       "escrow": {
         "title": "Payment held in escrow",
-        "text": "When a traveller accepts your parcel, your payment method is registered, but no money is taken. The charge happens only after the delivery scan validated by the recipient, and it is that scan that triggers the payout to the traveller. Until delivery is confirmed, nothing is taken from you and the traveller receives nothing. If the shipment does not go ahead, the payment request is dropped."
+        "text": "When a traveller accepts your parcel, your payment method is registered, but no money is taken. The charge happens only after the delivery scan has been validated by the recipient, and it is that scan that triggers the payout to the traveller. Until delivery is confirmed, nothing is taken from you and the traveller receives nothing. If the shipment does not go ahead, the payment request is dropped."
       },
       "cap": {
         "title": "Cap on declared value",
@@ -305,7 +305,7 @@
     "emailLabel": "Email address",
     "support": {
       "title": "User support",
-      "text": "A parcel stuck somewhere, a payment that will not release, an open dispute, an identity check that fails. The fastest route is still the support built into the app: your shipment is already identified there, so you do not have to describe it again. If you do not have the app yet, write to us here and give the departure city, the arrival city and the date concerned."
+      "text": "A parcel stuck somewhere, a payment that is not being released, an open dispute, an identity check that fails. The fastest route is still the support built into the app: your shipment is already identified there, so you do not have to describe it again. If you do not have the app yet, write to us here and give the departure city, the arrival city and the date concerned."
     },
     "press": {
       "title": "Press and partnerships",
@@ -335,7 +335,7 @@
       "sections": {
         "editor": {
           "title": "Site publisher",
-          "text": "The yadony.com site is published by the company that develops and operates the yadony mobile app, registered in France. Any request concerning the identification of the publisher can be sent to contact{'@'}yadony.com and receives a written reply."
+          "text": "The yadony.com site is published by the company that develops and operates the yadony mobile app, registered in France. Any request concerning the identification of the publisher can be sent to contact{'@'}yadony.com and will receive a written reply."
         },
         "publication": {
           "title": "Publication director",
@@ -343,11 +343,11 @@
         },
         "hosting": {
           "title": "Hosting",
-          "text": "The site is hosted by Cloudflare, Inc., 101 Townsend Street, San Francisco, CA 94107, United States. The pages are generated in advance and served from Cloudflare's delivery network: no database and no application logic runs behind this site."
+          "text": "The site is hosted by Cloudflare, Inc., 101 Townsend Street, San Francisco, CA 94107, United States. The pages are generated in advance and served from Cloudflare's delivery network: no database and no application logic run behind this site."
         },
         "ip": {
           "title": "Intellectual property",
-          "text": "The yadony trade mark, the logo, the visual identity, the texts and the app screenshots are the property of the publishing company. Any reproduction, even partial, without prior written permission is prohibited. Quotation in a journalistic context remains free, provided the source is named."
+          "text": "The yadony trade mark, the logo, the visual identity, the texts and the app screenshots are the property of the publishing company. Any reproduction, even partial, without prior written permission is prohibited. Quotation in a journalistic context remains permitted, provided the source is named."
         },
         "liability": {
           "title": "Liability",
@@ -369,7 +369,7 @@
       "sections": {
         "object": {
           "title": "Purpose of the service",
-          "text": "yadony connects travellers who have spare luggage space with senders who want a parcel carried. yadony is not a carrier: the company never takes possession of parcels, does not handle them and does not carry them. It provides the tool for matching, tracking and payment."
+          "text": "yadony connects travellers who have spare luggage space with senders who want a parcel carried. yadony is not a carrier: the company never takes possession of parcels, does not handle them and does not undertake to get them there. It provides the tool for matching, tracking and payment."
         },
         "account": {
           "title": "Account and identity verification",
@@ -419,7 +419,7 @@
         },
         "collected": {
           "title": "Data collected",
-          "text": "Account: phone number, first name, surname, profile photo. Identity verification: ID document and selfie, sent to Stripe Identity and stored encrypted, never visible to other users and with restricted internal access. Shipments: cities, dates, weight, description and photos of the parcel, declared value, scan history with timestamps. Payments: card details are handled directly by Stripe and never pass through our servers."
+          "text": "Account: phone number, first name, surname, profile photo. Identity verification: ID document and selfie, sent to Stripe Identity and stored encrypted, never visible to other users and with restricted internal access. Shipments: cities, dates, weight, description and photos of the parcel, declared value, scan history with timestamps. Payments: payment details are handled directly by Stripe and never pass through our servers."
         },
         "purposes": {
           "title": "Purposes and legal bases",
@@ -435,11 +435,11 @@
         },
         "rights": {
           "title": "Your rights",
-          "text": "You have a right of access, rectification, erasure, restriction, objection and portability over your data. These rights are exercised from the app settings or in writing to contact{'@'}yadony.com. You may also lodge a complaint with the CNIL, the French data protection authority."
+          "text": "You have a right of access, rectification, erasure, restriction, objection and portability over your data. These rights are exercised from the app settings or in writing to contact{'@'}yadony.com. You may also lodge a complaint with the Commission nationale de l'informatique et des libertés (CNIL), the French data protection authority."
         },
         "cookies": {
           "title": "Cookies on this site",
-          "text": "yadony.com is a static site. It sets no advertising cookie, embeds no third-party tracker and loads no font from an external server: the fonts are served from our own domain. The language shown is determined by the address of the page, not by a cookie."
+          "text": "yadony.com is a static site. It sets no advertising cookies, embeds no third-party trackers and loads no fonts from an external server: the fonts are served from our own domain. The language shown is determined by the address of the page, not by a cookie."
         },
         "security": {
           "title": "Security",

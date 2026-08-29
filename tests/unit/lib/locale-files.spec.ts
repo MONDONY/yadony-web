@@ -9,8 +9,7 @@ import en from '../../../i18n/locales/en.json'
  * (`home.faq.items[3].question`). Sans cela, `home.faq.items`,
  * `howItWorks.*.steps` et `about.paragraphs` seraient traités comme des
  * feuilles opaques : un `en.json` amputé d'une question de la FAQ passerait au
- * vert, ce qui est exactement le scénario que ce test doit interdire avant la
- * traduction anglaise de la tâche 12.
+ * vert, ce qui est exactement le scénario que ce test doit interdire.
  */
 function flattenEntries(value: unknown, path = ''): Array<[string, unknown]> {
   if (Array.isArray(value)) {
@@ -34,52 +33,68 @@ const locales: Array<[string, unknown]> = [
 ]
 
 /**
- * Chemins des endonymes, exemptés du contrôle « plus aucun français dans
- * `en.json` ».
- *
- * Un nom de langue s'écrit dans sa propre langue : « Français » reste
- * « Français » dans la version anglaise, cédille comprise, et « English »
- * reste « English » dans la version française. C'est la convention attendue
- * par les lecteurs d'écran et par les utilisateurs, et elle a été tranchée à
- * la relecture de la tâche 6.
- *
- * L'exemption porte sur le chemin de la clé, jamais sur la valeur : une phrase
- * française oubliée ailleurs dans le fichier reste détectée, et personne ne
- * peut faire passer un texte non traduit en le faisant ressembler à un
- * endonyme.
+ * Endonymes : un nom de langue s'écrit dans sa propre langue. « Français »
+ * reste « Français » dans la version anglaise, cédille comprise, et « English »
+ * reste « English » dans la version française. C'est la convention attendue par
+ * les lecteurs d'écran et par les utilisateurs, tranchée à la relecture de la
+ * tâche 6.
  */
-const endonymPaths = new Set(['language.fr', 'language.en'])
+const endonymPaths = ['language.fr', 'language.en']
 
 /**
- * Chemins des identifiants techniques, eux aussi exemptés du contrôle.
- *
- * Les `id` de la FAQ ne sont pas du texte : ils ne sont jamais affichés et
- * n'apparaissent pas dans le HTML généré. `HomeFaq.vue` les transmet à
- * `UiAccordion`, qui les utilise comme `:key` du `v-for`. Ils restent donc
- * identiques dans les deux langues, pour qu'une question précise puisse être
- * désignée indépendamment de la locale — ancre partageable si le composant en
- * expose une un jour, événement d'analytique, test de bout en bout qui vérifie
- * la même entrée en français et en anglais. Les traduire ferait diverger les
- * deux fichiers sans bénéfice pour personne.
- *
- * L'exemption ne crée pas d'angle mort : le test « conserve les identifiants
- * de FAQ identiques entre les deux langues » les épingle un par un sur
- * `fr.json`, donc aucun texte ne peut se cacher derrière ces chemins.
+ * Identifiants techniques : les `id` de la FAQ ne sont pas du texte. Ils ne
+ * sont jamais affichés et n'apparaissent pas dans le HTML généré ;
+ * `HomeFaq.vue` les transmet à `UiAccordion`, qui les utilise comme `:key` du
+ * `v-for`. Ils restent identiques dans les deux langues pour qu'une question
+ * précise puisse être désignée indépendamment de la locale — ancre partageable
+ * si le composant en expose une un jour, événement d'analytique, test de bout
+ * en bout couvrant la même entrée en français et en anglais.
  */
-const identifierPaths = new Set(
-  Array.from({ length: 8 }, (_, index) => `home.faq.items[${index}].id`),
-)
-
-/** Chemins dont la valeur est volontairement identique dans les deux fichiers. */
-const untranslatedPaths = new Set([...endonymPaths, ...identifierPaths])
+const identifierPaths = Array.from({ length: 8 }, (_, index) => `home.faq.items[${index}].id`)
 
 /**
- * Marqueurs de texte resté en français : mots-outils qui n'existent pas en
- * anglais (bornés sur les limites de mot pour ne pas se déclencher au milieu
- * d'un mot anglais) et lettres accentuées, absentes de la copie anglaise.
+ * Valeurs qui s'écrivent pareil dans les deux langues : deux mots communs au
+ * français et à l'anglais, et le nom de la marque affiché dans la colonne
+ * « Canal » du tableau comparatif.
+ */
+const sameWordPaths = ['nav.contact', 'nav.menu', 'home.problem.rows.yadony.channel']
+
+/**
+ * Tous les chemins dont la valeur est légitimement identique dans les deux
+ * fichiers. Cette liste n'est pas devinée : elle a été établie en lançant la
+ * comparaison ci-dessous sur les 244 feuilles, puis en justifiant chaque
+ * entrée. Ajouter un chemin ici doit rester un acte délibéré et argumenté.
+ */
+const sharedValuePaths = new Set([...endonymPaths, ...identifierPaths, ...sameWordPaths])
+
+/**
+ * Chemins exemptés du second filet à base de marqueurs, en plus des chemins
+ * partagés ci-dessus.
+ *
+ * La politique de confidentialité anglaise nomme la CNIL par son nom complet,
+ * « Commission nationale de l'informatique et des libertés (CNIL) ». C'est un
+ * nom propre : il ne se traduit pas et n'a pas de version anglaise officielle.
+ * Il porte donc un accent et le mot « des », qui déclencheraient les marqueurs.
+ * C'est bien le test qui s'adapte au contenu juridique, jamais l'inverse.
+ */
+const markerExemptPaths = new Set([
+  ...sharedValuePaths,
+  'legal.confidentialite.sections.rights.text',
+])
+
+/**
+ * Marqueurs de français résiduel. Filet **secondaire** : il attrape une chaîne
+ * partiellement retraduite, cas que la comparaison avec `fr.json` laisse passer
+ * puisque la valeur y diffère déjà de sa source. La garantie de complétude,
+ * elle, est portée par le test « traduit chaque valeur de en.json ».
+ *
+ * La liste de mots-outils est une heuristique et le reste : elle ne détecte pas
+ * toutes les phrases françaises possibles. Trois mots français en ont été
+ * retirés parce qu'ils existent aussi en anglais et produiraient des faux
+ * positifs : `plus`, `pour` (verbe) et `aux` (« aux input »).
  */
 const frenchMarkers: RegExp[] = [
-  /\b(le|la|les|un|une|des|du|au|aux|vous|votre|nous|notre|dans|avec|pour|est|sont|qui|que|ce|cette|ne|pas)\b/i,
+  /\b(le|la|les|un|une|des|du|au|vous|votre|nous|notre|dans|avec|est|sont|qui|que|ce|cette|ne|pas)\b/i,
   /[àâäçéèêëîïôöùûü]/i,
 ]
 
@@ -122,11 +137,29 @@ describe('fichiers de locale', () => {
     }
   })
 
-  it('en.json ne contient plus de texte resté en français', () => {
+  /**
+   * Garantie principale de complétude de la traduction.
+   *
+   * Une chaîne non traduite est exactement une chaîne restée identique à sa
+   * source : la comparaison chemin par chemin avec `fr.json` est donc
+   * déterministe et exhaustive, là où une recherche de marqueurs français ne
+   * pouvait être qu'une heuristique — elle laissait passer des phrases entières
+   * sans accent ni mot-outil, comme « Quatre scans entre Paris et Dakar ».
+   */
+  it('traduit chaque valeur de en.json', () => {
+    const frValues = new Map(flattenEntries(fr))
     const untranslated = flattenEntries(en)
-      .filter(([path]) => !untranslatedPaths.has(path))
-      .filter(([, value]) => typeof value === 'string' && frenchMarkers.some(marker => marker.test(value)))
+      .filter(([path]) => !sharedValuePaths.has(path))
+      .filter(([path, value]) => value === frValues.get(path))
       .map(([path, value]) => `${path} → ${String(value)}`)
     expect(untranslated).toEqual([])
+  })
+
+  it('ne laisse pas de français résiduel dans une valeur de en.json', () => {
+    const suspicious = flattenEntries(en)
+      .filter(([path]) => !markerExemptPaths.has(path))
+      .filter(([, value]) => typeof value === 'string' && frenchMarkers.some(marker => marker.test(value)))
+      .map(([path, value]) => `${path} → ${String(value)}`)
+    expect(suspicious).toEqual([])
   })
 })

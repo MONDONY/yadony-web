@@ -19,6 +19,20 @@ export default defineNuxtConfig({
   },
   ssr: true,
   css: ['~/assets/css/main.css'],
+  vite: {
+    vue: {
+      template: {
+        // Les images référencées par un `src` absolu (ex. `/screenshots/...`)
+        // vivent dans `public/` et sont servies telles quelles : elles ne
+        // doivent jamais être résolues comme un import de module au build.
+        // Par défaut, @vitejs/plugin-vue transforme aussi les chemins
+        // absolus (includeAbsolute: true en mode build), donc une capture
+        // pas encore fournie par le client ferait échouer `pnpm generate`
+        // avec une erreur d'import non résolu.
+        transformAssetUrls: { includeAbsolute: false },
+      },
+    },
+  },
   nitro: {
     prerender: {
       crawlLinks: true,

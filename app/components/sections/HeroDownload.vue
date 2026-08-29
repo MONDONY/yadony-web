@@ -17,7 +17,7 @@ const { t } = useI18n()
         <div class="lg:col-span-5">
           <div class="relative lg:-mr-24 xl:-mr-40">
             <img
-              :src="'/screenshots/app-accueil.webp'"
+              src="/screenshots/app-accueil.webp"
               :alt="t('home.hero.screenshotAlt')"
               width="1170"
               height="2532"

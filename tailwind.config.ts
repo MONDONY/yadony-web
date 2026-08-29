@@ -6,7 +6,7 @@ export default {
     './app/layouts/**/*.vue',
     './app/pages/**/*.vue',
     './app/app.vue',
-    './error.vue',
+    './app/error.vue',
   ],
   theme: {
     extend: {

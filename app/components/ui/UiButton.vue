@@ -6,7 +6,9 @@ const props = withDefaults(
     to?: string
     href?: string
   }>(),
-  { variant: 'primary', size: 'md' },
+  // `to` et `href` restent volontairement sans lien par défaut : leur absence
+  // signale le rendu <button>, le cas par défaut du composant.
+  { variant: 'primary', size: 'md', to: undefined, href: undefined },
 )
 
 const base =

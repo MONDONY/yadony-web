@@ -65,6 +65,13 @@ export default defineNuxtConfig({
           href: '/fonts/hanken-grotesk-latin-wght-normal.woff2',
           crossorigin: 'anonymous',
         },
+        {
+          rel: 'preload',
+          as: 'font',
+          type: 'font/woff2',
+          href: '/fonts/plus-jakarta-sans-latin-wght-normal.woff2',
+          crossorigin: 'anonymous',
+        },
       ],
     },
   },

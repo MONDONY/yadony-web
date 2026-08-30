@@ -1214,5 +1214,13 @@
       "accept": "Accepter",
       "refuse": "Refuser"
     }
+  },
+  "stores": {
+    "comingSoon": {
+      "kicker": "Tout bientôt",
+      "title": "L'application arrive",
+      "text": "Yadony sera très prochainement disponible sur l'App Store et Google Play. Revenez dans quelques jours — le site, lui, est déjà là.",
+      "close": "Compris"
+    }
   }
 }

@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test'
+import { storesLive } from '../../app/lib/site'
 
 const PAGES = [
   '/', '/comment-ca-marche', '/tarifs', '/securite',
@@ -34,10 +35,23 @@ test('la navigation du header mène aux bonnes pages', async ({ page, isMobile }
   await expect(page).toHaveURL('/tarifs')
 })
 
-test('les liens de stores pointent vers les magasins officiels', async ({ page }) => {
+test('les boutons de stores se comportent selon la disponibilité de l’app', async ({ page }) => {
   await page.goto('/')
-  const appStore = page.getByRole('link', { name: /App Store/i }).first()
-  const playStore = page.getByRole('link', { name: /Google Play/i }).first()
-  await expect(appStore).toHaveAttribute('href', /apps\.apple\.com/)
-  await expect(playStore).toHaveAttribute('href', /play\.google\.com/)
+  if (storesLive) {
+    // App publiée : de vrais liens vers les fiches officielles.
+    const appStore = page.getByRole('link', { name: /App Store/i }).first()
+    const playStore = page.getByRole('link', { name: /Google Play/i }).first()
+    await expect(appStore).toHaveAttribute('href', /apps\.apple\.com/)
+    await expect(playStore).toHaveAttribute('href', /play\.google\.com/)
+  } else {
+    // App pas encore publiée : aucun lien mort, le clic ouvre la fenêtre
+    // « bientôt disponible », refermable au clavier (Échap).
+    await expect(page.getByRole('link', { name: /App Store/i })).toHaveCount(0)
+    await page.getByRole('button', { name: /App Store/i }).first().click()
+    const dialog = page.locator('dialog[open]').first()
+    await expect(dialog).toBeVisible()
+    await expect(dialog).toContainText(/App Store et Google Play/i)
+    await page.keyboard.press('Escape')
+    await expect(page.locator('dialog[open]')).toHaveCount(0)
+  }
 })

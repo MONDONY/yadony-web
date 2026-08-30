@@ -142,7 +142,7 @@
         {
           "id": "prix",
           "question": "How much does it cost to send something?",
-          "answer": "The traveller sets their price per kilo according to their route and what they agree to carry. yadony adds 12% on top. For a 5 kg parcel with a traveller charging €12 a kilo: €60 for them, €7.20 commission, €67.20 for you to pay. The full breakdown is on the Pricing page."
+          "answer": "The traveller sets their price per kilo according to their route and what they agree to carry. yadony adds a service commission on top — 12% as of today, always shown before you pay. For a 5 kg parcel with a traveller at €12/kg: €60 for the traveller, €7.20 commission, €67.20 in total."
         },
         {
           "id": "interdits",
@@ -162,7 +162,7 @@
         {
           "id": "gain-voyageur",
           "question": "How much does a traveller earn?",
-          "answer": "Exactly the price they advertised. The 12% commission is added on top and is paid by the sender: it is not taken out of what the traveller receives. Ten kilos at €12 a kilo means €120 paid out after delivery, on a ticket already bought."
+          "answer": "Exactly the price they advertised. The service commission is added on top and is paid by the sender: it is not taken out of what the traveller receives."
         },
         {
           "id": "douane",
@@ -261,23 +261,23 @@
         },
         {
           "title": "You deliver and you get paid",
-          "text": "Hand-delivery, final scan, photo. The payout is triggered straight after. You receive the full price you set: the 12% commission is paid by the sender, on top."
+          "text": "Hand-delivery, final scan, photo. The payout is triggered straight after. You receive the full price you set: the service commission is paid by the sender, on top."
         }
       ]
     }
   },
   "pricing": {
     "seo": {
-      "title": "yadony pricing: 12% commission, and nothing else",
-      "description": "The traveller sets their price per kilo, yadony adds 12% paid by the sender. A full worked example for a 5 kg parcel Paris → Dakar and a comparison with a conventional carrier."
+      "title": "yadony pricing: one transparent commission, nothing else",
+      "description": "The traveller sets their price per kilo, yadony adds a service commission paid by the sender and shown before payment. A full worked example for a 5 kg parcel Paris → Dakar."
     },
-    "title": "The traveller sets the price. We take 12% on top.",
-    "lead": "There is no rate card at yadony, because we are not the ones doing the carrying. The price per kilo is the one the traveller advertises. The only thing we charge is a commission of 12%, added at the time of payment and paid by the sender.",
+    "title": "The traveller sets the price. We add one transparent commission.",
+    "lead": "There is no rate card at yadony, because we are not the ones doing the carrying. The price per kilo is the one the traveller advertises. The only thing we charge is a service commission — 12% at the time of writing — added at payment, paid by the sender and always shown before you confirm.",
     "cap": "The declared value of a parcel is capped at €{amount}. That is the reference amount used to settle a dispute; insurance for the parcel is not included in the commission.",
     "example": {
       "caption": "A 5 kg parcel, Paris → Dakar, with a traveller charging €12 a kilo",
       "travelerPrice": "Price asked by the traveller",
-      "commission": "yadony commission (12%)",
+      "commission": "yadony commission (current rate: 12%)",
       "senderPays": "Total paid by the sender",
       "travelerEarns": "Paid to the traveller after delivery"
     },
@@ -429,7 +429,7 @@
         },
         "price": {
           "title": "Price, commission and payment",
-          "text": "The price of carriage is set freely by the traveller. yadony charges a commission of 12% of that price, payable by the sender and billed in addition. The sender's payment method is registered when the parcel is accepted; the amount is charged only after the delivery scan has been validated, and the payout to the traveller follows. No charge is made if delivery is not confirmed."
+          "text": "The price of carriage is set freely by the traveller. yadony charges a service commission on that price, payable by the sender and billed in addition. The rate in force is shown in the app before any payment is confirmed; it may change, with no effect on transactions already under way. Payment is pre-authorised at acceptance and released to the traveller once delivery is confirmed."
         },
         "cancellation": {
           "title": "Cancellation",

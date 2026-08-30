@@ -1,0 +1,4 @@
+# L'app mobile (dony_app, legal_web_view_screen.dart) ouvre ces URL en
+# WebView : elles doivent répondre. Redirections 301 vers les pages réelles.
+/legal/terms /cgu 301
+/legal/privacy /confidentialite 301

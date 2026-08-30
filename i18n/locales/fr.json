@@ -142,7 +142,7 @@
         {
           "id": "prix",
           "question": "Combien coûte un envoi ?",
-          "answer": "Le voyageur fixe son prix au kilo selon son trajet et ce qu'il accepte de porter. yadony ajoute 12 % par-dessus. Pour un colis de 5 kg chez un voyageur à 12 € le kilo : 60 € pour lui, 7,20 € de commission, 67,20 € à votre charge. Le détail figure sur la page Tarifs."
+          "answer": "Le voyageur fixe son prix au kilo selon son trajet et ce qu'il accepte de porter. yadony ajoute par-dessus une commission de service — 12 % à ce jour, toujours affichée avant que vous ne payiez. Pour un colis de 5 kg chez un voyageur à 12 €/kg : 60 € pour le voyageur, 7,20 € de commission, 67,20 € au total."
         },
         {
           "id": "interdits",
@@ -162,7 +162,7 @@
         {
           "id": "gain-voyageur",
           "question": "Combien gagne un voyageur ?",
-          "answer": "Exactement le prix qu'il a annoncé. La commission de 12 % s'ajoute au-dessus et elle est payée par l'expéditeur : elle ne se prélève pas sur ce que touche le voyageur. Dix kilos à 12 € le kilo, ce sont 120 € versés après la livraison, sur un billet déjà acheté."
+          "answer": "Exactement le prix qu'il a annoncé. La commission de service s'ajoute au-dessus et elle est payée par l'expéditeur : elle ne se prélève pas sur ce que touche le voyageur."
         },
         {
           "id": "douane",
@@ -261,23 +261,23 @@
         },
         {
           "title": "Vous livrez et vous êtes payé",
-          "text": "Remise en main propre, scan final, photo. Le versement est déclenché dans la foulée. Vous percevez la totalité du prix que vous aviez fixé : les 12 % de commission sont payés par l'expéditeur, en plus."
+          "text": "Remise en main propre, scan final, photo. Le versement est déclenché dans la foulée. Vous percevez la totalité du prix que vous aviez fixé : la commission de service est payée par l'expéditeur, en plus."
         }
       ]
     }
   },
   "pricing": {
     "seo": {
-      "title": "Tarifs yadony : 12 % de commission, et rien d'autre",
-      "description": "Le voyageur fixe son prix au kilo, yadony ajoute 12 % payés par l'expéditeur. Exemple chiffré complet pour un colis de 5 kg Paris → Dakar et comparaison avec un transporteur classique."
+      "title": "Tarifs yadony : une commission transparente, rien d'autre",
+      "description": "Le voyageur fixe son prix au kilo, yadony ajoute une commission de service payée par l'expéditeur et affichée avant paiement. Exemple chiffré complet pour un colis de 5 kg Paris → Dakar."
     },
-    "title": "Le voyageur fixe son prix. Nous prenons 12 % par-dessus.",
-    "lead": "Il n'y a pas de grille tarifaire chez yadony, parce que ce n'est pas nous qui transportons. Le prix au kilo est celui qu'annonce le voyageur. La seule chose que nous facturons est une commission de 12 %, ajoutée au moment du paiement et payée par l'expéditeur.",
+    "title": "Le voyageur fixe son prix. Nous ajoutons une commission transparente.",
+    "lead": "Il n'y a pas de grille tarifaire chez yadony, parce que ce n'est pas nous qui transportons. Le prix au kilo est celui qu'annonce le voyageur. La seule chose que nous facturons est une commission de service — 12 % au moment où nous écrivons — ajoutée au moment du paiement, payée par l'expéditeur et toujours affichée avant que vous ne validiez.",
     "cap": "La valeur déclarée d'un colis est plafonnée à {amount} €. C'est le montant de référence retenu pour arbitrer un litige ; l'assurance du colis n'est pas comprise dans la commission.",
     "example": {
       "caption": "Un colis de 5 kg, Paris → Dakar, chez un voyageur à 12 € le kilo",
       "travelerPrice": "Prix demandé par le voyageur",
-      "commission": "Commission yadony (12 %)",
+      "commission": "Commission yadony (taux actuel : 12 %)",
       "senderPays": "Total payé par l'expéditeur",
       "travelerEarns": "Versé au voyageur après livraison"
     },
@@ -429,7 +429,7 @@
         },
         "price": {
           "title": "Prix, commission et paiement",
-          "text": "Le prix du transport est fixé librement par le voyageur. yadony perçoit une commission de 12 % de ce prix, à la charge de l'expéditeur et facturée en supplément. Le moyen de paiement de l'expéditeur est enregistré à l'acceptation du colis ; le montant n'est encaissé qu'après validation du scan de livraison, et le versement au voyageur intervient ensuite. Aucun encaissement n'a lieu si la livraison n'est pas confirmée."
+          "text": "Le prix du transport est fixé librement par le voyageur. yadony perçoit une commission de service sur ce prix, à la charge de l'expéditeur et facturée en sus. Le taux en vigueur est affiché dans l'application avant toute validation de paiement ; il peut évoluer, sans effet sur les transactions déjà engagées. Le paiement est pré-autorisé à l'acceptation et versé au voyageur après confirmation de la livraison."
         },
         "cancellation": {
           "title": "Annulation",

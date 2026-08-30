@@ -1,3 +1,6 @@
+// Taux utilisé pour l'exemple chiffré du site uniquement. Le taux réel est
+// paramétrable dans dony-admin : les textes le présentent toujours comme
+// « taux actuel », jamais comme un engagement contractuel figé.
 export const COMMISSION_RATE = 0.12
 export const MAX_DECLARED_VALUE_EUR = 500
 

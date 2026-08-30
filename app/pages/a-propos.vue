@@ -23,11 +23,10 @@ const paragraphs = computed(() => (tm('about.paragraphs') as unknown[]).map(para
 
 <template>
   <div>
+    <PageHero :title="t('about.title')" />
     <UiSection tone="white">
       <UiContainer>
-        <h1 class="max-w-[20ch] text-display-xl">{{ t('about.title') }}</h1>
-
-        <ProseBlock class="mt-10">
+        <ProseBlock>
           <p v-for="(paragraph, index) in paragraphs" :key="index">{{ paragraph }}</p>
         </ProseBlock>
       </UiContainer>

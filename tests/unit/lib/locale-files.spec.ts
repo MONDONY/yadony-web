@@ -60,12 +60,35 @@ const identifierPaths = Array.from({ length: 8 }, (_, index) => `home.faq.items[
 const sameWordPaths = ['nav.contact', 'nav.menu', 'home.problem.rows.yadony.channel']
 
 /**
+ * Noms propres invariants : les corridors sont des paires de villes
+ * (« Paris → Dakar ») qui s'écrivent pareil dans les deux langues, la marque
+ * « Yadony » / « Yadony Pro » ne se traduit pas, et l'adresse « Paris,
+ * France » non plus.
+ */
+const properNounPaths = [
+  'home.corridors.routes.dakar.route',
+  'home.corridors.routes.abidjan.route',
+  'home.corridors.routes.bamako.route',
+  'home.corridors.routes.douala.route',
+  'footer.company.name',
+  'footer.company.line2',
+  'footer.proTitle',
+  // Un numéral seul s'écrit pareil dans les deux langues.
+  'home.hero.stats.scans.figure',
+]
+
+/**
  * Tous les chemins dont la valeur est légitimement identique dans les deux
  * fichiers. Cette liste n'est pas devinée : elle a été établie en lançant la
  * comparaison ci-dessous sur les 244 feuilles, puis en justifiant chaque
  * entrée. Ajouter un chemin ici doit rester un acte délibéré et argumenté.
  */
-const sharedValuePaths = new Set([...endonymPaths, ...identifierPaths, ...sameWordPaths])
+const sharedValuePaths = new Set([
+  ...endonymPaths,
+  ...identifierPaths,
+  ...sameWordPaths,
+  ...properNounPaths,
+])
 
 /**
  * Chemins exemptés du second filet à base de marqueurs, en plus des chemins
@@ -80,6 +103,10 @@ const sharedValuePaths = new Set([...endonymPaths, ...identifierPaths, ...sameWo
 const markerExemptPaths = new Set([
   ...sharedValuePaths,
   'legal.confidentialite.sections.rights.text',
+  // « Côte d'Ivoire » est un nom propre : il garde son accent circonflexe
+  // dans la version anglaise (l'exonyme « Ivory Coast » n'est pas la forme
+  // officielle du pays).
+  'home.corridors.routes.abidjan.text',
 ])
 
 /**

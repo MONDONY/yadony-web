@@ -5,7 +5,7 @@ const { t } = useI18n()
 
 const props = withDefaults(
   defineProps<{
-    variant?: 'primary' | 'ghost'
+    variant?: 'primary' | 'ghost' | 'orange' | 'light' | 'ghost-dark' | 'navy'
     size?: 'md' | 'lg'
     to?: string
     href?: string
@@ -17,11 +17,16 @@ const props = withDefaults(
 
 const base =
   'inline-flex items-center justify-center gap-2 rounded-el font-semibold ' +
-  'transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary'
+  'transition-[color,background-color,border-color,transform] duration-150 active:scale-[0.96] ' +
+  'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary'
 
 const variants = {
   primary: 'bg-primary text-white hover:bg-primary-hover',
   ghost: 'border border-line text-ink hover:bg-sand',
+  orange: 'bg-orange text-navy-deep hover:bg-orange-hover',
+  light: 'bg-white text-navy hover:bg-sand',
+  'ghost-dark': 'border border-white/30 text-white hover:bg-white/10',
+  navy: 'bg-navy-deep text-white hover:bg-navy',
 } as const
 
 const sizes = { md: 'px-5 py-2.5 text-sm', lg: 'px-7 py-3.5 text-base' } as const

@@ -49,12 +49,10 @@ function onSubmit() {
 
 <template>
   <div>
+    <PageHero :title="t('contact.title')" :lead="t('contact.lead')" />
     <UiSection tone="white">
       <UiContainer>
-        <h1 class="max-w-[16ch] text-display-xl">{{ t('contact.title') }}</h1>
-        <p class="mt-6 max-w-prose text-lg text-ink-muted">{{ t('contact.lead') }}</p>
-
-        <div class="mt-8">
+        <div>
           <p class="text-sm text-ink-muted">{{ t('contact.emailLabel') }}</p>
           <a :href="`mailto:${contactEmail}`" class="mt-1 inline-block font-display text-lg font-semibold">{{ contactEmail }}</a>
         </div>

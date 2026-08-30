@@ -23,7 +23,7 @@ const quote = computeQuote({ weightKg: 5, pricePerKg: 12 })
         </tr>
         <tr class="border-b border-line font-semibold">
           <th scope="row" class="px-6 py-4">{{ t('pricing.example.senderPays') }}</th>
-          <td class="px-6 py-4 text-right text-terra">{{ n(quote.senderPays, 'currency') }}</td>
+          <td class="px-6 py-4 text-right text-orange-deep">{{ n(quote.senderPays, 'currency') }}</td>
         </tr>
         <tr>
           <th scope="row" class="px-6 py-4 font-normal text-ink-muted">{{ t('pricing.example.travelerEarns') }}</th>

@@ -15,7 +15,15 @@ export default {
           DEFAULT: 'rgb(var(--primary) / <alpha-value>)',
           hover: 'rgb(var(--primary-hover) / <alpha-value>)',
         },
-        terra: 'rgb(var(--terra) / <alpha-value>)',
+        navy: {
+          DEFAULT: 'rgb(var(--navy) / <alpha-value>)',
+          deep: 'rgb(var(--navy-deep) / <alpha-value>)',
+        },
+        orange: {
+          DEFAULT: 'rgb(var(--orange) / <alpha-value>)',
+          hover: 'rgb(var(--orange-hover) / <alpha-value>)',
+          deep: 'rgb(var(--orange-deep) / <alpha-value>)',
+        },
         ink: {
           DEFAULT: 'rgb(var(--ink) / <alpha-value>)',
           muted: 'rgb(var(--ink-muted) / <alpha-value>)',
@@ -33,7 +41,7 @@ export default {
         sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
       },
       fontSize: {
-        'display-xl': ['clamp(2.5rem, 6vw, 4.5rem)', { lineHeight: '1.02', letterSpacing: '-0.03em' }],
+        'display-xl': ['clamp(2.75rem, 7vw, 5.25rem)', { lineHeight: '1.02', letterSpacing: '-0.03em' }],
         'display-lg': ['clamp(2rem, 4.5vw, 3.25rem)', { lineHeight: '1.06', letterSpacing: '-0.025em' }],
         'display-md': ['clamp(1.5rem, 3vw, 2.25rem)', { lineHeight: '1.15', letterSpacing: '-0.02em' }],
       },

@@ -8,10 +8,21 @@ const travelerCtaHref = localePath({ path: '/comment-ca-marche', query: { role: 
 <template>
   <UiSection tone="white">
     <UiContainer>
-      <div class="rounded-card border border-line bg-sand-deep/40 px-8 py-14 sm:px-14">
-        <h2 class="max-w-[24ch] text-display-md">{{ t('home.traveler.title') }}</h2>
-        <p class="mt-5 max-w-prose text-ink-muted">{{ t('home.traveler.text') }}</p>
-        <UiButton :to="travelerCtaHref" size="lg" class="mt-8">{{ t('home.traveler.cta') }}</UiButton>
+      <div
+        class="overflow-hidden rounded-card bg-orange px-8 py-14 text-navy-deep sm:px-14"
+        :style="{
+          backgroundImage:
+            'radial-gradient(700px 340px at 90% -20%, rgb(255 255 255 / 0.28), transparent 60%)',
+        }"
+      >
+        <p class="font-display text-sm font-bold uppercase tracking-[0.18em] text-navy-deep/70">
+          {{ t('home.traveler.kicker') }}
+        </p>
+        <h2 class="mt-4 max-w-[24ch] text-display-md">{{ t('home.traveler.title') }}</h2>
+        <p class="mt-5 max-w-prose text-navy-deep/80">{{ t('home.traveler.text') }}</p>
+        <UiButton :to="travelerCtaHref" size="lg" variant="navy" class="mt-8">
+          {{ t('home.traveler.cta') }}
+        </UiButton>
       </div>
     </UiContainer>
   </UiSection>

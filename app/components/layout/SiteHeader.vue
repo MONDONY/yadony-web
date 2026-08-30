@@ -26,8 +26,15 @@ const links = computed(() => [
   <header class="sticky top-0 z-40 border-b border-line bg-surface/90 backdrop-blur">
     <UiContainer>
       <div class="flex h-16 items-center justify-between gap-6">
-        <NuxtLink :to="localePath('/')" class="font-display text-xl font-bold tracking-tight">
-          yadony
+        <NuxtLink :to="localePath('/')" class="shrink-0">
+          <img
+            src="/logos/logo-yadony-480.webp"
+            alt="Yadony"
+            width="480"
+            height="131"
+            class="h-8 w-auto"
+            loading="eager"
+          >
         </NuxtLink>
 
         <nav class="hidden items-center gap-7 md:flex" :aria-label="t('nav.mainLabel')">
@@ -41,7 +48,7 @@ const links = computed(() => [
 
         <div class="flex items-center gap-3">
           <LanguageSwitcher :href="switchHref" :target-locale="targetLocale" :label="switchLabel" />
-          <UiButton :to="`${localePath('/')}#telecharger`" class="hidden sm:inline-flex">
+          <UiButton :to="`${localePath('/')}#telecharger`" variant="orange" class="hidden sm:inline-flex">
             {{ t('nav.download') }}
           </UiButton>
           <button

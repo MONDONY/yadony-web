@@ -36,6 +36,7 @@ useHead({
     <ProblemComparison />
     <TrackingWalkthrough />
     <TrustPillars />
+    <CorridorsSeo />
     <TravelerBanner />
     <HomeFaq />
     <DownloadCta />

@@ -28,7 +28,7 @@ const rows = ['whatsapp', 'carrier', 'yadony'] as const
               v-for="row in rows"
               :key="row"
               class="border-b border-line"
-              :class="row === 'yadony' ? 'font-semibold text-ink' : 'text-ink-muted'"
+              :class="row === 'yadony' ? 'bg-orange/10 font-semibold text-ink' : 'text-ink-muted'"
             >
               <th scope="row" class="py-4 pr-6 font-normal">{{ t(`home.problem.rows.${row}.channel`) }}</th>
               <td class="py-4 pr-6">{{ t(`home.problem.rows.${row}.price`) }}</td>

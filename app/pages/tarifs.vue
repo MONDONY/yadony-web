@@ -21,12 +21,10 @@ useSeoMeta(
 
 <template>
   <div>
+    <PageHero :title="t('pricing.title')" :lead="t('pricing.lead')" />
     <UiSection tone="white">
       <UiContainer>
-        <h1 class="max-w-[18ch] text-display-xl">{{ t('pricing.title') }}</h1>
-        <p class="mt-6 max-w-prose text-lg text-ink-muted">{{ t('pricing.lead') }}</p>
-
-        <div class="mt-12 max-w-2xl">
+        <div class="max-w-2xl">
           <PricingExample />
         </div>
 

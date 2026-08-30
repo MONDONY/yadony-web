@@ -22,12 +22,10 @@ const sections = ['identity', 'escrow', 'cap', 'tracking', 'dispute', 'data', 'l
 
 <template>
   <div>
+    <PageHero :title="t('trust.title')" :lead="t('trust.lead')" />
     <UiSection tone="white">
       <UiContainer>
-        <h1 class="max-w-[24ch] text-display-xl">{{ t('trust.title') }}</h1>
-        <p class="mt-6 max-w-prose text-lg text-ink-muted">{{ t('trust.lead') }}</p>
-
-        <ProseBlock class="mt-12">
+        <ProseBlock>
           <template v-for="key in sections" :key="key">
             <h2>{{ t(`trust.sections.${key}.title`) }}</h2>
             <p>{{ t(`trust.sections.${key}.text`) }}</p>

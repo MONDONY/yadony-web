@@ -32,7 +32,22 @@
       "note": "Departing from Paris, Lyon and Marseille, to Dakar, Abidjan, Bamako and Douala.",
       "appStore": "Download on the App Store",
       "playStore": "Get it on Google Play",
-      "screenshotAlt": "Home screen of the yadony app showing the available trips"
+      "screenshotAlt": "Home screen of the yadony app showing the available trips",
+      "kicker": "The diaspora's app",
+      "stats": {
+        "scans": {
+          "figure": "4",
+          "label": "scans per parcel, from handover to delivery"
+        },
+        "identity": {
+          "figure": "100%",
+          "label": "of identities verified before a first parcel"
+        },
+        "escrow": {
+          "figure": "€0",
+          "label": "paid to the traveller before delivery is confirmed"
+        }
+      }
     },
     "problem": {
       "title": "Three ways to send a parcel. Only one of them is traceable.",
@@ -88,7 +103,8 @@
           "text": "Final scan, photo of the hand-delivery. The payment is released to the traveller at that point.",
           "alt": "Delivery screen with the hand-over confirmation photo"
         }
-      }
+      },
+      "kicker": "End-to-end tracking"
     },
     "trust": {
       "title": "Three things a WhatsApp group cannot guarantee you",
@@ -112,7 +128,8 @@
     "traveler": {
       "title": "Your suitcase has room to spare. It can pay for part of the trip.",
       "text": "You are flying to Abidjan and you will use only half of your baggage allowance. Ten kilos free, at €12 a kilo, comes to €120 on a flight you were taking anyway. You set your price, you choose what you agree to carry, and you keep all of it: the commission is paid by the sender, on top.",
-      "cta": "See how it works for travellers"
+      "cta": "See how it works for travellers",
+      "kicker": "For travellers"
     },
     "faq": {
       "title": "The questions people ask us before downloading",
@@ -161,7 +178,33 @@
     },
     "download": {
       "title": "The rest happens in the app",
-      "text": "Posting a parcel, comparing travellers, scanning, tracking, paying: it is all in there. This site exists only to explain how it works before you download it."
+      "text": "Posting a parcel, comparing travellers, scanning, tracking, paying: it is all in there. This site exists only to explain how it works before you download it.",
+      "screenshotAlt": "Activity screen of the Yadony app, with buttons to publish a trip or a parcel"
+    },
+    "corridors": {
+      "title": "Send a parcel from France to West and Central Africa",
+      "lead": "Yadony connects major French cities to the capitals where your family lives. A traveller is already heading the right way: your parcel rides in their suitcase.",
+      "routes": {
+        "dakar": {
+          "route": "Paris → Dakar",
+          "text": "The most active corridor: regular departures between the Paris region and Senegal."
+        },
+        "abidjan": {
+          "route": "Lyon → Abidjan",
+          "text": "Ship to Côte d'Ivoire from Lyon or Paris, at the price the traveller sets."
+        },
+        "bamako": {
+          "route": "Marseille → Bamako",
+          "text": "Mali from the south of France, without going through a classic carrier."
+        },
+        "douala": {
+          "route": "Paris → Douala",
+          "text": "Cameroon direct, with the same QR-code tracking at every step."
+        }
+      },
+      "outro": "Prices are set freely by travellers, per kilo. See {pricing} for a worked example, or read {howItWorks} before downloading the app.",
+      "outroPricing": "the pricing page",
+      "outroHow": "how it works"
     }
   },
   "howItWorks": {
@@ -447,6 +490,33 @@
           "text": "Traffic to and from the app is encrypted in transit. Identity verification data is encrypted at rest and kept apart from the rest of the database. Access to the data for a shipment is restricted to the two parties involved and, in the event of a dispute, to the team examining it. Every sensitive action is logged."
         }
       }
+    },
+    "cookies": {
+      "seo": {
+        "title": "Cookie policy",
+        "description": "How yadony.com uses cookies and local storage: no advertising trackers, only your own choices are remembered."
+      },
+      "title": "Cookie policy",
+      "intro": "This page describes what yadony.com stores on your device, why, and how to stay in control.",
+      "sections": {
+        "what": {
+          "title": "What a cookie is",
+          "text": "A cookie is a small file a website places on your device to remember information between visits. The browser's local storage plays a comparable role."
+        },
+        "current": {
+          "title": "What yadony.com uses today",
+          "text": "This site sets no advertising cookie, no third-party tracker, and embeds no analytics tool. The only information stored is your answer to the consent banner, kept in your browser's local storage."
+        },
+        "storage": {
+          "title": "Duration and scope",
+          "text": "Your choice stays on your device until you delete it, and is never sent to our servers or to third parties. If we ever add an analytics tool, this page will be updated and your consent requested before anything is activated."
+        },
+        "manage": {
+          "title": "Staying in control",
+          "text": "You can reopen the banner at any time with the button below or the “Manage cookies” link in the footer, and clear the stored choice through your browser settings."
+        }
+      },
+      "manageCta": "Reopen the cookie banner"
     }
   },
   "footer": {
@@ -456,7 +526,19 @@
     "legalNotice": "Legal notice",
     "terms": "Terms of use",
     "privacy": "Privacy policy",
-    "copyright": "© yadony. A matching service, not a carrier."
+    "copyright": "© yadony. A matching service, not a carrier.",
+    "navTitle": "Explore",
+    "legalTitle": "Legal",
+    "cookiesPolicy": "Cookie policy",
+    "manageCookies": "Manage cookies",
+    "proTitle": "Yadony Pro",
+    "proText": "Shipping regularly or running a business? Yadony Pro is the space built for professionals.",
+    "proCta": "Discover Yadony Pro",
+    "company": {
+      "name": "Yadony",
+      "line1": "Company registration in progress",
+      "line2": "Paris, France"
+    }
   },
   "error": {
     "seo": {
@@ -466,5 +548,15 @@
     "title": "This page does not exist",
     "lead": "The link may be outdated, or the address may contain a typo. Head back to the homepage to keep browsing.",
     "cta": "Back to homepage"
+  },
+  "cookies": {
+    "banner": {
+      "label": "Cookie information",
+      "title": "Your data, your choice",
+      "text": "This site uses no advertising cookies and no third-party trackers. Only your choice is stored on your device.",
+      "link": "Learn more",
+      "accept": "Accept",
+      "refuse": "Refuse"
+    }
   }
 }

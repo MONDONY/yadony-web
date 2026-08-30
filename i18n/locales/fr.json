@@ -32,7 +32,22 @@
       "note": "Au départ de Paris, Lyon et Marseille, vers Dakar, Abidjan, Bamako et Douala.",
       "appStore": "Télécharger sur l'App Store",
       "playStore": "Disponible sur Google Play",
-      "screenshotAlt": "Écran d'accueil de l'application yadony montrant les trajets disponibles"
+      "screenshotAlt": "Écran d'accueil de l'application yadony montrant les trajets disponibles",
+      "kicker": "L'app de la diaspora",
+      "stats": {
+        "scans": {
+          "figure": "4",
+          "label": "scans par colis, de la remise à la livraison"
+        },
+        "identity": {
+          "figure": "100 %",
+          "label": "des identités vérifiées avant le premier colis"
+        },
+        "escrow": {
+          "figure": "0 €",
+          "label": "versé au voyageur avant la livraison confirmée"
+        }
+      }
     },
     "problem": {
       "title": "Trois façons d'envoyer un colis. Une seule est traçable.",
@@ -88,7 +103,8 @@
           "text": "Scan final, photo de remise en main propre. Le paiement est alors libéré au voyageur.",
           "alt": "Écran de livraison avec photo de confirmation de remise"
         }
-      }
+      },
+      "kicker": "Suivi de bout en bout"
     },
     "trust": {
       "title": "Trois choses qu'un groupe WhatsApp ne peut pas vous garantir",
@@ -112,7 +128,8 @@
     "traveler": {
       "title": "Votre valise a de la place. Elle peut financer une partie du voyage.",
       "text": "Vous partez à Abidjan et vous n'utiliserez que la moitié de votre franchise bagage. Dix kilos libres, à 12 € le kilo, cela fait 120 € sur un vol que vous preniez déjà. Vous fixez votre prix, vous choisissez ce que vous acceptez de porter, et vous touchez la totalité : la commission est payée par l'expéditeur, en plus.",
-      "cta": "Voir le parcours voyageur"
+      "cta": "Voir le parcours voyageur",
+      "kicker": "Côté voyageurs"
     },
     "faq": {
       "title": "Les questions qu'on nous pose avant de télécharger",
@@ -161,7 +178,33 @@
     },
     "download": {
       "title": "Le reste se passe dans l'application",
-      "text": "Publier un colis, comparer les voyageurs, scanner, suivre, payer : tout s'y trouve. Ce site ne sert qu'à vous expliquer le fonctionnement avant que vous la téléchargiez."
+      "text": "Publier un colis, comparer les voyageurs, scanner, suivre, payer : tout s'y trouve. Ce site ne sert qu'à vous expliquer le fonctionnement avant que vous la téléchargiez.",
+      "screenshotAlt": "Écran Activités de l'app Yadony, avec les boutons publier un trajet et publier un colis"
+    },
+    "corridors": {
+      "title": "Envoyer un colis de la France vers l'Afrique de l'Ouest et centrale",
+      "lead": "Yadony relie les grandes villes françaises aux capitales où vit votre famille. Un voyageur part déjà dans la bonne direction : votre colis voyage dans sa valise.",
+      "routes": {
+        "dakar": {
+          "route": "Paris → Dakar",
+          "text": "Le corridor le plus actif : des départs réguliers entre l'Île-de-France et le Sénégal."
+        },
+        "abidjan": {
+          "route": "Lyon → Abidjan",
+          "text": "Envoyez vers la Côte d'Ivoire depuis Lyon ou Paris, au prix fixé par le voyageur."
+        },
+        "bamako": {
+          "route": "Marseille → Bamako",
+          "text": "Le Mali depuis le sud de la France, sans passer par un transporteur classique."
+        },
+        "douala": {
+          "route": "Paris → Douala",
+          "text": "Le Cameroun en direct, avec le même suivi par QR code à chaque étape."
+        }
+      },
+      "outro": "Les prix sont fixés librement par les voyageurs, au kilo. Consultez {pricing} pour un exemple chiffré, ou découvrez {howItWorks} avant de télécharger l'app.",
+      "outroPricing": "les tarifs",
+      "outroHow": "comment ça marche"
     }
   },
   "howItWorks": {
@@ -447,6 +490,33 @@
           "text": "Les échanges avec l'application sont chiffrés en transit. Les données de vérification d'identité sont chiffrées au repos et cloisonnées du reste de la base. L'accès aux données d'un envoi est restreint aux deux parties concernées et, en cas de litige, à l'équipe qui l'instruit. Toute action sensible est journalisée."
         }
       }
+    },
+    "cookies": {
+      "seo": {
+        "title": "Politique cookies",
+        "description": "Comment yadony.com utilise les cookies et le stockage local : aucun traceur publicitaire, uniquement la mémorisation de vos choix."
+      },
+      "title": "Politique cookies",
+      "intro": "Cette page décrit ce que yadony.com enregistre sur votre appareil, pourquoi, et comment garder la main dessus.",
+      "sections": {
+        "what": {
+          "title": "Ce qu'est un cookie",
+          "text": "Un cookie est un petit fichier déposé par un site sur votre appareil pour mémoriser des informations entre deux visites. Le stockage local du navigateur (localStorage) joue un rôle comparable."
+        },
+        "current": {
+          "title": "Ce que yadony.com utilise aujourd'hui",
+          "text": "Ce site ne dépose aucun cookie publicitaire, aucun traceur tiers et n'embarque aucun outil de mesure d'audience. La seule information enregistrée est votre réponse à la bannière de consentement, conservée dans le stockage local de votre navigateur."
+        },
+        "storage": {
+          "title": "Durée et portée",
+          "text": "Votre choix reste sur votre appareil jusqu'à ce que vous le supprimiez, et n'est jamais transmis à nos serveurs ni à des tiers. Si nous ajoutons un jour un outil de mesure d'audience, cette page sera mise à jour et votre consentement sera demandé avant toute activation."
+        },
+        "manage": {
+          "title": "Garder la main",
+          "text": "Vous pouvez rouvrir la bannière à tout moment avec le bouton ci-dessous ou le lien « Gérer les cookies » du pied de page, et effacer le choix mémorisé via les réglages de votre navigateur."
+        }
+      },
+      "manageCta": "Rouvrir la bannière cookies"
     }
   },
   "footer": {
@@ -456,7 +526,19 @@
     "legalNotice": "Mentions légales",
     "terms": "Conditions générales d'utilisation",
     "privacy": "Politique de confidentialité",
-    "copyright": "© yadony. Service de mise en relation, pas de transport."
+    "copyright": "© yadony. Service de mise en relation, pas de transport.",
+    "navTitle": "Explorer",
+    "legalTitle": "Légal",
+    "cookiesPolicy": "Politique cookies",
+    "manageCookies": "Gérer les cookies",
+    "proTitle": "Yadony Pro",
+    "proText": "Vous expédiez régulièrement ou gérez une activité ? Yadony Pro est l'espace dédié aux professionnels.",
+    "proCta": "Découvrir Yadony Pro",
+    "company": {
+      "name": "Yadony",
+      "line1": "Société en cours d'immatriculation",
+      "line2": "Paris, France"
+    }
   },
   "error": {
     "seo": {
@@ -466,5 +548,15 @@
     "title": "Cette page n'existe pas",
     "lead": "Le lien est peut-être obsolète, ou l'adresse comporte une erreur. Retournez à l'accueil pour continuer votre navigation.",
     "cta": "Retour à l'accueil"
+  },
+  "cookies": {
+    "banner": {
+      "label": "Information sur les cookies",
+      "title": "Vos données, votre choix",
+      "text": "Ce site n'utilise aucun cookie publicitaire ni traceur tiers. Seul votre choix est mémorisé sur votre appareil.",
+      "link": "En savoir plus",
+      "accept": "Accepter",
+      "refuse": "Refuser"
+    }
   }
 }

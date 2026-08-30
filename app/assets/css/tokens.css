@@ -1,9 +1,15 @@
 :root {
-  --primary: 11 95 255;
-  --primary-hover: 10 77 217;
-  /* Assombri par rapport au terracotta d'origine (217 106 58, contraste
-     3.45:1 sur blanc) pour atteindre 4.5:1 en texte sur fond clair. */
-  --terra: 184 90 49;
+  /* Couleurs tirées du logo Yadony : navy profond + orange. */
+  --primary: 24 43 92;
+  --primary-hover: 15 28 64;
+  --navy: 24 43 92;
+  --navy-deep: 10 20 48;
+  /* Orange du logo : réservé aux fonds sombres et aux aplats graphiques
+     (2.2:1 sur blanc — jamais en texte sur fond clair). */
+  --orange: 246 146 30;
+  --orange-hover: 228 128 15;
+  /* Variante assombrie pour le texte accentué sur fond clair (4.6:1). */
+  --orange-deep: 178 96 8;
   --ink: 10 37 64;
   --ink-muted: 84 80 74;
   --sand: 247 243 237;

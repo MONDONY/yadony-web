@@ -31,11 +31,10 @@ useSeoMeta(
 
 <template>
   <div>
+    <PageHero :title="t('howItWorks.title')" :lead="t('howItWorks.lead')" />
     <UiSection tone="white">
       <UiContainer>
-        <h1 class="max-w-[20ch] text-display-xl">{{ t('howItWorks.title') }}</h1>
-        <p class="mt-6 max-w-prose text-lg text-ink-muted">{{ t('howItWorks.lead') }}</p>
-        <RoleTabs :model-value="role" class="mt-10" @update:model-value="setRole" />
+        <RoleTabs :model-value="role" @update:model-value="setRole" />
         <JourneySteps :role="role" />
       </UiContainer>
     </UiSection>

@@ -12,10 +12,13 @@ const steps = [
 </script>
 
 <template>
-  <UiSection tone="white">
+  <UiSection tone="navy-deep">
     <UiContainer>
-      <h2 class="max-w-[18ch] text-display-lg">{{ t('home.tracking.title') }}</h2>
-      <p class="mt-5 max-w-prose text-lg text-ink-muted">{{ t('home.tracking.lead') }}</p>
+      <p class="font-display text-sm font-bold uppercase tracking-[0.18em] text-orange">
+        {{ t('home.tracking.kicker') }}
+      </p>
+      <h2 class="mt-4 max-w-[18ch] text-display-lg">{{ t('home.tracking.title') }}</h2>
+      <p class="mt-5 max-w-prose text-lg text-white/70">{{ t('home.tracking.lead') }}</p>
     </UiContainer>
 
     <ol
@@ -24,28 +27,20 @@ const steps = [
       :aria-label="t('home.tracking.scrollLabel')"
     >
       <li
-        v-for="step in steps"
+        v-for="(step, index) in steps"
         :key="step.key"
-        class="w-[268px] shrink-0 snap-start list-none sm:w-[300px]"
+        class="w-[248px] shrink-0 snap-start list-none sm:w-[272px]"
       >
-        <UiRevealOnScroll>
+        <UiRevealOnScroll :delay="index * 100">
           <article data-step>
-            <img
-              :src="step.image"
-              :alt="t(`home.tracking.steps.${step.key}.alt`)"
-              width="640"
-              height="1385"
-              loading="lazy"
-              decoding="async"
-              class="w-full rounded-card border border-line bg-sand"
-            >
-            <p data-step-number class="mt-5 font-display text-sm font-bold text-terra tabular-nums">
+            <UiPhoneFrame :src="step.image" :alt="t(`home.tracking.steps.${step.key}.alt`)" />
+            <p data-step-number class="mt-5 font-display text-sm font-bold text-orange tabular-nums">
               {{ step.number }}
             </p>
-            <h3 class="mt-1 font-display text-lg font-semibold">
+            <h3 class="mt-1 font-display text-lg font-semibold text-white">
               {{ t(`home.tracking.steps.${step.key}.label`) }}
             </h3>
-            <p class="mt-2 text-sm text-ink-muted">
+            <p class="mt-2 text-sm text-white/70">
               {{ t(`home.tracking.steps.${step.key}.text`) }}
             </p>
           </article>

@@ -7,4 +7,18 @@
 # yadony.com/pro (historique VPS + liens existants) doit continuer de mener
 # au bon endroit maintenant que la racine est servie par ce site.
 /pro https://pro.yadony.com 301
-/pro/* https://pro.yadony.com/:splat 301
+/pro/* https://pro.yadony.com/pro/:splat 301
+
+# Chemins dynamiques que l'ancien vhost racine du VPS servait et que des
+# liens déjà émis (QR codes, SMS, partages réseaux sociaux, app mobile)
+# continuent d'utiliser. Le vhost pro.yadony.com du VPS sert les mêmes
+# routes. 308 pour l'API : préserve la méthode HTTP (un 301 dégraderait un
+# POST en GET).
+/tracking/* https://pro.yadony.com/tracking/:splat 301
+/annonce/* https://pro.yadony.com/annonce/:splat 301
+/siragbe/* https://pro.yadony.com/siragbe/:splat 301
+/api/* https://pro.yadony.com/api/:splat 308
+
+# Page de suppression de compte exigée par les fiches store, servie en
+# statique par le VPS.
+/legal/account-deletion https://pro.yadony.com/legal/account-deletion 301

@@ -1150,7 +1150,7 @@
     "cookies": {
       "seo": {
         "title": "Politique cookies",
-        "description": "Comment yadony.com utilise les cookies et le stockage local : aucun traceur publicitaire, uniquement la mémorisation de vos choix."
+        "description": "Comment yadony.com utilise les cookies et le stockage local : aucun traceur publicitaire, une mesure d'audience sans cookie, et la mémorisation de vos choix."
       },
       "title": "Politique cookies",
       "intro": "Cette page décrit ce que yadony.com enregistre sur votre appareil, pourquoi, et comment garder la main dessus.",
@@ -1161,11 +1161,11 @@
         },
         "current": {
           "title": "Ce que yadony.com utilise aujourd'hui",
-          "text": "Ce site ne dépose aucun cookie publicitaire, aucun traceur tiers et n'embarque aucun outil de mesure d'audience. La seule information enregistrée est votre réponse à la bannière de consentement, conservée dans le stockage local de votre navigateur."
+          "text": "Ce site ne dépose aucun cookie publicitaire et aucun traceur tiers. La fréquentation est mesurée avec Cloudflare Web Analytics, un outil sans cookie : il ne dépose rien sur votre appareil, ne crée aucun identifiant, ne suit pas les visiteurs d'un site à l'autre et ne collecte que des statistiques agrégées (pages vues, pays, type d'appareil). Ce type de mesure est exempté de consentement par la CNIL. La seule information enregistrée sur votre appareil est votre réponse à la bannière, conservée dans le stockage local de votre navigateur."
         },
         "storage": {
           "title": "Durée et portée",
-          "text": "Votre choix reste sur votre appareil jusqu'à ce que vous le supprimiez, et n'est jamais transmis à nos serveurs ni à des tiers. Si nous ajoutons un jour un outil de mesure d'audience, cette page sera mise à jour et votre consentement sera demandé avant toute activation."
+          "text": "Votre choix reste sur votre appareil jusqu'à ce que vous le supprimiez, et n'est jamais transmis à nos serveurs ni à des tiers. Les statistiques de Cloudflare Web Analytics sont anonymes et agrégées : elles ne permettent pas de vous identifier. Si nous ajoutons un jour un outil qui dépose des cookies ou suit les visiteurs, cette page sera mise à jour et votre consentement sera demandé avant toute activation."
         },
         "manage": {
           "title": "Garder la main",

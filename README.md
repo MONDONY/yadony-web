@@ -70,9 +70,25 @@ Les captures affichées sur le site vivent dans `public/screenshots/`, servies t
 | Commande de build | `pnpm generate` |
 | Répertoire de sortie | `.output/public` |
 | Version de Node | `22` |
-| Variables d'environnement | aucune |
+| Variables d'environnement | `CF_BEACON_TOKEN` (facultatif, voir ci-dessous) |
 
 La connexion du dépôt GitHub au projet Cloudflare Pages est une action manuelle dans le tableau de bord Cloudflare — elle ne peut pas être scriptée depuis ce dépôt et revient au porteur du projet. Une fois le dépôt connecté avec les paramètres ci-dessus, chaque push sur `main` déclenche un déploiement.
+
+### Mesure d'audience — Cloudflare Web Analytics
+
+La fréquentation est mesurée avec Cloudflare Web Analytics : sans cookie,
+sans identifiant, exempté de consentement par la CNIL, et déjà décrit tel
+quel sur la page `/cookies` du site. Deux façons de l'activer, au choix :
+
+1. **Recommandée — dashboard Cloudflare** : dans le projet Pages, ouvrir
+   *Settings → Web Analytics* et activer. Cloudflare injecte la balise
+   automatiquement à l'edge, rien à changer dans ce dépôt.
+2. **Par variable de build** : créer un site Web Analytics dans le dashboard
+   (*Analytics → Web Analytics*), copier le token de la balise, puis définir
+   `CF_BEACON_TOKEN=<token>` dans les variables d'environnement du build
+   Pages. `nuxt.config.ts` n'émet la balise que si ce token est présent.
+
+Ne pas activer les deux à la fois (double comptage).
 
 ---
 

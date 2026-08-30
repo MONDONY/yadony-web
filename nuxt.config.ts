@@ -1,3 +1,10 @@
+// Cloudflare Web Analytics : mesure d'audience sans cookie (exemptée de
+// consentement par la CNIL). La balise n'est émise que si le token est fourni
+// au moment du build : CF_BEACON_TOKEN=xxx pnpm generate.
+// Alternative sans code : activer Web Analytics dans le dashboard Cloudflare
+// Pages (injection automatique de la même balise à l'edge).
+const cfBeaconToken = process.env.CF_BEACON_TOKEN
+
 export default defineNuxtConfig({
   compatibilityDate: '2026-05-15',
   devtools: { enabled: true },
@@ -52,6 +59,15 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
+      script: cfBeaconToken
+        ? [
+            {
+              src: 'https://static.cloudflareinsights.com/beacon.min.js',
+              defer: true,
+              'data-cf-beacon': JSON.stringify({ token: cfBeaconToken }),
+            },
+          ]
+        : [],
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },

@@ -75,6 +75,11 @@ const properNounPaths = [
   'footer.proTitle',
   // Un numéral seul s'écrit pareil dans les deux langues.
   'home.hero.stats.scans.figure',
+  // L'adresse du siège social ne se traduit pas.
+  'footer.company.line1',
+  // « Commission » s'écrit pareil dans les deux langues (sous-titre de
+  // l'article 7 des CGU).
+  'legal.cgu.articles[6].blocks[3].sub',
 ]
 
 /**
@@ -107,6 +112,14 @@ const markerExemptPaths = new Set([
   // dans la version anglaise (l'exonyme « Ivory Coast » n'est pas la forme
   // officielle du pays).
   'home.corridors.routes.abidjan.text',
+  // Textes légaux anglais citant des noms propres accentués qui ne se
+  // traduisent pas : « Côte d'Ivoire » et « RCS Créteil » (registre du
+  // commerce du siège social).
+  'legal.mentionsLegales.sections.editor.text',
+  'legal.cgu.articles[13].blocks[1].p[0]',
+  'legal.cgu.articles[20].blocks[0].ul[4]',
+  'legal.confidentialite.articles[7].blocks[3].p[0]',
+  'legal.confidentialite.articles[10].blocks[1].p[1]',
 ])
 
 /**

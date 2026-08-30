@@ -2,3 +2,9 @@
 # WebView : elles doivent répondre. Redirections 301 vers les pages réelles.
 /legal/terms /cgu 301
 /legal/privacy /confidentialite 301
+
+# L'espace pro vit sur le VPS, exposé via pro.yadony.com. L'ancienne adresse
+# yadony.com/pro (historique VPS + liens existants) doit continuer de mener
+# au bon endroit maintenant que la racine est servie par ce site.
+/pro https://pro.yadony.com 301
+/pro/* https://pro.yadony.com/:splat 301

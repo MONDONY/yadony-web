@@ -6,7 +6,7 @@ const { t } = useI18n()
 const p = useLocalePath()
 const { reopen } = useCookieConsent()
 
-const YADONY_PRO_URL = 'https://yadony.com/pro'
+const YADONY_PRO_URL = 'https://pro.yadony.com'
 </script>
 
 <template>

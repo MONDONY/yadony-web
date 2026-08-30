@@ -32,6 +32,14 @@ test('le ruban du parcours QR est atteignable et défilable au clavier', async (
   // sont conventionnellement liés au défilement vertical du document par
   // les navigateurs et n'ont aucun effet ici ; Flèche droite/gauche est le
   // raccourci natif pertinent pour un ruban horizontal.
+  //
+  // Depuis la refonte, les quatre cartes tiennent entièrement dans un
+  // viewport desktop : il n'y a alors rien à faire défiler, et c'est le
+  // comportement voulu. Le défilement clavier n'est exigé que lorsque le
+  // contenu déborde réellement (mobile, fenêtres étroites).
+  const overflows = await strip.evaluate((el) => el.scrollWidth > el.clientWidth)
+  if (!overflows) return
+
   const before = await strip.evaluate((el) => el.scrollLeft)
   await page.keyboard.press('ArrowRight')
   await expect(async () => {

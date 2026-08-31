@@ -8,7 +8,8 @@
     "download": "Télécharger l'app",
     "mainLabel": "Navigation principale",
     "mobileLabel": "Navigation mobile",
-    "menu": "Menu"
+    "menu": "Menu",
+    "corridors": "Envoyer un colis"
   },
   "a11y": {
     "skipToContent": "Aller au contenu",
@@ -1221,6 +1222,133 @@
       "title": "L'application arrive",
       "text": "Yadony sera très prochainement disponible sur l'App Store et Google Play. Revenez dans quelques jours — le site, lui, est déjà là.",
       "close": "Compris"
+    }
+  },
+  "corridorPages": {
+    "hub": {
+      "seo": {
+        "title": "Envoyer un colis en Afrique par un voyageur vérifié",
+        "description": "Paris–Dakar, Lyon–Abidjan, Marseille–Bamako, Paris–Douala : confiez votre colis à un voyageur vérifié, payez sous séquestre, suivez chaque scan."
+      },
+      "title": "Envoyer un colis en Afrique, corridor par corridor",
+      "lead": "Yadony relie les villes françaises aux capitales d'Afrique de l'Ouest et centrale. Choisissez votre corridor : chaque page détaille les prix, les délais et le fonctionnement exact du suivi.",
+      "listLabel": "Corridors desservis",
+      "cardCta": "Voir le corridor"
+    },
+    "common": {
+      "othersTitle": "Les autres corridors",
+      "faqTitle": "Questions fréquentes sur ce corridor",
+      "howTitle": "Comment ça marche",
+      "priceTitle": "Combien ça coûte",
+      "delayTitle": "Quels délais prévoir",
+      "safetyTitle": "Suivi et sécurité",
+      "backToHub": "Tous les corridors"
+    },
+    "pages": {
+      "parisDakar": {
+        "seo": {
+          "title": "Envoyer un colis de Paris à Dakar par un voyageur vérifié",
+          "description": "Un voyageur vérifié qui part déjà pour Dakar emporte votre colis : prix au kilo fixé par le voyageur, paiement bloqué jusqu'à la livraison, suivi par QR code."
+        },
+        "title": "Envoyer un colis de Paris à Dakar",
+        "lead": "Paris–Dakar est le corridor le plus actif de Yadony : la diaspora sénégalaise d'Île-de-France envoie chaque semaine des colis à Dakar, et des voyageurs font le trajet dans les deux sens toute l'année.",
+        "how": "Publiez votre colis dans l'app avec son poids, sa description et sa photo. Les voyageurs vérifiés qui partent de Paris vers Dakar voient votre demande et proposent leur prix au kilo. Vous choisissez, vous remettez le colis en main propre en région parisienne, et votre proche le récupère à Dakar auprès du voyageur.",
+        "price": "Le prix au kilo est fixé librement par chaque voyageur selon son vol et sa franchise bagage. Vous comparez les annonces avant de choisir. Une commission de service (5 % actuellement, toujours affichée avant paiement) est prélevée sur la transaction.",
+        "delay": "Un vol direct Paris–Dakar dure environ 5 h 30. Votre colis arrive donc le jour du vol du voyageur : dès la remise, vous connaissez la date exacte, et le rendez-vous de récupération à Dakar se cale dans les jours qui suivent l'atterrissage.",
+        "safety": "Identité du voyageur vérifiée avant le premier colis, paiement bloqué chez Stripe jusqu'à la confirmation de livraison par le destinataire, quatre scans QR entre la remise à Paris et la livraison à Dakar. Votre proche suit le colis depuis une simple page web, sans compte.",
+        "faq": [
+          {
+            "question": "Combien coûte un envoi de colis Paris–Dakar ?",
+            "answer": "C'est le voyageur qui fixe son prix au kilo — vous comparez les annonces avant de choisir. Pour un colis de 5 kg chez un voyageur à 12 €/kg, vous payez 60 € ; la commission de service (5 % actuellement) est prélevée sur la transaction et le voyageur reçoit 57 €."
+          },
+          {
+            "question": "Combien de temps met un colis pour arriver à Dakar ?",
+            "answer": "Le temps du vol du voyageur — environ 5 h 30 en direct — plus le rendez-vous de remise à Dakar. Vous voyez la date de départ avant de réserver, donc vous savez dès le début quand votre colis arrive."
+          },
+          {
+            "question": "Comment mon proche récupère-t-il le colis à Dakar ?",
+            "answer": "Le voyageur et le destinataire conviennent d'un rendez-vous. À la remise, le voyageur scanne le code QR du colis et prend une photo ; le destinataire confirme avec un code reçu par SMS, ce qui déclenche le paiement du voyageur."
+          }
+        ]
+      },
+      "lyonAbidjan": {
+        "seo": {
+          "title": "Envoyer un colis de Lyon à Abidjan par un voyageur vérifié",
+          "description": "Confiez votre colis à un voyageur vérifié qui part de Lyon pour Abidjan : prix au kilo transparent, séquestre jusqu'à la livraison, suivi par QR code."
+        },
+        "title": "Envoyer un colis de Lyon à Abidjan",
+        "lead": "La communauté ivoirienne de Lyon et de sa région n'a plus besoin de passer par Paris : des voyageurs relient directement Lyon à Abidjan, et votre colis voyage dans leur valise.",
+        "how": "Décrivez votre colis dans l'app — poids, contenu, photo, valeur déclarée. Les voyageurs vérifiés au départ de Lyon (ou de Paris si vous préférez élargir) proposent leur prix. Après acceptation, vous remettez le colis en main propre et chaque étape est scannée jusqu'à Abidjan.",
+        "price": "Chaque voyageur annonce son prix au kilo ; c'est souvent plus avantageux qu'un transporteur classique pour les colis de quelques kilos, et vous savez exactement qui transporte. La commission de service (5 % actuellement) est affichée avant que vous ne validiez.",
+        "delay": "Comptez environ 6 h 30 de vol direct Lyon–Abidjan. Le colis arrive avec le voyageur : la date est connue dès la réservation, sans fourchette floue de plusieurs semaines.",
+        "safety": "Vérification d'identité obligatoire, paiement sous séquestre Stripe libéré seulement après confirmation du destinataire, quatre scans QR horodatés et géolocalisés. En cas de problème, vous avez 48 h pour ouvrir un litige, instruit sous 72 h sur preuves.",
+        "faq": [
+          {
+            "question": "Y a-t-il souvent des voyageurs entre Lyon et Abidjan ?",
+            "answer": "Lyon–Abidjan fait partie des corridors de lancement de Yadony. Si aucun voyageur ne part de Lyon aux dates voulues, l'app vous montre aussi les départs de Paris vers Abidjan pour élargir le choix."
+          },
+          {
+            "question": "Que puis-je envoyer à Abidjan ?",
+            "answer": "Tout ce qui est légal et déclaré : vêtements, médicaments non réglementés, documents non officiels, produits du quotidien. Sont interdits notamment : drogues, armes, contrefaçons, animaux vivants et documents d'identité. Le voyageur voit votre déclaration complète avant d'accepter."
+          },
+          {
+            "question": "Comment le paiement est-il protégé ?",
+            "answer": "Vous payez à l'acceptation, mais l'argent est bloqué chez Stripe : le voyageur n'est payé qu'après la confirmation de livraison par le destinataire, avec un code reçu par SMS. En cas d'annulation avant la remise, vous êtes remboursé intégralement."
+          }
+        ]
+      },
+      "marseilleBamako": {
+        "seo": {
+          "title": "Envoyer un colis de Marseille à Bamako par un voyageur vérifié",
+          "description": "Un voyageur vérifié qui part de Marseille pour Bamako transporte votre colis : prix fixé par le voyageur, paiement bloqué jusqu'à la livraison, suivi complet."
+        },
+        "title": "Envoyer un colis de Marseille à Bamako",
+        "lead": "Depuis Marseille et tout le sud de la France, la communauté malienne envoie ses colis à Bamako sans détour : un voyageur qui fait déjà le trajet les emporte, avec un vrai suivi à chaque étape.",
+        "how": "Créez votre demande dans l'app avec le poids et la description du colis. Un voyageur vérifié partant de Marseille vers Bamako l'accepte, vous fixez ensemble un rendez-vous de remise, et le colis est scanné au départ, en transit et à l'arrivée.",
+        "price": "Le prix au kilo est celui qu'annonce le voyageur — pas de grille cachée, pas de suppléments découverts au guichet. Une commission de service (5 % actuellement) est prélevée sur la transaction, affichée avant paiement.",
+        "delay": "Le vol Marseille–Bamako dure environ 5 h 30 en direct. Votre colis arrive le jour où le voyageur atterrit ; la remise au destinataire se fait dans la foulée, au rendez-vous convenu dans l'app.",
+        "safety": "Chaque voyageur passe une vérification d'identité avec détection de vivacité avant de pouvoir transporter. Le paiement reste sous séquestre jusqu'au code de confirmation du destinataire, et l'historique des scans fait foi en cas de litige.",
+        "faq": [
+          {
+            "question": "Combien coûte un envoi Marseille–Bamako ?",
+            "answer": "Le voyageur fixe son prix au kilo et vous le voyez avant de réserver. Exemple : 5 kg à 12 €/kg = 60 € payés, dont une commission de service de 5 % (3 €) prélevée sur la transaction ; le voyageur reçoit 57 €."
+          },
+          {
+            "question": "Mon proche à Bamako doit-il installer l'application ?",
+            "answer": "Non. Le destinataire suit le colis depuis une simple page web, même sur un téléphone basique en connexion lente, et confirme la réception avec un code reçu par SMS."
+          },
+          {
+            "question": "Et si le voyageur annule son trajet ?",
+            "answer": "Tous les expéditeurs sont remboursés intégralement et automatiquement (3 à 5 jours ouvrés), et Yadony vous propose un voyageur de remplacement dans les 72 heures."
+          }
+        ]
+      },
+      "parisDouala": {
+        "seo": {
+          "title": "Envoyer un colis de Paris à Douala par un voyageur vérifié",
+          "description": "Envoyez vos colis au Cameroun avec un voyageur vérifié Paris–Douala : prix au kilo transparent, séquestre Stripe, quatre scans QR jusqu'à la livraison."
+        },
+        "title": "Envoyer un colis de Paris à Douala",
+        "lead": "Pour la diaspora camerounaise, Paris–Douala est le chemin le plus direct : un voyageur vérifié qui prend ce vol emporte votre colis et votre famille le récupère en main propre, preuve de livraison à l'appui.",
+        "how": "Publiez le colis dans l'app — poids, contenu, photos, coordonnées du destinataire à Douala. Un voyageur vérifié l'accepte, vous le lui remettez en région parisienne, et vous suivez les scans jusqu'à la remise finale, photo comprise.",
+        "price": "Le prix dépend du voyageur et de sa franchise bagage : chacun annonce son tarif au kilo et vous choisissez. La commission de service (5 % actuellement) est prélevée sur la transaction et toujours affichée avant que vous ne payiez.",
+        "delay": "Environ 6 h 30 de vol direct Paris–Douala. La date d'arrivée est celle du vol du voyageur, connue avant la réservation — vous pouvez prévenir votre famille du jour exact dès le départ.",
+        "safety": "Identités vérifiées des deux côtés, valeur déclarée plafonnée à 500 €, paiement séquestré jusqu'au code de confirmation du destinataire, quatre scans QR de Paris à Douala. Le destinataire suit tout depuis une page web, sans compte.",
+        "faq": [
+          {
+            "question": "Puis-je envoyer un colis à Yaoundé plutôt qu'à Douala ?",
+            "answer": "Le corridor dessert Douala, où le voyageur atterrit. La remise finale se fait au rendez-vous convenu entre le voyageur et votre destinataire ; si votre proche est à Yaoundé, il peut convenir d'un point de rencontre avec le voyageur, mais la livraison de référence reste Douala."
+          },
+          {
+            "question": "Quelle est la valeur maximale d'un colis ?",
+            "answer": "La valeur déclarée est plafonnée à 500 €. C'est le montant de référence en cas de litige, et la responsabilité du voyageur est engagée à hauteur de cette valeur déclarée."
+          },
+          {
+            "question": "Comment savoir où en est mon colis ?",
+            "answer": "Quatre scans jalonnent le trajet : remise, départ, transit, arrivée. Chaque scan est horodaté et géolocalisé, et vous comme le destinataire voyez la même fiche de suivi en temps réel."
+          }
+        ]
+      }
     }
   }
 }

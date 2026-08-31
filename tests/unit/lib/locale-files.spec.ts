@@ -120,6 +120,9 @@ const markerExemptPaths = new Set([
   'legal.cgu.articles[20].blocks[0].ul[4]',
   'legal.confidentialite.articles[7].blocks[3].p[0]',
   'legal.confidentialite.articles[10].blocks[1].p[1]',
+  // « Yaoundé » garde son accent dans la version anglaise (nom propre).
+  'corridorPages.pages.parisDouala.faq[0].question',
+  'corridorPages.pages.parisDouala.faq[0].answer',
 ])
 
 /**

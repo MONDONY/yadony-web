@@ -32,7 +32,8 @@ const YADONY_PRO_URL = 'https://pro.yadony.com'
 
         <nav :aria-label="t('footer.navLabel')" class="text-sm">
           <p class="font-display font-semibold text-white">{{ t('footer.navTitle') }}</p>
-          <NuxtLink :to="p('/comment-ca-marche')" class="mt-3 block py-1 text-white/65 hover:text-white">{{ t('nav.howItWorks') }}</NuxtLink>
+          <NuxtLink :to="p('/envoyer-colis')" class="mt-3 block py-1 text-white/65 hover:text-white">{{ t('nav.corridors') }}</NuxtLink>
+          <NuxtLink :to="p('/comment-ca-marche')" class="block py-1 text-white/65 hover:text-white">{{ t('nav.howItWorks') }}</NuxtLink>
           <NuxtLink :to="p('/tarifs')" class="block py-1 text-white/65 hover:text-white">{{ t('nav.pricing') }}</NuxtLink>
           <NuxtLink :to="p('/securite')" class="block py-1 text-white/65 hover:text-white">{{ t('nav.trust') }}</NuxtLink>
           <NuxtLink :to="p('/a-propos')" class="block py-1 text-white/65 hover:text-white">{{ t('nav.about') }}</NuxtLink>

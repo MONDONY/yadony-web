@@ -15,6 +15,7 @@ const switchLabel = computed(() =>
 )
 
 const links = computed(() => [
+  { to: '/envoyer-colis', label: t('nav.corridors') },
   { to: '/comment-ca-marche', label: t('nav.howItWorks') },
   { to: '/tarifs', label: t('nav.pricing') },
   { to: '/securite', label: t('nav.trust') },

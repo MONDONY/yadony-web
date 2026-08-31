@@ -19,7 +19,7 @@ const quote = computeQuote({ weightKg: 5, pricePerKg: 12 })
         </tr>
         <tr class="border-b border-line">
           <th scope="row" class="px-6 py-4 font-normal text-ink-muted">{{ t('pricing.example.commission') }}</th>
-          <td class="px-6 py-4 text-right">{{ n(quote.commission, 'currency') }}</td>
+          <td class="px-6 py-4 text-right text-ink-muted">{{ t('pricing.example.commissionValue') }}</td>
         </tr>
         <tr class="border-b border-line font-semibold">
           <th scope="row" class="px-6 py-4">{{ t('pricing.example.senderPays') }}</th>
@@ -27,7 +27,7 @@ const quote = computeQuote({ weightKg: 5, pricePerKg: 12 })
         </tr>
         <tr>
           <th scope="row" class="px-6 py-4 font-normal text-ink-muted">{{ t('pricing.example.travelerEarns') }}</th>
-          <td class="px-6 py-4 text-right">{{ n(quote.travelerEarns, 'currency') }}</td>
+          <td class="px-6 py-4 text-right text-ink-muted">{{ t('pricing.example.travelerEarnsValue') }}</td>
         </tr>
       </tbody>
     </table>

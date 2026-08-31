@@ -143,7 +143,7 @@
         {
           "id": "prix",
           "question": "How much does it cost to send something?",
-          "answer": "The traveller sets their price per kilo according to their route and what they agree to carry. A service commission — 5% as of today, always shown before you pay — is deducted from the transaction. For a 5 kg parcel with a traveller at €12/kg: you pay €60, the commission is €3, the traveller receives €57."
+          "answer": "The traveller sets their price per kilo according to their route and what they agree to carry. A service commission (5% as of today, always shown before you pay) is deducted from the transaction. For a 5 kg parcel with a traveller at €12/kg: you pay €60, the commission is €3, the traveller receives €57."
         },
         {
           "id": "interdits",
@@ -163,7 +163,7 @@
         {
           "id": "gain-voyageur",
           "question": "How much does a traveller earn?",
-          "answer": "The price they advertised, minus the service commission (5% as of today), deducted automatically from the transaction. For an advertised €60, the traveller receives €57 — and nothing is paid out before delivery is confirmed."
+          "answer": "The price they advertised, minus the service commission (5% as of today), deducted automatically from the transaction. For an advertised €60, the traveller receives €57, and nothing is paid out before delivery is confirmed."
         },
         {
           "id": "douane",
@@ -273,7 +273,7 @@
       "description": "The traveller sets their price per kilo; a service commission (currently 5%) is deducted from each transaction. A full worked example for a 5 kg parcel Paris → Abidjan."
     },
     "title": "The traveller sets the price. The commission is transparent.",
-    "lead": "There is no rate card at Yadony, because we are not the ones doing the carrying. The price per kilo is the one the traveller advertises. The only thing we deduct is a service commission — 5% at the time of writing, always shown before you confirm. In the event of a refund, it is never kept.",
+    "lead": "There is no rate card at Yadony, because we are not the ones doing the carrying. The price per kilo is the one the traveller advertises. The only thing we deduct is a service commission: 5% at the time of writing, always shown before you confirm. In the event of a refund, it is never kept.",
     "cap": "The declared value of a parcel is capped at €{amount}. That is the reference amount used to settle a dispute; insurance for the parcel is not included in the commission.",
     "example": {
       "caption": "A 5 kg parcel, Paris → Abidjan, with a traveller at €12 per kilo",
@@ -317,7 +317,7 @@
       },
       "data": {
         "title": "Your data",
-        "text": "ID documents are handled by Stripe Identity, stored encrypted and kept apart from the rest of the database. The other party to a shipment sees your first name, your profile photo, the status of your verification and the details of the parcel concerned — nothing more. The data for a shipment is kept as long as handling a possible dispute requires, then archived. The details are in the privacy policy."
+        "text": "ID documents are handled by Stripe Identity, stored encrypted and kept apart from the rest of the database. The other party to a shipment sees your first name, your profile photo, the status of your verification and the details of the parcel concerned, nothing more. The data for a shipment is kept as long as handling a possible dispute requires, then archived. The details are in the privacy policy."
       },
       "limits": {
         "title": "What we do not guarantee",
@@ -380,7 +380,7 @@
       "sections": {
         "editor": {
           "title": "Site publisher",
-          "text": "The yadony.com website is published by YADONY SAS, a simplified joint-stock company whose registration is in progress, with a share capital of €10, whose registered office is at 7 avenue Pablo Picasso, Appartement 375, 94120 Fontenay-sous-Bois, France. SIREN: 108 733 510 — RCS Créteil 108 733 510. Contact: contact{'@'}yadony.com — DPO: dpo{'@'}yadony.com."
+          "text": "The yadony.com website is published by YADONY SAS, a simplified joint-stock company whose registration is in progress, with a share capital of €10, whose registered office is at 7 avenue Pablo Picasso, Appartement 375, 94120 Fontenay-sous-Bois, France. SIREN: 108 733 510, RCS Créteil 108 733 510. Contact: contact{'@'}yadony.com. DPO: dpo{'@'}yadony.com."
         },
         "publication": {
           "title": "Publication director",
@@ -656,7 +656,7 @@
           "blocks": [
             {
               "p": [
-                "Yadony sends you notifications through the application (primary channel) and by SMS (backup channel). For the 3 critical events — payment received, delivery confirmed, dispute opened — if your phone does not acknowledge receipt within 60 seconds, an SMS is sent automatically. Two different SMS operators ensure continuity in case of outage."
+                "Yadony sends you notifications through the application (primary channel) and by SMS (backup channel). For the 3 critical events (payment received, delivery confirmed, dispute opened), if your phone does not acknowledge receipt within 60 seconds, an SMS is sent automatically. Two different SMS operators ensure continuity in case of outage."
               ]
             }
           ]
@@ -724,7 +724,7 @@
                 "Form: simplified joint-stock company (SAS)",
                 "Share capital: €10",
                 "Registered office: 7 avenue Pablo Picasso, Appartement 375, 94120 Fontenay-sous-Bois, France",
-                "SIREN: 108 733 510 — Companies register: RCS Créteil 108 733 510",
+                "SIREN: 108 733 510, Companies register: RCS Créteil 108 733 510",
                 "Publication director: Mr Dramane DIAKITE, President",
                 "Contact: contact{'@'}yadony.com",
                 "DPO: dpo{'@'}yadony.com",
@@ -742,7 +742,7 @@
         "description": "How Yadony protects your data: minimal internal data, certified partners (Firebase, Stripe, Cloudflare), retention periods and GDPR rights."
       },
       "title": "Privacy policy",
-      "intro": "Yadony is a mobile marketplace connecting travellers with spare luggage space to senders wishing to send parcels to their relatives. Our service covers corridors from Europe, the United States, Canada and Africa to all the destinations we serve. We designed Yadony around one core principle: we keep only the strict minimum of personal data internally. Sensitive data — identity, authentication, official documents — is entrusted to trusted, globally recognised specialised partners who process it with a level of security and compliance we could not reach alone. By using Yadony, you accept the practices described in this document. This English version is provided for convenience; the French version prevails.",
+      "intro": "Yadony is a mobile marketplace connecting travellers with spare luggage space to senders wishing to send parcels to their relatives. Our service covers corridors from Europe, the United States, Canada and Africa to all the destinations we serve. We designed Yadony around one core principle: we keep only the strict minimum of personal data internally. Sensitive data (identity, authentication, official documents) is entrusted to trusted, globally recognised specialised partners who process it with a level of security and compliance we could not reach alone. By using Yadony, you accept the practices described in this document. This English version is provided for convenience; the French version prevails.",
       "articles": [
         {
           "title": "1. Who is responsible for your data?",
@@ -761,7 +761,7 @@
           "blocks": [
             {
               "p": [
-                "Yadony stores internally only the information needed for your user profile. All sensitive data — identity, authentication, official documents, images — is processed and stored directly by specialised partners. Yadony never sees your identity documents, your face, or your bank details."
+                "Yadony stores internally only the information needed for your user profile. All sensitive data (identity, authentication, official documents, images) is processed and stored directly by specialised partners. Yadony never sees your identity documents, your face, or your bank details."
               ]
             },
             {
@@ -770,10 +770,10 @@
                 "The only data stored in our own systems is your public profile information:"
               ],
               "ul": [
-                "First and last name — displaying your identity on your profile and in transactions",
-                "E-mail address — identifying you and sending you transaction summaries",
-                "Date of birth — verifying that you are an adult (18 minimum)",
-                "City of residence — making it easier to match you with travellers near you"
+                "First and last name: displaying your identity on your profile and in transactions",
+                "E-mail address: identifying you and sending you transaction summaries",
+                "Date of birth: verifying that you are an adult (18 minimum)",
+                "City of residence: making it easier to match you with travellers near you"
               ]
             },
             {
@@ -792,7 +792,7 @@
               ]
             },
             {
-              "sub": "3.1 Google Firebase — Authentication and account security",
+              "sub": "3.1 Google Firebase: authentication and account security",
               "p": [
                 "The entire authentication layer is handled by Google Firebase, one of the most secure infrastructures in the world. Firebase handles:"
               ],
@@ -810,9 +810,9 @@
               ]
             },
             {
-              "sub": "3.2 Stripe Identity — Identity verification (KYC)",
+              "sub": "3.2 Stripe Identity: identity verification (KYC)",
               "p": [
-                "Identity verification — required to use Yadony — is fully handled by Stripe Identity, the document-verification service of the world leader in online payments. Stripe Identity handles:"
+                "Identity verification, required to use Yadony, is fully handled by Stripe Identity, the document-verification service of the world leader in online payments. Stripe Identity handles:"
               ],
               "ul": [
                 "The photo of your identity document (national ID card or passport)",
@@ -827,7 +827,7 @@
               ]
             },
             {
-              "sub": "3.3 Stripe — Payments and escrow",
+              "sub": "3.3 Stripe: payments and escrow",
               "p": [
                 "All payments, the escrow mechanism (money held until delivery) and payouts to travellers are handled exclusively by Stripe. Stripe handles:"
               ],
@@ -845,20 +845,20 @@
               ]
             },
             {
-              "sub": "3.4 Wave and Orange Money — Mobile Money",
+              "sub": "3.4 Wave and Orange Money: Mobile Money",
               "p": [
                 "For Mobile Money payments and payouts (mainly for users and travellers based in Africa), we rely on Wave and Orange Money. These providers manage your Mobile Money account details directly. Yadony does not store this information."
               ]
             },
             {
-              "sub": "3.5 Cloudflare — Image storage",
+              "sub": "3.5 Cloudflare: image storage",
               "p": [
-                "All parcel-related images — photos taken by the sender, handover and delivery photos taken by the traveller — are stored on Cloudflare infrastructure. Cloudflare handles:"
+                "All parcel-related images (photos taken by the sender, handover and delivery photos taken by the traveller) are stored on Cloudflare infrastructure. Cloudflare handles:"
               ],
               "ul": [
                 "Secure storage of parcel photos",
                 "Timestamped, geolocated handover and delivery photos",
-                "Generation of temporary, secure access links — images are never permanently publicly accessible"
+                "Generation of temporary, secure access links: images are never permanently publicly accessible"
               ]
             },
             {
@@ -876,12 +876,12 @@
                 "Beyond profile data and the data handled by our partners, Yadony generates and keeps the following data, essential to running the service:"
               ],
               "ul": [
-                "History of listings and trips — managing traveller activity and producing tax exports (Yadony PRO) — 5 years",
-                "Transaction history (amounts, dates, statuses) — financial traceability and statutory accounting obligations — 5 years (legal obligation)",
-                "Parcel scans (timestamp and geolocation) — parcel traceability at every step and evidence in disputes — 5 years",
-                "Ratings and reviews received — building user reputation and guaranteeing quality — lifetime of the account",
-                "Messages exchanged in the internal messaging system — enabling communication between senders and travellers — 2 years after the transaction",
-                "Connection data (date, device — anonymised) — account security and fraud detection — 13 months"
+                "History of listings and trips: managing traveller activity and producing tax exports for Yadony PRO. Retention: 5 years",
+                "Transaction history (amounts, dates, statuses): financial traceability and statutory accounting obligations. Retention: 5 years (legal obligation)",
+                "Parcel scans (timestamp and geolocation): parcel traceability at every step and evidence in disputes. Retention: 5 years",
+                "Ratings and reviews received: building user reputation and guaranteeing quality. Retention: lifetime of the account",
+                "Messages exchanged in the internal messaging system: enabling communication between senders and travellers. Retention: 2 years after the transaction",
+                "Connection data (date, device, anonymised): account security and fraud detection. Retention: 13 months"
               ]
             },
             {
@@ -899,15 +899,15 @@
                 "Here is a complete summary to give you a clear picture of how your data is protected."
               ],
               "ul": [
-                "Name, e-mail, date of birth, city — Yadony (internal database) — Yadony access: yes, profile data only",
-                "Phone number, SMS authentication — Google Firebase — Yadony access: no, Firebase manages it directly",
-                "Fingerprint, Face ID, PIN code — Google Firebase — Yadony access: no, biometric data stays on-device or with Firebase",
-                "ID document photo, selfie, liveness — Stripe Identity — Yadony access: no, Yadony receives only the Verified / Rejected status",
-                "Card number, payment data — Stripe — Yadony access: no, never sent to Yadony",
-                "Mobile Money details — Wave / Orange Money — Yadony access: no, managed directly by those services",
-                "Parcel and delivery photos — Cloudflare — access only through secure temporary links",
-                "Transaction history, scans, ratings — Yadony (internal database) — access: yes, needed to run the service",
-                "Messages between users — Yadony (encrypted) — encrypted content, access restricted to disputes"
+                "Name, e-mail, date of birth, city: Yadony (internal database). Yadony access: yes, profile data only",
+                "Phone number, SMS authentication: Google Firebase. Yadony access: no, Firebase manages it directly",
+                "Fingerprint, Face ID, PIN code: Google Firebase. Yadony access: no, biometric data stays on-device or with Firebase",
+                "ID document photo, selfie, liveness: Stripe Identity. Yadony access: no, Yadony receives only the Verified / Rejected status",
+                "Card number, payment data: Stripe. Yadony access: no, never sent to Yadony",
+                "Mobile Money details: Wave / Orange Money. Yadony access: no, managed directly by those services",
+                "Parcel and delivery photos: Cloudflare. Access only through secure temporary links",
+                "Transaction history, scans, ratings: Yadony (internal database). Access: yes, needed to run the service",
+                "Messages between users: Yadony (encrypted). Encrypted content, access restricted to disputes"
               ]
             }
           ]
@@ -917,16 +917,16 @@
           "blocks": [
             {
               "ul": [
-                "Profile data (name, e-mail, date of birth, city) — performance of the contract (Terms of Use)",
-                "Authentication via Google Firebase — performance of the contract",
-                "Identity verification via Stripe Identity — legal obligation (anti-money-laundering and fraud prevention)",
-                "Payment processing and escrow via Stripe — performance of the contract",
-                "Image storage via Cloudflare — performance of the contract and legitimate interest (evidence in disputes)",
-                "Transaction history — legal obligation (accounting and tax)",
-                "Parcel scans and traceability — performance of the contract and legitimate interest",
-                "Fraud detection and security — legitimate interest",
-                "Ratings and reputation — legitimate interest",
-                "Marketing communications — consent (revocable at any time)"
+                "Profile data (name, e-mail, date of birth, city): performance of the contract (Terms of Use)",
+                "Authentication via Google Firebase: performance of the contract",
+                "Identity verification via Stripe Identity: legal obligation (anti-money-laundering and fraud prevention)",
+                "Payment processing and escrow via Stripe: performance of the contract",
+                "Image storage via Cloudflare: performance of the contract and legitimate interest (evidence in disputes)",
+                "Transaction history: legal obligation (accounting and tax)",
+                "Parcel scans and traceability: performance of the contract and legitimate interest",
+                "Fraud detection and security: legitimate interest",
+                "Ratings and reputation: legitimate interest",
+                "Marketing communications: consent (revocable at any time)"
               ],
               "p": [
                 "Each processing operation rests on a specific legal basis:"
@@ -989,16 +989,16 @@
           "blocks": [
             {
               "ul": [
-                "Profile data (name, e-mail, date of birth, city) — for as long as you use the service plus 3 years after your last sign-in — account management",
-                "Authentication data (Firebase) — managed by Google Firebase under its own policy",
-                "KYC data (Stripe Identity) — managed by Stripe under its own policy",
-                "Payment data (Stripe) — managed by Stripe under its own policy",
-                "Parcel images (Cloudflare) — 5 years, temporary links — evidence in disputes",
-                "Transaction history — 5 years — accounting and tax obligation",
-                "Scans and geolocation — 5 years — evidence in disputes",
-                "Messages in the messaging system — 2 years after the transaction — dispute resolution",
-                "Anonymised browsing data — 13 months — CNIL compliance",
-                "Deleted accounts — profile data anonymised immediately, except financial history kept for 5 years"
+                "Profile data (name, e-mail, date of birth, city): for as long as you use the service plus 3 years after your last sign-in, for account management",
+                "Authentication data (Firebase): managed by Google Firebase under its own policy",
+                "KYC data (Stripe Identity): managed by Stripe under its own policy",
+                "Payment data (Stripe): managed by Stripe under its own policy",
+                "Parcel images (Cloudflare): 5 years, temporary links, evidence in disputes",
+                "Transaction history: 5 years, accounting and tax obligation",
+                "Scans and geolocation: 5 years, evidence in disputes",
+                "Messages in the messaging system: 2 years after the transaction, dispute resolution",
+                "Anonymised browsing data: 13 months, CNIL compliance",
+                "Deleted accounts: profile data anonymised immediately, except financial history kept for 5 years"
               ],
               "p": [
                 "Retention periods by type of data:"
@@ -1040,14 +1040,14 @@
           "blocks": [
             {
               "ul": [
-                "Right of access — obtain a copy of all the data Yadony holds about you — Settings → My data, or dpo{'@'}yadony.com",
-                "Right of rectification — correct your profile data (name, e-mail, city) — directly in your profile in the application",
-                "Right to erasure — delete your account and profile data — Settings → Delete my account",
-                "Right to portability — receive your data in JSON or CSV format — dpo{'@'}yadony.com",
-                "Right to object — object to processing based on legitimate interest — dpo{'@'}yadony.com",
-                "Withdrawal of consent — turn off marketing or analytics — Settings → Privacy",
-                "Rights over Firebase data — access, rectification, deletion of authentication data — through your Google account or dpo{'@'}yadony.com",
-                "Rights over Stripe data — access to and deletion of payment and identity data — stripe.com/fr or dpo{'@'}yadony.com"
+                "Right of access: obtain a copy of all the data Yadony holds about you, via Settings → My data or dpo{'@'}yadony.com",
+                "Right of rectification: correct your profile data (name, e-mail, city), directly in your profile in the application",
+                "Right to erasure: delete your account and profile data, via Settings → Delete my account",
+                "Right to portability: receive your data in JSON or CSV format, on request to dpo{'@'}yadony.com",
+                "Right to object: object to processing based on legitimate interest, on request to dpo{'@'}yadony.com",
+                "Withdrawal of consent: turn off marketing or analytics, via Settings → Privacy",
+                "Rights over Firebase data: access, rectification, deletion of authentication data, through your Google account or dpo{'@'}yadony.com",
+                "Rights over Stripe data: access to and deletion of payment and identity data, via stripe.com/fr or dpo{'@'}yadony.com"
               ],
               "p": [
                 "Your rights and how to exercise them:"
@@ -1103,7 +1103,7 @@
                 "Parcel images (Cloudflare): the links become inaccessible. Files are deleted under Cloudflare's policy.",
                 "Messages in the messaging system: deleted.",
                 "Recipient address book: cleared.",
-                "Transaction history: kept for 5 years — statutory accounting obligation. This data is anonymised as far as possible.",
+                "Transaction history: kept for 5 years (statutory accounting obligation). This data is anonymised as far as possible.",
                 "If a dispute is in progress, the account is kept until the dispute is closed, then deleted."
               ],
               "p": [
@@ -1141,7 +1141,7 @@
                 "Company name: YADONY SAS (registration in progress)",
                 "Publication director: Mr Dramane DIAKITE, President",
                 "Certified technical partners: Google Firebase, Stripe, Stripe Identity, Wave, Orange Money, Cloudflare",
-                "French supervisory authority: CNIL — www.cnil.fr"
+                "French supervisory authority: CNIL (www.cnil.fr)"
               ]
             }
           ]
@@ -1194,7 +1194,7 @@
     "company": {
       "name": "YADONY SAS",
       "line1": "7 avenue Pablo Picasso, 94120 Fontenay-sous-Bois",
-      "line2": "SIREN 108 733 510 — Créteil Trade Register"
+      "line2": "SIREN 108 733 510, Créteil Trade Register"
     },
     "socialLabel": "Follow Yadony on social media"
   },
@@ -1221,7 +1221,7 @@
     "comingSoon": {
       "kicker": "Coming soon",
       "title": "The app is on its way",
-      "text": "Yadony will very soon be available on the App Store and Google Play. Check back in a few days — the website is already here.",
+      "text": "Yadony will very soon be available on the App Store and Google Play. Check back in a few days. The website is already here.",
       "close": "Got it"
     }
   },
@@ -1260,11 +1260,11 @@
         "faq": [
           {
             "question": "How much does sending a parcel Paris–Dakar cost?",
-            "answer": "The traveller sets their price per kilo — you compare listings before choosing. For a 5 kg parcel with a traveller at €12/kg, you pay €60; the service commission (currently 5%) is deducted from the transaction and the traveller receives €57."
+            "answer": "The traveller sets their price per kilo; you compare listings before choosing. For a 5 kg parcel with a traveller at €12/kg, you pay €60; the service commission (currently 5%) is deducted from the transaction and the traveller receives €57."
           },
           {
             "question": "How long does a parcel take to reach Dakar?",
-            "answer": "The traveller's flight time — about 5.5 hours direct — plus the handover appointment in Dakar. You see the departure date before booking, so you know from the start when your parcel arrives."
+            "answer": "The traveller's flight time (about 5.5 hours direct), plus the handover appointment in Dakar. You see the departure date before booking, so you know from the start when your parcel arrives."
           },
           {
             "question": "How does my relative collect the parcel in Dakar?",
@@ -1279,7 +1279,7 @@
         },
         "title": "Send a parcel from Lyon to Abidjan",
         "lead": "The Ivorian community of Lyon and its region no longer needs to go through Paris: travellers connect Lyon directly to Abidjan, and your parcel rides in their suitcase.",
-        "how": "Describe your parcel in the app — weight, contents, photo, declared value. Verified travellers departing from Lyon (or Paris if you prefer a wider choice) offer their price. After acceptance, you hand the parcel over in person and every step is scanned all the way to Abidjan.",
+        "how": "Describe your parcel in the app: weight, contents, photo, declared value. Verified travellers departing from Lyon (or Paris if you prefer a wider choice) offer their price. After acceptance, you hand the parcel over in person and every step is scanned all the way to Abidjan.",
         "price": "Each traveller advertises their price per kilo; for parcels of a few kilos it is often better value than a classic carrier, and you know exactly who is carrying. The service commission (currently 5%) is shown before you confirm.",
         "delay": "Allow about 6.5 hours for a direct Lyon–Abidjan flight. The parcel arrives with the traveller: the date is known at booking time, with no vague multi-week window.",
         "safety": "Mandatory identity verification, payment in Stripe escrow released only after the recipient confirms, four timestamped and geolocated QR scans. If something goes wrong, you have 48 hours to open a dispute, investigated within 72 hours on evidence.",
@@ -1306,7 +1306,7 @@
         "title": "Send a parcel from Marseille to Bamako",
         "lead": "From Marseille and the whole south of France, the Malian community sends parcels to Bamako without detours: a traveller already making the trip carries them, with real tracking at every step.",
         "how": "Create your request in the app with the parcel's weight and description. A verified traveller flying from Marseille to Bamako accepts it, you agree on a handover appointment, and the parcel is scanned at departure, in transit and on arrival.",
-        "price": "The price per kilo is the one the traveller advertises — no hidden rate card, no surprises at a counter. A service commission (currently 5%) is deducted from the transaction, shown before payment.",
+        "price": "The price per kilo is the one the traveller advertises: no hidden rate card, no surprises at a counter. A service commission (currently 5%) is deducted from the transaction, shown before payment.",
         "delay": "The Marseille–Bamako flight takes about 5.5 hours direct. Your parcel arrives the day the traveller lands; delivery to the recipient follows at the appointment agreed in the app.",
         "safety": "Every traveller passes an identity check with liveness detection before they can carry. Payment stays in escrow until the recipient's confirmation code, and the scan history is the evidence if a dispute arises.",
         "faq": [
@@ -1331,9 +1331,9 @@
         },
         "title": "Send a parcel from Paris to Douala",
         "lead": "For the Cameroonian diaspora, Paris–Douala is the most direct path: a verified traveller on that flight carries your parcel and your family collects it in person, proof of delivery included.",
-        "how": "Publish the parcel in the app — weight, contents, photos, the recipient's details in Douala. A verified traveller accepts it, you hand it over in the Paris region, and you follow the scans through to final delivery, photo included.",
+        "how": "Publish the parcel in the app: weight, contents, photos, the recipient's details in Douala. A verified traveller accepts it, you hand it over in the Paris region, and you follow the scans through to final delivery, photo included.",
         "price": "The price depends on the traveller and their baggage allowance: each one advertises a per-kilo rate and you choose. The service commission (currently 5%) is deducted from the transaction and always shown before you pay.",
-        "delay": "About 6.5 hours of direct flight Paris–Douala. The arrival date is the traveller's flight date, known before booking — you can tell your family the exact day from the start.",
+        "delay": "About 6.5 hours of direct flight Paris–Douala. The arrival date is the traveller's flight date, known before booking, so you can tell your family the exact day from the start.",
         "safety": "Identities verified on both sides, declared value capped at €500, payment escrowed until the recipient's confirmation code, four QR scans from Paris to Douala. The recipient follows everything from a web page, no account needed.",
         "faq": [
           {
@@ -1357,8 +1357,8 @@
         },
         "title": "Send a parcel from Paris to Abidjan",
         "lead": "Paris–Abidjan is Yadony's flagship corridor: the Ivorian community of the Paris region is one of the most active in the diaspora, and daily flights to Abidjan mean a traveller departs almost every day.",
-        "how": "Publish your parcel in the app — weight, description, photos, the recipient's details in Abidjan. Verified travellers departing from Paris offer their price per kilo; you choose, hand the parcel over in person in the Paris region, and every step is scanned through to delivery in Abidjan.",
-        "price": "Each traveller sets their price per kilo according to their flight and baggage allowance — you compare before choosing. A service commission (currently 5%, always shown before payment) is deducted from the transaction.",
+        "how": "Publish your parcel in the app: weight, description, photos, the recipient's details in Abidjan. Verified travellers departing from Paris offer their price per kilo; you choose, hand the parcel over in person in the Paris region, and every step is scanned through to delivery in Abidjan.",
+        "price": "Each traveller sets their price per kilo according to their flight and baggage allowance; you compare before choosing. A service commission (currently 5%, always shown before payment) is deducted from the transaction.",
         "delay": "The direct Paris–Abidjan flight takes about 6.5 hours. Your parcel lands with the traveller: the date is known at booking time, and the handover in Abidjan is arranged in the days that follow.",
         "safety": "The traveller's identity is verified before their first parcel, payment is held by Stripe until the recipient's confirmation code, and four timestamped, geolocated QR scans run from Paris to Abidjan. Your relative follows everything from a simple web page, no account needed.",
         "faq": [
@@ -1372,7 +1372,7 @@
           },
           {
             "question": "Does my relative in Abidjan need to install the app?",
-            "answer": "No. The recipient follows the parcel from a simple web page, even on a basic phone, and confirms receipt with a code received by SMS — which is what triggers the traveller's payment."
+            "answer": "No. The recipient follows the parcel from a simple web page, even on a basic phone, and confirms receipt with a code received by SMS, which is what triggers the traveller's payment."
           }
         ]
       }

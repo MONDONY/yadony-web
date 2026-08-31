@@ -35,7 +35,7 @@ const errors = computed(() => ({
 const isValid = computed(() => !errors.value.name && !errors.value.email && !errors.value.message)
 
 const mailtoHref = computed(() => {
-  const subject = `${t('contact.form.legend')} — ${name.value.trim()}`
+  const subject = `${t('contact.form.legend')} - ${name.value.trim()}`
   const body = `${message.value.trim()}\n\n${email.value.trim()}`
   return `mailto:${contactEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
 })

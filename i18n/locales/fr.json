@@ -128,7 +128,7 @@
     },
     "traveler": {
       "title": "Votre valise a de la place. Elle peut financer une partie du voyage.",
-      "text": "Vous partez à Abidjan et vous n'utiliserez que la moitié de votre franchise bagage. Dix kilos libres, à 12 € le kilo, cela fait 120 € sur un vol que vous preniez déjà. Vous fixez votre prix, vous choisissez ce que vous acceptez de porter, et vous êtes payé sous 24 heures après la livraison confirmée, la commission de service (5 % actuellement) simplement déduite.",
+      "text": "Vous partez à Abidjan et vous n'utiliserez que la moitié de votre franchise bagage. Dix kilos libres, à 12 € le kilo, cela fait 120 € sur un vol que vous preniez déjà. Vous fixez votre prix, vous choisissez ce que vous acceptez de porter, et vous êtes payé sous 24 heures après la livraison confirmée, la commission de service simplement déduite.",
       "cta": "Voir le parcours voyageur",
       "kicker": "Côté voyageurs"
     },
@@ -143,7 +143,7 @@
         {
           "id": "prix",
           "question": "Combien coûte un envoi ?",
-          "answer": "Le voyageur fixe son prix au kilo selon son trajet et ce qu'il accepte de porter. Une commission de service (5 % à ce jour, toujours affichée avant que vous ne payiez) est prélevée sur la transaction. Pour un colis de 5 kg chez un voyageur à 12 €/kg : vous payez 60 €, la commission est de 3 €, le voyageur reçoit 57 €."
+          "answer": "Le voyageur fixe son prix au kilo selon son trajet et ce qu'il accepte de porter. Une commission de service, toujours affichée avant que vous ne payiez, est prélevée sur la transaction. Pour un colis de 5 kg chez un voyageur à 12 €/kg, vous payez 60 € et le voyageur reçoit ce montant moins la commission."
         },
         {
           "id": "interdits",
@@ -163,7 +163,7 @@
         {
           "id": "gain-voyageur",
           "question": "Combien gagne un voyageur ?",
-          "answer": "Le prix qu'il a annoncé, moins la commission de service (5 % à ce jour), prélevée automatiquement sur la transaction. Pour 60 € annoncés, le voyageur reçoit 57 €, et rien n'est versé avant la confirmation de livraison."
+          "answer": "Le prix qu'il a annoncé, moins la commission de service, prélevée automatiquement sur la transaction. Le montant net est affiché avant d'accepter, et rien n'est versé avant la confirmation de livraison."
         },
         {
           "id": "douane",
@@ -270,17 +270,19 @@
   "pricing": {
     "seo": {
       "title": "Tarifs yadony : une commission transparente, rien d'autre",
-      "description": "Le voyageur fixe son prix au kilo ; une commission de service (5 % actuellement) est prélevée sur chaque transaction. Exemple chiffré complet pour un colis de 5 kg Paris → Abidjan."
+      "description": "Le voyageur fixe son prix au kilo ; une commission de service est prélevée sur chaque transaction. Exemple chiffré complet pour un colis de 5 kg Paris → Abidjan."
     },
     "title": "Le voyageur fixe son prix. La commission est transparente.",
-    "lead": "Il n'y a pas de grille tarifaire chez Yadony, parce que ce n'est pas nous qui transportons. Le prix au kilo est celui qu'annonce le voyageur. La seule chose que nous prélevons est une commission de service : 5 % au moment où nous écrivons, toujours affichée avant que vous ne validiez. En cas de remboursement, elle n'est jamais retenue.",
+    "lead": "Il n'y a pas de grille tarifaire chez Yadony, parce que ce n'est pas nous qui transportons. Le prix au kilo est celui qu'annonce le voyageur. La seule chose que nous prélevons est une commission de service, toujours affichée avant que vous ne validiez. En cas de remboursement, elle n'est jamais retenue.",
     "cap": "La valeur déclarée d'un colis est plafonnée à {amount} €. C'est le montant de référence retenu pour arbitrer un litige ; l'assurance du colis n'est pas comprise dans la commission.",
     "example": {
       "caption": "Un colis de 5 kg, Paris → Abidjan, chez un voyageur à 12 € le kilo",
       "travelerPrice": "Prix demandé par le voyageur",
-      "commission": "Commission Yadony (taux actuel : 5 %)",
+      "commission": "Commission Yadony",
+      "commissionValue": "déduite du montant versé au voyageur",
       "senderPays": "Total payé par l'expéditeur",
-      "travelerEarns": "Versé au voyageur après livraison"
+      "travelerEarns": "Versé au voyageur après livraison",
+      "travelerEarnsValue": "le prix annoncé, commission déduite"
     },
     "comparison": {
       "title": "Le même colis chez un transporteur classique",
@@ -305,7 +307,7 @@
       },
       "cap": {
         "title": "Plafond de valeur déclarée",
-        "text": "La valeur déclarée d'un colis ne peut pas dépasser 500 €. Ce plafond est volontaire : au-delà, un envoi accompagné par un particulier n'est plus le bon canal, et un transporteur professionnel l'est davantage. La valeur déclarée est le montant de référence que nous retenons pour instruire un litige ; la sous-déclarer se retourne contre vous. La commission de 12 % ne comprend aucune assurance du colis."
+        "text": "La valeur déclarée d'un colis ne peut pas dépasser 500 €. Ce plafond est volontaire : au-delà, un envoi accompagné par un particulier n'est plus le bon canal, et un transporteur professionnel l'est davantage. La valeur déclarée est le montant de référence que nous retenons pour instruire un litige ; la sous-déclarer se retourne contre vous. La commission ne comprend aucune assurance du colis."
       },
       "tracking": {
         "title": "Quatre scans, et la preuve qui va avec",
@@ -321,7 +323,7 @@
       },
       "limits": {
         "title": "Ce que nous ne garantissons pas",
-        "text": "Nous ne transportons pas : le colis reste dans le bagage d'un voyageur, soumis aux aléas de son vol et de sa compagnie. Un retard d'avion, une grève ou un contrôle douanier ne relèvent pas de nous. Nous ne fouillons pas les colis à votre place : c'est le voyageur qui vérifie le contenu au dépôt, et l'expéditeur qui répond de sa déclaration. Nous ne sommes pas assureur non plus : la commission de 12 % ne comprend aucune assurance du colis, et nos conditions générales n'engagent aucun montant d'indemnisation. Ce que nous garantissons est plus étroit et plus vérifiable : le paiement n'est pas encaissé tant que la livraison n'est pas confirmée, et un litige est instruit sur des preuves horodatées. Enfin, un envoi convenu en dehors de l'application n'ouvre aucun recours : sans scan et sans paiement passé par la plateforme, il n'y a ni trace ni levier."
+        "text": "Nous ne transportons pas : le colis reste dans le bagage d'un voyageur, soumis aux aléas de son vol et de sa compagnie. Un retard d'avion, une grève ou un contrôle douanier ne relèvent pas de nous. Nous ne fouillons pas les colis à votre place : c'est le voyageur qui vérifie le contenu au dépôt, et l'expéditeur qui répond de sa déclaration. Nous ne sommes pas assureur non plus : la commission ne comprend aucune assurance du colis, et nos conditions générales n'engagent aucun montant d'indemnisation. Ce que nous garantissons est plus étroit et plus vérifiable : le paiement n'est pas encaissé tant que la livraison n'est pas confirmée, et un litige est instruit sur des preuves horodatées. Enfin, un envoi convenu en dehors de l'application n'ouvre aucun recours : sans scan et sans paiement passé par la plateforme, il n'y a ni trace ni levier."
       }
     }
   },
@@ -529,7 +531,7 @@
             {
               "sub": "Commission",
               "p": [
-                "Yadony prélève une commission de 5 % sur chaque transaction. Elle est prélevée automatiquement. En cas de remboursement, la commission n'est jamais retenue : vous récupérez la totalité de ce que vous avez payé."
+                "Yadony prélève une commission de service sur chaque transaction, au taux en vigueur affiché avant le paiement. Elle est prélevée automatiquement. En cas de remboursement, la commission n'est jamais retenue : vous récupérez la totalité de ce que vous avez payé."
               ]
             },
             {
@@ -1254,13 +1256,13 @@
         "title": "Envoyer un colis de Paris à Dakar",
         "lead": "Paris–Dakar est le corridor le plus actif de Yadony : la diaspora sénégalaise d'Île-de-France envoie chaque semaine des colis à Dakar, et des voyageurs font le trajet dans les deux sens toute l'année.",
         "how": "Publiez votre colis dans l'app avec son poids, sa description et sa photo. Les voyageurs vérifiés qui partent de Paris vers Dakar voient votre demande et proposent leur prix au kilo. Vous choisissez, vous remettez le colis en main propre en région parisienne, et votre proche le récupère à Dakar auprès du voyageur.",
-        "price": "Le prix au kilo est fixé librement par chaque voyageur selon son vol et sa franchise bagage. Vous comparez les annonces avant de choisir. Une commission de service (5 % actuellement, toujours affichée avant paiement) est prélevée sur la transaction.",
+        "price": "Le prix au kilo est fixé librement par chaque voyageur selon son vol et sa franchise bagage. Vous comparez les annonces avant de choisir. Une commission de service, toujours affichée avant paiement, est prélevée sur la transaction.",
         "delay": "Un vol direct Paris–Dakar dure environ 5 h 30. Votre colis arrive donc le jour du vol du voyageur : dès la remise, vous connaissez la date exacte, et le rendez-vous de récupération à Dakar se cale dans les jours qui suivent l'atterrissage.",
         "safety": "Identité du voyageur vérifiée avant le premier colis, paiement bloqué chez Stripe jusqu'à la confirmation de livraison par le destinataire, quatre scans QR entre la remise à Paris et la livraison à Dakar. Votre proche suit le colis depuis une simple page web, sans compte.",
         "faq": [
           {
             "question": "Combien coûte un envoi de colis Paris–Dakar ?",
-            "answer": "C'est le voyageur qui fixe son prix au kilo ; vous comparez les annonces avant de choisir. Pour un colis de 5 kg chez un voyageur à 12 €/kg, vous payez 60 € ; la commission de service (5 % actuellement) est prélevée sur la transaction et le voyageur reçoit 57 €."
+            "answer": "C'est le voyageur qui fixe son prix au kilo ; vous comparez les annonces avant de choisir. Pour un colis de 5 kg chez un voyageur à 12 €/kg, vous payez 60 € ; la commission de service est prélevée sur la transaction et le voyageur reçoit le reste."
           },
           {
             "question": "Combien de temps met un colis pour arriver à Dakar ?",
@@ -1280,7 +1282,7 @@
         "title": "Envoyer un colis de Lyon à Abidjan",
         "lead": "La communauté ivoirienne de Lyon et de sa région n'a plus besoin de passer par Paris : des voyageurs relient directement Lyon à Abidjan, et votre colis voyage dans leur valise.",
         "how": "Décrivez votre colis dans l'app : poids, contenu, photo, valeur déclarée. Les voyageurs vérifiés au départ de Lyon (ou de Paris si vous préférez élargir) proposent leur prix. Après acceptation, vous remettez le colis en main propre et chaque étape est scannée jusqu'à Abidjan.",
-        "price": "Chaque voyageur annonce son prix au kilo ; c'est souvent plus avantageux qu'un transporteur classique pour les colis de quelques kilos, et vous savez exactement qui transporte. La commission de service (5 % actuellement) est affichée avant que vous ne validiez.",
+        "price": "Chaque voyageur annonce son prix au kilo ; c'est souvent plus avantageux qu'un transporteur classique pour les colis de quelques kilos, et vous savez exactement qui transporte. La commission de service est affichée avant que vous ne validiez.",
         "delay": "Comptez environ 6 h 30 de vol direct Lyon–Abidjan. Le colis arrive avec le voyageur : la date est connue dès la réservation, sans fourchette floue de plusieurs semaines.",
         "safety": "Vérification d'identité obligatoire, paiement sous séquestre Stripe libéré seulement après confirmation du destinataire, quatre scans QR horodatés et géolocalisés. En cas de problème, vous avez 48 h pour ouvrir un litige, instruit sous 72 h sur preuves.",
         "faq": [
@@ -1306,13 +1308,13 @@
         "title": "Envoyer un colis de Marseille à Bamako",
         "lead": "Depuis Marseille et tout le sud de la France, la communauté malienne envoie ses colis à Bamako sans détour : un voyageur qui fait déjà le trajet les emporte, avec un vrai suivi à chaque étape.",
         "how": "Créez votre demande dans l'app avec le poids et la description du colis. Un voyageur vérifié partant de Marseille vers Bamako l'accepte, vous fixez ensemble un rendez-vous de remise, et le colis est scanné au départ, en transit et à l'arrivée.",
-        "price": "Le prix au kilo est celui qu'annonce le voyageur : pas de grille cachée, pas de suppléments découverts au guichet. Une commission de service (5 % actuellement) est prélevée sur la transaction, affichée avant paiement.",
+        "price": "Le prix au kilo est celui qu'annonce le voyageur : pas de grille cachée, pas de suppléments découverts au guichet. Une commission de service est prélevée sur la transaction, affichée avant paiement.",
         "delay": "Le vol Marseille–Bamako dure environ 5 h 30 en direct. Votre colis arrive le jour où le voyageur atterrit ; la remise au destinataire se fait dans la foulée, au rendez-vous convenu dans l'app.",
         "safety": "Chaque voyageur passe une vérification d'identité avec détection de vivacité avant de pouvoir transporter. Le paiement reste sous séquestre jusqu'au code de confirmation du destinataire, et l'historique des scans fait foi en cas de litige.",
         "faq": [
           {
             "question": "Combien coûte un envoi Marseille–Bamako ?",
-            "answer": "Le voyageur fixe son prix au kilo et vous le voyez avant de réserver. Exemple : 5 kg à 12 €/kg = 60 € payés, dont une commission de service de 5 % (3 €) prélevée sur la transaction ; le voyageur reçoit 57 €."
+            "answer": "Le voyageur fixe son prix au kilo et vous le voyez avant de réserver. Exemple : 5 kg à 12 €/kg = 60 € payés ; la commission de service est prélevée sur la transaction et le voyageur reçoit le reste."
           },
           {
             "question": "Mon proche à Bamako doit-il installer l'application ?",
@@ -1332,7 +1334,7 @@
         "title": "Envoyer un colis de Paris à Douala",
         "lead": "Pour la diaspora camerounaise, Paris–Douala est le chemin le plus direct : un voyageur vérifié qui prend ce vol emporte votre colis et votre famille le récupère en main propre, preuve de livraison à l'appui.",
         "how": "Publiez le colis dans l'app : poids, contenu, photos, coordonnées du destinataire à Douala. Un voyageur vérifié l'accepte, vous le lui remettez en région parisienne, et vous suivez les scans jusqu'à la remise finale, photo comprise.",
-        "price": "Le prix dépend du voyageur et de sa franchise bagage : chacun annonce son tarif au kilo et vous choisissez. La commission de service (5 % actuellement) est prélevée sur la transaction et toujours affichée avant que vous ne payiez.",
+        "price": "Le prix dépend du voyageur et de sa franchise bagage : chacun annonce son tarif au kilo et vous choisissez. La commission de service est prélevée sur la transaction et toujours affichée avant que vous ne payiez.",
         "delay": "Environ 6 h 30 de vol direct Paris–Douala. La date d'arrivée est celle du vol du voyageur, connue avant la réservation : vous pouvez prévenir votre famille du jour exact dès le départ.",
         "safety": "Identités vérifiées des deux côtés, valeur déclarée plafonnée à 500 €, paiement séquestré jusqu'au code de confirmation du destinataire, quatre scans QR de Paris à Douala. Le destinataire suit tout depuis une page web, sans compte.",
         "faq": [
@@ -1358,13 +1360,13 @@
         "title": "Envoyer un colis de Paris à Abidjan",
         "lead": "Paris–Abidjan est le corridor vedette de Yadony : la communauté ivoirienne d'Île-de-France est l'une des plus actives de la diaspora, et les vols quotidiens vers Abidjan font qu'un voyageur part presque chaque jour.",
         "how": "Publiez votre colis dans l'app : poids, description, photos, coordonnées du destinataire à Abidjan. Les voyageurs vérifiés qui partent de Paris proposent leur prix au kilo ; vous choisissez, vous remettez le colis en main propre en région parisienne, et chaque étape est scannée jusqu'à la remise à Abidjan.",
-        "price": "Chaque voyageur fixe son prix au kilo selon son vol et sa franchise bagage ; vous comparez avant de choisir. Une commission de service (5 % actuellement, toujours affichée avant paiement) est prélevée sur la transaction.",
+        "price": "Chaque voyageur fixe son prix au kilo selon son vol et sa franchise bagage ; vous comparez avant de choisir. Une commission de service, toujours affichée avant paiement, est prélevée sur la transaction.",
         "delay": "Le vol direct Paris–Abidjan dure environ 6 h 30. Votre colis atterrit avec le voyageur : la date est connue dès la réservation, et le rendez-vous de remise à Abidjan se cale dans les jours qui suivent.",
         "safety": "Identité du voyageur vérifiée avant le premier colis, paiement bloqué chez Stripe jusqu'au code de confirmation du destinataire, quatre scans QR horodatés et géolocalisés de Paris à Abidjan. Votre proche suit tout depuis une simple page web, sans compte.",
         "faq": [
           {
             "question": "Combien coûte un envoi de colis Paris–Abidjan ?",
-            "answer": "C'est le voyageur qui fixe son prix au kilo, et vous comparez les annonces avant de réserver. Exemple : 5 kg chez un voyageur à 12 €/kg = 60 € payés ; la commission de service (5 % actuellement) est prélevée sur la transaction et le voyageur reçoit 57 €."
+            "answer": "C'est le voyageur qui fixe son prix au kilo, et vous comparez les annonces avant de réserver. Exemple : 5 kg chez un voyageur à 12 €/kg = 60 € payés ; la commission de service est prélevée sur la transaction et le voyageur reçoit le reste."
           },
           {
             "question": "Y a-t-il des voyageurs Paris–Abidjan toute l'année ?",

@@ -128,7 +128,7 @@
     },
     "traveler": {
       "title": "Your suitcase has room to spare. It can pay for part of the trip.",
-      "text": "You are flying to Abidjan and you will use only half of your baggage allowance. Ten kilos free, at €12 a kilo, comes to €120 on a flight you were taking anyway. You set your price, you choose what you agree to carry, and you are paid within 24 hours of confirmed delivery, with the service commission (currently 5%) simply deducted.",
+      "text": "You are flying to Abidjan and you will use only half of your baggage allowance. Ten kilos free, at €12 a kilo, comes to €120 on a flight you were taking anyway. You set your price, you choose what you agree to carry, and you are paid within 24 hours of confirmed delivery, with the service commission simply deducted.",
       "cta": "See how it works for travellers",
       "kicker": "For travellers"
     },
@@ -143,7 +143,7 @@
         {
           "id": "prix",
           "question": "How much does it cost to send something?",
-          "answer": "The traveller sets their price per kilo according to their route and what they agree to carry. A service commission (5% as of today, always shown before you pay) is deducted from the transaction. For a 5 kg parcel with a traveller at €12/kg: you pay €60, the commission is €3, the traveller receives €57."
+          "answer": "The traveller sets their price per kilo according to their route and what they agree to carry. A service commission, always shown before you pay, is deducted from the transaction. For a 5 kg parcel with a traveller at €12/kg, you pay €60 and the traveller receives that amount minus the commission."
         },
         {
           "id": "interdits",
@@ -163,7 +163,7 @@
         {
           "id": "gain-voyageur",
           "question": "How much does a traveller earn?",
-          "answer": "The price they advertised, minus the service commission (5% as of today), deducted automatically from the transaction. For an advertised €60, the traveller receives €57, and nothing is paid out before delivery is confirmed."
+          "answer": "The price they advertised, minus the service commission, deducted automatically from the transaction. The net amount is shown before they accept, and nothing is paid out before delivery is confirmed."
         },
         {
           "id": "douane",
@@ -270,17 +270,19 @@
   "pricing": {
     "seo": {
       "title": "yadony pricing: one transparent commission, nothing else",
-      "description": "The traveller sets their price per kilo; a service commission (currently 5%) is deducted from each transaction. A full worked example for a 5 kg parcel Paris → Abidjan."
+      "description": "The traveller sets their price per kilo; a service commission is deducted from each transaction. A full worked example for a 5 kg parcel Paris → Abidjan."
     },
     "title": "The traveller sets the price. The commission is transparent.",
-    "lead": "There is no rate card at Yadony, because we are not the ones doing the carrying. The price per kilo is the one the traveller advertises. The only thing we deduct is a service commission: 5% at the time of writing, always shown before you confirm. In the event of a refund, it is never kept.",
+    "lead": "There is no rate card at Yadony, because we are not the ones doing the carrying. The price per kilo is the one the traveller advertises. The only thing we deduct is a service commission, always shown before you confirm. In the event of a refund, it is never kept.",
     "cap": "The declared value of a parcel is capped at €{amount}. That is the reference amount used to settle a dispute; insurance for the parcel is not included in the commission.",
     "example": {
       "caption": "A 5 kg parcel, Paris → Abidjan, with a traveller at €12 per kilo",
       "travelerPrice": "Price asked by the traveller",
-      "commission": "Yadony commission (current rate: 5%)",
+      "commission": "Yadony commission",
+      "commissionValue": "deducted from the amount paid to the traveller",
       "senderPays": "Total paid by the sender",
-      "travelerEarns": "Paid to the traveller after delivery"
+      "travelerEarns": "Paid to the traveller after delivery",
+      "travelerEarnsValue": "the advertised price, minus the commission"
     },
     "comparison": {
       "title": "The same parcel with a conventional carrier",
@@ -305,7 +307,7 @@
       },
       "cap": {
         "title": "Cap on declared value",
-        "text": "The declared value of a parcel cannot exceed €500. That cap is deliberate: above it, a shipment carried by a private individual is no longer the right channel, and a professional carrier is a better one. The declared value is the reference amount we use to examine a dispute; under-declaring it works against you. The 12% commission includes no insurance for the parcel."
+        "text": "The declared value of a parcel cannot exceed €500. That cap is deliberate: above it, a shipment carried by a private individual is no longer the right channel, and a professional carrier is a better one. The declared value is the reference amount we use to examine a dispute; under-declaring it works against you. The commission includes no insurance for the parcel."
       },
       "tracking": {
         "title": "Four scans, and the evidence that comes with them",
@@ -321,7 +323,7 @@
       },
       "limits": {
         "title": "What we do not guarantee",
-        "text": "We do not carry anything: the parcel stays in a traveller's luggage, subject to whatever happens to their flight and their airline. A delayed plane, a strike or a customs check are not down to us. We do not search parcels on your behalf: it is the traveller who checks the contents at handover, and the sender who answers for their declaration. We are not an insurer either: the 12% commission includes no insurance for the parcel, and our terms commit us to no compensation amount. What we do guarantee is narrower and easier to check: the payment is not charged until delivery is confirmed, and a dispute is examined on timestamped evidence. Finally, a shipment arranged outside the app opens no recourse at all: with no scans and no payment through the platform, there is neither a record nor any leverage."
+        "text": "We do not carry anything: the parcel stays in a traveller's luggage, subject to whatever happens to their flight and their airline. A delayed plane, a strike or a customs check are not down to us. We do not search parcels on your behalf: it is the traveller who checks the contents at handover, and the sender who answers for their declaration. We are not an insurer either: the commission includes no insurance for the parcel, and our terms commit us to no compensation amount. What we do guarantee is narrower and easier to check: the payment is not charged until delivery is confirmed, and a dispute is examined on timestamped evidence. Finally, a shipment arranged outside the app opens no recourse at all: with no scans and no payment through the platform, there is neither a record nor any leverage."
       }
     }
   },
@@ -529,7 +531,7 @@
             {
               "sub": "Commission",
               "p": [
-                "Yadony charges a 5% commission on each transaction. It is deducted automatically. In the event of a refund, the commission is never kept: you get back everything you paid."
+                "Yadony charges a service commission on each transaction, at the rate in force shown before payment. It is deducted automatically. In the event of a refund, the commission is never kept: you get back everything you paid."
               ]
             },
             {
@@ -1254,13 +1256,13 @@
         "title": "Send a parcel from Paris to Dakar",
         "lead": "Paris–Dakar is Yadony's most active corridor: the Senegalese community of the Paris region sends parcels to Dakar every week, and travellers fly the route in both directions all year round.",
         "how": "Publish your parcel in the app with its weight, description and photo. Verified travellers flying from Paris to Dakar see your request and offer their price per kilo. You choose, hand the parcel over in person in the Paris region, and your relative collects it in Dakar from the traveller.",
-        "price": "The price per kilo is set freely by each traveller according to their flight and baggage allowance. You compare listings before choosing. A service commission (currently 5%, always shown before payment) is deducted from the transaction.",
+        "price": "The price per kilo is set freely by each traveller according to their flight and baggage allowance. You compare listings before choosing. A service commission, always shown before payment, is deducted from the transaction.",
         "delay": "A direct Paris–Dakar flight takes about 5.5 hours. Your parcel arrives on the day of the traveller's flight: from handover, you know the exact date, and the pick-up in Dakar is arranged in the days after landing.",
         "safety": "The traveller's identity is verified before their first parcel, payment is held by Stripe until the recipient confirms delivery, and four QR scans run from handover in Paris to delivery in Dakar. Your relative follows the parcel from a simple web page, no account needed.",
         "faq": [
           {
             "question": "How much does sending a parcel Paris–Dakar cost?",
-            "answer": "The traveller sets their price per kilo; you compare listings before choosing. For a 5 kg parcel with a traveller at €12/kg, you pay €60; the service commission (currently 5%) is deducted from the transaction and the traveller receives €57."
+            "answer": "The traveller sets their price per kilo; you compare listings before choosing. For a 5 kg parcel with a traveller at €12/kg, you pay €60; the service commission is deducted from the transaction and the traveller receives the rest."
           },
           {
             "question": "How long does a parcel take to reach Dakar?",
@@ -1280,7 +1282,7 @@
         "title": "Send a parcel from Lyon to Abidjan",
         "lead": "The Ivorian community of Lyon and its region no longer needs to go through Paris: travellers connect Lyon directly to Abidjan, and your parcel rides in their suitcase.",
         "how": "Describe your parcel in the app: weight, contents, photo, declared value. Verified travellers departing from Lyon (or Paris if you prefer a wider choice) offer their price. After acceptance, you hand the parcel over in person and every step is scanned all the way to Abidjan.",
-        "price": "Each traveller advertises their price per kilo; for parcels of a few kilos it is often better value than a classic carrier, and you know exactly who is carrying. The service commission (currently 5%) is shown before you confirm.",
+        "price": "Each traveller advertises their price per kilo; for parcels of a few kilos it is often better value than a classic carrier, and you know exactly who is carrying. The service commission is shown before you confirm.",
         "delay": "Allow about 6.5 hours for a direct Lyon–Abidjan flight. The parcel arrives with the traveller: the date is known at booking time, with no vague multi-week window.",
         "safety": "Mandatory identity verification, payment in Stripe escrow released only after the recipient confirms, four timestamped and geolocated QR scans. If something goes wrong, you have 48 hours to open a dispute, investigated within 72 hours on evidence.",
         "faq": [
@@ -1306,13 +1308,13 @@
         "title": "Send a parcel from Marseille to Bamako",
         "lead": "From Marseille and the whole south of France, the Malian community sends parcels to Bamako without detours: a traveller already making the trip carries them, with real tracking at every step.",
         "how": "Create your request in the app with the parcel's weight and description. A verified traveller flying from Marseille to Bamako accepts it, you agree on a handover appointment, and the parcel is scanned at departure, in transit and on arrival.",
-        "price": "The price per kilo is the one the traveller advertises: no hidden rate card, no surprises at a counter. A service commission (currently 5%) is deducted from the transaction, shown before payment.",
+        "price": "The price per kilo is the one the traveller advertises: no hidden rate card, no surprises at a counter. A service commission is deducted from the transaction, shown before payment.",
         "delay": "The Marseille–Bamako flight takes about 5.5 hours direct. Your parcel arrives the day the traveller lands; delivery to the recipient follows at the appointment agreed in the app.",
         "safety": "Every traveller passes an identity check with liveness detection before they can carry. Payment stays in escrow until the recipient's confirmation code, and the scan history is the evidence if a dispute arises.",
         "faq": [
           {
             "question": "How much does a Marseille–Bamako shipment cost?",
-            "answer": "The traveller sets their price per kilo and you see it before booking. Example: 5 kg at €12/kg = €60 paid, including a 5% service commission (€3) deducted from the transaction; the traveller receives €57."
+            "answer": "The traveller sets their price per kilo and you see it before booking. Example: 5 kg at €12/kg = €60 paid; the service commission is deducted from the transaction and the traveller receives the rest."
           },
           {
             "question": "Does my relative in Bamako need to install the app?",
@@ -1332,7 +1334,7 @@
         "title": "Send a parcel from Paris to Douala",
         "lead": "For the Cameroonian diaspora, Paris–Douala is the most direct path: a verified traveller on that flight carries your parcel and your family collects it in person, proof of delivery included.",
         "how": "Publish the parcel in the app: weight, contents, photos, the recipient's details in Douala. A verified traveller accepts it, you hand it over in the Paris region, and you follow the scans through to final delivery, photo included.",
-        "price": "The price depends on the traveller and their baggage allowance: each one advertises a per-kilo rate and you choose. The service commission (currently 5%) is deducted from the transaction and always shown before you pay.",
+        "price": "The price depends on the traveller and their baggage allowance: each one advertises a per-kilo rate and you choose. The service commission is deducted from the transaction and always shown before you pay.",
         "delay": "About 6.5 hours of direct flight Paris–Douala. The arrival date is the traveller's flight date, known before booking, so you can tell your family the exact day from the start.",
         "safety": "Identities verified on both sides, declared value capped at €500, payment escrowed until the recipient's confirmation code, four QR scans from Paris to Douala. The recipient follows everything from a web page, no account needed.",
         "faq": [
@@ -1358,13 +1360,13 @@
         "title": "Send a parcel from Paris to Abidjan",
         "lead": "Paris–Abidjan is Yadony's flagship corridor: the Ivorian community of the Paris region is one of the most active in the diaspora, and daily flights to Abidjan mean a traveller departs almost every day.",
         "how": "Publish your parcel in the app: weight, description, photos, the recipient's details in Abidjan. Verified travellers departing from Paris offer their price per kilo; you choose, hand the parcel over in person in the Paris region, and every step is scanned through to delivery in Abidjan.",
-        "price": "Each traveller sets their price per kilo according to their flight and baggage allowance; you compare before choosing. A service commission (currently 5%, always shown before payment) is deducted from the transaction.",
+        "price": "Each traveller sets their price per kilo according to their flight and baggage allowance; you compare before choosing. A service commission, always shown before payment, is deducted from the transaction.",
         "delay": "The direct Paris–Abidjan flight takes about 6.5 hours. Your parcel lands with the traveller: the date is known at booking time, and the handover in Abidjan is arranged in the days that follow.",
         "safety": "The traveller's identity is verified before their first parcel, payment is held by Stripe until the recipient's confirmation code, and four timestamped, geolocated QR scans run from Paris to Abidjan. Your relative follows everything from a simple web page, no account needed.",
         "faq": [
           {
             "question": "How much does sending a parcel Paris–Abidjan cost?",
-            "answer": "The traveller sets their price per kilo, and you compare listings before booking. Example: 5 kg with a traveller at €12/kg = €60 paid; the service commission (currently 5%) is deducted from the transaction and the traveller receives €57."
+            "answer": "The traveller sets their price per kilo, and you compare listings before booking. Example: 5 kg with a traveller at €12/kg = €60 paid; the service commission is deducted from the transaction and the traveller receives the rest."
           },
           {
             "question": "Are there Paris–Abidjan travellers all year round?",

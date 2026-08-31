@@ -4,7 +4,7 @@ import { buildSeoMeta } from '@/lib/seo'
 describe('buildSeoMeta', () => {
   const input = {
     title: 'Tarifs',
-    description: 'Commission de 12 %, sans frais cachés.',
+    description: 'Commission transparente, sans frais cachés.',
     path: '/tarifs',
     locale: 'fr' as const,
   }
@@ -19,7 +19,7 @@ describe('buildSeoMeta', () => {
   })
 
   it('reprend la description en og:description', () => {
-    expect(buildSeoMeta(input).ogDescription).toBe('Commission de 12 %, sans frais cachés.')
+    expect(buildSeoMeta(input).ogDescription).toBe('Commission transparente, sans frais cachés.')
   })
 
   it('construit une og:url absolue à partir du chemin réel', () => {

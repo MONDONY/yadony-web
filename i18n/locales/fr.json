@@ -143,7 +143,7 @@
         {
           "id": "prix",
           "question": "Combien coûte un envoi ?",
-          "answer": "Le voyageur fixe son prix au kilo selon son trajet et ce qu'il accepte de porter. Une commission de service — 5 % à ce jour, toujours affichée avant que vous ne payiez — est prélevée sur la transaction. Pour un colis de 5 kg chez un voyageur à 12 €/kg : vous payez 60 €, la commission est de 3 €, le voyageur reçoit 57 €."
+          "answer": "Le voyageur fixe son prix au kilo selon son trajet et ce qu'il accepte de porter. Une commission de service (5 % à ce jour, toujours affichée avant que vous ne payiez) est prélevée sur la transaction. Pour un colis de 5 kg chez un voyageur à 12 €/kg : vous payez 60 €, la commission est de 3 €, le voyageur reçoit 57 €."
         },
         {
           "id": "interdits",
@@ -163,7 +163,7 @@
         {
           "id": "gain-voyageur",
           "question": "Combien gagne un voyageur ?",
-          "answer": "Le prix qu'il a annoncé, moins la commission de service (5 % à ce jour), prélevée automatiquement sur la transaction. Pour 60 € annoncés, le voyageur reçoit 57 € — et rien n'est versé avant la confirmation de livraison."
+          "answer": "Le prix qu'il a annoncé, moins la commission de service (5 % à ce jour), prélevée automatiquement sur la transaction. Pour 60 € annoncés, le voyageur reçoit 57 €, et rien n'est versé avant la confirmation de livraison."
         },
         {
           "id": "douane",
@@ -273,7 +273,7 @@
       "description": "Le voyageur fixe son prix au kilo ; une commission de service (5 % actuellement) est prélevée sur chaque transaction. Exemple chiffré complet pour un colis de 5 kg Paris → Abidjan."
     },
     "title": "Le voyageur fixe son prix. La commission est transparente.",
-    "lead": "Il n'y a pas de grille tarifaire chez Yadony, parce que ce n'est pas nous qui transportons. Le prix au kilo est celui qu'annonce le voyageur. La seule chose que nous prélevons est une commission de service — 5 % au moment où nous écrivons, toujours affichée avant que vous ne validiez. En cas de remboursement, elle n'est jamais retenue.",
+    "lead": "Il n'y a pas de grille tarifaire chez Yadony, parce que ce n'est pas nous qui transportons. Le prix au kilo est celui qu'annonce le voyageur. La seule chose que nous prélevons est une commission de service : 5 % au moment où nous écrivons, toujours affichée avant que vous ne validiez. En cas de remboursement, elle n'est jamais retenue.",
     "cap": "La valeur déclarée d'un colis est plafonnée à {amount} €. C'est le montant de référence retenu pour arbitrer un litige ; l'assurance du colis n'est pas comprise dans la commission.",
     "example": {
       "caption": "Un colis de 5 kg, Paris → Abidjan, chez un voyageur à 12 € le kilo",
@@ -317,7 +317,7 @@
       },
       "data": {
         "title": "Vos données",
-        "text": "Les pièces d'identité sont traitées par Stripe Identity, stockées chiffrées et cloisonnées du reste de la base. L'autre partie d'un envoi voit votre prénom, votre photo de profil, le statut de votre vérification et les informations du colis concerné — rien de plus. Les données d'un envoi sont conservées le temps nécessaire au traitement d'un éventuel litige, puis archivées. Le détail figure dans la politique de confidentialité."
+        "text": "Les pièces d'identité sont traitées par Stripe Identity, stockées chiffrées et cloisonnées du reste de la base. L'autre partie d'un envoi voit votre prénom, votre photo de profil, le statut de votre vérification et les informations du colis concerné, rien de plus. Les données d'un envoi sont conservées le temps nécessaire au traitement d'un éventuel litige, puis archivées. Le détail figure dans la politique de confidentialité."
       },
       "limits": {
         "title": "Ce que nous ne garantissons pas",
@@ -380,7 +380,7 @@
       "sections": {
         "editor": {
           "title": "Éditeur du site",
-          "text": "Le site yadony.com est édité par YADONY SAS, société par actions simplifiée en cours d'immatriculation au capital de 10 €, dont le siège social est situé 7 avenue Pablo Picasso, Appartement 375, 94120 Fontenay-sous-Bois, France. SIREN : 108 733 510 — RCS Créteil 108 733 510. Contact : contact{'@'}yadony.com — DPO : dpo{'@'}yadony.com."
+          "text": "Le site yadony.com est édité par YADONY SAS, société par actions simplifiée en cours d'immatriculation au capital de 10 €, dont le siège social est situé 7 avenue Pablo Picasso, Appartement 375, 94120 Fontenay-sous-Bois, France. SIREN : 108 733 510, RCS Créteil 108 733 510. Contact : contact{'@'}yadony.com. DPO : dpo{'@'}yadony.com."
         },
         "publication": {
           "title": "Directeur de la publication",
@@ -656,7 +656,7 @@
           "blocks": [
             {
               "p": [
-                "Yadony vous envoie des notifications via l'application (canal principal) et par SMS (canal de secours). Pour les 3 événements critiques — paiement reçu, livraison confirmée, litige ouvert — si votre téléphone n'accuse pas réception en 60 secondes, un SMS part automatiquement. Deux opérateurs SMS différents assurent la continuité en cas de panne."
+                "Yadony vous envoie des notifications via l'application (canal principal) et par SMS (canal de secours). Pour les 3 événements critiques (paiement reçu, livraison confirmée, litige ouvert), si votre téléphone n'accuse pas réception en 60 secondes, un SMS part automatiquement. Deux opérateurs SMS différents assurent la continuité en cas de panne."
               ]
             }
           ]
@@ -724,7 +724,7 @@
                 "Forme : Société par Actions Simplifiée",
                 "Capital : 10 €",
                 "Siège : 7 avenue Pablo Picasso, Appartement 375, 94120 Fontenay-sous-Bois, France",
-                "SIREN : 108 733 510 — RCS Créteil 108 733 510",
+                "SIREN : 108 733 510, RCS Créteil 108 733 510",
                 "Directeur de publication : M. Dramane DIAKITE, Président",
                 "Contact : contact{'@'}yadony.com",
                 "DPO : dpo{'@'}yadony.com",
@@ -742,7 +742,7 @@
         "description": "Comment Yadony protège vos données : minimum de données en interne, partenaires certifiés (Firebase, Stripe, Cloudflare), durées de conservation et droits RGPD."
       },
       "title": "Politique de confidentialité",
-      "intro": "Yadony est une place de marché mobile qui met en relation des voyageurs disposant de place dans leurs bagages avec des expéditeurs souhaitant envoyer des colis à leurs proches. Notre service couvre les corridors depuis l'Europe, les États-Unis, le Canada et l'Afrique vers toutes les destinations que nous desservons. Nous avons conçu Yadony avec un principe fondamental : nous ne conservons que le strict minimum de données personnelles en interne. Les données sensibles — identité, authentification, documents officiels — sont confiées à des partenaires spécialisés de confiance, reconnus mondialement, qui les traitent avec un niveau de sécurité et de conformité que nous ne pourrions pas atteindre seuls. En utilisant Yadony, vous acceptez les pratiques décrites dans ce document.",
+      "intro": "Yadony est une place de marché mobile qui met en relation des voyageurs disposant de place dans leurs bagages avec des expéditeurs souhaitant envoyer des colis à leurs proches. Notre service couvre les corridors depuis l'Europe, les États-Unis, le Canada et l'Afrique vers toutes les destinations que nous desservons. Nous avons conçu Yadony avec un principe fondamental : nous ne conservons que le strict minimum de données personnelles en interne. Les données sensibles (identité, authentification, documents officiels) sont confiées à des partenaires spécialisés de confiance, reconnus mondialement, qui les traitent avec un niveau de sécurité et de conformité que nous ne pourrions pas atteindre seuls. En utilisant Yadony, vous acceptez les pratiques décrites dans ce document.",
       "articles": [
         {
           "title": "1. Qui est responsable de vos données ?",
@@ -761,7 +761,7 @@
           "blocks": [
             {
               "p": [
-                "Yadony ne stocke en interne que les informations nécessaires à votre profil utilisateur. Toutes les données sensibles — identité, authentification, documents officiels, images — sont traitées et stockées directement par des partenaires spécialisés. Yadony ne voit jamais vos documents d'identité, votre visage, ni vos informations bancaires."
+                "Yadony ne stocke en interne que les informations nécessaires à votre profil utilisateur. Toutes les données sensibles (identité, authentification, documents officiels, images) sont traitées et stockées directement par des partenaires spécialisés. Yadony ne voit jamais vos documents d'identité, votre visage, ni vos informations bancaires."
               ]
             },
             {
@@ -770,10 +770,10 @@
                 "Les seules données stockées dans nos propres systèmes sont les informations de votre profil public :"
               ],
               "ul": [
-                "Nom et prénom — afficher votre identité sur votre profil et dans les transactions",
-                "Adresse e-mail — vous identifier et vous envoyer les récapitulatifs de transaction",
-                "Date de naissance — vérifier que vous êtes majeur (18 ans minimum)",
-                "Ville de résidence — faciliter la mise en relation avec des voyageurs proches de chez vous"
+                "Nom et prénom : afficher votre identité sur votre profil et dans les transactions",
+                "Adresse e-mail : vous identifier et vous envoyer les récapitulatifs de transaction",
+                "Date de naissance : vérifier que vous êtes majeur (18 ans minimum)",
+                "Ville de résidence : faciliter la mise en relation avec des voyageurs proches de chez vous"
               ]
             },
             {
@@ -792,7 +792,7 @@
               ]
             },
             {
-              "sub": "3.1 Google Firebase — Authentification et sécurité du compte",
+              "sub": "3.1 Google Firebase : authentification et sécurité du compte",
               "p": [
                 "Toute la partie authentification est gérée par Google Firebase, l'une des infrastructures les plus sécurisées au monde. Firebase gère :"
               ],
@@ -810,9 +810,9 @@
               ]
             },
             {
-              "sub": "3.2 Stripe Identity — Vérification d'identité (KYC)",
+              "sub": "3.2 Stripe Identity : vérification d'identité (KYC)",
               "p": [
-                "La vérification d'identité — obligatoire pour utiliser Yadony — est entièrement gérée par Stripe Identity, le service de vérification de documents du leader mondial du paiement en ligne. Stripe Identity gère :"
+                "La vérification d'identité, obligatoire pour utiliser Yadony, est entièrement gérée par Stripe Identity, le service de vérification de documents du leader mondial du paiement en ligne. Stripe Identity gère :"
               ],
               "ul": [
                 "La photo de votre pièce d'identité (carte nationale ou passeport)",
@@ -827,7 +827,7 @@
               ]
             },
             {
-              "sub": "3.3 Stripe — Paiements et séquestre",
+              "sub": "3.3 Stripe : paiements et séquestre",
               "p": [
                 "Tous les paiements, le mécanisme de séquestre (argent bloqué jusqu'à la livraison) et les virements vers les voyageurs sont gérés exclusivement par Stripe. Stripe gère :"
               ],
@@ -845,20 +845,20 @@
               ]
             },
             {
-              "sub": "3.4 Wave et Orange Money — Mobile Money",
+              "sub": "3.4 Wave et Orange Money : Mobile Money",
               "p": [
                 "Pour les paiements et virements via Mobile Money (principalement pour les utilisateurs et voyageurs basés en Afrique), nous faisons appel à Wave et Orange Money. Ces prestataires gèrent directement vos coordonnées de compte Mobile Money. Yadony ne stocke pas ces informations."
               ]
             },
             {
-              "sub": "3.5 Cloudflare — Stockage des images",
+              "sub": "3.5 Cloudflare : stockage des images",
               "p": [
-                "Toutes les images liées aux colis — photos prises par l'expéditeur, photos de remise et de livraison prises par le voyageur — sont stockées sur l'infrastructure Cloudflare. Cloudflare gère :"
+                "Toutes les images liées aux colis (photos prises par l'expéditeur, photos de remise et de livraison prises par le voyageur) sont stockées sur l'infrastructure Cloudflare. Cloudflare gère :"
               ],
               "ul": [
                 "Le stockage sécurisé des photos de colis",
                 "Les photos de remise et de livraison horodatées et géolocalisées",
-                "La génération de liens d'accès temporaires et sécurisés — les images ne sont jamais accessibles publiquement de façon permanente"
+                "La génération de liens d'accès temporaires et sécurisés : les images ne sont jamais accessibles publiquement de façon permanente"
               ]
             },
             {
@@ -876,12 +876,12 @@
                 "En dehors des données de profil et de celles gérées par nos partenaires, Yadony génère et conserve les données suivantes, indispensables au fonctionnement du service :"
               ],
               "ul": [
-                "Historique des annonces et des trajets — gérer l'activité des voyageurs et produire les exports fiscaux (Yadony PRO) — 5 ans",
-                "Historique des transactions (montants, dates, statuts) — traçabilité financière et obligations comptables légales — 5 ans (obligation légale)",
-                "Scans du colis (horodatage et géolocalisation) — traçabilité du colis à chaque étape et preuve en cas de litige — 5 ans",
-                "Notes et évaluations reçues — construire la réputation des utilisateurs et garantir la qualité — durée de vie du compte",
-                "Messages échangés dans la messagerie interne — permettre la communication entre expéditeurs et voyageurs — 2 ans après la transaction",
-                "Données de connexion (date, appareil — anonymisées) — sécurité du compte et détection de fraude — 13 mois"
+                "Historique des annonces et des trajets : gérer l'activité des voyageurs et produire les exports fiscaux Yadony PRO. Conservation : 5 ans",
+                "Historique des transactions (montants, dates, statuts) : traçabilité financière et obligations comptables légales. Conservation : 5 ans (obligation légale)",
+                "Scans du colis (horodatage et géolocalisation) : traçabilité du colis à chaque étape et preuve en cas de litige. Conservation : 5 ans",
+                "Notes et évaluations reçues : construire la réputation des utilisateurs et garantir la qualité. Conservation : durée de vie du compte",
+                "Messages échangés dans la messagerie interne : permettre la communication entre expéditeurs et voyageurs. Conservation : 2 ans après la transaction",
+                "Données de connexion (date, appareil, anonymisées) : sécurité du compte et détection de fraude. Conservation : 13 mois"
               ]
             },
             {
@@ -899,15 +899,15 @@
                 "Voici un récapitulatif complet pour vous donner une vision claire de l'architecture de protection de vos données."
               ],
               "ul": [
-                "Nom, prénom, e-mail, date de naissance, ville — Yadony (base de données interne) — Yadony y a accès : oui, données de profil uniquement",
-                "Numéro de téléphone, authentification par SMS — Google Firebase — accès Yadony : non, Firebase gère directement",
-                "Empreinte digitale, Face ID, code PIN — Google Firebase — accès Yadony : non, données biométriques locales ou Firebase",
-                "Photo de pièce d'identité, selfie, liveness — Stripe Identity — accès Yadony : non, Yadony reçoit uniquement le statut Vérifié / Rejeté",
-                "Numéro de carte bancaire, données de paiement — Stripe — accès Yadony : non, jamais transmis à Yadony",
-                "Coordonnées Mobile Money — Wave / Orange Money — accès Yadony : non, gérées directement par ces services",
-                "Photos de colis, photos de livraison — Cloudflare — accès via lien temporaire sécurisé uniquement",
-                "Historique des transactions, scans, évaluations — Yadony (base de données interne) — accès : oui, nécessaire au fonctionnement du service",
-                "Messages entre utilisateurs — Yadony (chiffrés) — contenu chiffré, accès restreint aux litiges"
+                "Nom, prénom, e-mail, date de naissance, ville : Yadony (base de données interne). Yadony y a accès : oui, données de profil uniquement",
+                "Numéro de téléphone, authentification par SMS : Google Firebase. Accès Yadony : non, Firebase gère directement",
+                "Empreinte digitale, Face ID, code PIN : Google Firebase. Accès Yadony : non, données biométriques locales ou Firebase",
+                "Photo de pièce d'identité, selfie, liveness : Stripe Identity. Accès Yadony : non, Yadony reçoit uniquement le statut Vérifié / Rejeté",
+                "Numéro de carte bancaire, données de paiement : Stripe. Accès Yadony : non, jamais transmis à Yadony",
+                "Coordonnées Mobile Money : Wave / Orange Money. Accès Yadony : non, gérées directement par ces services",
+                "Photos de colis, photos de livraison : Cloudflare. Accès via lien temporaire sécurisé uniquement",
+                "Historique des transactions, scans, évaluations : Yadony (base de données interne). Accès : oui, nécessaire au fonctionnement du service",
+                "Messages entre utilisateurs : Yadony (chiffrés). Contenu chiffré, accès restreint aux litiges"
               ]
             }
           ]
@@ -917,16 +917,16 @@
           "blocks": [
             {
               "ul": [
-                "Données de profil (nom, e-mail, date de naissance, ville) — exécution du contrat (CGU)",
-                "Authentification via Google Firebase — exécution du contrat",
-                "Vérification d'identité via Stripe Identity — obligation légale (lutte contre le blanchiment et la fraude)",
-                "Traitement des paiements et séquestre via Stripe — exécution du contrat",
-                "Stockage des images via Cloudflare — exécution du contrat et intérêt légitime (preuve en cas de litige)",
-                "Historique des transactions — obligation légale (comptabilité et fiscalité)",
-                "Scans et traçabilité du colis — exécution du contrat et intérêt légitime",
-                "Détection de fraude et sécurité — intérêt légitime",
-                "Évaluations et réputation — intérêt légitime",
-                "Communications marketing — consentement (révocable à tout moment)"
+                "Données de profil (nom, e-mail, date de naissance, ville) : exécution du contrat (CGU)",
+                "Authentification via Google Firebase : exécution du contrat",
+                "Vérification d'identité via Stripe Identity : obligation légale (lutte contre le blanchiment et la fraude)",
+                "Traitement des paiements et séquestre via Stripe : exécution du contrat",
+                "Stockage des images via Cloudflare : exécution du contrat et intérêt légitime (preuve en cas de litige)",
+                "Historique des transactions : obligation légale (comptabilité et fiscalité)",
+                "Scans et traçabilité du colis : exécution du contrat et intérêt légitime",
+                "Détection de fraude et sécurité : intérêt légitime",
+                "Évaluations et réputation : intérêt légitime",
+                "Communications marketing : consentement (révocable à tout moment)"
               ],
               "p": [
                 "Chaque traitement repose sur une base légale précise :"
@@ -989,16 +989,16 @@
           "blocks": [
             {
               "ul": [
-                "Données de profil (nom, e-mail, date de naissance, ville) — durée d'utilisation plus 3 ans après la dernière connexion — gestion du compte",
-                "Données d'authentification (Firebase) — gérées par Google Firebase selon leur politique",
-                "Données KYC (Stripe Identity) — gérées par Stripe selon leur politique",
-                "Données de paiement (Stripe) — gérées par Stripe selon leur politique",
-                "Images des colis (Cloudflare) — 5 ans, liens temporaires — preuve en cas de litige",
-                "Historique des transactions — 5 ans — obligation comptable et fiscale",
-                "Scans et géolocalisation — 5 ans — preuve en cas de litige",
-                "Messages dans la messagerie — 2 ans après la transaction — résolution de litiges",
-                "Données de navigation anonymisées — 13 mois — conformité CNIL",
-                "Comptes supprimés — anonymisation immédiate des données de profil, sauf historique financier conservé 5 ans"
+                "Données de profil (nom, e-mail, date de naissance, ville) : durée d'utilisation plus 3 ans après la dernière connexion, pour la gestion du compte",
+                "Données d'authentification (Firebase) : gérées par Google Firebase selon leur politique",
+                "Données KYC (Stripe Identity) : gérées par Stripe selon leur politique",
+                "Données de paiement (Stripe) : gérées par Stripe selon leur politique",
+                "Images des colis (Cloudflare) : 5 ans, liens temporaires, preuve en cas de litige",
+                "Historique des transactions : 5 ans, obligation comptable et fiscale",
+                "Scans et géolocalisation : 5 ans, preuve en cas de litige",
+                "Messages dans la messagerie : 2 ans après la transaction, résolution de litiges",
+                "Données de navigation anonymisées : 13 mois, conformité CNIL",
+                "Comptes supprimés : anonymisation immédiate des données de profil, sauf historique financier conservé 5 ans"
               ],
               "p": [
                 "Les durées de conservation par type de données :"
@@ -1040,14 +1040,14 @@
           "blocks": [
             {
               "ul": [
-                "Droit d'accès — obtenir une copie de toutes les données Yadony sur vous — Paramètres → Mes données, ou dpo{'@'}yadony.com",
-                "Droit de rectification — corriger vos données de profil (nom, e-mail, ville) — directement dans votre profil dans l'application",
-                "Droit à l'effacement — supprimer votre compte et vos données de profil — Paramètres → Supprimer mon compte",
-                "Droit à la portabilité — recevoir vos données en format JSON ou CSV — dpo{'@'}yadony.com",
-                "Droit d'opposition — vous opposer aux traitements fondés sur l'intérêt légitime — dpo{'@'}yadony.com",
-                "Retrait du consentement — désactiver le marketing ou les analytics — Paramètres → Confidentialité",
-                "Droits sur les données Firebase — accès, rectification, suppression des données d'authentification — via votre compte Google ou dpo{'@'}yadony.com",
-                "Droits sur les données Stripe — accès et suppression des données de paiement et d'identité — stripe.com/fr ou dpo{'@'}yadony.com"
+                "Droit d'accès : obtenir une copie de toutes les données Yadony sur vous, via Paramètres → Mes données ou dpo{'@'}yadony.com",
+                "Droit de rectification : corriger vos données de profil (nom, e-mail, ville), directement dans votre profil dans l'application",
+                "Droit à l'effacement : supprimer votre compte et vos données de profil, via Paramètres → Supprimer mon compte",
+                "Droit à la portabilité : recevoir vos données en format JSON ou CSV, sur demande à dpo{'@'}yadony.com",
+                "Droit d'opposition : vous opposer aux traitements fondés sur l'intérêt légitime, sur demande à dpo{'@'}yadony.com",
+                "Retrait du consentement : désactiver le marketing ou les analytics, via Paramètres → Confidentialité",
+                "Droits sur les données Firebase : accès, rectification, suppression des données d'authentification, via votre compte Google ou dpo{'@'}yadony.com",
+                "Droits sur les données Stripe : accès et suppression des données de paiement et d'identité, sur stripe.com/fr ou dpo{'@'}yadony.com"
               ],
               "p": [
                 "Vos droits et comment les exercer :"
@@ -1103,7 +1103,7 @@
                 "Images des colis (Cloudflare) : les liens deviennent inaccessibles. Les fichiers sont supprimés selon la politique Cloudflare.",
                 "Messages dans la messagerie : supprimés.",
                 "Carnet de destinataires : nettoyé.",
-                "Historique des transactions : conservé 5 ans — obligation légale comptable. Ces données sont anonymisées au maximum.",
+                "Historique des transactions : conservé 5 ans (obligation légale comptable). Ces données sont anonymisées au maximum.",
                 "Si un litige est en cours, le compte est maintenu jusqu'à la clôture du litige, puis supprimé."
               ],
               "p": [
@@ -1141,7 +1141,7 @@
                 "Raison sociale : YADONY SAS (en cours d'immatriculation)",
                 "Directeur de la publication : M. Dramane DIAKITE, Président",
                 "Partenaires techniques certifiés : Google Firebase, Stripe, Stripe Identity, Wave, Orange Money, Cloudflare",
-                "Autorité de contrôle française : CNIL — www.cnil.fr"
+                "Autorité de contrôle française : CNIL (www.cnil.fr)"
               ]
             }
           ]
@@ -1194,7 +1194,7 @@
     "company": {
       "name": "YADONY SAS",
       "line1": "7 avenue Pablo Picasso, 94120 Fontenay-sous-Bois",
-      "line2": "SIREN 108 733 510 — RCS Créteil"
+      "line2": "SIREN 108 733 510, RCS Créteil"
     },
     "socialLabel": "Suivez Yadony sur les réseaux"
   },
@@ -1221,7 +1221,7 @@
     "comingSoon": {
       "kicker": "Tout bientôt",
       "title": "L'application arrive",
-      "text": "Yadony sera très prochainement disponible sur l'App Store et Google Play. Revenez dans quelques jours — le site, lui, est déjà là.",
+      "text": "Yadony sera très prochainement disponible sur l'App Store et Google Play. Revenez dans quelques jours. Le site, lui, est déjà là.",
       "close": "Compris"
     }
   },
@@ -1260,11 +1260,11 @@
         "faq": [
           {
             "question": "Combien coûte un envoi de colis Paris–Dakar ?",
-            "answer": "C'est le voyageur qui fixe son prix au kilo — vous comparez les annonces avant de choisir. Pour un colis de 5 kg chez un voyageur à 12 €/kg, vous payez 60 € ; la commission de service (5 % actuellement) est prélevée sur la transaction et le voyageur reçoit 57 €."
+            "answer": "C'est le voyageur qui fixe son prix au kilo ; vous comparez les annonces avant de choisir. Pour un colis de 5 kg chez un voyageur à 12 €/kg, vous payez 60 € ; la commission de service (5 % actuellement) est prélevée sur la transaction et le voyageur reçoit 57 €."
           },
           {
             "question": "Combien de temps met un colis pour arriver à Dakar ?",
-            "answer": "Le temps du vol du voyageur — environ 5 h 30 en direct — plus le rendez-vous de remise à Dakar. Vous voyez la date de départ avant de réserver, donc vous savez dès le début quand votre colis arrive."
+            "answer": "Le temps du vol du voyageur (environ 5 h 30 en direct), plus le rendez-vous de remise à Dakar. Vous voyez la date de départ avant de réserver, donc vous savez dès le début quand votre colis arrive."
           },
           {
             "question": "Comment mon proche récupère-t-il le colis à Dakar ?",
@@ -1279,7 +1279,7 @@
         },
         "title": "Envoyer un colis de Lyon à Abidjan",
         "lead": "La communauté ivoirienne de Lyon et de sa région n'a plus besoin de passer par Paris : des voyageurs relient directement Lyon à Abidjan, et votre colis voyage dans leur valise.",
-        "how": "Décrivez votre colis dans l'app — poids, contenu, photo, valeur déclarée. Les voyageurs vérifiés au départ de Lyon (ou de Paris si vous préférez élargir) proposent leur prix. Après acceptation, vous remettez le colis en main propre et chaque étape est scannée jusqu'à Abidjan.",
+        "how": "Décrivez votre colis dans l'app : poids, contenu, photo, valeur déclarée. Les voyageurs vérifiés au départ de Lyon (ou de Paris si vous préférez élargir) proposent leur prix. Après acceptation, vous remettez le colis en main propre et chaque étape est scannée jusqu'à Abidjan.",
         "price": "Chaque voyageur annonce son prix au kilo ; c'est souvent plus avantageux qu'un transporteur classique pour les colis de quelques kilos, et vous savez exactement qui transporte. La commission de service (5 % actuellement) est affichée avant que vous ne validiez.",
         "delay": "Comptez environ 6 h 30 de vol direct Lyon–Abidjan. Le colis arrive avec le voyageur : la date est connue dès la réservation, sans fourchette floue de plusieurs semaines.",
         "safety": "Vérification d'identité obligatoire, paiement sous séquestre Stripe libéré seulement après confirmation du destinataire, quatre scans QR horodatés et géolocalisés. En cas de problème, vous avez 48 h pour ouvrir un litige, instruit sous 72 h sur preuves.",
@@ -1306,7 +1306,7 @@
         "title": "Envoyer un colis de Marseille à Bamako",
         "lead": "Depuis Marseille et tout le sud de la France, la communauté malienne envoie ses colis à Bamako sans détour : un voyageur qui fait déjà le trajet les emporte, avec un vrai suivi à chaque étape.",
         "how": "Créez votre demande dans l'app avec le poids et la description du colis. Un voyageur vérifié partant de Marseille vers Bamako l'accepte, vous fixez ensemble un rendez-vous de remise, et le colis est scanné au départ, en transit et à l'arrivée.",
-        "price": "Le prix au kilo est celui qu'annonce le voyageur — pas de grille cachée, pas de suppléments découverts au guichet. Une commission de service (5 % actuellement) est prélevée sur la transaction, affichée avant paiement.",
+        "price": "Le prix au kilo est celui qu'annonce le voyageur : pas de grille cachée, pas de suppléments découverts au guichet. Une commission de service (5 % actuellement) est prélevée sur la transaction, affichée avant paiement.",
         "delay": "Le vol Marseille–Bamako dure environ 5 h 30 en direct. Votre colis arrive le jour où le voyageur atterrit ; la remise au destinataire se fait dans la foulée, au rendez-vous convenu dans l'app.",
         "safety": "Chaque voyageur passe une vérification d'identité avec détection de vivacité avant de pouvoir transporter. Le paiement reste sous séquestre jusqu'au code de confirmation du destinataire, et l'historique des scans fait foi en cas de litige.",
         "faq": [
@@ -1331,9 +1331,9 @@
         },
         "title": "Envoyer un colis de Paris à Douala",
         "lead": "Pour la diaspora camerounaise, Paris–Douala est le chemin le plus direct : un voyageur vérifié qui prend ce vol emporte votre colis et votre famille le récupère en main propre, preuve de livraison à l'appui.",
-        "how": "Publiez le colis dans l'app — poids, contenu, photos, coordonnées du destinataire à Douala. Un voyageur vérifié l'accepte, vous le lui remettez en région parisienne, et vous suivez les scans jusqu'à la remise finale, photo comprise.",
+        "how": "Publiez le colis dans l'app : poids, contenu, photos, coordonnées du destinataire à Douala. Un voyageur vérifié l'accepte, vous le lui remettez en région parisienne, et vous suivez les scans jusqu'à la remise finale, photo comprise.",
         "price": "Le prix dépend du voyageur et de sa franchise bagage : chacun annonce son tarif au kilo et vous choisissez. La commission de service (5 % actuellement) est prélevée sur la transaction et toujours affichée avant que vous ne payiez.",
-        "delay": "Environ 6 h 30 de vol direct Paris–Douala. La date d'arrivée est celle du vol du voyageur, connue avant la réservation — vous pouvez prévenir votre famille du jour exact dès le départ.",
+        "delay": "Environ 6 h 30 de vol direct Paris–Douala. La date d'arrivée est celle du vol du voyageur, connue avant la réservation : vous pouvez prévenir votre famille du jour exact dès le départ.",
         "safety": "Identités vérifiées des deux côtés, valeur déclarée plafonnée à 500 €, paiement séquestré jusqu'au code de confirmation du destinataire, quatre scans QR de Paris à Douala. Le destinataire suit tout depuis une page web, sans compte.",
         "faq": [
           {
@@ -1357,8 +1357,8 @@
         },
         "title": "Envoyer un colis de Paris à Abidjan",
         "lead": "Paris–Abidjan est le corridor vedette de Yadony : la communauté ivoirienne d'Île-de-France est l'une des plus actives de la diaspora, et les vols quotidiens vers Abidjan font qu'un voyageur part presque chaque jour.",
-        "how": "Publiez votre colis dans l'app — poids, description, photos, coordonnées du destinataire à Abidjan. Les voyageurs vérifiés qui partent de Paris proposent leur prix au kilo ; vous choisissez, vous remettez le colis en main propre en région parisienne, et chaque étape est scannée jusqu'à la remise à Abidjan.",
-        "price": "Chaque voyageur fixe son prix au kilo selon son vol et sa franchise bagage — vous comparez avant de choisir. Une commission de service (5 % actuellement, toujours affichée avant paiement) est prélevée sur la transaction.",
+        "how": "Publiez votre colis dans l'app : poids, description, photos, coordonnées du destinataire à Abidjan. Les voyageurs vérifiés qui partent de Paris proposent leur prix au kilo ; vous choisissez, vous remettez le colis en main propre en région parisienne, et chaque étape est scannée jusqu'à la remise à Abidjan.",
+        "price": "Chaque voyageur fixe son prix au kilo selon son vol et sa franchise bagage ; vous comparez avant de choisir. Une commission de service (5 % actuellement, toujours affichée avant paiement) est prélevée sur la transaction.",
         "delay": "Le vol direct Paris–Abidjan dure environ 6 h 30. Votre colis atterrit avec le voyageur : la date est connue dès la réservation, et le rendez-vous de remise à Abidjan se cale dans les jours qui suivent.",
         "safety": "Identité du voyageur vérifiée avant le premier colis, paiement bloqué chez Stripe jusqu'au code de confirmation du destinataire, quatre scans QR horodatés et géolocalisés de Paris à Abidjan. Votre proche suit tout depuis une simple page web, sans compte.",
         "faq": [
@@ -1372,7 +1372,7 @@
           },
           {
             "question": "Mon proche à Abidjan doit-il installer l'application ?",
-            "answer": "Non. Le destinataire suit le colis depuis une simple page web, même sur un téléphone basique, et confirme la réception avec un code reçu par SMS — c'est ce qui déclenche le paiement du voyageur."
+            "answer": "Non. Le destinataire suit le colis depuis une simple page web, même sur un téléphone basique, et confirme la réception avec un code reçu par SMS : c'est ce qui déclenche le paiement du voyageur."
           }
         ]
       }

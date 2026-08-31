@@ -40,7 +40,7 @@ const YADONY_PRO_URL = 'https://pro.yadony.com'
                 <svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor" aria-hidden="true">
                   <path :d="social.iconPath" />
                 </svg>
-                <span class="sr-only">{{ social.name }} — {{ t('a11y.opensNewTab') }}</span>
+                <span class="sr-only">{{ social.name }} ({{ t('a11y.opensNewTab') }})</span>
               </a>
             </li>
           </ul>

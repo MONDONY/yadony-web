@@ -24,7 +24,7 @@ export interface SeoMeta {
 const OG_LOCALES: Record<Locale, string> = { fr: 'fr_FR', en: 'en_GB' }
 
 export function buildSeoMeta(input: SeoInput): SeoMeta {
-  const title = input.title === siteName ? siteName : `${input.title} — ${siteName}`
+  const title = input.title === siteName ? siteName : `${input.title} | ${siteName}`
   const image = absoluteUrl(input.image ?? '/og/default.png')
 
   return {

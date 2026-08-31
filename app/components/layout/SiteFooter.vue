@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
 import { contactEmail } from '@/lib/site'
+import { socialLinks } from '@/lib/social'
 
 const { t } = useI18n()
 const p = useLocalePath()
@@ -28,6 +29,21 @@ const YADONY_PRO_URL = 'https://pro.yadony.com'
             <p>{{ t('footer.company.line1') }}</p>
             <p>{{ t('footer.company.line2') }}</p>
           </address>
+          <ul class="mt-6 flex list-none gap-2" :aria-label="t('footer.socialLabel')">
+            <li v-for="social in socialLinks" :key="social.name">
+              <a
+                :href="social.url"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex h-10 w-10 items-center justify-center rounded-el text-white/65 transition-[color,background-color] duration-150 hover:bg-white/10 hover:text-white"
+              >
+                <svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor" aria-hidden="true">
+                  <path :d="social.iconPath" />
+                </svg>
+                <span class="sr-only">{{ social.name }} — {{ t('a11y.opensNewTab') }}</span>
+              </a>
+            </li>
+          </ul>
         </div>
 
         <nav :aria-label="t('footer.navLabel')" class="text-sm">

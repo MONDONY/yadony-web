@@ -4,8 +4,9 @@ import fr from '../../../i18n/locales/fr.json'
 import en from '../../../i18n/locales/en.json'
 
 describe('corridors', () => {
-  it('expose les quatre corridors de lancement', () => {
+  it('expose les cinq corridors de lancement, Paris–Abidjan en tête', () => {
     expect(corridors.map(c => c.slug)).toEqual([
+      'paris-abidjan',
       'paris-dakar',
       'lyon-abidjan',
       'marseille-bamako',

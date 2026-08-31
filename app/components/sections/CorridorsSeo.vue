@@ -6,7 +6,7 @@ const localePath = useLocalePath()
 
 const corridors = [
   { key: 'dakar', slug: 'paris-dakar' },
-  { key: 'abidjan', slug: 'lyon-abidjan' },
+  { key: 'abidjan', slug: 'paris-abidjan' },
   { key: 'bamako', slug: 'marseille-bamako' },
   { key: 'douala', slug: 'paris-douala' },
 ] as const

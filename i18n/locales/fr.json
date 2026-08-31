@@ -29,8 +29,8 @@
     },
     "hero": {
       "title": "Votre colis part avec quelqu'un de confiance",
-      "lead": "Un voyageur vérifié emporte votre colis Paris → Dakar. Vous payez à la livraison confirmée, pas avant.",
-      "note": "Au départ de Paris, Lyon et Marseille, vers Dakar, Abidjan, Bamako et Douala.",
+      "lead": "Un voyageur vérifié emporte votre colis Paris → Abidjan. Vous payez à la livraison confirmée, pas avant.",
+      "note": "Au départ de Paris, Lyon et Marseille, vers Abidjan, Dakar, Bamako et Douala.",
       "appStore": "Télécharger sur l'App Store",
       "playStore": "Disponible sur Google Play",
       "screenshotAlt": "Écran d'accueil de l'application yadony montrant les trajets disponibles",
@@ -80,9 +80,9 @@
       }
     },
     "tracking": {
-      "title": "Quatre scans entre Paris et Dakar",
+      "title": "Quatre scans entre Paris et Abidjan",
       "lead": "À chaque étape, un QR code est scanné. L'expéditeur et le destinataire voient la même chose, au même moment.",
-      "scrollLabel": "Étapes du parcours, de Paris à Dakar. Faites défiler pour voir les quatre écrans.",
+      "scrollLabel": "Étapes du parcours, de Paris à Abidjan. Faites défiler pour voir les quatre écrans.",
       "steps": {
         "deposit": {
           "label": "Dépôt à Paris",
@@ -100,7 +100,7 @@
           "alt": "Écran de scan à l'arrivée confirmant que le colis a atterri"
         },
         "delivery": {
-          "label": "Livraison à Dakar",
+          "label": "Livraison à Abidjan",
           "text": "Scan final, photo de remise en main propre. Le paiement est alors libéré au voyageur.",
           "alt": "Écran de livraison avec photo de confirmation de remise"
         }
@@ -173,7 +173,7 @@
         {
           "id": "villes",
           "question": "Quelles villes sont desservies ?",
-          "answer": "Au départ de Paris, Lyon et Marseille, vers Dakar, Abidjan, Bamako et Douala. Ce sont les corridors où il y a assez de vols et assez de monde pour que le service tienne dès le premier jour. D'autres viendront. Nous préférons ouvrir une ville quand elle fonctionne plutôt qu'afficher une carte pleine de destinations sans voyageurs."
+          "answer": "Au départ de Paris, Lyon et Marseille, vers Abidjan, Dakar, Bamako et Douala. Ce sont les corridors où il y a assez de vols et assez de monde pour que le service tienne dès le premier jour. D'autres villes suivront."
         }
       ]
     },
@@ -191,8 +191,8 @@
           "text": "Le corridor le plus actif : des départs réguliers entre l'Île-de-France et le Sénégal."
         },
         "abidjan": {
-          "route": "Lyon → Abidjan",
-          "text": "Envoyez vers la Côte d'Ivoire depuis Lyon ou Paris, au prix fixé par le voyageur."
+          "route": "Paris → Abidjan",
+          "text": "Le corridor vedette : envoyez vers la Côte d'Ivoire depuis Paris, au prix fixé par le voyageur."
         },
         "bamako": {
           "route": "Marseille → Bamako",
@@ -270,13 +270,13 @@
   "pricing": {
     "seo": {
       "title": "Tarifs yadony : une commission transparente, rien d'autre",
-      "description": "Le voyageur fixe son prix au kilo ; une commission de service (5 % actuellement) est prélevée sur chaque transaction. Exemple chiffré complet pour un colis de 5 kg Paris → Dakar."
+      "description": "Le voyageur fixe son prix au kilo ; une commission de service (5 % actuellement) est prélevée sur chaque transaction. Exemple chiffré complet pour un colis de 5 kg Paris → Abidjan."
     },
     "title": "Le voyageur fixe son prix. La commission est transparente.",
     "lead": "Il n'y a pas de grille tarifaire chez Yadony, parce que ce n'est pas nous qui transportons. Le prix au kilo est celui qu'annonce le voyageur. La seule chose que nous prélevons est une commission de service — 5 % au moment où nous écrivons, toujours affichée avant que vous ne validiez. En cas de remboursement, elle n'est jamais retenue.",
     "cap": "La valeur déclarée d'un colis est plafonnée à {amount} €. C'est le montant de référence retenu pour arbitrer un litige ; l'assurance du colis n'est pas comprise dans la commission.",
     "example": {
-      "caption": "Un colis de 5 kg, Paris → Dakar, chez un voyageur à 12 € le kilo",
+      "caption": "Un colis de 5 kg, Paris → Abidjan, chez un voyageur à 12 € le kilo",
       "travelerPrice": "Prix demandé par le voyageur",
       "commission": "Commission Yadony (taux actuel : 5 %)",
       "senderPays": "Total payé par l'expéditeur",
@@ -284,7 +284,7 @@
     },
     "comparison": {
       "title": "Le même colis chez un transporteur classique",
-      "text": "Cinq kilos Paris → Dakar démarrent autour de 150 € chez un transporteur international, hors options de délai, avec une livraison qui ne dessert pas tous les quartiers. Nous ne prétendons pas les remplacer : pour un envoi volumineux, urgent ou de grande valeur, ils restent le bon choix. Pour quelques kilos qu'un proche attend, la question du prix ne se pose plus de la même façon."
+      "text": "Cinq kilos Paris → Abidjan démarrent autour de 150 € chez un transporteur international, hors options de délai, contre 60 € chez un voyageur à 12 € le kilo. La différence tient à une chose : le voyageur faisait déjà le trajet."
     }
   },
   "trust": {
@@ -332,7 +332,7 @@
     },
     "title": "Pourquoi on a fini par le construire",
     "paragraphs": [
-      "Il y a un message que tout le monde dans la diaspora a déjà écrit, ou lu : « quelqu'un part à Dakar cette semaine ? »",
+      "Il y a un message que tout le monde dans la diaspora a déjà écrit, ou lu : « quelqu'un part à Abidjan cette semaine ? ». Yadony est né de ce message-là.",
       "Ça se passe dans un groupe WhatsApp de deux cents personnes. Quelqu'un répond, on échange un numéro, on se retrouve un samedi sur un parking. On confie un carton à un inconnu recommandé par un cousin, on paie en liquide, et on attend. La plupart du temps, ça marche. Ça marche même remarquablement bien : c'est comme ça que circulent les vêtements, le matériel scolaire, les pièces détachées et les cadeaux depuis trente ans.",
       "Le problème n'apparaît que le jour où ça ne marche pas. Le colis n'arrive pas. Le numéro ne répond plus. Il n'y a pas de trace, pas de preuve de remise, pas de reçu, personne à appeler. On ne peut même pas dire ce qui s'est passé : perdu, oublié, gardé. Et comme la personne rendait service, on n'ose pas insister. On perd le colis, et souvent on perd aussi la relation.",
       "En face, il y a les transporteurs. Ils sont fiables, ils sont nettement plus chers, et ils ne livrent pas partout. Pour faire parvenir cinq kilos à quelqu'un qu'on connaît, ce n'est pas une solution, c'est un renoncement.",
@@ -1228,7 +1228,7 @@
     "hub": {
       "seo": {
         "title": "Envoyer un colis en Afrique par un voyageur vérifié",
-        "description": "Paris–Dakar, Lyon–Abidjan, Marseille–Bamako, Paris–Douala : confiez votre colis à un voyageur vérifié, payez sous séquestre, suivez chaque scan."
+        "description": "Paris–Abidjan, Paris–Dakar, Lyon–Abidjan, Marseille–Bamako, Paris–Douala : confiez votre colis à un voyageur vérifié, payez sous séquestre, suivez chaque scan."
       },
       "title": "Envoyer un colis en Afrique, corridor par corridor",
       "lead": "Yadony relie les villes françaises aux capitales d'Afrique de l'Ouest et centrale. Choisissez votre corridor : chaque page détaille les prix, les délais et le fonctionnement exact du suivi.",
@@ -1346,6 +1346,32 @@
           {
             "question": "Comment savoir où en est mon colis ?",
             "answer": "Quatre scans jalonnent le trajet : remise, départ, transit, arrivée. Chaque scan est horodaté et géolocalisé, et vous comme le destinataire voyez la même fiche de suivi en temps réel."
+          }
+        ]
+      },
+      "parisAbidjan": {
+        "seo": {
+          "title": "Envoyer un colis de Paris à Abidjan par un voyageur vérifié",
+          "description": "Le corridor vedette de Yadony : un voyageur vérifié Paris–Abidjan emporte votre colis, paiement bloqué jusqu'à la livraison, suivi par QR code."
+        },
+        "title": "Envoyer un colis de Paris à Abidjan",
+        "lead": "Paris–Abidjan est le corridor vedette de Yadony : la communauté ivoirienne d'Île-de-France est l'une des plus actives de la diaspora, et les vols quotidiens vers Abidjan font qu'un voyageur part presque chaque jour.",
+        "how": "Publiez votre colis dans l'app — poids, description, photos, coordonnées du destinataire à Abidjan. Les voyageurs vérifiés qui partent de Paris proposent leur prix au kilo ; vous choisissez, vous remettez le colis en main propre en région parisienne, et chaque étape est scannée jusqu'à la remise à Abidjan.",
+        "price": "Chaque voyageur fixe son prix au kilo selon son vol et sa franchise bagage — vous comparez avant de choisir. Une commission de service (5 % actuellement, toujours affichée avant paiement) est prélevée sur la transaction.",
+        "delay": "Le vol direct Paris–Abidjan dure environ 6 h 30. Votre colis atterrit avec le voyageur : la date est connue dès la réservation, et le rendez-vous de remise à Abidjan se cale dans les jours qui suivent.",
+        "safety": "Identité du voyageur vérifiée avant le premier colis, paiement bloqué chez Stripe jusqu'au code de confirmation du destinataire, quatre scans QR horodatés et géolocalisés de Paris à Abidjan. Votre proche suit tout depuis une simple page web, sans compte.",
+        "faq": [
+          {
+            "question": "Combien coûte un envoi de colis Paris–Abidjan ?",
+            "answer": "C'est le voyageur qui fixe son prix au kilo, et vous comparez les annonces avant de réserver. Exemple : 5 kg chez un voyageur à 12 €/kg = 60 € payés ; la commission de service (5 % actuellement) est prélevée sur la transaction et le voyageur reçoit 57 €."
+          },
+          {
+            "question": "Y a-t-il des voyageurs Paris–Abidjan toute l'année ?",
+            "answer": "C'est le corridor le plus fourni de Yadony : les vols quotidiens entre Paris et Abidjan et la taille de la communauté ivoirienne en France font qu'il y a des départs réguliers toute l'année, y compris en dehors des fêtes."
+          },
+          {
+            "question": "Mon proche à Abidjan doit-il installer l'application ?",
+            "answer": "Non. Le destinataire suit le colis depuis une simple page web, même sur un téléphone basique, et confirme la réception avec un code reçu par SMS — c'est ce qui déclenche le paiement du voyageur."
           }
         ]
       }

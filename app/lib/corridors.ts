@@ -17,6 +17,7 @@ export interface Corridor {
 }
 
 export const corridors: Corridor[] = [
+  { key: 'parisAbidjan', slug: 'paris-abidjan', from: 'Paris', to: 'Abidjan', country: "Côte d'Ivoire", flightHours: 6.5 },
   { key: 'parisDakar', slug: 'paris-dakar', from: 'Paris', to: 'Dakar', country: 'Sénégal', flightHours: 5.5 },
   { key: 'lyonAbidjan', slug: 'lyon-abidjan', from: 'Lyon', to: 'Abidjan', country: "Côte d'Ivoire", flightHours: 6.5 },
   { key: 'marseilleBamako', slug: 'marseille-bamako', from: 'Marseille', to: 'Bamako', country: 'Mali', flightHours: 5.5 },

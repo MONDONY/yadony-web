@@ -29,8 +29,8 @@
     },
     "hero": {
       "title": "Your parcel travels with someone you can trust",
-      "lead": "A verified traveller takes your parcel Paris → Dakar. You pay once delivery is confirmed, not before.",
-      "note": "Departing from Paris, Lyon and Marseille, to Dakar, Abidjan, Bamako and Douala.",
+      "lead": "A verified traveller carries your parcel Paris → Abidjan. You pay when delivery is confirmed, not before.",
+      "note": "Departing from Paris, Lyon and Marseille, to Abidjan, Dakar, Bamako and Douala.",
       "appStore": "Download on the App Store",
       "playStore": "Get it on Google Play",
       "screenshotAlt": "Home screen of the yadony app showing the available trips",
@@ -80,9 +80,9 @@
       }
     },
     "tracking": {
-      "title": "Four scans between Paris and Dakar",
+      "title": "Four scans between Paris and Abidjan",
       "lead": "At every step, a QR code is scanned. The sender and the recipient see the same thing, at the same time.",
-      "scrollLabel": "Steps of the journey, from Paris to Dakar. Scroll to see the four screens.",
+      "scrollLabel": "Steps of the journey, from Paris to Abidjan. Scroll to see the four screens.",
       "steps": {
         "deposit": {
           "label": "Handover in Paris",
@@ -100,7 +100,7 @@
           "alt": "Arrival scan screen confirming that the parcel has landed"
         },
         "delivery": {
-          "label": "Delivery in Dakar",
+          "label": "Delivery in Abidjan",
           "text": "Final scan, photo of the hand-delivery. The payment is released to the traveller at that point.",
           "alt": "Delivery screen with the hand-over confirmation photo"
         }
@@ -173,7 +173,7 @@
         {
           "id": "villes",
           "question": "Which cities are covered?",
-          "answer": "Departing from Paris, Lyon and Marseille, to Dakar, Abidjan, Bamako and Douala. These are the corridors with enough flights and enough people for the service to hold up from day one. Others will follow. We would rather open a city when it works than show a map full of destinations with no travellers on them."
+          "answer": "Departing from Paris, Lyon and Marseille, to Abidjan, Dakar, Bamako and Douala. These are the corridors with enough flights and enough people for the service to work from day one. More cities will follow."
         }
       ]
     },
@@ -191,8 +191,8 @@
           "text": "The most active corridor: regular departures between the Paris region and Senegal."
         },
         "abidjan": {
-          "route": "Lyon → Abidjan",
-          "text": "Ship to Côte d'Ivoire from Lyon or Paris, at the price the traveller sets."
+          "route": "Paris → Abidjan",
+          "text": "The flagship corridor: ship to Côte d'Ivoire from Paris, at the price the traveller sets."
         },
         "bamako": {
           "route": "Marseille → Bamako",
@@ -270,13 +270,13 @@
   "pricing": {
     "seo": {
       "title": "yadony pricing: one transparent commission, nothing else",
-      "description": "The traveller sets their price per kilo; a service commission (currently 5%) is deducted from each transaction. A full worked example for a 5 kg parcel Paris → Dakar."
+      "description": "The traveller sets their price per kilo; a service commission (currently 5%) is deducted from each transaction. A full worked example for a 5 kg parcel Paris → Abidjan."
     },
     "title": "The traveller sets the price. The commission is transparent.",
     "lead": "There is no rate card at Yadony, because we are not the ones doing the carrying. The price per kilo is the one the traveller advertises. The only thing we deduct is a service commission — 5% at the time of writing, always shown before you confirm. In the event of a refund, it is never kept.",
     "cap": "The declared value of a parcel is capped at €{amount}. That is the reference amount used to settle a dispute; insurance for the parcel is not included in the commission.",
     "example": {
-      "caption": "A 5 kg parcel, Paris → Dakar, with a traveller charging €12 a kilo",
+      "caption": "A 5 kg parcel, Paris → Abidjan, with a traveller at €12 per kilo",
       "travelerPrice": "Price asked by the traveller",
       "commission": "Yadony commission (current rate: 5%)",
       "senderPays": "Total paid by the sender",
@@ -284,7 +284,7 @@
     },
     "comparison": {
       "title": "The same parcel with a conventional carrier",
-      "text": "Five kilos Paris → Dakar start at around €150 with an international carrier, before any express options, and delivery does not reach every neighbourhood. We do not claim to replace them: for a bulky, urgent or high-value shipment, they remain the right choice. For a few kilos that someone close to you is waiting for, the price question no longer looks the same."
+      "text": "Five kilos Paris → Abidjan start at around €150 with an international carrier, before delivery-time options, versus €60 with a traveller at €12 per kilo. The difference comes down to one thing: the traveller was already making the trip."
     }
   },
   "trust": {
@@ -332,7 +332,7 @@
     },
     "title": "Why we ended up building it",
     "paragraphs": [
-      "There is one message everyone in the diaspora has written, or read: “is anyone flying to Dakar this week?”",
+      "There is a message everyone in the diaspora has already written, or read: \"is anyone flying to Abidjan this week?\". Yadony was born from that message.",
       "It happens in a WhatsApp group of two hundred people. Someone answers, you swap numbers, you meet on a Saturday in a car park. You hand a box to a stranger vouched for by a cousin, you pay in cash, and you wait. Most of the time, it works. It works remarkably well, in fact: that is how clothes, school supplies, spare parts and presents have been moving for thirty years.",
       "The problem only shows up the day it does not work. The parcel does not arrive. The number stops answering. There is no record, no proof of handover, no receipt, nobody to call. You cannot even say what happened: lost, forgotten, kept. And because the person was doing you a favour, you do not dare push. You lose the parcel, and often you lose the relationship as well.",
       "On the other side, there are the carriers. They are reliable, they are considerably more expensive, and they do not deliver everywhere. To get five kilos to someone you know, that is not a solution, it is giving up.",
@@ -1228,7 +1228,7 @@
     "hub": {
       "seo": {
         "title": "Send a parcel to Africa with a verified traveller",
-        "description": "Paris–Dakar, Lyon–Abidjan, Marseille–Bamako, Paris–Douala: entrust your parcel to a verified traveller, pay into escrow, follow every scan."
+        "description": "Paris–Abidjan, Paris–Dakar, Lyon–Abidjan, Marseille–Bamako, Paris–Douala: entrust your parcel to a verified traveller, pay into escrow, follow every scan."
       },
       "title": "Send a parcel to Africa, corridor by corridor",
       "lead": "Yadony connects French cities to the capitals of West and Central Africa. Pick your corridor: each page details prices, timelines and exactly how tracking works.",
@@ -1346,6 +1346,32 @@
           {
             "question": "How do I know where my parcel is?",
             "answer": "Four scans mark the journey: handover, departure, transit, arrival. Each scan is timestamped and geolocated, and you and the recipient see the same tracking page in real time."
+          }
+        ]
+      },
+      "parisAbidjan": {
+        "seo": {
+          "title": "Send a parcel from Paris to Abidjan with a verified traveller",
+          "description": "Yadony's flagship corridor: a verified Paris–Abidjan traveller carries your parcel, payment held until delivery, QR-code tracking."
+        },
+        "title": "Send a parcel from Paris to Abidjan",
+        "lead": "Paris–Abidjan is Yadony's flagship corridor: the Ivorian community of the Paris region is one of the most active in the diaspora, and daily flights to Abidjan mean a traveller departs almost every day.",
+        "how": "Publish your parcel in the app — weight, description, photos, the recipient's details in Abidjan. Verified travellers departing from Paris offer their price per kilo; you choose, hand the parcel over in person in the Paris region, and every step is scanned through to delivery in Abidjan.",
+        "price": "Each traveller sets their price per kilo according to their flight and baggage allowance — you compare before choosing. A service commission (currently 5%, always shown before payment) is deducted from the transaction.",
+        "delay": "The direct Paris–Abidjan flight takes about 6.5 hours. Your parcel lands with the traveller: the date is known at booking time, and the handover in Abidjan is arranged in the days that follow.",
+        "safety": "The traveller's identity is verified before their first parcel, payment is held by Stripe until the recipient's confirmation code, and four timestamped, geolocated QR scans run from Paris to Abidjan. Your relative follows everything from a simple web page, no account needed.",
+        "faq": [
+          {
+            "question": "How much does sending a parcel Paris–Abidjan cost?",
+            "answer": "The traveller sets their price per kilo, and you compare listings before booking. Example: 5 kg with a traveller at €12/kg = €60 paid; the service commission (currently 5%) is deducted from the transaction and the traveller receives €57."
+          },
+          {
+            "question": "Are there Paris–Abidjan travellers all year round?",
+            "answer": "It is Yadony's busiest corridor: daily flights between Paris and Abidjan and the size of the Ivorian community in France mean regular departures all year, not just around the holidays."
+          },
+          {
+            "question": "Does my relative in Abidjan need to install the app?",
+            "answer": "No. The recipient follows the parcel from a simple web page, even on a basic phone, and confirms receipt with a code received by SMS — which is what triggers the traveller's payment."
           }
         ]
       }

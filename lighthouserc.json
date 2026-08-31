@@ -1,0 +1,18 @@
+{
+  "ci": {
+    "collect": {
+      "staticDistDir": ".output/public",
+      "url": ["http://localhost/index.html", "http://localhost/tarifs/index.html"],
+      "numberOfRuns": 3
+    },
+    "assert": {
+      "assertions": {
+        "categories:performance": ["error", { "minScore": 0.95 }],
+        "categories:seo": ["error", { "minScore": 1 }],
+        "categories:accessibility": ["error", { "minScore": 0.95 }],
+        "total-byte-weight": ["error", { "maxNumericValue": 1000000 }],
+        "resource-summary:script:size": ["error", { "maxNumericValue": 102400 }]
+      }
+    }
+  }
+}

@@ -73,7 +73,13 @@ export default defineNuxtConfig({
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       ],
       link: [
-        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+        // Icône officielle Yadony (images/ICON.png à la racine du monorepo) :
+        // 192 px pour les résultats de recherche Google (multiple de 48 exigé),
+        // 32 px pour l'onglet, apple-touch-icon pour iOS.
+        { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32.png' },
+        { rel: 'icon', type: 'image/png', sizes: '192x192', href: '/favicon-192.png' },
+        { rel: 'icon', type: 'image/png', sizes: '512x512', href: '/favicon-512.png' },
+        { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
         {
           rel: 'preload',
           as: 'font',

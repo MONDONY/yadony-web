@@ -540,6 +540,16 @@
                 "If the traveller cancels their trip: automatic full refund of all senders (3 to 5 business days). Yadony offers you a replacement traveller within 72 hours.",
                 "If the sender cancels before handover, they are refunded in full."
               ]
+            },
+            {
+              "sub": "Yadony wallet",
+              "p": [
+                "The wallet is topped up by bank card, Apple Pay or Google Pay. It can also receive free credits: referral rewards and amounts credited back to the wallet by Yadony, for example after cancelling a parcel paid with the wallet.",
+                "Every payment made with the wallet uses free credits first, then topped-up money, starting with the most recent top-up.",
+                "You can at any time request a refund of topped-up money you have not spent, from the Wallet screen in the application. It is paid back to the payment method used for the top-up, within 5 to 10 business days depending on your bank. A partly spent top-up is refunded for the remaining part. While the request is in progress, the balance in that currency cannot be used.",
+                "If the refund to the original payment method fails (expired card, top-up too old, refusal by the payment provider), the Yadony team refunds the amount concerned by another means.",
+                "Free credits are neither refundable nor convertible into cash. They can only be used to pay for parcels on Yadony."
+              ]
             }
           ]
         },
@@ -689,7 +699,10 @@
           "blocks": [
             {
               "p": [
-                "You can delete your account at any time from the application settings, unless a transaction is in progress. Yadony may close an account without notice in the event of a serious breach of these Terms or fraudulent behaviour."
+                "You can delete your account at any time from the application settings, unless a transaction is in progress. Yadony may close an account without notice in the event of a serious breach of these Terms or fraudulent behaviour.",
+                "A wallet balance does not prevent you from deleting your account. As soon as you request deletion, topped-up money you have not spent is refunded to you automatically, under the conditions of Article 7, with nothing more to do on your side.",
+                "Deletion takes effect 30 days after your request. During that period your account is suspended and you can reactivate it from the application: you then get your free credits back. Reactivation does not cancel refunds already started.",
+                "When the account is actually deleted, or straight away if you choose immediate deletion, free credits left in the wallet are permanently lost. Before you confirm, the application shows the amount that will be refunded and the amount that will be lost."
               ]
             }
           ]

@@ -540,6 +540,16 @@
                 "Si le voyageur annule son trajet : remboursement intégral automatique de tous les expéditeurs (3 à 5 jours ouvrés). Yadony vous propose un voyageur de remplacement dans les 72 heures.",
                 "Si l'expéditeur annule avant la remise, il est remboursé intégralement."
               ]
+            },
+            {
+              "sub": "Portefeuille Yadony",
+              "p": [
+                "Le portefeuille se recharge par carte bancaire, Apple Pay ou Google Pay. Il peut aussi recevoir des crédits offerts : récompenses de parrainage et sommes recréditées sur le portefeuille par Yadony, par exemple après l'annulation d'un envoi payé avec le portefeuille.",
+                "Chaque paiement effectué avec le portefeuille utilise d'abord les crédits offerts, puis l'argent rechargé, en commençant par la recharge la plus récente.",
+                "Vous pouvez à tout moment demander le remboursement de l'argent rechargé et non dépensé, depuis l'écran Portefeuille de l'application. Il est reversé sur le moyen de paiement utilisé pour la recharge, sous 5 à 10 jours ouvrés selon votre banque. Une recharge en partie dépensée est remboursée pour la part restante. Tant que la demande est en cours, le solde de la devise concernée ne peut pas être utilisé.",
+                "Si le remboursement sur le moyen de paiement d'origine échoue (carte expirée, recharge trop ancienne, refus du prestataire de paiement), l'équipe Yadony rembourse la somme concernée par un autre moyen.",
+                "Les crédits offerts ne sont ni remboursables ni convertibles en argent. Ils servent uniquement à payer des envois sur Yadony."
+              ]
             }
           ]
         },
@@ -689,7 +699,10 @@
           "blocks": [
             {
               "p": [
-                "Vous pouvez supprimer votre compte à tout moment depuis les paramètres de l'application, sauf si une transaction est en cours. Yadony peut fermer un compte sans préavis en cas de violation grave des CGU ou de comportement frauduleux."
+                "Vous pouvez supprimer votre compte à tout moment depuis les paramètres de l'application, sauf si une transaction est en cours. Yadony peut fermer un compte sans préavis en cas de violation grave des CGU ou de comportement frauduleux.",
+                "Un solde sur votre portefeuille n'empêche pas la suppression du compte. Dès votre demande de suppression, l'argent rechargé et non dépensé vous est remboursé automatiquement, dans les conditions de l'article 7, sans autre démarche de votre part.",
+                "La suppression prend effet 30 jours après votre demande. Pendant ce délai, votre compte est suspendu et vous pouvez le réactiver depuis l'application : vous retrouvez alors vos crédits offerts. Une réactivation n'annule pas les remboursements déjà lancés.",
+                "À la suppression effective du compte, ou tout de suite si vous choisissez la suppression immédiate, les crédits offerts restant sur le portefeuille sont définitivement perdus. Avant votre confirmation, l'application vous indique le montant qui sera remboursé et celui qui sera perdu."
               ]
             }
           ]

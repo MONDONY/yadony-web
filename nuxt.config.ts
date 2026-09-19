@@ -53,7 +53,10 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       crawlLinks: true,
-      routes: ['/'],
+      // /parrainage n'est lié depuis aucune page : cible du lien de
+      // parrainage partagé par l'app (via /r/{code}, cf. public/_redirects),
+      // elle doit être listée ici pour être générée.
+      routes: ['/', '/parrainage', '/en/referral'],
       failOnError: true,
     },
   },

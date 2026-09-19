@@ -1392,5 +1392,25 @@
         ]
       }
     }
+  },
+  "referral": {
+    "seo": {
+      "title": "yadony referral",
+      "description": "Someone you know invited you to yadony: find their referral code and enter it when you sign up to get a discount on your first shipment."
+    },
+    "title": "Someone you know is inviting you to yadony",
+    "lead": "Here is their referral code. Enter it when you sign up in the app: your first shipment gets a discount, and so does your sponsor.",
+    "codeLabel": "Referral code",
+    "copy": "Copy code",
+    "copied": "Code copied",
+    "copiedHint": "Paste it in the app when you sign up.",
+    "noCode": "This link carries no referral code. Ask the person who invited you for their code, then enter it when you sign up in the app.",
+    "stepsTitle": "How to use this code",
+    "steps": [
+      "Download the yadony app on your phone.",
+      "Create your account with your phone number or email address.",
+      "At the \"Referral code\" step, enter the code above. You can also add it later from Profile › Referral."
+    ],
+    "note": "The code applies only once, on a new account. The discount comes off the commission of your first paid shipment."
   }
 }

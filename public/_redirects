@@ -16,6 +16,7 @@
 # POST en GET).
 /tracking/* https://pro.yadony.com/tracking/:splat 301
 /annonce/* https://pro.yadony.com/annonce/:splat 301
+/demande/* https://pro.yadony.com/demande/:splat 301
 /siragbe/* https://pro.yadony.com/siragbe/:splat 301
 /api/* https://pro.yadony.com/api/:splat 308
 

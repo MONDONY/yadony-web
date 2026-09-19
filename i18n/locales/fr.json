@@ -1392,5 +1392,25 @@
         ]
       }
     }
+  },
+  "referral": {
+    "seo": {
+      "title": "Parrainage yadony",
+      "description": "Un proche vous a invité sur yadony : retrouvez son code de parrainage et saisissez-le à l'inscription pour profiter de la réduction sur votre premier envoi."
+    },
+    "title": "Un proche vous invite sur yadony",
+    "lead": "Voici son code de parrainage. Saisissez-le à l'inscription dans l'application : votre premier envoi bénéficie d'une réduction, et votre parrain aussi.",
+    "codeLabel": "Code de parrainage",
+    "copy": "Copier le code",
+    "copied": "Code copié",
+    "copiedHint": "Collez-le dans l'application au moment de l'inscription.",
+    "noCode": "Ce lien ne contient pas de code de parrainage. Demandez son code à la personne qui vous a invité, puis saisissez-le à l'inscription dans l'application.",
+    "stepsTitle": "Comment utiliser ce code",
+    "steps": [
+      "Téléchargez l'application yadony sur votre téléphone.",
+      "Créez votre compte avec votre numéro ou votre adresse e-mail.",
+      "À l'étape « Code de parrainage », saisissez le code ci-dessus. Vous pouvez aussi l'ajouter plus tard depuis Profil › Parrainage."
+    ],
+    "note": "Le code ne s'applique qu'une seule fois, sur un nouveau compte. La réduction est déduite de la commission de votre premier envoi payé."
   }
 }

@@ -26,7 +26,7 @@ const { t } = useI18n()
         <div class="hidden lg:col-span-5 lg:block">
           <div class="w-[260px] rotate-[3deg] lg:ml-auto lg:mr-6">
             <UiPhoneFrame
-              src="/screenshots/app-depot.webp"
+              src="/screenshots/app-activites.webp"
               :alt="t('home.download.screenshotAlt')"
             />
           </div>

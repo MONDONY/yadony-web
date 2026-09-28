@@ -87,7 +87,7 @@
         "deposit": {
           "label": "Handover in Paris",
           "text": "You hand the parcel to the traveller. They scan the QR code, a photo is taken, the timestamp is recorded.",
-          "alt": "Handover screen showing the QR code for the parcel"
+          "alt": "My parcels screen showing a shipment to hand over to the traveler, with a link to its QR code"
         },
         "airport": {
           "label": "Scan at the airport",
@@ -97,12 +97,12 @@
         "transit": {
           "label": "Scan on arrival",
           "text": "Third scan on landing, as soon as the traveller has collected their luggage. The tracking page, which can be shared as a link, switches to “arrived” for everyone at the same moment.",
-          "alt": "Arrival scan screen confirming that the parcel has landed"
+          "alt": "Screen of a Bamako to Abidjan trip marked as completed, with handover and pickup locations"
         },
         "delivery": {
           "label": "Delivery in Abidjan",
           "text": "Final scan, photo of the hand-delivery. The payment is released to the traveller at that point.",
-          "alt": "Delivery screen with the hand-over confirmation photo"
+          "alt": "Tracking sheet for a parcel delivered between Bamako and Abidjan, marked delivery confirmed"
         }
       },
       "kicker": "End-to-end tracking"

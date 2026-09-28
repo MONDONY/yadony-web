@@ -1232,6 +1232,14 @@
       "refuse": "Refuse"
     }
   },
+  "beta": {
+    "banner": {
+      "label": "Beta testing phase",
+      "badge": "Beta",
+      "text": "Yadony is being tested with its first users.",
+      "cta": "Join the WhatsApp group"
+    }
+  },
   "stores": {
     "comingSoon": {
       "kicker": "Coming soon",

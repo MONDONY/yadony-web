@@ -7,6 +7,12 @@ const cfBeaconToken = process.env.CF_BEACON_TOKEN
 
 export default defineNuxtConfig({
   compatibilityDate: '2026-05-15',
+  // Répertoire de build figé. Nuxt 4 le place tantôt ici, tantôt dans
+  // `node_modules/.cache/nuxt/.nuxt` selon l'état du projet, alors que
+  // `eslint.config.mjs` importe la config générée par un chemin écrit en dur :
+  // sans ce réglage, `pnpm lint` échoue sur un dépôt fraîchement cloné avec
+  // ERR_MODULE_NOT_FOUND.
+  buildDir: '.nuxt',
   devtools: { enabled: true },
   modules: ['@nuxt/eslint', '@nuxtjs/tailwindcss', '@nuxtjs/i18n', '@nuxtjs/sitemap'],
   components: [{ path: '~/components', pathPrefix: false }],

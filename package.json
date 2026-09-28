@@ -2,6 +2,7 @@
   "name": "yadony-web",
   "type": "module",
   "private": true,
+  "packageManager": "pnpm@11.12.0",
   "scripts": {
     "dev": "nuxt dev",
     "build": "nuxt build",
@@ -37,6 +38,7 @@
     "@vitejs/plugin-vue": "^6.0.8",
     "@vitest/coverage-v8": "^4.1.11",
     "@vue/test-utils": "^2.5.0",
+    "eslint": "^10.11.0",
     "happy-dom": "^20.11.12",
     "serve": "^14.2.6",
     "typescript": "^5.9.3",

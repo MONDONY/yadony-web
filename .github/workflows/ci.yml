@@ -10,9 +10,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      # Pas de `version:` ici : l'action lit le champ `packageManager` de
+      # package.json. Le workflow épinglait pnpm 9, qui refuse le
+      # pnpm-workspace.yaml du dépôt (`allowBuilds`, introduit par pnpm 10) et
+      # s'arrêtait sur « ERROR packages field missing or empty » : la CI n'a
+      # jamais été verte depuis le commit initial.
       - uses: pnpm/action-setup@v4
-        with:
-          version: 9
       - uses: actions/setup-node@v4
         with:
           node-version: 22

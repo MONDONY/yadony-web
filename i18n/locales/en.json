@@ -1238,6 +1238,12 @@
       "badge": "Beta",
       "text": "Yadony is being tested with its first users.",
       "cta": "Join the WhatsApp group"
+    },
+    "footer": {
+      "title": "Join the beta testers",
+      "text": "The WhatsApp group brings together our first users. We announce updates there and collect feedback.",
+      "qrAlt": "QR code for the beta testers WhatsApp group",
+      "scan": "Scan this code with your phone"
     }
   },
   "stores": {

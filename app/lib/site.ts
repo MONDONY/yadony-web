@@ -15,4 +15,4 @@ export const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.d
 // jour de la sortie publique fait disparaître le bandeau sans toucher au
 // reste du header.
 export const betaTesting = true
-export const betaWhatsAppGroupUrl = 'https://chat.whatsapp.com/REMPLACER_PAR_LE_LIEN_DU_GROUPE'
+export const betaWhatsAppGroupUrl = 'https://chat.whatsapp.com/CUFkMmCsEJC0L2bNmQLFQH'

@@ -2,6 +2,7 @@
 import { computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import type { Locale } from '@/lib/locale'
+import { betaTesting } from '@/lib/site'
 
 const { t, locale } = useI18n()
 const localePath = useLocalePath()
@@ -25,6 +26,7 @@ const links = computed(() => [
 
 <template>
   <header class="sticky top-0 z-40 border-b border-line bg-surface/90 backdrop-blur">
+    <BetaBanner v-if="betaTesting" />
     <UiContainer>
       <div class="flex h-16 items-center justify-between gap-6">
         <NuxtLink :to="localePath('/')" class="shrink-0">

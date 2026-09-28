@@ -9,3 +9,10 @@ export const contactEmail = 'contact@yadony.com'
 export const storesLive = false
 export const appStoreUrl = 'https://apps.apple.com/app/yadony/id0000000000'
 export const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.dony.app'
+
+// Phase de bêta test : un bandeau en haut du site invite les visiteurs à
+// rejoindre le groupe WhatsApp des testeurs. Passer betaTesting à false le
+// jour de la sortie publique fait disparaître le bandeau sans toucher au
+// reste du header.
+export const betaTesting = true
+export const betaWhatsAppGroupUrl = 'https://chat.whatsapp.com/CUFkMmCsEJC0L2bNmQLFQH'

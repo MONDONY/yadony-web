@@ -1232,6 +1232,20 @@
       "refuse": "Refuser"
     }
   },
+  "beta": {
+    "banner": {
+      "label": "Phase de bêta test",
+      "badge": "Bêta",
+      "text": "Yadony est en test avec ses premiers utilisateurs.",
+      "cta": "Rejoindre le groupe WhatsApp"
+    },
+    "footer": {
+      "title": "Rejoignez les bêta testeurs",
+      "text": "Le groupe WhatsApp réunit les premiers utilisateurs. On y annonce les nouveautés et on y recueille les retours.",
+      "qrAlt": "QR code du groupe WhatsApp des bêta testeurs",
+      "scan": "Scannez ce code avec votre téléphone"
+    }
+  },
   "stores": {
     "comingSoon": {
       "kicker": "Tout bientôt",

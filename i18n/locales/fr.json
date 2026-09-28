@@ -180,7 +180,7 @@
     "download": {
       "title": "Le reste se passe dans l'application",
       "text": "Publier un colis, comparer les voyageurs, scanner, suivre, payer : tout s'y trouve. Ce site ne sert qu'à vous expliquer le fonctionnement avant que vous la téléchargiez.",
-      "screenshotAlt": "Écran Activités de l'app Yadony, avec les boutons publier un trajet et publier un colis"
+      "screenshotAlt": "Écran Activités de l'app Yadony, avec le compteur de trajets actifs et les boutons publier un trajet et envoyer un colis"
     },
     "corridors": {
       "title": "Envoyer un colis de la France vers l'Afrique de l'Ouest et centrale",

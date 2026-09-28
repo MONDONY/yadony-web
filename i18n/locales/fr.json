@@ -87,7 +87,7 @@
         "deposit": {
           "label": "Dépôt à Paris",
           "text": "Vous remettez le colis au voyageur. Il scanne le QR code, une photo est prise, l'horodatage est enregistré.",
-          "alt": "Écran de dépôt affichant le QR code du colis"
+          "alt": "Écran Mes colis montrant un envoi à remettre au voyageur, avec le lien vers son QR code"
         },
         "airport": {
           "label": "Scan à l'aéroport",
@@ -97,12 +97,12 @@
         "transit": {
           "label": "Scan à l'arrivée",
           "text": "Troisième scan à l'atterrissage, dès que le voyageur a récupéré son bagage. La fiche de suivi, partageable par lien, passe en « arrivé » pour tout le monde en même temps.",
-          "alt": "Écran de scan à l'arrivée confirmant que le colis a atterri"
+          "alt": "Écran d'un trajet Bamako vers Abidjan marqué terminé, avec les lieux de remise et de récupération"
         },
         "delivery": {
           "label": "Livraison à Abidjan",
           "text": "Scan final, photo de remise en main propre. Le paiement est alors libéré au voyageur.",
-          "alt": "Écran de livraison avec photo de confirmation de remise"
+          "alt": "Fiche de suivi d'un colis livré entre Bamako et Abidjan, avec la mention livraison confirmée"
         }
       },
       "kicker": "Suivi de bout en bout"

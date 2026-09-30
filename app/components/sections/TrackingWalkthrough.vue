@@ -4,10 +4,10 @@ import { useI18n } from 'vue-i18n'
 const { t } = useI18n()
 
 const steps = [
-  { key: 'deposit', number: '01', image: '/screenshots/app-depot.webp' },
-  { key: 'airport', number: '02', image: '/screenshots/app-scan.webp' },
-  { key: 'transit', number: '03', image: '/screenshots/app-transit.webp' },
-  { key: 'delivery', number: '04', image: '/screenshots/app-livraison.webp' },
+  { key: 'deposit', number: '01', image: '/screenshots/suivi-01-remis.webp' },
+  { key: 'airport', number: '02', image: '/screenshots/suivi-02-scan.webp' },
+  { key: 'transit', number: '03', image: '/screenshots/suivi-03-en-route.webp' },
+  { key: 'delivery', number: '04', image: '/screenshots/suivi-04-livre.webp' },
 ] as const
 </script>
 

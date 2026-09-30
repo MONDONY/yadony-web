@@ -1,4 +1,6 @@
 import { describe, it, expect } from 'vitest'
+import { existsSync } from 'node:fs'
+import { join } from 'node:path'
 import { mount } from '@vue/test-utils'
 import { createI18n } from 'vue-i18n'
 import fr from '../../../i18n/locales/fr.json'
@@ -34,6 +36,19 @@ describe('TrackingWalkthrough', () => {
     for (const img of wrapper.findAll('img')) {
       expect(img.attributes('width')).toBe('640')
       expect(img.attributes('height')).toBe('1385')
+    }
+  })
+
+  /**
+   * Un renommage de capture sans mise à jour du composant (ou l'inverse)
+   * servirait une image absente en production : chaque `src` doit exister
+   * dans `public/`.
+   */
+  it('pointe vers des captures présentes dans public/', () => {
+    const wrapper = mount(TrackingWalkthrough, { global: { plugins: [i18n] } })
+    for (const img of wrapper.findAll('img')) {
+      const src = img.attributes('src')!
+      expect(existsSync(join(process.cwd(), 'public', src)), src).toBe(true)
     }
   })
 })

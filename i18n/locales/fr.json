@@ -25,28 +25,32 @@
   "home": {
     "seo": {
       "title": "Envoyer un colis en Afrique, par un voyageur vérifié",
-      "description": "yadony met en relation les voyageurs qui ont de la place dans leur valise et les expéditeurs de la diaspora. Identité vérifiée, paiement séquestre, suivi par QR code."
+      "description": "yadony met en relation les voyageurs qui ont de la place dans leur valise et les expéditeurs de la diaspora. Identité vérifiée, paiement bloqué jusqu'à la livraison, remise validée par un code."
     },
     "hero": {
       "title": "Votre colis part avec quelqu'un de confiance",
-      "lead": "Un voyageur vérifié emporte votre colis Paris → Abidjan. Vous payez à la livraison confirmée, pas avant.",
-      "note": "Au départ de Paris, Lyon et Marseille, vers Abidjan, Dakar, Bamako et Douala.",
+      "lead": "Un voyageur vérifié emporte votre colis dans sa valise. Payé par l'app, le voyageur ne touche rien tant que votre proche n'a pas le colis en main.",
+      "note": "Paris → Abidjan, Lyon → Dakar, Bamako → Paris : vous choisissez la ville de départ et la ville d'arrivée.",
       "appStore": "Télécharger sur l'App Store",
       "playStore": "Disponible sur Google Play",
-      "screenshotAlt": "Écran d'accueil de l'application yadony : la carte des voyageurs disponibles et leur prix au kilo",
+      "video": {
+        "description": "Vidéo de présentation de l'application yadony : recherche des voyageurs autour de vous sur la carte, négociation du prix d'un trajet, argent bloqué jusqu'à la livraison, colis scanné à chaque étape.",
+        "play": "Lire la vidéo",
+        "pause": "Mettre la vidéo en pause"
+      },
       "kicker": "L'app de la diaspora",
       "stats": {
         "scans": {
-          "figure": "4",
-          "label": "scans par colis, de la remise à la livraison"
+          "figure": "6",
+          "label": "chiffres : le code sans lequel le colis ne peut pas être déclaré livré"
         },
         "identity": {
           "figure": "100 %",
-          "label": "des identités vérifiées avant le premier colis"
+          "label": "des trajets et des colis publiés par des comptes à l'identité vérifiée"
         },
         "escrow": {
           "figure": "0 €",
-          "label": "versé au voyageur avant la livraison confirmée"
+          "label": "versé au voyageur avant la livraison confirmée, quand vous payez par l'app"
         }
       }
     },
@@ -75,33 +79,33 @@
           "channel": "yadony",
           "price": "Fixé par le voyageur",
           "tracking": "QR à chaque étape",
-          "recourse": "Séquestre et litige"
+          "recourse": "Paiement bloqué et litige"
         }
       }
     },
     "tracking": {
-      "title": "Quatre scans entre Paris et Abidjan",
-      "lead": "À chaque étape, un QR code est scanné. L'expéditeur et le destinataire voient la même chose, au même moment.",
-      "scrollLabel": "Étapes du parcours, de Paris à Abidjan. Faites défiler pour voir les quatre écrans.",
+      "title": "De la remise à la livraison, chaque étape tracée",
+      "lead": "Le voyageur scanne le QR code du colis quand vous le lui remettez, et la livraison n'est validée qu'avec le code du destinataire. Entre les deux, l'expéditeur et le destinataire voient la même fiche de suivi.",
+      "scrollLabel": "Étapes du parcours, de la remise à la livraison. Faites défiler pour voir les quatre écrans.",
       "steps": {
         "deposit": {
-          "label": "Dépôt à Paris",
-          "text": "Vous remettez le colis au voyageur. Il scanne le QR code, une photo est prise, l'horodatage est enregistré.",
+          "label": "Remise au voyageur",
+          "text": "Vous remettez le colis au voyageur. Il scanne le QR code et prend une photo : l'heure et le lieu sont enregistrés. C'est à ce moment que le code de livraison à 6 chiffres vous est envoyé.",
           "alt": "Écran Mes colis montrant un envoi à remettre au voyageur, avec le lien vers son QR code"
         },
         "airport": {
-          "label": "Scan à l'aéroport",
-          "text": "Second scan avant l'embarquement. Votre famille reçoit la notification.",
-          "alt": "Écran de scan à l'aéroport avec confirmation d'embarquement"
+          "label": "Transit, si besoin",
+          "text": "Une escale, un changement de ville ? Le voyageur peut ajouter un scan de transit. Il est facultatif : seules la remise et la livraison sont obligatoires.",
+          "alt": "Écran de scan du QR code d'un colis dans l'application yadony"
         },
         "transit": {
           "label": "Scan à l'arrivée",
-          "text": "Troisième scan à l'atterrissage, dès que le voyageur a récupéré son bagage. La fiche de suivi, partageable par lien, passe en « arrivé » pour tout le monde en même temps.",
+          "text": "Une fois arrivé, le voyageur marque son trajet comme arrivé. La fiche de suivi, partageable par lien, passe en « arrivé » pour tout le monde en même temps.",
           "alt": "Écran d'un trajet Bamako vers Abidjan marqué terminé, avec les lieux de remise et de récupération"
         },
         "delivery": {
           "label": "Livraison à Abidjan",
-          "text": "Scan final, photo de remise en main propre. Le paiement est alors libéré au voyageur.",
+          "text": "Remise en main propre : le destinataire donne le code à 6 chiffres que vous lui avez transmis, le voyageur prend une photo. La livraison est confirmée et le paiement part au voyageur.",
           "alt": "Fiche de suivi d'un colis livré entre Bamako et Abidjan, avec la mention livraison confirmée"
         }
       },
@@ -113,22 +117,22 @@
       "identity": {
         "figure": "100 %",
         "label": "Identités vérifiées",
-        "text": "Voyageurs et expéditeurs passent une vérification d'identité Stripe Identity. Aucun compte anonyme sur la plateforme."
+        "text": "Pour publier un trajet ou une demande de colis, il faut avoir vérifié son identité avec Didit : pièce d'identité et selfie. Par défaut, les voyageurs n'acceptent que des expéditeurs vérifiés."
       },
       "escrow": {
         "figure": "0 €",
         "label": "Versé au voyageur avant livraison",
-        "text": "Votre paiement est bloqué et n'est versé au voyageur qu'après le scan de livraison confirmé."
+        "text": "Payé par carte, votre argent est bloqué sur la plateforme et n'est versé au voyageur qu'une fois la livraison confirmée avec le code du destinataire."
       },
-      "insurance": {
-        "figure": "500 €",
-        "label": "Valeur déclarée plafonnée",
-        "text": "Vous déclarez la valeur du colis, dans la limite de 500 €. C'est le montant de référence sur lequel nous arbitrons si un litige est ouvert."
+      "code": {
+        "figure": "6",
+        "label": "Chiffres pour valider la remise",
+        "text": "Le code de livraison vous est envoyé à la remise du colis, et vous seul le transmettez au destinataire. Sans ce code, le voyageur ne peut pas déclarer le colis livré."
       }
     },
     "traveler": {
       "title": "Votre valise a de la place. Elle peut financer une partie du voyage.",
-      "text": "Vous partez à Abidjan et vous n'utiliserez que la moitié de votre franchise bagage. Dix kilos libres, à 12 € le kilo, cela fait 120 € sur un vol que vous preniez déjà. Vous fixez votre prix, vous choisissez ce que vous acceptez de porter, et vous êtes payé sous 24 heures après la livraison confirmée, la commission de service simplement déduite.",
+      "text": "Vous partez à Abidjan et vous n'utiliserez que la moitié de votre franchise bagage. Dix kilos libres à 8 € le kilo, cela fait 80 € sur un vol que vous preniez déjà. Vous fixez votre prix, vous choisissez ce que vous acceptez de porter, et vous touchez le prix annoncé en entier : la commission de service est payée par l'expéditeur, en plus.",
       "cta": "Voir le parcours voyageur",
       "kicker": "Côté voyageurs"
     },
@@ -143,7 +147,7 @@
         {
           "id": "prix",
           "question": "Combien coûte un envoi ?",
-          "answer": "Le voyageur fixe son prix au kilo selon son trajet et ce qu'il accepte de porter. Une commission de service, toujours affichée avant que vous ne payiez, est prélevée sur la transaction. Pour un colis de 5 kg chez un voyageur à 12 €/kg, vous payez 60 € et le voyageur reçoit ce montant moins la commission."
+          "answer": "Le voyageur fixe son prix au kilo selon son trajet et ce qu'il accepte de porter. S'y ajoute une commission de service, toujours affichée avant que vous ne payiez. Pour un colis de 5 kg chez un voyageur à 8 €/kg, le voyageur touche 40 € et vous payez 40 € plus la commission."
         },
         {
           "id": "interdits",
@@ -153,17 +157,17 @@
         {
           "id": "paiement",
           "question": "À quel moment suis-je débité ?",
-          "answer": "Vous payez au moment où le voyageur accepte votre colis, et l'argent est immédiatement bloqué chez Stripe : personne ne peut y toucher avant la livraison. Le destinataire confirme la réception avec un code à 6 chiffres reçu par SMS, et le voyageur est payé dans les 24 heures suivantes. En cas d'annulation avant la remise, vous êtes remboursé intégralement, commission comprise."
+          "answer": "Par carte, votre paiement est autorisé quand vous envoyez votre demande et débité quand le voyageur l'accepte. L'argent reste ensuite bloqué sur la plateforme : le voyageur ne le reçoit qu'une fois la livraison confirmée avec le code à 6 chiffres, que vous transmettez vous-même au destinataire. Si le voyageur refuse ou si l'envoi est annulé avant la remise, vous êtes remboursé intégralement, commission comprise. En espèces, vous réglez le voyageur directement."
         },
         {
           "id": "perte",
           "question": "Et si le colis n'arrive jamais ?",
-          "answer": "Vous avez 48 heures après la livraison prévue pour signaler un problème depuis l'application. Le versement au voyageur reste suspendu pendant l'instruction : l'équipe reprend les scans, les photos et les messages, notifie le voyageur sous 24 heures et rend une décision sous 72 heures maximum. En cas de perte ou de dommage avéré, un remboursement est possible dans la limite de la valeur déclarée, et la responsabilité du voyageur est engagée à hauteur de cette valeur."
+          "answer": "Signalez-le depuis l'application : un litige peut être ouvert dans les 15 jours qui suivent la date prévue. Tant qu'il est instruit, le versement au voyageur reste suspendu. L'équipe examine les scans, les photos et les messages échangés dans l'application et tranche sous 72 heures ouvrées. Yadony peut rembourser tout ou partie de l'envoi, dans la limite d'un plafond et sous les conditions affichés dans l'application."
         },
         {
           "id": "gain-voyageur",
           "question": "Combien gagne un voyageur ?",
-          "answer": "Le prix qu'il a annoncé, moins la commission de service, prélevée automatiquement sur la transaction. Le montant net est affiché avant d'accepter, et rien n'est versé avant la confirmation de livraison."
+          "answer": "Le prix qu'il a annoncé, en entier. La commission de service est payée par l'expéditeur, en plus du prix du voyageur. Rien n'est versé avant la confirmation de livraison, et le virement suit ensuite le calendrier de votre banque."
         },
         {
           "id": "douane",
@@ -173,7 +177,7 @@
         {
           "id": "villes",
           "question": "Quelles villes sont desservies ?",
-          "answer": "Au départ de Paris, Lyon et Marseille, vers Abidjan, Dakar, Bamako et Douala. Ce sont les corridors où il y a assez de vols et assez de monde pour que le service tienne dès le premier jour. D'autres villes suivront."
+          "answer": "Vous choisissez librement la ville de départ et la ville d'arrivée, en France, en Europe, en Afrique ou ailleurs. Les trajets les plus fréquents relient Paris, Lyon et Marseille à Abidjan, Dakar, Bamako et Douala, dans les deux sens."
         }
       ]
     },
@@ -221,23 +225,23 @@
       "steps": [
         {
           "title": "Vous décrivez le colis",
-          "text": "Ville de départ, ville d'arrivée, poids, contenu, photos. Vous déclarez une valeur, plafonnée à 500 € : c'est le montant de référence retenu si un litige doit être instruit."
+          "text": "Ville de départ, ville d'arrivée, poids, contenu, photos. Vous signez un avertissement sur les produits interdits : le voyageur voit votre description complète avant d'accepter."
         },
         {
           "title": "Vous choisissez un voyageur",
-          "text": "L'application affiche qui part sur votre corridor, à quelle date, avec combien de kilos libres et à quel prix au kilo. Vous voyez son identité vérifiée et ses évaluations, s'il en a déjà. À la réservation, votre moyen de paiement est enregistré : il ne sera encaissé qu'à la livraison confirmée."
+          "text": "L'application affiche qui part sur votre trajet, à quelle date, avec combien de kilos libres et à quel prix au kilo. Vous voyez son identité vérifiée et ses évaluations, s'il en a déjà. Par carte, votre paiement est débité quand le voyageur accepte, puis bloqué jusqu'à la livraison."
         },
         {
           "title": "Vous remettez le colis",
-          "text": "Rendez-vous convenu dans l'application. Le voyageur ouvre le colis devant vous, scanne le QR code, prend une photo. L'horodatage est enregistré : c'est votre preuve de dépôt."
+          "text": "Rendez-vous convenu dans l'application. Le voyageur vérifie le contenu devant vous, scanne le QR code et prend une photo. Vous recevez alors le code de livraison à 6 chiffres, à transmettre au destinataire."
         },
         {
           "title": "Vous suivez les scans",
-          "text": "Embarquement, puis arrivée. Chaque scan déclenche une notification pour vous et pour la personne qui attend le colis. Un lien de suivi partageable lui permet de regarder sans installer l'application."
+          "text": "Départ, transit éventuel, arrivée. Chaque étape déclenche une notification. Un lien de suivi partageable permet à la personne qui attend le colis de suivre sans installer l'application."
         },
         {
           "title": "La livraison libère le paiement",
-          "text": "Le destinataire reçoit le colis en main propre, le scan final est validé, une photo de remise est prise. C'est cet événement, et lui seul, qui déclenche le prélèvement et le versement au voyageur."
+          "text": "Le destinataire reçoit le colis en main propre et donne le code au voyageur, qui prend une photo de remise. C'est cet événement, et lui seul, qui déclenche le versement au voyageur."
         }
       ]
     },
@@ -250,19 +254,19 @@
         },
         {
           "title": "Vous passez la vérification d'identité",
-          "text": "Pièce d'identité et selfie, contrôlés par Stripe Identity. C'est obligatoire avant de transporter quoi que ce soit, et c'est ce qui rassure la personne qui vous confie son colis."
+          "text": "Pièce d'identité et selfie, contrôlés par Didit, notre prestataire de vérification. Le résultat arrive en général en quelques minutes. C'est obligatoire pour publier un trajet, et c'est ce qui rassure la personne qui vous confie son colis."
         },
         {
           "title": "Vous acceptez un colis",
-          "text": "Description, photos et valeur déclarée vous sont montrées avant que vous acceptiez. Au dépôt, vous ouvrez le colis devant l'expéditeur et vous scannez le QR code : ce que vous transportez est acté."
+          "text": "Description et photos du colis vous sont montrées avant que vous acceptiez. À la remise, vous vérifiez le contenu devant l'expéditeur et vous scannez le QR code : ce que vous transportez est acté."
         },
         {
           "title": "Vous voyagez normalement",
-          "text": "Un scan avant l'embarquement, un autre à l'arrivée. Le colis part dans votre bagage, dans la limite de la franchise accordée par votre compagnie."
+          "text": "Le colis part dans votre bagage, dans la limite de la franchise accordée par votre compagnie. Un scan de transit est possible mais facultatif ; à l'arrivée, vous marquez votre trajet comme arrivé."
         },
         {
           "title": "Vous livrez et vous êtes payé",
-          "text": "Remise en main propre, scan final, photo. Le destinataire confirme avec son code reçu par SMS et vous êtes payé dans les 24 heures, la commission de service déduite du montant."
+          "text": "Remise en main propre : le destinataire vous donne son code à 6 chiffres, vous prenez une photo. Le versement part dès la livraison confirmée, pour le prix annoncé en entier, la commission étant payée par l'expéditeur."
         }
       ]
     }
@@ -270,60 +274,61 @@
   "pricing": {
     "seo": {
       "title": "Tarifs yadony : une commission transparente, rien d'autre",
-      "description": "Le voyageur fixe son prix au kilo ; une commission de service est prélevée sur chaque transaction. Exemple chiffré complet pour un colis de 5 kg Paris → Abidjan."
+      "description": "Le voyageur fixe son prix au kilo ; une commission de service s'y ajoute, affichée avant chaque paiement. Exemple chiffré pour un colis de 5 kg Paris → Abidjan."
     },
     "title": "Le voyageur fixe son prix. La commission est transparente.",
-    "lead": "Il n'y a pas de grille tarifaire chez Yadony, parce que ce n'est pas nous qui transportons. Le prix au kilo est celui qu'annonce le voyageur. La seule chose que nous prélevons est une commission de service, toujours affichée avant que vous ne validiez. En cas de remboursement, elle n'est jamais retenue.",
-    "cap": "La valeur déclarée d'un colis est plafonnée à {amount} €. C'est le montant de référence retenu pour arbitrer un litige ; l'assurance du colis n'est pas comprise dans la commission.",
+    "lead": "Il n'y a pas de grille tarifaire chez Yadony, parce que ce n'est pas nous qui transportons. Le prix au kilo est celui qu'annonce le voyageur. La seule chose que nous ajoutons est une commission de service, payée par l'expéditeur et toujours affichée avant que vous ne validiez. En cas d'annulation avant la remise, elle vous est remboursée.",
+    "cap": "Yadony peut rembourser un envoi perdu ou endommagé, dans la limite d'un plafond et sous les conditions affichés dans l'application. La commission ne comprend aucune assurance du colis.",
     "example": {
-      "caption": "Un colis de 5 kg, Paris → Abidjan, chez un voyageur à 12 € le kilo",
+      "caption": "Un colis de 5 kg, Paris → Abidjan, chez un voyageur à 8 € le kilo",
       "travelerPrice": "Prix demandé par le voyageur",
       "commission": "Commission Yadony",
-      "commissionValue": "déduite du montant versé au voyageur",
+      "commissionValue": "ajoutée au prix, affichée avant paiement",
       "senderPays": "Total payé par l'expéditeur",
       "travelerEarns": "Versé au voyageur après livraison",
-      "travelerEarnsValue": "le prix annoncé, commission déduite"
+      "travelerEarnsValue": "le prix annoncé, en entier",
+      "senderPaysValue": "prix du voyageur + commission"
     },
     "comparison": {
       "title": "Le même colis chez un transporteur classique",
-      "text": "Cinq kilos Paris → Abidjan démarrent autour de 150 € chez un transporteur international, hors options de délai, contre 60 € chez un voyageur à 12 € le kilo. La différence tient à une chose : le voyageur faisait déjà le trajet."
+      "text": "Cinq kilos Paris → Abidjan démarrent autour de 150 € chez un transporteur international, hors options de délai, contre 40 € plus la commission chez un voyageur à 8 € le kilo. La différence tient à une chose : le voyageur faisait déjà le trajet."
     }
   },
   "trust": {
     "seo": {
       "title": "Sécurité : identité vérifiée, paiement séquestre, litiges",
-      "description": "Comment yadony sécurise un envoi entre particuliers : vérification d'identité Stripe Identity, paiement encaissé seulement après la livraison confirmée, valeur déclarée plafonnée à 500 €, procédure de litige et traitement des données."
+      "description": "Comment yadony sécurise un envoi entre particuliers : vérification d'identité avec Didit, paiement bloqué jusqu'à la livraison, code de remise à 6 chiffres, procédure de litige et traitement des données."
     },
     "title": "Ce que la plateforme garantit, et ce qu'elle ne garantit pas",
     "lead": "Cette page décrit les mécanismes en place, sans les enjoliver. Si un point vous paraît insuffisant, écrivez-nous : c'est plus utile de le dire maintenant que de le découvrir au moment d'un problème.",
     "sections": {
       "identity": {
         "title": "Vérification d'identité",
-        "text": "Aucun compte anonyme ne peut expédier ni transporter un colis. Avant sa première annonce, chaque utilisateur transmet une pièce d'identité et un selfie à Stripe Identity, qui contrôle la validité du document et sa correspondance avec le visage. Ces documents sont conservés chiffrés et cloisonnés du reste de la base : ils ne sont jamais visibles par les autres utilisateurs, et l'accès interne y est restreint et journalisé. Le nom affiché à l'autre partie est le nom vérifié."
+        "text": "Aucun compte non vérifié ne peut publier un trajet ou une demande de colis. Chaque utilisateur transmet une pièce d'identité et un selfie à Didit, notre prestataire de vérification, qui contrôle la validité du document et sa correspondance avec le visage. Yadony ne reçoit pas ces images : seulement le résultat de la vérification et le nom vérifié, qui est celui affiché à l'autre partie. Par défaut, un voyageur n'accepte que des expéditeurs vérifiés."
       },
       "escrow": {
-        "title": "Paiement séquestre",
-        "text": "Quand un voyageur accepte votre colis, votre moyen de paiement est enregistré, mais aucune somme n'est encaissée. L'encaissement n'intervient qu'après le scan de livraison validé par le destinataire, et c'est lui qui déclenche le versement au voyageur. Tant que la livraison n'est pas confirmée, rien ne vous est prélevé et le voyageur ne perçoit rien. Si l'envoi n'a pas lieu, la demande de paiement est abandonnée."
+        "title": "Paiement bloqué jusqu'à la livraison",
+        "text": "Par carte, votre paiement est autorisé à l'envoi de votre demande et débité quand le voyageur l'accepte. L'argent reste alors sur la plateforme : le voyageur ne le reçoit qu'après la livraison confirmée avec le code du destinataire. Si le voyageur refuse, ou si l'envoi est annulé avant la remise, vous êtes remboursé intégralement, commission comprise. Si vous choisissez de payer en espèces, l'argent passe de main à main : ce blocage ne s'applique pas, seule la trace des scans demeure."
       },
       "cap": {
-        "title": "Plafond de valeur déclarée",
-        "text": "La valeur déclarée d'un colis ne peut pas dépasser 500 €. Ce plafond est volontaire : au-delà, un envoi accompagné par un particulier n'est plus le bon canal, et un transporteur professionnel l'est davantage. La valeur déclarée est le montant de référence que nous retenons pour instruire un litige ; la sous-déclarer se retourne contre vous. La commission ne comprend aucune assurance du colis."
+        "title": "Remboursement plafonné",
+        "text": "En cas de perte ou de dommage avéré, Yadony peut rembourser l'envoi, dans la limite d'un plafond et sous les conditions affichés dans l'application au moment de la publication. Au-delà, un envoi accompagné par un particulier n'est plus le bon canal, et un transporteur professionnel l'est davantage. La commission ne comprend aucune assurance du colis."
       },
       "tracking": {
-        "title": "Quatre scans, et la preuve qui va avec",
-        "text": "Dépôt, embarquement, arrivée, remise. Chaque scan enregistre un horodatage et, au dépôt comme à la remise, une photo. Cet historique n'est pas décoratif : c'est la pièce sur laquelle un litige est instruit. Il est visible en permanence par l'expéditeur et le destinataire, et il ne peut pas être modifié après coup."
+        "title": "Des scans, un code, et la preuve qui va avec",
+        "text": "Remise, transit éventuel, arrivée, livraison. Le scan à la remise et la livraison par code sont obligatoires ; le transit est facultatif. Chaque étape enregistre l'heure et la position, avec une photo à la remise et à la livraison. Cet historique n'est pas décoratif : c'est la pièce sur laquelle un litige est instruit. Il est visible en permanence par l'expéditeur et le destinataire, et il ne peut pas être modifié après coup."
       },
       "dispute": {
         "title": "Procédure de litige",
-        "text": "Un litige s'ouvre depuis l'application, à partir du moment où une étape ne se déroule pas comme prévu. Le versement au voyageur est immédiatement suspendu. Nous examinons l'historique des scans, les photos horodatées et les échanges tenus dans l'application, puis nous tranchons : remboursement de l'expéditeur, versement au voyageur, ou répartition. La décision est motivée et communiquée aux deux parties."
+        "text": "Un litige s'ouvre depuis l'application, dans les 15 jours qui suivent la date prévue, dès qu'une étape ne se déroule pas comme prévu. Le versement au voyageur est suspendu pendant l'instruction. Nous examinons l'historique des scans, les photos horodatées et les échanges tenus dans l'application, puis nous tranchons sous 72 heures ouvrées : remboursement de l'expéditeur, versement au voyageur, ou répartition. La décision est motivée et communiquée aux deux parties."
       },
       "data": {
         "title": "Vos données",
-        "text": "Les pièces d'identité sont traitées par Stripe Identity, stockées chiffrées et cloisonnées du reste de la base. L'autre partie d'un envoi voit votre prénom, votre photo de profil, le statut de votre vérification et les informations du colis concerné, rien de plus. Les données d'un envoi sont conservées le temps nécessaire au traitement d'un éventuel litige, puis archivées. Le détail figure dans la politique de confidentialité."
+        "text": "Les pièces d'identité et les selfies sont traités par Didit, notre prestataire de vérification, qui héberge ses données dans l'Union européenne. Yadony n'en conserve aucune copie. L'autre partie d'un envoi voit votre prénom, votre photo de profil, le statut de votre vérification et les informations du colis concerné, rien de plus. Les données d'un envoi sont conservées le temps nécessaire au traitement d'un éventuel litige, puis archivées. Le détail figure dans la politique de confidentialité."
       },
       "limits": {
         "title": "Ce que nous ne garantissons pas",
-        "text": "Nous ne transportons pas : le colis reste dans le bagage d'un voyageur, soumis aux aléas de son vol et de sa compagnie. Un retard d'avion, une grève ou un contrôle douanier ne relèvent pas de nous. Nous ne fouillons pas les colis à votre place : c'est le voyageur qui vérifie le contenu au dépôt, et l'expéditeur qui répond de sa déclaration. Nous ne sommes pas assureur non plus : la commission ne comprend aucune assurance du colis, et nos conditions générales n'engagent aucun montant d'indemnisation. Ce que nous garantissons est plus étroit et plus vérifiable : le paiement n'est pas encaissé tant que la livraison n'est pas confirmée, et un litige est instruit sur des preuves horodatées. Enfin, un envoi convenu en dehors de l'application n'ouvre aucun recours : sans scan et sans paiement passé par la plateforme, il n'y a ni trace ni levier."
+        "text": "Nous ne transportons pas : le colis reste dans le bagage d'un voyageur, soumis aux aléas de son vol et de sa compagnie. Un retard d'avion, une grève ou un contrôle douanier ne relèvent pas de nous. Nous ne fouillons pas les colis à votre place : c'est le voyageur qui vérifie le contenu à la remise, et l'expéditeur qui répond de sa déclaration. Nous ne sommes pas assureur non plus : la commission ne comprend aucune assurance du colis, et un remboursement éventuel reste plafonné. Ce que nous garantissons est plus étroit et plus vérifiable : payé par carte, l'argent n'est pas versé au voyageur tant que la livraison n'est pas confirmée, et un litige est instruit sur des preuves horodatées. Enfin, un envoi convenu en dehors de l'application n'ouvre aucun recours : sans scan et sans paiement passé par la plateforme, il n'y a ni trace ni levier."
       }
     }
   },
@@ -338,8 +343,8 @@
       "Ça se passe dans un groupe WhatsApp de deux cents personnes. Quelqu'un répond, on échange un numéro, on se retrouve un samedi sur un parking. On confie un carton à un inconnu recommandé par un cousin, on paie en liquide, et on attend. La plupart du temps, ça marche. Ça marche même remarquablement bien : c'est comme ça que circulent les vêtements, le matériel scolaire, les pièces détachées et les cadeaux depuis trente ans.",
       "Le problème n'apparaît que le jour où ça ne marche pas. Le colis n'arrive pas. Le numéro ne répond plus. Il n'y a pas de trace, pas de preuve de remise, pas de reçu, personne à appeler. On ne peut même pas dire ce qui s'est passé : perdu, oublié, gardé. Et comme la personne rendait service, on n'ose pas insister. On perd le colis, et souvent on perd aussi la relation.",
       "En face, il y a les transporteurs. Ils sont fiables, ils sont nettement plus chers, et ils ne livrent pas partout. Pour faire parvenir cinq kilos à quelqu'un qu'on connaît, ce n'est pas une solution, c'est un renoncement.",
-      "yadony ne cherche pas à remplacer le voyageur par un camion. Le voyageur existe déjà, il part déjà, sa valise est déjà à moitié vide. Ce qui manquait n'était pas le transport : c'était la trace. Savoir qui porte, quand, et pouvoir le prouver. D'où la vérification d'identité, les quatre scans, les photos horodatées, et un paiement qui ne part pas tant que le colis n'est pas dans les mains du destinataire.",
-      "Nous ouvrons sur quatre villes d'arrivée, pas quarante, parce que nous préférons qu'un corridor fonctionne réellement plutôt qu'une carte fasse illusion. Nous n'avons pas de chiffres à afficher : nous commençons. Si vous utilisez l'application et qu'une chose vous paraît bancale, écrivez-nous. À ce stade, c'est le retour le plus utile qu'on puisse recevoir."
+      "yadony ne cherche pas à remplacer le voyageur par un camion. Le voyageur existe déjà, il part déjà, sa valise est déjà à moitié vide. Ce qui manquait n'était pas le transport : c'était la trace. Savoir qui porte, quand, et pouvoir le prouver. D'où la vérification d'identité, les scans à chaque étape, les photos horodatées, le code de livraison, et un paiement qui n'arrive au voyageur que quand le colis est dans les mains du destinataire.",
+      "Nous sommes partis des trajets que la diaspora fait déjà, entre Paris, Lyon, Marseille et Abidjan, Dakar, Bamako ou Douala, et l'application accepte aujourd'hui n'importe quelle ville de départ et d'arrivée. Nous n'avons pas de chiffres à afficher : nous commençons, et l'application est encore en bêta. Si vous l'utilisez et qu'une chose vous paraît bancale, écrivez-nous. À ce stade, c'est le retour le plus utile qu'on puisse recevoir."
     ]
   },
   "contact": {
@@ -421,7 +426,7 @@
               "p": [
                 "L'application est ouverte à toute personne majeure (18 ans minimum) capable de contracter. Un seul compte par numéro de téléphone est autorisé.",
                 "Tout utilisateur peut à la fois envoyer des colis et en transporter. Il n'y a pas de rôle à choisir à l'inscription : ces deux possibilités sont accessibles à tous dès la création du compte.",
-                "Avant de pouvoir payer, publier un trajet ou envoyer un colis, chaque utilisateur doit vérifier son identité : photo de sa pièce d'identité et selfie avec détection de vivacité. La réponse est donnée sous 24 heures. Les comptes vérifiés affichent le badge « Identité vérifiée »."
+                "Avant de publier un trajet ou une demande de colis, chaque utilisateur doit vérifier son identité auprès de notre prestataire Didit : photo de sa pièce d'identité et selfie. Le résultat est en général connu en quelques minutes. Les comptes vérifiés affichent le badge « Identité vérifiée »."
               ]
             }
           ]
@@ -649,7 +654,7 @@
             {
               "p": [
                 "Yadony respecte le Règlement Européen sur la Protection des Données (RGPD). Pour toute question : dpo{'@'}yadony.com.",
-                "Nous collectons uniquement les données nécessaires au fonctionnement du service : identité (KYC), coordonnées, données de transaction, photos de livraison et données de navigation. Nous ne stockons jamais vos données bancaires (gérées directement par Stripe). Les données biométriques collectées lors de la vérification d'identité sont supprimées dès la fin de la vérification.",
+                "Nous collectons uniquement les données nécessaires au fonctionnement du service : identité (KYC), coordonnées, données de transaction, photos de livraison et données de navigation. Nous ne stockons jamais vos données bancaires (gérées directement par Stripe). Les images de votre pièce d'identité et de votre visage sont traitées par Didit, notre prestataire de vérification : Yadony n'en conserve aucune copie.",
                 "Vos données sont conservées pendant la durée d'utilisation de votre compte plus 3 ans. Les données de transaction sont conservées 5 ans (obligation légale comptable). Les documents d'identité sont conservés 5 ans après la fin de votre relation avec Yadony.",
                 "Vous pouvez à tout moment consulter, modifier, exporter ou supprimer vos données depuis les paramètres de l'application. À la suppression du compte : données anonymisées, pièces d'identité effacées, carnet de destinataires nettoyé (sauf historique de paiement conservé 5 ans).",
                 "Pour toute réclamation non résolue, vous pouvez contacter la CNIL : www.cnil.fr."
@@ -825,20 +830,20 @@
               ]
             },
             {
-              "sub": "3.2 Stripe Identity : vérification d'identité (KYC)",
+              "sub": "3.2 Didit : vérification d'identité (KYC)",
               "p": [
-                "La vérification d'identité, obligatoire pour utiliser Yadony, est entièrement gérée par Stripe Identity, le service de vérification de documents du leader mondial du paiement en ligne. Stripe Identity gère :"
+                "La vérification d'identité, obligatoire pour publier un trajet ou une demande de colis, est confiée à Didit (Didit Identity Spain, S.L., Barcelone, Espagne), qui agit comme sous-traitant de Yadony au sens du RGPD et héberge ses données dans l'Union européenne. Didit gère :"
               ],
               "ul": [
                 "La photo de votre pièce d'identité (carte nationale ou passeport)",
-                "Le selfie avec détection de vivacité (liveness detection)",
+                "Le selfie et le contrôle de vivacité (liveness)",
                 "La comparaison entre votre visage et votre document officiel",
                 "La validation ou le rejet de la vérification"
               ]
             },
             {
               "p": [
-                "Yadony ne voit jamais vos documents d'identité ni votre visage. Stripe Identity nous communique uniquement le résultat de la vérification : Vérifié, En attente ou Rejeté. Les documents et données biométriques restent chez Stripe et sont soumis à leur politique de conservation. Politique de confidentialité Stripe Identity : https://stripe.com/fr/privacy"
+                "Yadony ne reçoit ni vos documents d'identité ni les images de votre visage. Didit nous communique le résultat de la vérification (Vérifiée, En cours d'examen ou Refusée, avec le motif d'un refus) et, pour une vérification réussie, votre nom tel qu'il figure sur le document. Didit conserve les documents et les données biométriques selon les paramètres de conservation définis par Yadony et sa propre politique. Politique de confidentialité de Didit : https://didit.me/terms/privacy-policy/"
               ]
             },
             {
@@ -917,7 +922,7 @@
                 "Nom, prénom, e-mail, date de naissance, ville : Yadony (base de données interne). Yadony y a accès : oui, données de profil uniquement",
                 "Numéro de téléphone, authentification par SMS : Google Firebase. Accès Yadony : non, Firebase gère directement",
                 "Empreinte digitale, Face ID, code PIN : Google Firebase. Accès Yadony : non, données biométriques locales ou Firebase",
-                "Photo de pièce d'identité, selfie, liveness : Stripe Identity. Accès Yadony : non, Yadony reçoit uniquement le statut Vérifié / Rejeté",
+                "Photo de pièce d'identité, selfie, liveness : Didit. Accès Yadony : non, Yadony reçoit uniquement le résultat de la vérification et le nom vérifié",
                 "Numéro de carte bancaire, données de paiement : Stripe. Accès Yadony : non, jamais transmis à Yadony",
                 "Coordonnées Mobile Money : Wave / Orange Money. Accès Yadony : non, gérées directement par ces services",
                 "Photos de colis, photos de livraison : Cloudflare. Accès via lien temporaire sécurisé uniquement",
@@ -934,7 +939,7 @@
               "ul": [
                 "Données de profil (nom, e-mail, date de naissance, ville) : exécution du contrat (CGU)",
                 "Authentification via Google Firebase : exécution du contrat",
-                "Vérification d'identité via Stripe Identity : obligation légale (lutte contre le blanchiment et la fraude)",
+                "Vérification d'identité via Didit : obligation légale (lutte contre le blanchiment et la fraude)",
                 "Traitement des paiements et séquestre via Stripe : exécution du contrat",
                 "Stockage des images via Cloudflare : exécution du contrat et intérêt légitime (preuve en cas de litige)",
                 "Historique des transactions : obligation légale (comptabilité et fiscalité)",
@@ -1006,7 +1011,7 @@
               "ul": [
                 "Données de profil (nom, e-mail, date de naissance, ville) : durée d'utilisation plus 3 ans après la dernière connexion, pour la gestion du compte",
                 "Données d'authentification (Firebase) : gérées par Google Firebase selon leur politique",
-                "Données KYC (Stripe Identity) : gérées par Stripe selon leur politique",
+                "Données KYC (Didit) : conservées par Didit selon les paramètres définis par Yadony et la politique de Didit",
                 "Données de paiement (Stripe) : gérées par Stripe selon leur politique",
                 "Images des colis (Cloudflare) : 5 ans, liens temporaires, preuve en cas de litige",
                 "Historique des transactions : 5 ans, obligation comptable et fiscale",
@@ -1031,7 +1036,7 @@
               ],
               "ul": [
                 "Google Firebase : certifié ISO 27001, SOC 1, SOC 2, SOC 3, PCI DSS. Données d'authentification chiffrées et isolées.",
-                "Stripe Identity : certifié PCI DSS niveau 1. Documents d'identité chiffrés, jamais exposés à Yadony.",
+                "Didit : certifié ISO/IEC 27001 et SOC 2, données hébergées dans l'Union européenne. Documents d'identité chiffrés, jamais transmis à Yadony.",
                 "Cloudflare : certifié ISO 27001, SOC 2. Images accessibles uniquement via liens temporaires sécurisés.",
                 "Yadony : données de profil chiffrées au repos et en transit (HTTPS/TLS). Accès interne limité au strict nécessaire."
               ]
@@ -1114,7 +1119,7 @@
               "ul": [
                 "Données de profil Yadony (nom, prénom, e-mail, date de naissance, ville) : anonymisées immédiatement.",
                 "Données Firebase (téléphone, authentification) : supprimées sur demande via Firebase.",
-                "Données Stripe Identity (pièce d'identité, selfie) : supprimées selon la politique de conservation de Stripe.",
+                "Données Didit (pièce d'identité, selfie) : supprimées selon les paramètres de conservation définis par Yadony auprès de Didit.",
                 "Images des colis (Cloudflare) : les liens deviennent inaccessibles. Les fichiers sont supprimés selon la politique Cloudflare.",
                 "Messages dans la messagerie : supprimés.",
                 "Carnet de destinataires : nettoyé.",
@@ -1155,7 +1160,7 @@
               "ul": [
                 "Raison sociale : YADONY SAS (en cours d'immatriculation)",
                 "Directeur de la publication : M. Dramane DIAKITE, Président",
-                "Partenaires techniques certifiés : Google Firebase, Stripe, Stripe Identity, Wave, Orange Money, Cloudflare",
+                "Partenaires techniques certifiés : Google Firebase, Stripe, Didit, Wave, Orange Money, Cloudflare",
                 "Autorité de contrôle française : CNIL (www.cnil.fr)"
               ]
             }
@@ -1192,7 +1197,7 @@
     }
   },
   "footer": {
-    "pitch": "yadony met en relation les voyageurs qui ont de la place dans leur valise et les personnes qui ont un colis à faire partir. Identité vérifiée, quatre scans, paiement libéré à la livraison.",
+    "pitch": "yadony met en relation les voyageurs qui ont de la place dans leur valise et les personnes qui ont un colis à faire partir. Identité vérifiée, scans à chaque étape, paiement libéré à la livraison.",
     "navLabel": "Navigation du pied de page",
     "legalLabel": "Informations légales",
     "legalNotice": "Mentions légales",
@@ -1285,11 +1290,11 @@
         "how": "Publiez votre colis dans l'app avec son poids, sa description et sa photo. Les voyageurs vérifiés qui partent de Paris vers Dakar voient votre demande et proposent leur prix au kilo. Vous choisissez, vous remettez le colis en main propre en région parisienne, et votre proche le récupère à Dakar auprès du voyageur.",
         "price": "Le prix au kilo est fixé librement par chaque voyageur selon son vol et sa franchise bagage. Vous comparez les annonces avant de choisir. Une commission de service, toujours affichée avant paiement, est prélevée sur la transaction.",
         "delay": "Un vol direct Paris–Dakar dure environ 5 h 30. Votre colis arrive donc le jour du vol du voyageur : dès la remise, vous connaissez la date exacte, et le rendez-vous de récupération à Dakar se cale dans les jours qui suivent l'atterrissage.",
-        "safety": "Identité du voyageur vérifiée avant le premier colis, paiement bloqué chez Stripe jusqu'à la confirmation de livraison par le destinataire, quatre scans QR entre la remise à Paris et la livraison à Dakar. Votre proche suit le colis depuis une simple page web, sans compte.",
+        "safety": "Identité du voyageur vérifiée avec Didit, paiement par carte bloqué jusqu'à la confirmation de livraison, remise validée par un code à 6 chiffres, chaque étape horodatée et géolocalisée. Votre proche suit tout depuis une simple page web, sans compte.",
         "faq": [
           {
             "question": "Combien coûte un envoi de colis Paris–Dakar ?",
-            "answer": "C'est le voyageur qui fixe son prix au kilo ; vous comparez les annonces avant de choisir. Pour un colis de 5 kg chez un voyageur à 12 €/kg, vous payez 60 € ; la commission de service est prélevée sur la transaction et le voyageur reçoit le reste."
+            "answer": "C'est le voyageur qui fixe son prix au kilo ; vous comparez les annonces avant de choisir. Pour un colis de 5 kg chez un voyageur à 8 €/kg, le voyageur touche 40 € et vous payez 40 € plus la commission de service, affichée avant paiement."
           },
           {
             "question": "Combien de temps met un colis pour arriver à Dakar ?",
@@ -1297,7 +1302,7 @@
           },
           {
             "question": "Comment mon proche récupère-t-il le colis à Dakar ?",
-            "answer": "Le voyageur et le destinataire conviennent d'un rendez-vous. À la remise, le voyageur scanne le code QR du colis et prend une photo ; le destinataire confirme avec un code reçu par SMS, ce qui déclenche le paiement du voyageur."
+            "answer": "Le voyageur et le destinataire conviennent d'un rendez-vous. À la remise, le destinataire donne le code à 6 chiffres que vous lui avez transmis, et le voyageur prend une photo : la livraison est confirmée et le paiement du voyageur est déclenché."
           }
         ]
       },
@@ -1308,10 +1313,10 @@
         },
         "title": "Envoyer un colis de Lyon à Abidjan",
         "lead": "La communauté ivoirienne de Lyon et de sa région n'a plus besoin de passer par Paris : des voyageurs relient directement Lyon à Abidjan, et votre colis voyage dans leur valise.",
-        "how": "Décrivez votre colis dans l'app : poids, contenu, photo, valeur déclarée. Les voyageurs vérifiés au départ de Lyon (ou de Paris si vous préférez élargir) proposent leur prix. Après acceptation, vous remettez le colis en main propre et chaque étape est scannée jusqu'à Abidjan.",
+        "how": "Décrivez votre colis dans l'app : poids, contenu, photos. Les voyageurs vérifiés au départ de Lyon (ou de Paris si vous préférez élargir) proposent leur prix. Après acceptation, vous remettez le colis en main propre et chaque étape est tracée jusqu'à Abidjan.",
         "price": "Chaque voyageur annonce son prix au kilo ; c'est souvent plus avantageux qu'un transporteur classique pour les colis de quelques kilos, et vous savez exactement qui transporte. La commission de service est affichée avant que vous ne validiez.",
         "delay": "Comptez environ 6 h 30 de vol direct Lyon–Abidjan. Le colis arrive avec le voyageur : la date est connue dès la réservation, sans fourchette floue de plusieurs semaines.",
-        "safety": "Vérification d'identité obligatoire, paiement sous séquestre Stripe libéré seulement après confirmation du destinataire, quatre scans QR horodatés et géolocalisés. En cas de problème, vous avez 48 h pour ouvrir un litige, instruit sous 72 h sur preuves.",
+        "safety": "Vérification d'identité obligatoire, paiement par carte bloqué jusqu'à la confirmation du destinataire, scans horodatés et géolocalisés. En cas de problème, vous avez 15 jours pour ouvrir un litige, tranché sous 72 heures ouvrées sur preuves.",
         "faq": [
           {
             "question": "Y a-t-il souvent des voyageurs entre Lyon et Abidjan ?",
@@ -1323,7 +1328,7 @@
           },
           {
             "question": "Comment le paiement est-il protégé ?",
-            "answer": "Vous payez à l'acceptation, mais l'argent est bloqué chez Stripe : le voyageur n'est payé qu'après la confirmation de livraison par le destinataire, avec un code reçu par SMS. En cas d'annulation avant la remise, vous êtes remboursé intégralement."
+            "answer": "Par carte, vous êtes débité quand le voyageur accepte, mais l'argent reste bloqué sur la plateforme : le voyageur n'est payé qu'après la confirmation de livraison, avec le code à 6 chiffres que vous transmettez au destinataire. En cas d'annulation avant la remise, vous êtes remboursé intégralement."
           }
         ]
       },
@@ -1334,48 +1339,48 @@
         },
         "title": "Envoyer un colis de Marseille à Bamako",
         "lead": "Depuis Marseille et tout le sud de la France, la communauté malienne envoie ses colis à Bamako sans détour : un voyageur qui fait déjà le trajet les emporte, avec un vrai suivi à chaque étape.",
-        "how": "Créez votre demande dans l'app avec le poids et la description du colis. Un voyageur vérifié partant de Marseille vers Bamako l'accepte, vous fixez ensemble un rendez-vous de remise, et le colis est scanné au départ, en transit et à l'arrivée.",
+        "how": "Créez votre demande dans l'app avec le poids et la description du colis. Un voyageur vérifié partant de Marseille vers Bamako l'accepte, vous fixez ensemble un rendez-vous de remise, et le colis est scanné à la remise puis livré contre le code du destinataire.",
         "price": "Le prix au kilo est celui qu'annonce le voyageur : pas de grille cachée, pas de suppléments découverts au guichet. Une commission de service est prélevée sur la transaction, affichée avant paiement.",
         "delay": "Le vol Marseille–Bamako dure environ 5 h 30 en direct. Votre colis arrive le jour où le voyageur atterrit ; la remise au destinataire se fait dans la foulée, au rendez-vous convenu dans l'app.",
-        "safety": "Chaque voyageur passe une vérification d'identité avec détection de vivacité avant de pouvoir transporter. Le paiement reste sous séquestre jusqu'au code de confirmation du destinataire, et l'historique des scans fait foi en cas de litige.",
+        "safety": "Chaque voyageur vérifie son identité avec Didit, pièce d'identité et selfie, avant de pouvoir publier un trajet. Payé par carte, l'argent reste bloqué jusqu'au code de confirmation du destinataire, et l'historique des scans fait foi en cas de litige.",
         "faq": [
           {
             "question": "Combien coûte un envoi Marseille–Bamako ?",
-            "answer": "Le voyageur fixe son prix au kilo et vous le voyez avant de réserver. Exemple : 5 kg à 12 €/kg = 60 € payés ; la commission de service est prélevée sur la transaction et le voyageur reçoit le reste."
+            "answer": "Le voyageur fixe son prix au kilo et vous le voyez avant de réserver. Exemple : 5 kg à 8 €/kg, le voyageur touche 40 € et vous payez 40 € plus la commission de service, affichée avant paiement."
           },
           {
             "question": "Mon proche à Bamako doit-il installer l'application ?",
-            "answer": "Non. Le destinataire suit le colis depuis une simple page web, même sur un téléphone basique en connexion lente, et confirme la réception avec un code reçu par SMS."
+            "answer": "Non. Le destinataire suit le colis depuis une simple page web, même sur un téléphone basique en connexion lente. À la remise, il donne au voyageur le code à 6 chiffres que vous lui avez transmis."
           },
           {
             "question": "Et si le voyageur annule son trajet ?",
-            "answer": "Tous les expéditeurs sont remboursés intégralement et automatiquement (3 à 5 jours ouvrés), et Yadony vous propose un voyageur de remplacement dans les 72 heures."
+            "answer": "Vous êtes remboursé intégralement et automatiquement, commission comprise, et l'application vous suggère d'autres voyageurs qui partent à des dates proches."
           }
         ]
       },
       "parisDouala": {
         "seo": {
           "title": "Envoyer un colis de Paris à Douala par un voyageur vérifié",
-          "description": "Envoyez vos colis au Cameroun avec un voyageur vérifié Paris–Douala : prix au kilo transparent, séquestre Stripe, quatre scans QR jusqu'à la livraison."
+          "description": "Envoyez vos colis au Cameroun avec un voyageur vérifié Paris–Douala : prix au kilo transparent, paiement bloqué jusqu'à la livraison, remise validée par un code."
         },
         "title": "Envoyer un colis de Paris à Douala",
         "lead": "Pour la diaspora camerounaise, Paris–Douala est le chemin le plus direct : un voyageur vérifié qui prend ce vol emporte votre colis et votre famille le récupère en main propre, preuve de livraison à l'appui.",
         "how": "Publiez le colis dans l'app : poids, contenu, photos, coordonnées du destinataire à Douala. Un voyageur vérifié l'accepte, vous le lui remettez en région parisienne, et vous suivez les scans jusqu'à la remise finale, photo comprise.",
         "price": "Le prix dépend du voyageur et de sa franchise bagage : chacun annonce son tarif au kilo et vous choisissez. La commission de service est prélevée sur la transaction et toujours affichée avant que vous ne payiez.",
         "delay": "Environ 6 h 30 de vol direct Paris–Douala. La date d'arrivée est celle du vol du voyageur, connue avant la réservation : vous pouvez prévenir votre famille du jour exact dès le départ.",
-        "safety": "Identités vérifiées des deux côtés, valeur déclarée plafonnée à 500 €, paiement séquestré jusqu'au code de confirmation du destinataire, quatre scans QR de Paris à Douala. Le destinataire suit tout depuis une page web, sans compte.",
+        "safety": "Identités vérifiées avec Didit, paiement par carte bloqué jusqu'au code de confirmation du destinataire, chaque étape tracée de Paris à Douala. Le destinataire suit tout depuis une page web, sans compte.",
         "faq": [
           {
             "question": "Puis-je envoyer un colis à Yaoundé plutôt qu'à Douala ?",
             "answer": "Le corridor dessert Douala, où le voyageur atterrit. La remise finale se fait au rendez-vous convenu entre le voyageur et votre destinataire ; si votre proche est à Yaoundé, il peut convenir d'un point de rencontre avec le voyageur, mais la livraison de référence reste Douala."
           },
           {
-            "question": "Quelle est la valeur maximale d'un colis ?",
-            "answer": "La valeur déclarée est plafonnée à 500 €. C'est le montant de référence en cas de litige, et la responsabilité du voyageur est engagée à hauteur de cette valeur déclarée."
+            "question": "Que se passe-t-il si le colis est perdu ?",
+            "answer": "Ouvrez un litige depuis l'application dans les 15 jours qui suivent la date prévue. Le versement au voyageur est suspendu, l'équipe examine les preuves et Yadony peut rembourser l'envoi, dans la limite d'un plafond et sous les conditions affichés dans l'application."
           },
           {
             "question": "Comment savoir où en est mon colis ?",
-            "answer": "Quatre scans jalonnent le trajet : remise, départ, transit, arrivée. Chaque scan est horodaté et géolocalisé, et vous comme le destinataire voyez la même fiche de suivi en temps réel."
+            "answer": "Le voyageur scanne le colis à la remise, peut ajouter un scan de transit, marque son arrivée, puis la livraison est validée par le code du destinataire. Chaque étape est horodatée et géolocalisée, et vous comme le destinataire voyez la même fiche de suivi en temps réel."
           }
         ]
       },
@@ -1389,11 +1394,11 @@
         "how": "Publiez votre colis dans l'app : poids, description, photos, coordonnées du destinataire à Abidjan. Les voyageurs vérifiés qui partent de Paris proposent leur prix au kilo ; vous choisissez, vous remettez le colis en main propre en région parisienne, et chaque étape est scannée jusqu'à la remise à Abidjan.",
         "price": "Chaque voyageur fixe son prix au kilo selon son vol et sa franchise bagage ; vous comparez avant de choisir. Une commission de service, toujours affichée avant paiement, est prélevée sur la transaction.",
         "delay": "Le vol direct Paris–Abidjan dure environ 6 h 30. Votre colis atterrit avec le voyageur : la date est connue dès la réservation, et le rendez-vous de remise à Abidjan se cale dans les jours qui suivent.",
-        "safety": "Identité du voyageur vérifiée avant le premier colis, paiement bloqué chez Stripe jusqu'au code de confirmation du destinataire, quatre scans QR horodatés et géolocalisés de Paris à Abidjan. Votre proche suit tout depuis une simple page web, sans compte.",
+        "safety": "Identité du voyageur vérifiée avec Didit, paiement par carte bloqué jusqu'au code de confirmation du destinataire, scans horodatés et géolocalisés de Paris à Abidjan. Votre proche suit tout depuis une simple page web, sans compte.",
         "faq": [
           {
             "question": "Combien coûte un envoi de colis Paris–Abidjan ?",
-            "answer": "C'est le voyageur qui fixe son prix au kilo, et vous comparez les annonces avant de réserver. Exemple : 5 kg chez un voyageur à 12 €/kg = 60 € payés ; la commission de service est prélevée sur la transaction et le voyageur reçoit le reste."
+            "answer": "C'est le voyageur qui fixe son prix au kilo, et vous comparez les annonces avant de réserver. Exemple : 5 kg chez un voyageur à 8 €/kg, le voyageur touche 40 € et vous payez 40 € plus la commission de service, affichée avant paiement."
           },
           {
             "question": "Y a-t-il des voyageurs Paris–Abidjan toute l'année ?",
@@ -1401,7 +1406,7 @@
           },
           {
             "question": "Mon proche à Abidjan doit-il installer l'application ?",
-            "answer": "Non. Le destinataire suit le colis depuis une simple page web, même sur un téléphone basique, et confirme la réception avec un code reçu par SMS : c'est ce qui déclenche le paiement du voyageur."
+            "answer": "Non. Le destinataire suit le colis depuis une simple page web, même sur un téléphone basique. À la remise, il donne au voyageur le code à 6 chiffres que vous lui avez transmis : c'est ce qui confirme la livraison et déclenche le paiement du voyageur."
           }
         ]
       }
@@ -1410,10 +1415,10 @@
   "referral": {
     "seo": {
       "title": "Parrainage yadony",
-      "description": "Un proche vous a invité sur yadony : retrouvez son code de parrainage et saisissez-le à l'inscription pour profiter de la réduction sur votre premier envoi."
+      "description": "Un proche vous a invité sur yadony : retrouvez son code de parrainage et saisissez-le à l'inscription dans l'application."
     },
     "title": "Un proche vous invite sur yadony",
-    "lead": "Voici son code de parrainage. Saisissez-le à l'inscription dans l'application : votre premier envoi bénéficie d'une réduction, et votre parrain aussi.",
+    "lead": "Voici son code de parrainage. Saisissez-le à l'inscription dans l'application : à votre première livraison confirmée, votre parrain reçoit une réduction sur sa prochaine commission.",
     "codeLabel": "Code de parrainage",
     "copy": "Copier le code",
     "copied": "Code copié",
@@ -1425,6 +1430,6 @@
       "Créez votre compte avec votre numéro ou votre adresse e-mail.",
       "À l'étape « Code de parrainage », saisissez le code ci-dessus. Vous pouvez aussi l'ajouter plus tard depuis Profil › Parrainage."
     ],
-    "note": "Le code ne s'applique qu'une seule fois, sur un nouveau compte. La réduction est déduite de la commission de votre premier envoi payé."
+    "note": "Le code ne s'applique qu'une seule fois, sur un nouveau compte. La récompense revient à votre parrain : une réduction de moitié sur sa prochaine commission, valable 6 mois."
   }
 }

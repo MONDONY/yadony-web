@@ -2,7 +2,6 @@
 import { useI18n } from 'vue-i18n'
 import { useRoute } from 'vue-router'
 import { buildSeoMeta } from '@/lib/seo'
-import { MAX_DECLARED_VALUE_EUR } from '@/lib/pricing'
 
 defineI18nRoute({ paths: { fr: '/tarifs', en: '/pricing' } })
 
@@ -29,7 +28,7 @@ useSeoMeta(
         </div>
 
         <p class="mt-8 max-w-prose text-sm text-ink-muted">
-          {{ t('pricing.cap', { amount: MAX_DECLARED_VALUE_EUR }) }}
+          {{ t('pricing.cap') }}
         </p>
       </UiContainer>
     </UiSection>

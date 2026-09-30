@@ -75,6 +75,7 @@ const properNounPaths = [
   'footer.proTitle',
   // Un numéral seul s'écrit pareil dans les deux langues.
   'home.hero.stats.scans.figure',
+  'home.trust.code.figure',
   // L'adresse du siège social ne se traduit pas.
   'footer.company.line1',
   // « Commission » s'écrit pareil dans les deux langues (sous-titre de

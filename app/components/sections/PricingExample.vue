@@ -3,7 +3,7 @@ import { useI18n } from 'vue-i18n'
 import { computeQuote } from '@/lib/pricing'
 
 const { t, n } = useI18n()
-const quote = computeQuote({ weightKg: 5, pricePerKg: 12 })
+const quote = computeQuote({ weightKg: 5, pricePerKg: 8 })
 </script>
 
 <template>
@@ -23,11 +23,14 @@ const quote = computeQuote({ weightKg: 5, pricePerKg: 12 })
         </tr>
         <tr class="border-b border-line font-semibold">
           <th scope="row" class="px-6 py-4">{{ t('pricing.example.senderPays') }}</th>
-          <td class="px-6 py-4 text-right text-orange-deep">{{ n(quote.senderPays, 'currency') }}</td>
+          <td class="px-6 py-4 text-right text-orange-deep">{{ t('pricing.example.senderPaysValue') }}</td>
         </tr>
         <tr>
           <th scope="row" class="px-6 py-4 font-normal text-ink-muted">{{ t('pricing.example.travelerEarns') }}</th>
-          <td class="px-6 py-4 text-right text-ink-muted">{{ t('pricing.example.travelerEarnsValue') }}</td>
+          <td class="px-6 py-4 text-right">
+            {{ n(quote.travelerEarns, 'currency') }}
+            <span class="block text-xs font-normal text-ink-muted">{{ t('pricing.example.travelerEarnsValue') }}</span>
+          </td>
         </tr>
       </tbody>
     </table>

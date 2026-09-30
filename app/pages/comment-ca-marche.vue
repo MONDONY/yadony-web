@@ -32,6 +32,7 @@ useSeoMeta(
 <template>
   <div>
     <PageHero :title="t('howItWorks.title')" :lead="t('howItWorks.lead')" />
+    <VideoIntro />
     <UiSection tone="white">
       <UiContainer>
         <RoleTabs :model-value="role" @update:model-value="setRole" />

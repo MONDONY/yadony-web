@@ -90,23 +90,23 @@
       "steps": {
         "deposit": {
           "label": "Handover to the traveller",
-          "text": "You hand the parcel to the traveller. They scan the QR code and take a photo, and the time and place are recorded. This is when the 6-digit delivery code is sent to you.",
-          "alt": "My parcels screen showing a shipment to hand over to the traveler, with a link to its QR code"
+          "text": "You hand the parcel to the traveller, who scans its QR code and takes a photo. In My parcels, the shipment switches to \"Handed over\": time and place are recorded.",
+          "alt": "My parcels screen showing a Paris to Bamako shipment marked handed over, with the handed over, on the way, arrived, delivery timeline"
         },
         "airport": {
-          "label": "Transit, when needed",
-          "text": "A stopover or a change of city? The traveller can add a transit scan. It is optional: only handover and delivery are required.",
-          "alt": "QR code scanning screen for a parcel in the yadony app"
+          "label": "The traveller scans",
+          "text": "At each step, the traveller scans the parcel's QR code and the next step is validated automatically. Transit is optional; on arrival, they confirm it in one tap.",
+          "alt": "Traveller tracking screen: QR code scanner and a button to confirm a parcel's arrival"
         },
         "transit": {
-          "label": "Scan on arrival",
-          "text": "Once they land, the traveller marks the trip as arrived. The tracking page, shareable by link, switches to \"arrived\" for everyone at the same time.",
-          "alt": "Screen of a Bamako to Abidjan trip marked as completed, with handover and pickup locations"
+          "label": "On the way, pickup code",
+          "text": "Your parcel is on its way. In its page, the pickup code button shows the 6-digit code: pass it on to the recipient. The tracking link can be shared without installing the app.",
+          "alt": "Page of a parcel on its way from Paris to Bamako, with the parcel QR and pickup code buttons"
         },
         "delivery": {
-          "label": "Delivery in Abidjan",
-          "text": "Handover in person: the recipient gives the 6-digit code you passed on to them, and the traveller takes a photo. Delivery is confirmed and the payment goes to the traveller.",
-          "alt": "Tracking sheet for a parcel delivered between Bamako and Abidjan, marked delivery confirmed"
+          "label": "Delivered, payment released",
+          "text": "The recipient gives the code to the traveller, who takes a handover photo. The parcel switches to \"Delivered\" and the payment is released to the traveller.",
+          "alt": "Page of a parcel delivered between Madrid and Bamako, stating that the payment was released to the traveller"
         }
       },
       "kicker": "End-to-end tracking"
@@ -220,6 +220,12 @@
     "title": "Two journeys, five steps each",
     "lead": "A shipment involves two people who do not know each other. Here is what each of them does, in order, and when the money moves.",
     "tabsLabel": "Choose a journey",
+    "intro": {
+      "kicker": "In one minute",
+      "title": "A parcel's journey, from Paris to Abidjan",
+      "lead": "From finding a traveller to the handover against the delivery code: the whole journey of a shipment, step by step, in one minute.",
+      "videoLabel": "Animated video: a parcel's journey from Paris to Abidjan with yadony"
+    },
     "expediteur": {
       "tab": "I am a sender",
       "steps": [
@@ -243,7 +249,12 @@
           "title": "Delivery releases the payment",
           "text": "The recipient receives the parcel in person and gives the code to the traveller, who takes a handover photo. This event, and only this one, releases the payout to the traveller."
         }
-      ]
+      ],
+      "video": {
+        "title": "Tutorial: sending a parcel",
+        "duration": "3 min 20 video, with French subtitles",
+        "label": "Video tutorial: posting a parcel request in the yadony app"
+      }
     },
     "voyageur": {
       "tab": "I am a traveller",
@@ -268,7 +279,12 @@
           "title": "You deliver and you get paid",
           "text": "Handover in person: the recipient gives you their 6-digit code and you take a photo. The payout is sent as soon as delivery is confirmed, for your full asking price, since the fee is paid by the sender."
         }
-      ]
+      ],
+      "video": {
+        "title": "Tutorial: posting a trip",
+        "duration": "6 min 30 video, with French subtitles",
+        "label": "Video tutorial: posting a trip in the yadony app"
+      }
     }
   },
   "pricing": {

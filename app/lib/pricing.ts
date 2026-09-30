@@ -1,9 +1,8 @@
 // Le site ne publie ni le taux de commission ni les montants qui permettraient
 // de le déduire : le taux réel est paramétrable dans dony-admin et présenté à
 // l'utilisateur au moment du paiement, dans l'application.
-// Modèle des CGU (article 7) : l'expéditeur paie le prix annoncé, le voyageur
-// reçoit ce prix moins la commission de service.
-export const MAX_DECLARED_VALUE_EUR = 500
+// Modèle du backend (PaymentService) : la commission s'ajoute au prix du
+// voyageur, payée par l'expéditeur ; le voyageur reçoit son prix en entier.
 
 export interface QuoteInput {
   weightKg: number
@@ -12,7 +11,7 @@ export interface QuoteInput {
 
 export interface Quote {
   travelerPrice: number
-  senderPays: number
+  travelerEarns: number
 }
 
 function round2(value: number): number {
@@ -25,6 +24,6 @@ export function computeQuote({ weightKg, pricePerKg }: QuoteInput): Quote {
   const travelerPrice = round2(weightKg * pricePerKg)
   return {
     travelerPrice,
-    senderPays: travelerPrice,
+    travelerEarns: travelerPrice,
   }
 }

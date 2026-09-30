@@ -25,28 +25,32 @@
   "home": {
     "seo": {
       "title": "Send a parcel to Africa with a verified traveller",
-      "description": "yadony connects travellers who have room in their suitcase with senders in the diaspora. Verified identity, payment held in escrow, QR code tracking."
+      "description": "yadony connects travellers with spare luggage room and senders from the diaspora. Verified identity, payment held until delivery, handover validated with a code."
     },
     "hero": {
       "title": "Your parcel travels with someone you can trust",
-      "lead": "A verified traveller carries your parcel Paris → Abidjan. You pay when delivery is confirmed, not before.",
-      "note": "Departing from Paris, Lyon and Marseille, to Abidjan, Dakar, Bamako and Douala.",
+      "lead": "A verified traveller carries your parcel in their luggage. Pay through the app and the traveller receives nothing until your loved one has the parcel in hand.",
+      "note": "Paris to Abidjan, Lyon to Dakar, Bamako to Paris: you pick the departure and arrival cities.",
       "appStore": "Download on the App Store",
       "playStore": "Get it on Google Play",
-      "screenshotAlt": "Home screen of the yadony app: the map of available travelers and their price per kilo",
+      "video": {
+        "description": "Walkthrough of the yadony app: finding travellers near you on the map, negotiating the price of a trip, money held until delivery, a parcel scanned at every step.",
+        "play": "Play the video",
+        "pause": "Pause the video"
+      },
       "kicker": "The diaspora's app",
       "stats": {
         "scans": {
-          "figure": "4",
-          "label": "scans per parcel, from handover to delivery"
+          "figure": "6",
+          "label": "digits: the code without which a parcel cannot be marked as delivered"
         },
         "identity": {
           "figure": "100%",
-          "label": "of identities verified before a first parcel"
+          "label": "of trips and parcels posted by identity-verified accounts"
         },
         "escrow": {
           "figure": "€0",
-          "label": "paid to the traveller before delivery is confirmed"
+          "label": "paid to the traveller before confirmed delivery, when you pay through the app"
         }
       }
     },
@@ -75,33 +79,33 @@
           "channel": "yadony",
           "price": "Set by the traveller",
           "tracking": "QR scan at every step",
-          "recourse": "Escrow and disputes"
+          "recourse": "Held payment and disputes"
         }
       }
     },
     "tracking": {
-      "title": "Four scans between Paris and Abidjan",
-      "lead": "At every step, a QR code is scanned. The sender and the recipient see the same thing, at the same time.",
-      "scrollLabel": "Steps of the journey, from Paris to Abidjan. Scroll to see the four screens.",
+      "title": "From handover to delivery, every step on record",
+      "lead": "The traveller scans the parcel's QR code when you hand it over, and delivery is only validated with the recipient's code. In between, sender and recipient see the same tracking page.",
+      "scrollLabel": "Journey steps, from handover to delivery. Scroll to see all four screens.",
       "steps": {
         "deposit": {
-          "label": "Handover in Paris",
-          "text": "You hand the parcel to the traveller. They scan the QR code, a photo is taken, the timestamp is recorded.",
+          "label": "Handover to the traveller",
+          "text": "You hand the parcel to the traveller. They scan the QR code and take a photo, and the time and place are recorded. This is when the 6-digit delivery code is sent to you.",
           "alt": "My parcels screen showing a shipment to hand over to the traveler, with a link to its QR code"
         },
         "airport": {
-          "label": "Scan at the airport",
-          "text": "Second scan before boarding. Your family gets the notification.",
-          "alt": "Airport scan screen with boarding confirmation"
+          "label": "Transit, when needed",
+          "text": "A stopover or a change of city? The traveller can add a transit scan. It is optional: only handover and delivery are required.",
+          "alt": "QR code scanning screen for a parcel in the yadony app"
         },
         "transit": {
           "label": "Scan on arrival",
-          "text": "Third scan on landing, as soon as the traveller has collected their luggage. The tracking page, which can be shared as a link, switches to “arrived” for everyone at the same moment.",
+          "text": "Once they land, the traveller marks the trip as arrived. The tracking page, shareable by link, switches to \"arrived\" for everyone at the same time.",
           "alt": "Screen of a Bamako to Abidjan trip marked as completed, with handover and pickup locations"
         },
         "delivery": {
           "label": "Delivery in Abidjan",
-          "text": "Final scan, photo of the hand-delivery. The payment is released to the traveller at that point.",
+          "text": "Handover in person: the recipient gives the 6-digit code you passed on to them, and the traveller takes a photo. Delivery is confirmed and the payment goes to the traveller.",
           "alt": "Tracking sheet for a parcel delivered between Bamako and Abidjan, marked delivery confirmed"
         }
       },
@@ -113,22 +117,22 @@
       "identity": {
         "figure": "100%",
         "label": "Identities verified",
-        "text": "Travellers and senders both go through a Stripe Identity check. No anonymous accounts on the platform."
+        "text": "To post a trip or a parcel request, you must first verify your identity with Didit: ID document and selfie. By default, travellers only accept verified senders."
       },
       "escrow": {
         "figure": "€0",
         "label": "Paid to the traveller before delivery",
-        "text": "Your payment is held and is only released to the traveller after the delivery scan is confirmed."
+        "text": "Paid by card, your money is held on the platform and only released to the traveller once delivery is confirmed with the recipient's code."
       },
-      "insurance": {
-        "figure": "€500",
-        "label": "Cap on declared value",
-        "text": "You declare the value of the parcel, up to €500. That is the reference amount we rule on if a dispute is opened."
+      "code": {
+        "figure": "6",
+        "label": "Digits to validate the handover",
+        "text": "The delivery code is sent to you when you hand over the parcel, and only you pass it on to the recipient. Without it, the traveller cannot mark the parcel as delivered."
       }
     },
     "traveler": {
       "title": "Your suitcase has room to spare. It can pay for part of the trip.",
-      "text": "You are flying to Abidjan and you will use only half of your baggage allowance. Ten kilos free, at €12 a kilo, comes to €120 on a flight you were taking anyway. You set your price, you choose what you agree to carry, and you are paid within 24 hours of confirmed delivery, with the service commission simply deducted.",
+      "text": "You are flying to Abidjan and will only use half of your baggage allowance. Ten spare kilos at 8 euros a kilo is 80 euros on a flight you were taking anyway. You set your price, you choose what you agree to carry, and you receive your full asking price: the service fee is paid by the sender, on top.",
       "cta": "See how it works for travellers",
       "kicker": "For travellers"
     },
@@ -143,7 +147,7 @@
         {
           "id": "prix",
           "question": "How much does it cost to send something?",
-          "answer": "The traveller sets their price per kilo according to their route and what they agree to carry. A service commission, always shown before you pay, is deducted from the transaction. For a 5 kg parcel with a traveller at €12/kg, you pay €60 and the traveller receives that amount minus the commission."
+          "answer": "The traveller sets their price per kilo based on their trip and what they agree to carry. A service fee is added on top, always shown before you pay. For a 5 kg parcel with a traveller at 8 euros per kilo, the traveller receives 40 euros and you pay 40 euros plus the fee."
         },
         {
           "id": "interdits",
@@ -153,17 +157,17 @@
         {
           "id": "paiement",
           "question": "When am I charged?",
-          "answer": "You pay when the traveller accepts your parcel, and the money is immediately held by Stripe: no one can touch it before delivery. The recipient confirms receipt with a 6-digit code received by SMS, and the traveller is paid within the following 24 hours. If a cancellation happens before handover, you are refunded in full, commission included."
+          "answer": "By card, your payment is authorised when you send your request and charged when the traveller accepts it. The money then stays held on the platform: the traveller only receives it once delivery is confirmed with the 6-digit code, which you pass on to the recipient yourself. If the traveller declines or the shipment is cancelled before handover, you get a full refund, fee included. With cash, you pay the traveller directly."
         },
         {
           "id": "perte",
           "question": "What if the parcel never arrives?",
-          "answer": "You have 48 hours after the planned delivery to report a problem from the application. The payout to the traveller stays suspended during the investigation: the team reviews the scans, photos and messages, notifies the traveller within 24 hours and issues a decision within 72 hours at most. In the event of proven loss or damage, a refund is possible within the limit of the declared value, and the traveller's liability is engaged up to that value."
+          "answer": "Report it from the app: a dispute can be opened within 15 days of the planned date. While it is being reviewed, the payout to the traveller stays on hold. The team reviews the scans, photos and in-app messages and rules within 72 business hours. Yadony may refund all or part of the shipment, up to a cap and under the conditions shown in the app."
         },
         {
           "id": "gain-voyageur",
           "question": "How much does a traveller earn?",
-          "answer": "The price they advertised, minus the service commission, deducted automatically from the transaction. The net amount is shown before they accept, and nothing is paid out before delivery is confirmed."
+          "answer": "Their full asking price. The service fee is paid by the sender, on top of the traveller's price. Nothing is paid out before delivery is confirmed, and the bank transfer then follows your bank's usual timing."
         },
         {
           "id": "douane",
@@ -173,7 +177,7 @@
         {
           "id": "villes",
           "question": "Which cities are covered?",
-          "answer": "Departing from Paris, Lyon and Marseille, to Abidjan, Dakar, Bamako and Douala. These are the corridors with enough flights and enough people for the service to work from day one. More cities will follow."
+          "answer": "You freely pick the departure and arrival cities, in France, Europe, Africa or elsewhere. The most frequent trips link Paris, Lyon and Marseille with Abidjan, Dakar, Bamako and Douala, in both directions."
         }
       ]
     },
@@ -221,23 +225,23 @@
       "steps": [
         {
           "title": "You describe the parcel",
-          "text": "Departure city, arrival city, weight, contents, photos. You declare a value, capped at €500: that is the reference amount used if a dispute has to be examined."
+          "text": "Departure city, arrival city, weight, contents, photos. You sign a warning about prohibited items: the traveller sees your full description before accepting."
         },
         {
           "title": "You choose a traveller",
-          "text": "The app shows who is flying your corridor, on what date, with how many kilos free and at what price per kilo. You see their verified identity and their ratings, if they already have any. When you book, your payment method is registered: it will be charged only once delivery is confirmed."
+          "text": "The app shows who is travelling your route, on which date, with how many spare kilos and at what price per kilo. You see their verified identity and their reviews, if they have any. By card, your payment is charged when the traveller accepts, then held until delivery."
         },
         {
           "title": "You hand over the parcel",
-          "text": "You agree a meeting point in the app. The traveller opens the parcel in front of you, scans the QR code, takes a photo. The timestamp is recorded: that is your proof of handover."
+          "text": "Meeting arranged in the app. The traveller checks the contents in front of you, scans the QR code and takes a photo. You then receive the 6-digit delivery code to pass on to the recipient."
         },
         {
           "title": "You follow the scans",
-          "text": "Boarding, then arrival. Each scan sends a notification to you and to the person waiting for the parcel. A shareable tracking link lets them watch without installing the app."
+          "text": "Departure, optional transit, arrival. Each step sends a notification. A shareable tracking link lets the person waiting for the parcel follow along without installing the app."
         },
         {
           "title": "Delivery releases the payment",
-          "text": "The recipient receives the parcel in person, the final scan is validated, a hand-over photo is taken. That event, and nothing else, triggers the charge and the payout to the traveller."
+          "text": "The recipient receives the parcel in person and gives the code to the traveller, who takes a handover photo. This event, and only this one, releases the payout to the traveller."
         }
       ]
     },
@@ -250,19 +254,19 @@
         },
         {
           "title": "You go through the identity check",
-          "text": "An ID document and a selfie, checked by Stripe Identity. It is compulsory before you carry anything, and it is what reassures the person handing you their parcel."
+          "text": "ID document and selfie, checked by Didit, our verification provider. The result usually arrives within minutes. It is required to post a trip, and it is what reassures the person handing you their parcel."
         },
         {
           "title": "You accept a parcel",
-          "text": "The description, the photos and the declared value are shown to you before you accept. At handover, you open the parcel in front of the sender and scan the QR code: what you are carrying is on the record."
+          "text": "The parcel's description and photos are shown to you before you accept. At handover, you check the contents in front of the sender and scan the QR code: what you carry is on record."
         },
         {
           "title": "You travel as usual",
-          "text": "One scan before boarding, another on arrival. The parcel goes in your luggage, within the allowance granted by your airline."
+          "text": "The parcel travels in your luggage, within your airline's baggage allowance. A transit scan is possible but optional; on arrival, you mark your trip as arrived."
         },
         {
           "title": "You deliver and you get paid",
-          "text": "Hand-delivery, final scan, photo. The recipient confirms with the code received by SMS and you are paid within 24 hours, with the service commission deducted from the amount."
+          "text": "Handover in person: the recipient gives you their 6-digit code and you take a photo. The payout is sent as soon as delivery is confirmed, for your full asking price, since the fee is paid by the sender."
         }
       ]
     }
@@ -270,60 +274,61 @@
   "pricing": {
     "seo": {
       "title": "yadony pricing: one transparent commission, nothing else",
-      "description": "The traveller sets their price per kilo; a service commission is deducted from each transaction. A full worked example for a 5 kg parcel Paris → Abidjan."
+      "description": "The traveller sets their price per kilo; a service fee is added on top and shown before every payment. Worked example for a 5 kg parcel from Paris to Abidjan."
     },
     "title": "The traveller sets the price. The commission is transparent.",
-    "lead": "There is no rate card at Yadony, because we are not the ones doing the carrying. The price per kilo is the one the traveller advertises. The only thing we deduct is a service commission, always shown before you confirm. In the event of a refund, it is never kept.",
-    "cap": "The declared value of a parcel is capped at €{amount}. That is the reference amount used to settle a dispute; insurance for the parcel is not included in the commission.",
+    "lead": "Yadony has no price list, because we are not the ones carrying the parcel. The price per kilo is the one the traveller posts. The only thing we add is a service fee, paid by the sender and always shown before you confirm. If the shipment is cancelled before handover, it is refunded to you.",
+    "cap": "Yadony may refund a lost or damaged shipment, up to a cap and under the conditions shown in the app. The fee does not include any parcel insurance.",
     "example": {
-      "caption": "A 5 kg parcel, Paris → Abidjan, with a traveller at €12 per kilo",
+      "caption": "A 5 kg parcel, Paris to Abidjan, with a traveller at 8 euros per kilo",
       "travelerPrice": "Price asked by the traveller",
       "commission": "Yadony commission",
-      "commissionValue": "deducted from the amount paid to the traveller",
+      "commissionValue": "added to the price, shown before payment",
       "senderPays": "Total paid by the sender",
       "travelerEarns": "Paid to the traveller after delivery",
-      "travelerEarnsValue": "the advertised price, minus the commission"
+      "travelerEarnsValue": "the full asking price",
+      "senderPaysValue": "traveller's price + fee"
     },
     "comparison": {
       "title": "The same parcel with a conventional carrier",
-      "text": "Five kilos Paris → Abidjan start at around €150 with an international carrier, before delivery-time options, versus €60 with a traveller at €12 per kilo. The difference comes down to one thing: the traveller was already making the trip."
+      "text": "Five kilos from Paris to Abidjan start at around 150 euros with an international carrier, before delivery-speed options, against 40 euros plus the fee with a traveller at 8 euros per kilo. The difference comes down to one thing: the traveller was making the trip anyway."
     }
   },
   "trust": {
     "seo": {
       "title": "Trust and safety: verified identity, escrow payment, disputes",
-      "description": "How yadony secures a shipment between private individuals: Stripe Identity verification, payment charged only after delivery is confirmed, declared value capped at €500, dispute procedure and data handling."
+      "description": "How yadony secures a parcel between individuals: identity checks with Didit, payment held until delivery, a 6-digit handover code, a dispute process and data handling."
     },
     "title": "What the platform guarantees, and what it does not",
     "lead": "This page describes the mechanisms in place, without dressing them up. If something here looks insufficient to you, write to us: it is more useful to say so now than to find out when something goes wrong.",
     "sections": {
       "identity": {
         "title": "Identity verification",
-        "text": "No anonymous account can send or carry a parcel. Before their first listing, every user submits an ID document and a selfie to Stripe Identity, which checks that the document is valid and that it matches the face. These documents are stored encrypted and kept apart from the rest of the database: they are never visible to other users, and internal access to them is restricted and logged. The name shown to the other party is the verified name."
+        "text": "No unverified account can post a trip or a parcel request. Each user sends an ID document and a selfie to Didit, our verification provider, which checks that the document is valid and matches the face. Yadony does not receive these images: only the verification result and the verified name, which is the one shown to the other party. By default, a traveller only accepts verified senders."
       },
       "escrow": {
-        "title": "Payment held in escrow",
-        "text": "When a traveller accepts your parcel, your payment method is registered, but no money is taken. The charge happens only after the delivery scan has been validated by the recipient, and it is that scan that triggers the payout to the traveller. Until delivery is confirmed, nothing is taken from you and the traveller receives nothing. If the shipment does not go ahead, the payment request is dropped."
+        "title": "Payment held until delivery",
+        "text": "By card, your payment is authorised when you send your request and charged when the traveller accepts it. The money then stays on the platform: the traveller only receives it after delivery is confirmed with the recipient's code. If the traveller declines, or the shipment is cancelled before handover, you get a full refund, fee included. If you choose to pay in cash, the money changes hands directly: this hold does not apply, and only the scan history remains."
       },
       "cap": {
-        "title": "Cap on declared value",
-        "text": "The declared value of a parcel cannot exceed €500. That cap is deliberate: above it, a shipment carried by a private individual is no longer the right channel, and a professional carrier is a better one. The declared value is the reference amount we use to examine a dispute; under-declaring it works against you. The commission includes no insurance for the parcel."
+        "title": "Capped refunds",
+        "text": "In case of proven loss or damage, Yadony may refund the shipment, up to a cap and under the conditions shown in the app when you post it. Beyond that, a parcel carried by an individual is no longer the right channel, and a professional carrier is a better fit. The fee does not include any parcel insurance."
       },
       "tracking": {
-        "title": "Four scans, and the evidence that comes with them",
-        "text": "Handover, boarding, arrival, hand-delivery. Each scan records a timestamp and, at handover and at hand-delivery, a photo. This history is not decorative: it is the material a dispute is examined on. It is visible to the sender and the recipient at all times, and it cannot be altered afterwards."
+        "title": "Scans, a code, and the proof that comes with them",
+        "text": "Handover, optional transit, arrival, delivery. The handover scan and the code-based delivery are required; transit is optional. Each step records the time and location, with a photo at handover and at delivery. This history is not decorative: it is the evidence a dispute is decided on. The sender and recipient can see it at all times, and it cannot be altered afterwards."
       },
       "dispute": {
         "title": "Dispute procedure",
-        "text": "A dispute is opened from the app, from the moment a step does not go as planned. The payout to the traveller is suspended immediately. We examine the scan history, the timestamped photos and the messages exchanged in the app, then we decide: refund to the sender, payout to the traveller, or a split. The decision is explained and given to both parties."
+        "text": "A dispute is opened from the app, within 15 days of the planned date, as soon as a step does not go as planned. The payout to the traveller is suspended during the review. We examine the scan history, the time-stamped photos and the in-app messages, then rule within 72 business hours: refund to the sender, payout to the traveller, or a split. The decision is reasoned and shared with both parties."
       },
       "data": {
         "title": "Your data",
-        "text": "ID documents are handled by Stripe Identity, stored encrypted and kept apart from the rest of the database. The other party to a shipment sees your first name, your profile photo, the status of your verification and the details of the parcel concerned, nothing more. The data for a shipment is kept as long as handling a possible dispute requires, then archived. The details are in the privacy policy."
+        "text": "ID documents and selfies are processed by Didit, our verification provider, which hosts its data in the European Union. Yadony keeps no copy of them. The other party to a shipment sees your first name, your profile photo, your verification status and the details of the parcel concerned, nothing more. Shipment data is kept as long as needed to handle any dispute, then archived. The details are in the privacy policy."
       },
       "limits": {
         "title": "What we do not guarantee",
-        "text": "We do not carry anything: the parcel stays in a traveller's luggage, subject to whatever happens to their flight and their airline. A delayed plane, a strike or a customs check are not down to us. We do not search parcels on your behalf: it is the traveller who checks the contents at handover, and the sender who answers for their declaration. We are not an insurer either: the commission includes no insurance for the parcel, and our terms commit us to no compensation amount. What we do guarantee is narrower and easier to check: the payment is not charged until delivery is confirmed, and a dispute is examined on timestamped evidence. Finally, a shipment arranged outside the app opens no recourse at all: with no scans and no payment through the platform, there is neither a record nor any leverage."
+        "text": "We do not carry parcels: the parcel stays in a traveller's luggage, subject to the ups and downs of their flight and airline. A flight delay, a strike or a customs check are outside our control. We do not search parcels for you: the traveller checks the contents at handover, and the sender is accountable for their declaration. We are not an insurer either: the fee includes no parcel insurance, and any refund remains capped. What we do guarantee is narrower and easier to verify: paid by card, the money is not released to the traveller until delivery is confirmed, and a dispute is decided on time-stamped evidence. Finally, a shipment arranged outside the app gives no recourse: without scans and without a payment through the platform, there is no record and no leverage."
       }
     }
   },
@@ -338,8 +343,8 @@
       "It happens in a WhatsApp group of two hundred people. Someone answers, you swap numbers, you meet on a Saturday in a car park. You hand a box to a stranger vouched for by a cousin, you pay in cash, and you wait. Most of the time, it works. It works remarkably well, in fact: that is how clothes, school supplies, spare parts and presents have been moving for thirty years.",
       "The problem only shows up the day it does not work. The parcel does not arrive. The number stops answering. There is no record, no proof of handover, no receipt, nobody to call. You cannot even say what happened: lost, forgotten, kept. And because the person was doing you a favour, you do not dare push. You lose the parcel, and often you lose the relationship as well.",
       "On the other side, there are the carriers. They are reliable, they are considerably more expensive, and they do not deliver everywhere. To get five kilos to someone you know, that is not a solution, it is giving up.",
-      "yadony is not trying to replace the traveller with a lorry. The traveller already exists, is already flying, and their suitcase is already half empty. What was missing was not the transport: it was the record. Knowing who is carrying, when, and being able to prove it. Hence the identity check, the four scans, the timestamped photos, and a payment that does not move until the parcel is in the recipient's hands.",
-      "We are opening with four arrival cities, not forty, because we would rather have one corridor that genuinely works than a map that looks impressive. We have no figures to show: we are starting out. If you use the app and something strikes you as shaky, write to us. At this stage, that is the most useful feedback we can get."
+      "yadony is not trying to replace the traveller with a lorry. The traveller already exists, is already leaving, and their suitcase is already half empty. What was missing was not transport: it was a record. Knowing who carries what, when, and being able to prove it. Hence identity checks, scans at every step, time-stamped photos, the delivery code, and a payment that only reaches the traveller once the parcel is in the recipient's hands.",
+      "We started from the trips the diaspora already makes, between Paris, Lyon, Marseille and Abidjan, Dakar, Bamako or Douala, and the app now accepts any departure and arrival city. We have no numbers to show off: we are just starting, and the app is still in beta. If you use it and something feels off, write to us. At this stage, it is the most useful feedback we could get."
     ]
   },
   "contact": {
@@ -421,7 +426,7 @@
               "p": [
                 "The application is open to any adult (18 or over) with the capacity to contract. One account per phone number.",
                 "Every user can both send parcels and carry them. There is no role to choose at sign-up: both possibilities are available to everyone from account creation.",
-                "Before paying, publishing a trip or sending a parcel, every user must verify their identity: a photo of their ID document and a selfie with liveness detection. The answer is given within 24 hours. Verified accounts display the \"Identity verified\" badge."
+                "Before posting a trip or a parcel request, every user must verify their identity with our provider Didit: a photo of their ID document and a selfie. The result is usually known within minutes. Verified accounts display the \"Identity verified\" badge."
               ]
             }
           ]
@@ -649,7 +654,7 @@
             {
               "p": [
                 "Yadony complies with the European General Data Protection Regulation (GDPR). For any question: dpo{'@'}yadony.com.",
-                "We collect only the data needed to run the service: identity (KYC), contact details, transaction data, delivery photos and browsing data. We never store your bank details (handled directly by Stripe). Biometric data collected during identity verification is deleted as soon as verification ends.",
+                "We collect only the data needed to run the service: identity (KYC), contact details, transaction data, delivery photos and browsing data. We never store your bank details (handled directly by Stripe). Images of your ID document and your face are processed by Didit, our verification provider: Yadony keeps no copy of them.",
                 "Your data is kept for as long as you use your account plus 3 years. Transaction data is kept for 5 years (statutory accounting obligation). Identity documents are kept for 5 years after your relationship with Yadony ends.",
                 "You can at any time view, edit, export or delete your data from the application settings. When an account is deleted: profile data anonymised, identity documents erased, recipient address book cleared (except payment history, kept for 5 years).",
                 "For any unresolved complaint, you can contact the CNIL: www.cnil.fr."
@@ -825,20 +830,20 @@
               ]
             },
             {
-              "sub": "3.2 Stripe Identity: identity verification (KYC)",
+              "sub": "3.2 Didit: identity verification (KYC)",
               "p": [
-                "Identity verification, required to use Yadony, is fully handled by Stripe Identity, the document-verification service of the world leader in online payments. Stripe Identity handles:"
+                "Identity verification, required to post a trip or a parcel request, is handled by Didit (Didit Identity Spain, S.L., Barcelona, Spain), which acts as Yadony's processor under the GDPR and hosts its data in the European Union. Didit handles:"
               ],
               "ul": [
                 "The photo of your identity document (national ID card or passport)",
-                "The selfie with liveness detection",
+                "The selfie and the liveness check",
                 "The comparison between your face and your official document",
                 "The approval or rejection of the verification"
               ]
             },
             {
               "p": [
-                "Yadony never sees your identity documents or your face. Stripe Identity sends us only the result of the verification: Verified, Pending or Rejected. Documents and biometric data stay with Stripe and are subject to its retention policy. Stripe Identity privacy policy: https://stripe.com/fr/privacy"
+                "Yadony receives neither your identity documents nor images of your face. Didit sends us the verification result (Verified, Under review or Declined, with the reason for a decline) and, for a successful check, your name as it appears on the document. Didit keeps documents and biometric data according to the retention settings defined by Yadony and its own policy. Didit privacy policy: https://didit.me/terms/privacy-policy/"
               ]
             },
             {
@@ -917,7 +922,7 @@
                 "Name, e-mail, date of birth, city: Yadony (internal database). Yadony access: yes, profile data only",
                 "Phone number, SMS authentication: Google Firebase. Yadony access: no, Firebase manages it directly",
                 "Fingerprint, Face ID, PIN code: Google Firebase. Yadony access: no, biometric data stays on-device or with Firebase",
-                "ID document photo, selfie, liveness: Stripe Identity. Yadony access: no, Yadony receives only the Verified / Rejected status",
+                "ID document photo, selfie, liveness: Didit. Yadony access: no, Yadony receives only the verification result and the verified name",
                 "Card number, payment data: Stripe. Yadony access: no, never sent to Yadony",
                 "Mobile Money details: Wave / Orange Money. Yadony access: no, managed directly by those services",
                 "Parcel and delivery photos: Cloudflare. Access only through secure temporary links",
@@ -934,7 +939,7 @@
               "ul": [
                 "Profile data (name, e-mail, date of birth, city): performance of the contract (Terms of Use)",
                 "Authentication via Google Firebase: performance of the contract",
-                "Identity verification via Stripe Identity: legal obligation (anti-money-laundering and fraud prevention)",
+                "Identity verification via Didit: legal obligation (anti-money-laundering and fraud prevention)",
                 "Payment processing and escrow via Stripe: performance of the contract",
                 "Image storage via Cloudflare: performance of the contract and legitimate interest (evidence in disputes)",
                 "Transaction history: legal obligation (accounting and tax)",
@@ -1006,7 +1011,7 @@
               "ul": [
                 "Profile data (name, e-mail, date of birth, city): for as long as you use the service plus 3 years after your last sign-in, for account management",
                 "Authentication data (Firebase): managed by Google Firebase under its own policy",
-                "KYC data (Stripe Identity): managed by Stripe under its own policy",
+                "KYC data (Didit): kept by Didit according to the settings defined by Yadony and Didit's policy",
                 "Payment data (Stripe): managed by Stripe under its own policy",
                 "Parcel images (Cloudflare): 5 years, temporary links, evidence in disputes",
                 "Transaction history: 5 years, accounting and tax obligation",
@@ -1031,7 +1036,7 @@
               ],
               "ul": [
                 "Google Firebase: certified ISO 27001, SOC 1, SOC 2, SOC 3, PCI DSS. Authentication data encrypted and isolated.",
-                "Stripe Identity: PCI DSS Level 1 certified. Identity documents encrypted, never exposed to Yadony.",
+                "Didit: ISO/IEC 27001 and SOC 2 certified, data hosted in the European Union. Identity documents encrypted, never passed on to Yadony.",
                 "Cloudflare: certified ISO 27001, SOC 2. Images accessible only through secure temporary links.",
                 "Yadony: profile data encrypted at rest and in transit (HTTPS/TLS). Internal access limited to the strict minimum."
               ]
@@ -1114,7 +1119,7 @@
               "ul": [
                 "Yadony profile data (first name, last name, e-mail, date of birth, city): anonymised immediately.",
                 "Firebase data (phone, authentication): deleted on request through Firebase.",
-                "Stripe Identity data (ID document, selfie): deleted under Stripe's retention policy.",
+                "Didit data (ID document, selfie): deleted according to the retention settings Yadony has defined with Didit.",
                 "Parcel images (Cloudflare): the links become inaccessible. Files are deleted under Cloudflare's policy.",
                 "Messages in the messaging system: deleted.",
                 "Recipient address book: cleared.",
@@ -1155,7 +1160,7 @@
               "ul": [
                 "Company name: YADONY SAS (registration in progress)",
                 "Publication director: Mr Dramane DIAKITE, President",
-                "Certified technical partners: Google Firebase, Stripe, Stripe Identity, Wave, Orange Money, Cloudflare",
+                "Certified technical partners: Google Firebase, Stripe, Didit, Wave, Orange Money, Cloudflare",
                 "French supervisory authority: CNIL (www.cnil.fr)"
               ]
             }
@@ -1192,7 +1197,7 @@
     }
   },
   "footer": {
-    "pitch": "yadony connects travellers who have room in their suitcase with people who have a parcel to send. Verified identity, four scans, payment released on delivery.",
+    "pitch": "yadony connects travellers who have room in their suitcase with people who have a parcel to send. Verified identity, scans at every step, payment released on delivery.",
     "navLabel": "Footer navigation",
     "legalLabel": "Legal information",
     "legalNotice": "Legal notice",
@@ -1285,11 +1290,11 @@
         "how": "Publish your parcel in the app with its weight, description and photo. Verified travellers flying from Paris to Dakar see your request and offer their price per kilo. You choose, hand the parcel over in person in the Paris region, and your relative collects it in Dakar from the traveller.",
         "price": "The price per kilo is set freely by each traveller according to their flight and baggage allowance. You compare listings before choosing. A service commission, always shown before payment, is deducted from the transaction.",
         "delay": "A direct Paris–Dakar flight takes about 5.5 hours. Your parcel arrives on the day of the traveller's flight: from handover, you know the exact date, and the pick-up in Dakar is arranged in the days after landing.",
-        "safety": "The traveller's identity is verified before their first parcel, payment is held by Stripe until the recipient confirms delivery, and four QR scans run from handover in Paris to delivery in Dakar. Your relative follows the parcel from a simple web page, no account needed.",
+        "safety": "Traveller identity verified with Didit, card payment held until delivery is confirmed, handover validated with a 6-digit code, every step time-stamped and geolocated. Your loved one follows everything from a simple web page, no account needed.",
         "faq": [
           {
             "question": "How much does sending a parcel Paris–Dakar cost?",
-            "answer": "The traveller sets their price per kilo; you compare listings before choosing. For a 5 kg parcel with a traveller at €12/kg, you pay €60; the service commission is deducted from the transaction and the traveller receives the rest."
+            "answer": "The traveller sets their price per kilo; you compare listings before choosing. For a 5 kg parcel with a traveller at 8 euros per kilo, the traveller receives 40 euros and you pay 40 euros plus the service fee, shown before payment."
           },
           {
             "question": "How long does a parcel take to reach Dakar?",
@@ -1297,7 +1302,7 @@
           },
           {
             "question": "How does my relative collect the parcel in Dakar?",
-            "answer": "The traveller and the recipient agree on an appointment. At handover, the traveller scans the parcel's QR code and takes a photo; the recipient confirms with a code received by SMS, which triggers the traveller's payment."
+            "answer": "The traveller and the recipient agree on a meeting. At handover, the recipient gives the 6-digit code you passed on to them and the traveller takes a photo: delivery is confirmed and the traveller's payment is released."
           }
         ]
       },
@@ -1308,10 +1313,10 @@
         },
         "title": "Send a parcel from Lyon to Abidjan",
         "lead": "The Ivorian community of Lyon and its region no longer needs to go through Paris: travellers connect Lyon directly to Abidjan, and your parcel rides in their suitcase.",
-        "how": "Describe your parcel in the app: weight, contents, photo, declared value. Verified travellers departing from Lyon (or Paris if you prefer a wider choice) offer their price. After acceptance, you hand the parcel over in person and every step is scanned all the way to Abidjan.",
+        "how": "Describe your parcel in the app: weight, contents, photos. Verified travellers leaving from Lyon (or Paris if you want more options) offer their price. Once accepted, you hand over the parcel in person and every step is tracked all the way to Abidjan.",
         "price": "Each traveller advertises their price per kilo; for parcels of a few kilos it is often better value than a classic carrier, and you know exactly who is carrying. The service commission is shown before you confirm.",
         "delay": "Allow about 6.5 hours for a direct Lyon–Abidjan flight. The parcel arrives with the traveller: the date is known at booking time, with no vague multi-week window.",
-        "safety": "Mandatory identity verification, payment in Stripe escrow released only after the recipient confirms, four timestamped and geolocated QR scans. If something goes wrong, you have 48 hours to open a dispute, investigated within 72 hours on evidence.",
+        "safety": "Mandatory identity check, card payment held until the recipient confirms, time-stamped and geolocated scans. If something goes wrong, you have 15 days to open a dispute, settled within 72 business hours on evidence.",
         "faq": [
           {
             "question": "Are there often travellers between Lyon and Abidjan?",
@@ -1323,7 +1328,7 @@
           },
           {
             "question": "How is the payment protected?",
-            "answer": "You pay at acceptance, but the money is held by Stripe: the traveller is only paid after the recipient confirms delivery with a code received by SMS. If a cancellation happens before handover, you are refunded in full."
+            "answer": "By card, you are charged when the traveller accepts, but the money stays held on the platform: the traveller is only paid after delivery is confirmed, with the 6-digit code you pass on to the recipient. If the shipment is cancelled before handover, you get a full refund."
           }
         ]
       },
@@ -1334,48 +1339,48 @@
         },
         "title": "Send a parcel from Marseille to Bamako",
         "lead": "From Marseille and the whole south of France, the Malian community sends parcels to Bamako without detours: a traveller already making the trip carries them, with real tracking at every step.",
-        "how": "Create your request in the app with the parcel's weight and description. A verified traveller flying from Marseille to Bamako accepts it, you agree on a handover appointment, and the parcel is scanned at departure, in transit and on arrival.",
+        "how": "Create your request in the app with the weight and a description of the parcel. A verified traveller flying from Marseille to Bamako accepts it, you agree on a handover meeting together, and the parcel is scanned at handover then delivered against the recipient's code.",
         "price": "The price per kilo is the one the traveller advertises: no hidden rate card, no surprises at a counter. A service commission is deducted from the transaction, shown before payment.",
         "delay": "The Marseille–Bamako flight takes about 5.5 hours direct. Your parcel arrives the day the traveller lands; delivery to the recipient follows at the appointment agreed in the app.",
-        "safety": "Every traveller passes an identity check with liveness detection before they can carry. Payment stays in escrow until the recipient's confirmation code, and the scan history is the evidence if a dispute arises.",
+        "safety": "Every traveller verifies their identity with Didit, ID document and selfie, before they can post a trip. Paid by card, the money stays held until the recipient's confirmation code, and the scan history is the reference in any dispute.",
         "faq": [
           {
             "question": "How much does a Marseille–Bamako shipment cost?",
-            "answer": "The traveller sets their price per kilo and you see it before booking. Example: 5 kg at €12/kg = €60 paid; the service commission is deducted from the transaction and the traveller receives the rest."
+            "answer": "The traveller sets their price per kilo and you see it before booking. Example: 5 kg at 8 euros per kilo, the traveller receives 40 euros and you pay 40 euros plus the service fee, shown before payment."
           },
           {
             "question": "Does my relative in Bamako need to install the app?",
-            "answer": "No. The recipient follows the parcel from a simple web page, even on a basic phone with a slow connection, and confirms receipt with a code received by SMS."
+            "answer": "No. The recipient follows the parcel from a simple web page, even on a basic phone with a slow connection. At handover, they give the traveller the 6-digit code you passed on to them."
           },
           {
             "question": "What if the traveller cancels their trip?",
-            "answer": "All senders are refunded in full, automatically (3 to 5 business days), and Yadony offers you a replacement traveller within 72 hours."
+            "answer": "You get a full, automatic refund, fee included, and the app suggests other travellers leaving around the same dates."
           }
         ]
       },
       "parisDouala": {
         "seo": {
           "title": "Send a parcel from Paris to Douala with a verified traveller",
-          "description": "Send parcels to Cameroon with a verified Paris–Douala traveller: transparent per-kilo price, Stripe escrow, four QR scans through to delivery."
+          "description": "Send parcels to Cameroon with a verified traveller from Paris to Douala: clear price per kilo, payment held until delivery, handover validated with a code."
         },
         "title": "Send a parcel from Paris to Douala",
         "lead": "For the Cameroonian diaspora, Paris–Douala is the most direct path: a verified traveller on that flight carries your parcel and your family collects it in person, proof of delivery included.",
         "how": "Publish the parcel in the app: weight, contents, photos, the recipient's details in Douala. A verified traveller accepts it, you hand it over in the Paris region, and you follow the scans through to final delivery, photo included.",
         "price": "The price depends on the traveller and their baggage allowance: each one advertises a per-kilo rate and you choose. The service commission is deducted from the transaction and always shown before you pay.",
         "delay": "About 6.5 hours of direct flight Paris–Douala. The arrival date is the traveller's flight date, known before booking, so you can tell your family the exact day from the start.",
-        "safety": "Identities verified on both sides, declared value capped at €500, payment escrowed until the recipient's confirmation code, four QR scans from Paris to Douala. The recipient follows everything from a web page, no account needed.",
+        "safety": "Identities verified with Didit, card payment held until the recipient's confirmation code, every step tracked from Paris to Douala. The recipient follows everything from a web page, no account needed.",
         "faq": [
           {
             "question": "Can I send a parcel to Yaoundé instead of Douala?",
             "answer": "The corridor serves Douala, where the traveller lands. Final delivery happens at the appointment agreed between the traveller and your recipient; if your relative is in Yaoundé, they can arrange a meeting point with the traveller, but the reference delivery city remains Douala."
           },
           {
-            "question": "What is the maximum value of a parcel?",
-            "answer": "The declared value is capped at €500. It is the reference amount in a dispute, and the traveller's liability is engaged up to that declared value."
+            "question": "What happens if the parcel is lost?",
+            "answer": "Open a dispute from the app within 15 days of the planned date. The payout to the traveller is suspended, the team reviews the evidence, and Yadony may refund the shipment, up to a cap and under the conditions shown in the app."
           },
           {
             "question": "How do I know where my parcel is?",
-            "answer": "Four scans mark the journey: handover, departure, transit, arrival. Each scan is timestamped and geolocated, and you and the recipient see the same tracking page in real time."
+            "answer": "The traveller scans the parcel at handover, may add a transit scan, marks their arrival, and delivery is then validated with the recipient's code. Each step is time-stamped and geolocated, and you and the recipient see the same tracking page in real time."
           }
         ]
       },
@@ -1389,11 +1394,11 @@
         "how": "Publish your parcel in the app: weight, description, photos, the recipient's details in Abidjan. Verified travellers departing from Paris offer their price per kilo; you choose, hand the parcel over in person in the Paris region, and every step is scanned through to delivery in Abidjan.",
         "price": "Each traveller sets their price per kilo according to their flight and baggage allowance; you compare before choosing. A service commission, always shown before payment, is deducted from the transaction.",
         "delay": "The direct Paris–Abidjan flight takes about 6.5 hours. Your parcel lands with the traveller: the date is known at booking time, and the handover in Abidjan is arranged in the days that follow.",
-        "safety": "The traveller's identity is verified before their first parcel, payment is held by Stripe until the recipient's confirmation code, and four timestamped, geolocated QR scans run from Paris to Abidjan. Your relative follows everything from a simple web page, no account needed.",
+        "safety": "Traveller identity verified with Didit, card payment held until the recipient's confirmation code, time-stamped and geolocated scans from Paris to Abidjan. Your loved one follows everything from a simple web page, no account needed.",
         "faq": [
           {
             "question": "How much does sending a parcel Paris–Abidjan cost?",
-            "answer": "The traveller sets their price per kilo, and you compare listings before booking. Example: 5 kg with a traveller at €12/kg = €60 paid; the service commission is deducted from the transaction and the traveller receives the rest."
+            "answer": "The traveller sets their price per kilo, and you compare listings before booking. Example: 5 kg with a traveller at 8 euros per kilo, the traveller receives 40 euros and you pay 40 euros plus the service fee, shown before payment."
           },
           {
             "question": "Are there Paris–Abidjan travellers all year round?",
@@ -1401,7 +1406,7 @@
           },
           {
             "question": "Does my relative in Abidjan need to install the app?",
-            "answer": "No. The recipient follows the parcel from a simple web page, even on a basic phone, and confirms receipt with a code received by SMS, which is what triggers the traveller's payment."
+            "answer": "No. The recipient follows the parcel from a simple web page, even on a basic phone. At handover, they give the traveller the 6-digit code you passed on to them: that is what confirms delivery and releases the traveller's payment."
           }
         ]
       }
@@ -1410,10 +1415,10 @@
   "referral": {
     "seo": {
       "title": "yadony referral",
-      "description": "Someone you know invited you to yadony: find their referral code and enter it when you sign up to get a discount on your first shipment."
+      "description": "Someone close to you invited you to yadony: find their referral code here and enter it when you sign up in the app."
     },
     "title": "Someone you know is inviting you to yadony",
-    "lead": "Here is their referral code. Enter it when you sign up in the app: your first shipment gets a discount, and so does your sponsor.",
+    "lead": "Here is their referral code. Enter it when you sign up in the app: once your first delivery is confirmed, the person who invited you gets a discount on their next service fee.",
     "codeLabel": "Referral code",
     "copy": "Copy code",
     "copied": "Code copied",
@@ -1425,6 +1430,6 @@
       "Create your account with your phone number or email address.",
       "At the \"Referral code\" step, enter the code above. You can also add it later from Profile › Referral."
     ],
-    "note": "The code applies only once, on a new account. The discount comes off the commission of your first paid shipment."
+    "note": "The code can only be used once, on a new account. The reward goes to the person who invited you: half off their next service fee, valid for 6 months."
   }
 }

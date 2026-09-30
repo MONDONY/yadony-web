@@ -29,10 +29,12 @@ const stats = ['scans', 'identity', 'escrow'] as const
 
         <div class="lg:col-span-5">
           <div class="relative mx-auto w-[270px] sm:w-[300px] lg:-mr-16 lg:ml-auto lg:w-[330px] lg:rotate-[-3deg] xl:-mr-24">
-            <UiPhoneFrame
-              src="/screenshots/app-accueil.webp"
-              :alt="t('home.hero.screenshotAlt')"
-              eager
+            <UiPhoneVideo
+              src="/video/yadony-promo.mp4"
+              poster="/video/yadony-promo-poster.jpg"
+              :description="t('home.hero.video.description')"
+              :play-label="t('home.hero.video.play')"
+              :pause-label="t('home.hero.video.pause')"
             />
           </div>
         </div>

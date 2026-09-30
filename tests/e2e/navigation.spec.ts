@@ -47,9 +47,14 @@ test('les boutons de stores se comportent selon la disponibilité de l’app', a
     // App pas encore publiée : aucun lien mort, le clic ouvre la fenêtre
     // « bientôt disponible », refermable au clavier (Échap).
     await expect(page.getByRole('link', { name: /App Store/i })).toHaveCount(0)
-    await page.getByRole('button', { name: /App Store/i }).first().click()
+    // Un clic reçu avant l'hydratation de Vue est perdu (le HTML statique
+    // n'a pas encore d'écouteur) : le test échouait par intermittence sur une
+    // machine chargée. On reclique jusqu'à ce que la fenêtre s'ouvre.
     const dialog = page.locator('dialog[open]').first()
-    await expect(dialog).toBeVisible()
+    await expect(async () => {
+      await page.getByRole('button', { name: /App Store/i }).first().click()
+      await expect(dialog).toBeVisible({ timeout: 1000 })
+    }).toPass({ timeout: 10000 })
     await expect(dialog).toContainText(/App Store et Google Play/i)
     await page.keyboard.press('Escape')
     await expect(page.locator('dialog[open]')).toHaveCount(0)

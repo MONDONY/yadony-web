@@ -14,15 +14,17 @@ const steps = [
 <template>
   <UiSection tone="navy-deep">
     <UiContainer>
-      <p class="font-display text-sm font-bold uppercase tracking-[0.18em] text-orange">
-        {{ t('home.tracking.kicker') }}
-      </p>
-      <h2 class="mt-4 max-w-[18ch] text-display-lg">{{ t('home.tracking.title') }}</h2>
-      <p class="mt-5 max-w-prose text-lg text-white/70">{{ t('home.tracking.lead') }}</p>
+      <div class="mx-auto max-w-3xl text-center">
+        <p class="font-display text-sm font-bold uppercase tracking-[0.18em] text-orange">
+          {{ t('home.tracking.kicker') }}
+        </p>
+        <h2 class="mx-auto mt-4 max-w-[20ch] text-display-lg text-balance">{{ t('home.tracking.title') }}</h2>
+        <p class="mx-auto mt-5 max-w-prose text-lg text-white/70 text-pretty">{{ t('home.tracking.lead') }}</p>
+      </div>
     </UiContainer>
 
     <ol
-      class="mt-14 flex snap-x snap-mandatory gap-6 overflow-x-auto px-5 pb-6 sm:px-8 lg:px-12"
+      class="mt-14 flex snap-x snap-mandatory gap-6 overflow-x-auto px-5 pb-6 [justify-content:safe_center] sm:px-8 lg:px-12"
       tabindex="0"
       :aria-label="t('home.tracking.scrollLabel')"
     >
@@ -34,13 +36,13 @@ const steps = [
         <UiRevealOnScroll :delay="index * 100">
           <article data-step>
             <UiPhoneFrame :src="step.image" :alt="t(`home.tracking.steps.${step.key}.alt`)" />
-            <p data-step-number class="mt-5 font-display text-sm font-bold text-orange tabular-nums">
+            <p data-step-number class="mt-5 text-center font-display text-sm font-bold text-orange tabular-nums">
               {{ step.number }}
             </p>
-            <h3 class="mt-1 font-display text-lg font-semibold text-white">
+            <h3 class="mt-1 text-center font-display text-lg font-semibold text-white">
               {{ t(`home.tracking.steps.${step.key}.label`) }}
             </h3>
-            <p class="mt-2 text-sm text-white/70">
+            <p class="mt-2 text-center text-sm text-white/70 text-pretty">
               {{ t(`home.tracking.steps.${step.key}.text`) }}
             </p>
           </article>

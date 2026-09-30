@@ -90,23 +90,23 @@
       "steps": {
         "deposit": {
           "label": "Remise au voyageur",
-          "text": "Vous remettez le colis au voyageur. Il scanne le QR code et prend une photo : l'heure et le lieu sont enregistrés. C'est à ce moment que le code de livraison à 6 chiffres vous est envoyé.",
-          "alt": "Écran Mes colis montrant un envoi à remettre au voyageur, avec le lien vers son QR code"
+          "text": "Vous remettez le colis au voyageur, qui scanne son QR code et prend une photo. Dans Mes colis, l'envoi passe à « Remis » : l'heure et le lieu sont enregistrés.",
+          "alt": "Écran Mes colis montrant un envoi Paris vers Bamako au statut remis, avec la frise remis, en route, arrivé, livraison"
         },
         "airport": {
-          "label": "Transit, si besoin",
-          "text": "Une escale, un changement de ville ? Le voyageur peut ajouter un scan de transit. Il est facultatif : seules la remise et la livraison sont obligatoires.",
-          "alt": "Écran de scan du QR code d'un colis dans l'application yadony"
+          "label": "Le voyageur scanne",
+          "text": "À chaque étape, le voyageur scanne le QR du colis et l'étape suivante se valide toute seule. Le transit est facultatif ; à l'arrivée, il valide l'arrivée en un geste.",
+          "alt": "Écran Suivi du voyageur : scanner de QR code et bouton pour valider l'arrivée d'un colis"
         },
         "transit": {
-          "label": "Scan à l'arrivée",
-          "text": "Une fois arrivé, le voyageur marque son trajet comme arrivé. La fiche de suivi, partageable par lien, passe en « arrivé » pour tout le monde en même temps.",
-          "alt": "Écran d'un trajet Bamako vers Abidjan marqué terminé, avec les lieux de remise et de récupération"
+          "label": "En route, code de retrait",
+          "text": "Votre colis est en route. Dans sa fiche, le bouton « Code de retrait » affiche le code à 6 chiffres : transmettez-le au destinataire. Le lien de suivi se partage sans installer l'application.",
+          "alt": "Fiche d'un colis en route de Paris à Bamako, avec les boutons QR du colis et code de retrait"
         },
         "delivery": {
-          "label": "Livraison à Abidjan",
-          "text": "Remise en main propre : le destinataire donne le code à 6 chiffres que vous lui avez transmis, le voyageur prend une photo. La livraison est confirmée et le paiement part au voyageur.",
-          "alt": "Fiche de suivi d'un colis livré entre Bamako et Abidjan, avec la mention livraison confirmée"
+          "label": "Livré, paiement libéré",
+          "text": "Le destinataire donne le code au voyageur, qui prend une photo de remise. Le colis passe à « Livré » et le paiement est libéré au voyageur.",
+          "alt": "Fiche d'un colis livré entre Madrid et Bamako, avec la mention paiement libéré au voyageur"
         }
       },
       "kicker": "Suivi de bout en bout"
@@ -220,6 +220,12 @@
     "title": "Deux parcours, cinq étapes chacun",
     "lead": "Un envoi met en jeu deux personnes qui ne se connaissent pas. Voici ce que chacune fait, dans l'ordre, et à quel moment l'argent bouge.",
     "tabsLabel": "Choisir un parcours",
+    "intro": {
+      "kicker": "En une minute",
+      "title": "Le voyage d'un colis, de Paris à Abidjan",
+      "lead": "De la recherche d'un voyageur à la remise contre le code de livraison : tout le parcours d'un envoi, étape par étape, en une minute.",
+      "videoLabel": "Vidéo animée : le voyage d'un colis de Paris à Abidjan avec yadony"
+    },
     "expediteur": {
       "tab": "Je suis expéditeur",
       "steps": [
@@ -243,7 +249,12 @@
           "title": "La livraison libère le paiement",
           "text": "Le destinataire reçoit le colis en main propre et donne le code au voyageur, qui prend une photo de remise. C'est cet événement, et lui seul, qui déclenche le versement au voyageur."
         }
-      ]
+      ],
+      "video": {
+        "title": "Le tutoriel : envoyer un colis",
+        "duration": "Vidéo de 3 min 20, sous-titrée",
+        "label": "Tutoriel vidéo : publier une demande d'envoi de colis dans l'application yadony"
+      }
     },
     "voyageur": {
       "tab": "Je suis voyageur",
@@ -268,7 +279,12 @@
           "title": "Vous livrez et vous êtes payé",
           "text": "Remise en main propre : le destinataire vous donne son code à 6 chiffres, vous prenez une photo. Le versement part dès la livraison confirmée, pour le prix annoncé en entier, la commission étant payée par l'expéditeur."
         }
-      ]
+      ],
+      "video": {
+        "title": "Le tutoriel : publier un trajet",
+        "duration": "Vidéo de 6 min 30, sous-titrée",
+        "label": "Tutoriel vidéo : publier un trajet dans l'application yadony"
+      }
     }
   },
   "pricing": {

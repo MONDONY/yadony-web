@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test'
+import { test, expect } from './fixtures'
 
 test('la page du classement affiche le titre, le statut et le barème', async ({ page }) => {
   await page.goto('/classement')

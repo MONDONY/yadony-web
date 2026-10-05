@@ -1,8 +1,8 @@
 /**
  * Fenêtre d'annonce du concours bêta-testeurs, ouverte à l'arrivée sur le
- * site. Une fois fermée, elle ne revient plus sur cet appareil : le choix est
- * gardé en localStorage sous une clé propre à ce concours (un concours suivant
- * changera de clé et se réaffichera).
+ * site. Une fois fermée, elle ne revient plus de la visite : le choix est
+ * gardé en sessionStorage (propre à l'onglet), donc elle se rouvre à la visite
+ * suivante (nouvel onglet, navigateur rouvert). Clé propre à ce concours.
  */
 export const CONTEST_POPUP_KEY = 'yadony-concours-2026-10-ferme'
 

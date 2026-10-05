@@ -1,4 +1,4 @@
-import { test, expect, type Page, type Locator } from '@playwright/test'
+import { test, expect, type Page, type Locator } from './fixtures'
 
 // La configuration i18n (nuxt.config.ts) déclare l'anglais avec la balise
 // IETF `en-GB`, cohérente avec `ogLocale: 'en_GB'` déjà vérifié par

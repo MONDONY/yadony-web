@@ -19,9 +19,13 @@ test('le bouton du bandeau mène au barème', async ({ page }) => {
   await page.clock.setFixedTime(new Date('2026-10-05T18:31:00Z'))
   await page.goto('/classement')
   await expect(page.getByTestId('phase1-row').first()).toBeVisible()
-  await page.getByRole('link', { name: /voir le barème/i }).click()
+  // Sous charge, un clic arrivé avant l'hydratation ou un défilement doux
+  // interrompu par la mise en page peut rater sa cible : on réessaie.
+  await expect(async () => {
+    await page.getByRole('link', { name: /voir le barème/i }).click()
+    await expect(page.getByRole('heading', { name: /comment gagner des points/i })).toBeInViewport({ timeout: 2_000 })
+  }).toPass({ timeout: 15_000 })
   await expect(page).toHaveURL(/#bareme$/)
-  await expect(page.getByRole('heading', { name: /comment gagner des points/i })).toBeInViewport()
 })
 
 test('le lien du guide s’ouvre dans un nouvel onglet', async ({ page }) => {

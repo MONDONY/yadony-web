@@ -2,6 +2,9 @@
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { BAREME, POINTS, TEST_GROUPS, type TestKey } from '@/lib/classement/bareme'
+import type { Premiers } from '@/lib/classement/premiers'
+
+withDefaults(defineProps<{ premiers?: Premiers }>(), { premiers: () => ({}) })
 
 const { t, tm, rt, n } = useI18n()
 
@@ -31,6 +34,11 @@ const retours = computed(() => [
     <h2 id="rules-title" class="mt-1.5 text-balance font-display text-display-md font-extrabold">{{ t('contest.rules.title') }}</h2>
     <p class="mt-1.5 max-w-prose text-ink-muted">{{ t('contest.rules.lead') }}</p>
 
+    <p
+      data-testid="regle-premier"
+      class="mt-4 inline-flex items-center gap-2 rounded-full bg-orange/15 px-3.5 py-1.5 text-sm font-bold text-orange-deep"
+    ><span aria-hidden="true">🥇</span>{{ t('contest.firsts.rule', { n: POINTS.premier }) }}</p>
+
     <div class="mt-5 grid gap-x-6 gap-y-3.5 rounded-card bg-navy px-5 py-5 text-white sm:grid-cols-3">
       <h3 class="font-display text-[13px] font-bold uppercase tracking-[0.16em] text-orange sm:col-span-3">{{ t('contest.rules.beforeTitle') }}</h3>
       <div v-for="(item, i) in avant" :key="i" class="flex gap-3 text-sm text-white/85">
@@ -46,6 +54,11 @@ const retours = computed(() => [
           <span class="min-w-0">
             {{ t(`contest.tests.${cle}`) }}
             <small v-if="sousTitre(cle)" class="block text-[12.5px] text-ink-muted">{{ sousTitre(cle) }}</small>
+            <small
+              v-if="premiers[cle]"
+              :data-testid="`premier-${cle}`"
+              class="mt-0.5 block text-[12.5px] font-semibold text-orange-deep"
+            ><span aria-hidden="true">🥇 </span>{{ t('contest.firsts.claimed', { nom: premiers[cle]!.nom }) }}</small>
           </span>
           <span class="flex-none whitespace-nowrap font-display text-sm font-extrabold tabular-nums text-orange-deep">{{ n(BAREME[cle]) }}</span>
         </div>

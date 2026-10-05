@@ -5,6 +5,7 @@ import { useRoute } from 'vue-router'
 import { buildSeoMeta } from '@/lib/seo'
 import { classer, instantInitial, localeDates, statutPeriode } from '@/lib/classement/score'
 import type { ClassementData } from '@/lib/classement/types'
+import { normaliserPremiers } from '@/lib/classement/premiers'
 import donnees from '@/data/classement.json'
 import donneesPhase1 from '@/data/classement-phase1.json'
 
@@ -25,7 +26,8 @@ useSeoMeta(
 useHead({ meta: [{ name: 'robots', content: 'noindex, nofollow' }] })
 
 const data = donnees as ClassementData
-const lignes = computed(() => classer(data.testeurs))
+const premiers = computed(() => normaliserPremiers(data.premiers, data.testeurs))
+const lignes = computed(() => classer(data.testeurs, data.premiers))
 
 // Le HTML est figé au build : on part de l'heure de la mise à jour (ou juste
 // avant le début), puis on suit l'heure réelle une fois monté, minute par
@@ -64,7 +66,7 @@ const dateDebut = computed(() =>
     <UiContainer>
       <template v-if="lignes.length">
         <ContestPodium :lignes="lignes" />
-        <ContestTable :lignes="lignes" :mise-a-jour="data.miseAJour" />
+        <ContestTable :lignes="lignes" :mise-a-jour="data.miseAJour" :premiers="premiers" />
       </template>
       <p
         v-else
@@ -77,7 +79,7 @@ const dateDebut = computed(() =>
       <ContestPhase1 :donnees="donneesPhase1" :maintenant="monte ? maintenant : null" />
 
       <div class="mt-10">
-        <ContestRules />
+        <ContestRules :premiers="premiers" />
       </div>
     </UiContainer>
   </div>

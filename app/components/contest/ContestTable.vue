@@ -3,8 +3,20 @@ import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { TOTAL_TESTS } from '@/lib/classement/bareme'
 import { localeDates, type LigneClassement, type LigneDetail } from '@/lib/classement/score'
+import { premiersDe, type Premiers } from '@/lib/classement/premiers'
 
-defineProps<{ lignes: LigneClassement[]; miseAJour: string | null }>()
+const props = withDefaults(
+  defineProps<{ lignes: LigneClassement[]; miseAJour: string | null; premiers?: Premiers }>(),
+  { premiers: () => ({}) },
+)
+
+function nbPremiers(id: string): number {
+  return premiersDe(id, props.premiers).length
+}
+
+function estPremier(id: string, cle: string): boolean {
+  return props.premiers[cle as keyof Premiers]?.id === id
+}
 const { t, n, locale } = useI18n()
 
 const ouverte = ref<string | null>(null)
@@ -75,6 +87,12 @@ function dateMiseAJour(iso: string): string {
                     <path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
                   {{ l.nom }}
+                  <span
+                    v-if="nbPremiers(l.id)"
+                    data-testid="premier-badge"
+                    class="ml-1 inline-flex items-center gap-1 whitespace-nowrap rounded-full bg-orange/15 px-2 py-0.5 text-[11.5px] font-bold text-orange-deep"
+                    :title="t('contest.firsts.badgeHint', nbPremiers(l.id))"
+                  ><span aria-hidden="true">🥇</span>{{ t('contest.firsts.badge', { n: nbPremiers(l.id) }) }}</span>
                 </button>
               </td>
               <td class="border-b border-line px-3.5 py-3 text-right font-display text-lg font-extrabold">{{ n(l.total) }}</td>
@@ -88,7 +106,14 @@ function dateMiseAJour(iso: string): string {
               <td colspan="6" class="border-b border-line bg-sand p-0">
                 <ul class="grid gap-x-6 gap-y-1.5 px-4 pb-4 pt-3.5 sm:grid-cols-[repeat(auto-fill,minmax(230px,1fr))] sm:pl-16">
                   <li v-for="d in l.detail" :key="d.cle" class="flex justify-between gap-3 border-b border-dashed border-line py-1.5 text-[13.5px]">
-                    <span>{{ libelle(d) }}</span>
+                    <span>
+                      {{ libelle(d) }}
+                      <span
+                        v-if="estPremier(l.id, d.cle)"
+                        data-testid="premier-chip"
+                        class="ml-1 whitespace-nowrap rounded-full bg-orange/15 px-1.5 py-px text-[11px] font-bold text-orange-deep"
+                      >{{ t('contest.firsts.chip') }}</span>
+                    </span>
                     <b class="whitespace-nowrap tabular-nums text-success">+{{ n(d.points) }}</b>
                   </li>
                 </ul>

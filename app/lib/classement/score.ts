@@ -1,7 +1,7 @@
 import { BAREME, POINTS, type TestKey } from './bareme'
 import type { ClassementData, Testeur } from './types'
 
-export type CleDetail = TestKey | 'bug' | 'suggestion' | 'avis_ecran'
+export type CleDetail = TestKey | 'bug' | 'suggestion' | 'avis_ecran' | 'premier'
 
 export interface LigneDetail {
   cle: CleDetail
@@ -38,8 +38,10 @@ function compteur(valeur: number): number {
   return Number.isFinite(valeur) && valeur > 0 ? Math.floor(valeur) : 0
 }
 
-export function scoreTesteur(t: Testeur): Score {
+/** `premiersCles` : tests que ce testeur a réussis en premier (bonus de 40 points chacun). */
+export function scoreTesteur(t: Testeur, premiersCles: string[] = []): Score {
   const valides = [...new Set(t.tests ?? [])].filter(estTest)
+  const nbPremiers = new Set(premiersCles.filter(cle => (valides as string[]).includes(cle))).size
   const detail: LigneDetail[] = valides.map(cle => ({ cle, points: BAREME[cle] }))
   const compteurs: Compteurs = {
     bugs: compteur(t.bugs),
@@ -51,6 +53,7 @@ export function scoreTesteur(t: Testeur): Score {
     ['bug', compteurs.bugs, POINTS.bug],
     ['suggestion', compteurs.suggestions, POINTS.suggestion],
     ['avis_ecran', compteurs.ecransAvecAvis, POINTS.avisEcran],
+    ['premier', nbPremiers, POINTS.premier],
   ]
   for (const [cle, nombre, unite] of unitaires) {
     if (nombre > 0) detail.push({ cle, points: nombre * unite, nombre })
@@ -79,11 +82,17 @@ function heure(iso: string | null): number {
  * (1, 1, 3) ; à l'affichage, le premier à avoir atteint le total passe devant,
  * puis l'ordre alphabétique.
  */
-export function classer(testeurs: Testeur[]): LigneClassement[] {
+export function classer(
+  testeurs: Testeur[],
+  premiers: Record<string, string> = {},
+): LigneClassement[] {
   const vus = new Set<string>()
   const uniques = testeurs.filter(t => !vus.has(t.id) && vus.add(t.id))
   const lignes = uniques
-    .map(t => ({ ...t, ...scoreTesteur(t), rang: 0 }))
+    .map(t => {
+      const cles = Object.keys(premiers).filter(cle => premiers[cle] === t.id)
+      return { ...t, ...scoreTesteur(t, cles), rang: 0 }
+    })
     .sort(
       (a, b) =>
         b.total - a.total ||

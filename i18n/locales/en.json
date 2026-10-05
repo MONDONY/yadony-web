@@ -1556,6 +1556,25 @@
       "nego_trajet": "Trip negotiation",
       "nego_colis": "Parcel negotiation",
       "filtres": "Search filters"
+    },
+    "popup": {
+      "close": "Close",
+      "live": "Contest now live",
+      "soon": "Starts {date}",
+      "title": "Become the top Yadony beta tester",
+      "text": "Test the app, report what gets in your way and climb the leaderboard. Every completed test earns you points.",
+      "perks": [
+        "Bugs, reviews and ideas: up to 100 pts",
+        "Full journeys, payments, negotiations",
+        "Live leaderboard on yadony.com"
+      ],
+      "endsIn": "Ends in",
+      "startsIn": "Starts in",
+      "days": "days",
+      "hours": "hrs",
+      "minutes": "mins",
+      "cta": "See the leaderboard",
+      "later": "Maybe later"
     }
   }
 }

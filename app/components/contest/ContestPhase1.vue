@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { classerPhase1, phase1Visible, type TesteurPhase1 } from '@/lib/classement/phase1'
 import { localeDates } from '@/lib/classement/score'
@@ -23,6 +23,11 @@ const visible = computed(() =>
   phase1Visible(props.donnees.revelation, props.maintenant, props.donnees.testeurs.length),
 )
 const lignes = computed(() => (visible.value ? classerPhase1(props.donnees.testeurs) : []))
+
+// Le top 10 tient sur un écran de téléphone ; le reste se déplie sur demande.
+const LIMITE = 10
+const tout = ref(false)
+const lignesAffichees = computed(() => (tout.value ? lignes.value : lignes.value.slice(0, LIMITE)))
 const podium = computed(() =>
   lignes.value.slice(0, 3).map((l, i) => ({
     id: `phase1-${i}`,
@@ -85,20 +90,38 @@ const nombre = (valeur: number) => n(valeur, { maximumFractionDigits: 1 })
             <th scope="col" class="border-b border-line px-3.5 pb-2.5 pt-3.5 text-right">{{ t('contest.board.score') }}</th>
             <th scope="col" class="hidden border-b border-line px-3.5 pb-2.5 pt-3.5 text-right sm:table-cell">{{ t('contest.phase1.minutes') }}</th>
             <th scope="col" class="hidden border-b border-line px-3.5 pb-2.5 pt-3.5 text-right sm:table-cell">{{ t('contest.phase1.screens') }}</th>
-            <th scope="col" class="border-b border-line px-3.5 pb-2.5 pt-3.5 text-right">{{ t('contest.phase1.bugs') }}</th>
+            <th scope="col" class="hidden border-b border-line px-3.5 pb-2.5 pt-3.5 text-right sm:table-cell">{{ t('contest.phase1.bugs') }}</th>
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(l, i) in lignes" :key="i" data-testid="phase1-row" class="transition-colors hover:bg-sand/60">
+          <tr v-for="(l, i) in lignesAffichees" :key="i" data-testid="phase1-row" class="transition-colors hover:bg-sand/60">
             <td class="w-12 border-b border-line px-3.5 py-2.5 font-display font-extrabold" :class="l.rang <= 3 ? 'text-orange-deep' : 'text-ink-muted'">{{ l.rang }}</td>
-            <td class="border-b border-line px-3.5 py-2.5 font-semibold" :class="l.nom ? '' : 'font-normal italic text-ink-muted'">{{ l.nom ?? t('contest.phase1.anonymous') }}</td>
+            <td class="border-b border-line px-3.5 py-2.5">
+              <span class="block font-semibold" :class="l.nom ? '' : 'font-normal italic text-ink-muted'">{{ l.nom ?? t('contest.phase1.anonymous') }}</span>
+              <span data-testid="phase1-meta" class="mt-0.5 block text-[12px] text-ink-muted sm:hidden">
+                {{ t('contest.phase1.meta', { minutes: n(Math.round(l.minutes)), ecrans: n(l.ecrans), bugs: l.bugs }) }}
+              </span>
+            </td>
             <td class="border-b border-line px-3.5 py-2.5 text-right font-display font-extrabold">{{ nombre(l.score) }}</td>
             <td class="hidden border-b border-line px-3.5 py-2.5 text-right text-ink-muted sm:table-cell">{{ nombre(l.minutes) }}</td>
             <td class="hidden border-b border-line px-3.5 py-2.5 text-right text-ink-muted sm:table-cell">{{ n(l.ecrans) }}</td>
-            <td class="border-b border-line px-3.5 py-2.5 text-right">{{ l.bugs }}</td>
+            <td class="hidden border-b border-line px-3.5 py-2.5 text-right sm:table-cell">{{ l.bugs }}</td>
           </tr>
         </tbody>
       </table>
+      <button
+        v-if="lignes.length > LIMITE"
+        type="button"
+        data-testid="phase1-more"
+        class="flex min-h-12 w-full items-center justify-center gap-2 font-display text-[14.5px] font-bold text-orange-deep transition-[background-color,scale] duration-150 hover:bg-sand/60 focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-orange active:scale-[0.96]"
+        :aria-expanded="tout ? 'true' : 'false'"
+        @click="tout = !tout"
+      >
+        {{ tout ? t('contest.board.less') : t('contest.board.more', { n: lignes.length }) }}
+        <svg class="h-4 w-4 transition-transform duration-200" :class="tout ? 'rotate-180' : ''" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </button>
     </div>
   </section>
 </template>

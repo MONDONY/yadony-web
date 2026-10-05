@@ -1480,7 +1480,10 @@
       "tests": "Tests",
       "feedback": "Bugs · reviews · ideas",
       "activity": "Screens · time",
-      "activityHint": "Screens visited and time spent, for information"
+      "activityHint": "Screens visited and time spent, for information",
+      "meta": "{tests} of {total} tests",
+      "more": "Show all {n} testers",
+      "less": "Show fewer"
     },
     "detail": {
       "bug": "Resolved bug | Resolved bug | {n} resolved bugs",
@@ -1588,7 +1591,8 @@
       "screens": "Screens",
       "bugs": "Bug reports",
       "teaser": "Phase 1 results will be revealed on {date}.",
-      "podiumSub": "{minutes} mins · {bugs} bug reports"
+      "podiumSub": "{minutes} mins · {bugs} bug reports",
+      "meta": "{minutes} min · {ecrans} screens · {bugs} bugs"
     },
     "firsts": {
       "badge": "First ×{n}",

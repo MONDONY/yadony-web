@@ -52,7 +52,14 @@ describe('ContestPodium', () => {
 
   it('centre le 1er même quand il est seul', () => {
     const w = mount(ContestPodium, { props: { lignes: lignes.slice(0, 1) }, global: { plugins: [i18n] } })
-    expect(w.find('[data-testid="podium-step"]').classes()).toContain('sm:col-start-2')
+    expect(w.find('[data-testid="podium-step"]').classes()).toContain('col-start-2')
+  })
+
+  it('garde les trois marches côte à côte, même sur téléphone', () => {
+    const w = mount(ContestPodium, { props: { lignes }, global: { plugins: [i18n] } })
+    const classes = w.find('[data-testid="podium"]').classes()
+    expect(classes).toContain('grid-cols-[1fr_1.12fr_1fr]')
+    expect(classes.some(c => c.startsWith('sm:grid-cols'))).toBe(false)
   })
 
   it('compte les tests comme le tableau', () => {
@@ -115,5 +122,29 @@ describe('ContestTable', () => {
 
   it('indique la date de mise à jour', () => {
     expect(monter().text()).toContain('Mis à jour le')
+  })
+
+  it('résume les tests sous le nom, pour les petits écrans', () => {
+    const meta = monter().find('[data-testid="board-row"] [data-testid="board-meta"]')
+    expect(meta.text()).toContain('2 / 26 tests')
+  })
+
+  it('n’affiche que les 10 premiers et déplie le reste sur demande', async () => {
+    const douze = classer(Array.from({ length: 12 }, (_, i) => testeur(`t${i}`, `Testeur ${i}`, i < 6 ? ['litige'] : ['filtres'])))
+    const w = mount(ContestTable, { props: { lignes: douze, miseAJour: null }, global: { plugins: [i18n] } })
+    expect(w.findAll('[data-testid="board-row"]')).toHaveLength(10)
+    const plus = w.find('[data-testid="board-more"]')
+    expect(plus.text()).toContain('Voir les 12 testeurs')
+    expect(plus.attributes('aria-expanded')).toBe('false')
+
+    await plus.trigger('click')
+
+    expect(w.findAll('[data-testid="board-row"]')).toHaveLength(12)
+    expect(w.find('[data-testid="board-more"]').text()).toMatch(/réduire/i)
+    expect(w.find('[data-testid="board-more"]').attributes('aria-expanded')).toBe('true')
+  })
+
+  it('n’affiche pas le bouton quand tout tient dans le top 10', () => {
+    expect(monter().find('[data-testid="board-more"]').exists()).toBe(false)
   })
 })

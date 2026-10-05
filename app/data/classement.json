@@ -1,5 +1,5 @@
 {
-  "miseAJour": "2026-10-05T20:47:00Z",
+  "miseAJour": "2026-10-05T21:31:00Z",
   "debut": "2026-10-05T18:30:00Z",
   "fin": "2026-10-12T18:30:00Z",
   "testeurs": [
@@ -9,16 +9,37 @@
       "tests": [
         "scenario_complet",
         "avis_parcours",
-        "message_app"
+        "message_app",
+        "message_destinataire",
+        "outils",
+        "nego_colis",
+        "grille_kilos"
       ],
       "bugs": 0,
       "suggestions": 0,
       "ecransAvecAvis": 0,
       "indicatif": {
-        "ecrans": 43,
-        "minutes": 41.6
+        "ecrans": 60,
+        "minutes": 47.5
       },
-      "dernierPoint": "2026-10-05T19:38:42Z"
+      "dernierPoint": "2026-10-05T21:10:11Z"
+    },
+    {
+      "id": "LWoJJBVp",
+      "nom": "Mahoua O.",
+      "tests": [
+        "outils",
+        "message_app",
+        "nego_colis"
+      ],
+      "bugs": 0,
+      "suggestions": 0,
+      "ecransAvecAvis": 0,
+      "indicatif": {
+        "ecrans": 116,
+        "minutes": 69.3
+      },
+      "dernierPoint": "2026-10-05T20:42:50Z"
     },
     {
       "id": "1aM5LVzU",
@@ -32,10 +53,27 @@
       "suggestions": 0,
       "ecransAvecAvis": 0,
       "indicatif": {
-        "ecrans": 213,
-        "minutes": 91.8
+        "ecrans": 220,
+        "minutes": 92.2
       },
       "dernierPoint": "2026-10-05T20:36:35Z"
+    },
+    {
+      "id": "txCpxwiq",
+      "nom": "Ibrahim O.",
+      "tests": [
+        "nego_trajet",
+        "message_app",
+        "grille_kilos"
+      ],
+      "bugs": 0,
+      "suggestions": 0,
+      "ecransAvecAvis": 0,
+      "indicatif": {
+        "ecrans": 124,
+        "minutes": 85.5
+      },
+      "dernierPoint": "2026-10-05T20:49:22Z"
     },
     {
       "id": "ftAUL354",
@@ -54,52 +92,37 @@
       "dernierPoint": "2026-10-05T19:17:53Z"
     },
     {
-      "id": "txCpxwiq",
-      "nom": "Ibrahim O.",
-      "tests": [
-        "nego_trajet",
-        "message_app"
-      ],
-      "bugs": 0,
-      "suggestions": 0,
-      "ecransAvecAvis": 0,
-      "indicatif": {
-        "ecrans": 80,
-        "minutes": 62.6
-      },
-      "dernierPoint": "2026-10-05T20:33:02Z"
-    },
-    {
       "id": "YeTesJn5",
       "nom": "Salimata D.",
       "tests": [
         "grille_kilos",
-        "message_app"
+        "message_app",
+        "appels"
       ],
       "bugs": 0,
       "suggestions": 0,
       "ecransAvecAvis": 0,
       "indicatif": {
-        "ecrans": 60,
-        "minutes": 43.3
+        "ecrans": 190,
+        "minutes": 76.3
       },
-      "dernierPoint": "2026-10-05T19:44:50Z"
+      "dernierPoint": "2026-10-05T21:02:49Z"
     },
     {
-      "id": "LWoJJBVp",
-      "nom": "Mahoua O.",
+      "id": "szE1BA7k",
+      "nom": "Hadja Maferima T.",
       "tests": [
-        "outils",
-        "message_app"
+        "message_app",
+        "appels"
       ],
       "bugs": 0,
       "suggestions": 0,
       "ecransAvecAvis": 0,
       "indicatif": {
-        "ecrans": 105,
-        "minutes": 40.1
+        "ecrans": 133,
+        "minutes": 29.9
       },
-      "dernierPoint": "2026-10-05T20:36:20Z"
+      "dernierPoint": "2026-10-05T21:02:49Z"
     },
     {
       "id": "cS2IXWI0",
@@ -123,6 +146,9 @@
     "scenario_complet": "mAOPz6Y0",
     "avis_parcours": "mAOPz6Y0",
     "grille_kilos": "YeTesJn5",
-    "nego_trajet": "txCpxwiq"
+    "nego_trajet": "txCpxwiq",
+    "message_destinataire": "mAOPz6Y0",
+    "nego_colis": "LWoJJBVp",
+    "appels": "szE1BA7k"
   }
 }

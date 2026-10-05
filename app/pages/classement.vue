@@ -31,8 +31,11 @@ const lignes = computed(() => classer(data.testeurs))
 // avant le début), puis on suit l'heure réelle une fois monté, minute par
 // minute, pour qu'un onglet ouvert avant 20 h 30 passe à « En cours ».
 const maintenant = ref(instantInitial(data))
+// La phase 1 n'est jamais rendue côté serveur : elle attend l'heure du visiteur.
+const monte = ref(false)
 let minuteur: ReturnType<typeof setInterval> | undefined
 onMounted(() => {
+  monte.value = true
   maintenant.value = new Date()
   minuteur = setInterval(() => {
     maintenant.value = new Date()
@@ -71,7 +74,7 @@ const dateDebut = computed(() =>
         {{ t(`contest.empty.${statut}`, { date: dateDebut }) }}
       </p>
 
-      <ContestPhase1 :donnees="donneesPhase1" />
+      <ContestPhase1 :donnees="donneesPhase1" :maintenant="monte ? maintenant : null" />
 
       <div class="mt-10">
         <ContestRules />

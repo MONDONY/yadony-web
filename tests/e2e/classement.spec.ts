@@ -39,10 +39,16 @@ test('le classement est absent du sitemap', async ({ request }) => {
   expect(sitemap).not.toContain('/leaderboard')
 })
 
-test('le classement de la phase 1 est affiché avec l’ancienne formule', async ({ page }) => {
+test('les résultats de la phase 1 restent masqués avant 20 h 00 (Paris)', async ({ page }) => {
+  await page.clock.setFixedTime(new Date('2026-10-05T17:00:00Z'))
   await page.goto('/classement')
   const phase1 = page.getByTestId('contest-phase1')
-  await expect(phase1).toBeVisible()
-  await expect(phase1.getByTestId('phase1-row').first()).toContainText('Koro D.')
   await expect(phase1).toContainText('minutes × 2')
+  await expect(phase1.getByTestId('phase1-teaser')).toContainText(/dévoilés/i)
+  await expect(phase1.getByTestId('phase1-row')).toHaveCount(0)
+})
+
+test('le HTML statique ne contient aucun résultat de la phase 1', async ({ request }) => {
+  const html = await (await request.get('/classement')).text()
+  expect(html).not.toContain('data-testid="phase1-row"')
 })

@@ -1,7 +1,31 @@
 {
-  "miseAJour": null,
+  "miseAJour": "2026-10-05T18:56:00Z",
   "debut": "2026-10-05T18:30:00Z",
   "fin": "2026-10-12T18:30:00Z",
-  "testeurs": [],
-  "premiers": {}
+  "testeurs": [
+    {
+      "id": "1aM5LVzU",
+      "nom": "Koro D.",
+      "tests": ["outils", "message_app"],
+      "bugs": 0,
+      "suggestions": 0,
+      "ecransAvecAvis": 0,
+      "indicatif": { "ecrans": 88, "minutes": 37.7 },
+      "dernierPoint": "2026-10-05T18:51:03Z"
+    },
+    {
+      "id": "ftAUL354",
+      "nom": "Ibrahim D.",
+      "tests": ["message_app"],
+      "bugs": 0,
+      "suggestions": 0,
+      "ecransAvecAvis": 0,
+      "indicatif": { "ecrans": 48, "minutes": 22.8 },
+      "dernierPoint": "2026-10-05T18:46:25Z"
+    }
+  ],
+  "premiers": {
+    "outils": "1aM5LVzU",
+    "message_app": "ftAUL354"
+  }
 }

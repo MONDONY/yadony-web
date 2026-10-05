@@ -14,7 +14,11 @@ test('la page du classement n’est pas indexée', async ({ page }) => {
 })
 
 test('le bouton du bandeau mène au barème', async ({ page }) => {
+  // Après 20 h 00, la phase 1 s'insère au-dessus du barème une fois la page
+  // montée : on attend qu'elle soit là pour que le défilement vise la bonne place.
+  await page.clock.setFixedTime(new Date('2026-10-05T18:31:00Z'))
   await page.goto('/classement')
+  await expect(page.getByTestId('phase1-row').first()).toBeVisible()
   await page.getByRole('link', { name: /voir le barème/i }).click()
   await expect(page).toHaveURL(/#bareme$/)
   await expect(page.getByRole('heading', { name: /comment gagner des points/i })).toBeInViewport()

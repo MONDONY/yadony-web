@@ -52,3 +52,12 @@ test('le HTML statique ne contient aucun résultat de la phase 1', async ({ requ
   const html = await (await request.get('/classement')).text()
   expect(html).not.toContain('data-testid="phase1-row"')
 })
+
+test('les résultats de la phase 1 apparaissent à partir de 20 h 00 (Paris)', async ({ page }) => {
+  await page.clock.setFixedTime(new Date('2026-10-05T18:01:00Z'))
+  await page.goto('/classement')
+  const phase1 = page.getByTestId('contest-phase1')
+  await expect(phase1.getByTestId('phase1-row')).toHaveCount(51)
+  await expect(phase1.getByTestId('podium-step')).toHaveCount(3)
+  await expect(phase1.getByTestId('podium-name').first()).not.toBeEmpty()
+})

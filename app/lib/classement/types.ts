@@ -27,4 +27,6 @@ export interface ClassementData {
   debut: string
   fin: string
   testeurs: Testeur[]
+  /** Premier testeur à avoir réussi chaque test : `{ cleDeTest: idDuTesteur }` (badge « 1er »). */
+  premiers?: Record<string, string>
 }

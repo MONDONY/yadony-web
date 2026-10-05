@@ -1485,7 +1485,8 @@
     "detail": {
       "bug": "Resolved bug | Resolved bug | {n} resolved bugs",
       "suggestion": "Accepted idea | Accepted idea | {n} accepted ideas",
-      "avis_ecran": "Review on 1 screen | Review on 1 screen | Reviews on {n} screens"
+      "avis_ecran": "Review on 1 screen | Review on 1 screen | Reviews on {n} screens",
+      "premier": "First-place bonus | First-place bonus on 1 test | First-place bonus on {n} tests"
     },
     "empty": {
       "bientot": "The contest starts on {date}. The leaderboard will appear here as soon as the first points come in.",
@@ -1587,6 +1588,13 @@
       "screens": "Screens",
       "bugs": "Bug reports",
       "teaser": "Phase 1 results will be revealed on {date}."
+    },
+    "firsts": {
+      "badge": "First ×{n}",
+      "badgeHint": "no tests completed first | 1 test completed first | {n} tests completed first",
+      "chip": "First",
+      "claimed": "First: {nom}",
+      "rule": "Bonus: {n} pts to the first tester to complete each test"
     }
   }
 }

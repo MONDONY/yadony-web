@@ -52,7 +52,7 @@ describe('barème', () => {
       nego_colis: 60,
       filtres: 20,
     })
-    expect(POINTS).toEqual({ bug: 20, suggestion: 30, avisEcran: 20 })
+    expect(POINTS).toEqual({ bug: 20, suggestion: 30, avisEcran: 20, premier: 40 })
     expect(TOTAL_TESTS).toBe(26)
   })
 
@@ -215,5 +215,30 @@ describe('localeDates', () => {
     expect(localeDates('en')).toBe('en-GB')
     expect(localeDates('fr')).toBe('fr-FR')
     expect(localeDates('de')).toBe('fr-FR')
+  })
+})
+
+describe('bonus du premier', () => {
+  it('ajoute 40 points par test réussi en premier', () => {
+    expect(POINTS.premier).toBe(40)
+    const s = scoreTesteur(testeur({ id: 'a', tests: ['litige', 'filtres'] }), ['litige', 'filtres'])
+    expect(s.total).toBe(60 + 20 + 2 * 40)
+    expect(s.detail.find(l => l.cle === 'premier')).toEqual({ cle: 'premier', points: 80, nombre: 2 })
+  })
+
+  it('ne donne pas de bonus pour un test non validé par le testeur', () => {
+    const s = scoreTesteur(testeur({ id: 'a', tests: ['litige'] }), ['litige', 'appels'])
+    expect(s.total).toBe(60 + 40)
+  })
+
+  it('classe en tenant compte du bonus', () => {
+    const lignes = classer(
+      [testeur({ id: 'a', tests: ['litige'] }), testeur({ id: 'b', tests: ['nego_colis'] })],
+      { nego_colis: 'b' },
+    )
+    expect(lignes.map(l => [l.id, l.total])).toEqual([
+      ['b', 100],
+      ['a', 60],
+    ])
   })
 })

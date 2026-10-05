@@ -1485,7 +1485,8 @@
     "detail": {
       "bug": "Bug résolu | Bug résolu | {n} bugs résolus",
       "suggestion": "Suggestion retenue | Suggestion retenue | {n} suggestions retenues",
-      "avis_ecran": "Avis sur 1 écran | Avis sur 1 écran | Avis sur {n} écrans"
+      "avis_ecran": "Avis sur 1 écran | Avis sur 1 écran | Avis sur {n} écrans",
+      "premier": "Bonus 1er | Bonus 1er sur 1 test | Bonus 1er sur {n} tests"
     },
     "empty": {
       "bientot": "Le concours commence le {date}. Le classement s'affichera ici dès les premiers points.",
@@ -1587,6 +1588,13 @@
       "screens": "Écrans",
       "bugs": "Bugs",
       "teaser": "Les résultats de la phase 1 seront dévoilés le {date}."
+    },
+    "firsts": {
+      "badge": "1er ×{n}",
+      "badgeHint": "aucun test réussi en premier | 1 test réussi en premier | {n} tests réussis en premier",
+      "chip": "1er",
+      "claimed": "1er : {nom}",
+      "rule": "Bonus : {n} pts au premier qui réussit chaque test"
     }
   }
 }

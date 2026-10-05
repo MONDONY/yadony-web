@@ -34,8 +34,11 @@ export type TestKey = keyof typeof BAREME
 
 export const TEST_KEYS = Object.keys(BAREME) as TestKey[]
 
-/** Points des retours envoyés avec le bouton scarabée, comptés une fois résolus. */
-export const POINTS = { bug: 20, suggestion: 30, avisEcran: 20 } as const
+/**
+ * Points des retours envoyés avec le bouton scarabée (comptés une fois résolus)
+ * et bonus du premier testeur à réussir chaque test du barème.
+ */
+export const POINTS = { bug: 20, suggestion: 30, avisEcran: 20, premier: 40 } as const
 
 /** Tests affichés « n / 26 » : les tests à action, plus l'avis par écran et la suggestion. */
 export const TOTAL_TESTS = TEST_KEYS.length + 2

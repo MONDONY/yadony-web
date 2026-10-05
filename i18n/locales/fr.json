@@ -9,7 +9,8 @@
     "mainLabel": "Navigation principale",
     "mobileLabel": "Navigation mobile",
     "menu": "Menu",
-    "corridors": "Envoyer un colis"
+    "corridors": "Envoyer un colis",
+    "contest": "Concours bêta-testeurs"
   },
   "a11y": {
     "skipToContent": "Aller au contenu",

@@ -60,3 +60,34 @@ test('les boutons de stores se comportent selon la disponibilité de l’app', a
     await expect(page.locator('dialog[open]')).toHaveCount(0)
   }
 })
+
+test('le header mène au classement du concours', async ({ page, isMobile }) => {
+  await page.goto('/')
+  if (isMobile) {
+    await page.getByRole('button', { name: 'Menu' }).click()
+  }
+  await page.getByRole('link', { name: 'Concours bêta-testeurs' }).first().click()
+  await expect(page).toHaveURL(/\/classement\/?$/)
+})
+
+// Six liens tiennent sur une ligne à partir de 1280 px ; en dessous, le menu
+// passe dans le bouton « Menu ». Aucune largeur ne doit faire défiler la page.
+for (const width of [768, 1024, 1280]) {
+  test(`le header tient sans défilement horizontal en ${width} px`, async ({ page }) => {
+    await page.setViewportSize({ width, height: 800 })
+    await page.goto('/')
+    const overflow = await page.evaluate(
+      () => document.documentElement.scrollWidth - document.documentElement.clientWidth,
+    )
+    expect(overflow).toBeLessThanOrEqual(0)
+    const header = page.locator('header').first()
+    const nav = header.getByRole('navigation', { name: 'Navigation principale' })
+    if (width >= 1280) {
+      await expect(nav.getByRole('link', { name: 'Concours bêta-testeurs' })).toBeVisible()
+    } else {
+      await expect(nav).toBeHidden()
+      await header.getByRole('button', { name: 'Menu' }).click()
+      await expect(header.getByRole('link', { name: 'Concours bêta-testeurs' })).toBeVisible()
+    }
+  })
+}

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { classerPhase1, nomPublic, scorePhase1 } from '@/lib/classement/phase1'
+import { classerPhase1, nomPublic, phase1Visible, scorePhase1 } from '@/lib/classement/phase1'
 import donnees from '@/data/classement-phase1.json'
 
 describe('scorePhase1', () => {
@@ -44,14 +44,32 @@ describe('nomPublic', () => {
 })
 
 describe('données de la phase 1', () => {
-  it('couvre la période du 27 septembre au 5 octobre 20 h 30 (Paris)', () => {
+  it('couvre la période du 27 septembre au 5 octobre 20 h 00 (Paris), dévoilée à 20 h 00', () => {
     expect(donnees.debut).toBe('2026-09-26T22:00:00Z')
-    expect(donnees.fin).toBe('2026-10-05T18:30:00Z')
+    expect(donnees.fin).toBe('2026-10-05T18:00:00Z')
+    expect(donnees.revelation).toBe('2026-10-05T18:00:00Z')
   })
 
   it('ne publie ni email ni identifiant complet', () => {
     const texte = JSON.stringify(donnees.testeurs)
     expect(texte).not.toMatch(/@/)
     expect(texte).not.toMatch(/[A-Za-z0-9]{20,}/)
+  })
+})
+
+describe('phase1Visible', () => {
+  const revelation = '2026-10-05T18:00:00Z'
+
+  it('reste masquée avant 20 h 00 (Paris)', () => {
+    expect(phase1Visible(revelation, new Date('2026-10-05T17:59:59Z'), 50)).toBe(false)
+  })
+
+  it('apparaît à 20 h 00 s’il y a des résultats', () => {
+    expect(phase1Visible(revelation, new Date('2026-10-05T18:00:00Z'), 50)).toBe(true)
+    expect(phase1Visible(revelation, new Date('2026-10-05T18:00:00Z'), 0)).toBe(false)
+  })
+
+  it('reste masquée tant que l’heure du visiteur est inconnue (rendu serveur)', () => {
+    expect(phase1Visible(revelation, null, 50)).toBe(false)
   })
 })

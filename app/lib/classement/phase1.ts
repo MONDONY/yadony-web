@@ -41,6 +41,16 @@ function majuscule(mot: string): string {
   return mot.charAt(0).toLocaleUpperCase('fr') + mot.slice(1).toLocaleLowerCase('fr')
 }
 
+/**
+ * Les résultats ne sont montrés qu'à partir de l'heure de révélation, et
+ * jamais au rendu serveur (heure du visiteur inconnue, `null`) : le HTML
+ * statique ne les contient pas, même déployé avant l'heure.
+ */
+export function phase1Visible(revelation: string, maintenant: Date | null, nombre: number): boolean {
+  if (!maintenant || nombre === 0) return false
+  return maintenant.getTime() >= Date.parse(revelation)
+}
+
 /** « cheick kassoum » + « DIALLO » → « Cheick Kassoum D. » ; sans prénom → null. */
 export function nomPublic(prenom: string | null, nom: string | null): string | null {
   const p = (prenom ?? '').trim()

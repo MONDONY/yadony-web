@@ -1585,7 +1585,8 @@
       "anonymous": "Anonymous tester",
       "minutes": "Minutes spent",
       "screens": "Screens",
-      "bugs": "Bug reports"
+      "bugs": "Bug reports",
+      "teaser": "Phase 1 results will be revealed on {date}."
     }
   }
 }

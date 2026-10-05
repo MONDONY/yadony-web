@@ -1585,7 +1585,8 @@
       "anonymous": "Testeur anonyme",
       "minutes": "Minutes",
       "screens": "Écrans",
-      "bugs": "Bugs"
+      "bugs": "Bugs",
+      "teaser": "Les résultats de la phase 1 seront dévoilés le {date}."
     }
   }
 }

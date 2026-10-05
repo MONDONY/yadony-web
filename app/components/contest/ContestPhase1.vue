@@ -3,6 +3,7 @@ import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { classerPhase1, phase1Visible, type TesteurPhase1 } from '@/lib/classement/phase1'
 import { localeDates } from '@/lib/classement/score'
+import ContestPodium from './ContestPodium.vue'
 
 const props = defineProps<{
   donnees: {
@@ -22,6 +23,15 @@ const visible = computed(() =>
   phase1Visible(props.donnees.revelation, props.maintenant, props.donnees.testeurs.length),
 )
 const lignes = computed(() => (visible.value ? classerPhase1(props.donnees.testeurs) : []))
+const podium = computed(() =>
+  lignes.value.slice(0, 3).map((l, i) => ({
+    id: `phase1-${i}`,
+    nom: l.nom ?? t('contest.phase1.anonymous'),
+    total: l.score,
+    rang: l.rang,
+    sousTitre: t('contest.phase1.podiumSub', { minutes: n(Math.round(l.minutes)), bugs: l.bugs }),
+  })),
+)
 
 function date(iso: string, avecHeure: boolean): string {
   return new Intl.DateTimeFormat(localeDates(locale.value), {
@@ -64,7 +74,9 @@ const nombre = (valeur: number) => n(valeur, { maximumFractionDigits: 1 })
       {{ t('contest.phase1.teaser', { date: date(donnees.revelation, true) }) }}
     </p>
 
-    <div v-else class="mt-4 overflow-x-auto rounded-card border border-line bg-surface">
+    <ContestPodium v-if="visible" :lignes="podium" :chevauche="false" />
+
+    <div v-if="visible" class="mt-6 overflow-x-auto rounded-card border border-line bg-surface">
       <table class="w-full border-collapse tabular-nums">
         <thead>
           <tr class="text-left font-display text-[11px] font-bold uppercase tracking-[0.12em] text-ink-muted">

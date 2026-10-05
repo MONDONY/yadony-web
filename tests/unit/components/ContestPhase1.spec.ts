@@ -59,4 +59,22 @@ describe('ContestPhase1', () => {
   it('masque les résultats au rendu serveur, quand l’heure est inconnue', () => {
     expect(monter(false, null).findAll('[data-testid="phase1-row"]')).toHaveLength(0)
   })
+
+  it('met les trois premiers sur un podium au-dessus du tableau', () => {
+    const w = monter()
+    const marches = w.findAll('[data-testid="podium-step"]')
+    expect(marches).toHaveLength(3)
+    expect(w.find('[data-rank="1"]').text()).toContain('Koro D.')
+    expect(w.find('[data-rank="1"]').text()).toContain('60')
+    expect(w.find('[data-rank="1"]').text()).toContain('100 min')
+    expect(w.find('[data-rank="3"]').text()).toContain('Testeur anonyme')
+  })
+
+  it('ne chevauche pas le contenu au-dessus', () => {
+    expect(monter().find('[data-testid="podium"]').classes()).not.toContain('-mt-16')
+  })
+
+  it('n’affiche pas de podium tant que les résultats sont masqués', () => {
+    expect(monter(false, null).find('[data-testid="podium-step"]').exists()).toBe(false)
+  })
 })

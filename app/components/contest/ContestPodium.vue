@@ -1,9 +1,12 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
-import type { LigneClassement } from '@/lib/classement/score'
+import type { MarchePodium } from '@/lib/classement/types'
 
-const props = defineProps<{ lignes: LigneClassement[] }>()
+const props = withDefaults(
+  defineProps<{ lignes: MarchePodium[]; chevauche?: boolean }>(),
+  { chevauche: true },
+)
 const { t, n } = useI18n()
 
 // `place` = position (1er, 2e, 3e) : fixe la colonne et le style de la marche.
@@ -12,7 +15,7 @@ const { t, n } = useI18n()
 const marches = computed(() =>
   [1, 0, 2]
     .map(i => ({ ligne: props.lignes[i], place: i + 1 }))
-    .filter((m): m is { ligne: LigneClassement; place: number } => Boolean(m.ligne)),
+    .filter((m): m is { ligne: MarchePodium; place: number } => Boolean(m.ligne)),
 )
 
 const colonnes: Record<number, string> = { 1: 'sm:col-start-2', 2: 'sm:col-start-1', 3: 'sm:col-start-3' }
@@ -32,7 +35,9 @@ const styles: Record<number, { medal: string; card: string; name: string; pts: s
 <template>
   <section
     v-if="marches.length"
-    class="relative -mt-16 grid items-end gap-3.5 sm:grid-cols-[1fr_1.12fr_1fr]"
+    data-testid="podium"
+    class="relative grid items-end gap-3.5 sm:grid-cols-[1fr_1.12fr_1fr]"
+    :class="chevauche ? '-mt-16' : 'mt-5'"
     :aria-label="t('contest.podium')"
   >
     <div
@@ -58,7 +63,7 @@ const styles: Record<number, { medal: string; card: string; name: string; pts: s
         {{ n(m.ligne.total) }}<small class="ml-1 text-sm font-semibold tracking-normal text-ink-muted">{{ t('contest.points') }}</small>
       </div>
       <div class="text-[13px] text-ink-muted">
-        {{ t('contest.testsDone', m.ligne.nbTests) }}
+        {{ m.ligne.sousTitre ?? t('contest.testsDone', m.ligne.nbTests ?? 0) }}
       </div>
     </div>
   </section>

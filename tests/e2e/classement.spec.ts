@@ -38,3 +38,11 @@ test('le classement est absent du sitemap', async ({ request }) => {
   expect(sitemap).not.toContain('/classement')
   expect(sitemap).not.toContain('/leaderboard')
 })
+
+test('le classement de la phase 1 est affiché avec l’ancienne formule', async ({ page }) => {
+  await page.goto('/classement')
+  const phase1 = page.getByTestId('contest-phase1')
+  await expect(phase1).toBeVisible()
+  await expect(phase1.getByTestId('phase1-row').first()).toContainText('Koro D.')
+  await expect(phase1).toContainText('minutes × 2')
+})

@@ -1575,6 +1575,17 @@
       "minutes": "mins",
       "cta": "See the leaderboard",
       "later": "Maybe later"
+    },
+    "phase1": {
+      "eyebrow": "Phase 1 · original formula",
+      "title": "Leaderboard from {debut} to {fin}",
+      "lead": "Before the points table, the leaderboard tracked activity in the app: (minutes × 2 + screens × 3 + bugs × 50) / 10.",
+      "provisional": "Provisional · updated {date}",
+      "final": "Final leaderboard",
+      "anonymous": "Anonymous tester",
+      "minutes": "Minutes spent",
+      "screens": "Screens",
+      "bugs": "Bug reports"
     }
   }
 }

@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test'
 
-const PAGES = ['/', '/comment-ca-marche', '/tarifs']
+const PAGES = ['/', '/comment-ca-marche', '/tarifs', '/classement']
 
 for (const path of PAGES) {
   test(`la page ${path} ne défile pas horizontalement en 360 px`, async ({ page }) => {

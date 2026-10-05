@@ -1447,5 +1447,114 @@
       "À l'étape « Code de parrainage », saisissez le code ci-dessus. Vous pouvez aussi l'ajouter plus tard depuis Profil › Parrainage."
     ],
     "note": "Le code ne s'applique qu'une seule fois, sur un nouveau compte. La récompense revient à votre parrain : une réduction de moitié sur sa prochaine commission, valable 6 mois."
+  },
+  "contest": {
+    "seo": {
+      "title": "Classement du concours bêta-testeurs",
+      "description": "Le classement en direct du concours des bêta-testeurs de l'application yadony, et le barème des points."
+    },
+    "eyebrow": "Concours bêta-testeurs",
+    "title": "Le classement des testeurs yadony",
+    "lead": "Chaque test réalisé dans l'application rapporte des points, de 20 à 100 selon son importance. Les bugs, avis et suggestions comptent une fois traités par l'équipe.",
+    "status": {
+      "bientot": "Bientôt",
+      "en_cours": "En cours",
+      "termine": "Terminé"
+    },
+    "daysLeft": "aucun jour restant | encore 1 jour | encore {n} jours",
+    "seeRules": "Voir le barème des points",
+    "guide": "Guide complet du concours",
+    "guideUrl": "https://docs.google.com/document/d/1fdXCljjLYbdR_eKtx_E0aliMsoAmGiEx7Oh9Bw_8j8Y",
+    "newTab": "(s'ouvre dans un nouvel onglet)",
+    "podium": "Podium",
+    "points": "pts",
+    "testsDone": "aucun test validé | 1 test validé | {n} tests validés",
+    "board": {
+      "title": "Tous les testeurs",
+      "updated": "Mis à jour le {date}",
+      "hint": "Touchez une ligne pour voir le détail des points.",
+      "rank": "Rang",
+      "name": "Testeur",
+      "score": "Points",
+      "tests": "Tests",
+      "feedback": "Bugs · avis · idées",
+      "activity": "Écrans · temps",
+      "activityHint": "Écrans visités et temps passé, pour info"
+    },
+    "detail": {
+      "bug": "Bug résolu | Bug résolu | {n} bugs résolus",
+      "suggestion": "Suggestion retenue | Suggestion retenue | {n} suggestions retenues",
+      "avis_ecran": "Avis sur 1 écran | Avis sur 1 écran | Avis sur {n} écrans"
+    },
+    "empty": {
+      "bientot": "Le concours commence le {date}. Le classement s'affichera ici dès les premiers points.",
+      "en_cours": "Aucun point pour l'instant. Le classement s'affichera ici dès les premiers tests validés.",
+      "termine": "Le concours est terminé."
+    },
+    "rules": {
+      "eyebrow": "Le guide du concours",
+      "title": "Comment gagner des points",
+      "lead": "Chaque test rapporte ses points une fois. Tes actions sont comptées automatiquement. Les bugs, avis et suggestions comptent une fois traités par l'équipe.",
+      "beforeTitle": "Avant de commencer",
+      "before": [
+        {
+          "title": "Mets l'application à jour",
+          "text": "avec la dernière version testeur."
+        },
+        {
+          "title": "Accepte l'analyse d'usage",
+          "text": "sinon tes actions ne sont pas comptées."
+        },
+        {
+          "title": "Reste connecté",
+          "text": "tes actions sont rattachées à ton compte."
+        }
+      ],
+      "comment": "+ commentaire sur la procédure",
+      "paymentHint": "Un bug trouvé pendant le paiement, avec capture",
+      "perScreen": "{n} / écran",
+      "perIdea": "{n} / idée",
+      "perBug": "{n} / bug",
+      "avisEcran": "Avis sur un écran",
+      "avisEcranHint": "Par écran différent",
+      "suggestion": "Suggestion retenue",
+      "bugOther": "Bug hors paiement",
+      "unlimited": "Sans limite",
+      "footer": "Écrans visités et temps passé : affichés pour info, ils ne comptent pas.",
+      "readGuide": "Lire le guide complet"
+    },
+    "groups": {
+      "paiements": "Paiements",
+      "absences": "Absences et annulations",
+      "parcours": "Parcours du colis",
+      "outils": "Outils et échanges",
+      "retours": "Tes retours avec le bouton 🐞"
+    },
+    "tests": {
+      "outils": "Configurer tous tes outils",
+      "paiement_mm": "Paiement Mobile Money",
+      "paiement_carte": "Paiement par carte",
+      "paiement_especes": "Paiement en espèces",
+      "scenario_complet": "Scénario complet Expéditeur → Voyageur → Destinataire",
+      "trois_continents": "Trajet sur 3 continents",
+      "parrainage": "Parrainer un testeur actif",
+      "avis_parcours": "Avis sur le parcours du colis",
+      "grille_kilos": "Trajets avec grille de prix et de kilos",
+      "absence_expediteur": "Absence de l'expéditeur à la remise",
+      "absence_destinataire_procedure": "Absence du destinataire à la livraison",
+      "absence_voyageur": "Absence du voyageur à la remise",
+      "annulation_voyageur": "Annulation par le voyageur après paiement",
+      "annulation_expediteur": "Annulation par l'expéditeur après règlement",
+      "code_retour": "Code de retour après annulation",
+      "retard_voyageur": "Retard du voyageur",
+      "destinataire_absent": "Destinataire qui ne vient pas",
+      "litige": "Litige",
+      "appels": "Appels entre utilisateurs",
+      "message_destinataire": "Message au destinataire",
+      "message_app": "Message dans l'application",
+      "nego_trajet": "Négociation d'un trajet",
+      "nego_colis": "Négociation d'un colis",
+      "filtres": "Filtres de recherche"
+    }
   }
 }

@@ -57,7 +57,17 @@ const identifierPaths = Array.from({ length: 8 }, (_, index) => `home.faq.items[
  * français et à l'anglais, et le nom de la marque affiché dans la colonne
  * « Canal » du tableau comparatif.
  */
-const sameWordPaths = ['nav.contact', 'nav.menu', 'home.problem.rows.yadony.channel']
+const sameWordPaths = [
+  'nav.contact',
+  'nav.menu',
+  'home.problem.rows.yadony.channel',
+  // Page du classement : « pts », « Points », « Tests » et « bug » sont
+  // communs aux deux langues.
+  'contest.points',
+  'contest.board.score',
+  'contest.board.tests',
+  'contest.rules.perBug',
+]
 
 /**
  * Noms propres invariants : les corridors sont des paires de villes

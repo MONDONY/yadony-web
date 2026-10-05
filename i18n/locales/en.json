@@ -1447,5 +1447,114 @@
       "At the \"Referral code\" step, enter the code above. You can also add it later from Profile › Referral."
     ],
     "note": "The code can only be used once, on a new account. The reward goes to the person who invited you: half off their next service fee, valid for 6 months."
+  },
+  "contest": {
+    "seo": {
+      "title": "Beta tester contest leaderboard",
+      "description": "Live leaderboard of the yadony app beta tester contest, with the points table."
+    },
+    "eyebrow": "Beta tester contest",
+    "title": "The yadony tester leaderboard",
+    "lead": "Every test you complete in the app earns points, from 20 to 100 depending on how critical it is. Bugs, reviews and ideas count once the team has handled them.",
+    "status": {
+      "bientot": "Coming soon",
+      "en_cours": "Live",
+      "termine": "Finished"
+    },
+    "daysLeft": "no days left | 1 day left | {n} days left",
+    "seeRules": "See the points table",
+    "guide": "Full contest guide",
+    "guideUrl": "https://docs.google.com/document/d/1fdXCljjLYbdR_eKtx_E0aliMsoAmGiEx7Oh9Bw_8j8Y?hl=en",
+    "newTab": "(opens in a new tab)",
+    "podium": "Top three",
+    "points": "pts",
+    "testsDone": "no tests completed | 1 test completed | {n} tests completed",
+    "board": {
+      "title": "All testers",
+      "updated": "Updated {date}",
+      "hint": "Tap a row to see how the points add up.",
+      "rank": "Rank",
+      "name": "Tester",
+      "score": "Points",
+      "tests": "Tests",
+      "feedback": "Bugs · reviews · ideas",
+      "activity": "Screens · time",
+      "activityHint": "Screens visited and time spent, for information"
+    },
+    "detail": {
+      "bug": "Resolved bug | Resolved bug | {n} resolved bugs",
+      "suggestion": "Accepted idea | Accepted idea | {n} accepted ideas",
+      "avis_ecran": "Review on 1 screen | Review on 1 screen | Reviews on {n} screens"
+    },
+    "empty": {
+      "bientot": "The contest starts on {date}. The leaderboard will appear here as soon as the first points come in.",
+      "en_cours": "No points yet. The leaderboard will appear here once the first tests are completed.",
+      "termine": "The contest is over."
+    },
+    "rules": {
+      "eyebrow": "Contest guide",
+      "title": "How to earn points",
+      "lead": "Each test earns its points once. Your actions are counted automatically. Bugs, reviews and ideas count once the team has handled them.",
+      "beforeTitle": "Before you start",
+      "before": [
+        {
+          "title": "Update the app",
+          "text": "to the latest tester build."
+        },
+        {
+          "title": "Accept usage analytics",
+          "text": "otherwise your actions are not counted."
+        },
+        {
+          "title": "Stay signed in",
+          "text": "your actions are linked to your account."
+        }
+      ],
+      "comment": "+ a comment on what happened next",
+      "paymentHint": "A bug found during the payment, with a screenshot",
+      "perScreen": "{n} / screen",
+      "perIdea": "{n} / idea",
+      "perBug": "{n} / bug",
+      "avisEcran": "Review of a screen",
+      "avisEcranHint": "For each different screen",
+      "suggestion": "Accepted idea",
+      "bugOther": "Bug outside payments",
+      "unlimited": "No limit",
+      "footer": "Screens visited and time spent are shown for information only and earn no points.",
+      "readGuide": "Read the full guide"
+    },
+    "groups": {
+      "paiements": "Payments",
+      "absences": "No-shows and cancellations",
+      "parcours": "Parcel journey",
+      "outils": "Tools and messaging",
+      "retours": "Your feedback with the 🐞 button"
+    },
+    "tests": {
+      "outils": "Set up all your tools",
+      "paiement_mm": "Mobile Money payment",
+      "paiement_carte": "Card payment",
+      "paiement_especes": "Cash payment",
+      "scenario_complet": "Full journey Sender → Traveller → Recipient",
+      "trois_continents": "Trips across 3 continents",
+      "parrainage": "Refer an active tester",
+      "avis_parcours": "Review of the parcel journey",
+      "grille_kilos": "Trips with a price list and per-kilo rate",
+      "absence_expediteur": "Sender missing at handover",
+      "absence_destinataire_procedure": "Recipient missing at delivery",
+      "absence_voyageur": "Traveller missing at handover",
+      "annulation_voyageur": "Traveller cancels after payment",
+      "annulation_expediteur": "Sender cancels after paying",
+      "code_retour": "Return code after a cancellation",
+      "retard_voyageur": "Traveller delay",
+      "destinataire_absent": "Recipient never collects the parcel",
+      "litige": "Dispute",
+      "appels": "Calls between users",
+      "message_destinataire": "Message to the recipient",
+      "message_app": "In-app message",
+      "nego_trajet": "Trip negotiation",
+      "nego_colis": "Parcel negotiation",
+      "filtres": "Search filters"
+    }
   }
 }

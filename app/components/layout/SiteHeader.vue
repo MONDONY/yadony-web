@@ -21,6 +21,7 @@ const links = computed(() => [
   { to: '/tarifs', label: t('nav.pricing') },
   { to: '/securite', label: t('nav.trust') },
   { to: '/a-propos', label: t('nav.about') },
+  { to: '/classement', label: t('nav.contest') },
 ])
 </script>
 
@@ -40,7 +41,9 @@ const links = computed(() => [
           >
         </NuxtLink>
 
-        <nav class="hidden items-center gap-7 md:flex" :aria-label="t('nav.mainLabel')">
+        <!-- Six liens ne tiennent sur une ligne qu'à partir de 1280 px (xl) ;
+             en dessous, ils passent dans le menu déroulant. -->
+        <nav class="hidden items-center gap-7 xl:flex" :aria-label="t('nav.mainLabel')">
           <NuxtLink
             v-for="link in links"
             :key="link.to"
@@ -56,7 +59,7 @@ const links = computed(() => [
           </UiButton>
           <button
             type="button"
-            class="md:hidden rounded-el border border-line px-3 py-1.5 text-sm"
+            class="xl:hidden rounded-el border border-line px-3 py-1.5 text-sm"
             :aria-expanded="open"
             aria-controls="menu-mobile"
             @click="open = !open"
@@ -64,7 +67,7 @@ const links = computed(() => [
         </div>
       </div>
 
-      <nav v-show="open" id="menu-mobile" class="border-t border-line py-4 md:hidden" :aria-label="t('nav.mobileLabel')">
+      <nav v-show="open" id="menu-mobile" class="border-t border-line py-4 xl:hidden" :aria-label="t('nav.mobileLabel')">
         <NuxtLink
           v-for="link in links"
           :key="link.to"

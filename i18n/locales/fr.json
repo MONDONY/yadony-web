@@ -1587,7 +1587,8 @@
       "minutes": "Minutes",
       "screens": "Écrans",
       "bugs": "Bugs",
-      "teaser": "Les résultats de la phase 1 seront dévoilés le {date}."
+      "teaser": "Les résultats de la phase 1 seront dévoilés le {date}.",
+      "podiumSub": "{minutes} min · {bugs} bugs"
     },
     "firsts": {
       "badge": "1er ×{n}",

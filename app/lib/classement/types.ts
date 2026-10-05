@@ -30,3 +30,14 @@ export interface ClassementData {
   /** Premier testeur à avoir réussi chaque test : `{ cleDeTest: idDuTesteur }` (badge « 1er »). */
   premiers?: Record<string, string>
 }
+
+/** Ce dont une marche du podium a besoin : le nouveau classement et la phase 1 le fournissent. */
+export interface MarchePodium {
+  id: string
+  nom: string
+  total: number
+  rang: number
+  nbTests?: number
+  /** Remplace « n tests validés » sous le score (ex. minutes et bugs en phase 1). */
+  sousTitre?: string
+}

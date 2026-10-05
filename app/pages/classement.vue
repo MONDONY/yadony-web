@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { computed, onMounted, ref } from 'vue'
+import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRoute } from 'vue-router'
 import { buildSeoMeta } from '@/lib/seo'
-import { classer, statutPeriode } from '@/lib/classement/score'
+import { classer, instantInitial, localeDates, statutPeriode } from '@/lib/classement/score'
 import type { ClassementData } from '@/lib/classement/types'
 import donnees from '@/data/classement.json'
 
@@ -26,18 +26,23 @@ useHead({ meta: [{ name: 'robots', content: 'noindex, nofollow' }] })
 const data = donnees as ClassementData
 const lignes = computed(() => classer(data.testeurs))
 
-// Le HTML est figé au build : on part de l'heure de la mise à jour, puis on
-// passe à l'heure réelle une fois monté (une page générée à 19 h doit afficher
-// « En cours » à 21 h).
-const maintenant = ref(new Date(data.miseAJour ?? data.debut))
+// Le HTML est figé au build : on part de l'heure de la mise à jour (ou juste
+// avant le début), puis on suit l'heure réelle une fois monté, minute par
+// minute, pour qu'un onglet ouvert avant 20 h 30 passe à « En cours ».
+const maintenant = ref(instantInitial(data))
+let minuteur: ReturnType<typeof setInterval> | undefined
 onMounted(() => {
   maintenant.value = new Date()
+  minuteur = setInterval(() => {
+    maintenant.value = new Date()
+  }, 60_000)
 })
+onBeforeUnmount(() => clearInterval(minuteur))
 
 const statut = computed(() => statutPeriode(data.debut, data.fin, maintenant.value))
 
 const dateDebut = computed(() =>
-  new Intl.DateTimeFormat(locale.value, {
+  new Intl.DateTimeFormat(localeDates(locale.value), {
     weekday: 'long',
     day: 'numeric',
     month: 'long',

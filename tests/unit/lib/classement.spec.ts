@@ -2,7 +2,9 @@ import { describe, expect, it } from 'vitest'
 import { BAREME, POINTS, TEST_GROUPS, TEST_KEYS, TOTAL_TESTS } from '@/lib/classement/bareme'
 import {
   classer,
+  instantInitial,
   joursRestants,
+  localeDates,
   progression,
   scoreTesteur,
   statutPeriode,
@@ -104,7 +106,13 @@ describe('scoreTesteur', () => {
   })
 
   it('donne zéro à un testeur sans activité', () => {
-    expect(scoreTesteur(testeur({ id: 'a' }))).toEqual({ total: 0, detail: [], testsValides: [] })
+    expect(scoreTesteur(testeur({ id: 'a' }))).toEqual({
+      total: 0,
+      detail: [],
+      testsValides: [],
+      compteurs: { bugs: 0, suggestions: 0, ecransAvecAvis: 0 },
+      nbTests: 0,
+    })
   })
 })
 
@@ -156,5 +164,56 @@ describe('période', () => {
     expect(joursRestants(fin, new Date('2026-10-12T17:30:00Z'))).toBe(1)
     expect(joursRestants(fin, new Date('2026-10-08T18:30:00Z'))).toBe(4)
     expect(joursRestants(fin, new Date('2026-10-13T00:00:00Z'))).toBe(0)
+  })
+})
+
+describe('compteurs affichés', () => {
+  it('compte les tests affichés « n / 26 » à partir des valeurs normalisées', () => {
+    const s = scoreTesteur(
+      testeur({ id: 'a', tests: ['litige', 'filtres'], ecransAvecAvis: 2, suggestions: 1 }),
+    )
+    expect(s.nbTests).toBe(4)
+    expect(s.compteurs).toEqual({ bugs: 0, suggestions: 1, ecransAvecAvis: 2 })
+  })
+
+  it('ne compte pas un demi-écran ni une valeur absente', () => {
+    const brut = { id: 'a', ecransAvecAvis: 0.5, bugs: undefined } as unknown as Partial<Testeur> & { id: string }
+    const s = scoreTesteur(testeur(brut))
+    expect(s.nbTests).toBe(0)
+    expect(s.compteurs).toEqual({ bugs: 0, suggestions: 0, ecransAvecAvis: 0 })
+  })
+})
+
+describe('classer : identifiants en double', () => {
+  it('garde la première occurrence d’un même testeur', () => {
+    const lignes = classer([
+      testeur({ id: 'a', nom: 'Awa D.', tests: ['litige'] }),
+      testeur({ id: 'a', nom: 'Awa D.', tests: ['filtres'] }),
+    ])
+    expect(lignes).toHaveLength(1)
+    expect(lignes[0]!.total).toBe(60)
+  })
+})
+
+describe('instantInitial', () => {
+  const data = { debut: '2026-10-05T18:30:00Z', fin: '2026-10-12T18:30:00Z', testeurs: [] }
+
+  it('se place juste avant le début quand le classement n’a jamais été mis à jour', () => {
+    const t = instantInitial({ ...data, miseAJour: null })
+    expect(statutPeriode(data.debut, data.fin, t)).toBe('bientot')
+  })
+
+  it('reprend l’heure de la dernière mise à jour', () => {
+    expect(instantInitial({ ...data, miseAJour: '2026-10-07T09:00:00Z' }).toISOString()).toBe(
+      '2026-10-07T09:00:00.000Z',
+    )
+  })
+})
+
+describe('localeDates', () => {
+  it('formate les dates anglaises à la britannique et les françaises en français', () => {
+    expect(localeDates('en')).toBe('en-GB')
+    expect(localeDates('fr')).toBe('fr-FR')
+    expect(localeDates('de')).toBe('fr-FR')
   })
 })

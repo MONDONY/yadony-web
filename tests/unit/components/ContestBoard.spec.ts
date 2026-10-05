@@ -39,6 +39,28 @@ describe('ContestPodium', () => {
     expect(w.find('[data-rank="1"]').text()).toContain('220')
   })
 
+  it('affiche le rang partagé sur les médailles des ex æquo', () => {
+    const egalite = classer([
+      testeur('x', 'Awa D.', ['litige']),
+      testeur('y', 'Koro D.', ['nego_colis']),
+      testeur('z', 'Moussa T.', ['filtres']),
+    ])
+    const w = mount(ContestPodium, { props: { lignes: egalite }, global: { plugins: [i18n] } })
+    const medailles = w.findAll('[data-testid="podium-medal"]').map(m => m.text())
+    expect(medailles).toEqual(['1', '1', '3'])
+  })
+
+  it('centre le 1er même quand il est seul', () => {
+    const w = mount(ContestPodium, { props: { lignes: lignes.slice(0, 1) }, global: { plugins: [i18n] } })
+    expect(w.find('[data-testid="podium-step"]').classes()).toContain('sm:col-start-2')
+  })
+
+  it('compte les tests comme le tableau', () => {
+    const avecRetours = classer([testeur('a', 'Awa D.', ['litige'], { ecransAvecAvis: 2, suggestions: 1 })])
+    const w = mount(ContestPodium, { props: { lignes: avecRetours }, global: { plugins: [i18n] } })
+    expect(w.text()).toContain('3 tests validés')
+  })
+
   it("n'affiche que les marches existantes", () => {
     const w = mount(ContestPodium, { props: { lignes: lignes.slice(0, 2) }, global: { plugins: [i18n] } })
     expect(w.findAll('[data-testid="podium-step"]')).toHaveLength(2)

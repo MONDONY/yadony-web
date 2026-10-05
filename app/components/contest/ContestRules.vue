@@ -61,7 +61,7 @@ const retours = computed(() => [
 
     <div class="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2.5 text-[13.5px] text-ink-muted">
       <span>{{ t('contest.rules.footer') }}</span>
-      <a :href="t('contest.guideUrl')" target="_blank" rel="noopener" class="font-bold text-orange-deep underline-offset-2 hover:underline">{{ t('contest.rules.readGuide') }} ↗<span class="sr-only"> {{ t('contest.newTab') }}</span></a>
+      <a :href="t('contest.guideUrl')" target="_blank" rel="noopener" class="font-bold text-orange-deep underline-offset-2 hover:underline">{{ t('contest.rules.readGuide') }} <span aria-hidden="true">↗</span><span class="sr-only"> {{ t('contest.newTab') }}</span></a>
     </div>
   </section>
 </template>

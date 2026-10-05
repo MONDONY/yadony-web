@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { joursRestants, progression, statutPeriode } from '@/lib/classement/score'
+import { joursRestants, localeDates, progression, statutPeriode } from '@/lib/classement/score'
 
 const props = defineProps<{ debut: string; fin: string; maintenant: Date }>()
 const { t, locale } = useI18n()
@@ -11,7 +11,7 @@ const avance = computed(() => Math.round(progression(props.debut, props.fin, pro
 const jours = computed(() => joursRestants(props.fin, props.maintenant))
 
 function date(iso: string): string {
-  return new Intl.DateTimeFormat(locale.value, {
+  return new Intl.DateTimeFormat(localeDates(locale.value), {
     day: 'numeric',
     month: 'short',
     hour: '2-digit',
@@ -64,7 +64,7 @@ const pastille: Record<string, string> = {
           target="_blank"
           rel="noopener"
           class="inline-flex items-center rounded-el px-5 py-3 font-bold text-white shadow-[inset_0_0_0_1.5px_rgb(255_255_255/0.4)] transition hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-orange active:scale-[0.97]"
-        >{{ t('contest.guide') }} ↗<span class="sr-only"> {{ t('contest.newTab') }}</span></a>
+        >{{ t('contest.guide') }} <span aria-hidden="true">↗</span><span class="sr-only"> {{ t('contest.newTab') }}</span></a>
       </div>
     </UiContainer>
   </section>

@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { TOTAL_TESTS } from '@/lib/classement/bareme'
-import type { LigneClassement, LigneDetail } from '@/lib/classement/score'
+import { localeDates, type LigneClassement, type LigneDetail } from '@/lib/classement/score'
 
 defineProps<{ lignes: LigneClassement[]; miseAJour: string | null }>()
 const { t, n, locale } = useI18n()
@@ -19,12 +19,12 @@ function libelle(ligne: LigneDetail): string {
 }
 
 function duree(minutes: number): string {
-  const total = Math.max(0, Math.round(minutes))
+  const total = Number.isFinite(minutes) ? Math.max(0, Math.round(minutes)) : 0
   return `${Math.floor(total / 60)} h ${String(total % 60).padStart(2, '0')}`
 }
 
 function dateMiseAJour(iso: string): string {
-  return new Intl.DateTimeFormat(locale.value, {
+  return new Intl.DateTimeFormat(localeDates(locale.value), {
     day: 'numeric',
     month: 'short',
     hour: '2-digit',
@@ -33,10 +33,6 @@ function dateMiseAJour(iso: string): string {
   }).format(new Date(iso))
 }
 
-// Nombre de « tests » au sens du compteur n / 26 : tests à action + avis écran + suggestion.
-function testsAffiches(l: LigneClassement): number {
-  return l.testsValides.length + (l.ecransAvecAvis > 0 ? 1 : 0) + (l.suggestions > 0 ? 1 : 0)
-}
 
 </script>
 
@@ -72,7 +68,7 @@ function testsAffiches(l: LigneClassement): number {
                   type="button"
                   class="flex w-full items-center gap-2 rounded-el px-2 py-1.5 text-left font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-orange"
                   :aria-expanded="ouverte === l.id ? 'true' : 'false'"
-                  :aria-controls="`detail-${l.id}`"
+                  :aria-controls="ouverte === l.id ? `detail-${l.id}` : undefined"
                   @click="basculer(l.id)"
                 >
                   <svg class="h-4 w-4 flex-none text-ink-muted transition-transform duration-200" :class="ouverte === l.id ? 'rotate-90' : ''" viewBox="0 0 16 16" fill="none" aria-hidden="true">
@@ -83,10 +79,10 @@ function testsAffiches(l: LigneClassement): number {
               </td>
               <td class="border-b border-line px-3.5 py-3 text-right font-display text-lg font-extrabold">{{ n(l.total) }}</td>
               <td class="border-b border-line px-3.5 py-3 text-right">
-                <span class="whitespace-nowrap rounded-full bg-sand-deep px-2.5 py-0.5 text-[12.5px] font-semibold">{{ testsAffiches(l) }} / {{ TOTAL_TESTS }}</span>
+                <span class="whitespace-nowrap rounded-full bg-sand-deep px-2.5 py-0.5 text-[12.5px] font-semibold">{{ l.nbTests }} / {{ TOTAL_TESTS }}</span>
               </td>
-              <td class="hidden border-b border-line px-3.5 py-3 text-right sm:table-cell">{{ l.bugs }} · {{ l.ecransAvecAvis }} · {{ l.suggestions }}</td>
-              <td class="hidden whitespace-nowrap border-b border-line px-3.5 py-3 text-right text-[13px] text-ink-muted sm:table-cell">{{ n(l.indicatif.ecrans) }} · {{ duree(l.indicatif.minutes) }}</td>
+              <td class="hidden border-b border-line px-3.5 py-3 text-right sm:table-cell">{{ l.compteurs.bugs }} · {{ l.compteurs.ecransAvecAvis }} · {{ l.compteurs.suggestions }}</td>
+              <td class="hidden whitespace-nowrap border-b border-line px-3.5 py-3 text-right text-[13px] text-ink-muted sm:table-cell">{{ n(l.indicatif?.ecrans || 0) }} · {{ duree(l.indicatif?.minutes ?? 0) }}</td>
             </tr>
             <tr v-if="ouverte === l.id" :id="`detail-${l.id}`" data-testid="board-detail">
               <td colspan="6" class="border-b border-line bg-sand p-0">

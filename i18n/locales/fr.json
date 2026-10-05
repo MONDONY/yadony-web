@@ -1575,6 +1575,17 @@
       "minutes": "min",
       "cta": "Voir le classement",
       "later": "Plus tard"
+    },
+    "phase1": {
+      "eyebrow": "Phase 1 · ancienne formule",
+      "title": "Classement du {debut} au {fin}",
+      "lead": "Avant le barème du guide, le classement suivait l'activité dans l'application : (minutes × 2 + écrans × 3 + bugs × 50) / 10.",
+      "provisional": "Provisoire · mis à jour le {date}",
+      "final": "Classement final",
+      "anonymous": "Testeur anonyme",
+      "minutes": "Minutes",
+      "screens": "Écrans",
+      "bugs": "Bugs"
     }
   }
 }

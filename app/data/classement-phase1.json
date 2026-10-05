@@ -1,0 +1,358 @@
+{
+  "miseAJour": "2026-10-05T14:02:00Z",
+  "fige": false,
+  "debut": "2026-09-26T22:00:00Z",
+  "fin": "2026-10-05T18:30:00Z",
+  "testeurs": [
+    {
+      "nom": "Koro D.",
+      "sessions": 62,
+      "minutes": 862.6,
+      "ecrans": 1245,
+      "bugs": 6
+    },
+    {
+      "nom": "Hadja Maferima T.",
+      "sessions": 29,
+      "minutes": 284.4,
+      "ecrans": 1195,
+      "bugs": 8
+    },
+    {
+      "nom": "Salimata D.",
+      "sessions": 23,
+      "minutes": 412.1,
+      "ecrans": 762,
+      "bugs": 11
+    },
+    {
+      "nom": "Mahoua O.",
+      "sessions": 35,
+      "minutes": 497.8,
+      "ecrans": 757,
+      "bugs": 2
+    },
+    {
+      "nom": "Ibrahim D.",
+      "sessions": 30,
+      "minutes": 453.8,
+      "ecrans": 358,
+      "bugs": 5
+    },
+    {
+      "nom": "Ibrahim O.",
+      "sessions": 24,
+      "minutes": 358.7,
+      "ecrans": 364,
+      "bugs": 5
+    },
+    {
+      "nom": "Tidiane H.",
+      "sessions": 26,
+      "minutes": 203.9,
+      "ecrans": 470,
+      "bugs": 4
+    },
+    {
+      "nom": "Ibou C.",
+      "sessions": 27,
+      "minutes": 170.4,
+      "ecrans": 316,
+      "bugs": 5
+    },
+    {
+      "nom": null,
+      "sessions": 21,
+      "minutes": 132.0,
+      "ecrans": 363,
+      "bugs": 2
+    },
+    {
+      "nom": "Ini N.",
+      "sessions": 9,
+      "minutes": 178.8,
+      "ecrans": 301,
+      "bugs": 2
+    },
+    {
+      "nom": "N'da O.",
+      "sessions": 13,
+      "minutes": 218.9,
+      "ecrans": 281,
+      "bugs": 1
+    },
+    {
+      "nom": "Youssouf S.",
+      "sessions": 14,
+      "minutes": 105.2,
+      "ecrans": 259,
+      "bugs": 2
+    },
+    {
+      "nom": "Fatoumata S.",
+      "sessions": 5,
+      "minutes": 117.1,
+      "ecrans": 124,
+      "bugs": 5
+    },
+    {
+      "nom": "Axel D.",
+      "sessions": 7,
+      "minutes": 132.4,
+      "ecrans": 130,
+      "bugs": 0
+    },
+    {
+      "nom": "Marcellin D.",
+      "sessions": 7,
+      "minutes": 57.0,
+      "ecrans": 147,
+      "bugs": 0
+    },
+    {
+      "nom": "Moustapha H.",
+      "sessions": 6,
+      "minutes": 100.8,
+      "ecrans": 99,
+      "bugs": 0
+    },
+    {
+      "nom": "Chaka D.",
+      "sessions": 10,
+      "minutes": 45.9,
+      "ecrans": 99,
+      "bugs": 0
+    },
+    {
+      "nom": "Soualio K.",
+      "sessions": 7,
+      "minutes": 60.8,
+      "ecrans": 87,
+      "bugs": 0
+    },
+    {
+      "nom": "Aicha B.",
+      "sessions": 2,
+      "minutes": 24.5,
+      "ecrans": 109,
+      "bugs": 0
+    },
+    {
+      "nom": "Oumar T.",
+      "sessions": 6,
+      "minutes": 36.5,
+      "ecrans": 90,
+      "bugs": 0
+    },
+    {
+      "nom": null,
+      "sessions": 6,
+      "minutes": 48.6,
+      "ecrans": 79,
+      "bugs": 0
+    },
+    {
+      "nom": "Aboubakar B.",
+      "sessions": 3,
+      "minutes": 22.1,
+      "ecrans": 59,
+      "bugs": 2
+    },
+    {
+      "nom": "Nakaridia F.",
+      "sessions": 10,
+      "minutes": 14.2,
+      "ecrans": 67,
+      "bugs": 0
+    },
+    {
+      "nom": "Fredy G.",
+      "sessions": 8,
+      "minutes": 27.3,
+      "ecrans": 49,
+      "bugs": 0
+    },
+    {
+      "nom": "Aïcha K.",
+      "sessions": 6,
+      "minutes": 61.8,
+      "ecrans": 23,
+      "bugs": 0
+    },
+    {
+      "nom": "Traore M.",
+      "sessions": 11,
+      "minutes": 8.5,
+      "ecrans": 57,
+      "bugs": 0
+    },
+    {
+      "nom": "Seydou O.",
+      "sessions": 2,
+      "minutes": 24.4,
+      "ecrans": 30,
+      "bugs": 0
+    },
+    {
+      "nom": "Abdoulaye O.",
+      "sessions": 1,
+      "minutes": 25.9,
+      "ecrans": 29,
+      "bugs": 0
+    },
+    {
+      "nom": "Baye Magatte S.",
+      "sessions": 2,
+      "minutes": 8.9,
+      "ecrans": 23,
+      "bugs": 1
+    },
+    {
+      "nom": "Ibrahim S.",
+      "sessions": 3,
+      "minutes": 17.8,
+      "ecrans": 30,
+      "bugs": 0
+    },
+    {
+      "nom": null,
+      "sessions": 3,
+      "minutes": 2.5,
+      "ecrans": 6,
+      "bugs": 2
+    },
+    {
+      "nom": "Kedja A.",
+      "sessions": 1,
+      "minutes": 19.2,
+      "ecrans": 13,
+      "bugs": 0
+    },
+    {
+      "nom": "Kayodé D.",
+      "sessions": 2,
+      "minutes": 7.1,
+      "ecrans": 17,
+      "bugs": 0
+    },
+    {
+      "nom": "Ibrahim O.",
+      "sessions": 1,
+      "minutes": 13.1,
+      "ecrans": 13,
+      "bugs": 0
+    },
+    {
+      "nom": null,
+      "sessions": 3,
+      "minutes": 14.2,
+      "ecrans": 12,
+      "bugs": 0
+    },
+    {
+      "nom": "Yaya B.",
+      "sessions": 2,
+      "minutes": 14.3,
+      "ecrans": 11,
+      "bugs": 0
+    },
+    {
+      "nom": "Bema S.",
+      "sessions": 1,
+      "minutes": 11.8,
+      "ecrans": 12,
+      "bugs": 0
+    },
+    {
+      "nom": "Cheick Kassoum D.",
+      "sessions": 1,
+      "minutes": 8.6,
+      "ecrans": 9,
+      "bugs": 0
+    },
+    {
+      "nom": "Nouho K.",
+      "sessions": 3,
+      "minutes": 2.6,
+      "ecrans": 13,
+      "bugs": 0
+    },
+    {
+      "nom": null,
+      "sessions": 4,
+      "minutes": 15.7,
+      "ecrans": 4,
+      "bugs": 0
+    },
+    {
+      "nom": "Arnaud M.",
+      "sessions": 3,
+      "minutes": 6.8,
+      "ecrans": 9,
+      "bugs": 0
+    },
+    {
+      "nom": "Lauric O.",
+      "sessions": 3,
+      "minutes": 2.1,
+      "ecrans": 12,
+      "bugs": 0
+    },
+    {
+      "nom": "Assim A.",
+      "sessions": 1,
+      "minutes": 4.2,
+      "ecrans": 10,
+      "bugs": 0
+    },
+    {
+      "nom": null,
+      "sessions": 1,
+      "minutes": 6.6,
+      "ecrans": 8,
+      "bugs": 0
+    },
+    {
+      "nom": null,
+      "sessions": 1,
+      "minutes": 14.2,
+      "ecrans": 2,
+      "bugs": 0
+    },
+    {
+      "nom": "Isaac E.",
+      "sessions": 1,
+      "minutes": 2.9,
+      "ecrans": 7,
+      "bugs": 0
+    },
+    {
+      "nom": "Vianney S.",
+      "sessions": 2,
+      "minutes": 0.8,
+      "ecrans": 7,
+      "bugs": 0
+    },
+    {
+      "nom": "Brice K.",
+      "sessions": 3,
+      "minutes": 1.1,
+      "ecrans": 4,
+      "bugs": 0
+    },
+    {
+      "nom": null,
+      "sessions": 1,
+      "minutes": 0.4,
+      "ecrans": 3,
+      "bugs": 0
+    },
+    {
+      "nom": "Aly K.",
+      "sessions": 1,
+      "minutes": 0.5,
+      "ecrans": 2,
+      "bugs": 0
+    }
+  ]
+}

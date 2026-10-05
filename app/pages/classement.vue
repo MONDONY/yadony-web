@@ -6,6 +6,7 @@ import { buildSeoMeta } from '@/lib/seo'
 import { classer, instantInitial, localeDates, statutPeriode } from '@/lib/classement/score'
 import type { ClassementData } from '@/lib/classement/types'
 import donnees from '@/data/classement.json'
+import donneesPhase1 from '@/data/classement-phase1.json'
 
 defineI18nRoute({ paths: { fr: '/classement', en: '/leaderboard' } })
 
@@ -69,6 +70,8 @@ const dateDebut = computed(() =>
       >
         {{ t(`contest.empty.${statut}`, { date: dateDebut }) }}
       </p>
+
+      <ContestPhase1 :donnees="donneesPhase1" />
 
       <div class="mt-10">
         <ContestRules />

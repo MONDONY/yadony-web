@@ -34,7 +34,8 @@ export default defineNuxtConfig({
   site: { url: 'https://yadony.com', name: 'yadony' },
   sitemap: {
     autoLastmod: false,
-    exclude: ['/404'],
+    // /classement : page temporaire du concours, en noindex (prénoms affichés).
+    exclude: ['/404', '/classement', '/en/leaderboard'],
     // Le module @nuxtjs/sitemap scinde automatiquement le sitemap en un
     // sitemap-index avec un fichier par langue dès qu'il détecte @nuxtjs/i18n
     // avec plusieurs locales. On force un seul fichier `sitemap.xml` listant
@@ -62,7 +63,8 @@ export default defineNuxtConfig({
       // /parrainage n'est lié depuis aucune page : cible du lien de
       // parrainage partagé par l'app (via /r/{code}, cf. public/_redirects),
       // elle doit être listée ici pour être générée.
-      routes: ['/', '/parrainage', '/en/referral'],
+      // /classement n'est lié depuis aucune page : partagé aux testeurs par lien.
+      routes: ['/', '/parrainage', '/en/referral', '/classement', '/en/leaderboard'],
       failOnError: true,
     },
   },

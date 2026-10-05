@@ -37,7 +37,7 @@ const dateDebut = computed(() =>
 
 function lireStockage(): string | null {
   try {
-    return window.localStorage.getItem(CONTEST_POPUP_KEY)
+    return window.sessionStorage.getItem(CONTEST_POPUP_KEY)
   } catch {
     return null
   }
@@ -45,9 +45,9 @@ function lireStockage(): string | null {
 
 function memoriserFermeture() {
   try {
-    window.localStorage.setItem(CONTEST_POPUP_KEY, '1')
+    window.sessionStorage.setItem(CONTEST_POPUP_KEY, '1')
   } catch {
-    // Sans stockage, la fenêtre reviendra à la prochaine visite : acceptable.
+    // Sans stockage, la fenêtre reviendra au prochain chargement : acceptable.
   }
 }
 

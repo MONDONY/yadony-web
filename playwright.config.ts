@@ -15,18 +15,6 @@ export default defineConfig({
   use: {
     baseURL: `http://localhost:${PORT}`,
     trace: 'on-first-retry',
-    // La fenêtre du concours s'ouvre à la première visite et piégerait le
-    // focus des autres parcours : on part d'un navigateur où elle est déjà
-    // fermée. tests/e2e/popup-concours.spec.ts repart d'un navigateur vierge.
-    storageState: {
-      cookies: [],
-      origins: [
-        {
-          origin: `http://localhost:${PORT}`,
-          localStorage: [{ name: 'yadony-concours-2026-10-ferme', value: '1' }],
-        },
-      ],
-    },
   },
   projects: [
     { name: 'desktop', use: { ...devices['Desktop Chrome'] } },

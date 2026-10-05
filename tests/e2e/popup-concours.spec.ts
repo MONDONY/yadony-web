@@ -1,9 +1,9 @@
-import { test, expect, type Page } from '@playwright/test'
+import { test, expect, type Page } from './fixtures'
 import AxeBuilder from '@axe-core/playwright'
 
-// Les autres suites partent d'un navigateur où la fenêtre est déjà fermée
-// (storageState de playwright.config.ts) ; ici, on repart d'un navigateur vierge.
-test.use({ storageState: { cookies: [], origins: [] } })
+// Les autres suites partent d'un onglet où la fenêtre est déjà fermée
+// (fixture `popupDejaFermee`) ; ici, on repart d'un onglet vierge.
+test.use({ popupDejaFermee: false })
 
 const PENDANT = new Date('2026-10-06T10:00:00Z')
 const AVANT = new Date('2026-10-05T12:00:00Z')
@@ -24,14 +24,22 @@ test('la fenêtre du concours s’ouvre à l’arrivée et mène au classement',
   await expect(fenetre(page)).toHaveCount(0)
 })
 
-test('la fenêtre se ferme avec la croix et ne revient plus', async ({ page }) => {
+test('fermée, la fenêtre ne revient pas pendant la visite mais revient à la suivante', async ({ page, context }) => {
   await page.clock.setFixedTime(PENDANT)
   await page.goto('/')
   await fenetre(page).getByRole('button', { name: 'Fermer' }).click()
   await expect(fenetre(page)).toBeHidden()
+
+  // Même visite (même onglet) : rechargement et navigation ne la rouvrent pas.
   await page.reload()
   await page.waitForTimeout(1500)
   await expect(fenetre(page)).toBeHidden()
+
+  // Nouvelle visite (nouvel onglet) : elle revient.
+  const nouvelOnglet = await context.newPage()
+  await nouvelOnglet.clock.setFixedTime(PENDANT)
+  await nouvelOnglet.goto('/')
+  await expect(fenetre(nouvelOnglet)).toBeVisible()
 })
 
 test('la fenêtre se ferme avec « Plus tard » et avec Échap', async ({ page }) => {
@@ -40,7 +48,7 @@ test('la fenêtre se ferme avec « Plus tard » et avec Échap', async ({ page }
   await fenetre(page).getByRole('button', { name: 'Plus tard' }).click()
   await expect(fenetre(page)).toBeHidden()
 
-  await page.evaluate(() => window.localStorage.clear())
+  await page.evaluate(() => window.sessionStorage.clear())
   await page.reload()
   await expect(fenetre(page)).toBeVisible()
   await page.keyboard.press('Escape')

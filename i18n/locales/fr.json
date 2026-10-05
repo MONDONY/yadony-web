@@ -1480,7 +1480,10 @@
       "tests": "Tests",
       "feedback": "Bugs · avis · idées",
       "activity": "Écrans · temps",
-      "activityHint": "Écrans visités et temps passé, pour info"
+      "activityHint": "Écrans visités et temps passé, pour info",
+      "meta": "{tests} / {total} tests",
+      "more": "Voir les {n} testeurs",
+      "less": "Réduire le classement"
     },
     "detail": {
       "bug": "Bug résolu | Bug résolu | {n} bugs résolus",
@@ -1588,7 +1591,8 @@
       "screens": "Écrans",
       "bugs": "Bugs",
       "teaser": "Les résultats de la phase 1 seront dévoilés le {date}.",
-      "podiumSub": "{minutes} min · {bugs} bugs"
+      "podiumSub": "{minutes} min · {bugs} bugs",
+      "meta": "{minutes} min · {ecrans} écrans · {bugs} bugs"
     },
     "firsts": {
       "badge": "1er ×{n}",

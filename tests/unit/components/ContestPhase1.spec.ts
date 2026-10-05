@@ -77,4 +77,30 @@ describe('ContestPhase1', () => {
   it('n’affiche pas de podium tant que les résultats sont masqués', () => {
     expect(monter(false, null).find('[data-testid="podium-step"]').exists()).toBe(false)
   })
+
+  it('résume minutes, écrans et bugs sous le nom, pour les petits écrans', () => {
+    const meta = monter().findAll('[data-testid="phase1-row"]')[0]!.find('[data-testid="phase1-meta"]')
+    expect(meta.text()).toContain('100 min · 100 écrans · 2 bugs')
+  })
+
+  it('n’affiche que les 10 premiers et déplie le reste sur demande', async () => {
+    const testeurs = Array.from({ length: 12 }, (_, i) => ({ nom: `T${i}`, sessions: 1, minutes: i, ecrans: i, bugs: 0 }))
+    const w = mount(ContestPhase1, {
+      props: { donnees: { ...donnees, testeurs }, maintenant: APRES },
+      global: { plugins: [i18n] },
+    })
+    expect(w.findAll('[data-testid="phase1-row"]')).toHaveLength(10)
+    const plus = w.find('[data-testid="phase1-more"]')
+    expect(plus.text()).toContain('Voir les 12 testeurs')
+
+    await plus.trigger('click')
+
+    expect(w.findAll('[data-testid="phase1-row"]')).toHaveLength(12)
+    expect(w.find('[data-testid="phase1-more"]').text()).toMatch(/réduire/i)
+  })
+
+  it('n’affiche pas le bouton quand tout tient dans le top 10', () => {
+    expect(monter().find('[data-testid="phase1-more"]').exists()).toBe(false)
+  })
 })
+

@@ -1556,6 +1556,25 @@
       "nego_trajet": "Négociation d'un trajet",
       "nego_colis": "Négociation d'un colis",
       "filtres": "Filtres de recherche"
+    },
+    "popup": {
+      "close": "Fermer",
+      "live": "Jeu concours en cours",
+      "soon": "Dès le {date}",
+      "title": "Deviens le meilleur bêta-testeur Yadony",
+      "text": "Teste l'application, signale ce qui coince et grimpe au classement. Chaque test validé te rapporte des points.",
+      "perks": [
+        "Bugs, avis et idées : jusqu'à 100 pts",
+        "Scénarios complets, paiements, négociations",
+        "Classement en direct sur yadony.com"
+      ],
+      "endsIn": "Fin dans",
+      "startsIn": "Début dans",
+      "days": "jours",
+      "hours": "h",
+      "minutes": "min",
+      "cta": "Voir le classement",
+      "later": "Plus tard"
     }
   }
 }

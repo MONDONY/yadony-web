@@ -63,10 +63,16 @@ test('les boutons de stores se comportent selon la disponibilité de l’app', a
 
 test('le header mène au classement du concours', async ({ page, isMobile }) => {
   await page.goto('/')
+  const lien = page.getByRole('link', { name: 'Concours bêta-testeurs' }).locator('visible=true').first()
   if (isMobile) {
-    await page.getByRole('button', { name: 'Menu' }).click()
+    // Un clic reçu avant l'hydratation de Vue est perdu : on reclique sur
+    // « Menu » jusqu'à ce que le lien du menu mobile apparaisse.
+    await expect(async () => {
+      await page.getByRole('button', { name: 'Menu' }).click()
+      await expect(lien).toBeVisible({ timeout: 1000 })
+    }).toPass({ timeout: 10000 })
   }
-  await page.getByRole('link', { name: 'Concours bêta-testeurs' }).first().click()
+  await lien.click()
   await expect(page).toHaveURL(/\/classement\/?$/)
 })
 
@@ -86,8 +92,12 @@ for (const width of [768, 1024, 1280]) {
       await expect(nav.getByRole('link', { name: 'Concours bêta-testeurs' })).toBeVisible()
     } else {
       await expect(nav).toBeHidden()
-      await header.getByRole('button', { name: 'Menu' }).click()
-      await expect(header.getByRole('link', { name: 'Concours bêta-testeurs' })).toBeVisible()
+      // Clic perdu s'il arrive avant l'hydratation : on reclique au besoin.
+      const lienMobile = header.getByRole('link', { name: 'Concours bêta-testeurs' }).locator('visible=true')
+      await expect(async () => {
+        await header.getByRole('button', { name: 'Menu' }).click()
+        await expect(lienMobile).toBeVisible({ timeout: 1000 })
+      }).toPass({ timeout: 10000 })
     }
   })
 }

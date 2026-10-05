@@ -24,6 +24,7 @@ useHead(() => ({
     <SiteFooter />
     <ClientOnly>
       <CookieBanner />
+      <ContestPopup />
     </ClientOnly>
   </div>
 </template>

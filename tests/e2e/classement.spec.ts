@@ -81,3 +81,12 @@ test('sur téléphone, le podium de la phase 1 garde ses trois marches sur une l
   const hauts = await marches.evaluateAll(els => els.map(e => Math.round(e.getBoundingClientRect().bottom)))
   expect(new Set(hauts).size).toBe(1)
 })
+
+test('les défis quotidiens sont annoncés avec leurs horaires', async ({ page }) => {
+  await page.clock.setFixedTime(new Date('2026-10-06T12:00:00Z'))
+  await page.goto('/classement')
+  const defis = page.getByTestId('defis')
+  await expect(defis).toContainText('Les défis quotidiens débarquent')
+  await expect(defis.getByTestId('defi-courant')).toContainText('19 h 30 pile')
+  await expect(defis.getByTestId('defi-compte')).toContainText('Lancement dans 5 h 30 min')
+})

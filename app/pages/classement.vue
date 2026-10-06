@@ -8,6 +8,8 @@ import type { ClassementData } from '@/lib/classement/types'
 import { normaliserPremiers } from '@/lib/classement/premiers'
 import donnees from '@/data/classement.json'
 import donneesPhase1 from '@/data/classement-phase1.json'
+import donneesDefis from '@/data/defis.json'
+import type { Defi } from '@/lib/classement/defis'
 
 defineI18nRoute({ paths: { fr: '/classement', en: '/leaderboard' } })
 
@@ -27,7 +29,9 @@ useHead({ meta: [{ name: 'robots', content: 'noindex, nofollow' }] })
 
 const data = donnees as ClassementData
 const premiers = computed(() => normaliserPremiers(data.premiers, data.testeurs))
-const lignes = computed(() => classer(data.testeurs, data.premiers))
+const defis = donneesDefis.defis as Defi[]
+const lignes = computed(() => classer(data.testeurs, data.premiers, defis))
+const noms = computed(() => Object.fromEntries(data.testeurs.map(t => [t.id, t.nom])))
 
 // Le HTML est figé au build : on part de l'heure de la mise à jour (ou juste
 // avant le début), puis on suit l'heure réelle une fois monté, minute par
@@ -64,14 +68,16 @@ const dateDebut = computed(() =>
     <ContestHero :debut="data.debut" :fin="data.fin" :maintenant="maintenant" />
 
     <UiContainer>
+      <ContestDefis :defis="defis" :maintenant="maintenant" :noms="noms" />
+
       <template v-if="lignes.length">
-        <ContestPodium :lignes="lignes" />
+        <ContestPodium :lignes="lignes" :chevauche="!defis.length" />
         <ContestTable :lignes="lignes" :mise-a-jour="data.miseAJour" :premiers="premiers" />
       </template>
       <p
         v-else
         data-testid="contest-empty"
-        class="relative -mt-12 rounded-card border border-line bg-surface p-6 text-ink-muted shadow-[0_12px_32px_-16px_rgb(10_20_48/0.25)]"
+        :class="defis.length ? 'mt-6' : '-mt-12'" class="relative rounded-card border border-line bg-surface p-6 text-ink-muted shadow-[0_12px_32px_-16px_rgb(10_20_48/0.25)]"
       >
         {{ t(`contest.empty.${statut}`, { date: dateDebut }) }}
       </p>

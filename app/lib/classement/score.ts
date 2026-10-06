@@ -1,12 +1,13 @@
 import { BAREME, POINTS, type TestKey } from './bareme'
 import type { ClassementData, Testeur } from './types'
+import { bonusDefis, type Defi } from './defis'
 
-export type CleDetail = TestKey | 'bug' | 'suggestion' | 'avis_ecran' | 'premier'
+export type CleDetail = TestKey | 'bug' | 'suggestion' | 'avis_ecran' | 'premier' | 'defi'
 
 export interface LigneDetail {
   cle: CleDetail
   points: number
-  /** Nombre d'éléments pour les lignes comptées à l'unité (bugs, suggestions, écrans). */
+  /** Nombre d'éléments pour les lignes comptées à l'unité (bugs, suggestions, écrans), numéro pour un défi. */
   nombre?: number
 }
 
@@ -38,8 +39,15 @@ function compteur(valeur: number): number {
   return Number.isFinite(valeur) && valeur > 0 ? Math.floor(valeur) : 0
 }
 
-/** `premiersCles` : tests que ce testeur a réussis en premier (bonus de 40 points chacun). */
-export function scoreTesteur(t: Testeur, premiersCles: string[] = []): Score {
+/**
+ * `premiersCles` : tests que ce testeur a réussis en premier (bonus de 40 points chacun).
+ * `defis` : défis quotidiens qu'il a gagnés, avec leurs points.
+ */
+export function scoreTesteur(
+  t: Testeur,
+  premiersCles: string[] = [],
+  defis: { numero: number; points: number }[] = [],
+): Score {
   const valides = [...new Set(t.tests ?? [])].filter(estTest)
   const nbPremiers = new Set(premiersCles.filter(cle => (valides as string[]).includes(cle))).size
   const detail: LigneDetail[] = valides.map(cle => ({ cle, points: BAREME[cle] }))
@@ -58,6 +66,8 @@ export function scoreTesteur(t: Testeur, premiersCles: string[] = []): Score {
   for (const [cle, nombre, unite] of unitaires) {
     if (nombre > 0) detail.push({ cle, points: nombre * unite, nombre })
   }
+
+  for (const d of defis) detail.push({ cle: 'defi', points: d.points, nombre: d.numero })
 
   // Tri stable : à points égaux, l'ordre du JSON puis bugs, suggestions, écrans.
   detail.sort((a, b) => b.points - a.points)
@@ -85,13 +95,14 @@ function heure(iso: string | null): number {
 export function classer(
   testeurs: Testeur[],
   premiers: Record<string, string> = {},
+  defis: Defi[] = [],
 ): LigneClassement[] {
   const vus = new Set<string>()
   const uniques = testeurs.filter(t => !vus.has(t.id) && vus.add(t.id))
   const lignes = uniques
     .map(t => {
       const cles = Object.keys(premiers).filter(cle => premiers[cle] === t.id)
-      return { ...t, ...scoreTesteur(t, cles), rang: 0 }
+      return { ...t, ...scoreTesteur(t, cles, bonusDefis(t.id, defis)), rang: 0 }
     })
     .sort(
       (a, b) =>

@@ -1489,7 +1489,8 @@
       "bug": "Bug résolu | Bug résolu | {n} bugs résolus",
       "suggestion": "Suggestion retenue | Suggestion retenue | {n} suggestions retenues",
       "avis_ecran": "Avis sur 1 écran | Avis sur 1 écran | Avis sur {n} écrans",
-      "premier": "Bonus 1er | Bonus 1er sur 1 test | Bonus 1er sur {n} tests"
+      "premier": "Bonus 1er | Bonus 1er sur 1 test | Bonus 1er sur {n} tests",
+      "defi": "Défi n°{n} | Défi n°{n} | Défi n°{n}"
     },
     "empty": {
       "bientot": "Le concours commence le {date}. Le classement s'affichera ici dès les premiers points.",
@@ -1600,6 +1601,36 @@
       "chip": "1er",
       "claimed": "1er : {nom}",
       "rule": "Bonus : {n} pts au premier qui réussit chaque test"
+    },
+    "defis": {
+      "eyebrow": "Nouveauté",
+      "title": "Les défis quotidiens débarquent !",
+      "lead": "Pour pimenter les tests et faire bouger le classement, nous lançons désormais un défi par jour !",
+      "rewardTitle": "La récompense",
+      "reward": "Chaque défi permet de remporter entre {min} et {max} points bonus au classement. La première personne à valider l'objectif empoche la mise !",
+      "current": "Défi n°{n} · {jour}",
+      "launch": "Lancement de l'énoncé",
+      "launchAt": "{heure} pile",
+      "end": "Fin du défi",
+      "endAt": "{heure} (minuit, heure de Paris)",
+      "startsIn": "Lancement dans {temps}",
+      "endsIn": "Fin dans {temps}",
+      "ready": "Restez connectés et préparez-vous dès {heure} ! Que le plus rapide gagne !",
+      "pending": "L'énoncé arrive dans un instant : rechargez la page.",
+      "atStake": "{points} points en jeu",
+      "statement": "L'énoncé",
+      "wonBy": "Gagné par {nom}",
+      "wonPts": "+{points} points ajoutés à son classement",
+      "nobody": "Personne n'a relevé le défi : les points ne sont pas attribués.",
+      "rule": "Pas d'égalité : le gagnant est celui qui réussit le défi le plus vite avant minuit. Si personne ne réussit, personne ne gagne les points.",
+      "history": "Défis précédents",
+      "duration": "{h} h {m} min",
+      "durationMin": "{m} min",
+      "state": {
+        "a_venir": "À venir",
+        "en_cours": "En cours",
+        "termine": "Terminé"
+      }
     }
   }
 }

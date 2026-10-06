@@ -1606,19 +1606,12 @@
       "eyebrow": "New",
       "title": "Daily challenges are here!",
       "lead": "To spice up testing and shake up the leaderboard, we now launch one challenge every day!",
-      "rewardTitle": "The reward",
-      "reward": "Each challenge is worth {min} to {max} bonus points on the leaderboard. The first person to complete the goal takes the prize!",
       "current": "Challenge #{n} · {jour}",
-      "launch": "Challenge revealed",
-      "launchAt": "{heure} sharp",
-      "end": "Challenge ends",
-      "endAt": "{heure} (midnight, Paris time)",
       "startsIn": "Starts in {temps}",
       "endsIn": "Ends in {temps}",
       "ready": "Stay tuned and get ready from {heure}! May the fastest win!",
       "pending": "The challenge is about to appear: reload the page.",
       "atStake": "{points} points up for grabs",
-      "statement": "The challenge",
       "wonBy": "Won by {nom}",
       "wonPts": "+{points} points added to their score",
       "nobody": "Nobody completed the challenge: no points awarded.",
@@ -1630,7 +1623,18 @@
         "a_venir": "Upcoming",
         "en_cours": "Live",
         "termine": "Over"
-      }
+      },
+      "banner": {
+        "a_venir": "Challenge #{n} tonight at {heure}",
+        "en_cours": "Challenge #{n} is live",
+        "termine": "Challenge #{n} is over"
+      },
+      "see": "See the challenge",
+      "seeStatement": "Read the challenge",
+      "rewardChip": "{min} to {max} bonus points for the first to complete the goal",
+      "chipStart": "Revealed at {heure} sharp",
+      "chipEnd": "Ends at {heure} (midnight, Paris time)",
+      "nobodyShort": "Nobody succeeded"
     }
   }
 }

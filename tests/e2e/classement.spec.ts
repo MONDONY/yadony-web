@@ -90,3 +90,12 @@ test('les défis quotidiens sont annoncés avec leurs horaires', async ({ page }
   await expect(defis.getByTestId('defi-courant')).toContainText('19 h 30 pile')
   await expect(defis.getByTestId('defi-compte')).toContainText('Lancement dans 5 h 30 min')
 })
+
+test('sur téléphone, le podium du classement est visible dès le premier écran', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 })
+  await page.clock.setFixedTime(new Date('2026-10-06T12:00:00Z'))
+  await page.goto('/classement')
+  await expect(page.getByTestId('defis-bandeau')).toBeVisible()
+  const haut = await page.getByTestId('podium').first().evaluate(e => e.getBoundingClientRect().top)
+  expect(haut).toBeLessThan(844 - 200)
+})

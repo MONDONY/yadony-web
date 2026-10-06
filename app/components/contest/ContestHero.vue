@@ -29,7 +29,7 @@ const pastille: Record<string, string> = {
 
 <template>
   <section
-    class="bg-navy-deep pb-24 pt-12 text-white sm:pt-16"
+    class="bg-navy-deep pb-20 pt-6 text-white sm:pb-24 sm:pt-16"
     :style="{
       backgroundImage:
         'radial-gradient(900px 420px at 85% -20%, rgb(246 146 30 / 0.16), transparent 60%),' +
@@ -38,10 +38,10 @@ const pastille: Record<string, string> = {
   >
     <UiContainer>
       <p class="font-display text-xs font-bold uppercase tracking-[0.18em] text-orange">{{ t('contest.eyebrow') }}</p>
-      <h1 class="mt-2.5 max-w-[22ch] text-balance font-display text-display-lg font-extrabold">{{ t('contest.title') }}</h1>
-      <p class="mt-3 max-w-prose text-white/75">{{ t('contest.lead') }}</p>
+      <h1 class="mt-2 max-w-[22ch] text-balance font-display text-[28px] font-extrabold leading-tight sm:mt-2.5 sm:text-display-lg">{{ t('contest.title') }}</h1>
+      <p class="mt-3 hidden max-w-prose text-white/75 sm:block">{{ t('contest.lead') }}</p>
 
-      <div class="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2.5 text-sm" data-testid="contest-status" :data-status="statut">
+      <div class="mt-3 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm sm:mt-6" data-testid="contest-status" :data-status="statut">
         <span class="inline-flex items-center gap-2 font-semibold">
           <span class="h-2 w-2 rounded-full" :class="pastille[statut]" aria-hidden="true" />
           {{ t(`contest.status.${statut}`) }}
@@ -54,16 +54,16 @@ const pastille: Record<string, string> = {
         </span>
       </div>
 
-      <div class="mt-6 flex flex-wrap gap-3">
+      <div class="mt-4 flex flex-wrap gap-2.5 sm:mt-6 sm:gap-3">
         <a
           href="#bareme"
-          class="inline-flex items-center rounded-el bg-orange px-5 py-3 font-bold text-navy-deep transition hover:bg-orange-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-orange active:scale-[0.97]"
+          class="inline-flex items-center rounded-el bg-orange px-4 py-2.5 text-[14.5px] font-bold sm:px-5 sm:py-3 sm:text-base text-navy-deep transition hover:bg-orange-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-orange active:scale-[0.97]"
         >{{ t('contest.seeRules') }}</a>
         <a
           :href="t('contest.guideUrl')"
           target="_blank"
           rel="noopener"
-          class="inline-flex items-center rounded-el px-5 py-3 font-bold text-white shadow-[inset_0_0_0_1.5px_rgb(255_255_255/0.4)] transition hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-orange active:scale-[0.97]"
+          class="inline-flex items-center rounded-el px-4 py-2.5 text-[14.5px] font-bold text-white sm:px-5 sm:py-3 sm:text-base shadow-[inset_0_0_0_1.5px_rgb(255_255_255/0.4)] transition hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-orange active:scale-[0.97]"
         >{{ t('contest.guide') }} <span aria-hidden="true">↗</span><span class="sr-only"> {{ t('contest.newTab') }}</span></a>
       </div>
     </UiContainer>

@@ -1606,19 +1606,12 @@
       "eyebrow": "Nouveauté",
       "title": "Les défis quotidiens débarquent !",
       "lead": "Pour pimenter les tests et faire bouger le classement, nous lançons désormais un défi par jour !",
-      "rewardTitle": "La récompense",
-      "reward": "Chaque défi permet de remporter entre {min} et {max} points bonus au classement. La première personne à valider l'objectif empoche la mise !",
       "current": "Défi n°{n} · {jour}",
-      "launch": "Lancement de l'énoncé",
-      "launchAt": "{heure} pile",
-      "end": "Fin du défi",
-      "endAt": "{heure} (minuit, heure de Paris)",
       "startsIn": "Lancement dans {temps}",
       "endsIn": "Fin dans {temps}",
       "ready": "Restez connectés et préparez-vous dès {heure} ! Que le plus rapide gagne !",
       "pending": "L'énoncé arrive dans un instant : rechargez la page.",
       "atStake": "{points} points en jeu",
-      "statement": "L'énoncé",
       "wonBy": "Gagné par {nom}",
       "wonPts": "+{points} points ajoutés à son classement",
       "nobody": "Personne n'a relevé le défi : les points ne sont pas attribués.",
@@ -1630,7 +1623,18 @@
         "a_venir": "À venir",
         "en_cours": "En cours",
         "termine": "Terminé"
-      }
+      },
+      "banner": {
+        "a_venir": "Défi n°{n} ce soir à {heure}",
+        "en_cours": "Défi n°{n} en cours",
+        "termine": "Défi n°{n} terminé"
+      },
+      "see": "Voir le défi",
+      "seeStatement": "Voir l'énoncé",
+      "rewardChip": "{min} à {max} pts bonus pour le 1er qui valide l'objectif",
+      "chipStart": "Énoncé à {heure} pile",
+      "chipEnd": "Fin à {heure} (minuit, heure de Paris)",
+      "nobodyShort": "Personne n'a réussi"
     }
   }
 }

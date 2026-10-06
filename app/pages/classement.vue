@@ -68,7 +68,7 @@ const dateDebut = computed(() =>
     <ContestHero :debut="data.debut" :fin="data.fin" :maintenant="maintenant" />
 
     <UiContainer>
-      <ContestDefis :defis="defis" :maintenant="maintenant" :noms="noms" />
+      <ContestDefis variante="bandeau" :defis="defis" :maintenant="maintenant" :noms="noms" />
 
       <template v-if="lignes.length">
         <ContestPodium :lignes="lignes" :chevauche="!defis.length" />
@@ -81,6 +81,8 @@ const dateDebut = computed(() =>
       >
         {{ t(`contest.empty.${statut}`, { date: dateDebut }) }}
       </p>
+
+      <ContestDefis :defis="defis" :maintenant="maintenant" :noms="noms" />
 
       <ContestPhase1 :donnees="donneesPhase1" :maintenant="monte ? maintenant : null" />
 

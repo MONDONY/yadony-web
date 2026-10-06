@@ -1,5 +1,5 @@
 {
-  "miseAJour": "2026-10-06T17:34:00Z",
+  "miseAJour": "2026-10-06T21:15:00Z",
   "debut": "2026-10-05T18:30:00Z",
   "fin": "2026-10-12T18:30:00Z",
   "testeurs": [
@@ -7,13 +7,14 @@
       "id": "mAOPz6Y0",
       "nom": "N'da O.",
       "tests": [
-        "scenario_complet",
+        "appels",
         "avis_parcours",
+        "grille_kilos",
         "message_app",
         "message_destinataire",
-        "outils",
         "nego_colis",
-        "grille_kilos"
+        "outils",
+        "scenario_complet"
       ],
       "bugs": 0,
       "suggestions": 0,
@@ -22,17 +23,19 @@
         "ecrans": 307,
         "minutes": 259.8
       },
-      "dernierPoint": "2026-10-05T21:10:11Z"
+      "dernierPoint": "2026-10-06T18:12:32Z"
     },
     {
       "id": "1aM5LVzU",
       "nom": "Koro D.",
       "tests": [
-        "outils",
-        "message_app",
-        "grille_kilos",
         "appels",
         "avis_parcours",
+        "grille_kilos",
+        "message_app",
+        "nego_colis",
+        "outils",
+        "retard_voyageur",
         "scenario_complet"
       ],
       "bugs": 0,
@@ -42,19 +45,21 @@
         "ecrans": 419,
         "minutes": 190.8
       },
-      "dernierPoint": "2026-10-06T11:03:13Z"
+      "dernierPoint": "2026-10-06T18:53:12Z"
     },
     {
       "id": "szE1BA7k",
       "nom": "Hadja Maferima T.",
       "tests": [
-        "message_app",
         "appels",
+        "avis_parcours",
+        "grille_kilos",
+        "message_app",
         "message_destinataire",
         "nego_trajet",
-        "grille_kilos",
-        "scenario_complet",
-        "avis_parcours"
+        "outils",
+        "retard_voyageur",
+        "scenario_complet"
       ],
       "bugs": 0,
       "suggestions": 0,
@@ -63,18 +68,20 @@
         "ecrans": 827,
         "minutes": 182.3
       },
-      "dernierPoint": "2026-10-06T17:31:43Z"
+      "dernierPoint": "2026-10-06T18:56:33Z"
     },
     {
       "id": "ftAUL354",
       "nom": "Ibrahim D.",
       "tests": [
-        "message_app",
-        "outils",
-        "scenario_complet",
+        "appels",
         "avis_parcours",
+        "message_app",
         "message_destinataire",
-        "appels"
+        "nego_colis",
+        "outils",
+        "retard_voyageur",
+        "scenario_complet"
       ],
       "bugs": 0,
       "suggestions": 0,
@@ -83,17 +90,18 @@
         "ecrans": 418,
         "minutes": 237.8
       },
-      "dernierPoint": "2026-10-06T11:03:13Z"
+      "dernierPoint": "2026-10-06T18:50:55Z"
     },
     {
       "id": "Yg2uNZRK",
       "nom": "Ini N.",
       "tests": [
-        "outils",
-        "message_app",
         "avis_parcours",
-        "scenario_complet",
-        "grille_kilos"
+        "grille_kilos",
+        "message_app",
+        "outils",
+        "retard_voyageur",
+        "scenario_complet"
       ],
       "bugs": 0,
       "suggestions": 0,
@@ -102,16 +110,18 @@
         "ecrans": 163,
         "minutes": 142.2
       },
-      "dernierPoint": "2026-10-06T17:32:09Z"
+      "dernierPoint": "2026-10-06T18:50:34Z"
     },
     {
       "id": "LWoJJBVp",
       "nom": "Mahoua O.",
       "tests": [
-        "outils",
+        "appels",
+        "grille_kilos",
         "message_app",
         "nego_colis",
-        "grille_kilos"
+        "nego_trajet",
+        "outils"
       ],
       "bugs": 0,
       "suggestions": 0,
@@ -120,17 +130,22 @@
         "ecrans": 551,
         "minutes": 354.2
       },
-      "dernierPoint": "2026-10-06T05:34:07Z"
+      "dernierPoint": "2026-10-06T20:55:28Z"
     },
     {
       "id": "YeTesJn5",
       "nom": "Salimata D.",
       "tests": [
+        "appels",
+        "avis_parcours",
         "grille_kilos",
         "message_app",
-        "appels",
         "message_destinataire",
-        "nego_trajet"
+        "nego_trajet",
+        "outils",
+        "parrainage",
+        "retard_voyageur",
+        "scenario_complet"
       ],
       "bugs": 0,
       "suggestions": 0,
@@ -139,7 +154,7 @@
         "ecrans": 380,
         "minutes": 155.6
       },
-      "dernierPoint": "2026-10-06T16:59:18Z"
+      "dernierPoint": "2026-10-06T20:54:13Z"
     },
     {
       "id": "txCpxwiq",
@@ -218,6 +233,27 @@
         "minutes": 4.1
       },
       "dernierPoint": "2026-10-05T21:41:59Z"
+    },
+    {
+      "id": "um8gN18T",
+      "nom": "Mariam D.",
+      "tests": [
+        "appels",
+        "avis_parcours",
+        "filtres",
+        "grille_kilos",
+        "message_app",
+        "retard_voyageur",
+        "scenario_complet"
+      ],
+      "bugs": 0,
+      "suggestions": 0,
+      "ecransAvecAvis": 0,
+      "indicatif": {
+        "ecrans": 0,
+        "minutes": 0
+      },
+      "dernierPoint": "2026-10-06T19:49:00Z"
     }
   ],
   "premiers": {
@@ -229,6 +265,9 @@
     "nego_trajet": "txCpxwiq",
     "message_destinataire": "mAOPz6Y0",
     "nego_colis": "LWoJJBVp",
-    "appels": "szE1BA7k"
+    "appels": "szE1BA7k",
+    "retard_voyageur": "1aM5LVzU",
+    "parrainage": "YeTesJn5",
+    "filtres": "um8gN18T"
   }
 }

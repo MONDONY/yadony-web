@@ -17,6 +17,12 @@ export interface Defi {
   gagnant: string | null
   /** Bugs pertinents trouvés sur les parcours du défi et validés par l'équipe, par id (8 caractères). */
   bugs?: Record<string, number>
+  /** Testeurs qui ont réussi le défi, dans l'ordre d'arrivée (nom affiché, heure de fin ISO). */
+  reussites?: { nom: string; fin: string }[]
+  /** Testeurs qui n'ont réussi qu'une partie du défi (nombre de parties réussies), dans l'ordre d'arrivée. */
+  partiels?: { nom: string; parties: number }[]
+  /** Récit du défi une fois terminé : ce qui s'est passé, partie par partie. */
+  bilan?: { titre: { fr: string; en: string }; texte: { fr: string; en: string } }[]
 }
 
 export type EtatDefi = 'a_venir' | 'en_cours' | 'termine'
@@ -29,6 +35,8 @@ export const DEFI_POINTS_BUG = 40
 export function etatDefi(defi: Defi, maintenant: Date): EtatDefi {
   const t = maintenant.getTime()
   if (t < Date.parse(defi.debut)) return 'a_venir'
+  // Le plus rapide gagne : un gagnant désigné clôt le défi avant minuit.
+  if (defi.gagnant) return 'termine'
   return t < Date.parse(defi.fin) ? 'en_cours' : 'termine'
 }
 

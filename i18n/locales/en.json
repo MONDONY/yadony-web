@@ -1636,7 +1636,10 @@
       "chipStart": "Revealed at {heure} sharp",
       "chipEnd": "Ends at {heure} (midnight, Paris time)",
       "nobodyShort": "Nobody succeeded",
-      "bugRule": "+{n} points per relevant bug found on a challenge's flows, once confirmed by the team."
+      "bugRule": "+{n} points per relevant bug found on a challenge's flows, once confirmed by the team.",
+      "bilanTitle": "What happened",
+      "reussitesTitle": "Completed the challenge ({n})",
+      "partiels": "{n} part out of {total} | {n} part out of {total} | {n} parts out of {total}"
     }
   }
 }

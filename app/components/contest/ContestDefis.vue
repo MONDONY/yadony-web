@@ -101,7 +101,7 @@ const pastille = computed(() =>
 
       <div v-else-if="etat === 'en_cours'" class="mt-3">
         <template v-if="enonce(defi)">
-          <p class="text-pretty text-[17px] font-semibold" data-testid="defi-enonce">{{ enonce(defi) }}</p>
+          <p class="whitespace-pre-line text-pretty text-[16px] font-semibold leading-relaxed" data-testid="defi-enonce">{{ enonce(defi) }}</p>
           <p v-if="defi.points" class="mt-2 inline-flex rounded-full bg-orange/15 px-3 py-1 text-[13px] font-bold text-orange-deep">{{ t('contest.defis.atStake', { points: defi.points }) }}</p>
         </template>
         <p v-else class="text-pretty font-semibold">{{ t('contest.defis.pending') }}</p>
@@ -109,7 +109,7 @@ const pastille = computed(() =>
       </div>
 
       <div v-else class="mt-3" data-testid="defi-resultat">
-        <p v-if="enonce(defi)" class="text-pretty text-[14px] text-ink-muted">{{ enonce(defi) }}</p>
+        <p v-if="enonce(defi)" class="whitespace-pre-line text-pretty text-[14px] text-ink-muted">{{ enonce(defi) }}</p>
         <template v-if="gagnant(defi)">
           <p class="mt-1 font-display text-[20px] font-extrabold">{{ t('contest.defis.wonBy', { nom: gagnant(defi) }) }}</p>
           <p v-if="defi.points" class="font-semibold text-success">{{ t('contest.defis.wonPts', { points: defi.points }) }}</p>

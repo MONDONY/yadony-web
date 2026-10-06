@@ -6,8 +6,8 @@
       "fin": "2026-10-06T22:00:00Z",
       "points": 150,
       "enonce": {
-        "fr": "Relève les 3 défis avant minuit :\n1. Zéro espèce : une commande payée par carte ou mobile money, jusqu'à la livraison confirmée. Valable dans les deux sens : l'expéditeur qui paie ou le voyageur qui se fait payer.\n2. Le voyageur décale : un trajet reporté par le voyageur, ou un report auquel l'expéditeur répond (garder ou retirer son colis).\n3. L'alerte qui sonne : une alerte de trajet créée et une correspondance ouverte.\nLe premier à finir les trois gagne 150 points.",
-        "en": "Complete all 3 challenges before midnight:\n1. Zero cash: an order paid by card or mobile money, all the way to confirmed delivery. Counts both ways: the sender who pays or the traveller who gets paid.\n2. The traveller reschedules: a trip rescheduled by the traveller, or a reschedule the sender answers (keep or withdraw their parcel).\n3. The alert that rings: a trip alert created and a match opened.\nThe first to finish all three wins 150 points."
+        "fr": "Relève les 3 défis avant minuit :\n1. Zéro espèce : une commande payée par carte ou mobile money, jusqu'à la livraison confirmée. Valable dans les deux sens : l'expéditeur qui paie ou le voyageur qui se fait payer.\n2. Le voyageur décale : un trajet reporté par le voyageur, ou un report auquel l'expéditeur répond (garder ou retirer son colis).\n3. L'alerte qui sonne : une alerte de trajet créée et une correspondance ouverte.\nLe premier à finir les trois gagne 150 points.\nBonus : +40 points par bug pertinent trouvé sur ces parcours.",
+        "en": "Complete all 3 challenges before midnight:\n1. Zero cash: an order paid by card or mobile money, all the way to confirmed delivery. Counts both ways: the sender who pays or the traveller who gets paid.\n2. The traveller reschedules: a trip rescheduled by the traveller, or a reschedule the sender answers (keep or withdraw their parcel).\n3. The alert that rings: a trip alert created and a match opened.\nThe first to finish all three wins 150 points.\nBonus: +40 points per relevant bug found on these flows."
       },
       "gagnant": null
     }

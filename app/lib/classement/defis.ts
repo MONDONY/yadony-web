@@ -15,11 +15,16 @@ export interface Defi {
   enonce: { fr: string; en: string } | null
   /** Id (8 caractères) du gagnant, renseigné après la fin. */
   gagnant: string | null
+  /** Bugs pertinents trouvés sur les parcours du défi et validés par l'équipe, par id (8 caractères). */
+  bugs?: Record<string, number>
 }
 
 export type EtatDefi = 'a_venir' | 'en_cours' | 'termine'
 
 export const DEFI_POINTS = { min: 50, max: 150 } as const
+
+/** Points par bug pertinent trouvé sur les parcours d'un défi. */
+export const DEFI_POINTS_BUG = 40
 
 export function etatDefi(defi: Defi, maintenant: Date): EtatDefi {
   const t = maintenant.getTime()
@@ -38,4 +43,12 @@ export function bonusDefis(id: string, defis: Defi[]): { numero: number; points:
   return defis
     .filter(d => d.gagnant === id && typeof d.points === 'number' && d.points > 0)
     .map(d => ({ numero: d.numero, points: d.points as number }))
+}
+
+/** Nombre de bugs pertinents trouvés par un testeur sur les parcours des défis. */
+export function bugsDefis(id: string, defis: Defi[]): number {
+  return defis.reduce((somme, d) => {
+    const n = d.bugs?.[id] ?? 0
+    return somme + (Number.isFinite(n) && n > 0 ? Math.floor(n) : 0)
+  }, 0)
 }

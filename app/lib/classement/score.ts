@@ -1,8 +1,8 @@
 import { BAREME, POINTS, type TestKey } from './bareme'
 import type { ClassementData, Testeur } from './types'
-import { bonusDefis, type Defi } from './defis'
+import { bonusDefis, bugsDefis, DEFI_POINTS_BUG, type Defi } from './defis'
 
-export type CleDetail = TestKey | 'bug' | 'suggestion' | 'avis_ecran' | 'premier' | 'defi'
+export type CleDetail = TestKey | 'bug' | 'suggestion' | 'avis_ecran' | 'premier' | 'defi' | 'defi_bug'
 
 export interface LigneDetail {
   cle: CleDetail
@@ -42,11 +42,13 @@ function compteur(valeur: number): number {
 /**
  * `premiersCles` : tests que ce testeur a réussis en premier (bonus de 40 points chacun).
  * `defis` : défis quotidiens qu'il a gagnés, avec leurs points.
+ * `bugsDefi` : bugs pertinents trouvés sur les parcours des défis (40 points chacun).
  */
 export function scoreTesteur(
   t: Testeur,
   premiersCles: string[] = [],
   defis: { numero: number; points: number }[] = [],
+  bugsDefi = 0,
 ): Score {
   const valides = [...new Set(t.tests ?? [])].filter(estTest)
   const nbPremiers = new Set(premiersCles.filter(cle => (valides as string[]).includes(cle))).size
@@ -62,6 +64,7 @@ export function scoreTesteur(
     ['suggestion', compteurs.suggestions, POINTS.suggestion],
     ['avis_ecran', compteurs.ecransAvecAvis, POINTS.avisEcran],
     ['premier', nbPremiers, POINTS.premier],
+    ['defi_bug', compteur(bugsDefi), DEFI_POINTS_BUG],
   ]
   for (const [cle, nombre, unite] of unitaires) {
     if (nombre > 0) detail.push({ cle, points: nombre * unite, nombre })
@@ -102,7 +105,7 @@ export function classer(
   const lignes = uniques
     .map(t => {
       const cles = Object.keys(premiers).filter(cle => premiers[cle] === t.id)
-      return { ...t, ...scoreTesteur(t, cles, bonusDefis(t.id, defis)), rang: 0 }
+      return { ...t, ...scoreTesteur(t, cles, bonusDefis(t.id, defis), bugsDefis(t.id, defis)), rang: 0 }
     })
     .sort(
       (a, b) =>

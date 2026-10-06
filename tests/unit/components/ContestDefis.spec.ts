@@ -25,6 +25,7 @@ describe('ContestDefis', () => {
     expect(w.find('[data-testid="defi-compte"]').text()).toContain('Lancement dans 7 h 30 min')
     expect(w.text()).toContain('50 à 150 pts bonus pour le 1er')
     expect(w.find('[data-testid="defis-regle"]').text()).toMatch(/plus vite avant minuit/)
+    expect(w.find('[data-testid="defis-bugs"]').text()).toBe('+40 points par bug pertinent trouvé sur les parcours d\'un défi, une fois validé par l\'équipe.')
   })
 
   it('n’affiche aucun énoncé avant qu’il soit publié', () => {

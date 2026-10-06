@@ -1490,7 +1490,8 @@
       "suggestion": "Accepted idea | Accepted idea | {n} accepted ideas",
       "avis_ecran": "Review on 1 screen | Review on 1 screen | Reviews on {n} screens",
       "premier": "First-place bonus | First-place bonus on 1 test | First-place bonus on {n} tests",
-      "defi": "Challenge #{n} | Challenge #{n} | Challenge #{n}"
+      "defi": "Challenge #{n} | Challenge #{n} | Challenge #{n}",
+      "defi_bug": "Bug on a challenge | Bug on a challenge | {n} bugs on challenges"
     },
     "empty": {
       "bientot": "The contest starts on {date}. The leaderboard will appear here as soon as the first points come in.",
@@ -1634,7 +1635,8 @@
       "rewardChip": "{min} to {max} bonus points for the first to complete the goal",
       "chipStart": "Revealed at {heure} sharp",
       "chipEnd": "Ends at {heure} (midnight, Paris time)",
-      "nobodyShort": "Nobody succeeded"
+      "nobodyShort": "Nobody succeeded",
+      "bugRule": "+{n} points per relevant bug found on a challenge's flows, once confirmed by the team."
     }
   }
 }

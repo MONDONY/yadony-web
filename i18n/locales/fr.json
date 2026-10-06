@@ -1490,7 +1490,8 @@
       "suggestion": "Suggestion retenue | Suggestion retenue | {n} suggestions retenues",
       "avis_ecran": "Avis sur 1 écran | Avis sur 1 écran | Avis sur {n} écrans",
       "premier": "Bonus 1er | Bonus 1er sur 1 test | Bonus 1er sur {n} tests",
-      "defi": "Défi n°{n} | Défi n°{n} | Défi n°{n}"
+      "defi": "Défi n°{n} | Défi n°{n} | Défi n°{n}",
+      "defi_bug": "Bug sur un défi | Bug sur un défi | {n} bugs sur les défis"
     },
     "empty": {
       "bientot": "Le concours commence le {date}. Le classement s'affichera ici dès les premiers points.",
@@ -1634,7 +1635,8 @@
       "rewardChip": "{min} à {max} pts bonus pour le 1er qui valide l'objectif",
       "chipStart": "Énoncé à {heure} pile",
       "chipEnd": "Fin à {heure} (minuit, heure de Paris)",
-      "nobodyShort": "Personne n'a réussi"
+      "nobodyShort": "Personne n'a réussi",
+      "bugRule": "+{n} points par bug pertinent trouvé sur les parcours d'un défi, une fois validé par l'équipe."
     }
   }
 }

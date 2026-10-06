@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { DEFI_POINTS, defiAffiche, etatDefi, type Defi } from '@/lib/classement/defis'
+import { DEFI_POINTS, DEFI_POINTS_BUG, defiAffiche, etatDefi, type Defi } from '@/lib/classement/defis'
 import { compteARebours } from '@/lib/classement/popup'
 import { localeDates } from '@/lib/classement/score'
 
@@ -120,6 +120,9 @@ const pastille = computed(() =>
 
     <p class="mt-3 text-pretty text-[13px] leading-relaxed text-ink-muted" data-testid="defis-regle">
       <b class="block text-ink">{{ t('contest.defis.rewardChip', DEFI_POINTS) }}</b>{{ t('contest.defis.rule') }}
+    </p>
+    <p class="mt-2 text-pretty text-[13px] leading-relaxed text-ink-muted" data-testid="defis-bugs">
+      {{ t('contest.defis.bugRule', { n: DEFI_POINTS_BUG }) }}
     </p>
 
     <div v-if="passes.length" class="mt-4" data-testid="defis-historique">

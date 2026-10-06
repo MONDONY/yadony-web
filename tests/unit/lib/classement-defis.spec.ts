@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { bonusDefis, defiAffiche, etatDefi, type Defi } from '@/lib/classement/defis'
+import { bonusDefis, bugsDefis, DEFI_POINTS_BUG, defiAffiche, etatDefi, type Defi } from '@/lib/classement/defis'
 import { classer, scoreTesteur } from '@/lib/classement/score'
 import type { Testeur } from '@/lib/classement/types'
 
@@ -62,5 +62,28 @@ describe('points de défi dans le score', () => {
     const lignes = classer([testeur('aaaa1111', 'Awa D.', ['outils']), testeur('bbbb2222', 'Koro D.', ['filtres'])], {}, defis)
     expect(lignes[0]!.nom).toBe('Koro D.')
     expect(lignes[0]!.total).toBe(170)
+  })
+})
+
+describe('bugs trouvés sur les parcours des défis', () => {
+  it('additionne les bugs d\'un testeur sur tous les défis, entiers positifs seulement', () => {
+    const defis: Defi[] = [
+      { ...d1, bugs: { aaaa1111: 2, bbbb2222: -1 } },
+      { ...d2, bugs: { aaaa1111: 1.7, cccc3333: Number.NaN } },
+    ]
+    expect(bugsDefis('aaaa1111', defis)).toBe(3)
+    expect(bugsDefis('bbbb2222', defis)).toBe(0)
+    expect(bugsDefis('cccc3333', defis)).toBe(0)
+    expect(bugsDefis('dddd4444', [d1])).toBe(0)
+  })
+
+  it('rapporte 40 points par bug, sur une ligne à part du détail', () => {
+    expect(DEFI_POINTS_BUG).toBe(40)
+    const defis: Defi[] = [{ ...d1, bugs: { bbbb2222: 2 } }]
+    const lignes = classer([testeur('aaaa1111', 'Awa D.', ['outils']), testeur('bbbb2222', 'Koro D.', ['filtres'])], {}, defis)
+    const koro = lignes.find(l => l.id === 'bbbb2222')!
+    expect(koro.total).toBe(100)
+    expect(koro.detail).toContainEqual({ cle: 'defi_bug', points: 80, nombre: 2 })
+    expect(lignes.find(l => l.id === 'aaaa1111')!.detail.some(l => l.cle === 'defi_bug')).toBe(false)
   })
 })

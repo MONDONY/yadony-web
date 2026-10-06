@@ -1,5 +1,5 @@
 {
-  "miseAJour": "2026-10-06T10:00:00Z",
+  "miseAJour": "2026-10-06T15:38:00Z",
   "debut": "2026-10-05T18:30:00Z",
   "fin": "2026-10-12T18:30:00Z",
   "testeurs": [
@@ -19,10 +19,30 @@
       "suggestions": 0,
       "ecransAvecAvis": 0,
       "indicatif": {
-        "ecrans": 235,
-        "minutes": 210.5
+        "ecrans": 289,
+        "minutes": 257.8
       },
       "dernierPoint": "2026-10-05T21:10:11Z"
+    },
+    {
+      "id": "1aM5LVzU",
+      "nom": "Koro D.",
+      "tests": [
+        "outils",
+        "message_app",
+        "grille_kilos",
+        "appels",
+        "avis_parcours",
+        "scenario_complet"
+      ],
+      "bugs": 0,
+      "suggestions": 0,
+      "ecransAvecAvis": 0,
+      "indicatif": {
+        "ecrans": 403,
+        "minutes": 175.1
+      },
+      "dernierPoint": "2026-10-06T11:03:13Z"
     },
     {
       "id": "ftAUL354",
@@ -32,16 +52,17 @@
         "outils",
         "scenario_complet",
         "avis_parcours",
-        "message_destinataire"
+        "message_destinataire",
+        "appels"
       ],
       "bugs": 0,
       "suggestions": 0,
       "ecransAvecAvis": 0,
       "indicatif": {
-        "ecrans": 243,
-        "minutes": 138.8
+        "ecrans": 418,
+        "minutes": 237.8
       },
-      "dernierPoint": "2026-10-06T08:12:38Z"
+      "dernierPoint": "2026-10-06T11:03:13Z"
     },
     {
       "id": "LWoJJBVp",
@@ -56,27 +77,47 @@
       "suggestions": 0,
       "ecransAvecAvis": 0,
       "indicatif": {
-        "ecrans": 403,
-        "minutes": 237.4
+        "ecrans": 537,
+        "minutes": 351.3
       },
       "dernierPoint": "2026-10-06T05:34:07Z"
     },
     {
-      "id": "1aM5LVzU",
-      "nom": "Koro D.",
+      "id": "Yg2uNZRK",
+      "nom": "Ini N.",
       "tests": [
         "outils",
         "message_app",
+        "avis_parcours",
+        "scenario_complet"
+      ],
+      "bugs": 0,
+      "suggestions": 0,
+      "ecransAvecAvis": 0,
+      "indicatif": {
+        "ecrans": 147,
+        "minutes": 135.2
+      },
+      "dernierPoint": "2026-10-06T14:44:59Z"
+    },
+    {
+      "id": "szE1BA7k",
+      "nom": "Hadja Maferima T.",
+      "tests": [
+        "message_app",
+        "appels",
+        "message_destinataire",
+        "nego_trajet",
         "grille_kilos"
       ],
       "bugs": 0,
       "suggestions": 0,
       "ecransAvecAvis": 0,
       "indicatif": {
-        "ecrans": 255,
-        "minutes": 105.9
+        "ecrans": 601,
+        "minutes": 118.6
       },
-      "dernierPoint": "2026-10-05T20:36:35Z"
+      "dernierPoint": "2026-10-06T14:17:30Z"
     },
     {
       "id": "txCpxwiq",
@@ -90,8 +131,8 @@
       "suggestions": 0,
       "ecransAvecAvis": 0,
       "indicatif": {
-        "ecrans": 123,
-        "minutes": 85.5
+        "ecrans": 146,
+        "minutes": 91.8
       },
       "dernierPoint": "2026-10-05T20:49:22Z"
     },
@@ -108,42 +149,10 @@
       "suggestions": 0,
       "ecransAvecAvis": 0,
       "indicatif": {
-        "ecrans": 251,
-        "minutes": 107.8
+        "ecrans": 349,
+        "minutes": 134.3
       },
       "dernierPoint": "2026-10-05T22:48:40Z"
-    },
-    {
-      "id": "szE1BA7k",
-      "nom": "Hadja Maferima T.",
-      "tests": [
-        "message_app",
-        "appels"
-      ],
-      "bugs": 0,
-      "suggestions": 0,
-      "ecransAvecAvis": 0,
-      "indicatif": {
-        "ecrans": 161,
-        "minutes": 32.4
-      },
-      "dernierPoint": "2026-10-05T21:02:49Z"
-    },
-    {
-      "id": "Yg2uNZRK",
-      "nom": "Ini N.",
-      "tests": [
-        "outils",
-        "message_app"
-      ],
-      "bugs": 0,
-      "suggestions": 0,
-      "ecransAvecAvis": 0,
-      "indicatif": {
-        "ecrans": 77,
-        "minutes": 83.6
-      },
-      "dernierPoint": "2026-10-05T21:50:47Z"
     },
     {
       "id": "cS2IXWI0",
@@ -156,10 +165,25 @@
       "suggestions": 0,
       "ecransAvecAvis": 0,
       "indicatif": {
-        "ecrans": 72,
+        "ecrans": 74,
         "minutes": 12.8
       },
       "dernierPoint": "2026-10-06T06:13:41Z"
+    },
+    {
+      "id": "KN8KQuy6",
+      "nom": "Oumar T.",
+      "tests": [
+        "nego_trajet"
+      ],
+      "bugs": 0,
+      "suggestions": 0,
+      "ecransAvecAvis": 0,
+      "indicatif": {
+        "ecrans": 68,
+        "minutes": 35.4
+      },
+      "dernierPoint": "2026-10-06T14:18:10Z"
     },
     {
       "id": "AoiqXgIG",
@@ -171,8 +195,8 @@
       "suggestions": 0,
       "ecransAvecAvis": 0,
       "indicatif": {
-        "ecrans": 20,
-        "minutes": 7.1
+        "ecrans": 50,
+        "minutes": 13.5
       },
       "dernierPoint": "2026-10-06T07:42:39Z"
     },

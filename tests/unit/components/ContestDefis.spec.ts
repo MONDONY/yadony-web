@@ -9,8 +9,8 @@ const i18n = createI18n({ legacy: false, locale: 'fr', messages: { fr } })
 const d1: Defi = { numero: 1, debut: '2026-10-06T17:30:00Z', fin: '2026-10-06T22:00:00Z', points: null, enonce: null, gagnant: null }
 const noms = { aaaa1111: 'Koro D.' }
 
-function monter(defis: Defi[], iso: string) {
-  return mount(ContestDefis, { props: { defis, maintenant: new Date(iso), noms }, global: { plugins: [i18n] } })
+function monter(defis: Defi[], iso: string, variante: 'bandeau' | 'complet' = 'complet') {
+  return mount(ContestDefis, { props: { defis, maintenant: new Date(iso), noms, variante }, global: { plugins: [i18n] } })
 }
 
 describe('ContestDefis', () => {
@@ -23,7 +23,7 @@ describe('ContestDefis', () => {
     expect(carte).toContain('19 h 30 pile')
     expect(carte).toContain('00 h 00 (minuit, heure de Paris)')
     expect(w.find('[data-testid="defi-compte"]').text()).toContain('Lancement dans 7 h 30 min')
-    expect(w.text()).toContain('entre 50 et 150 points bonus')
+    expect(w.text()).toContain('50 à 150 pts bonus pour le 1er')
     expect(w.find('[data-testid="defis-regle"]').text()).toMatch(/plus vite avant minuit/)
   })
 
@@ -64,5 +64,23 @@ describe('ContestDefis', () => {
 
   it('ne rend rien sans défi', () => {
     expect(monter([], '2026-10-06T10:00:00Z').find('[data-testid="defis"]').exists()).toBe(false)
+  })
+
+  it('résume le défi en une ligne qui mène à la section', () => {
+    const b = monter([d1], '2026-10-06T10:00:00Z', 'bandeau').find('[data-testid="defis-bandeau"]')
+    expect(b.attributes('href')).toBe('#defis')
+    expect(b.text()).toContain('Défi n°1 ce soir à 19 h 30')
+    expect(b.text()).toContain('Lancement dans 7 h 30 min')
+    expect(b.text()).toContain('Voir le défi')
+  })
+
+  it('invite à lire l’énoncé pendant le défi, puis annonce le gagnant', () => {
+    const live = { ...d1, points: 100, enonce: { fr: 'Défi.', en: 'Challenge.' } }
+    const enCours = monter([live], '2026-10-06T18:00:00Z', 'bandeau').text()
+    expect(enCours).toContain('Défi n°1 en cours')
+    expect(enCours).toContain('100 points en jeu')
+    expect(enCours).toContain('Voir l\'énoncé')
+    expect(monter([{ ...live, gagnant: 'aaaa1111' }], '2026-10-06T23:00:00Z', 'bandeau').text()).toContain('Gagné par Koro D.')
+    expect(monter([d1], '2026-10-06T23:00:00Z', 'bandeau').text()).toContain('Personne n\'a réussi')
   })
 })

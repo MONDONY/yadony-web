@@ -9,7 +9,77 @@
         "fr": "Relève les 3 défis avant minuit :\n1. Zéro espèce : une commande payée par carte ou mobile money, jusqu'à la livraison confirmée. Valable dans les deux sens : l'expéditeur qui paie ou le voyageur qui se fait payer.\n2. Le voyageur décale : le voyageur demande un report et l'expéditeur y répond (accepter ou refuser). Validé pour les deux seulement quand l'expéditeur a répondu.\n3. L'alerte qui sonne : une alerte de trajet créée et une correspondance ouverte.\nLe premier à finir les trois gagne 150 points.\nBonus : +40 points par bug pertinent trouvé sur ces parcours.",
         "en": "Complete all 3 challenges before midnight:\n1. Zero cash: an order paid by card or mobile money, all the way to confirmed delivery. Counts both ways: the sender who pays or the traveller who gets paid.\n2. The traveller reschedules: the traveller asks for a reschedule and the sender answers it (accept or decline). It only counts, for both, once the sender has answered.\n3. The alert that rings: a trip alert created and a match opened.\nThe first to finish all three wins 150 points.\nBonus: +40 points per relevant bug found on these flows."
       },
-      "gagnant": null
+      "gagnant": "ftAUL354",
+      "bilan": [
+        {
+          "titre": {
+            "fr": "1. Zéro espèce",
+            "en": "1. Zero cash"
+          },
+          "texte": {
+            "fr": "Validé par 5 testeurs. Ini N. et Hadja Maferima T. ouvrent le bal à 20 h 07 avec une commande payée en mobile money et livrée. Koro D. et Ibrahim D. suivent à 20 h 19 avec une commande payée par carte, puis Salimata D. à 20 h 36, payée par carte côté voyageuse.",
+            "en": "Done by 5 testers. Ini N. and Hadja Maferima T. kick off at 8:07 pm with an order paid by mobile money and delivered. Koro D. and Ibrahim D. follow at 8:19 pm with a card-paid order, then Salimata D. at 8:36 pm, paid by card on the traveller side."
+          }
+        },
+        {
+          "titre": {
+            "fr": "2. Le voyageur décale",
+            "en": "2. The traveller reschedules"
+          },
+          "texte": {
+            "fr": "Koro D. reporte son trajet et Ibrahim D. répond le premier à 20 h 43 en gardant son colis : l'élément est validé pour les deux. Hadja Maferima T. répond au report d'Ini N. à 20 h 53, puis Mariam D. à celui de Salimata D. à 21 h 49.",
+            "en": "Koro D. reschedules his trip and Ibrahim D. answers first at 8:43 pm, keeping his parcel: it counts for both. Hadja Maferima T. answers Ini N.'s reschedule at 8:53 pm, then Mariam D. answers Salimata D.'s at 9:49 pm."
+          }
+        },
+        {
+          "titre": {
+            "fr": "3. L'alerte qui sonne",
+            "en": "3. The alert that rings"
+          },
+          "texte": {
+            "fr": "Ibrahim D. crée une alerte Paris → Abidjan à 20 h 45 et ouvre aussitôt une correspondance : le trajet de N'da O. Il boucle les trois défis le premier. Hadja Maferima T. fait de même à 20 h 56, puis Ini N. à 22 h 01. Koro D. a créé ses alertes sans ouvrir de correspondance, et Salimata D. a créé une alerte de colis sans recevoir de proposition.",
+            "en": "Ibrahim D. creates a Paris → Abidjan alert at 8:45 pm and opens a match right away: N'da O.'s trip. He is the first to complete all three. Hadja Maferima T. does the same at 8:56 pm, then Ini N. at 10:01 pm. Koro D. created alerts but never opened a match, and Salimata D. created a parcel alert without receiving any offer."
+          }
+        },
+        {
+          "titre": {
+            "fr": "Bugs remontés",
+            "en": "Bugs reported"
+          },
+          "texte": {
+            "fr": "4 bugs remontés sur les parcours du défi. Ils ne sont pas encore traités : les points (+40 par bug validé) seront ajoutés au score après leur traitement par l'équipe.",
+            "en": "4 bugs reported on the challenge flows. They have not been processed yet: the points (+40 per confirmed bug) will be added to the score once the team has processed them."
+          }
+        }
+      ],
+      "reussites": [
+        {
+          "nom": "Ibrahim D.",
+          "fin": "2026-10-06T18:45:22Z"
+        },
+        {
+          "nom": "Hadja Maferima T.",
+          "fin": "2026-10-06T18:56:50Z"
+        },
+        {
+          "nom": "Ini N.",
+          "fin": "2026-10-06T20:01:53Z"
+        }
+      ],
+      "partiels": [
+        {
+          "nom": "Koro D.",
+          "parties": 2
+        },
+        {
+          "nom": "Salimata D.",
+          "parties": 2
+        },
+        {
+          "nom": "Mariam D.",
+          "parties": 1
+        }
+      ]
     }
   ]
 }

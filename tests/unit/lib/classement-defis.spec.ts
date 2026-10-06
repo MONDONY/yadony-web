@@ -17,6 +17,12 @@ describe('etatDefi', () => {
     expect(etatDefi(d1, new Date('2026-10-06T21:59:59Z'))).toBe('en_cours')
     expect(etatDefi(d1, new Date('2026-10-06T22:00:00Z'))).toBe('termine')
   })
+
+  it('est terminé dès qu’un gagnant est désigné, même avant minuit', () => {
+    const gagne: Defi = { ...d1, points: 150, gagnant: 'aaaa1111' }
+    expect(etatDefi(gagne, new Date('2026-10-06T20:00:00Z'))).toBe('termine')
+    expect(etatDefi(gagne, new Date('2026-10-06T17:00:00Z'))).toBe('a_venir')
+  })
 })
 
 describe('defiAffiche', () => {

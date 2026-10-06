@@ -1636,7 +1636,10 @@
       "chipStart": "Énoncé à {heure} pile",
       "chipEnd": "Fin à {heure} (minuit, heure de Paris)",
       "nobodyShort": "Personne n'a réussi",
-      "bugRule": "+{n} points par bug pertinent trouvé sur les parcours d'un défi, une fois validé par l'équipe."
+      "bugRule": "+{n} points par bug pertinent trouvé sur les parcours d'un défi, une fois validé par l'équipe.",
+      "bilanTitle": "Ce qui s’est passé",
+      "reussitesTitle": "Ont réussi le défi ({n})",
+      "partiels": "{n} partie sur {total} | {n} partie sur {total} | {n} parties sur {total}"
     }
   }
 }

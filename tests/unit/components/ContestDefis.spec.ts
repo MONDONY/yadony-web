@@ -49,6 +49,69 @@ describe('ContestDefis', () => {
     expect(r).toContain('+120 points ajoutés à son classement')
   })
 
+  it('raconte ce qui s’est passé, un bloc par partie du défi', () => {
+    const defi: Defi = {
+      ...d1,
+      points: 150,
+      gagnant: 'aaaa1111',
+      bilan: [
+        { titre: { fr: 'Zéro espèce', en: 'Zero cash' }, texte: { fr: 'Validé par 5 testeurs.', en: 'Done by 5 testers.' } },
+        { titre: { fr: 'L’alerte qui sonne', en: 'The alert that rings' }, texte: { fr: 'Koro D. a ouvert sa correspondance.', en: 'Koro D. opened a match.' } },
+      ],
+    }
+    const w = monter([defi], '2026-10-06T20:00:00Z')
+    expect(w.find('[data-testid="defis"]').attributes('data-etat')).toBe('termine')
+    const bilan = w.find('[data-testid="defi-bilan"]')
+    expect(bilan.text()).toContain('Ce qui s’est passé')
+    const blocs = bilan.findAll('li')
+    expect(blocs).toHaveLength(2)
+    expect(blocs[0]!.text()).toContain('Zéro espèce')
+    expect(blocs[0]!.text()).toContain('Validé par 5 testeurs.')
+    expect(blocs[1]!.text()).toContain('Koro D. a ouvert sa correspondance.')
+  })
+
+  it('classe ceux qui ont réussi le défi, dans l’ordre d’arrivée, avec leur heure', () => {
+    const defi: Defi = {
+      ...d1,
+      points: 150,
+      gagnant: 'aaaa1111',
+      reussites: [
+        { nom: 'Koro D.', fin: '2026-10-06T18:45:22Z' },
+        { nom: 'Awa D.', fin: '2026-10-06T18:56:50Z' },
+      ],
+    }
+    const lignes = monter([defi], '2026-10-06T23:00:00Z').find('[data-testid="defi-reussites"]').findAll('li')
+    expect(lignes).toHaveLength(2)
+    expect(lignes[0]!.text()).toMatch(/1.*Koro D\..*20 h 45/)
+    expect(lignes[1]!.text()).toMatch(/2.*Awa D\..*20 h 56/)
+  })
+
+  it('liste aussi ceux qui ont réussi deux parties, puis une seule', () => {
+    const defi: Defi = {
+      ...d1,
+      points: 150,
+      gagnant: 'aaaa1111',
+      partiels: [
+        { nom: 'Mariam D.', parties: 1 },
+        { nom: 'Koro D.', parties: 2 },
+        { nom: 'Salimata D.', parties: 2 },
+      ],
+    }
+    const groupes = monter([defi], '2026-10-06T23:00:00Z').find('[data-testid="defi-partiels"]').findAll('li')
+    expect(groupes).toHaveLength(2)
+    expect(groupes[0]!.text()).toContain('2 parties sur 3')
+    expect(groupes[0]!.text()).toContain('Koro D., Salimata D.')
+    expect(groupes[1]!.text()).toContain('1 partie sur 3')
+    expect(groupes[1]!.text()).toContain('Mariam D.')
+  })
+
+  it('n’affiche pas de récit quand le défi n’en a pas', () => {
+    const w = monter([{ ...d1, points: 150, gagnant: 'aaaa1111' }], '2026-10-06T23:00:00Z')
+    expect(w.find('[data-testid="defi-bilan"]').exists()).toBe(false)
+    expect(w.find('[data-testid="defi-reussites"]').exists()).toBe(false)
+    expect(w.find('[data-testid="defi-partiels"]').exists()).toBe(false)
+  })
+
   it('dit que personne n’a gagné si personne n’a réussi', () => {
     const r = monter([d1], '2026-10-06T23:00:00Z').find('[data-testid="defi-resultat"]').text()
     expect(r).toContain('Personne n\'a relevé le défi')

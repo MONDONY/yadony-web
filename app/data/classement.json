@@ -1,5 +1,5 @@
 {
-  "miseAJour": "2026-10-07T14:30:00Z",
+  "miseAJour": "2026-10-07T15:20:00Z",
   "debut": "2026-10-05T18:30:00Z",
   "fin": "2026-10-12T18:30:00Z",
   "testeurs": [
@@ -17,7 +17,7 @@
         "scenario_complet"
       ],
       "bugs": 0,
-      "suggestions": 0,
+      "suggestions": 1,
       "ecransAvecAvis": 0,
       "indicatif": {
         "ecrans": 307,
@@ -39,7 +39,7 @@
         "scenario_complet"
       ],
       "bugs": 2,
-      "suggestions": 0,
+      "suggestions": 2,
       "ecransAvecAvis": 0,
       "indicatif": {
         "ecrans": 419,
@@ -62,7 +62,7 @@
         "scenario_complet"
       ],
       "bugs": 3,
-      "suggestions": 0,
+      "suggestions": 1,
       "ecransAvecAvis": 0,
       "indicatif": {
         "ecrans": 827,
@@ -105,7 +105,7 @@
         "scenario_complet"
       ],
       "bugs": 1,
-      "suggestions": 0,
+      "suggestions": 1,
       "ecransAvecAvis": 0,
       "indicatif": {
         "ecrans": 163,
@@ -126,8 +126,8 @@
         "paiement_carte"
       ],
       "bugs": 0,
-      "suggestions": 0,
-      "ecransAvecAvis": 0,
+      "suggestions": 2,
+      "ecransAvecAvis": 1,
       "indicatif": {
         "ecrans": 551,
         "minutes": 354.2
@@ -151,7 +151,7 @@
         "scenario_complet"
       ],
       "bugs": 3,
-      "suggestions": 0,
+      "suggestions": 1,
       "ecransAvecAvis": 0,
       "indicatif": {
         "ecrans": 380,
@@ -168,7 +168,7 @@
         "grille_kilos"
       ],
       "bugs": 0,
-      "suggestions": 0,
+      "suggestions": 1,
       "ecransAvecAvis": 0,
       "indicatif": {
         "ecrans": 146,

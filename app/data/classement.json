@@ -1,5 +1,5 @@
 {
-  "miseAJour": "2026-10-06T21:15:00Z",
+  "miseAJour": "2026-10-07T05:40:00Z",
   "debut": "2026-10-05T18:30:00Z",
   "fin": "2026-10-12T18:30:00Z",
   "testeurs": [
@@ -143,11 +143,12 @@
         "message_destinataire",
         "nego_trajet",
         "outils",
+        "paiement_mm",
         "parrainage",
         "retard_voyageur",
         "scenario_complet"
       ],
-      "bugs": 0,
+      "bugs": 2,
       "suggestions": 0,
       "ecransAvecAvis": 0,
       "indicatif": {
@@ -268,6 +269,7 @@
     "appels": "szE1BA7k",
     "retard_voyageur": "1aM5LVzU",
     "parrainage": "YeTesJn5",
-    "filtres": "um8gN18T"
+    "filtres": "um8gN18T",
+    "paiement_mm": "YeTesJn5"
   }
 }

@@ -106,6 +106,8 @@ describe('données des défis', () => {
     expect(deux!.enonce!.fr).toContain('Le colis qui revient')
     expect(deux!.enonce!.fr).toContain('Négocier jusqu\'au bout')
     expect(deux!.enonce!.fr).toContain('Le destinataire qui refuse')
+    expect(deux!.enonce!.fr.startsWith('Prérequis : installez la dernière version de l\'application (TestFlight sur iPhone, Play Store sur Android).\n')).toBe(true)
+    expect(deux!.enonce!.en.startsWith('Prerequisite: install the latest version of the app (TestFlight on iPhone, Play Store on Android).\n')).toBe(true)
     expect(deux!.enonce!.fr).toContain('Le colis qui revient (2 personnes : un expéditeur et un voyageur)')
     expect(deux!.enonce!.fr).toContain('Négocier jusqu\'au bout (2 personnes : un expéditeur et un voyageur)')
     expect(deux!.enonce!.fr).toContain('Le destinataire qui refuse (3 personnes : le destinataire, le voyageur et l\'expéditeur)')

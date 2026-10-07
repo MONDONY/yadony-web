@@ -96,13 +96,17 @@ describe('bugs trouvés sur les parcours des défis', () => {
 })
 
 describe('données des défis', () => {
-  it('annonce le défi n°2 ce soir de 20 h 30 à 23 h 30 (heure de Paris), sans énoncé tant que le départ n’est pas donné', () => {
+  it('annonce le défi n°2 de 20 h 30 à 23 h 30 (heure de Paris), avec son énoncé en trois parties et 150 points', () => {
     const [un, deux] = defisData.defis as Defi[]
     expect(un!.numero).toBe(1)
     expect(deux!.numero).toBe(2)
     expect(deux!.debut).toBe('2026-10-07T18:30:00Z')
     expect(deux!.fin).toBe('2026-10-07T21:30:00Z')
-    expect(deux!.enonce).toBeNull()
+    expect(deux!.points).toBe(150)
+    expect(deux!.enonce!.fr).toContain('Le colis qui revient')
+    expect(deux!.enonce!.fr).toContain('Négocier jusqu\'au bout')
+    expect(deux!.enonce!.fr).toContain('Le destinataire qui refuse')
+    expect(deux!.enonce!.en).toContain('before 11:30 pm')
     expect(deux!.gagnant).toBeNull()
     expect(etatDefi(deux!, new Date('2026-10-07T12:00:00Z'))).toBe('a_venir')
     expect(etatDefi(deux!, new Date('2026-10-07T18:30:00Z'))).toBe('en_cours')

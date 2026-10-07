@@ -92,8 +92,11 @@
       "numero": 2,
       "debut": "2026-10-07T18:30:00Z",
       "fin": "2026-10-07T21:30:00Z",
-      "points": null,
-      "enonce": null,
+      "points": 150,
+      "enonce": {
+        "fr": "Relève les 3 défis avant 23 h 30 :\n1. Le colis qui revient : l'expéditeur publie une demande d'envoi, le voyageur lie son trajet et fait une proposition, l'expéditeur dépose son colis. Le voyageur annule : l'expéditeur récupère son colis et donne le code de retour, que le voyageur saisit. Validé pour les deux dès la saisie du code.\n2. Négocier jusqu'au bout : une demande d'envoi négociée sur au moins 3 tours de contre-offres, jusqu'à l'accord ou jusqu'à la limite de 5 tours.\n3. Le destinataire qui refuse : le destinataire (avec un compte Yadony) refuse le colis, le voyageur demande un autre destinataire et l'expéditeur en désigne un nouveau.\nLe premier à finir les trois gagne 150 points.\nBonus : +40 points par bug pertinent trouvé sur ces parcours.",
+        "en": "Complete all 3 challenges before 11:30 pm:\n1. The parcel that comes back: the sender posts a shipping request, the traveller links their trip and makes an offer, the sender hands over the parcel. The traveller cancels: the sender gets the parcel back and gives the return code, which the traveller enters. It counts for both as soon as the code is entered.\n2. Negotiate to the end: a shipping request negotiated over at least 3 rounds of counter-offers, until an agreement or the 5-round limit.\n3. The recipient who declines: the recipient (with a Yadony account) declines the parcel, the traveller asks for another recipient and the sender names a new one.\nThe first to finish all three wins 150 points.\nBonus: +40 points per relevant bug found on these flows."
+      },
       "gagnant": null
     }
   ]

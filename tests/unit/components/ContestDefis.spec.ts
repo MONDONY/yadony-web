@@ -25,7 +25,7 @@ describe('ContestDefis', () => {
     expect(w.find('[data-testid="defi-compte"]').text()).toContain('Lancement dans 7 h 30 min')
     expect(w.text()).toContain('50 à 200 pts bonus pour le 1er')
     expect(w.find('[data-testid="defis-regle"]').text()).toMatch(/plus vite avant la fin du défi/)
-    expect(w.find('[data-testid="defis-regle"]').text()).toContain('Pas d\'égalité')
+    expect(w.find('[data-testid="defis-regle"]').text()).toContain('ils gagnent ensemble')
     expect(w.find('[data-testid="defis-bugs"]').text()).toBe('+40 points par bug pertinent trouvé sur les parcours d\'un défi, une fois validé par l\'équipe.')
   })
 
@@ -172,5 +172,27 @@ describe('ContestDefis', () => {
     expect(enCours).toContain('Voir l\'énoncé')
     expect(monter([{ ...live, gagnant: 'aaaa1111' }], '2026-10-06T23:00:00Z', 'bandeau').text()).toContain('Gagné par Koro D.')
     expect(monter([d1], '2026-10-06T23:00:00Z', 'bandeau').text()).toContain('Personne n\'a réussi')
+  })
+
+  it('annonce plusieurs gagnants avec les points de chacun', () => {
+    const defi: Defi = { ...d1, points: 200, gagnant: null, gagnants: ['aaaa1111', 'bbbb2222'] }
+    const w = mount(ContestDefis, {
+      props: { defis: [defi], maintenant: new Date('2026-10-06T23:00:00Z'), noms: { aaaa1111: 'Koro D.', bbbb2222: 'Awa D.' }, variante: 'complet' },
+      global: { plugins: [i18n] },
+    })
+    const r = w.find('[data-testid="defi-resultat"]').text()
+    expect(r).toContain('Gagné par Koro D. et Awa D.')
+    expect(r).toContain('+200 points ajoutés à chacun')
+    const bandeau = mount(ContestDefis, {
+      props: { defis: [defi], maintenant: new Date('2026-10-06T23:00:00Z'), noms: { aaaa1111: 'Koro D.', bbbb2222: 'Awa D.' }, variante: 'bandeau' },
+      global: { plugins: [i18n] },
+    })
+    expect(bandeau.text()).toContain('Gagné par Koro D. et Awa D.')
+  })
+
+  it('compte les parties sur le nombre de sujets du défi', () => {
+    const defi: Defi = { ...d1, points: 200, gagnant: 'aaaa1111', sujets: 5, partiels: [{ nom: 'Mia D.', parties: 3 }] }
+    const w = monter([defi], '2026-10-06T23:00:00Z')
+    expect(w.find('[data-testid="defi-partiels"]').text()).toContain('3 parties sur 5')
   })
 })

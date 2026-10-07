@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { bonusDefis, bugsDefis, DEFI_POINTS_BUG, defiAffiche, etatDefi, type Defi } from '@/lib/classement/defis'
+import { bonusDefis, bugsDefis, gagnantsDefi, DEFI_POINTS_BUG, defiAffiche, etatDefi, type Defi } from '@/lib/classement/defis'
 import defisData from '../../../app/data/defis.json'
 import { classer, scoreTesteur } from '@/lib/classement/score'
 import type { Testeur } from '@/lib/classement/types'
@@ -17,6 +17,11 @@ describe('etatDefi', () => {
     expect(etatDefi(d1, new Date('2026-10-06T17:30:00Z'))).toBe('en_cours')
     expect(etatDefi(d1, new Date('2026-10-06T21:59:59Z'))).toBe('en_cours')
     expect(etatDefi(d1, new Date('2026-10-06T22:00:00Z'))).toBe('termine')
+  })
+
+  it('est terminé dès que des gagnants sont désignés, même avant la fin', () => {
+    const duo: Defi = { ...d1, points: 150, gagnants: ['aaaa1111', 'bbbb2222'] }
+    expect(etatDefi(duo, new Date('2026-10-06T20:00:00Z'))).toBe('termine')
   })
 
   it('est terminé dès qu’un gagnant est désigné, même avant minuit', () => {
@@ -123,24 +128,53 @@ describe('données des défis', () => {
     expect(deux!.enonce!.en).toContain('1. Follow two other users (3 people: you and the two users you follow)')
     expect(deux!.enonce!.en).toContain('2. Publish two shipping requests (1 person: the sender)')
     expect(deux!.enonce!.fr).toContain('Pour gagner, il faut avoir réussi les cinq sujets.')
-    expect(deux!.enonce!.fr).toContain('il n\'y a qu\'un seul gagnant.')
+    expect(deux!.enonce!.fr).toContain('Si deux testeurs réussissent ensemble les sujets 3 et 4 en binôme, ils gagnent ensemble : les deux reçoivent 200 points.')
     expect(deux!.enonce!.fr).toContain('terminez par l\'annulation du voyageur, qui clôt le colis')
     expect(deux!.enonce!.fr).toContain('compte Yadony dont le numéro (format international)')
     expect(deux!.enonce!.en).toContain('To win, you must complete all five topics.')
-    expect(deux!.enonce!.en).toContain('there is only one winner.')
-    expect(deux!.enonce!.fr).toContain('En cas d\'égalité à la seconde près, le gagnant est celui qui a fini ses sujets individuels (1 et 2) en premier.')
-    expect(deux!.enonce!.en).toContain('In case of a tie to the second, the winner is whoever finished the individual topics (1 and 2) first.')
+    expect(deux!.enonce!.en).toContain('If two testers complete topics 3 and 4 together as a pair, they win together: both receive 200 points.')
     expect(deux!.enonce!.en).toContain('finish with the traveller\'s cancellation')
     expect(deux!.enonce!.en).toContain('wins 200 points')
     expect(deux!.enonce!.en).toContain('before 11:30 pm')
-    expect(deux!.gagnant).toBeNull()
+    expect(deux!.gagnants).toEqual(['ftAUL354', '1aM5LVzU'])
+    expect(deux!.sujets).toBe(5)
+    expect(bonusDefis('ftAUL354', defisData.defis as Defi[])).toContainEqual({ numero: 2, points: 200 })
+    expect(bonusDefis('1aM5LVzU', defisData.defis as Defi[])).toContainEqual({ numero: 2, points: 200 })
+    expect(deux!.reussites!.map(r => r.nom)).toEqual(['Ibrahim D.', 'Koro D.'])
+    expect(deux!.bilan).toHaveLength(6)
     expect(etatDefi(deux!, new Date('2026-10-07T12:00:00Z'))).toBe('a_venir')
-    expect(etatDefi(deux!, new Date('2026-10-07T18:59:59Z'))).toBe('a_venir')
-    expect(etatDefi(deux!, new Date('2026-10-07T19:00:00Z'))).toBe('en_cours')
+    expect(etatDefi(deux!, new Date('2026-10-07T19:00:00Z'))).toBe('termine')
     expect(etatDefi(deux!, new Date('2026-10-07T21:30:00Z'))).toBe('termine')
   })
 
   it('met le défi n°2 en avant dès que le n°1 a un gagnant', () => {
     expect(defiAffiche(defisData.defis as Defi[], new Date('2026-10-07T12:00:00Z'))!.numero).toBe(2)
+  })
+})
+
+describe('plusieurs gagnants', () => {
+  const duo: Defi = { ...d1, points: 200, gagnant: null, gagnants: ['aaaa1111', 'bbbb2222'] }
+
+  it('donne les points du défi à chacun des gagnants', () => {
+    expect(bonusDefis('aaaa1111', [duo])).toEqual([{ numero: 1, points: 200 }])
+    expect(bonusDefis('bbbb2222', [duo])).toEqual([{ numero: 1, points: 200 }])
+    expect(bonusDefis('cccc3333', [duo])).toEqual([])
+  })
+
+  it('liste les gagnants sans doublon, le gagnant unique en premier', () => {
+    expect(gagnantsDefi(duo)).toEqual(['aaaa1111', 'bbbb2222'])
+    expect(gagnantsDefi({ ...duo, gagnant: 'bbbb2222' })).toEqual(['bbbb2222', 'aaaa1111'])
+    expect(gagnantsDefi(d1)).toEqual([])
+  })
+
+  it('fait monter les deux gagnants dans le classement', () => {
+    const lignes = classer(
+      [testeur('aaaa1111', 'Awa D.', ['outils']), testeur('bbbb2222', 'Koro D.', ['filtres']), testeur('cccc3333', 'Ini N.', ['appels'])],
+      {},
+      [duo],
+    )
+    expect(lignes.map(l => l.nom)).toEqual(['Awa D.', 'Koro D.', 'Ini N.'])
+    expect(lignes[0]!.total).toBe(280)
+    expect(lignes[1]!.total).toBe(220)
   })
 })

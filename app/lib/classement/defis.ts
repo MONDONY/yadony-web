@@ -15,6 +15,10 @@ export interface Defi {
   enonce: { fr: string; en: string } | null
   /** Id (8 caractères) du gagnant, renseigné après la fin. */
   gagnant: string | null
+  /** Ids (8 caractères) de plusieurs gagnants qui se partagent la victoire : chacun reçoit les points du défi. */
+  gagnants?: string[]
+  /** Nombre de sujets du défi (3 par défaut), pour compter « n parties sur N ». */
+  sujets?: number
   /** Bugs pertinents trouvés sur les parcours du défi et validés par l'équipe, par id (8 caractères). */
   bugs?: Record<string, number>
   /** Testeurs qui ont réussi le défi, dans l'ordre d'arrivée (nom affiché, heure de fin ISO). */
@@ -36,7 +40,7 @@ export function etatDefi(defi: Defi, maintenant: Date): EtatDefi {
   const t = maintenant.getTime()
   if (t < Date.parse(defi.debut)) return 'a_venir'
   // Le plus rapide gagne : un gagnant désigné clôt le défi avant minuit.
-  if (defi.gagnant) return 'termine'
+  if (gagnantsDefi(defi).length) return 'termine'
   return t < Date.parse(defi.fin) ? 'en_cours' : 'termine'
 }
 
@@ -49,7 +53,7 @@ export function defiAffiche(defis: Defi[], maintenant: Date): Defi | null {
 /** Points de défi gagnés par un testeur. */
 export function bonusDefis(id: string, defis: Defi[]): { numero: number; points: number }[] {
   return defis
-    .filter(d => d.gagnant === id && typeof d.points === 'number' && d.points > 0)
+    .filter(d => gagnantsDefi(d).includes(id) && typeof d.points === 'number' && d.points > 0)
     .map(d => ({ numero: d.numero, points: d.points as number }))
 }
 
@@ -59,4 +63,9 @@ export function bugsDefis(id: string, defis: Defi[]): number {
     const n = d.bugs?.[id] ?? 0
     return somme + (Number.isFinite(n) && n > 0 ? Math.floor(n) : 0)
   }, 0)
+}
+
+/** Ids des gagnants d'un défi : le gagnant unique en premier, puis les autres, sans doublon. */
+export function gagnantsDefi(defi: Defi): string[] {
+  return [...new Set([defi.gagnant, ...(defi.gagnants ?? [])].filter((id): id is string => Boolean(id)))]
 }

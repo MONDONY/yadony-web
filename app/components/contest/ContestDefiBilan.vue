@@ -33,7 +33,7 @@ function groupesPartiels(): { parties: number; noms: string[] }[] {
   </div>
   <ul v-if="groupesPartiels().length" class="mt-2 grid gap-1.5 text-[14px]" data-testid="defi-partiels">
     <li v-for="g in groupesPartiels()" :key="g.parties" class="text-pretty">
-      <b class="font-semibold">{{ t('contest.defis.partiels', { n: g.parties, total: 3 }, g.parties) }}</b>
+      <b class="font-semibold">{{ t('contest.defis.partiels', { n: g.parties, total: props.defi.sujets ?? 3 }, g.parties) }}</b>
       <span class="text-ink-muted"> · {{ g.noms.join(', ') }}</span>
     </li>
   </ul>

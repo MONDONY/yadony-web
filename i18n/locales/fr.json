@@ -1616,7 +1616,7 @@
       "wonBy": "Gagné par {nom}",
       "wonPts": "+{points} points ajoutés à son classement",
       "nobody": "Personne n'a relevé le défi : les points ne sont pas attribués.",
-      "rule": "Pas d'égalité : le gagnant est celui qui réussit le défi le plus vite avant la fin du défi. Si personne ne réussit, personne ne gagne les points.",
+      "rule": "Le gagnant est celui qui réussit le défi le plus vite avant la fin du défi. Si deux testeurs réussissent ensemble en binôme, ils gagnent ensemble. Si personne ne réussit, personne ne gagne les points.",
       "history": "Défis précédents",
       "duration": "{h} h {m} min",
       "durationMin": "{m} min",
@@ -1640,7 +1640,8 @@
       "bilanTitle": "Ce qui s’est passé",
       "reussitesTitle": "Ont réussi le défi ({n})",
       "partiels": "{n} partie sur {total} | {n} partie sur {total} | {n} parties sur {total}",
-      "seeResult": "Voir le résultat"
+      "seeResult": "Voir le résultat",
+      "wonPtsEach": "+{points} points ajoutés à chacun"
     }
   }
 }

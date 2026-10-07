@@ -23,7 +23,7 @@ describe('ContestDefis', () => {
     expect(carte).toContain('19 h 30 pile')
     expect(carte).toContain('00 h 00 (heure de Paris)')
     expect(w.find('[data-testid="defi-compte"]').text()).toContain('Lancement dans 7 h 30 min')
-    expect(w.text()).toContain('50 à 150 pts bonus pour le 1er')
+    expect(w.text()).toContain('50 à 200 pts bonus pour le 1er')
     expect(w.find('[data-testid="defis-regle"]').text()).toMatch(/plus vite avant la fin du défi/)
     expect(w.find('[data-testid="defis-bugs"]').text()).toBe('+40 points par bug pertinent trouvé sur les parcours d\'un défi, une fois validé par l\'équipe.')
   })

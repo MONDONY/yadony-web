@@ -96,13 +96,13 @@ describe('bugs trouvés sur les parcours des défis', () => {
 })
 
 describe('données des défis', () => {
-  it('annonce le défi n°2 de 20 h 30 à 23 h 30 (heure de Paris), avec son énoncé en trois parties et 150 points', () => {
+  it('annonce le défi n°2 de 20 h 30 à 23 h 30 (heure de Paris), avec son énoncé en trois parties et 200 points', () => {
     const [un, deux] = defisData.defis as Defi[]
     expect(un!.numero).toBe(1)
     expect(deux!.numero).toBe(2)
     expect(deux!.debut).toBe('2026-10-07T18:30:00Z')
     expect(deux!.fin).toBe('2026-10-07T21:30:00Z')
-    expect(deux!.points).toBe(150)
+    expect(deux!.points).toBe(200)
     expect(deux!.enonce!.fr).toContain('Le colis qui revient')
     expect(deux!.enonce!.fr).toContain('Négocier jusqu\'au bout')
     expect(deux!.enonce!.fr).toContain('Le destinataire qui refuse')
@@ -110,6 +110,8 @@ describe('données des défis', () => {
     expect(deux!.enonce!.fr).toContain('Négocier jusqu\'au bout (2 personnes : un expéditeur et un voyageur)')
     expect(deux!.enonce!.fr).toContain('Le destinataire qui refuse (3 personnes : le destinataire, le voyageur et l\'expéditeur)')
     expect(deux!.enonce!.en).toContain('(3 people: the recipient, the traveller and the sender)')
+    expect(deux!.enonce!.fr).toContain('gagne 200 points')
+    expect(deux!.enonce!.en).toContain('wins 200 points')
     expect(deux!.enonce!.en).toContain('before 11:30 pm')
     expect(deux!.gagnant).toBeNull()
     expect(etatDefi(deux!, new Date('2026-10-07T12:00:00Z'))).toBe('a_venir')

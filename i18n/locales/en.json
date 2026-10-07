@@ -1610,13 +1610,13 @@
       "current": "Challenge #{n} · {jour}",
       "startsIn": "Starts in {temps}",
       "endsIn": "Ends in {temps}",
-      "ready": "Stay tuned and get ready from {heure}! May the fastest win!",
+      "ready": "Update your app, stay tuned and get ready from {heure}! May the fastest win!",
       "pending": "The challenge is about to appear: reload the page.",
       "atStake": "{points} points up for grabs",
       "wonBy": "Won by {nom}",
       "wonPts": "+{points} points added to their score",
       "nobody": "Nobody completed the challenge: no points awarded.",
-      "rule": "No ties: the winner is whoever completes the challenge fastest before midnight. If nobody succeeds, nobody gets the points.",
+      "rule": "No ties: the winner is whoever completes the challenge fastest before the challenge ends. If nobody succeeds, nobody gets the points.",
       "history": "Past challenges",
       "duration": "{h}h {m}m",
       "durationMin": "{m}m",
@@ -1634,12 +1634,13 @@
       "seeStatement": "Read the challenge",
       "rewardChip": "{min} to {max} bonus points for the first to complete the goal",
       "chipStart": "Revealed at {heure} sharp",
-      "chipEnd": "Ends at {heure} (midnight, Paris time)",
+      "chipEnd": "Ends at {heure} (Paris time)",
       "nobodyShort": "Nobody succeeded",
       "bugRule": "+{n} points per relevant bug found on a challenge's flows, once confirmed by the team.",
       "bilanTitle": "What happened",
       "reussitesTitle": "Completed the challenge ({n})",
-      "partiels": "{n} part out of {total} | {n} part out of {total} | {n} parts out of {total}"
+      "partiels": "{n} part out of {total} | {n} part out of {total} | {n} parts out of {total}",
+      "seeResult": "See the result"
     }
   }
 }

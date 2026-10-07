@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { bonusDefis, bugsDefis, DEFI_POINTS_BUG, defiAffiche, etatDefi, type Defi } from '@/lib/classement/defis'
+import defisData from '../../../app/data/defis.json'
 import { classer, scoreTesteur } from '@/lib/classement/score'
 import type { Testeur } from '@/lib/classement/types'
 
@@ -91,5 +92,24 @@ describe('bugs trouvés sur les parcours des défis', () => {
     expect(koro.total).toBe(100)
     expect(koro.detail).toContainEqual({ cle: 'defi_bug', points: 80, nombre: 2 })
     expect(lignes.find(l => l.id === 'aaaa1111')!.detail.some(l => l.cle === 'defi_bug')).toBe(false)
+  })
+})
+
+describe('données des défis', () => {
+  it('annonce le défi n°2 ce soir de 20 h 30 à 23 h 30 (heure de Paris), sans énoncé tant que le départ n’est pas donné', () => {
+    const [un, deux] = defisData.defis as Defi[]
+    expect(un!.numero).toBe(1)
+    expect(deux!.numero).toBe(2)
+    expect(deux!.debut).toBe('2026-10-07T18:30:00Z')
+    expect(deux!.fin).toBe('2026-10-07T21:30:00Z')
+    expect(deux!.enonce).toBeNull()
+    expect(deux!.gagnant).toBeNull()
+    expect(etatDefi(deux!, new Date('2026-10-07T12:00:00Z'))).toBe('a_venir')
+    expect(etatDefi(deux!, new Date('2026-10-07T18:30:00Z'))).toBe('en_cours')
+    expect(etatDefi(deux!, new Date('2026-10-07T21:30:00Z'))).toBe('termine')
+  })
+
+  it('met le défi n°2 en avant dès que le n°1 a un gagnant', () => {
+    expect(defiAffiche(defisData.defis as Defi[], new Date('2026-10-07T12:00:00Z'))!.numero).toBe(2)
   })
 })

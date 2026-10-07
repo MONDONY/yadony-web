@@ -128,6 +128,8 @@ describe('données des défis', () => {
     expect(deux!.enonce!.fr).toContain('compte Yadony dont le numéro (format international)')
     expect(deux!.enonce!.en).toContain('To win, you must complete all five topics.')
     expect(deux!.enonce!.en).toContain('there is only one winner.')
+    expect(deux!.enonce!.fr).toContain('En cas d\'égalité à la seconde près, le gagnant est celui qui a fini ses sujets individuels (1 et 2) en premier.')
+    expect(deux!.enonce!.en).toContain('In case of a tie to the second, the winner is whoever finished the individual topics (1 and 2) first.')
     expect(deux!.enonce!.en).toContain('finish with the traveller\'s cancellation')
     expect(deux!.enonce!.en).toContain('wins 200 points')
     expect(deux!.enonce!.en).toContain('before 11:30 pm')

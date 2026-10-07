@@ -1,5 +1,5 @@
 {
-  "miseAJour": "2026-10-07T05:40:00Z",
+  "miseAJour": "2026-10-07T12:55:00Z",
   "debut": "2026-10-05T18:30:00Z",
   "fin": "2026-10-12T18:30:00Z",
   "testeurs": [
@@ -97,6 +97,7 @@
       "nom": "Ini N.",
       "tests": [
         "avis_parcours",
+        "filtres",
         "grille_kilos",
         "message_app",
         "outils",
@@ -110,7 +111,7 @@
         "ecrans": 163,
         "minutes": 142.2
       },
-      "dernierPoint": "2026-10-06T18:50:34Z"
+      "dernierPoint": "2026-10-07T09:36:27Z"
     },
     {
       "id": "LWoJJBVp",
@@ -224,6 +225,7 @@
       "id": "KqxKUE6g",
       "nom": "Moustapha H.",
       "tests": [
+        "appels",
         "message_app"
       ],
       "bugs": 0,
@@ -233,7 +235,7 @@
         "ecrans": 28,
         "minutes": 4.1
       },
-      "dernierPoint": "2026-10-05T21:41:59Z"
+      "dernierPoint": "2026-10-07T12:08:30Z"
     },
     {
       "id": "um8gN18T",

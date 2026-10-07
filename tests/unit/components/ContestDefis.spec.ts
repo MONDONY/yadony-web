@@ -136,7 +136,7 @@ describe('ContestDefis', () => {
       partiels: [{ nom: 'Mariam D.', parties: 1 }],
       bilan: [{ titre: { fr: 'Zéro espèce', en: 'Zero cash' }, texte: { fr: 'Validé par 5 testeurs.', en: 'Done by 5 testers.' } }],
     }
-    const d2: Defi = { ...d1, numero: 2, debut: '2026-10-07T18:30:00Z', fin: '2026-10-07T21:30:00Z' }
+    const d2: Defi = { ...d1, numero: 2, debut: '2026-10-07T19:00:00Z', fin: '2026-10-07T21:30:00Z' }
     const w = monter([d1fini, d2], '2026-10-07T09:00:00Z')
     const detail = w.find('[data-testid="defis-historique"] details')
     expect(detail.exists()).toBe(true)
@@ -147,7 +147,7 @@ describe('ContestDefis', () => {
   })
 
   it('n’ajoute pas de détail déroulable à un défi passé sans récit', () => {
-    const d2: Defi = { ...d1, numero: 2, debut: '2026-10-07T18:30:00Z', fin: '2026-10-07T21:30:00Z' }
+    const d2: Defi = { ...d1, numero: 2, debut: '2026-10-07T19:00:00Z', fin: '2026-10-07T21:30:00Z' }
     const w = monter([{ ...d1, points: 80, gagnant: 'aaaa1111' }, d2], '2026-10-07T09:00:00Z')
     expect(w.find('[data-testid="defis-historique"] details').exists()).toBe(false)
   })

@@ -23,8 +23,9 @@ describe('ContestDefis', () => {
     expect(carte).toContain('19 h 30 pile')
     expect(carte).toContain('00 h 00 (heure de Paris)')
     expect(w.find('[data-testid="defi-compte"]').text()).toContain('Lancement dans 7 h 30 min')
-    expect(w.text()).toContain('50 à 150 pts bonus pour le 1er')
+    expect(w.text()).toContain('50 à 200 pts bonus pour le 1er')
     expect(w.find('[data-testid="defis-regle"]').text()).toMatch(/plus vite avant la fin du défi/)
+    expect(w.find('[data-testid="defis-regle"]').text()).toContain('Pas d\'égalité')
     expect(w.find('[data-testid="defis-bugs"]').text()).toBe('+40 points par bug pertinent trouvé sur les parcours d\'un défi, une fois validé par l\'équipe.')
   })
 
@@ -135,7 +136,7 @@ describe('ContestDefis', () => {
       partiels: [{ nom: 'Mariam D.', parties: 1 }],
       bilan: [{ titre: { fr: 'Zéro espèce', en: 'Zero cash' }, texte: { fr: 'Validé par 5 testeurs.', en: 'Done by 5 testers.' } }],
     }
-    const d2: Defi = { ...d1, numero: 2, debut: '2026-10-07T18:30:00Z', fin: '2026-10-07T21:30:00Z' }
+    const d2: Defi = { ...d1, numero: 2, debut: '2026-10-07T19:00:00Z', fin: '2026-10-07T21:30:00Z' }
     const w = monter([d1fini, d2], '2026-10-07T09:00:00Z')
     const detail = w.find('[data-testid="defis-historique"] details')
     expect(detail.exists()).toBe(true)
@@ -146,7 +147,7 @@ describe('ContestDefis', () => {
   })
 
   it('n’ajoute pas de détail déroulable à un défi passé sans récit', () => {
-    const d2: Defi = { ...d1, numero: 2, debut: '2026-10-07T18:30:00Z', fin: '2026-10-07T21:30:00Z' }
+    const d2: Defi = { ...d1, numero: 2, debut: '2026-10-07T19:00:00Z', fin: '2026-10-07T21:30:00Z' }
     const w = monter([{ ...d1, points: 80, gagnant: 'aaaa1111' }, d2], '2026-10-07T09:00:00Z')
     expect(w.find('[data-testid="defis-historique"] details').exists()).toBe(false)
   })

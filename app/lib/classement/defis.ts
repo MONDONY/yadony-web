@@ -9,7 +9,7 @@ export interface Defi {
   debut: string
   /** Fin du défi (ISO). */
   fin: string
-  /** Points en jeu (50 à 150), connus avec l'énoncé. */
+  /** Points en jeu (50 à 200), connus avec l'énoncé. */
   points: number | null
   /** Énoncé, publié à l'heure du dévoilement seulement (le site est statique). */
   enonce: { fr: string; en: string } | null
@@ -27,7 +27,7 @@ export interface Defi {
 
 export type EtatDefi = 'a_venir' | 'en_cours' | 'termine'
 
-export const DEFI_POINTS = { min: 50, max: 150 } as const
+export const DEFI_POINTS = { min: 50, max: 200 } as const
 
 /** Points par bug pertinent trouvé sur les parcours d'un défi. */
 export const DEFI_POINTS_BUG = 40

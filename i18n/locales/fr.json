@@ -1616,7 +1616,7 @@
       "wonBy": "Gagné par {nom}",
       "wonPts": "+{points} points ajoutés à son classement",
       "nobody": "Personne n'a relevé le défi : les points ne sont pas attribués.",
-      "rule": "Le gagnant est celui qui réussit le défi le plus vite avant la fin du défi. Deux testeurs qui finissent ensemble gagnent ensemble. Si personne ne réussit, personne ne gagne les points.",
+      "rule": "Pas d'égalité : le gagnant est celui qui réussit le défi le plus vite avant la fin du défi. Si personne ne réussit, personne ne gagne les points.",
       "history": "Défis précédents",
       "duration": "{h} h {m} min",
       "durationMin": "{m} min",

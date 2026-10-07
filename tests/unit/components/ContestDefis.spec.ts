@@ -25,7 +25,7 @@ describe('ContestDefis', () => {
     expect(w.find('[data-testid="defi-compte"]').text()).toContain('Lancement dans 7 h 30 min')
     expect(w.text()).toContain('50 à 200 pts bonus pour le 1er')
     expect(w.find('[data-testid="defis-regle"]').text()).toMatch(/plus vite avant la fin du défi/)
-    expect(w.find('[data-testid="defis-regle"]').text()).toContain('Deux testeurs qui finissent ensemble gagnent ensemble.')
+    expect(w.find('[data-testid="defis-regle"]').text()).toContain('Pas d\'égalité')
     expect(w.find('[data-testid="defis-bugs"]').text()).toBe('+40 points par bug pertinent trouvé sur les parcours d\'un défi, une fois validé par l\'équipe.')
   })
 

@@ -96,7 +96,7 @@ describe('bugs trouvés sur les parcours des défis', () => {
 })
 
 describe('données des défis', () => {
-  it('annonce le défi n°2 de 21 h 00 à 23 h 30 (heure de Paris), avec son énoncé en trois parties et 200 points', () => {
+  it('annonce le défi n°2 de 21 h 00 à 23 h 30 (heure de Paris), avec son énoncé en cinq sujets et 200 points', () => {
     const [un, deux] = defisData.defis as Defi[]
     expect(un!.numero).toBe(1)
     expect(deux!.numero).toBe(2)
@@ -123,11 +123,11 @@ describe('données des défis', () => {
     expect(deux!.enonce!.en).toContain('1. Follow two other users (3 people: you and the two users you follow)')
     expect(deux!.enonce!.en).toContain('2. Publish two shipping requests (1 person: the sender)')
     expect(deux!.enonce!.fr).toContain('Pour gagner, il faut avoir réussi les cinq sujets.')
-    expect(deux!.enonce!.fr).toContain('Un duo qui termine les cinq sujets ensemble gagne ensemble : les deux reçoivent 200 points.')
+    expect(deux!.enonce!.fr).toContain('il n\'y a qu\'un seul gagnant.')
     expect(deux!.enonce!.fr).toContain('terminez par l\'annulation du voyageur, qui clôt le colis')
     expect(deux!.enonce!.fr).toContain('compte Yadony dont le numéro (format international)')
     expect(deux!.enonce!.en).toContain('To win, you must complete all five topics.')
-    expect(deux!.enonce!.en).toContain('A duo that finishes all five topics together wins together: both receive 200 points.')
+    expect(deux!.enonce!.en).toContain('there is only one winner.')
     expect(deux!.enonce!.en).toContain('finish with the traveller\'s cancellation')
     expect(deux!.enonce!.en).toContain('wins 200 points')
     expect(deux!.enonce!.en).toContain('before 11:30 pm')

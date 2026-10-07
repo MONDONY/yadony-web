@@ -1,5 +1,5 @@
 {
-  "miseAJour": "2026-10-07T12:55:00Z",
+  "miseAJour": "2026-10-07T14:30:00Z",
   "debut": "2026-10-05T18:30:00Z",
   "fin": "2026-10-12T18:30:00Z",
   "testeurs": [
@@ -38,7 +38,7 @@
         "retard_voyageur",
         "scenario_complet"
       ],
-      "bugs": 0,
+      "bugs": 2,
       "suggestions": 0,
       "ecransAvecAvis": 0,
       "indicatif": {
@@ -61,7 +61,7 @@
         "retard_voyageur",
         "scenario_complet"
       ],
-      "bugs": 0,
+      "bugs": 3,
       "suggestions": 0,
       "ecransAvecAvis": 0,
       "indicatif": {
@@ -83,7 +83,7 @@
         "retard_voyageur",
         "scenario_complet"
       ],
-      "bugs": 0,
+      "bugs": 3,
       "suggestions": 0,
       "ecransAvecAvis": 0,
       "indicatif": {
@@ -104,7 +104,7 @@
         "retard_voyageur",
         "scenario_complet"
       ],
-      "bugs": 0,
+      "bugs": 1,
       "suggestions": 0,
       "ecransAvecAvis": 0,
       "indicatif": {
@@ -122,7 +122,8 @@
         "message_app",
         "nego_colis",
         "nego_trajet",
-        "outils"
+        "outils",
+        "paiement_carte"
       ],
       "bugs": 0,
       "suggestions": 0,
@@ -149,7 +150,7 @@
         "retard_voyageur",
         "scenario_complet"
       ],
-      "bugs": 2,
+      "bugs": 3,
       "suggestions": 0,
       "ecransAvecAvis": 0,
       "indicatif": {
@@ -272,6 +273,7 @@
     "retard_voyageur": "1aM5LVzU",
     "parrainage": "YeTesJn5",
     "filtres": "um8gN18T",
-    "paiement_mm": "YeTesJn5"
+    "paiement_mm": "YeTesJn5",
+    "paiement_carte": "LWoJJBVp"
   }
 }

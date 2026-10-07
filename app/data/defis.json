@@ -94,10 +94,105 @@
       "fin": "2026-10-07T21:30:00Z",
       "points": 200,
       "enonce": {
-        "fr": "Prérequis : installez la dernière version de l'application (TestFlight sur iPhone, Play Store sur Android).\nRelève les 5 défis avant 23 h 30 :\n1. S'abonner à deux autres utilisateurs (3 personnes : toi et les deux utilisateurs suivis) : abonne-toi au profil de deux autres utilisateurs pour recevoir une notification à chaque trajet qu'ils publient.\n2. Publier deux demandes d'envoi (1 personne : l'expéditeur) : publie au moins deux demandes d'envoi, l'une avec négociation du prix et l'autre avec un prix fixe.\n3. Le colis qui revient (2 personnes : un expéditeur et un voyageur) : l'expéditeur publie une demande d'envoi, le voyageur lie son trajet et fait une proposition, l'expéditeur dépose son colis. Le voyageur annule : l'expéditeur récupère son colis et donne le code de retour, que le voyageur saisit. Validé pour les deux dès la saisie du code.\n4. Négocier jusqu'au bout (2 personnes : un expéditeur et un voyageur) : une demande d'envoi négociée sur au moins 3 tours de contre-offres, jusqu'à l'accord ou jusqu'à la limite de 5 tours.\n5. Le destinataire qui refuse (3 personnes : le destinataire, le voyageur et l'expéditeur) : le destinataire (avec un compte Yadony) refuse le colis, le voyageur demande un autre destinataire et l'expéditeur en désigne un nouveau.\nConseil : un même colis peut servir aux trois dernières parties, terminez par l'annulation du voyageur, qui clôt le colis. Le destinataire doit avoir un compte Yadony dont le numéro (format international) est celui saisi par l'expéditeur.\nOrganisez-vous : 3 testeurs suffisent pour valider les cinq parties.\nPour gagner, il faut avoir réussi les cinq sujets. Le premier à finir les cinq gagne 200 points : il n'y a qu'un seul gagnant. En cas d'égalité à la seconde près, le gagnant est celui qui a fini ses sujets individuels (1 et 2) en premier.\nBonus : +40 points par bug pertinent trouvé sur ces parcours.",
-        "en": "Prerequisite: install the latest version of the app (TestFlight on iPhone, Play Store on Android).\nComplete all 5 challenges before 11:30 pm:\n1. Follow two other users (3 people: you and the two users you follow): follow two other users to get a notification every time they publish a trip.\n2. Publish two shipping requests (1 person: the sender): publish at least two shipping requests, one with price negotiation and one with a fixed price.\n3. The parcel that comes back (2 people: a sender and a traveller): the sender posts a shipping request, the traveller links their trip and makes an offer, the sender hands over the parcel. The traveller cancels: the sender gets the parcel back and gives the return code, which the traveller enters. It counts for both as soon as the code is entered.\n4. Negotiate to the end (2 people: a sender and a traveller): a shipping request negotiated over at least 3 rounds of counter-offers, until an agreement or the 5-round limit.\n5. The recipient who declines (3 people: the recipient, the traveller and the sender): the recipient (with a Yadony account) declines the parcel, the traveller asks for another recipient and the sender names a new one.\nTip: one parcel can serve the last three parts, finish with the traveller's cancellation, which closes the parcel. The recipient must have a Yadony account whose number (international format) is the one entered by the sender.\nGet organised: 3 testers are enough to complete all five parts.\nTo win, you must complete all five topics. The first to finish all five wins 200 points: there is only one winner. In case of a tie to the second, the winner is whoever finished the individual topics (1 and 2) first.\nBonus: +40 points per relevant bug found on these flows."
+        "fr": "Prérequis : installez la dernière version de l'application (TestFlight sur iPhone, Play Store sur Android).\nRelève les 5 défis avant 23 h 30 :\n1. S'abonner à deux autres utilisateurs (3 personnes : toi et les deux utilisateurs suivis) : abonne-toi au profil de deux autres utilisateurs pour recevoir une notification à chaque trajet qu'ils publient.\n2. Publier deux demandes d'envoi (1 personne : l'expéditeur) : publie au moins deux demandes d'envoi, l'une avec négociation du prix et l'autre avec un prix fixe.\n3. Le colis qui revient (2 personnes : un expéditeur et un voyageur) : l'expéditeur publie une demande d'envoi, le voyageur lie son trajet et fait une proposition, l'expéditeur dépose son colis. Le voyageur annule : l'expéditeur récupère son colis et donne le code de retour, que le voyageur saisit. Validé pour les deux dès la saisie du code.\n4. Négocier jusqu'au bout (2 personnes : un expéditeur et un voyageur) : une demande d'envoi négociée sur au moins 3 tours de contre-offres, jusqu'à l'accord ou jusqu'à la limite de 5 tours.\n5. Le destinataire qui refuse (3 personnes : le destinataire, le voyageur et l'expéditeur) : le destinataire (avec un compte Yadony) refuse le colis, le voyageur demande un autre destinataire et l'expéditeur en désigne un nouveau.\nConseil : un même colis peut servir aux trois dernières parties, terminez par l'annulation du voyageur, qui clôt le colis. Le destinataire doit avoir un compte Yadony dont le numéro (format international) est celui saisi par l'expéditeur.\nOrganisez-vous : 3 testeurs suffisent pour valider les cinq parties.\nPour gagner, il faut avoir réussi les cinq sujets. Le premier à finir les cinq gagne 200 points. Si deux testeurs réussissent ensemble les sujets 3 et 4 en binôme, ils gagnent ensemble : les deux reçoivent 200 points.\nBonus : +40 points par bug pertinent trouvé sur ces parcours.",
+        "en": "Prerequisite: install the latest version of the app (TestFlight on iPhone, Play Store on Android).\nComplete all 5 challenges before 11:30 pm:\n1. Follow two other users (3 people: you and the two users you follow): follow two other users to get a notification every time they publish a trip.\n2. Publish two shipping requests (1 person: the sender): publish at least two shipping requests, one with price negotiation and one with a fixed price.\n3. The parcel that comes back (2 people: a sender and a traveller): the sender posts a shipping request, the traveller links their trip and makes an offer, the sender hands over the parcel. The traveller cancels: the sender gets the parcel back and gives the return code, which the traveller enters. It counts for both as soon as the code is entered.\n4. Negotiate to the end (2 people: a sender and a traveller): a shipping request negotiated over at least 3 rounds of counter-offers, until an agreement or the 5-round limit.\n5. The recipient who declines (3 people: the recipient, the traveller and the sender): the recipient (with a Yadony account) declines the parcel, the traveller asks for another recipient and the sender names a new one.\nTip: one parcel can serve the last three parts, finish with the traveller's cancellation, which closes the parcel. The recipient must have a Yadony account whose number (international format) is the one entered by the sender.\nGet organised: 3 testers are enough to complete all five parts.\nTo win, you must complete all five topics. The first to finish all five wins 200 points. If two testers complete topics 3 and 4 together as a pair, they win together: both receive 200 points.\nBonus: +40 points per relevant bug found on these flows."
       },
-      "gagnant": null
+      "gagnant": null,
+      "gagnants": [
+        "ftAUL354",
+        "1aM5LVzU"
+      ],
+      "sujets": 5,
+      "reussites": [
+        {
+          "nom": "Ibrahim D.",
+          "fin": "2026-10-07T20:26:38Z"
+        },
+        {
+          "nom": "Koro D.",
+          "fin": "2026-10-07T20:26:38Z"
+        }
+      ],
+      "partiels": [
+        {
+          "nom": "Hadja Maferima T.",
+          "parties": 3
+        },
+        {
+          "nom": "Salimata D.",
+          "parties": 3
+        },
+        {
+          "nom": "N'da O.",
+          "parties": 1
+        },
+        {
+          "nom": "Ini N.",
+          "parties": 1
+        }
+      ],
+      "bilan": [
+        {
+          "titre": {
+            "fr": "1. S'abonner à deux autres utilisateurs",
+            "en": "1. Follow two other users"
+          },
+          "texte": {
+            "fr": "6 testeurs ont réussi : Koro D. (21 h 06), Ibrahim D. (21 h 07), Hadja Maferima T. (21 h 08), Salimata D. (21 h 09), Ini N. (21 h 55) et N'da O. (22 h 08), le premier testeur Android du défi.",
+            "en": "6 testers did it: Koro D. (9:06 pm), Ibrahim D. (9:07 pm), Hadja Maferima T. (9:08 pm), Salimata D. (9:09 pm), Ini N. (9:55 pm) and N'da O. (10:08 pm), the challenge's first Android tester."
+          }
+        },
+        {
+          "titre": {
+            "fr": "2. Publier deux demandes d'envoi",
+            "en": "2. Publish two shipping requests"
+          },
+          "texte": {
+            "fr": "4 testeurs ont publié une demande négociable et une à prix fixe : Ibrahim D. (21 h 10), Salimata D. (21 h 21), Hadja Maferima T. (21 h 22) et Koro D. (21 h 31). Mariam D. n'a publié que des demandes négociables.",
+            "en": "4 testers published one negotiable request and one at a fixed price: Ibrahim D. (9:10 pm), Salimata D. (9:21 pm), Hadja Maferima T. (9:22 pm) and Koro D. (9:31 pm). Mariam D. only published negotiable requests."
+          }
+        },
+        {
+          "titre": {
+            "fr": "3. Le colis qui revient",
+            "en": "3. The parcel that comes back"
+          },
+          "texte": {
+            "fr": "3 colis ont été rendus avec le code de retour : Ibrahim D. a saisi celui de Koro D. (21 h 48), puis Hadja Maferima T. (22 h 19) et Salimata D. (22 h 26) ont chacune saisi le code de l'autre.",
+            "en": "3 parcels were returned with the return code: Ibrahim D. entered Koro D.'s (9:48 pm), then Hadja Maferima T. (10:19 pm) and Salimata D. (10:26 pm) each entered the other's code."
+          }
+        },
+        {
+          "titre": {
+            "fr": "4. Négocier jusqu'au bout",
+            "en": "4. Negotiate to the end"
+          },
+          "texte": {
+            "fr": "Une seule négociation est allée jusqu'à la limite de 5 tours : celle de Koro D. et Ibrahim D. (21 h 56). Toutes les autres se sont terminées dès le premier tour.",
+            "en": "Only one negotiation went all the way to the 5-round limit: Koro D. and Ibrahim D.'s (9:56 pm). All the others ended in the first round."
+          }
+        },
+        {
+          "titre": {
+            "fr": "5. Le destinataire qui refuse",
+            "en": "5. The recipient who declines"
+          },
+          "texte": {
+            "fr": "Deux destinataires se sont retirés d'un colis. Au premier (22 h 07), Koro D. a désigné un nouveau destinataire sans demande du voyageur. Au second (22 h 25), Ibrahim D. a demandé un autre destinataire (22 h 26) et Koro D. a désigné le nouveau (22 h 26 min 38 s) : sujet validé pour les deux.",
+            "en": "Two recipients withdrew from a parcel. For the first (10:07 pm), Koro D. named a new recipient without the traveller asking. For the second (10:25 pm), Ibrahim D. asked for another recipient (10:26 pm) and Koro D. named the new one (10:26:38 pm): topic completed for both."
+          }
+        },
+        {
+          "titre": {
+            "fr": "Bugs remontés",
+            "en": "Bugs reported"
+          },
+          "texte": {
+            "fr": "Les retours reçus pendant le défi sont en cours de traitement : +40 points par bug validé, ajoutés au score après leur traitement par l'équipe.",
+            "en": "The reports received during the challenge are being processed: +40 points per confirmed bug, added to the score once the team has processed them."
+          }
+        }
+      ]
     }
   ]
 }

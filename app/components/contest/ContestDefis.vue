@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { DEFI_POINTS, DEFI_POINTS_BUG, defiAffiche, etatDefi, type Defi } from '@/lib/classement/defis'
+import { DEFI_POINTS, DEFI_POINTS_BUG, defiAffiche, etatDefi, gagnantsDefi, type Defi } from '@/lib/classement/defis'
 import { compteARebours } from '@/lib/classement/popup'
 import { localeDates } from '@/lib/classement/score'
 import ContestDefiBilan from './ContestDefiBilan.vue'
@@ -44,7 +44,9 @@ function aDetail(d: Defi): boolean {
   return Boolean(d.reussites?.length || d.partiels?.length || d.bilan?.length)
 }
 function gagnant(d: Defi): string | null {
-  return d.gagnant ? (props.noms[d.gagnant] ?? null) : null
+  const noms = gagnantsDefi(d).map(id => props.noms[id]).filter((n): n is string => Boolean(n))
+  if (!noms.length) return null
+  return new Intl.ListFormat(localeDates(locale.value), { style: 'long', type: 'conjunction' }).format(noms)
 }
 const pastille = computed(() =>
   etat.value === 'en_cours' ? 'bg-[rgb(40_180_110)] motion-safe:animate-pulse' : etat.value === 'termine' ? 'bg-ink-muted' : 'bg-orange',
@@ -116,7 +118,7 @@ const pastille = computed(() =>
         <p v-if="enonce(defi)" class="whitespace-pre-line text-pretty text-[14px] text-ink-muted">{{ enonce(defi) }}</p>
         <template v-if="gagnant(defi)">
           <p class="mt-1 font-display text-[20px] font-extrabold">{{ t('contest.defis.wonBy', { nom: gagnant(defi) }) }}</p>
-          <p v-if="defi.points" class="font-semibold text-success">{{ t('contest.defis.wonPts', { points: defi.points }) }}</p>
+          <p v-if="defi.points" class="font-semibold text-success">{{ t(gagnantsDefi(defi).length > 1 ? 'contest.defis.wonPtsEach' : 'contest.defis.wonPts', { points: defi.points }) }}</p>
         </template>
         <p v-else class="mt-1 text-pretty font-semibold">{{ t('contest.defis.nobody') }}</p>
         <ContestDefiBilan :defi="defi" />

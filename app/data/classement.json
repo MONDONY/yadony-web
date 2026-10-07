@@ -1,5 +1,5 @@
 {
-  "miseAJour": "2026-10-07T15:20:00Z",
+  "miseAJour": "2026-10-07T20:35:00Z",
   "debut": "2026-10-05T18:30:00Z",
   "fin": "2026-10-12T18:30:00Z",
   "testeurs": [
@@ -53,9 +53,11 @@
       "tests": [
         "appels",
         "avis_parcours",
+        "code_retour",
         "grille_kilos",
         "message_app",
         "message_destinataire",
+        "nego_colis",
         "nego_trajet",
         "outils",
         "retard_voyageur",
@@ -68,7 +70,7 @@
         "ecrans": 827,
         "minutes": 182.3
       },
-      "dernierPoint": "2026-10-06T18:56:33Z"
+      "dernierPoint": "2026-10-07T20:19:21Z"
     },
     {
       "id": "ftAUL354",
@@ -76,6 +78,8 @@
       "tests": [
         "appels",
         "avis_parcours",
+        "code_retour",
+        "grille_kilos",
         "message_app",
         "message_destinataire",
         "nego_colis",
@@ -90,7 +94,7 @@
         "ecrans": 418,
         "minutes": 237.8
       },
-      "dernierPoint": "2026-10-06T18:50:55Z"
+      "dernierPoint": "2026-10-07T19:48:31Z"
     },
     {
       "id": "Yg2uNZRK",
@@ -140,9 +144,11 @@
       "tests": [
         "appels",
         "avis_parcours",
+        "code_retour",
         "grille_kilos",
         "message_app",
         "message_destinataire",
+        "nego_colis",
         "nego_trajet",
         "outils",
         "paiement_mm",
@@ -157,7 +163,7 @@
         "ecrans": 380,
         "minutes": 155.6
       },
-      "dernierPoint": "2026-10-06T20:54:13Z"
+      "dernierPoint": "2026-10-07T20:26:25Z"
     },
     {
       "id": "txCpxwiq",
@@ -247,6 +253,7 @@
         "filtres",
         "grille_kilos",
         "message_app",
+        "nego_colis",
         "retard_voyageur",
         "scenario_complet"
       ],
@@ -257,7 +264,7 @@
         "ecrans": 0,
         "minutes": 0
       },
-      "dernierPoint": "2026-10-06T19:49:00Z"
+      "dernierPoint": "2026-10-07T19:35:18Z"
     }
   ],
   "premiers": {
@@ -274,6 +281,7 @@
     "parrainage": "YeTesJn5",
     "filtres": "um8gN18T",
     "paiement_mm": "YeTesJn5",
-    "paiement_carte": "LWoJJBVp"
+    "paiement_carte": "LWoJJBVp",
+    "code_retour": "ftAUL354"
   }
 }

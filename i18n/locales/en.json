@@ -1616,7 +1616,7 @@
       "wonBy": "Won by {nom}",
       "wonPts": "+{points} points added to their score",
       "nobody": "Nobody completed the challenge: no points awarded.",
-      "rule": "No ties: the winner is whoever completes the challenge fastest before the challenge ends. If nobody succeeds, nobody gets the points.",
+      "rule": "The winner is whoever completes the challenge fastest before the challenge ends. If two testers succeed together as a pair, they win together. If nobody succeeds, nobody gets the points.",
       "history": "Past challenges",
       "duration": "{h}h {m}m",
       "durationMin": "{m}m",
@@ -1640,7 +1640,8 @@
       "bilanTitle": "What happened",
       "reussitesTitle": "Completed the challenge ({n})",
       "partiels": "{n} part out of {total} | {n} part out of {total} | {n} parts out of {total}",
-      "seeResult": "See the result"
+      "seeResult": "See the result",
+      "wonPtsEach": "+{points} points added to each"
     }
   }
 }

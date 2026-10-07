@@ -80,6 +80,14 @@
           "parties": 1
         }
       ]
+    },
+    {
+      "numero": 2,
+      "debut": "2026-10-07T18:30:00Z",
+      "fin": "2026-10-07T21:30:00Z",
+      "points": null,
+      "enonce": null,
+      "gagnant": null
     }
   ]
 }

@@ -1610,13 +1610,13 @@
       "current": "Défi n°{n} · {jour}",
       "startsIn": "Lancement dans {temps}",
       "endsIn": "Fin dans {temps}",
-      "ready": "Restez connectés et préparez-vous dès {heure} ! Que le plus rapide gagne !",
+      "ready": "Mets ton application à jour, restez connectés et préparez-vous dès {heure} ! Que le plus rapide gagne !",
       "pending": "L'énoncé arrive dans un instant : rechargez la page.",
       "atStake": "{points} points en jeu",
       "wonBy": "Gagné par {nom}",
       "wonPts": "+{points} points ajoutés à son classement",
       "nobody": "Personne n'a relevé le défi : les points ne sont pas attribués.",
-      "rule": "Pas d'égalité : le gagnant est celui qui réussit le défi le plus vite avant minuit. Si personne ne réussit, personne ne gagne les points.",
+      "rule": "Pas d'égalité : le gagnant est celui qui réussit le défi le plus vite avant la fin du défi. Si personne ne réussit, personne ne gagne les points.",
       "history": "Défis précédents",
       "duration": "{h} h {m} min",
       "durationMin": "{m} min",
@@ -1634,12 +1634,13 @@
       "seeStatement": "Voir l'énoncé",
       "rewardChip": "{min} à {max} pts bonus pour le 1er qui valide l'objectif",
       "chipStart": "Énoncé à {heure} pile",
-      "chipEnd": "Fin à {heure} (minuit, heure de Paris)",
+      "chipEnd": "Fin à {heure} (heure de Paris)",
       "nobodyShort": "Personne n'a réussi",
       "bugRule": "+{n} points par bug pertinent trouvé sur les parcours d'un défi, une fois validé par l'équipe.",
       "bilanTitle": "Ce qui s’est passé",
       "reussitesTitle": "Ont réussi le défi ({n})",
-      "partiels": "{n} partie sur {total} | {n} partie sur {total} | {n} parties sur {total}"
+      "partiels": "{n} partie sur {total} | {n} partie sur {total} | {n} parties sur {total}",
+      "seeResult": "Voir le résultat"
     }
   }
 }

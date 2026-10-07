@@ -21,10 +21,10 @@ describe('ContestDefis', () => {
     expect(carte).toContain('Défi n°1')
     expect(carte).toContain('mardi 6 octobre')
     expect(carte).toContain('19 h 30 pile')
-    expect(carte).toContain('00 h 00 (minuit, heure de Paris)')
+    expect(carte).toContain('00 h 00 (heure de Paris)')
     expect(w.find('[data-testid="defi-compte"]').text()).toContain('Lancement dans 7 h 30 min')
     expect(w.text()).toContain('50 à 150 pts bonus pour le 1er')
-    expect(w.find('[data-testid="defis-regle"]').text()).toMatch(/plus vite avant minuit/)
+    expect(w.find('[data-testid="defis-regle"]').text()).toMatch(/plus vite avant la fin du défi/)
     expect(w.find('[data-testid="defis-bugs"]').text()).toBe('+40 points par bug pertinent trouvé sur les parcours d\'un défi, une fois validé par l\'équipe.')
   })
 
@@ -124,6 +124,31 @@ describe('ContestDefis', () => {
     const h = w.find('[data-testid="defis-historique"]').text()
     expect(h).toContain('Défi n°1')
     expect(h).toContain('Gagné par Koro D.')
+  })
+
+  it('garde le récit d’un défi terminé, déroulable dans l’historique', () => {
+    const d1fini: Defi = {
+      ...d1,
+      points: 150,
+      gagnant: 'aaaa1111',
+      reussites: [{ nom: 'Koro D.', fin: '2026-10-06T18:45:22Z' }],
+      partiels: [{ nom: 'Mariam D.', parties: 1 }],
+      bilan: [{ titre: { fr: 'Zéro espèce', en: 'Zero cash' }, texte: { fr: 'Validé par 5 testeurs.', en: 'Done by 5 testers.' } }],
+    }
+    const d2: Defi = { ...d1, numero: 2, debut: '2026-10-07T18:30:00Z', fin: '2026-10-07T21:30:00Z' }
+    const w = monter([d1fini, d2], '2026-10-07T09:00:00Z')
+    const detail = w.find('[data-testid="defis-historique"] details')
+    expect(detail.exists()).toBe(true)
+    expect(detail.text()).toContain('Voir le résultat')
+    expect(detail.find('[data-testid="defi-reussites"]').text()).toContain('Koro D.')
+    expect(detail.find('[data-testid="defi-partiels"]').text()).toContain('Mariam D.')
+    expect(detail.find('[data-testid="defi-bilan"]').text()).toContain('Validé par 5 testeurs.')
+  })
+
+  it('n’ajoute pas de détail déroulable à un défi passé sans récit', () => {
+    const d2: Defi = { ...d1, numero: 2, debut: '2026-10-07T18:30:00Z', fin: '2026-10-07T21:30:00Z' }
+    const w = monter([{ ...d1, points: 80, gagnant: 'aaaa1111' }, d2], '2026-10-07T09:00:00Z')
+    expect(w.find('[data-testid="defis-historique"] details').exists()).toBe(false)
   })
 
   it('ne rend rien sans défi', () => {

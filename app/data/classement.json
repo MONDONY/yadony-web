@@ -1,5 +1,5 @@
 {
-  "miseAJour": "2026-10-07T20:56:00Z",
+  "miseAJour": "2026-10-08T13:30:00Z",
   "debut": "2026-10-05T18:30:00Z",
   "fin": "2026-10-12T18:30:00Z",
   "testeurs": [
@@ -157,7 +157,7 @@
         "retard_voyageur",
         "scenario_complet"
       ],
-      "bugs": 3,
+      "bugs": 4,
       "suggestions": 1,
       "ecransAvecAvis": 0,
       "indicatif": {

@@ -1,5 +1,5 @@
 {
-  "miseAJour": "2026-10-09T15:30:00Z",
+  "miseAJour": "2026-10-09T18:45:00Z",
   "debut": "2026-10-05T18:30:00Z",
   "fin": "2026-10-12T18:30:00Z",
   "testeurs": [
@@ -20,8 +20,8 @@
       "suggestions": 1,
       "ecransAvecAvis": 0,
       "indicatif": {
-        "ecrans": 307,
-        "minutes": 259.8
+        "ecrans": 532,
+        "minutes": 354.1
       },
       "dernierPoint": "2026-10-06T18:12:32Z"
     },
@@ -43,8 +43,8 @@
       "suggestions": 3,
       "ecransAvecAvis": 0,
       "indicatif": {
-        "ecrans": 419,
-        "minutes": 190.8
+        "ecrans": 1578,
+        "minutes": 699.0
       },
       "dernierPoint": "2026-10-09T11:16:12Z"
     },
@@ -68,8 +68,8 @@
       "suggestions": 1,
       "ecransAvecAvis": 0,
       "indicatif": {
-        "ecrans": 827,
-        "minutes": 182.3
+        "ecrans": 1676,
+        "minutes": 465.9
       },
       "dernierPoint": "2026-10-07T20:19:21Z"
     },
@@ -92,8 +92,8 @@
       "suggestions": 0,
       "ecransAvecAvis": 0,
       "indicatif": {
-        "ecrans": 418,
-        "minutes": 237.8
+        "ecrans": 1030,
+        "minutes": 409.0
       },
       "dernierPoint": "2026-10-07T19:48:31Z"
     },
@@ -113,8 +113,8 @@
       "suggestions": 1,
       "ecransAvecAvis": 0,
       "indicatif": {
-        "ecrans": 163,
-        "minutes": 142.2
+        "ecrans": 499,
+        "minutes": 367.0
       },
       "dernierPoint": "2026-10-07T09:36:27Z"
     },
@@ -134,8 +134,8 @@
       "suggestions": 2,
       "ecransAvecAvis": 1,
       "indicatif": {
-        "ecrans": 551,
-        "minutes": 354.2
+        "ecrans": 691,
+        "minutes": 429.2
       },
       "dernierPoint": "2026-10-06T20:55:28Z"
     },
@@ -161,8 +161,8 @@
       "suggestions": 1,
       "ecransAvecAvis": 0,
       "indicatif": {
-        "ecrans": 380,
-        "minutes": 155.6
+        "ecrans": 1066,
+        "minutes": 612.8
       },
       "dernierPoint": "2026-10-07T20:26:25Z"
     },
@@ -194,8 +194,8 @@
       "suggestions": 0,
       "ecransAvecAvis": 0,
       "indicatif": {
-        "ecrans": 128,
-        "minutes": 17.8
+        "ecrans": 135,
+        "minutes": 18.3
       },
       "dernierPoint": "2026-10-06T06:13:41Z"
     },
@@ -240,8 +240,8 @@
       "suggestions": 0,
       "ecransAvecAvis": 0,
       "indicatif": {
-        "ecrans": 28,
-        "minutes": 4.1
+        "ecrans": 79,
+        "minutes": 107.4
       },
       "dernierPoint": "2026-10-07T12:08:30Z"
     },
@@ -262,8 +262,8 @@
       "suggestions": 0,
       "ecransAvecAvis": 0,
       "indicatif": {
-        "ecrans": 0,
-        "minutes": 0
+        "ecrans": 306,
+        "minutes": 156.5
       },
       "dernierPoint": "2026-10-07T19:35:18Z"
     },

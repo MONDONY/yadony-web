@@ -1,5 +1,5 @@
 {
-  "miseAJour": "2026-10-09T08:30:00Z",
+  "miseAJour": "2026-10-09T15:30:00Z",
   "debut": "2026-10-05T18:30:00Z",
   "fin": "2026-10-12T18:30:00Z",
   "testeurs": [
@@ -39,14 +39,14 @@
         "retard_voyageur",
         "scenario_complet"
       ],
-      "bugs": 3,
+      "bugs": 4,
       "suggestions": 3,
       "ecransAvecAvis": 0,
       "indicatif": {
         "ecrans": 419,
         "minutes": 190.8
       },
-      "dernierPoint": "2026-10-07T20:48:11Z"
+      "dernierPoint": "2026-10-09T11:16:12Z"
     },
     {
       "id": "szE1BA7k",

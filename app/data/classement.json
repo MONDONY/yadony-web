@@ -1,5 +1,5 @@
 {
-  "miseAJour": "2026-10-08T13:30:00Z",
+  "miseAJour": "2026-10-09T08:30:00Z",
   "debut": "2026-10-05T18:30:00Z",
   "fin": "2026-10-12T18:30:00Z",
   "testeurs": [
@@ -16,7 +16,7 @@
         "outils",
         "scenario_complet"
       ],
-      "bugs": 0,
+      "bugs": 1,
       "suggestions": 1,
       "ecransAvecAvis": 0,
       "indicatif": {
@@ -39,8 +39,8 @@
         "retard_voyageur",
         "scenario_complet"
       ],
-      "bugs": 2,
-      "suggestions": 2,
+      "bugs": 3,
+      "suggestions": 3,
       "ecransAvecAvis": 0,
       "indicatif": {
         "ecrans": 419,
@@ -266,6 +266,37 @@
         "minutes": 0
       },
       "dernierPoint": "2026-10-07T19:35:18Z"
+    },
+    {
+      "id": "kwKRyW5j",
+      "nom": "Rahim M.",
+      "tests": [
+        "grille_kilos"
+      ],
+      "bugs": 0,
+      "suggestions": 1,
+      "ecransAvecAvis": 0,
+      "indicatif": {
+        "ecrans": 0,
+        "minutes": 0
+      },
+      "dernierPoint": "2026-10-08T17:45:50Z"
+    },
+    {
+      "id": "1f1UZQp3",
+      "nom": "Cheick Kassoum D.",
+      "tests": [
+        "filtres",
+        "nego_trajet"
+      ],
+      "bugs": 0,
+      "suggestions": 0,
+      "ecransAvecAvis": 0,
+      "indicatif": {
+        "ecrans": 62,
+        "minutes": 7.6
+      },
+      "dernierPoint": "2026-10-09T02:05:41Z"
     }
   ],
   "premiers": {

@@ -1,5 +1,5 @@
 {
-  "miseAJour": "2026-10-10T08:45:00Z",
+  "miseAJour": "2026-10-10T13:00:00Z",
   "debut": "2026-10-05T18:30:00Z",
   "fin": "2026-10-12T18:30:00Z",
   "testeurs": [
@@ -69,8 +69,8 @@
       "suggestions": 1,
       "ecransAvecAvis": 0,
       "indicatif": {
-        "ecrans": 1978,
-        "minutes": 529.7
+        "ecrans": 2105,
+        "minutes": 546.3
       },
       "dernierPoint": "2026-10-09T23:29:45Z"
     },
@@ -242,8 +242,8 @@
       "suggestions": 0,
       "ecransAvecAvis": 0,
       "indicatif": {
-        "ecrans": 79,
-        "minutes": 107.4
+        "ecrans": 92,
+        "minutes": 113.0
       },
       "dernierPoint": "2026-10-07T12:08:30Z"
     },

@@ -178,3 +178,50 @@ describe('plusieurs gagnants', () => {
     expect(lignes[1]!.total).toBe(220)
   })
 })
+
+describe('défi à podium', () => {
+  const grand: Defi = {
+    numero: 3,
+    debut: '2026-10-11T08:00:00Z',
+    fin: '2026-10-11T20:00:00Z',
+    points: 500,
+    podium: [500, 300, 100],
+    enonce: null,
+    gagnant: null,
+    classement: ['aaaa1111', 'bbbb2222', 'cccc3333', 'dddd4444'],
+  }
+
+  it('donne à chacun les points de sa place, rien au-delà du podium', () => {
+    expect(bonusDefis('aaaa1111', [grand])).toEqual([{ numero: 3, points: 500 }])
+    expect(bonusDefis('bbbb2222', [grand])).toEqual([{ numero: 3, points: 300 }])
+    expect(bonusDefis('cccc3333', [grand])).toEqual([{ numero: 3, points: 100 }])
+    expect(bonusDefis('dddd4444', [grand])).toEqual([])
+  })
+
+  it('liste comme gagnants les seuls testeurs du podium, dans l’ordre d’arrivée', () => {
+    expect(gagnantsDefi(grand)).toEqual(['aaaa1111', 'bbbb2222', 'cccc3333'])
+  })
+
+  it('reste en cours tant que le podium n’est pas complet, et se termine à l’heure de fin', () => {
+    const deuxArrivees: Defi = { ...grand, classement: ['aaaa1111', 'bbbb2222'] }
+    expect(etatDefi(deuxArrivees, new Date('2026-10-11T15:00:00Z'))).toBe('en_cours')
+    expect(etatDefi(deuxArrivees, new Date('2026-10-11T20:00:00Z'))).toBe('termine')
+    expect(etatDefi(grand, new Date('2026-10-11T15:00:00Z'))).toBe('termine')
+  })
+
+  it('place chacun selon ses points de podium dans le classement', () => {
+    const lignes = classer([testeur('cccc3333', 'Ini N.'), testeur('aaaa1111', 'Awa D.'), testeur('bbbb2222', 'Koro D.')], {}, [grand])
+    expect(lignes.map(l => [l.nom, l.total])).toEqual([['Awa D.', 500], ['Koro D.', 300], ['Ini N.', 100]])
+  })
+})
+
+describe('données du grand défi', () => {
+  it('annonce le défi n°3 le dimanche 11 octobre de 10 h à 22 h (Paris), dix sujets, podium 500 / 300 / 100', () => {
+    const trois = (defisData.defis as Defi[]).find(d => d.numero === 3)!
+    expect(trois.debut).toBe('2026-10-11T08:00:00Z')
+    expect(trois.fin).toBe('2026-10-11T20:00:00Z')
+    expect(trois.podium).toEqual([500, 300, 100])
+    expect(trois.sujets).toBe(10)
+    expect(defiAffiche(defisData.defis as Defi[], new Date('2026-10-10T18:00:00Z'))!.numero).toBe(3)
+  })
+})

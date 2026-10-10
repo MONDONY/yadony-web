@@ -37,6 +37,28 @@ function duree(iso: string): string {
   const h = jours * 24 + heures
   return h > 0 ? t('contest.defis.duration', { h, m: minutes }) : t('contest.defis.durationMin', { m: minutes })
 }
+function jourCourt(iso: string): string {
+  return new Intl.DateTimeFormat(localeDates(locale.value), { weekday: 'long', timeZone: 'Europe/Paris' }).format(new Date(iso))
+}
+/** Défi du soir : « ce soir à 19 h 30 » ; défi de journée : « dimanche à 10 h 00 ». */
+function annonce(d: Defi): string {
+  const h = Number(new Intl.DateTimeFormat('en-GB', { hour: '2-digit', hourCycle: 'h23', timeZone: 'Europe/Paris' }).format(new Date(d.debut)))
+  return h >= 17
+    ? t('contest.defis.banner.a_venir', { n: d.numero, heure: heure(d.debut) })
+    : t('contest.defis.banner.a_venirJour', { n: d.numero, jour: jourCourt(d.debut), heure: heure(d.debut) })
+}
+/** Points en jeu : un montant, ou ceux de chaque place pour un défi à podium. */
+function enjeu(d: Defi): string | null {
+  if (d.podium?.length) return d.podium.join(' / ')
+  return d.points ? String(d.points) : null
+}
+function rang(i: number): string {
+  if (locale.value === 'en') return ['1st', '2nd', '3rd'][i] ?? `${i + 1}th`
+  return i === 0 ? '1er' : `${i + 1}e`
+}
+function podium(d: Defi): { rang: string; nom: string; points: number }[] {
+  return gagnantsDefi(d).map((id, i) => ({ rang: rang(i), nom: props.noms[id] ?? id, points: d.podium?.[i] ?? 0 }))
+}
 function enonce(d: Defi): string | null {
   return d.enonce ? (locale.value === 'en' ? d.enonce.en : d.enonce.fr) : null
 }
@@ -66,11 +88,11 @@ const pastille = computed(() =>
     <span class="min-w-0 flex-1">
       <span class="flex items-center gap-2 font-display text-[15px] font-extrabold leading-tight">
         <span class="h-2 w-2 flex-none rounded-full" :class="pastille" aria-hidden="true" />
-        <span class="truncate">{{ t(`contest.defis.banner.${etat}`, { n: defi.numero, heure: heure(defi.debut) }) }}</span>
+        <span class="truncate">{{ etat === 'a_venir' ? annonce(defi) : t(`contest.defis.banner.${etat}`, { n: defi.numero, heure: heure(defi.debut) }) }}</span>
       </span>
       <span class="mt-0.5 block truncate text-[13px] tabular-nums text-ink-muted">
         <template v-if="etat === 'a_venir'">{{ t('contest.defis.startsIn', { temps: duree(defi.debut) }) }}<span class="hidden sm:inline"> · {{ t('contest.defis.rewardChip', DEFI_POINTS) }}</span></template>
-        <template v-else-if="etat === 'en_cours'">{{ t('contest.defis.endsIn', { temps: duree(defi.fin) }) }}<template v-if="defi.points"> · {{ t('contest.defis.atStake', { points: defi.points }) }}</template></template>
+        <template v-else-if="etat === 'en_cours'">{{ t('contest.defis.endsIn', { temps: duree(defi.fin) }) }}<template v-if="enjeu(defi)"> · {{ t('contest.defis.atStake', { points: enjeu(defi) }) }}</template></template>
         <template v-else>{{ gagnant(defi) ? t('contest.defis.wonBy', { nom: gagnant(defi) }) : t('contest.defis.nobodyShort') }}</template>
       </span>
     </span>
@@ -108,7 +130,7 @@ const pastille = computed(() =>
       <div v-else-if="etat === 'en_cours'" class="mt-3">
         <template v-if="enonce(defi)">
           <p class="whitespace-pre-line text-pretty text-[16px] font-semibold leading-relaxed" data-testid="defi-enonce">{{ enonce(defi) }}</p>
-          <p v-if="defi.points" class="mt-2 inline-flex rounded-full bg-orange/15 px-3 py-1 text-[13px] font-bold text-orange-deep">{{ t('contest.defis.atStake', { points: defi.points }) }}</p>
+          <p v-if="enjeu(defi)" class="mt-2 inline-flex rounded-full bg-orange/15 px-3 py-1 text-[13px] font-bold text-orange-deep">{{ t('contest.defis.atStake', { points: enjeu(defi) }) }}</p>
         </template>
         <p v-else class="text-pretty font-semibold">{{ t('contest.defis.pending') }}</p>
         <p class="mt-2 font-display text-[20px] font-extrabold tabular-nums text-orange-deep" data-testid="defi-compte">{{ t('contest.defis.endsIn', { temps: duree(defi.fin) }) }}</p>
@@ -116,7 +138,10 @@ const pastille = computed(() =>
 
       <div v-else class="mt-3" data-testid="defi-resultat">
         <p v-if="enonce(defi)" class="whitespace-pre-line text-pretty text-[14px] text-ink-muted">{{ enonce(defi) }}</p>
-        <template v-if="gagnant(defi)">
+        <ol v-if="defi.podium?.length && gagnant(defi)" class="mt-1 grid gap-1 font-display text-[17px] font-extrabold tabular-nums" data-testid="defi-podium">
+          <li v-for="p in podium(defi)" :key="p.rang">{{ t('contest.defis.place', p) }}</li>
+        </ol>
+        <template v-else-if="gagnant(defi)">
           <p class="mt-1 font-display text-[20px] font-extrabold">{{ t('contest.defis.wonBy', { nom: gagnant(defi) }) }}</p>
           <p v-if="defi.points" class="font-semibold text-success">{{ t(gagnantsDefi(defi).length > 1 ? 'contest.defis.wonPtsEach' : 'contest.defis.wonPts', { points: defi.points }) }}</p>
         </template>
@@ -138,7 +163,7 @@ const pastille = computed(() =>
         <li v-for="d in passes" :key="d.numero" class="py-2 text-[14px]">
           <div class="flex flex-wrap items-baseline justify-between gap-x-4">
             <span class="font-semibold">{{ t('contest.defis.current', { n: d.numero, jour: jour(d.debut) }) }}</span>
-            <span v-if="gagnant(d)" class="text-ink-muted">{{ t('contest.defis.wonBy', { nom: gagnant(d) }) }}<template v-if="d.points"> · +{{ d.points }}</template></span>
+            <span v-if="gagnant(d)" class="text-ink-muted">{{ t('contest.defis.wonBy', { nom: gagnant(d) }) }}<template v-if="enjeu(d)"> · +{{ enjeu(d) }}</template></span>
             <span v-else class="text-ink-muted">{{ t('contest.defis.nobodyShort') }}</span>
           </div>
           <details v-if="aDetail(d)" class="mt-1">

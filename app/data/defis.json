@@ -198,6 +198,21 @@
         "1aM5LVzU": 2,
         "YeTesJn5": 1
       }
+    },
+    {
+      "numero": 3,
+      "debut": "2026-10-11T08:00:00Z",
+      "fin": "2026-10-11T20:00:00Z",
+      "points": 500,
+      "podium": [
+        500,
+        300,
+        100
+      ],
+      "sujets": 10,
+      "enonce": null,
+      "gagnant": null,
+      "classement": []
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "miseAJour": "2026-10-10T18:45:00Z",
+  "miseAJour": "2026-10-10T20:15:00Z",
   "debut": "2026-10-05T18:30:00Z",
   "fin": "2026-10-12T18:30:00Z",
   "testeurs": [
@@ -137,7 +137,7 @@
         "outils",
         "paiement_carte"
       ],
-      "bugs": 2,
+      "bugs": 3,
       "suggestions": 2,
       "ecransAvecAvis": 1,
       "indicatif": {

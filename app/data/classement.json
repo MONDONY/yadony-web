@@ -1,5 +1,5 @@
 {
-  "miseAJour": "2026-10-09T18:45:00Z",
+  "miseAJour": "2026-10-10T08:45:00Z",
   "debut": "2026-10-05T18:30:00Z",
   "fin": "2026-10-12T18:30:00Z",
   "testeurs": [
@@ -43,8 +43,8 @@
       "suggestions": 3,
       "ecransAvecAvis": 0,
       "indicatif": {
-        "ecrans": 1578,
-        "minutes": 699.0
+        "ecrans": 1657,
+        "minutes": 752.7
       },
       "dernierPoint": "2026-10-09T11:16:12Z"
     },
@@ -62,16 +62,17 @@
         "nego_trajet",
         "outils",
         "retard_voyageur",
-        "scenario_complet"
+        "scenario_complet",
+        "destinataire_absent"
       ],
       "bugs": 3,
       "suggestions": 1,
       "ecransAvecAvis": 0,
       "indicatif": {
-        "ecrans": 1676,
-        "minutes": 465.9
+        "ecrans": 1978,
+        "minutes": 529.7
       },
-      "dernierPoint": "2026-10-07T20:19:21Z"
+      "dernierPoint": "2026-10-09T23:29:45Z"
     },
     {
       "id": "ftAUL354",
@@ -113,8 +114,8 @@
       "suggestions": 1,
       "ecransAvecAvis": 0,
       "indicatif": {
-        "ecrans": 499,
-        "minutes": 367.0
+        "ecrans": 506,
+        "minutes": 393.5
       },
       "dernierPoint": "2026-10-07T09:36:27Z"
     },
@@ -130,14 +131,14 @@
         "outils",
         "paiement_carte"
       ],
-      "bugs": 0,
+      "bugs": 2,
       "suggestions": 2,
       "ecransAvecAvis": 1,
       "indicatif": {
-        "ecrans": 691,
-        "minutes": 429.2
+        "ecrans": 735,
+        "minutes": 466.6
       },
-      "dernierPoint": "2026-10-06T20:55:28Z"
+      "dernierPoint": "2026-10-10T02:31:22Z"
     },
     {
       "id": "YeTesJn5",
@@ -155,16 +156,17 @@
         "paiement_mm",
         "parrainage",
         "retard_voyageur",
-        "scenario_complet"
+        "scenario_complet",
+        "destinataire_absent"
       ],
-      "bugs": 4,
+      "bugs": 5,
       "suggestions": 1,
       "ecransAvecAvis": 0,
       "indicatif": {
-        "ecrans": 1066,
-        "minutes": 612.8
+        "ecrans": 1200,
+        "minutes": 716.4
       },
-      "dernierPoint": "2026-10-07T20:26:25Z"
+      "dernierPoint": "2026-10-09T23:14:09Z"
     },
     {
       "id": "txCpxwiq",
@@ -262,8 +264,8 @@
       "suggestions": 0,
       "ecransAvecAvis": 0,
       "indicatif": {
-        "ecrans": 306,
-        "minutes": 156.5
+        "ecrans": 322,
+        "minutes": 194.4
       },
       "dernierPoint": "2026-10-07T19:35:18Z"
     },
@@ -314,6 +316,7 @@
     "filtres": "um8gN18T",
     "paiement_mm": "YeTesJn5",
     "paiement_carte": "LWoJJBVp",
-    "code_retour": "ftAUL354"
+    "code_retour": "ftAUL354",
+    "destinataire_absent": "YeTesJn5"
   }
 }

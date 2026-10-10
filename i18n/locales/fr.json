@@ -1628,7 +1628,8 @@
       "banner": {
         "a_venir": "Défi n°{n} ce soir à {heure}",
         "en_cours": "Défi n°{n} en cours",
-        "termine": "Défi n°{n} terminé"
+        "termine": "Défi n°{n} terminé",
+        "a_venirJour": "Défi n°{n} {jour} à {heure}"
       },
       "see": "Voir le défi",
       "seeStatement": "Voir l'énoncé",
@@ -1641,7 +1642,8 @@
       "reussitesTitle": "Ont réussi le défi ({n})",
       "partiels": "{n} partie sur {total} | {n} partie sur {total} | {n} parties sur {total}",
       "seeResult": "Voir le résultat",
-      "wonPtsEach": "+{points} points ajoutés à chacun"
+      "wonPtsEach": "+{points} points ajoutés à chacun",
+      "place": "{rang} {nom} · +{points}"
     }
   }
 }

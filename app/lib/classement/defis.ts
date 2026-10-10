@@ -17,6 +17,10 @@ export interface Defi {
   gagnant: string | null
   /** Ids (8 caractères) de plusieurs gagnants qui se partagent la victoire : chacun reçoit les points du défi. */
   gagnants?: string[]
+  /** Points par place (1er, 2e, 3e…) d'un défi à podium ; remplace `points` dans le score. */
+  podium?: number[]
+  /** Ids (8 caractères) dans l'ordre d'arrivée d'un défi à podium ; seuls les `podium.length` premiers marquent. */
+  classement?: string[]
   /** Nombre de sujets du défi (3 par défaut), pour compter « n parties sur N ». */
   sujets?: number
   /** Bugs pertinents trouvés sur les parcours du défi et validés par l'équipe, par id (8 caractères). */
@@ -39,8 +43,10 @@ export const DEFI_POINTS_BUG = 40
 export function etatDefi(defi: Defi, maintenant: Date): EtatDefi {
   const t = maintenant.getTime()
   if (t < Date.parse(defi.debut)) return 'a_venir'
-  // Le plus rapide gagne : un gagnant désigné clôt le défi avant minuit.
-  if (gagnantsDefi(defi).length) return 'termine'
+  // Le plus rapide gagne : un gagnant désigné clôt le défi avant minuit. Un défi à podium
+  // ne se clôt d'avance qu'une fois toutes les places attribuées.
+  const gagnants = gagnantsDefi(defi)
+  if (gagnants.length && (!defi.podium?.length || gagnants.length >= defi.podium.length)) return 'termine'
   return t < Date.parse(defi.fin) ? 'en_cours' : 'termine'
 }
 
@@ -53,8 +59,16 @@ export function defiAffiche(defis: Defi[], maintenant: Date): Defi | null {
 /** Points de défi gagnés par un testeur. */
 export function bonusDefis(id: string, defis: Defi[]): { numero: number; points: number }[] {
   return defis
-    .filter(d => gagnantsDefi(d).includes(id) && typeof d.points === 'number' && d.points > 0)
-    .map(d => ({ numero: d.numero, points: d.points as number }))
+    .map(d => ({ numero: d.numero, points: pointsDefi(d, id) }))
+    .filter(b => b.points > 0)
+}
+
+/** Points d'un testeur sur un défi : ceux de sa place sur un podium, sinon ceux du défi s'il l'a gagné. */
+function pointsDefi(defi: Defi, id: string): number {
+  const place = gagnantsDefi(defi).indexOf(id)
+  if (place < 0) return 0
+  const points = defi.podium?.length ? defi.podium[place] : defi.points
+  return typeof points === 'number' && points > 0 ? points : 0
 }
 
 /** Nombre de bugs pertinents trouvés par un testeur sur les parcours des défis. */
@@ -67,5 +81,6 @@ export function bugsDefis(id: string, defis: Defi[]): number {
 
 /** Ids des gagnants d'un défi : le gagnant unique en premier, puis les autres, sans doublon. */
 export function gagnantsDefi(defi: Defi): string[] {
+  if (defi.podium?.length) return [...new Set(defi.classement ?? [])].slice(0, defi.podium.length)
   return [...new Set([defi.gagnant, ...(defi.gagnants ?? [])].filter((id): id is string => Boolean(id)))]
 }

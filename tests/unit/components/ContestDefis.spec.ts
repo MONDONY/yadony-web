@@ -195,4 +195,37 @@ describe('ContestDefis', () => {
     const w = monter([defi], '2026-10-06T23:00:00Z')
     expect(w.find('[data-testid="defi-partiels"]').text()).toContain('3 parties sur 5')
   })
+
+  describe('défi à podium', () => {
+    const grand: Defi = {
+      numero: 3,
+      debut: '2026-10-11T08:00:00Z',
+      fin: '2026-10-11T20:00:00Z',
+      points: 500,
+      podium: [500, 300, 100],
+      enonce: { fr: 'Dix défis.', en: 'Ten challenges.' },
+      gagnant: null,
+    }
+    const nomsPodium = { aaaa1111: 'Koro D.', bbbb2222: 'Salimata D.', cccc3333: 'Ibrahim D.' }
+
+    it('annonce les points de chaque place pendant le défi', () => {
+      const w = monter([grand], '2026-10-11T09:00:00Z')
+      expect(w.text()).toContain('500 / 300 / 100 points en jeu')
+    })
+
+    it('affiche le podium avec les points de chaque place une fois terminé', () => {
+      const fini = { ...grand, classement: ['aaaa1111', 'bbbb2222', 'cccc3333'] }
+      const w = mount(ContestDefis, { props: { defis: [fini], maintenant: new Date('2026-10-11T21:00:00Z'), noms: nomsPodium }, global: { plugins: [i18n] } })
+      const r = w.find('[data-testid="defi-podium"]').text()
+      expect(r).toContain('1er Koro D. · +500')
+      expect(r).toContain('2e Salimata D. · +300')
+      expect(r).toContain('3e Ibrahim D. · +100')
+    })
+
+    it('annonce dans le bandeau un défi du matin avec son jour, pas « ce soir »', () => {
+      const b = monter([grand], '2026-10-10T18:00:00Z', 'bandeau').find('[data-testid="defis-bandeau"]')
+      expect(b.text()).toContain('Défi n°3 dimanche à 10 h 00')
+      expect(b.text()).not.toContain('ce soir')
+    })
+  })
 })

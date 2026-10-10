@@ -1628,7 +1628,8 @@
       "banner": {
         "a_venir": "Challenge #{n} tonight at {heure}",
         "en_cours": "Challenge #{n} is live",
-        "termine": "Challenge #{n} is over"
+        "termine": "Challenge #{n} is over",
+        "a_venirJour": "Challenge #{n} on {jour} at {heure}"
       },
       "see": "See the challenge",
       "seeStatement": "Read the challenge",
@@ -1641,7 +1642,8 @@
       "reussitesTitle": "Completed the challenge ({n})",
       "partiels": "{n} part out of {total} | {n} part out of {total} | {n} parts out of {total}",
       "seeResult": "See the result",
-      "wonPtsEach": "+{points} points added to each"
+      "wonPtsEach": "+{points} points added to each",
+      "place": "{rang} {nom} · +{points} pts"
     }
   }
 }

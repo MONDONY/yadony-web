@@ -1,5 +1,5 @@
 {
-  "miseAJour": "2026-10-10T20:15:00Z",
+  "miseAJour": "2026-10-10T20:30:00Z",
   "debut": "2026-10-05T18:30:00Z",
   "fin": "2026-10-12T18:30:00Z",
   "testeurs": [
@@ -45,12 +45,12 @@
       ],
       "bugs": 4,
       "suggestions": 3,
-      "ecransAvecAvis": 0,
+      "ecransAvecAvis": 1,
       "indicatif": {
         "ecrans": 1657,
         "minutes": 752.7
       },
-      "dernierPoint": "2026-10-09T11:16:12Z"
+      "dernierPoint": "2026-10-10T19:16:40Z"
     },
     {
       "id": "szE1BA7k",
@@ -139,7 +139,7 @@
       ],
       "bugs": 3,
       "suggestions": 2,
-      "ecransAvecAvis": 1,
+      "ecransAvecAvis": 2,
       "indicatif": {
         "ecrans": 735,
         "minutes": 466.6

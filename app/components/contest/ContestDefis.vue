@@ -91,7 +91,7 @@ const pastille = computed(() =>
         <span class="truncate">{{ etat === 'a_venir' ? annonce(defi) : t(`contest.defis.banner.${etat}`, { n: defi.numero, heure: heure(defi.debut) }) }}</span>
       </span>
       <span class="mt-0.5 block truncate text-[13px] tabular-nums text-ink-muted">
-        <template v-if="etat === 'a_venir'">{{ t('contest.defis.startsIn', { temps: duree(defi.debut) }) }}<span class="hidden sm:inline"> · {{ t('contest.defis.rewardChip', DEFI_POINTS) }}</span></template>
+        <template v-if="etat === 'a_venir'">{{ t('contest.defis.startsIn', { temps: duree(defi.debut) }) }}<span class="hidden sm:inline"> · {{ defi.podium?.length ? t('contest.defis.atStake', { points: enjeu(defi) }) : t('contest.defis.rewardChip', DEFI_POINTS) }}</span></template>
         <template v-else-if="etat === 'en_cours'">{{ t('contest.defis.endsIn', { temps: duree(defi.fin) }) }}<template v-if="enjeu(defi)"> · {{ t('contest.defis.atStake', { points: enjeu(defi) }) }}</template></template>
         <template v-else>{{ gagnant(defi) ? t('contest.defis.wonBy', { nom: gagnant(defi) }) : t('contest.defis.nobodyShort') }}</template>
       </span>
@@ -125,6 +125,7 @@ const pastille = computed(() =>
       <div v-if="etat === 'a_venir'" class="mt-3">
         <p class="font-display text-[22px] font-extrabold tabular-nums text-orange-deep" data-testid="defi-compte">{{ t('contest.defis.startsIn', { temps: duree(defi.debut) }) }}</p>
         <p class="text-pretty text-[14px] text-ink-muted">{{ t('contest.defis.ready', { heure: heure(defi.debut) }) }}</p>
+        <p v-if="defi.podium?.length" class="mt-2 inline-flex rounded-full bg-orange/15 px-3 py-1 text-[13px] font-bold text-orange-deep">{{ t('contest.defis.atStake', { points: enjeu(defi) }) }}</p>
       </div>
 
       <div v-else-if="etat === 'en_cours'" class="mt-3">

@@ -1,5 +1,5 @@
 {
-  "miseAJour": "2026-10-10T14:30:00Z",
+  "miseAJour": "2026-10-10T18:45:00Z",
   "debut": "2026-10-05T18:30:00Z",
   "fin": "2026-10-12T18:30:00Z",
   "testeurs": [
@@ -165,7 +165,8 @@
         "scenario_complet",
         "destinataire_absent",
         "annulation_voyageur",
-        "absence_destinataire_procedure"
+        "absence_destinataire_procedure",
+        "annulation_expediteur"
       ],
       "bugs": 5,
       "suggestions": 1,
@@ -174,7 +175,7 @@
         "ecrans": 1200,
         "minutes": 716.4
       },
-      "dernierPoint": "2026-10-09T23:14:09Z"
+      "dernierPoint": "2026-10-10T15:24:32Z"
     },
     {
       "id": "txCpxwiq",

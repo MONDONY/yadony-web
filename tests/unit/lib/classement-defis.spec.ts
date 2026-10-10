@@ -224,4 +224,22 @@ describe('données du grand défi', () => {
     expect(trois.sujets).toBe(10)
     expect(defiAffiche(defisData.defis as Defi[], new Date('2026-10-10T18:00:00Z'))!.numero).toBe(3)
   })
+
+  it('publie l’énoncé des dix défis, en français et en anglais', () => {
+    const trois = (defisData.defis as Defi[]).find(d => d.numero === 3)!
+    const fr = trois.enonce!.fr
+    const en = trois.enonce!.en
+    for (let n = 1; n <= 10; n++) {
+      expect(fr).toContain(`\n${n}. `)
+      expect(en).toContain(`\n${n}. `)
+    }
+    expect(fr).toContain('Relève les 10 défis avant 22 h')
+    expect(fr).toContain('le 2e 300 points, le 3e 100 points')
+    expect(fr).toContain('commission Yadony de 5 %')
+    expect(fr).toContain('Le quiz des paramètres')
+    expect(fr).not.toMatch(/déconnect/i)
+    expect(en).toContain('Complete all 10 challenges before 10 pm')
+    expect(en).toContain("Yadony's 5% commission")
+    expect(en).not.toMatch(/log ?out|sign ?out|disconnect/i)
+  })
 })

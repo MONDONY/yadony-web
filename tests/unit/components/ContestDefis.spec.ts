@@ -227,5 +227,13 @@ describe('ContestDefis', () => {
       expect(b.text()).toContain('Défi n°3 dimanche à 10 h 00')
       expect(b.text()).not.toContain('ce soir')
     })
+
+    it('annonce avant le lancement les points du podium, pas la fourchette des défis du soir', () => {
+      const w = monter([grand], '2026-10-10T18:00:00Z')
+      expect(w.find('[data-testid="defi-courant"]').text()).toContain('500 / 300 / 100 points en jeu')
+      const b = monter([grand], '2026-10-10T18:00:00Z', 'bandeau').find('[data-testid="defis-bandeau"]')
+      expect(b.text()).toContain('500 / 300 / 100 points en jeu')
+      expect(b.text()).not.toContain('50 à 200')
+    })
   })
 })

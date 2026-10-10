@@ -1,5 +1,5 @@
 {
-  "miseAJour": "2026-10-10T13:00:00Z",
+  "miseAJour": "2026-10-10T14:00:00Z",
   "debut": "2026-10-05T18:30:00Z",
   "fin": "2026-10-12T18:30:00Z",
   "testeurs": [
@@ -37,7 +37,8 @@
         "nego_trajet",
         "outils",
         "retard_voyageur",
-        "scenario_complet"
+        "scenario_complet",
+        "litige"
       ],
       "bugs": 4,
       "suggestions": 3,
@@ -317,6 +318,7 @@
     "paiement_mm": "YeTesJn5",
     "paiement_carte": "LWoJJBVp",
     "code_retour": "ftAUL354",
-    "destinataire_absent": "YeTesJn5"
+    "destinataire_absent": "YeTesJn5",
+    "litige": "1aM5LVzU"
   }
 }

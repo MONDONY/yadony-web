@@ -1,5 +1,5 @@
 {
-  "miseAJour": "2026-10-10T14:00:00Z",
+  "miseAJour": "2026-10-10T14:30:00Z",
   "debut": "2026-10-05T18:30:00Z",
   "fin": "2026-10-12T18:30:00Z",
   "testeurs": [
@@ -14,7 +14,8 @@
         "message_destinataire",
         "nego_colis",
         "outils",
-        "scenario_complet"
+        "scenario_complet",
+        "annulation_expediteur"
       ],
       "bugs": 1,
       "suggestions": 1,
@@ -38,7 +39,9 @@
         "outils",
         "retard_voyageur",
         "scenario_complet",
-        "litige"
+        "litige",
+        "annulation_voyageur",
+        "annulation_expediteur"
       ],
       "bugs": 4,
       "suggestions": 3,
@@ -64,7 +67,9 @@
         "outils",
         "retard_voyageur",
         "scenario_complet",
-        "destinataire_absent"
+        "destinataire_absent",
+        "annulation_expediteur",
+        "absence_destinataire_procedure"
       ],
       "bugs": 3,
       "suggestions": 1,
@@ -73,7 +78,7 @@
         "ecrans": 2105,
         "minutes": 546.3
       },
-      "dernierPoint": "2026-10-09T23:29:45Z"
+      "dernierPoint": "2026-10-10T11:01:27Z"
     },
     {
       "id": "ftAUL354",
@@ -158,7 +163,9 @@
         "parrainage",
         "retard_voyageur",
         "scenario_complet",
-        "destinataire_absent"
+        "destinataire_absent",
+        "annulation_voyageur",
+        "absence_destinataire_procedure"
       ],
       "bugs": 5,
       "suggestions": 1,
@@ -319,6 +326,9 @@
     "paiement_carte": "LWoJJBVp",
     "code_retour": "ftAUL354",
     "destinataire_absent": "YeTesJn5",
-    "litige": "1aM5LVzU"
+    "litige": "1aM5LVzU",
+    "annulation_voyageur": "1aM5LVzU",
+    "annulation_expediteur": "1aM5LVzU",
+    "absence_destinataire_procedure": "YeTesJn5"
   }
 }

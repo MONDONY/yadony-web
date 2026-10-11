@@ -1,5 +1,5 @@
 {
-  "miseAJour": "2026-10-10T20:30:00Z",
+  "miseAJour": "2026-10-11T07:30:00Z",
   "debut": "2026-10-05T18:30:00Z",
   "fin": "2026-10-12T18:30:00Z",
   "testeurs": [
@@ -183,7 +183,9 @@
       "tests": [
         "nego_trajet",
         "message_app",
-        "grille_kilos"
+        "grille_kilos",
+        "avis_parcours",
+        "scenario_complet"
       ],
       "bugs": 0,
       "suggestions": 1,
@@ -192,7 +194,7 @@
         "ecrans": 146,
         "minutes": 91.8
       },
-      "dernierPoint": "2026-10-05T20:49:22Z"
+      "dernierPoint": "2026-10-10T20:36:02Z"
     },
     {
       "id": "cS2IXWI0",

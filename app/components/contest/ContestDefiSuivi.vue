@@ -44,7 +44,9 @@ function texte(v: { fr: string; en: string }): string {
     <p class="mt-1.5 text-[12.5px] text-ink-muted">{{ t('contest.defis.suiviLegende') }}</p>
 
     <div class="mt-3 grid gap-2" data-testid="defi-suivi-detail">
-      <details v-for="s in defi.suivi" :key="s.nom" class="rounded-el bg-surface px-3.5 py-2.5">
+      <template v-for="s in defi.suivi" :key="s.nom">
+      <p v-if="!s.manques.length" class="rounded-el bg-surface px-3.5 py-2.5 text-[14px] font-bold text-success">{{ t('contest.defis.suiviFini', { nom: s.nom }) }}</p>
+      <details v-else class="rounded-el bg-surface px-3.5 py-2.5">
         <summary class="cursor-pointer text-[14px] font-bold text-orange-deep">{{ t('contest.defis.suiviManque', { nom: s.nom }) }}</summary>
         <ul class="mt-2 grid gap-2.5 text-[14px] leading-relaxed">
           <li v-for="m in s.manques" :key="m.defi">
@@ -54,6 +56,7 @@ function texte(v: { fr: string; en: string }): string {
           </li>
         </ul>
       </details>
+      </template>
     </div>
   </div>
 </template>

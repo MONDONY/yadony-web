@@ -1658,7 +1658,8 @@
       "suiviManque": "Ce qui manque à {nom}",
       "suiviDefi": "Défi {n}",
       "suiviFait": "Ce que tu as fait",
-      "suiviAFaire": "Pour valider"
+      "suiviAFaire": "Pour valider",
+      "suiviFini": "🎉 {nom} a validé tous les défis"
     }
   }
 }

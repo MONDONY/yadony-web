@@ -296,6 +296,13 @@ describe('ContestDefis', () => {
       expect(w.find('[data-testid="defi-provisoire"]').exists()).toBe(false)
     })
 
+    it('annonce qu’un testeur a tout validé au lieu d’une liste vide', () => {
+      const fini: Defi = { ...suivi, suivi: [{ nom: 'Hadja M.', defis: ['ok', 'ok', 'ok'], manques: [] }] }
+      const detail = monter([fini], '2026-10-11T11:50:00Z').find('[data-testid="defi-suivi-detail"]')
+      expect(detail.text()).toContain('Hadja M. a validé tous les défis')
+      expect(detail.find('details').exists()).toBe(false)
+    })
+
     it('explique à chacun ce qui manque : ce qu’il a fait et comment valider', () => {
       const detail = monter([suivi], '2026-10-11T11:20:00Z').find('[data-testid="defi-suivi-detail"]')
       expect(detail.text()).toContain('Ce qui manque à Salimata D.')

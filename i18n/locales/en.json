@@ -1658,7 +1658,8 @@
       "suiviManque": "What {nom} still needs",
       "suiviDefi": "Challenge {n}",
       "suiviFait": "What you did",
-      "suiviAFaire": "To complete it"
+      "suiviAFaire": "To complete it",
+      "suiviFini": "🎉 {nom} has completed every challenge"
     }
   }
 }

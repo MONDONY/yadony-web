@@ -215,19 +215,17 @@
         "en": "Prerequisite: install the latest version of the app (TestFlight on iPhone, Play Store on Android). To receive money, set up your card payout account or your mobile money number before you start (Profile → Payments).\nComplete all 10 challenges before 10 pm. The first to finish everything wins 500 points, the 2nd 300 points, the 3rd 100 points. Every bug found on the challenge flows and validated by the team earns +40 points: report it with the beetle.\n\nMONEY REACHES THE TRAVELLER\n1. Negotiated on a trip, paid by card (2 people: a sender and a traveller): on a traveller's trip, the sender proposes another price and the traveller accepts (or counters until you agree). The sender then pays by card, the parcel is delivered and receipt confirmed. The traveller opens \"My money\" and checks they received the agreed price minus Yadony's 5% commission. Counts for both once the money is paid out to the traveller.\n2. Negotiated on a shipping request, paid by mobile money (2 people: a sender and a traveller): the sender publishes a shipping request, the traveller makes an offer and you negotiate the price until you agree. The sender pays by mobile money and the parcel is delivered, up to the payout on the traveller's phone. Counts for both once the payout arrives.\n3. Cash: the commission taken (2 people: a sender and a traveller): an order paid in cash, up to confirmed delivery. The traveller checks that Yadony's commission was taken from their wallet.\n\nTHE SENDER IS PROPERLY REFUNDED WHEN SOMETHING GOES WRONG\n4. Refunded on the card (2 people: a sender and a traveller): the sender pays by card, then the traveller declines or cancels the parcel. The sender checks that the refund shows up in the app.\n5. Refunded by mobile money (2 people: a sender and a traveller): same with a mobile money payment. The traveller cancels after payment, and the sender must be refunded on their phone.\n6. The cancelled trip (2 people: a sender and a traveller): the traveller accepts a parcel that the sender pays for (card or mobile money), then the traveller cancels the whole trip. The sender must be refunded automatically and checks it in the app.\n7. The wallet round trip (1 person): top up your wallet, then request a refund of your balance.\n\nFILTERS\n8. The filter hunter (1 person): on the home screen, in trips mode, use at least 5 different filters (urgent, date, kilos, price, and stops or payment methods in the advanced search). In parcels mode, use at least 3 filters (for my trips, size, weight). In My shipments, filter by period. Each time, check that the results really match the filter: report anything that doesn't with the beetle.\n\nSETTINGS\n9. The settings tour (1 person): in Settings, Privacy, turn on then back off \"Hide my number\", \"Show my country of residence\" and \"Show my last seen\". In Preferences, change your currency. In Notifications, turn off one notification of your choice. In Accessibility, change one setting. Finally, block a user, then unblock them.\n10. The settings quiz (1 person): from the Settings screen, send a message with the beetle starting with [AVIS] and answer these 5 questions:\n- What does \"Verified profiles only\" change?\n- What is the difference between \"Currency\" and \"Display currency\"?\n- What is the \"Pickup radius\" for?\n- Which notifications cannot be turned off?\n- What is the \"Minimum price\" in the trip preferences for?\n\nTo make the podium, you must complete all ten challenges. The finishing order is set by the time each tester completes their tenth challenge.\n\nBONUS (+20 points, optional, does not count for the podium)\nShare your trip in the Yadony Facebook group: on your trip, tap \"Share my trip\" then \"Share the poster\", and post it in the group https://www.facebook.com/groups/1051558350756867 with your Yadony first name in the message. The team validates by checking your post in the group."
       },
       "gagnant": null,
-      "classement": [],
+      "classement": [
+        "szE1BA7k"
+      ],
       "bonus": {
         "points": 20,
         "testeurs": []
       },
       "partiels": [
         {
-          "nom": "Hadja Maferima T.",
-          "parties": 9
-        },
-        {
           "nom": "Salimata D.",
-          "parties": 8
+          "parties": 9
         },
         {
           "nom": "Ibrahim D.",
@@ -246,7 +244,7 @@
           "parties": 1
         }
       ],
-      "provisoireMaj": "2026-10-11T11:38:00Z",
+      "provisoireMaj": "2026-10-11T11:50:00Z",
       "suivi": [
         {
           "nom": "Hadja Maferima T.",
@@ -256,25 +254,13 @@
             "ok",
             "ok",
             "ok",
-            "non",
+            "ok",
             "ok",
             "ok",
             "ok",
             "ok"
           ],
-          "manques": [
-            {
-              "defi": 6,
-              "fait": {
-                "fr": "Pas encore fait.",
-                "en": "Not done yet."
-              },
-              "aFaire": {
-                "fr": "le voyageur accepte un colis que l'expéditeur paie par carte ou mobile money, puis ouvre son trajet et touche « Annuler le voyage ». L'expéditeur vérifie son remboursement dans l'application.",
-                "en": "the traveller accepts a parcel the sender pays by card or mobile money, then opens the trip and taps \"Cancel the trip\". The sender checks the refund in the app."
-              }
-            }
-          ]
+          "manques": []
         },
         {
           "nom": "Salimata D.",
@@ -284,24 +270,13 @@
             "ok",
             "ok",
             "ok",
-            "non",
+            "ok",
             "ok",
             "non",
             "ok",
             "ok"
           ],
           "manques": [
-            {
-              "defi": 6,
-              "fait": {
-                "fr": "Pas encore fait.",
-                "en": "Not done yet."
-              },
-              "aFaire": {
-                "fr": "le voyageur accepte un colis que l'expéditeur paie par carte ou mobile money, puis ouvre son trajet et touche « Annuler le voyage ». L'expéditeur vérifie son remboursement dans l'application.",
-                "en": "the traveller accepts a parcel the sender pays by card or mobile money, then opens the trip and taps \"Cancel the trip\". The sender checks the refund in the app."
-              }
-            },
             {
               "defi": 8,
               "fait": {
@@ -646,6 +621,12 @@
               }
             }
           ]
+        }
+      ],
+      "reussites": [
+        {
+          "nom": "Hadja Maferima T.",
+          "fin": "2026-10-11T11:48:25Z"
         }
       ]
     }

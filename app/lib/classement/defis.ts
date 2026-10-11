@@ -30,7 +30,10 @@ export interface Defi {
   /** Testeurs qui ont réussi le défi, dans l'ordre d'arrivée (nom affiché, heure de fin ISO). */
   reussites?: { nom: string; fin: string }[]
   /** Testeurs qui n'ont réussi qu'une partie du défi (nombre de parties réussies), dans l'ordre d'arrivée. */
+  /** Pendant le défi, ces lignes forment le classement provisoire, du plus avancé au moins avancé. */
   partiels?: { nom: string; parties: number }[]
+  /** Heure (ISO) de la dernière mise à jour du classement provisoire. */
+  provisoireMaj?: string
   /** Récit du défi une fois terminé : ce qui s'est passé, partie par partie. */
   bilan?: { titre: { fr: string; en: string }; texte: { fr: string; en: string } }[]
 }

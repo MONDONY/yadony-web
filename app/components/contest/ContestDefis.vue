@@ -135,6 +135,17 @@ const pastille = computed(() =>
         </template>
         <p v-else class="text-pretty font-semibold">{{ t('contest.defis.pending') }}</p>
         <p class="mt-2 font-display text-[20px] font-extrabold tabular-nums text-orange-deep" data-testid="defi-compte">{{ t('contest.defis.endsIn', { temps: duree(defi.fin) }) }}</p>
+        <div v-if="defi.partiels?.length" class="mt-4" data-testid="defi-provisoire">
+          <p class="font-display text-[12px] font-bold uppercase tracking-[0.12em] text-ink-muted">
+            {{ t('contest.defis.provisionalTitle') }}<template v-if="defi.provisoireMaj"> · {{ t('contest.defis.provisionalAt', { heure: heure(defi.provisoireMaj) }) }}</template>
+          </p>
+          <ol class="mt-1.5 divide-y divide-line overflow-hidden rounded-el bg-surface">
+            <li v-for="(p, i) in defi.partiels" :key="p.nom" class="flex items-baseline justify-between gap-3 px-3.5 py-2 text-[14.5px]">
+              <span class="min-w-0 truncate font-semibold">{{ i + 1 }}. {{ p.nom }}</span>
+              <span class="flex-none tabular-nums text-ink-muted">{{ t('contest.defis.partiels', { n: p.parties, total: defi.sujets ?? 3 }, p.parties) }}</span>
+            </li>
+          </ol>
+        </div>
       </div>
 
       <div v-else class="mt-3" data-testid="defi-resultat">

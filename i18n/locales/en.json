@@ -1644,7 +1644,9 @@
       "partiels": "{n} part out of {total} | {n} part out of {total} | {n} parts out of {total}",
       "seeResult": "See the result",
       "wonPtsEach": "+{points} points added to each",
-      "place": "{rang} {nom} · +{points} pts"
+      "place": "{rang} {nom} · +{points} pts",
+      "provisionalTitle": "Provisional ranking",
+      "provisionalAt": "updated at {heure}"
     }
   }
 }

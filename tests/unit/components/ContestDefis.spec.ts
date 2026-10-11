@@ -236,4 +236,29 @@ describe('ContestDefis', () => {
       expect(b.text()).not.toContain('50 à 200')
     })
   })
+
+  it('affiche le classement provisoire pendant le défi, avec l’heure de mise à jour', () => {
+    const encours: Defi = {
+      ...d1,
+      numero: 3,
+      debut: '2026-10-11T08:00:00Z',
+      fin: '2026-10-11T20:00:00Z',
+      podium: [500, 300, 100],
+      sujets: 10,
+      enonce: { fr: 'Dix défis.', en: 'Ten challenges.' },
+      partiels: [{ nom: 'Salimata D.', parties: 5 }, { nom: 'Koro D.', parties: 4 }],
+      provisoireMaj: '2026-10-11T10:33:00Z',
+    }
+    const p = monter([encours], '2026-10-11T10:40:00Z').find('[data-testid="defi-provisoire"]')
+    expect(p.text()).toContain('Classement provisoire')
+    expect(p.text()).toContain('à 12 h 33')
+    expect(p.text()).toContain('1. Salimata D.')
+    expect(p.text()).toContain('5 parties sur 10')
+    expect(p.text()).toContain('2. Koro D.')
+  })
+
+  it('n’affiche pas de classement provisoire sans progression', () => {
+    const encours: Defi = { ...d1, enonce: { fr: 'Défi.', en: 'Challenge.' } }
+    expect(monter([encours], '2026-10-06T18:00:00Z').find('[data-testid="defi-provisoire"]').exists()).toBe(false)
+  })
 })

@@ -1660,6 +1660,12 @@
       "suiviFait": "What you did",
       "suiviAFaire": "To complete it",
       "suiviFini": "🎉 {nom} has completed every challenge"
+    },
+    "missing": {
+      "title": "1 test of {total} still to do | 1 test of {total} still to do | {n} tests of {total} still to do",
+      "done": "All {total} tests done.",
+      "avis_ecran": "Review on a screen",
+      "suggestion": "An accepted idea"
     }
   }
 }

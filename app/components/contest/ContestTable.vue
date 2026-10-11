@@ -2,7 +2,7 @@
 import { computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { TOTAL_TESTS } from '@/lib/classement/bareme'
-import { localeDates, type LigneClassement, type LigneDetail } from '@/lib/classement/score'
+import { localeDates, testsManquants, type LigneClassement, type LigneDetail, type Manquant } from '@/lib/classement/score'
 import { premiersDe, type Premiers } from '@/lib/classement/premiers'
 
 const props = withDefaults(
@@ -33,6 +33,10 @@ function basculer(id: string) {
 function libelle(ligne: LigneDetail): string {
   if (ligne.nombre !== undefined) return t(`contest.detail.${ligne.cle}`, ligne.nombre)
   return t(`contest.tests.${ligne.cle}`)
+}
+
+function libelleManquant(m: Manquant): string {
+  return m.cle === 'avis_ecran' || m.cle === 'suggestion' ? t(`contest.missing.${m.cle}`) : t(`contest.tests.${m.cle}`)
 }
 
 function duree(minutes: number): string {
@@ -129,6 +133,20 @@ function dateMiseAJour(iso: string): string {
                     <b class="whitespace-nowrap tabular-nums text-success">+{{ n(d.points) }}</b>
                   </li>
                 </ul>
+                <div data-testid="board-missing" class="px-4 pb-4 sm:pl-16">
+                  <template v-if="testsManquants(l).length">
+                    <p class="mb-1.5 font-display text-[12px] font-bold uppercase tracking-[0.1em] text-ink-muted">
+                      {{ t('contest.missing.title', { n: testsManquants(l).length, total: TOTAL_TESTS }, testsManquants(l).length) }}
+                    </p>
+                    <ul class="grid gap-x-6 gap-y-1 sm:grid-cols-[repeat(auto-fill,minmax(230px,1fr))]">
+                      <li v-for="m in testsManquants(l)" :key="m.cle" class="flex justify-between gap-3 border-b border-dashed border-line py-1 text-[13px] text-ink-muted">
+                        <span>{{ libelleManquant(m) }}</span>
+                        <span class="whitespace-nowrap tabular-nums">{{ n(m.points) }}</span>
+                      </li>
+                    </ul>
+                  </template>
+                  <p v-else class="text-[13px] font-semibold text-success">{{ t('contest.missing.done', { total: TOTAL_TESTS }) }}</p>
+                </div>
               </td>
             </tr>
           </template>

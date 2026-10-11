@@ -1,5 +1,5 @@
 {
-  "miseAJour": "2026-10-11T07:30:00Z",
+  "miseAJour": "2026-10-12T06:00:00Z",
   "debut": "2026-10-05T18:30:00Z",
   "fin": "2026-10-12T18:30:00Z",
   "testeurs": [
@@ -15,7 +15,9 @@
         "nego_colis",
         "outils",
         "scenario_complet",
-        "annulation_expediteur"
+        "annulation_expediteur",
+        "nego_trajet",
+        "filtres"
       ],
       "bugs": 1,
       "suggestions": 1,
@@ -24,7 +26,7 @@
         "ecrans": 532,
         "minutes": 354.1
       },
-      "dernierPoint": "2026-10-06T18:12:32Z"
+      "dernierPoint": "2026-10-11T11:00:00Z"
     },
     {
       "id": "1aM5LVzU",
@@ -41,16 +43,19 @@
         "scenario_complet",
         "litige",
         "annulation_voyageur",
-        "annulation_expediteur"
+        "annulation_expediteur",
+        "message_destinataire",
+        "code_retour",
+        "filtres"
       ],
       "bugs": 4,
       "suggestions": 3,
-      "ecransAvecAvis": 1,
+      "ecransAvecAvis": 2,
       "indicatif": {
         "ecrans": 1657,
         "minutes": 752.7
       },
-      "dernierPoint": "2026-10-10T19:16:40Z"
+      "dernierPoint": "2026-10-11T18:50:17Z"
     },
     {
       "id": "szE1BA7k",
@@ -69,7 +74,10 @@
         "scenario_complet",
         "destinataire_absent",
         "annulation_expediteur",
-        "absence_destinataire_procedure"
+        "absence_destinataire_procedure",
+        "annulation_voyageur",
+        "absence_voyageur",
+        "filtres"
       ],
       "bugs": 3,
       "suggestions": 1,
@@ -78,7 +86,7 @@
         "ecrans": 2105,
         "minutes": 546.3
       },
-      "dernierPoint": "2026-10-10T11:01:27Z"
+      "dernierPoint": "2026-10-11T10:08:49Z"
     },
     {
       "id": "ftAUL354",
@@ -93,16 +101,18 @@
         "nego_colis",
         "outils",
         "retard_voyageur",
-        "scenario_complet"
+        "scenario_complet",
+        "annulation_voyageur",
+        "filtres"
       ],
       "bugs": 3,
       "suggestions": 0,
-      "ecransAvecAvis": 0,
+      "ecransAvecAvis": 1,
       "indicatif": {
         "ecrans": 1030,
         "minutes": 409.0
       },
-      "dernierPoint": "2026-10-07T19:48:31Z"
+      "dernierPoint": "2026-10-11T10:24:15Z"
     },
     {
       "id": "Yg2uNZRK",
@@ -135,7 +145,9 @@
         "nego_colis",
         "nego_trajet",
         "outils",
-        "paiement_carte"
+        "paiement_carte",
+        "scenario_complet",
+        "avis_parcours"
       ],
       "bugs": 3,
       "suggestions": 2,
@@ -144,7 +156,7 @@
         "ecrans": 735,
         "minutes": 466.6
       },
-      "dernierPoint": "2026-10-10T02:31:22Z"
+      "dernierPoint": "2026-10-11T13:12:57Z"
     },
     {
       "id": "YeTesJn5",
@@ -166,7 +178,8 @@
         "destinataire_absent",
         "annulation_voyageur",
         "absence_destinataire_procedure",
-        "annulation_expediteur"
+        "annulation_expediteur",
+        "filtres"
       ],
       "bugs": 5,
       "suggestions": 1,
@@ -175,7 +188,7 @@
         "ecrans": 1200,
         "minutes": 716.4
       },
-      "dernierPoint": "2026-10-10T15:24:32Z"
+      "dernierPoint": "2026-10-11T10:08:38Z"
     },
     {
       "id": "txCpxwiq",
@@ -247,7 +260,8 @@
       "nom": "Moustapha H.",
       "tests": [
         "appels",
-        "message_app"
+        "message_app",
+        "litige"
       ],
       "bugs": 0,
       "suggestions": 0,
@@ -256,7 +270,7 @@
         "ecrans": 92,
         "minutes": 113.0
       },
-      "dernierPoint": "2026-10-07T12:08:30Z"
+      "dernierPoint": "2026-10-10T19:12:06Z"
     },
     {
       "id": "um8gN18T",
@@ -332,6 +346,7 @@
     "litige": "1aM5LVzU",
     "annulation_voyageur": "1aM5LVzU",
     "annulation_expediteur": "1aM5LVzU",
-    "absence_destinataire_procedure": "YeTesJn5"
+    "absence_destinataire_procedure": "YeTesJn5",
+    "absence_voyageur": "szE1BA7k"
   }
 }

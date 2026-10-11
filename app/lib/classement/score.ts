@@ -1,4 +1,4 @@
-import { BAREME, POINTS, type TestKey } from './bareme'
+import { BAREME, POINTS, TEST_KEYS, type TestKey } from './bareme'
 import type { ClassementData, Testeur } from './types'
 import { bonusDefis, bonusSujets, bugsDefis, DEFI_POINTS_BUG, type Defi } from './defis'
 
@@ -86,6 +86,26 @@ export function scoreTesteur(
     nbTests:
       testsValides.length + (compteurs.ecransAvecAvis > 0 ? 1 : 0) + (compteurs.suggestions > 0 ? 1 : 0),
   }
+}
+
+export interface Manquant {
+  cle: TestKey | 'avis_ecran' | 'suggestion'
+  points: number
+}
+
+/**
+ * Ce qu'il reste à valider pour atteindre les 26 tests du compteur : tests du
+ * barème pas encore réussis, plus l'avis sur un écran et la suggestion tant
+ * qu'ils sont à zéro. Du plus payant au moins payant, ordre du barème à égalité.
+ */
+export function testsManquants(score: Score): Manquant[] {
+  const manquants: Manquant[] = TEST_KEYS.filter(cle => !score.testsValides.includes(cle)).map(cle => ({
+    cle,
+    points: BAREME[cle],
+  }))
+  if (score.compteurs.ecransAvecAvis === 0) manquants.push({ cle: 'avis_ecran', points: POINTS.avisEcran })
+  if (score.compteurs.suggestions === 0) manquants.push({ cle: 'suggestion', points: POINTS.suggestion })
+  return manquants.sort((a, b) => b.points - a.points)
 }
 
 function heure(iso: string | null): number {

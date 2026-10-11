@@ -223,6 +223,14 @@
       "partiels": [
         {
           "nom": "Salimata D.",
+          "parties": 7
+        },
+        {
+          "nom": "Koro D.",
+          "parties": 5
+        },
+        {
+          "nom": "Ibrahim D.",
           "parties": 5
         },
         {
@@ -230,19 +238,15 @@
           "parties": 5
         },
         {
-          "nom": "Koro D.",
-          "parties": 4
-        },
-        {
-          "nom": "Ibrahim D.",
-          "parties": 4
-        },
-        {
           "nom": "Mahoua O.",
+          "parties": 1
+        },
+        {
+          "nom": "N'da O.",
           "parties": 1
         }
       ],
-      "provisoireMaj": "2026-10-11T10:33:00Z"
+      "provisoireMaj": "2026-10-11T11:02:00Z"
     }
   ]
 }

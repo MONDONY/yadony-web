@@ -216,17 +216,14 @@
       },
       "gagnant": null,
       "classement": [
-        "szE1BA7k"
+        "szE1BA7k",
+        "YeTesJn5"
       ],
       "bonus": {
         "points": 20,
         "testeurs": []
       },
       "partiels": [
-        {
-          "nom": "Salimata D.",
-          "parties": 9
-        },
         {
           "nom": "Ibrahim D.",
           "parties": 7
@@ -244,7 +241,7 @@
           "parties": 1
         }
       ],
-      "provisoireMaj": "2026-10-11T11:50:00Z",
+      "provisoireMaj": "2026-10-11T12:09:00Z",
       "suivi": [
         {
           "nom": "Hadja Maferima T.",
@@ -272,23 +269,11 @@
             "ok",
             "ok",
             "ok",
-            "non",
+            "ok",
             "ok",
             "ok"
           ],
-          "manques": [
-            {
-              "defi": 8,
-              "fait": {
-                "fr": "6 filtres en mode trajets et 6 en mode colis : c'est bon.",
-                "en": "6 filters in trips mode and 6 in parcels mode: done."
-              },
-              "aFaire": {
-                "fr": "il manque Mes envois : ouvre « Mes envois », touche « Filtrer par période » et choisis une période.",
-                "en": "My shipments is missing: open \"My shipments\", tap \"Filter by period\" and pick a period."
-              }
-            }
-          ]
+          "manques": []
         },
         {
           "nom": "Ibrahim D.",
@@ -627,6 +612,10 @@
         {
           "nom": "Hadja Maferima T.",
           "fin": "2026-10-11T11:48:25Z"
+        },
+        {
+          "nom": "Salimata D.",
+          "fin": "2026-10-11T12:00:45Z"
         }
       ]
     }

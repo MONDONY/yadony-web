@@ -1646,7 +1646,19 @@
       "wonPtsEach": "+{points} points ajoutés à chacun",
       "place": "{rang} {nom} · +{points}",
       "provisionalTitle": "Classement provisoire",
-      "provisionalAt": "mis à jour à {heure}"
+      "provisionalAt": "mis à jour à {heure}",
+      "suiviTester": "Testeur",
+      "suiviTotal": "Total",
+      "suiviStatut": {
+        "ok": "validé",
+        "attente": "en attente de validation",
+        "non": "pas encore validé"
+      },
+      "suiviLegende": "✅ validé · ⏳ en attente de validation par l'équipe · ✕ pas encore validé",
+      "suiviManque": "Ce qui manque à {nom}",
+      "suiviDefi": "Défi {n}",
+      "suiviFait": "Ce que tu as fait",
+      "suiviAFaire": "Pour valider"
     }
   }
 }

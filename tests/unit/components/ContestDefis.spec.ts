@@ -261,4 +261,47 @@ describe('ContestDefis', () => {
     const encours: Defi = { ...d1, enonce: { fr: 'Défi.', en: 'Challenge.' } }
     expect(monter([encours], '2026-10-06T18:00:00Z').find('[data-testid="defi-provisoire"]').exists()).toBe(false)
   })
+
+  describe('suivi par testeur pendant le défi', () => {
+    const suivi: Defi = {
+      ...d1,
+      numero: 3,
+      debut: '2026-10-11T08:00:00Z',
+      fin: '2026-10-11T20:00:00Z',
+      podium: [500, 300, 100],
+      sujets: 3,
+      enonce: { fr: 'Trois défis.', en: 'Three challenges.' },
+      provisoireMaj: '2026-10-11T11:17:00Z',
+      partiels: [{ nom: 'Salimata D.', parties: 2 }],
+      suivi: [
+        {
+          nom: 'Salimata D.',
+          defis: ['ok', 'attente', 'non'],
+          manques: [
+            { defi: 3, fait: { fr: 'Aucun trajet annulé.', en: 'No trip cancelled.' }, aFaire: { fr: 'Touche « Annuler le voyage ».', en: 'Tap "Cancel the trip".' } },
+          ],
+        },
+      ],
+    }
+
+    it('montre un tableau défi par défi avec les statuts et le total', () => {
+      const w = monter([suivi], '2026-10-11T11:20:00Z')
+      const tableau = w.find('[data-testid="defi-suivi-tableau"]')
+      expect(tableau.text()).toContain('Salimata D.')
+      expect(tableau.findAll('th').map(th => th.text())).toEqual(expect.arrayContaining(['1', '2', '3']))
+      expect(tableau.find('[data-statut="ok"]').exists()).toBe(true)
+      expect(tableau.find('[data-statut="attente"]').exists()).toBe(true)
+      expect(tableau.find('[data-statut="non"]').exists()).toBe(true)
+      expect(tableau.text()).toContain('1 (+1)')
+      expect(w.find('[data-testid="defi-provisoire"]').exists()).toBe(false)
+    })
+
+    it('explique à chacun ce qui manque : ce qu’il a fait et comment valider', () => {
+      const detail = monter([suivi], '2026-10-11T11:20:00Z').find('[data-testid="defi-suivi-detail"]')
+      expect(detail.text()).toContain('Ce qui manque à Salimata D.')
+      expect(detail.text()).toContain('Défi 3')
+      expect(detail.text()).toContain('Ce que tu as fait : Aucun trajet annulé.')
+      expect(detail.text()).toContain('Pour valider : Touche « Annuler le voyage ».')
+    })
+  })
 })

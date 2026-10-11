@@ -32,10 +32,24 @@ export interface Defi {
   /** Testeurs qui n'ont réussi qu'une partie du défi (nombre de parties réussies), dans l'ordre d'arrivée. */
   /** Pendant le défi, ces lignes forment le classement provisoire, du plus avancé au moins avancé. */
   partiels?: { nom: string; parties: number }[]
+  /**
+   * Suivi détaillé pendant le défi : statut de chaque sujet par testeur (dans l'ordre du
+   * classement provisoire) et, pour chaque sujet manquant, ce qu'il a fait et comment valider.
+   */
+  suivi?: SuiviTesteur[]
   /** Heure (ISO) de la dernière mise à jour du classement provisoire. */
   provisoireMaj?: string
   /** Récit du défi une fois terminé : ce qui s'est passé, partie par partie. */
   bilan?: { titre: { fr: string; en: string }; texte: { fr: string; en: string } }[]
+}
+
+export type StatutSujet = 'ok' | 'attente' | 'non'
+
+export interface SuiviTesteur {
+  nom: string
+  /** Un statut par sujet, dans l'ordre des sujets. */
+  defis: StatutSujet[]
+  manques: { defi: number; fait: { fr: string; en: string }; aFaire: { fr: string; en: string } }[]
 }
 
 export type EtatDefi = 'a_venir' | 'en_cours' | 'termine'

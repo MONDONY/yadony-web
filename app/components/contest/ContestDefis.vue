@@ -5,6 +5,7 @@ import { DEFI_POINTS, DEFI_POINTS_BUG, defiAffiche, etatDefi, gagnantsDefi, type
 import { compteARebours } from '@/lib/classement/popup'
 import { localeDates } from '@/lib/classement/score'
 import ContestDefiBilan from './ContestDefiBilan.vue'
+import ContestDefiSuivi from './ContestDefiSuivi.vue'
 
 const props = withDefaults(
   defineProps<{
@@ -135,7 +136,13 @@ const pastille = computed(() =>
         </template>
         <p v-else class="text-pretty font-semibold">{{ t('contest.defis.pending') }}</p>
         <p class="mt-2 font-display text-[20px] font-extrabold tabular-nums text-orange-deep" data-testid="defi-compte">{{ t('contest.defis.endsIn', { temps: duree(defi.fin) }) }}</p>
-        <div v-if="defi.partiels?.length" class="mt-4" data-testid="defi-provisoire">
+        <template v-if="defi.suivi?.length">
+          <p class="mt-4 font-display text-[12px] font-bold uppercase tracking-[0.12em] text-ink-muted">
+            {{ t('contest.defis.provisionalTitle') }}<template v-if="defi.provisoireMaj"> · {{ t('contest.defis.provisionalAt', { heure: heure(defi.provisoireMaj) }) }}</template>
+          </p>
+          <ContestDefiSuivi :defi="defi" />
+        </template>
+        <div v-else-if="defi.partiels?.length" class="mt-4" data-testid="defi-provisoire">
           <p class="font-display text-[12px] font-bold uppercase tracking-[0.12em] text-ink-muted">
             {{ t('contest.defis.provisionalTitle') }}<template v-if="defi.provisoireMaj"> · {{ t('contest.defis.provisionalAt', { heure: heure(defi.provisoireMaj) }) }}</template>
           </p>

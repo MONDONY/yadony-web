@@ -223,19 +223,19 @@
       "partiels": [
         {
           "nom": "Salimata D.",
+          "parties": 8
+        },
+        {
+          "nom": "Hadja Maferima T.",
+          "parties": 8
+        },
+        {
+          "nom": "Ibrahim D.",
           "parties": 7
         },
         {
           "nom": "Koro D.",
-          "parties": 5
-        },
-        {
-          "nom": "Ibrahim D.",
-          "parties": 5
-        },
-        {
-          "nom": "Hadja Maferima T.",
-          "parties": 5
+          "parties": 7
         },
         {
           "nom": "Mahoua O.",
@@ -246,7 +246,419 @@
           "parties": 1
         }
       ],
-      "provisoireMaj": "2026-10-11T11:02:00Z"
+      "provisoireMaj": "2026-10-11T11:25:00Z",
+      "suivi": [
+        {
+          "nom": "Salimata D.",
+          "defis": [
+            "ok",
+            "ok",
+            "ok",
+            "ok",
+            "ok",
+            "non",
+            "ok",
+            "non",
+            "ok",
+            "ok"
+          ],
+          "manques": [
+            {
+              "defi": 6,
+              "fait": {
+                "fr": "Pas encore fait.",
+                "en": "Not done yet."
+              },
+              "aFaire": {
+                "fr": "le voyageur accepte un colis que l'expéditeur paie par carte ou mobile money, puis ouvre son trajet et touche « Annuler le voyage ». L'expéditeur vérifie son remboursement dans l'application.",
+                "en": "the traveller accepts a parcel the sender pays by card or mobile money, then opens the trip and taps \"Cancel the trip\". The sender checks the refund in the app."
+              }
+            },
+            {
+              "defi": 8,
+              "fait": {
+                "fr": "6 filtres en mode trajets et 6 en mode colis : c'est bon.",
+                "en": "6 filters in trips mode and 6 in parcels mode: done."
+              },
+              "aFaire": {
+                "fr": "il manque Mes envois : ouvre « Mes envois », touche « Filtrer par période » et choisis une période.",
+                "en": "My shipments is missing: open \"My shipments\", tap \"Filter by period\" and pick a period."
+              }
+            }
+          ]
+        },
+        {
+          "nom": "Hadja Maferima T.",
+          "defis": [
+            "ok",
+            "ok",
+            "ok",
+            "ok",
+            "ok",
+            "non",
+            "ok",
+            "non",
+            "ok",
+            "ok"
+          ],
+          "manques": [
+            {
+              "defi": 6,
+              "fait": {
+                "fr": "Pas encore fait.",
+                "en": "Not done yet."
+              },
+              "aFaire": {
+                "fr": "le voyageur accepte un colis que l'expéditeur paie par carte ou mobile money, puis ouvre son trajet et touche « Annuler le voyage ». L'expéditeur vérifie son remboursement dans l'application.",
+                "en": "the traveller accepts a parcel the sender pays by card or mobile money, then opens the trip and taps \"Cancel the trip\". The sender checks the refund in the app."
+              }
+            },
+            {
+              "defi": 8,
+              "fait": {
+                "fr": "6 filtres en mode trajets et 5 en mode colis : c'est bon.",
+                "en": "6 filters in trips mode and 5 in parcels mode: done."
+              },
+              "aFaire": {
+                "fr": "il manque Mes envois : ouvre « Mes envois », touche « Filtrer par période » et choisis une période.",
+                "en": "My shipments is missing: open \"My shipments\", tap \"Filter by period\" and pick a period."
+              }
+            }
+          ]
+        },
+        {
+          "nom": "Ibrahim D.",
+          "defis": [
+            "ok",
+            "ok",
+            "ok",
+            "ok",
+            "ok",
+            "non",
+            "ok",
+            "non",
+            "non",
+            "ok"
+          ],
+          "manques": [
+            {
+              "defi": 6,
+              "fait": {
+                "fr": "Pas encore fait.",
+                "en": "Not done yet."
+              },
+              "aFaire": {
+                "fr": "le voyageur accepte un colis que l'expéditeur paie par carte ou mobile money, puis ouvre son trajet et touche « Annuler le voyage ». L'expéditeur vérifie son remboursement dans l'application.",
+                "en": "the traveller accepts a parcel the sender pays by card or mobile money, then opens the trip and taps \"Cancel the trip\". The sender checks the refund in the app."
+              }
+            },
+            {
+              "defi": 8,
+              "fait": {
+                "fr": "6 filtres en mode trajets.",
+                "en": "6 filters in trips mode."
+              },
+              "aFaire": {
+                "fr": "il manque le mode colis (sur l'accueil, passe en mode colis et utilise 3 filtres : « Pour mes trajets », « Taille » et « Kilos ».) et Mes envois (ouvre « Mes envois », touche « Filtrer par période » et choisis une période.)",
+                "en": "parcels mode is missing (on the home screen, switch to parcels mode and use 3 filters: \"For my trips\", \"Size\" and \"Kilos\".) and My shipments (open \"My shipments\", tap \"Filter by period\" and pick a period.)"
+              }
+            },
+            {
+              "defi": 9,
+              "fait": {
+                "fr": "devise changée, numéro masqué, pays de résidence, une notification coupée, accessibilité, utilisateur bloqué puis débloqué.",
+                "en": "currency changed, number hidden, country of residence, one notification off, accessibility, user blocked then unblocked."
+              },
+              "aFaire": {
+                "fr": "il ne manque que « Afficher ma dernière connexion » : Paramètres → Confidentialité, active-le puis remets-le.",
+                "en": "only \"Show my last seen\" is missing: Settings → Privacy, turn it on then back off."
+              }
+            }
+          ]
+        },
+        {
+          "nom": "Koro D.",
+          "defis": [
+            "ok",
+            "ok",
+            "ok",
+            "ok",
+            "ok",
+            "non",
+            "ok",
+            "non",
+            "non",
+            "ok"
+          ],
+          "manques": [
+            {
+              "defi": 6,
+              "fait": {
+                "fr": "Pas encore fait.",
+                "en": "Not done yet."
+              },
+              "aFaire": {
+                "fr": "le voyageur accepte un colis que l'expéditeur paie par carte ou mobile money, puis ouvre son trajet et touche « Annuler le voyage ». L'expéditeur vérifie son remboursement dans l'application.",
+                "en": "the traveller accepts a parcel the sender pays by card or mobile money, then opens the trip and taps \"Cancel the trip\". The sender checks the refund in the app."
+              }
+            },
+            {
+              "defi": 8,
+              "fait": {
+                "fr": "6 filtres en mode trajets et Mes envois filtré par période.",
+                "en": "6 filters in trips mode and My shipments filtered by period."
+              },
+              "aFaire": {
+                "fr": "il manque le mode colis : sur l'accueil, passe en mode colis et utilise 3 filtres : « Pour mes trajets », « Taille » et « Kilos ».",
+                "en": "parcels mode is missing: on the home screen, switch to parcels mode and use 3 filters: \"For my trips\", \"Size\" and \"Kilos\"."
+              }
+            },
+            {
+              "defi": 9,
+              "fait": {
+                "fr": "devise changée, numéro masqué, une notification coupée, accessibilité, utilisateur bloqué puis débloqué.",
+                "en": "currency changed, number hidden, one notification off, accessibility, user blocked then unblocked."
+              },
+              "aFaire": {
+                "fr": "dans Paramètres → Confidentialité, active puis remets « Afficher mon pays de résidence » et « Afficher ma dernière connexion ».",
+                "en": "in Settings → Privacy, turn on then back off \"Show my country of residence\" and \"Show my last seen\"."
+              }
+            }
+          ]
+        },
+        {
+          "nom": "Mahoua O.",
+          "defis": [
+            "non",
+            "non",
+            "ok",
+            "non",
+            "non",
+            "non",
+            "non",
+            "non",
+            "non",
+            "non"
+          ],
+          "manques": [
+            {
+              "defi": 1,
+              "fait": {
+                "fr": "Pas encore fait.",
+                "en": "Not done yet."
+              },
+              "aFaire": {
+                "fr": "sur le trajet d'un voyageur, propose un autre prix ; une fois accepté, paie par carte, fais livrer le colis et confirme la réception jusqu'au versement au voyageur.",
+                "en": "on a traveller's trip, propose another price; once accepted, pay by card, have the parcel delivered and confirm receipt until the traveller is paid out."
+              }
+            },
+            {
+              "defi": 2,
+              "fait": {
+                "fr": "Pas encore fait.",
+                "en": "Not done yet."
+              },
+              "aFaire": {
+                "fr": "publie une demande d'envoi ; le voyageur y fait une offre et vous vous mettez d'accord sur le prix ; paie en mobile money, jusqu'au versement sur le téléphone du voyageur.",
+                "en": "publish a shipping request; the traveller makes an offer and you agree on the price; pay by mobile money, up to the payout on the traveller's phone."
+              }
+            },
+            {
+              "defi": 4,
+              "fait": {
+                "fr": "Pas encore fait.",
+                "en": "Not done yet."
+              },
+              "aFaire": {
+                "fr": "paie un colis par carte, puis le voyageur le refuse ou l'annule : vérifie que le remboursement apparaît.",
+                "en": "pay for a parcel by card, then the traveller declines or cancels it: check the refund shows up."
+              }
+            },
+            {
+              "defi": 5,
+              "fait": {
+                "fr": "Pas encore fait.",
+                "en": "Not done yet."
+              },
+              "aFaire": {
+                "fr": "même chose avec un paiement en mobile money : le voyageur annule après le paiement et tu es remboursé sur ton téléphone.",
+                "en": "same with a mobile money payment: the traveller cancels after payment and you are refunded on your phone."
+              }
+            },
+            {
+              "defi": 6,
+              "fait": {
+                "fr": "Pas encore fait.",
+                "en": "Not done yet."
+              },
+              "aFaire": {
+                "fr": "le voyageur accepte un colis que l'expéditeur paie par carte ou mobile money, puis ouvre son trajet et touche « Annuler le voyage ». L'expéditeur vérifie son remboursement dans l'application.",
+                "en": "the traveller accepts a parcel the sender pays by card or mobile money, then opens the trip and taps \"Cancel the trip\". The sender checks the refund in the app."
+              }
+            },
+            {
+              "defi": 7,
+              "fait": {
+                "fr": "Pas encore fait.",
+                "en": "Not done yet."
+              },
+              "aFaire": {
+                "fr": "dans ton portefeuille, touche « Recharger », puis « Rembourser mon solde ».",
+                "en": "in your wallet, tap \"Top up\", then \"Refund my balance\"."
+              }
+            },
+            {
+              "defi": 8,
+              "fait": {
+                "fr": "Pas encore fait.",
+                "en": "Not done yet."
+              },
+              "aFaire": {
+                "fr": "sur l'accueil en mode trajets, utilise 5 filtres (urgent, date, kilos, prix, escales ou moyens de paiement) ; en mode colis, 3 filtres (« Pour mes trajets », « Taille », « Kilos ») ; puis ouvre « Mes envois », touche « Filtrer par période » et choisis une période.",
+                "en": "on the home screen in trips mode, use 5 filters (urgent, date, kilos, price, stops or payment methods); in parcels mode, 3 filters (\"For my trips\", \"Size\", \"Kilos\"); then open \"My shipments\", tap \"Filter by period\" and pick a period."
+              }
+            },
+            {
+              "defi": 9,
+              "fait": {
+                "fr": "devise changée.",
+                "en": "currency changed."
+              },
+              "aFaire": {
+                "fr": "il reste : dans Paramètres : Confidentialité (active puis remets « Masquer mon numéro », « Afficher mon pays de résidence », « Afficher ma dernière connexion »), Notifications (coupe une notification), Accessibilité (change un réglage), puis bloque et débloque un utilisateur.",
+                "en": "still to do: in Settings: Privacy (turn on then back off \"Hide my number\", \"Show my country of residence\", \"Show my last seen\"), Notifications (turn one off), Accessibility (change one setting), then block and unblock a user."
+              }
+            },
+            {
+              "defi": 10,
+              "fait": {
+                "fr": "Pas encore fait.",
+                "en": "Not done yet."
+              },
+              "aFaire": {
+                "fr": "ouvre Profil → Paramètres et envoie avec le scarabée un message [AVIS] qui répond aux 5 questions du quiz.",
+                "en": "open Profile → Settings and send a beetle message starting with [AVIS] that answers the 5 quiz questions."
+              }
+            }
+          ]
+        },
+        {
+          "nom": "N'da O.",
+          "defis": [
+            "non",
+            "non",
+            "ok",
+            "non",
+            "non",
+            "non",
+            "non",
+            "non",
+            "non",
+            "non"
+          ],
+          "manques": [
+            {
+              "defi": 1,
+              "fait": {
+                "fr": "Pas encore fait.",
+                "en": "Not done yet."
+              },
+              "aFaire": {
+                "fr": "sur le trajet d'un voyageur, propose un autre prix ; une fois accepté, paie par carte, fais livrer le colis et confirme la réception jusqu'au versement au voyageur.",
+                "en": "on a traveller's trip, propose another price; once accepted, pay by card, have the parcel delivered and confirm receipt until the traveller is paid out."
+              }
+            },
+            {
+              "defi": 2,
+              "fait": {
+                "fr": "Pas encore fait.",
+                "en": "Not done yet."
+              },
+              "aFaire": {
+                "fr": "publie une demande d'envoi ; le voyageur y fait une offre et vous vous mettez d'accord sur le prix ; paie en mobile money, jusqu'au versement sur le téléphone du voyageur.",
+                "en": "publish a shipping request; the traveller makes an offer and you agree on the price; pay by mobile money, up to the payout on the traveller's phone."
+              }
+            },
+            {
+              "defi": 4,
+              "fait": {
+                "fr": "Pas encore fait.",
+                "en": "Not done yet."
+              },
+              "aFaire": {
+                "fr": "paie un colis par carte, puis le voyageur le refuse ou l'annule : vérifie que le remboursement apparaît.",
+                "en": "pay for a parcel by card, then the traveller declines or cancels it: check the refund shows up."
+              }
+            },
+            {
+              "defi": 5,
+              "fait": {
+                "fr": "Pas encore fait.",
+                "en": "Not done yet."
+              },
+              "aFaire": {
+                "fr": "même chose avec un paiement en mobile money : le voyageur annule après le paiement et tu es remboursé sur ton téléphone.",
+                "en": "same with a mobile money payment: the traveller cancels after payment and you are refunded on your phone."
+              }
+            },
+            {
+              "defi": 6,
+              "fait": {
+                "fr": "Pas encore fait.",
+                "en": "Not done yet."
+              },
+              "aFaire": {
+                "fr": "le voyageur accepte un colis que l'expéditeur paie par carte ou mobile money, puis ouvre son trajet et touche « Annuler le voyage ». L'expéditeur vérifie son remboursement dans l'application.",
+                "en": "the traveller accepts a parcel the sender pays by card or mobile money, then opens the trip and taps \"Cancel the trip\". The sender checks the refund in the app."
+              }
+            },
+            {
+              "defi": 7,
+              "fait": {
+                "fr": "Pas encore fait.",
+                "en": "Not done yet."
+              },
+              "aFaire": {
+                "fr": "dans ton portefeuille, touche « Recharger », puis « Rembourser mon solde ».",
+                "en": "in your wallet, tap \"Top up\", then \"Refund my balance\"."
+              }
+            },
+            {
+              "defi": 8,
+              "fait": {
+                "fr": "7 filtres en mode trajets et Mes envois filtré par période.",
+                "en": "7 filters in trips mode and My shipments filtered by period."
+              },
+              "aFaire": {
+                "fr": "il manque le mode colis : sur l'accueil, passe en mode colis et utilise 3 filtres : « Pour mes trajets », « Taille » et « Kilos ».",
+                "en": "parcels mode is missing: on the home screen, switch to parcels mode and use 3 filters: \"For my trips\", \"Size\" and \"Kilos\"."
+              }
+            },
+            {
+              "defi": 9,
+              "fait": {
+                "fr": "Pas encore fait.",
+                "en": "Not done yet."
+              },
+              "aFaire": {
+                "fr": "dans Paramètres : Confidentialité (active puis remets « Masquer mon numéro », « Afficher mon pays de résidence », « Afficher ma dernière connexion »), Préférences (change ta devise), Notifications (coupe une notification), Accessibilité (change un réglage), puis bloque et débloque un utilisateur.",
+                "en": "in Settings: Privacy (turn on then back off \"Hide my number\", \"Show my country of residence\", \"Show my last seen\"), Preferences (change your currency), Notifications (turn one off), Accessibility (change one setting), then block and unblock a user."
+              }
+            },
+            {
+              "defi": 10,
+              "fait": {
+                "fr": "Pas encore fait.",
+                "en": "Not done yet."
+              },
+              "aFaire": {
+                "fr": "ouvre Profil → Paramètres et envoie avec le scarabée un message [AVIS] qui répond aux 5 questions du quiz.",
+                "en": "open Profile → Settings and send a beetle message starting with [AVIS] that answers the 5 quiz questions."
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }

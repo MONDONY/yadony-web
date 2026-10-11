@@ -1646,7 +1646,19 @@
       "wonPtsEach": "+{points} points added to each",
       "place": "{rang} {nom} · +{points} pts",
       "provisionalTitle": "Provisional ranking",
-      "provisionalAt": "updated at {heure}"
+      "provisionalAt": "updated at {heure}",
+      "suiviTester": "Tester",
+      "suiviTotal": "Total score",
+      "suiviStatut": {
+        "ok": "done",
+        "attente": "awaiting validation",
+        "non": "not done yet"
+      },
+      "suiviLegende": "✅ done · ⏳ awaiting the team's validation · ✕ not done yet",
+      "suiviManque": "What {nom} still needs",
+      "suiviDefi": "Challenge {n}",
+      "suiviFait": "What you did",
+      "suiviAFaire": "To complete it"
     }
   }
 }

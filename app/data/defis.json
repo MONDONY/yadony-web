@@ -226,7 +226,7 @@
       "partiels": [
         {
           "nom": "Ibrahim D.",
-          "parties": 7
+          "parties": 9
         },
         {
           "nom": "Koro D.",
@@ -241,7 +241,7 @@
           "parties": 1
         }
       ],
-      "provisoireMaj": "2026-10-11T12:09:00Z",
+      "provisoireMaj": "2026-10-11T14:15:00Z",
       "suivi": [
         {
           "nom": "Hadja Maferima T.",
@@ -285,8 +285,8 @@
             "ok",
             "non",
             "ok",
-            "non",
-            "non",
+            "ok",
+            "ok",
             "ok"
           ],
           "manques": [
@@ -299,28 +299,6 @@
               "aFaire": {
                 "fr": "le voyageur accepte un colis que l'expéditeur paie par carte ou mobile money, puis ouvre son trajet et touche « Annuler le voyage ». L'expéditeur vérifie son remboursement dans l'application.",
                 "en": "the traveller accepts a parcel the sender pays by card or mobile money, then opens the trip and taps \"Cancel the trip\". The sender checks the refund in the app."
-              }
-            },
-            {
-              "defi": 8,
-              "fait": {
-                "fr": "6 filtres en mode trajets.",
-                "en": "6 filters in trips mode."
-              },
-              "aFaire": {
-                "fr": "il manque le mode colis (sur l'accueil, passe en mode colis et utilise 3 filtres : « Pour mes trajets », « Taille » et « Kilos ».) et Mes envois (ouvre « Mes envois », touche « Filtrer par période » et choisis une période.)",
-                "en": "parcels mode is missing (on the home screen, switch to parcels mode and use 3 filters: \"For my trips\", \"Size\" and \"Kilos\".) and My shipments (open \"My shipments\", tap \"Filter by period\" and pick a period.)"
-              }
-            },
-            {
-              "defi": 9,
-              "fait": {
-                "fr": "devise changée, numéro masqué, pays de résidence, une notification coupée, accessibilité, utilisateur bloqué puis débloqué.",
-                "en": "currency changed, number hidden, country of residence, one notification off, accessibility, user blocked then unblocked."
-              },
-              "aFaire": {
-                "fr": "il ne manque que « Afficher ma dernière connexion » : Paramètres → Confidentialité, active-le puis remets-le.",
-                "en": "only \"Show my last seen\" is missing: Settings → Privacy, turn it on then back off."
               }
             }
           ]

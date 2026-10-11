@@ -222,11 +222,11 @@
       },
       "partiels": [
         {
-          "nom": "Salimata D.",
-          "parties": 8
+          "nom": "Hadja Maferima T.",
+          "parties": 9
         },
         {
-          "nom": "Hadja Maferima T.",
+          "nom": "Salimata D.",
           "parties": 8
         },
         {
@@ -246,8 +246,36 @@
           "parties": 1
         }
       ],
-      "provisoireMaj": "2026-10-11T11:25:00Z",
+      "provisoireMaj": "2026-10-11T11:38:00Z",
       "suivi": [
+        {
+          "nom": "Hadja Maferima T.",
+          "defis": [
+            "ok",
+            "ok",
+            "ok",
+            "ok",
+            "ok",
+            "non",
+            "ok",
+            "ok",
+            "ok",
+            "ok"
+          ],
+          "manques": [
+            {
+              "defi": 6,
+              "fait": {
+                "fr": "Pas encore fait.",
+                "en": "Not done yet."
+              },
+              "aFaire": {
+                "fr": "le voyageur accepte un colis que l'expéditeur paie par carte ou mobile money, puis ouvre son trajet et touche « Annuler le voyage ». L'expéditeur vérifie son remboursement dans l'application.",
+                "en": "the traveller accepts a parcel the sender pays by card or mobile money, then opens the trip and taps \"Cancel the trip\". The sender checks the refund in the app."
+              }
+            }
+          ]
+        },
         {
           "nom": "Salimata D.",
           "defis": [
@@ -279,45 +307,6 @@
               "fait": {
                 "fr": "6 filtres en mode trajets et 6 en mode colis : c'est bon.",
                 "en": "6 filters in trips mode and 6 in parcels mode: done."
-              },
-              "aFaire": {
-                "fr": "il manque Mes envois : ouvre « Mes envois », touche « Filtrer par période » et choisis une période.",
-                "en": "My shipments is missing: open \"My shipments\", tap \"Filter by period\" and pick a period."
-              }
-            }
-          ]
-        },
-        {
-          "nom": "Hadja Maferima T.",
-          "defis": [
-            "ok",
-            "ok",
-            "ok",
-            "ok",
-            "ok",
-            "non",
-            "ok",
-            "non",
-            "ok",
-            "ok"
-          ],
-          "manques": [
-            {
-              "defi": 6,
-              "fait": {
-                "fr": "Pas encore fait.",
-                "en": "Not done yet."
-              },
-              "aFaire": {
-                "fr": "le voyageur accepte un colis que l'expéditeur paie par carte ou mobile money, puis ouvre son trajet et touche « Annuler le voyage ». L'expéditeur vérifie son remboursement dans l'application.",
-                "en": "the traveller accepts a parcel the sender pays by card or mobile money, then opens the trip and taps \"Cancel the trip\". The sender checks the refund in the app."
-              }
-            },
-            {
-              "defi": 8,
-              "fait": {
-                "fr": "6 filtres en mode trajets et 5 en mode colis : c'est bon.",
-                "en": "6 filters in trips mode and 5 in parcels mode: done."
               },
               "aFaire": {
                 "fr": "il manque Mes envois : ouvre « Mes envois », touche « Filtrer par période » et choisis une période.",

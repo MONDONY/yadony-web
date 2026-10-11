@@ -148,3 +148,18 @@ describe('ContestTable', () => {
     expect(monter().find('[data-testid="board-more"]').exists()).toBe(false)
   })
 })
+
+describe('ContestTable : tests manquants', () => {
+  it('liste dans le détail ce qui manque pour valider les 26 tests', async () => {
+    const w = mount(ContestTable, { props: { lignes, miseAJour: null }, global: { plugins: [i18n] } })
+    const ligneMoussa = w.findAll('[data-testid="board-row"]').find(r => r.text().includes('Moussa T.'))!
+    await ligneMoussa.find('button').trigger('click')
+    const manquants = w.find('[data-testid="board-missing"]')
+    expect(manquants.text()).toContain('Il te manque 25 tests sur 26')
+    const items = manquants.findAll('li').map(li => li.text())
+    expect(items).toHaveLength(25)
+    expect(items[0]).toContain('100')
+    expect(items.join(' ')).toContain('Avis sur un écran')
+    expect(items.join(' ')).not.toContain('Filtres de recherche')
+  })
+})

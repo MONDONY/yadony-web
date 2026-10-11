@@ -1660,6 +1660,12 @@
       "suiviFait": "Ce que tu as fait",
       "suiviAFaire": "Pour valider",
       "suiviFini": "🎉 {nom} a validé tous les défis"
+    },
+    "missing": {
+      "title": "Il te manque 1 test sur {total} | Il te manque 1 test sur {total} | Il te manque {n} tests sur {total}",
+      "done": "Les {total} tests sont validés.",
+      "avis_ecran": "Avis sur un écran",
+      "suggestion": "Une suggestion retenue"
     }
   }
 }

@@ -8,6 +8,7 @@ import {
   progression,
   scoreTesteur,
   statutPeriode,
+  testsManquants,
 } from '@/lib/classement/score'
 import type { Testeur } from '@/lib/classement/types'
 
@@ -240,5 +241,50 @@ describe('bonus du premier', () => {
       ['b', 100],
       ['a', 60],
     ])
+  })
+})
+
+describe('testsManquants', () => {
+  it('liste les tests du barème non validés, plus avis écran et suggestion à zéro, du plus payant au moins payant', () => {
+    const score = scoreTesteur({
+      id: 'x',
+      nom: 'Awa D.',
+      tests: [...TEST_KEYS.filter(cle => !['paiement_mm', 'filtres', 'litige'].includes(cle))],
+      bugs: 0,
+      suggestions: 0,
+      ecransAvecAvis: 0,
+      indicatif: { ecrans: 0, minutes: 0 },
+      dernierPoint: null,
+    })
+    expect(testsManquants(score)).toEqual([
+      { cle: 'paiement_mm', points: 100 },
+      { cle: 'litige', points: 60 },
+      { cle: 'suggestion', points: 30 },
+      { cle: 'filtres', points: 20 },
+      { cle: 'avis_ecran', points: 20 },
+    ])
+  })
+
+  it('rend une liste vide quand les 26 tests sont validés', () => {
+    const score = scoreTesteur({
+      id: 'x',
+      nom: 'Awa D.',
+      tests: [...TEST_KEYS],
+      bugs: 0,
+      suggestions: 1,
+      ecransAvecAvis: 2,
+      indicatif: { ecrans: 0, minutes: 0 },
+      dernierPoint: null,
+    })
+    expect(score.nbTests).toBe(TOTAL_TESTS)
+    expect(testsManquants(score)).toEqual([])
+  })
+
+  it('compte autant de manquants que TOTAL_TESTS moins les tests validés', () => {
+    const score = scoreTesteur({
+      id: 'x', nom: 'Awa D.', tests: ['outils', 'filtres'], bugs: 3, suggestions: 0, ecransAvecAvis: 1,
+      indicatif: { ecrans: 0, minutes: 0 }, dernierPoint: null,
+    })
+    expect(testsManquants(score)).toHaveLength(TOTAL_TESTS - score.nbTests)
   })
 })

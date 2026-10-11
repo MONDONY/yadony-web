@@ -156,7 +156,7 @@ const pastille = computed(() =>
       </div>
 
       <div v-else class="mt-3" data-testid="defi-resultat">
-        <p v-if="enonce(defi)" class="whitespace-pre-line text-pretty text-[14px] text-ink-muted">{{ enonce(defi) }}</p>
+        <p v-if="enonce(defi)" class="whitespace-pre-line text-pretty break-words [overflow-wrap:anywhere] text-[14px] text-ink-muted">{{ enonce(defi) }}</p>
         <ol v-if="defi.podium?.length && gagnant(defi)" class="mt-1 grid gap-1 font-display text-[17px] font-extrabold tabular-nums" data-testid="defi-podium">
           <li v-for="p in podium(defi)" :key="p.rang">{{ t('contest.defis.place', p) }}</li>
         </ol>

@@ -1,8 +1,8 @@
 import { BAREME, POINTS, type TestKey } from './bareme'
 import type { ClassementData, Testeur } from './types'
-import { bonusDefis, bugsDefis, DEFI_POINTS_BUG, type Defi } from './defis'
+import { bonusDefis, bonusSujets, bugsDefis, DEFI_POINTS_BUG, type Defi } from './defis'
 
-export type CleDetail = TestKey | 'bug' | 'suggestion' | 'avis_ecran' | 'premier' | 'defi' | 'defi_bug'
+export type CleDetail = TestKey | 'bug' | 'suggestion' | 'avis_ecran' | 'premier' | 'defi' | 'defi_bug' | 'defi_bonus'
 
 export interface LigneDetail {
   cle: CleDetail
@@ -43,12 +43,14 @@ function compteur(valeur: number): number {
  * `premiersCles` : tests que ce testeur a réussis en premier (bonus de 40 points chacun).
  * `defis` : défis quotidiens qu'il a gagnés, avec leurs points.
  * `bugsDefi` : bugs pertinents trouvés sur les parcours des défis (40 points chacun).
+ * `bonus` : sujets bonus des défis validés, avec leurs points.
  */
 export function scoreTesteur(
   t: Testeur,
   premiersCles: string[] = [],
   defis: { numero: number; points: number }[] = [],
   bugsDefi = 0,
+  bonus: { numero: number; points: number }[] = [],
 ): Score {
   const valides = [...new Set(t.tests ?? [])].filter(estTest)
   const nbPremiers = new Set(premiersCles.filter(cle => (valides as string[]).includes(cle))).size
@@ -71,6 +73,7 @@ export function scoreTesteur(
   }
 
   for (const d of defis) detail.push({ cle: 'defi', points: d.points, nombre: d.numero })
+  for (const b of bonus) detail.push({ cle: 'defi_bonus', points: b.points, nombre: b.numero })
 
   // Tri stable : à points égaux, l'ordre du JSON puis bugs, suggestions, écrans.
   detail.sort((a, b) => b.points - a.points)
@@ -105,7 +108,7 @@ export function classer(
   const lignes = uniques
     .map(t => {
       const cles = Object.keys(premiers).filter(cle => premiers[cle] === t.id)
-      return { ...t, ...scoreTesteur(t, cles, bonusDefis(t.id, defis), bugsDefis(t.id, defis)), rang: 0 }
+      return { ...t, ...scoreTesteur(t, cles, bonusDefis(t.id, defis), bugsDefis(t.id, defis), bonusSujets(t.id, defis)), rang: 0 }
     })
     .sort(
       (a, b) =>

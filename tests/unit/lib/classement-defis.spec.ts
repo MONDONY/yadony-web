@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { bonusDefis, bugsDefis, gagnantsDefi, DEFI_POINTS_BUG, defiAffiche, etatDefi, type Defi } from '@/lib/classement/defis'
+import { bonusDefis, bonusSujets, bugsDefis, gagnantsDefi, DEFI_POINTS_BUG, defiAffiche, etatDefi, type Defi } from '@/lib/classement/defis'
 import defisData from '../../../app/data/defis.json'
 import { classer, scoreTesteur } from '@/lib/classement/score'
 import type { Testeur } from '@/lib/classement/types'
@@ -245,5 +245,33 @@ describe('données du grand défi', () => {
     expect(en).toContain('Complete all 10 challenges before 10 pm')
     expect(en).toContain("Yadony's 5% commission")
     expect(en).not.toMatch(/log ?out|sign ?out|disconnect/i)
+  })
+})
+
+describe('sujet bonus d’un défi', () => {
+  const avecBonus: Defi = { ...d1, numero: 3, points: 500, podium: [500, 300, 100], classement: [], bonus: { points: 20, testeurs: ['aaaa1111'] } }
+
+  it('donne les points du bonus aux seuls testeurs validés, même hors podium', () => {
+    expect(bonusSujets('aaaa1111', [avecBonus])).toEqual([{ numero: 3, points: 20 }])
+    expect(bonusSujets('bbbb2222', [avecBonus])).toEqual([])
+    expect(bonusSujets('aaaa1111', [d1])).toEqual([])
+    expect(bonusSujets('aaaa1111', [{ ...avecBonus, bonus: { points: 0, testeurs: ['aaaa1111'] } }])).toEqual([])
+  })
+
+  it('ajoute une ligne « bonus du défi » au détail et au total', () => {
+    const lignes = classer([testeur('aaaa1111', 'Awa D.', ['filtres']), testeur('bbbb2222', 'Koro D.', ['filtres'])], {}, [avecBonus])
+    const awa = lignes.find(l => l.id === 'aaaa1111')!
+    expect(awa.total).toBe(40)
+    expect(awa.detail).toContainEqual({ cle: 'defi_bonus', points: 20, nombre: 3 })
+    expect(lignes.find(l => l.id === 'bbbb2222')!.total).toBe(20)
+  })
+
+  it('prévoit un bonus de 20 points au défi n°3 : partager son trajet sur le groupe Facebook', () => {
+    const trois = (defisData.defis as Defi[]).find(d => d.numero === 3)!
+    expect(trois.bonus!.points).toBe(20)
+    expect(trois.enonce!.fr).toContain('BONUS (+20 points')
+    expect(trois.enonce!.fr).toContain('https://www.facebook.com/groups/1051558350756867')
+    expect(trois.enonce!.en).toContain('BONUS (+20 points')
+    expect(trois.enonce!.en).toContain('https://www.facebook.com/groups/1051558350756867')
   })
 })

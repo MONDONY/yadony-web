@@ -219,7 +219,30 @@
       "bonus": {
         "points": 20,
         "testeurs": []
-      }
+      },
+      "partiels": [
+        {
+          "nom": "Salimata D.",
+          "parties": 5
+        },
+        {
+          "nom": "Hadja Maferima T.",
+          "parties": 5
+        },
+        {
+          "nom": "Koro D.",
+          "parties": 4
+        },
+        {
+          "nom": "Ibrahim D.",
+          "parties": 4
+        },
+        {
+          "nom": "Mahoua O.",
+          "parties": 1
+        }
+      ],
+      "provisoireMaj": "2026-10-11T10:33:00Z"
     }
   ]
 }

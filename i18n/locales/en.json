@@ -1491,7 +1491,8 @@
       "avis_ecran": "Review on 1 screen | Review on 1 screen | Reviews on {n} screens",
       "premier": "First-place bonus | First-place bonus on 1 test | First-place bonus on {n} tests",
       "defi": "Challenge #{n} | Challenge #{n} | Challenge #{n}",
-      "defi_bug": "Bug on a challenge | Bug on a challenge | {n} bugs on challenges"
+      "defi_bug": "Bug on a challenge | Bug on a challenge | {n} bugs on challenges",
+      "defi_bonus": "Challenge #{n} bonus | Challenge #{n} bonus | Challenge #{n} bonus"
     },
     "empty": {
       "bientot": "The contest starts on {date}. The leaderboard will appear here as soon as the first points come in.",

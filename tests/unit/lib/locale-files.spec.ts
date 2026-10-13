@@ -67,6 +67,8 @@ const sameWordPaths = [
   'contest.board.score',
   'contest.board.tests',
   'contest.rules.perBug',
+  // Résultat final : « 651 + 2 220 », une addition sans mot.
+  'contest.final.podiumSub',
 ]
 
 /**

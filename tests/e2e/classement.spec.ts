@@ -96,6 +96,20 @@ test('sur téléphone, le podium du classement est visible dès le premier écra
   await page.clock.setFixedTime(new Date('2026-10-06T12:00:00Z'))
   await page.goto('/classement')
   await expect(page.getByTestId('defis-bandeau')).toBeVisible()
+  // Le HTML statique est figé après la fin du concours (résultat final inclus) :
+  // pendant le concours, le bloc final disparaît au montage, on attend qu'il soit parti.
+  await expect(page.getByTestId('contest-final')).toHaveCount(0)
   const haut = await page.getByTestId('podium').first().evaluate(e => e.getBoundingClientRect().top)
   expect(haut).toBeLessThan(844 - 200)
+})
+
+test('après le concours, le résultat final annonce la gagnante, le podium et les actionnaires', async ({ page }) => {
+  await page.clock.setFixedTime(new Date('2026-10-13T12:00:00Z'))
+  await page.goto('/classement')
+  const final = page.getByTestId('contest-final')
+  await expect(final.getByTestId('final-title')).toContainText('Hadja Maferima T. remporte le concours')
+  await expect(final.getByTestId('podium-name')).toHaveText(['Koro D.', 'Hadja Maferima T.', 'Salimata D.'])
+  await expect(final.getByTestId('final-shareholders')).toContainText('Hadja, Koro et Salimata')
+  await expect(final.getByTestId('final-row')).toHaveCount(7)
+  await expect(final.getByTestId('final-row').nth(4)).toContainText('Ibrahim O.')
 })

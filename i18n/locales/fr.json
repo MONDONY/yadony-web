@@ -1666,6 +1666,23 @@
       "done": "Les {total} tests sont validés.",
       "avis_ecran": "Avis sur un écran",
       "suggestion": "Une suggestion retenue"
+    },
+    "final": {
+      "eyebrow": "Résultat final · phases 1 + 2",
+      "title": "{nom} remporte le concours !",
+      "lead": "Le classement final additionne les points de la phase 1 et de la phase 2. Merci à tous les testeurs pour ces deux semaines d'énergie.",
+      "winnerLabel": "Grande gagnante",
+      "winnerDetail": "{p1} points en phase 1 + {p2} points en phase 2",
+      "podiumSub": "{p1} + {p2}",
+      "shareholdersTitle": "Futures actionnaires de Yadony",
+      "shareholdersText": "{a}, {b} et {c} vont rejoindre l'aventure Yadony en tant qu'actionnaires. Nous sommes heureux de les compter parmi nous.",
+      "shareholdersNote": "Les modalités leur seront communiquées personnellement.",
+      "phase1Label": "Gagnante de la phase 1",
+      "phase2Label": "Gagnante de la phase 2",
+      "restTitle": "De la 4e à la 10e place",
+      "rewardsTitle": "Pour tout le top 10",
+      "rewardsText": "Des réductions et du crédit sur le solde Yadony dès le lancement officiel de l'application. Et, pour celles et ceux qui le souhaitent, la possibilité de devenir ambassadeur de Yadony.",
+      "phase2Heading": "Phase 2 · barème du guide"
     }
   }
 }

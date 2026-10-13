@@ -4,6 +4,8 @@
  * Le barème du guide (`bareme.ts`) prend le relais pour la suite du concours.
  */
 export interface TesteurPhase1 {
+  /** 8 premiers caractères de l'UID, seulement pour départager deux homonymes. */
+  id?: string
   /** Prénom + initiale, ou null pour un compte sans nom (« Testeur anonyme »). */
   nom: string | null
   sessions: number

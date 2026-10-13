@@ -6,6 +6,7 @@ import { buildSeoMeta } from '@/lib/seo'
 import { classer, instantInitial, localeDates, statutPeriode } from '@/lib/classement/score'
 import type { ClassementData } from '@/lib/classement/types'
 import { normaliserPremiers } from '@/lib/classement/premiers'
+import { classerPhase1 } from '@/lib/classement/phase1'
 import donnees from '@/data/classement.json'
 import donneesPhase1 from '@/data/classement-phase1.json'
 import donneesDefis from '@/data/defis.json'
@@ -50,6 +51,8 @@ onMounted(() => {
 onBeforeUnmount(() => clearInterval(minuteur))
 
 const statut = computed(() => statutPeriode(data.debut, data.fin, maintenant.value))
+// Résultat final (phase 1 + phase 2), affiché dès la fin du concours.
+const lignesPhase1 = classerPhase1(donneesPhase1.testeurs)
 
 const dateDebut = computed(() =>
   new Intl.DateTimeFormat(localeDates(locale.value), {
@@ -68,9 +71,19 @@ const dateDebut = computed(() =>
     <ContestHero :debut="data.debut" :fin="data.fin" :maintenant="maintenant" />
 
     <UiContainer>
-      <ContestDefis variante="bandeau" :defis="defis" :maintenant="maintenant" :noms="noms" />
+      <ContestFinal v-if="statut === 'termine'" :phase1="lignesPhase1" :phase2="lignes" />
+
+      <!-- Le concours fini, le bandeau du défi du jour laisse la place au résultat final. -->
+      <ContestDefis v-if="statut !== 'termine'" variante="bandeau" :defis="defis" :maintenant="maintenant" :noms="noms" />
 
       <template v-if="lignes.length">
+        <h2
+          v-if="statut === 'termine'"
+          data-testid="phase2-title"
+          class="mt-12 text-balance font-display text-display-md font-extrabold"
+        >
+          {{ t('contest.final.phase2Heading') }}
+        </h2>
         <ContestPodium :lignes="lignes" :chevauche="!defis.length" />
         <ContestTable :lignes="lignes" :mise-a-jour="data.miseAJour" :premiers="premiers" />
       </template>

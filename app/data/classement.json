@@ -1,5 +1,5 @@
 {
-  "miseAJour": "2026-10-12T06:00:00Z",
+  "miseAJour": "2026-10-13T08:00:00Z",
   "debut": "2026-10-05T18:30:00Z",
   "fin": "2026-10-12T18:30:00Z",
   "testeurs": [
@@ -19,7 +19,7 @@
         "nego_trajet",
         "filtres"
       ],
-      "bugs": 1,
+      "bugs": 2,
       "suggestions": 1,
       "ecransAvecAvis": 0,
       "indicatif": {
@@ -46,16 +46,20 @@
         "annulation_expediteur",
         "message_destinataire",
         "code_retour",
-        "filtres"
+        "filtres",
+        "absence_voyageur",
+        "trois_continents",
+        "paiement_carte",
+        "paiement_mm"
       ],
-      "bugs": 4,
+      "bugs": 7,
       "suggestions": 3,
-      "ecransAvecAvis": 2,
+      "ecransAvecAvis": 5,
       "indicatif": {
         "ecrans": 1657,
         "minutes": 752.7
       },
-      "dernierPoint": "2026-10-11T18:50:17Z"
+      "dernierPoint": "2026-10-12T17:18:45Z"
     },
     {
       "id": "szE1BA7k",
@@ -77,16 +81,19 @@
         "absence_destinataire_procedure",
         "annulation_voyageur",
         "absence_voyageur",
-        "filtres"
+        "filtres",
+        "absence_expediteur",
+        "parrainage",
+        "paiement_carte"
       ],
-      "bugs": 3,
-      "suggestions": 1,
-      "ecransAvecAvis": 0,
+      "bugs": 5,
+      "suggestions": 6,
+      "ecransAvecAvis": 1,
       "indicatif": {
         "ecrans": 2105,
         "minutes": 546.3
       },
-      "dernierPoint": "2026-10-11T10:08:49Z"
+      "dernierPoint": "2026-10-12T18:21:43Z"
     },
     {
       "id": "ftAUL354",
@@ -103,9 +110,10 @@
         "retard_voyageur",
         "scenario_complet",
         "annulation_voyageur",
-        "filtres"
+        "filtres",
+        "paiement_carte"
       ],
-      "bugs": 3,
+      "bugs": 4,
       "suggestions": 0,
       "ecransAvecAvis": 1,
       "indicatif": {
@@ -149,7 +157,7 @@
         "scenario_complet",
         "avis_parcours"
       ],
-      "bugs": 3,
+      "bugs": 4,
       "suggestions": 2,
       "ecransAvecAvis": 2,
       "indicatif": {
@@ -179,16 +187,18 @@
         "annulation_voyageur",
         "absence_destinataire_procedure",
         "annulation_expediteur",
-        "filtres"
+        "filtres",
+        "absence_expediteur",
+        "paiement_especes"
       ],
-      "bugs": 5,
-      "suggestions": 1,
-      "ecransAvecAvis": 0,
+      "bugs": 7,
+      "suggestions": 2,
+      "ecransAvecAvis": 2,
       "indicatif": {
         "ecrans": 1200,
         "minutes": 716.4
       },
-      "dernierPoint": "2026-10-11T10:08:38Z"
+      "dernierPoint": "2026-10-12T17:10:10Z"
     },
     {
       "id": "txCpxwiq",
@@ -324,6 +334,25 @@
         "minutes": 7.6
       },
       "dernierPoint": "2026-10-09T02:05:41Z"
+    },
+    {
+      "id": "1KPJAq8o",
+      "nom": "Léila S.",
+      "tests": [
+        "message_app",
+        "nego_trajet",
+        "scenario_complet",
+        "avis_parcours",
+        "grille_kilos"
+      ],
+      "bugs": 0,
+      "suggestions": 0,
+      "ecransAvecAvis": 0,
+      "indicatif": {
+        "ecrans": 0,
+        "minutes": 0
+      },
+      "dernierPoint": "2026-10-12T18:05:57Z"
     }
   ],
   "premiers": {
@@ -347,6 +376,9 @@
     "annulation_voyageur": "1aM5LVzU",
     "annulation_expediteur": "1aM5LVzU",
     "absence_destinataire_procedure": "YeTesJn5",
-    "absence_voyageur": "szE1BA7k"
+    "absence_voyageur": "szE1BA7k",
+    "absence_expediteur": "szE1BA7k",
+    "trois_continents": "1aM5LVzU",
+    "paiement_especes": "YeTesJn5"
   }
 }

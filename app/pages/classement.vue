@@ -29,7 +29,7 @@ useHead({ meta: [{ name: 'robots', content: 'noindex, nofollow' }] })
 
 const data = donnees as ClassementData
 const premiers = computed(() => normaliserPremiers(data.premiers, data.testeurs))
-const defis = donneesDefis.defis as Defi[]
+const defis = donneesDefis.defis as unknown as Defi[]
 const lignes = computed(() => classer(data.testeurs, data.premiers, defis))
 const noms = computed(() => Object.fromEntries(data.testeurs.map(t => [t.id, t.nom])))
 

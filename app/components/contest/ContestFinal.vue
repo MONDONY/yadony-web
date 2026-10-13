@@ -47,17 +47,9 @@ const premiere2 = computed(() =>
   >
     <p class="font-display text-xs font-bold uppercase tracking-[0.18em] text-orange-deep">{{ t('contest.final.eyebrow') }}</p>
     <h2 id="final-title" data-testid="final-title" class="mt-1.5 text-balance font-display text-display-md font-extrabold">
-      {{ t('contest.final.title', { nom: gagnante.nom }) }}
+      {{ top3.length === 3 ? t('contest.final.title', { a: top3[0]!.nom, b: top3[1]!.nom, c: top3[2]!.nom }) : gagnante.nom }}
     </h2>
     <p class="mt-1.5 max-w-prose text-pretty text-ink-muted">{{ t('contest.final.lead') }}</p>
-
-    <div data-testid="final-winner" class="mt-5 flex flex-wrap items-baseline gap-x-3 gap-y-1">
-      <span class="font-display text-[13px] font-bold uppercase tracking-[0.12em] text-ink-muted">{{ t('contest.final.winnerLabel') }}</span>
-      <span class="font-display text-[34px] font-extrabold tabular-nums leading-none tracking-tight text-orange-deep sm:text-[44px]">
-        {{ n(gagnante.total) }}<small class="ml-1 text-sm font-semibold tracking-normal text-ink-muted">{{ t('contest.points') }}</small>
-      </span>
-      <span class="text-[14px] tabular-nums text-ink-muted">{{ t('contest.final.winnerDetail', { p1: n(gagnante.phase1), p2: n(gagnante.phase2) }) }}</span>
-    </div>
 
     <ContestPodium :lignes="podium" :chevauche="false" />
 

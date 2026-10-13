@@ -25,13 +25,10 @@ function monter() {
 }
 
 describe('ContestFinal', () => {
-  it('annonce la grande gagnante avec le détail de ses deux phases', () => {
+  it('annonce les trois premiers dans le titre, sans désigner une seule gagnante', () => {
     const w = monter()
-    expect(w.get('[data-testid="final-title"]').text()).toContain('Hadja Maferima T.')
-    const detail = w.get('[data-testid="final-winner"]').text()
-    expect(detail).toContain('2 871')
-    expect(detail).toContain('651')
-    expect(detail).toContain('2 220')
+    expect(w.get('[data-testid="final-title"]').text()).toBe('Hadja Maferima T., Koro D. et Salimata D. remportent le concours !')
+    expect(w.find('[data-testid="final-winner"]').exists()).toBe(false)
   })
 
   it('montre le podium dans l’ordre des totaux', () => {

@@ -1669,10 +1669,8 @@
     },
     "final": {
       "eyebrow": "Résultat final · phases 1 + 2",
-      "title": "{nom} remporte le concours !",
+      "title": "{a}, {b} et {c} remportent le concours !",
       "lead": "Le classement final additionne les points de la phase 1 et de la phase 2. Merci à tous les testeurs pour ces deux semaines d'énergie.",
-      "winnerLabel": "Grande gagnante",
-      "winnerDetail": "{p1} points en phase 1 + {p2} points en phase 2",
       "podiumSub": "{p1} + {p2}",
       "shareholdersTitle": "Futures actionnaires de Yadony",
       "shareholdersText": "{a}, {b} et {c} vont rejoindre l'aventure Yadony en tant qu'actionnaires. Nous sommes heureux de les compter parmi nous.",

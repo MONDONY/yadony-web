@@ -595,7 +595,12 @@
           "nom": "Salimata D.",
           "fin": "2026-10-11T12:00:45Z"
         }
-      ]
+      ],
+      "bugs": {
+        "LWoJJBVp": 3,
+        "YeTesJn5": 2,
+        "ftAUL354": 1
+      }
     }
   ]
 }

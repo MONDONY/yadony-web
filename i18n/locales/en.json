@@ -1431,23 +1431,19 @@
   },
   "referral": {
     "seo": {
-      "title": "yadony referral",
-      "description": "Someone close to you invited you to yadony: find their referral code here and enter it when you sign up in the app."
+      "title": "Yadony invitation",
+      "description": "Someone you know is inviting you to Yadony: ship your parcels to Africa with verified travellers. Enter their referral code when you sign up."
     },
-    "title": "Someone you know is inviting you to yadony",
-    "lead": "Here is their referral code. Enter it when you sign up in the app: once your first delivery is confirmed, the person who invited you gets a discount on their next service fee.",
+    "title": "You're invited to Yadony",
+    "lead": "Ship your parcels to Africa with verified travellers. Sign up with this referral code.",
+    "leadNoCode": "Ship your parcels to Africa with verified travellers. Download the Yadony app to get started.",
     "codeLabel": "Referral code",
     "copy": "Copy code",
-    "copied": "Code copied",
-    "copiedHint": "Paste it in the app when you sign up.",
-    "noCode": "This link carries no referral code. Ask the person who invited you for their code, then enter it when you sign up in the app.",
-    "stepsTitle": "How to use this code",
-    "steps": [
-      "Download the yadony app on your phone.",
-      "Create your account with your phone number or email address.",
-      "At the \"Referral code\" step, enter the code above. You can also add it later from Profile › Referral."
-    ],
-    "note": "The code can only be used once, on a new account. The reward goes to the person who invited you: half off their next service fee, valid for 6 months."
+    "copied": "Copied",
+    "copiedHint": "Code copied to the clipboard.",
+    "openApp": "Open the Yadony app",
+    "install": "Don't have the app yet? Once it's installed, enter the code {code} when you sign up.",
+    "noCode": "This link has no valid referral code. Ask the person who invited you for their code, then enter it when you sign up in the app."
   },
   "contest": {
     "seo": {

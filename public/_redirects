@@ -19,9 +19,12 @@
 /demande/* https://pro.yadony.com/demande/:splat 301
 
 # Lien de parrainage partagé par l'app (ReferralService, yadony-back) :
-# https://yadony.com/r/{code}. La page d'atterrissage est prérendue une seule
+# https://yadony.com/r/{code}. La page d'invitation est prérendue une seule
 # fois, sans le code, et le lit dans la requête (app/pages/parrainage.vue).
+# Une réécriture 200 ne convient pas : le routeur Nuxt verrait /r/{code}, qui
+# n'est pas une route, et afficherait une 404 à l'hydratation.
 /r/:code /parrainage?code=:code 302
+/en/r/:code /en/referral?code=:code 302
 /siragbe/* https://pro.yadony.com/siragbe/:splat 301
 /api/* https://pro.yadony.com/api/:splat 308
 

@@ -26,6 +26,10 @@ describe('public/_redirects', () => {
     expect(ruleFor('/r/:code')).toEqual(['/r/:code', '/parrainage?code=:code', '302'])
   })
 
+  it('réécrit la variante anglaise /en/r/{code} vers /en/referral', () => {
+    expect(ruleFor('/en/r/:code')).toEqual(['/en/r/:code', '/en/referral?code=:code', '302'])
+  })
+
   it('préserve la méthode HTTP pour l’API (308)', () => {
     expect(ruleFor('/api/*')).toEqual(['/api/*', 'https://pro.yadony.com/api/:splat', '308'])
   })

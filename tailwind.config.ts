@@ -35,6 +35,10 @@ export default {
         line: 'rgb(var(--line) / <alpha-value>)',
         surface: 'rgb(var(--surface) / <alpha-value>)',
         success: 'rgb(var(--success) / <alpha-value>)',
+        invite: {
+          DEFAULT: 'rgb(var(--invite) / <alpha-value>)',
+          soft: 'rgb(var(--invite-soft) / <alpha-value>)',
+        },
       },
       fontFamily: {
         display: ['Hanken Grotesk', 'system-ui', 'sans-serif'],

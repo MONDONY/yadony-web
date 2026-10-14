@@ -1431,23 +1431,19 @@
   },
   "referral": {
     "seo": {
-      "title": "Parrainage yadony",
-      "description": "Un proche vous a invité sur yadony : retrouvez son code de parrainage et saisissez-le à l'inscription dans l'application."
+      "title": "Invitation Yadony",
+      "description": "Un proche vous invite sur Yadony : envoyez vos colis vers l'Afrique avec des voyageurs vérifiés. Saisissez son code parrain à l'inscription."
     },
-    "title": "Un proche vous invite sur yadony",
-    "lead": "Voici son code de parrainage. Saisissez-le à l'inscription dans l'application : à votre première livraison confirmée, votre parrain reçoit une réduction sur sa prochaine commission.",
-    "codeLabel": "Code de parrainage",
+    "title": "Vous êtes invité sur Yadony",
+    "lead": "Envoyez vos colis vers l'Afrique avec des voyageurs vérifiés. Inscrivez-vous avec ce code parrain.",
+    "leadNoCode": "Envoyez vos colis vers l'Afrique avec des voyageurs vérifiés. Téléchargez l'app Yadony pour commencer.",
+    "codeLabel": "Code parrain",
     "copy": "Copier le code",
-    "copied": "Code copié",
-    "copiedHint": "Collez-le dans l'application au moment de l'inscription.",
-    "noCode": "Ce lien ne contient pas de code de parrainage. Demandez son code à la personne qui vous a invité, puis saisissez-le à l'inscription dans l'application.",
-    "stepsTitle": "Comment utiliser ce code",
-    "steps": [
-      "Téléchargez l'application yadony sur votre téléphone.",
-      "Créez votre compte avec votre numéro ou votre adresse e-mail.",
-      "À l'étape « Code de parrainage », saisissez le code ci-dessus. Vous pouvez aussi l'ajouter plus tard depuis Profil › Parrainage."
-    ],
-    "note": "Le code ne s'applique qu'une seule fois, sur un nouveau compte. La récompense revient à votre parrain : une réduction de moitié sur sa prochaine commission, valable 6 mois."
+    "copied": "Copié",
+    "copiedHint": "Code copié dans le presse-papiers.",
+    "openApp": "Ouvrir l'app Yadony",
+    "install": "Pas encore l'app ? Après l'installation, saisissez le code {code} à l'inscription.",
+    "noCode": "Ce lien ne contient pas de code parrain valide. Demandez son code à la personne qui vous a invité, puis saisissez-le à l'inscription dans l'app."
   },
   "contest": {
     "seo": {

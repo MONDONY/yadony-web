@@ -35,7 +35,8 @@ export default defineNuxtConfig({
   sitemap: {
     autoLastmod: false,
     // /classement : page temporaire du concours, en noindex (prénoms affichés).
-    exclude: ['/404', '/classement', '/en/leaderboard'],
+    // /parrainage : page d'invitation du lien /r/{code}, en noindex.
+    exclude: ['/404', '/classement', '/en/leaderboard', '/parrainage', '/en/referral'],
     // Le module @nuxtjs/sitemap scinde automatiquement le sitemap en un
     // sitemap-index avec un fichier par langue dès qu'il détecte @nuxtjs/i18n
     // avec plusieurs locales. On force un seul fichier `sitemap.xml` listant

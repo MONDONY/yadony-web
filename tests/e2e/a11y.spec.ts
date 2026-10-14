@@ -1,7 +1,7 @@
 import { test, expect } from './fixtures'
 import AxeBuilder from '@axe-core/playwright'
 
-const PAGES = ['/', '/comment-ca-marche', '/tarifs', '/securite', '/a-propos', '/contact']
+const PAGES = ['/', '/comment-ca-marche', '/tarifs', '/securite', '/a-propos', '/contact', '/parrainage?code=ABOU1890']
 
 for (const path of PAGES) {
   test(`la page ${path} ne présente aucune violation critique`, async ({ page }) => {

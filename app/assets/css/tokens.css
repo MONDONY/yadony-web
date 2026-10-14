@@ -17,4 +17,8 @@
   --line: 232 229 223;
   --surface: 255 255 255;
   --success: 12 122 84;
+  /* Bleu de l'app mobile (#0B5FFF) et son fond pâle (#EDF2FF) : page
+     d'invitation de parrainage, pour rester dans le ton de l'app. */
+  --invite: 11 95 255;
+  --invite-soft: 237 242 255;
 }

@@ -10,7 +10,7 @@ defineI18nRoute({ paths: { fr: '/parrainage', en: '/referral' } })
 const { t, locale } = useI18n()
 const route = useRoute()
 
-// Titre tel quel (« Invitation Yadony »), sans le suffixe « | yadony » que
+// Titre tel quel (« Invitation Yadony »), sans le suffixe « | Yadony » que
 // buildSeoMeta ajoute : il contient déjà le nom et s'affiche dans l'aperçu
 // du lien partagé (WhatsApp, SMS).
 const seoTitle = t('referral.seo.title')

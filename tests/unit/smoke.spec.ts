@@ -3,6 +3,6 @@ import { siteName } from '@/lib/site'
 
 describe('site metadata', () => {
   it('expose le nom du site', () => {
-    expect(siteName).toBe('yadony')
+    expect(siteName).toBe('Yadony')
   })
 })

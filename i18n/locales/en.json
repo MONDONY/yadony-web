@@ -713,6 +713,14 @@
                 "It is prohibited to publish false information, to contact other users off the platform to avoid paying the commission, to use Yadony for illicit purposes or to attempt to bypass the security systems.",
                 "In the event of a violation, Yadony may remove your content, suspend or permanently close your account, and report the facts to the competent authorities."
               ]
+            },
+            {
+              "sub": "Zero tolerance",
+              "p": [
+                "Yadony does not tolerate any objectionable content: hateful, violent, sexual or discriminatory content, harassment, threats or insults. Nor does Yadony tolerate abusive users.",
+                "Every message, listing, request, review, photo and profile can be reported from the app. You can also block another user at any time.",
+                "Our team handles every report within 24 hours: the offending content is removed and its author is excluded from Yadony."
+              ]
             }
           ]
         },
@@ -779,14 +787,14 @@
         "description": "How Yadony protects your data: minimal internal data, certified partners (Firebase, Stripe, Cloudflare), retention periods and GDPR rights."
       },
       "title": "Privacy policy",
-      "intro": "Yadony is a mobile marketplace connecting travellers with spare luggage space to senders wishing to send parcels to their relatives. Our service covers corridors from Europe, the United States, Canada and Africa to all the destinations we serve. We designed Yadony around one core principle: we keep only the strict minimum of personal data internally. Sensitive data (identity, authentication, official documents) is entrusted to trusted, globally recognised specialised partners who process it with a level of security and compliance we could not reach alone. By using Yadony, you accept the practices described in this document. This English version is provided for convenience; the French version prevails.",
+      "intro": "Last updated: October 15, 2026. Yadony is a mobile marketplace connecting travellers with spare luggage space to senders wishing to send parcels to their relatives. Our service covers corridors from Europe, the United States, Canada and Africa to all the destinations we serve. We designed Yadony around one core principle: we keep only the strict minimum of personal data internally. Sensitive data (identity, authentication, official documents) is entrusted to trusted, globally recognised specialised partners who process it with a level of security and compliance we could not reach alone. By using Yadony, you accept the practices described in this document. This English version is provided for convenience; the French version prevails.",
       "articles": [
         {
           "title": "1. Who is responsible for your data?",
           "blocks": [
             {
               "p": [
-                "Data controller: YADONY SAS, a simplified joint-stock company whose registration is in progress.",
+                "Data controller: YADONY SAS, a simplified joint-stock company registered in France under SIREN number 108 733 510.",
                 "Data Protection Officer (DPO): dpo{'@'}yadony.com. General contact: contact{'@'}yadony.com.",
                 "If you have a question about your data or wish to exercise your rights, contact us directly. We undertake to reply within a reasonable time."
               ]
@@ -882,9 +890,10 @@
               ]
             },
             {
-              "sub": "3.4 Wave and Orange Money: Mobile Money",
+              "sub": "3.4 pawaPay: Mobile Money (Wave, Orange Money and other operators)",
               "p": [
-                "For Mobile Money payments and payouts (mainly for users and travellers based in Africa), we rely on Wave and Orange Money. These providers manage your Mobile Money account details directly. Yadony does not store this information."
+                "When Mobile Money payment is offered (mainly for users and travellers based in Africa), payments, balance top-ups and payouts go through pawaPay, a payment aggregator that passes them on to your Mobile Money operator (for example Wave or Orange Money, depending on the country). For each transaction, pawaPay and your operator receive the Mobile Money number used, the operator name and the amount.",
+                "To pay out your earnings, Yadony keeps the Mobile Money number you register, encrypted in its database, along with the operator you chose."
               ]
             },
             {
@@ -901,6 +910,53 @@
             {
               "p": [
                 "Yadony does not host these images on its own servers. Cloudflare is one of the world leaders in web security and performance, certified ISO 27001 and SOC 2. Cloudflare privacy policy: https://www.cloudflare.com/privacypolicy/"
+              ]
+            },
+            {
+              "sub": "3.6 PostHog: audience measurement",
+              "p": [
+                "To understand how the app is used and improve it, we use PostHog. Under the consent rules described in article 4, PostHog receives:"
+              ],
+              "ul": [
+                "The screens viewed and the actions taken in the app (for example posting a listing or opening a conversation)",
+                "Technical information about your device (model, operating system, app version)",
+                "Session recordings, in which all text and all images are masked on your device before being sent"
+              ]
+            },
+            {
+              "p": [
+                "This data is linked to your account's technical identifier, never to your phone number, e-mail address or name."
+              ]
+            },
+            {
+              "sub": "3.7 Sentry: crash and error reports",
+              "p": [
+                "When the app or our servers run into an error, a technical report is sent to Sentry so that we can fix it. This report contains the error description, the screen or action in progress and technical information about the device (model, operating system, app version). The app is configured not to send your personal data to Sentry by default.",
+                "When you report a problem from the app, your message and any screenshots you attach are also sent to Sentry."
+              ]
+            },
+            {
+              "sub": "3.8 Twilio: sending text messages",
+              "p": [
+                "Twilio sends the text messages containing your one-time sign-in code, as well as some notification text messages. To do so, Twilio receives your phone number and the content of the message."
+              ]
+            },
+            {
+              "sub": "3.9 Resend: sending codes by e-mail",
+              "p": [
+                "When you sign in or add an e-mail address to your account, the verification code is sent to you by e-mail through Resend. To do so, Resend receives your e-mail address and the content of the message."
+              ]
+            },
+            {
+              "sub": "3.10 Stream: audio calls",
+              "p": [
+                "When the call feature is available, audio calls between users go through Stream. Stream receives your account's technical identifier, your display name and your profile photo, and carries the audio of the call."
+              ]
+            },
+            {
+              "sub": "3.11 Google Maps: maps and address search",
+              "p": [
+                "The maps shown in the app and the address search (autocomplete) use Google Maps services. Google receives the addresses and places you search for, as well as the map areas displayed. Google privacy policy: https://policies.google.com/privacy"
               ]
             }
           ]
@@ -923,7 +979,7 @@
             },
             {
               "p": [
-                "Browsing and app-usage data is collected in anonymised form only, and only with your explicit consent gathered at your first sign-in."
+                "App usage data (screens viewed, actions taken, session recordings) is measured with PostHog (see article 3.6). It is linked to your account's technical identifier, never to your phone number, e-mail address or name, and the text and images in session recordings are masked on your device. In the European Union, the European Economic Area, the United Kingdom and Switzerland (or if your country cannot be determined), this measurement is only turned on with your explicit consent, requested at your first sign-in. Elsewhere, it is on by default. In every case, you can turn it off at any time in the app: Profile tab, ☰ menu, Settings, Privacy, “Usage statistics”."
               ]
             }
           ]
@@ -941,7 +997,9 @@
                 "Fingerprint, Face ID, PIN code: Google Firebase. Yadony access: no, biometric data stays on-device or with Firebase",
                 "ID document photo, selfie, liveness: Didit. Yadony access: no, Yadony receives only the verification result and the verified name",
                 "Card number, payment data: Stripe. Yadony access: no, never sent to Yadony",
-                "Mobile Money details: Wave / Orange Money. Yadony access: no, managed directly by those services",
+                "Mobile Money number: pawaPay and your operator (Wave, Orange Money or another) for each transaction. Yadony keeps, encrypted, the number you register to receive your payouts",
+                "App usage data: PostHog, linked to the account's technical identifier, under the consent rules of article 4",
+                "Error reports and problem reports: Sentry",
                 "Parcel and delivery photos: Cloudflare. Access only through secure temporary links",
                 "Transaction history, scans, ratings: Yadony (internal database). Access: yes, needed to run the service",
                 "Messages between users: Yadony (encrypted). Encrypted content, access restricted to disputes"
@@ -1034,8 +1092,8 @@
                 "Transaction history: 5 years, accounting and tax obligation",
                 "Scans and geolocation: 5 years, evidence in disputes",
                 "Messages in the messaging system: 2 years after the transaction, dispute resolution",
-                "Anonymised browsing data: 13 months, CNIL compliance",
-                "Deleted accounts: profile data anonymised immediately, except financial history kept for 5 years"
+                "Audience measurement data: 13 months, CNIL compliance",
+                "Deleted accounts: profile data anonymised upon final deletion, 30 days after the request, except financial history kept for 5 years"
               ],
               "p": [
                 "Retention periods by type of data:"
@@ -1079,7 +1137,7 @@
               "ul": [
                 "Right of access: obtain a copy of all the data Yadony holds about you, via Settings → My data or dpo{'@'}yadony.com",
                 "Right of rectification: correct your profile data (name, e-mail, city), directly in your profile in the application",
-                "Right to erasure: delete your account and profile data, via Settings → Delete my account",
+                "Right to erasure: delete your account and profile data, in the app: Profile tab, ☰ menu, then “Delete my account”",
                 "Right to portability: receive your data in JSON or CSV format, on request to dpo{'@'}yadony.com",
                 "Right to object: object to processing based on legitimate interest, on request to dpo{'@'}yadony.com",
                 "Withdrawal of consent: turn off marketing or analytics, via Settings → Privacy",
@@ -1103,7 +1161,7 @@
           "blocks": [
             {
               "p": [
-                "Yadony uses only the cookies strictly necessary to run the application (session persistence, security). Audience-measurement cookies are enabled only with your explicit consent and the data collected is anonymised. You can manage your preferences from Settings → Privacy and data."
+                "Yadony uses only the cookies strictly necessary to run the application (session persistence, security). Audience measurement in the app (PostHog) follows the consent rules described in article 4. You can turn it off from Settings → Privacy."
               ]
             }
           ]
@@ -1134,7 +1192,7 @@
           "blocks": [
             {
               "ul": [
-                "Yadony profile data (first name, last name, e-mail, date of birth, city): anonymised immediately.",
+                "Yadony profile data (first name, last name, e-mail, date of birth, city): anonymised.",
                 "Firebase data (phone, authentication): deleted on request through Firebase.",
                 "Didit data (ID document, selfie): deleted according to the retention settings Yadony has defined with Didit.",
                 "Parcel images (Cloudflare): the links become inaccessible. Files are deleted under Cloudflare's policy.",
@@ -1144,7 +1202,9 @@
                 "If a dispute is in progress, the account is kept until the dispute is closed, then deleted."
               ],
               "p": [
-                "When you delete your account:"
+                "To delete your account from the app: Profile tab, ☰ menu, then “Delete my account”.",
+                "Deletion is not possible while a transaction is in progress. Once your request is recorded, deletion becomes final 30 days later: during that period, you can cancel it from the app.",
+                "When your account is finally deleted:"
               ]
             }
           ]
@@ -1175,9 +1235,9 @@
             {
               "sub": "Legal information",
               "ul": [
-                "Company name: YADONY SAS (registration in progress)",
+                "Company name: YADONY SAS, SIREN 108 733 510",
                 "Publication director: Mr Dramane DIAKITE, President",
-                "Certified technical partners: Google Firebase, Stripe, Didit, Wave, Orange Money, Cloudflare",
+                "Technical partners: Google Firebase, Stripe, Didit, pawaPay (Mobile Money: Wave, Orange Money and other operators), Cloudflare, PostHog, Sentry, Twilio, Resend, Stream, Google Maps",
                 "French supervisory authority: CNIL (www.cnil.fr)"
               ]
             }

@@ -1,0 +1,106 @@
+{
+  "app": {
+    "flight-alerts": {
+      "width": 1170,
+      "height": 2392
+    },
+    "flights-found": {
+      "width": 1170,
+      "height": 2392
+    },
+    "flights-hub": {
+      "width": 1170,
+      "height": 2392
+    },
+    "mobile-money": {
+      "width": 1170,
+      "height": 2392
+    },
+    "my-parcels": {
+      "width": 1170,
+      "height": 2392
+    },
+    "my-trips": {
+      "width": 1170,
+      "height": 2392
+    },
+    "negotiation": {
+      "width": 1170,
+      "height": 2392
+    },
+    "parcel-ticket": {
+      "width": 1170,
+      "height": 2392
+    },
+    "parcel-tracking": {
+      "width": 1170,
+      "height": 2392
+    },
+    "publish-trip": {
+      "width": 1170,
+      "height": 2392
+    },
+    "scan": {
+      "width": 1170,
+      "height": 2392
+    },
+    "search-map": {
+      "width": 1170,
+      "height": 2392
+    },
+    "traveler-profile": {
+      "width": 1170,
+      "height": 2392
+    },
+    "trip-detail": {
+      "width": 1170,
+      "height": 2392
+    },
+    "wallet": {
+      "width": 1170,
+      "height": 2392
+    }
+  },
+  "dony": {
+    "celebration": {
+      "width": 768,
+      "height": 768
+    },
+    "handover": {
+      "width": 1254,
+      "height": 1254
+    },
+    "hello": {
+      "width": 768,
+      "height": 768
+    },
+    "no-result": {
+      "width": 768,
+      "height": 768
+    },
+    "publish": {
+      "width": 1254,
+      "height": 1254
+    },
+    "search": {
+      "width": 768,
+      "height": 768
+    },
+    "success": {
+      "width": 768,
+      "height": 768
+    },
+    "travel": {
+      "width": 768,
+      "height": 768
+    },
+    "waiting": {
+      "width": 768,
+      "height": 768
+    },
+    "welcome": {
+      "width": 768,
+      "height": 768
+    }
+  }
+}

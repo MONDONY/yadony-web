@@ -27,6 +27,6 @@ defineProps<{ locked: boolean; amount: string; caption: string }>()
       <rect x="56" y="96" width="8" height="18" rx="4" fill="white" />
     </svg>
     <p class="mt-5 font-display text-3xl font-bold tabular-nums text-ink">{{ amount }}</p>
-    <p class="mt-1 text-sm font-semibold" :class="locked ? 'text-primary' : 'text-success'">{{ caption }}</p>
+    <p class="mt-1 text-sm font-semibold" :class="locked ? 'text-primary' : 'text-ink'">{{ caption }}</p>
   </div>
 </template>

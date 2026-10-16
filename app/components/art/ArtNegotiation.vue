@@ -41,7 +41,7 @@ const side = (index: number) => (index % 2 === 0 ? 'sender' : 'traveler')
     <p
       data-agreed
       :data-shown="props.step >= 3"
-      class="mt-5 flex items-center justify-center gap-2 rounded-pill bg-success/10 px-4 py-2.5 text-sm font-bold text-success transition-[opacity,scale] duration-slow ease-dony"
+      class="mt-5 flex items-center justify-center gap-2 rounded-pill bg-success/10 px-4 py-2.5 text-sm font-bold text-ink transition-[opacity,scale] duration-slow ease-dony"
       :class="props.step >= 3 ? 'scale-100 opacity-100' : 'scale-90 opacity-0'"
     >
       <svg viewBox="0 0 20 20" class="size-4" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="m4 10.5 4 4 8-9" stroke-linecap="round" stroke-linejoin="round" /></svg>

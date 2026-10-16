@@ -324,7 +324,7 @@
               "p": [
                 "L'application est ouverte à toute personne majeure (18 ans minimum) capable de contracter. Un seul compte par numéro de téléphone est autorisé.",
                 "Tout utilisateur peut à la fois envoyer des colis et en transporter. Il n'y a pas de rôle à choisir à l'inscription : ces deux possibilités sont accessibles à tous dès la création du compte.",
-                "Avant de publier un trajet ou une demande de colis, chaque utilisateur doit vérifier son identité auprès de notre prestataire Didit : photo de sa pièce d'identité et selfie. Le résultat est en général connu en quelques minutes. Les comptes vérifiés affichent le badge « Identité vérifiée »."
+                "Avant de publier un trajet ou une demande de colis, chaque utilisateur doit vérifier son identité auprès de notre prestataire Didit : photo de sa pièce d'identité et selfie. Les pièces acceptées sont la carte nationale d'identité, le passeport, le permis de conduire ou le titre de séjour. Le résultat est en général immédiat. Si une photo est illisible ou si la vérification échoue, vous êtes invité à recommencer. Les comptes vérifiés affichent le badge « Identité vérifiée »."
               ]
             }
           ]
@@ -413,8 +413,7 @@
               ],
               "ul": [
                 "Carte bancaire (Visa, Mastercard), Apple Pay ou Google Pay via Stripe",
-                "Mobile Money : Wave et Orange Money",
-                "Portefeuille Yadony (solde rechargeable dans l'application)"
+                "Mobile Money : Wave et Orange Money"
               ]
             },
             {
@@ -427,7 +426,7 @@
               "sub": "L'argent bloqué (séquestre)",
               "p": [
                 "Dès votre paiement, l'argent est immédiatement bloqué chez Stripe. Personne ne peut y toucher avant la confirmation de livraison.",
-                "La livraison est confirmée par le destinataire : il saisit un code à 6 chiffres reçu par SMS sur la page de suivi. Le voyageur est payé dans les 24 heures suivantes.",
+                "La livraison est confirmée par le destinataire : il saisit un code à 6 chiffres reçu par SMS sur la page de suivi. Le voyageur est payé dans les 24 heures suivantes, au plus tard 48 heures selon sa banque.",
                 "Si le destinataire ne confirme pas sous 48 heures, l'équipe Yadony peut débloquer le paiement manuellement, uniquement après une vérification. Cette action est tracée. Un voyageur honnête n'attend jamais indéfiniment."
               ]
             },
@@ -447,11 +446,12 @@
             {
               "sub": "Portefeuille Yadony",
               "p": [
-                "Le portefeuille se recharge par carte bancaire, Apple Pay ou Google Pay. Il peut aussi recevoir des crédits offerts : récompenses de parrainage et sommes recréditées sur le portefeuille par Yadony, par exemple après l'annulation d'un envoi payé avec le portefeuille.",
-                "Chaque paiement effectué avec le portefeuille utilise d'abord les crédits offerts, puis l'argent rechargé, en commençant par la recharge la plus récente.",
+                "Le portefeuille ne sert pas à payer un envoi. Il sert uniquement à payer la commission Yadony lorsque l'expéditeur choisit de régler le voyageur en espèces.",
+                "Le portefeuille se recharge par carte bancaire, Apple Pay ou Google Pay. Il peut aussi recevoir des crédits offerts : récompenses de parrainage et sommes recréditées sur le portefeuille par Yadony, par exemple après l'annulation d'un envoi dont la commission a été payée avec le portefeuille.",
+                "Chaque commission payée avec le portefeuille utilise d'abord les crédits offerts, puis l'argent rechargé, en commençant par la recharge la plus récente.",
                 "Vous pouvez à tout moment demander le remboursement de l'argent rechargé et non dépensé, depuis l'écran Portefeuille de l'application. Il est reversé sur le moyen de paiement utilisé pour la recharge, sous 5 à 10 jours ouvrés selon votre banque. Une recharge en partie dépensée est remboursée pour la part restante. Tant que la demande est en cours, le solde de la devise concernée ne peut pas être utilisé.",
                 "Si le remboursement sur le moyen de paiement d'origine échoue (carte expirée, recharge trop ancienne, refus du prestataire de paiement), l'équipe Yadony rembourse la somme concernée par un autre moyen.",
-                "Les crédits offerts ne sont ni remboursables ni convertibles en argent. Ils servent uniquement à payer des envois sur Yadony."
+                "Les crédits offerts ne sont ni remboursables ni convertibles en argent. Ils servent uniquement à payer la commission Yadony."
               ]
             }
           ]
@@ -495,7 +495,9 @@
           "blocks": [
             {
               "p": [
-                "Vous avez 48 heures après la livraison pour signaler un problème via l'application. Passé ce délai, la livraison est considérée comme conforme et le voyageur est payé.",
+                "La livraison est considérée comme conforme dès que le destinataire saisit le code de livraison. Le voyageur est alors payé aussitôt : l'argent arrive sur son compte sous 24 heures, au plus tard 48 heures selon sa banque.",
+                "Si vous constatez un problème après la livraison (colis abîmé, contenu manquant), signalez-le au support depuis l'application dans les 48 heures qui suivent. L'équipe Yadony ouvre alors un litige.",
+                "Un colis jamais livré doit être signalé dans les 15 jours suivant la date de livraison prévue. C'est l'une des conditions de la prise en charge par la garantie décrite ci-dessous.",
                 "L'équipe Yadony dispose de toutes les preuves : scans, photos, messages, déclaration signée. Elle notifie le voyageur sous 24 heures et rend une décision sous 72 heures maximum. En cas de désaccord, Yadony tranche sur preuves, pas sur parole.",
                 "En cas de perte ou de dommage avéré, Yadony peut rembourser jusqu'à 50 € par incident (fonds de garantie interne), dans la limite de la valeur déclarée. Sont exclus de la garantie : le contenu non déclaré ou interdit, l'absence de photo de livraison géolocalisée, et les litiges déclarés hors délai.",
                 "Un expéditeur qui ouvre 3 litiges sans preuve est suspendu automatiquement.",
@@ -668,7 +670,7 @@
         "description": "Comment Yadony protège vos données : minimum de données en interne, partenaires certifiés (Firebase, Stripe, Cloudflare), durées de conservation et droits RGPD."
       },
       "title": "Politique de confidentialité",
-      "intro": "Dernière mise à jour : 15 octobre 2026. Yadony est une place de marché mobile qui met en relation des voyageurs disposant de place dans leurs bagages avec des expéditeurs souhaitant envoyer des colis à leurs proches. Notre service couvre les corridors depuis l'Europe, les États-Unis, le Canada et l'Afrique vers toutes les destinations que nous desservons. Nous avons conçu Yadony avec un principe fondamental : nous ne conservons que le strict minimum de données personnelles en interne. Les données sensibles (identité, authentification, documents officiels) sont confiées à des partenaires spécialisés de confiance, reconnus mondialement, qui les traitent avec un niveau de sécurité et de conformité que nous ne pourrions pas atteindre seuls. En utilisant Yadony, vous acceptez les pratiques décrites dans ce document.",
+      "intro": "Dernière mise à jour : 16 octobre 2026. Yadony est une place de marché mobile qui met en relation des voyageurs disposant de place dans leurs bagages avec des expéditeurs souhaitant envoyer des colis à leurs proches. Notre service couvre les corridors depuis l'Europe, les États-Unis, le Canada et l'Afrique vers toutes les destinations que nous desservons. Nous avons conçu Yadony avec un principe fondamental : nous ne conservons que le strict minimum de données personnelles en interne. Les données sensibles (identité, authentification, documents officiels) sont confiées à des partenaires spécialisés de confiance, reconnus mondialement, qui les traitent avec un niveau de sécurité et de conformité que nous ne pourrions pas atteindre seuls. En utilisant Yadony, vous acceptez les pratiques décrites dans ce document.",
       "articles": [
         {
           "title": "1. Qui est responsable de vos données ?",
@@ -741,7 +743,7 @@
                 "La vérification d'identité, obligatoire pour publier un trajet ou une demande de colis, est confiée à Didit (Didit Identity Spain, S.L., Barcelone, Espagne), qui agit comme sous-traitant de Yadony au sens du RGPD et héberge ses données dans l'Union européenne. Didit gère :"
               ],
               "ul": [
-                "La photo de votre pièce d'identité (carte nationale ou passeport)",
+                "La photo de votre pièce d'identité (carte nationale d'identité, passeport, permis de conduire ou titre de séjour)",
                 "Le selfie et le contrôle de vivacité (liveness)",
                 "La comparaison entre votre visage et votre document officiel",
                 "La validation ou le rejet de la vérification"

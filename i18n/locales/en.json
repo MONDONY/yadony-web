@@ -324,7 +324,7 @@
               "p": [
                 "The application is open to any adult (18 or over) with the capacity to contract. One account per phone number.",
                 "Every user can both send parcels and carry them. There is no role to choose at sign-up: both possibilities are available to everyone from account creation.",
-                "Before posting a trip or a parcel request, every user must verify their identity with our provider Didit: a photo of their ID document and a selfie. The result is usually known within minutes. Verified accounts display the \"Identity verified\" badge."
+                "Before posting a trip or a parcel request, every user must verify their identity with our provider Didit: a photo of their ID document and a selfie. The accepted documents are the national identity card, the passport, the driving licence or the residence permit. The result is usually immediate. If a photo is unreadable or the verification fails, you are invited to try again. Verified accounts display the \"Identity verified\" badge."
               ]
             }
           ]
@@ -413,8 +413,7 @@
               ],
               "ul": [
                 "Bank card (Visa, Mastercard), Apple Pay or Google Pay via Stripe",
-                "Mobile Money: Wave and Orange Money",
-                "Yadony wallet (balance top-up in the application)"
+                "Mobile Money: Wave and Orange Money"
               ]
             },
             {
@@ -427,7 +426,7 @@
               "sub": "Money held in escrow",
               "p": [
                 "As soon as you pay, the money is immediately held by Stripe. No one can touch it before delivery is confirmed.",
-                "Delivery is confirmed by the recipient: they enter a 6-digit code received by SMS on the tracking page. The traveller is paid within the following 24 hours.",
+                "Delivery is confirmed by the recipient: they enter a 6-digit code received by SMS on the tracking page. The traveller is paid within the following 24 hours, at most 48 hours depending on their bank.",
                 "If the recipient does not confirm within 48 hours, the Yadony team can release the payment manually, only after a check. That action is logged. An honest traveller never waits indefinitely."
               ]
             },
@@ -447,11 +446,12 @@
             {
               "sub": "Yadony wallet",
               "p": [
-                "The wallet is topped up by bank card, Apple Pay or Google Pay. It can also receive free credits: referral rewards and amounts credited back to the wallet by Yadony, for example after cancelling a parcel paid with the wallet.",
-                "Every payment made with the wallet uses free credits first, then topped-up money, starting with the most recent top-up.",
+                "The wallet is not a way to pay for a parcel. It is used only to pay the Yadony commission when the sender chooses to pay the traveller in cash.",
+                "The wallet is topped up by bank card, Apple Pay or Google Pay. It can also receive free credits: referral rewards and amounts credited back to the wallet by Yadony, for example after cancelling a parcel whose commission was paid with the wallet.",
+                "Every commission paid with the wallet uses free credits first, then topped-up money, starting with the most recent top-up.",
                 "You can at any time request a refund of topped-up money you have not spent, from the Wallet screen in the application. It is paid back to the payment method used for the top-up, within 5 to 10 business days depending on your bank. A partly spent top-up is refunded for the remaining part. While the request is in progress, the balance in that currency cannot be used.",
                 "If the refund to the original payment method fails (expired card, top-up too old, refusal by the payment provider), the Yadony team refunds the amount concerned by another means.",
-                "Free credits are neither refundable nor convertible into cash. They can only be used to pay for parcels on Yadony."
+                "Free credits are neither refundable nor convertible into cash. They can only be used to pay the Yadony commission."
               ]
             }
           ]
@@ -495,7 +495,9 @@
           "blocks": [
             {
               "p": [
-                "You have 48 hours after delivery to report a problem through the application. After that, the delivery is deemed compliant and the traveller is paid.",
+                "Delivery is deemed compliant as soon as the recipient enters the delivery code. The traveller is then paid immediately: the money reaches their account within 24 hours, at most 48 hours depending on their bank.",
+                "If you notice a problem after delivery (damaged parcel, missing contents), report it to support from the application within the following 48 hours. The Yadony team then opens a dispute.",
+                "A parcel that was never delivered must be reported within 15 days of the expected delivery date. This is one of the conditions for coverage under the guarantee described below.",
                 "The Yadony team holds all the evidence: scans, photos, messages, signed declaration. It notifies the traveller within 24 hours and issues a decision within 72 hours at most. In case of disagreement, Yadony decides on evidence, not on word.",
                 "In the event of proven loss or damage, Yadony may refund up to €50 per incident (internal guarantee fund), within the limit of the declared value. Excluded from the guarantee: undeclared or prohibited contents, the absence of a geolocated delivery photo, and disputes reported late.",
                 "A sender who opens 3 disputes without evidence is suspended automatically.",
@@ -668,7 +670,7 @@
         "description": "How Yadony protects your data: minimal internal data, certified partners (Firebase, Stripe, Cloudflare), retention periods and GDPR rights."
       },
       "title": "Privacy policy",
-      "intro": "Last updated: October 15, 2026. Yadony is a mobile marketplace connecting travellers with spare luggage space to senders wishing to send parcels to their relatives. Our service covers corridors from Europe, the United States, Canada and Africa to all the destinations we serve. We designed Yadony around one core principle: we keep only the strict minimum of personal data internally. Sensitive data (identity, authentication, official documents) is entrusted to trusted, globally recognised specialised partners who process it with a level of security and compliance we could not reach alone. By using Yadony, you accept the practices described in this document. This English version is provided for convenience; the French version prevails.",
+      "intro": "Last updated: October 16, 2026. Yadony is a mobile marketplace connecting travellers with spare luggage space to senders wishing to send parcels to their relatives. Our service covers corridors from Europe, the United States, Canada and Africa to all the destinations we serve. We designed Yadony around one core principle: we keep only the strict minimum of personal data internally. Sensitive data (identity, authentication, official documents) is entrusted to trusted, globally recognised specialised partners who process it with a level of security and compliance we could not reach alone. By using Yadony, you accept the practices described in this document. This English version is provided for convenience; the French version prevails.",
       "articles": [
         {
           "title": "1. Who is responsible for your data?",
@@ -741,7 +743,7 @@
                 "Identity verification, required to post a trip or a parcel request, is handled by Didit (Didit Identity Spain, S.L., Barcelona, Spain), which acts as Yadony's processor under the GDPR and hosts its data in the European Union. Didit handles:"
               ],
               "ul": [
-                "The photo of your identity document (national ID card or passport)",
+                "The photo of your identity document (national identity card, passport, driving licence or residence permit)",
                 "The selfie and the liveness check",
                 "The comparison between your face and your official document",
                 "The approval or rejection of the verification"

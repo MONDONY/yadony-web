@@ -10,8 +10,6 @@ export type JourneyArt =
   | 'padlock'
   | 'route'
   | 'timeline'
-  | 'request'
-  | 'earnings'
 
 export interface JourneyStep {
   id: string
@@ -37,7 +35,7 @@ export const crossedJourney: JourneyStep[] = [
 export const senderJourney: JourneyStep[] = [
   { id: 'search', actor: 'sender', screen: ['search-map', 'request-step1'] },
   { id: 'choose', actor: 'sender', screen: 'traveler-profile' },
-  { id: 'negotiate', actor: 'sender', screen: 'negotiation' },
+  { id: 'negotiate', actor: 'sender', art: 'negotiation' },
   { id: 'pay', actor: 'sender', art: 'padlock' },
   { id: 'handover', actor: 'sender', screen: 'parcel-ticket' },
   { id: 'track', actor: 'sender', screen: 'my-parcels' },

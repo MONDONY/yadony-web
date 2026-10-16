@@ -15,8 +15,9 @@ defineProps<{ modes: Array<{ title: string; example: string }>; flipped: boolean
       class="flip-card h-24 [perspective:900px]"
     >
       <div
-        class="flip-inner relative h-full transition-transform duration-page ease-dony [transform-style:preserve-3d] motion-reduce:transform-none"
-        :style="{ transform: flipped ? 'rotateY(180deg)' : 'none', transitionDelay: `${index * 120}ms` }"
+        class="flip-inner relative h-full transition-transform duration-page ease-dony [transform-style:preserve-3d]"
+        :class="flipped ? '[transform:rotateY(180deg)] motion-reduce:[transform:none]' : ''"
+        :style="{ transitionDelay: `${index * 120}ms` }"
       >
         <div class="absolute inset-0 flex items-center gap-4 rounded-card border border-line bg-surface px-5 shadow-sm [backface-visibility:hidden]">
           <span class="grid size-11 shrink-0 place-items-center rounded-btn bg-accent-soft font-display text-lg font-bold text-accent-text">{{ index + 1 }}</span>

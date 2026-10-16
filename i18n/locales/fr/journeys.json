@@ -7,7 +7,8 @@
       "downloadTitle": "Prêt à essayer ?",
       "downloadLead": "Installez Yadony : l'inscription prend deux minutes, la vérification d'identité se fait dans l'app.",
       "videoPlay": "Lire le tutoriel",
-      "videoPause": "Mettre le tutoriel en pause"
+      "videoPause": "Mettre le tutoriel en pause",
+      "breadcrumb": "Fil d'Ariane"
     },
     "screens": {
       "flights-hub": "Écran Activités de Yadony : le bloc « Billets d'avion » avec deux bons plans à moins 49 % et moins 48 %",
@@ -96,7 +97,7 @@
     "traveler": {
       "seo": {
         "title": "Vendre ses kilos de bagage : rentabilisez votre valise",
-        "description": "Vous partez en Afrique ? Vendez les kilos libres de votre valise à des expéditeurs vérifiés : prix au kilo, négociable ou par article, paiement garanti à la livraison."
+        "description": "Vous partez en Afrique ? Vendez les kilos libres de votre valise à des expéditeurs vérifiés : prix au kilo, négociable ou par article, paiement bloqué puis versé à la livraison."
       },
       "kicker": "Voyageurs",
       "title": "Vendez vos kilos, rentabilisez votre voyage",

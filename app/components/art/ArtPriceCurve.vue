@@ -22,7 +22,7 @@ const curve = 'M10 40 C 60 30, 90 70, 130 60 S 200 30, 240 80 S 300 150, 350 140
         class="transition-[stroke-dashoffset] duration-[1600ms] ease-dony motion-reduce:transition-none"
         :style="{ strokeDashoffset: drawn ? 0 : 1 }"
       />
-      <circle cx="350" cy="140" r="7" fill="rgb(var(--success))" class="transition-opacity delay-[1400ms] duration-base" :class="drawn ? 'opacity-100' : 'opacity-0'" />
+      <circle cx="350" cy="140" r="7" fill="rgb(var(--success))" class="transition-opacity delay-[1400ms] duration-base motion-reduce:delay-0" :class="drawn ? 'opacity-100' : 'opacity-0'" />
     </svg>
     <div
       class="absolute -bottom-6 left-6 right-6 flex items-center gap-3 rounded-card bg-ink px-4 py-3 text-white shadow-xl transition-[opacity,translate] delay-[1500ms] duration-slow ease-dony motion-reduce:delay-0"

@@ -1,5 +1,8 @@
 import { describe, expect, it } from 'vitest'
+import { nextTick } from 'vue'
 import { mount } from '@vue/test-utils'
+import ArtPaymentMarquee from '@/components/art/ArtPaymentMarquee.vue'
+import { FakeIntersectionObserver, installObservers } from '../helpers/observers'
 import ArtNegotiation from '@/components/art/ArtNegotiation.vue'
 import ArtTrackingTimeline from '@/components/art/ArtTrackingTimeline.vue'
 import ArtPadlock from '@/components/art/ArtPadlock.vue'
@@ -57,5 +60,25 @@ describe('ArtPriceModes', () => {
     expect(wrapper.findAll('[data-mode]')).toHaveLength(3)
     expect(wrapper.text()).toContain('Téléphone 20 €')
     expect(wrapper.get('[data-mode]').attributes('data-flipped')).toBe('true')
+  })
+})
+
+describe('ArtPaymentMarquee', () => {
+  it('se met en pause et reprend à la demande (WCAG 2.2.2)', async () => {
+    installObservers()
+    const wrapper = mount(ArtPaymentMarquee, {
+      props: { items: ['Carte bancaire', 'Wave'], pauseLabel: 'Mettre en pause', playLabel: 'Reprendre' },
+    })
+    await nextTick()
+    FakeIntersectionObserver.last().trigger(wrapper.find('[data-marquee]').element, true)
+    await nextTick()
+    expect(wrapper.find('[data-marquee]').classes()).not.toContain('is-paused')
+    const button = wrapper.get('button')
+    expect(button.attributes('aria-label')).toBe('Mettre en pause')
+    await button.trigger('click')
+    expect(wrapper.find('[data-marquee]').classes()).toContain('is-paused')
+    expect(button.attributes('aria-label')).toBe('Reprendre')
+    await button.trigger('click')
+    expect(wrapper.find('[data-marquee]').classes()).not.toContain('is-paused')
   })
 })

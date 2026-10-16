@@ -55,7 +55,7 @@ const faqAccordion = computed(() => faq.map((item, index) => ({ id: `gp-${page.s
       <UiContainer>
         <div class="relative grid items-center gap-10 py-12 sm:py-16 lg:grid-cols-12 lg:py-20">
           <div class="lg:col-span-8">
-            <nav :aria-label="t('journeys.common.home')" class="text-sm text-ink-muted">
+            <nav :aria-label="t('journeys.common.breadcrumb')" class="text-sm text-ink-muted">
               <ol class="flex list-none flex-wrap items-center gap-2">
                 <li><NuxtLink to="/" class="hover:text-ink">{{ t('journeys.common.home') }}</NuxtLink></li>
                 <li aria-hidden="true">›</li>

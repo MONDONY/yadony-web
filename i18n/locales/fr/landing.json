@@ -180,7 +180,9 @@
         "Portefeuille Yadony",
         "Espèces"
       ],
-      "note": "Les espèces restent possibles, mais sans paiement bloqué : la protection ne s'applique qu'aux paiements faits dans l'app."
+      "note": "Les espèces restent possibles, mais sans paiement bloqué : la protection ne s'applique qu'aux paiements faits dans l'app.",
+      "pause": "Mettre en pause le défilement des moyens de paiement",
+      "play": "Reprendre le défilement des moyens de paiement"
     },
     "corridors": {
       "kicker": "Destinations",

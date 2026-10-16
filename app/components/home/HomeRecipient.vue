@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useInView } from '@/composables/useInView'
 import { useTexts } from '@/composables/useTexts'
@@ -9,6 +9,10 @@ const { t } = useI18n()
 const { list } = useTexts()
 const scene = ref<HTMLElement | null>(null)
 const { inView } = useInView(scene, { once: true })
+// Masqué seulement une fois monté : le HTML prérendu (robots, sans JS) montre
+// la conversation et la page de suivi telles quelles.
+const mounted = ref(false)
+onMounted(() => { mounted.value = true })
 </script>
 
 <template>
@@ -29,19 +33,19 @@ const { inView } = useInView(scene, { once: true })
         <div ref="scene" class="mx-auto flex w-full max-w-md flex-col gap-4">
           <div
             class="max-w-[85%] self-end rounded-card rounded-br-[6px] bg-[#DCF8C6] px-4 py-3 text-ink shadow-md transition-[opacity,translate] duration-slow ease-dony"
-            :class="inView ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'"
+            :class="!mounted || inView ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'"
           >
             <p>{{ t('landing.recipient.chat.message') }}</p>
-            <p class="mt-1 font-semibold text-primary underline">{{ t('landing.recipient.chat.link') }}</p>
+            <p class="mt-1 font-semibold text-primary-press underline">{{ t('landing.recipient.chat.link') }}</p>
           </div>
           <div
             class="rounded-sheet bg-surface p-6 text-ink shadow-xl transition-[opacity,translate] delay-500 duration-page ease-dony motion-reduce:delay-0"
-            :class="inView ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'"
+            :class="!mounted || inView ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'"
           >
             <p class="font-display text-xl font-bold">{{ t('landing.recipient.chat.page') }}</p>
             <p class="mt-1 text-sm text-ink-muted">{{ t('landing.recipient.chat.pageDetail') }}</p>
             <div class="mt-5">
-              <ArtTrackingTimeline :labels="list('landing.crossed.art.timeline')" :progress="inView ? 2 : 0" class="!max-w-none !p-0 !shadow-none" />
+              <ArtTrackingTimeline :labels="list('landing.crossed.art.timeline')" :progress="!mounted || inView ? 2 : 0" class="!max-w-none !p-0 !shadow-none" />
             </div>
           </div>
         </div>

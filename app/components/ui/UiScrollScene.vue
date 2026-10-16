@@ -20,7 +20,7 @@ function register(index: number, el: unknown) {
 <template>
   <div class="lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-12">
     <div class="order-2 hidden lg:block" aria-hidden="true">
-      <div class="sticky top-[12vh] flex h-[76vh] items-center justify-center rounded-[32px] bg-sand p-8">
+      <div class="sticky top-[12vh] flex h-[76vh] items-center justify-center rounded-[32px] bg-sand p-6">
         <slot name="visual" :active="active" :mobile="false" />
       </div>
     </div>

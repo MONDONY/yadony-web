@@ -16,7 +16,7 @@ const { list } = useTexts()
       </div>
     </UiContainer>
     <div class="mt-10">
-      <ArtPaymentMarquee :items="list('landing.payments.items')" />
+      <ArtPaymentMarquee :items="list('landing.payments.items')" :pause-label="t('landing.payments.pause')" :play-label="t('landing.payments.play')" />
     </div>
     <UiContainer>
       <p class="mt-8 max-w-2xl text-sm text-ink-muted">{{ t('landing.payments.note') }}</p>

@@ -26,7 +26,7 @@ const art = 'landing.crossed.art'
 
 <template>
   <div class="relative flex w-full justify-center">
-    <div v-if="screens.length" class="w-[240px] sm:w-[270px]">
+    <div v-if="screens.length" class="w-[240px] sm:w-[270px] lg:[@media(max-height:860px)]:w-[200px]">
       <UiPhone
         :screens="screens"
         :alts="alts"

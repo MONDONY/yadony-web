@@ -69,7 +69,7 @@ const faqAccordion = computed(() => faqItems.map((item, index) => ({ id: `${corr
       <UiContainer>
         <div class="relative grid items-center gap-10 py-12 sm:py-16 lg:grid-cols-12 lg:py-20">
           <div class="lg:col-span-7">
-            <nav :aria-label="t('journeys.common.home')" class="text-sm text-ink-muted">
+            <nav :aria-label="t('journeys.common.breadcrumb')" class="text-sm text-ink-muted">
               <ol class="flex list-none flex-wrap items-center gap-2">
                 <li><NuxtLink :to="localePath('/')" class="hover:text-ink">{{ t('journeys.common.home') }}</NuxtLink></li>
                 <li aria-hidden="true">›</li>
@@ -107,7 +107,7 @@ const faqAccordion = computed(() => faqItems.map((item, index) => ({ id: `${corr
               :to="`/gp/${gp.slug}`"
               class="rounded-card border border-line bg-accent-soft p-6 font-semibold text-accent-text transition-colors duration-micro hover:border-accent"
             >{{ t('landing.corridors.gp') }} <span aria-hidden="true">→</span></NuxtLink>
-            <NuxtLink :to="localePath('/envoyer-colis')" class="rounded-card border border-line bg-bg p-6 font-semibold text-primary hover:border-primary">{{ t('nav.howItWorks') }} <span aria-hidden="true">→</span></NuxtLink>
+            <NuxtLink :to="localePath('/comment-ca-marche')" class="rounded-card border border-line bg-bg p-6 font-semibold text-primary hover:border-primary">{{ t('nav.howItWorks') }} <span aria-hidden="true">→</span></NuxtLink>
             <NuxtLink :to="localePath('/tarifs')" class="rounded-card border border-line bg-bg p-6 font-semibold text-primary hover:border-primary">{{ t('nav.pricing') }} <span aria-hidden="true">→</span></NuxtLink>
             <NuxtLink :to="localePath('/securite')" class="rounded-card border border-line bg-bg p-6 font-semibold text-primary hover:border-primary">{{ t('nav.trust') }} <span aria-hidden="true">→</span></NuxtLink>
           </aside>

@@ -23,7 +23,8 @@
     "switchLabel": "Changer de langue",
     "switchTo": "Lire cette page en {language}",
     "fr": "Français",
-    "en": "English"
+    "en": "English",
+    "homeIn": "Accueil en {language}"
   },
   "home": {
     "hero": {
@@ -180,7 +181,7 @@
       "title": "Le même colis chez un transporteur classique",
       "text": "Cinq kilos Paris → Abidjan démarrent autour de 150 € chez un transporteur international, hors options de délai, contre 40 € plus la commission chez un voyageur à 8 € le kilo. La différence tient à une chose : le voyageur faisait déjà le trajet."
     },
-    "donyAlt": "Dony, la mascotte de Yadony, pèse un colis",
+    "donyAlt": "Dony, la mascotte de Yadony, ravi",
     "modes": {
       "kicker": "Côté voyageur",
       "title": "Trois façons de fixer son prix",

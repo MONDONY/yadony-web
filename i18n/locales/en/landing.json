@@ -180,7 +180,9 @@
         "Yadony wallet",
         "Cash"
       ],
-      "note": "Cash is still an option, but without the held payment: the protection only applies to payments made in the app."
+      "note": "Cash is still an option, but without the held payment: the protection only applies to payments made in the app.",
+      "pause": "Pause the scrolling payment methods",
+      "play": "Resume the scrolling payment methods"
     },
     "corridors": {
       "kicker": "Destinations",

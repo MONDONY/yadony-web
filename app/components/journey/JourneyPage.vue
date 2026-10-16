@@ -64,7 +64,7 @@ const stepLabel = (n: number) => t('journeys.common.stepLabel', { n })
       <UiContainer>
         <div class="relative grid items-center gap-12 py-12 sm:py-16 lg:grid-cols-12 lg:py-20">
           <div class="lg:col-span-7">
-            <nav :aria-label="t('journeys.common.home')" class="text-sm text-ink-muted">
+            <nav :aria-label="t('journeys.common.breadcrumb')" class="text-sm text-ink-muted">
               <ol class="flex list-none items-center gap-2">
                 <li><NuxtLink :to="localePath('/')" class="hover:text-ink">{{ t('journeys.common.home') }}</NuxtLink></li>
                 <li aria-hidden="true">›</li>
@@ -92,6 +92,7 @@ const stepLabel = (n: number) => t('journeys.common.stepLabel', { n })
 
     <section class="bg-surface py-14 sm:py-20">
       <UiContainer>
+        <h2 class="sr-only">{{ t(`${base}.listLabel`) }}</h2>
         <JourneyScene :steps="props.steps" :texts="stepTexts" :label="t(`${base}.listLabel`)" :step-label="stepLabel" />
       </UiContainer>
     </section>

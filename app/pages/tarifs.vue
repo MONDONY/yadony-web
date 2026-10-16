@@ -31,7 +31,7 @@ useSeoMeta(
 
 <template>
   <div>
-    <PageHero :title="t('pricing.title')" :lead="t('pricing.lead')" pose="scale" :pose-alt="t('pricing.donyAlt')" />
+    <PageHero :title="t('pricing.title')" :lead="t('pricing.lead')" pose="success" :pose-alt="t('pricing.donyAlt')" />
     <UiSection tone="white">
       <UiContainer>
         <div class="grid items-start gap-10 lg:grid-cols-12">

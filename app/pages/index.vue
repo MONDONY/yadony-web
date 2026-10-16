@@ -43,6 +43,8 @@ useHead({
     <LazyHomeCorridors hydrate-on-visible />
     <LazyHomeRecipient hydrate-on-visible />
     <LazyHomeFaq hydrate-on-visible />
-    <LazyDownloadCta hydrate-on-visible />
+    <!-- Hydraté tout de suite : le bouton « Télécharger » de l'en-tête y mène
+         directement, le premier clic sur les badges ne doit pas se perdre. -->
+    <DownloadCta />
   </div>
 </template>

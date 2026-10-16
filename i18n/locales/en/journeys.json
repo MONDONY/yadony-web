@@ -7,7 +7,8 @@
       "downloadTitle": "Ready to give it a go?",
       "downloadLead": "Install Yadony: signing up takes two minutes, and identity verification happens in the app.",
       "videoPlay": "Play the tutorial",
-      "videoPause": "Pause the tutorial"
+      "videoPause": "Pause the tutorial",
+      "breadcrumb": "Breadcrumb"
     },
     "screens": {
       "flights-hub": "The Yadony \"Activités\" (Activities) screen: the \"Billets d'avion\" (Flight tickets) section with two deals at 49% and 48% off",
@@ -96,7 +97,7 @@
     "traveler": {
       "seo": {
         "title": "Sell your luggage space and make your trip to Africa pay",
-        "description": "Flying to Africa? Sell your spare baggage allowance to verified senders: per kilo, open to offers or per item, with payment guaranteed on delivery."
+        "description": "Flying to Africa? Sell your spare baggage allowance to verified senders: per kilo, open to offers or per item, with payment held and released on delivery."
       },
       "kicker": "Travellers",
       "title": "Sell your kilos, make your trip pay",

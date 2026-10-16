@@ -12,9 +12,11 @@ const open = ref(false)
 const targetLocale = computed<Locale>(() => (locale.value === 'fr' ? 'en' : 'fr'))
 // Une page sans version dans l'autre langue (pages GP, en français seulement)
 // renvoie vers l'accueil de cette langue.
-const switchHref = computed(() => switchLocalePath(targetLocale.value) || localePath('/', targetLocale.value))
+const switchTarget = computed(() => switchLocalePath(targetLocale.value))
+const switchHref = computed(() => switchTarget.value || localePath('/', targetLocale.value))
+// Sans traduction de la page, le lien mène à l'accueil : son libellé le dit.
 const switchLabel = computed(() =>
-  t('language.switchTo', { language: t(`language.${targetLocale.value}`) }),
+  t(switchTarget.value ? 'language.switchTo' : 'language.homeIn', { language: t(`language.${targetLocale.value}`) }),
 )
 
 const links = computed(() => [

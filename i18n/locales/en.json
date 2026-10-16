@@ -23,7 +23,8 @@
     "switchLabel": "Change language",
     "switchTo": "Read this page in {language}",
     "fr": "Français",
-    "en": "English"
+    "en": "English",
+    "homeIn": "Home page in {language}"
   },
   "home": {
     "hero": {
@@ -180,7 +181,7 @@
       "title": "The same parcel with a conventional carrier",
       "text": "Five kilos from Paris to Abidjan start at around 150 euros with an international carrier, before delivery-speed options, against 40 euros plus the fee with a traveller at 8 euros per kilo. The difference comes down to one thing: the traveller was making the trip anyway."
     },
-    "donyAlt": "Dony, the Yadony mascot, weighing a parcel",
+    "donyAlt": "Dony, the Yadony mascot, delighted",
     "modes": {
       "kicker": "For travellers",
       "title": "Three ways to set your price",

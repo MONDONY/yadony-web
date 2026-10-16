@@ -10,7 +10,9 @@ const switchLocalePath = useSwitchLocalePath()
 const open = ref(false)
 
 const targetLocale = computed<Locale>(() => (locale.value === 'fr' ? 'en' : 'fr'))
-const switchHref = computed(() => switchLocalePath(targetLocale.value))
+// Une page sans version dans l'autre langue (pages GP, en français seulement)
+// renvoie vers l'accueil de cette langue.
+const switchHref = computed(() => switchLocalePath(targetLocale.value) || localePath('/', targetLocale.value))
 const switchLabel = computed(() =>
   t('language.switchTo', { language: t(`language.${targetLocale.value}`) }),
 )

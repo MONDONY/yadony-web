@@ -164,7 +164,8 @@ const deux = (n: number) => String(n).padStart(2, '0')
         <div class="step s4 mt-[18px] flex flex-wrap items-center gap-2 text-[13px] text-ink-muted">
           <span>{{ statut === 'bientot' ? t('contest.popup.startsIn') : t('contest.popup.endsIn') }}</span>
           <div class="flex gap-1.5">
-            <span v-for="bloc in [
+            <span
+v-for="bloc in [
               { v: String(reste.jours), l: t('contest.popup.days') },
               { v: deux(reste.heures), l: t('contest.popup.hours') },
               { v: deux(reste.minutes), l: t('contest.popup.minutes') },

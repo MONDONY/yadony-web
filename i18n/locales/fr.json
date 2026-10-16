@@ -26,118 +26,9 @@
     "en": "English"
   },
   "home": {
-    "seo": {
-      "title": "Envoyer un colis en Afrique, par un voyageur vérifié",
-      "description": "Yadony met en relation les voyageurs qui ont de la place dans leur valise et les expéditeurs de la diaspora. Identité vérifiée, paiement bloqué jusqu'à la livraison, remise validée par un code."
-    },
     "hero": {
-      "title": "Votre colis part avec quelqu'un de confiance",
-      "lead": "Un voyageur vérifié emporte votre colis dans sa valise. Payé par l'app, le voyageur ne touche rien tant que votre proche n'a pas le colis en main.",
-      "note": "Paris → Abidjan, Lyon → Dakar, Bamako → Paris : vous choisissez la ville de départ et la ville d'arrivée.",
       "appStore": "Télécharger sur l'App Store",
-      "playStore": "Disponible sur Google Play",
-      "video": {
-        "description": "Vidéo de présentation de l'application Yadony : recherche des voyageurs autour de vous sur la carte, négociation du prix d'un trajet, argent bloqué jusqu'à la livraison, colis scanné à chaque étape.",
-        "play": "Lire la vidéo",
-        "pause": "Mettre la vidéo en pause"
-      },
-      "kicker": "L'app de la diaspora",
-      "stats": {
-        "scans": {
-          "figure": "6",
-          "label": "chiffres : le code sans lequel le colis ne peut pas être déclaré livré"
-        },
-        "identity": {
-          "figure": "100 %",
-          "label": "des trajets et des colis publiés par des comptes à l'identité vérifiée"
-        },
-        "escrow": {
-          "figure": "0 €",
-          "label": "versé au voyageur avant la livraison confirmée, quand vous payez par l'app"
-        }
-      }
-    },
-    "problem": {
-      "title": "Trois façons d'envoyer un colis. Une seule est traçable.",
-      "columns": {
-        "channel": "Canal",
-        "price": "Prix pour 5 kg",
-        "tracking": "Suivi",
-        "recourse": "Recours"
-      },
-      "rows": {
-        "whatsapp": {
-          "channel": "Groupe WhatsApp",
-          "price": "Variable",
-          "tracking": "Aucun",
-          "recourse": "Aucun"
-        },
-        "carrier": {
-          "channel": "Transporteur classique",
-          "price": "150 € et plus",
-          "tracking": "Complet",
-          "recourse": "Contractuel"
-        },
-        "yadony": {
-          "channel": "Yadony",
-          "price": "Fixé par le voyageur",
-          "tracking": "QR à chaque étape",
-          "recourse": "Paiement bloqué et litige"
-        }
-      }
-    },
-    "tracking": {
-      "title": "De la remise à la livraison, chaque étape tracée",
-      "lead": "Le voyageur scanne le QR code du colis quand vous le lui remettez, et la livraison n'est validée qu'avec le code du destinataire. Entre les deux, l'expéditeur et le destinataire voient la même fiche de suivi.",
-      "scrollLabel": "Étapes du parcours, de la remise à la livraison. Faites défiler pour voir les quatre écrans.",
-      "steps": {
-        "deposit": {
-          "label": "Remise au voyageur",
-          "text": "Vous remettez le colis au voyageur, qui scanne son QR code et prend une photo. Dans Mes colis, l'envoi passe à « Remis » : l'heure et le lieu sont enregistrés.",
-          "alt": "Écran Mes colis montrant un envoi Paris vers Bamako au statut remis, avec la frise remis, en route, arrivé, livraison"
-        },
-        "airport": {
-          "label": "Le voyageur scanne",
-          "text": "À chaque étape, le voyageur scanne le QR du colis et l'étape suivante se valide toute seule. Le transit est facultatif ; à l'arrivée, il valide l'arrivée en un geste.",
-          "alt": "Écran Suivi du voyageur : scanner de QR code et bouton pour valider l'arrivée d'un colis"
-        },
-        "transit": {
-          "label": "En route, code de retrait",
-          "text": "Votre colis est en route. Dans sa fiche, le bouton « Code de retrait » affiche le code à 6 chiffres : transmettez-le au destinataire. Le lien de suivi se partage sans installer l'application.",
-          "alt": "Fiche d'un colis en route de Paris à Bamako, avec les boutons QR du colis et code de retrait"
-        },
-        "delivery": {
-          "label": "Livré, paiement libéré",
-          "text": "Le destinataire donne le code au voyageur, qui prend une photo de remise. Le colis passe à « Livré » et le paiement est libéré au voyageur.",
-          "alt": "Fiche d'un colis livré entre Madrid et Bamako, avec la mention paiement libéré au voyageur"
-        }
-      },
-      "kicker": "Suivi de bout en bout"
-    },
-    "trust": {
-      "title": "Trois choses qu'un groupe WhatsApp ne peut pas vous garantir",
-      "lead": "Vous confiez un colis à quelqu'un que vous ne connaissez pas. Voici ce que la plateforme met en place pour que ce ne soit pas un pari.",
-      "identity": {
-        "figure": "100 %",
-        "label": "Identités vérifiées",
-        "text": "Pour publier un trajet ou une demande de colis, il faut avoir vérifié son identité avec Didit : pièce d'identité et selfie. Par défaut, les voyageurs n'acceptent que des expéditeurs vérifiés."
-      },
-      "escrow": {
-        "figure": "0 €",
-        "label": "Versé au voyageur avant livraison",
-        "text": "Payé par carte, votre argent est bloqué sur la plateforme et n'est versé au voyageur qu'une fois la livraison confirmée avec le code du destinataire."
-      },
-      "code": {
-        "figure": "6",
-        "label": "Chiffres pour valider la remise",
-        "text": "Le code de livraison vous est envoyé à la remise du colis, et vous seul le transmettez au destinataire. Sans ce code, le voyageur ne peut pas déclarer le colis livré."
-      }
-    },
-    "traveler": {
-      "title": "Votre valise a de la place. Elle peut financer une partie du voyage.",
-      "text": "Vous partez à Abidjan et vous n'utiliserez que la moitié de votre franchise bagage. Dix kilos libres à 8 € le kilo, cela fait 80 € sur un vol que vous preniez déjà. Vous fixez votre prix, vous choisissez ce que vous acceptez de porter, et vous touchez le prix annoncé en entier : la commission de service est payée par l'expéditeur, en plus.",
-      "cta": "Voir le parcours voyageur",
-      "kicker": "Côté voyageurs"
+      "playStore": "Disponible sur Google Play"
     },
     "faq": {
       "title": "Les questions qu'on nous pose avant de télécharger",
@@ -183,36 +74,6 @@
           "answer": "Vous choisissez librement la ville de départ et la ville d'arrivée, en France, en Europe, en Afrique ou ailleurs. Les trajets les plus fréquents relient Paris, Lyon et Marseille à Abidjan, Dakar, Bamako et Douala, dans les deux sens."
         }
       ]
-    },
-    "download": {
-      "title": "Le reste se passe dans l'application",
-      "text": "Publier un colis, comparer les voyageurs, scanner, suivre, payer : tout s'y trouve. Ce site ne sert qu'à vous expliquer le fonctionnement avant que vous la téléchargiez.",
-      "screenshotAlt": "Écran Activités de l'app Yadony, avec le compteur de trajets actifs et les boutons publier un trajet et envoyer un colis"
-    },
-    "corridors": {
-      "title": "Envoyer un colis de la France vers l'Afrique de l'Ouest et centrale",
-      "lead": "Yadony relie les grandes villes françaises aux capitales où vit votre famille. Un voyageur part déjà dans la bonne direction : votre colis voyage dans sa valise.",
-      "routes": {
-        "dakar": {
-          "route": "Paris → Dakar",
-          "text": "Le corridor le plus actif : des départs réguliers entre l'Île-de-France et le Sénégal."
-        },
-        "abidjan": {
-          "route": "Paris → Abidjan",
-          "text": "Le corridor vedette : envoyez vers la Côte d'Ivoire depuis Paris, au prix fixé par le voyageur."
-        },
-        "bamako": {
-          "route": "Marseille → Bamako",
-          "text": "Le Mali depuis le sud de la France, sans passer par un transporteur classique."
-        },
-        "douala": {
-          "route": "Paris → Douala",
-          "text": "Le Cameroun en direct, avec le même suivi par QR code à chaque étape."
-        }
-      },
-      "outro": "Les prix sont fixés librement par les voyageurs, au kilo. Consultez {pricing} pour un exemple chiffré, ou découvrez {howItWorks} avant de télécharger l'app.",
-      "outroPricing": "les tarifs",
-      "outroHow": "comment ça marche"
     }
   },
   "howItWorks": {

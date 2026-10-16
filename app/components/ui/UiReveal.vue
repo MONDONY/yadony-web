@@ -17,10 +17,17 @@ const props = withDefaults(
 const el = ref<HTMLElement | null>(null)
 const { inView } = useInView(el, { once: true })
 const mounted = ref(false)
-onMounted(() => { mounted.value = true })
+// Un bloc déjà à l'écran au chargement (titre du haut de page) reste tel quel :
+// le masquer puis le révéler après l'hydratation retarderait le LCP.
+const onScreenAtLoad = ref(false)
+onMounted(() => {
+  const rect = el.value?.getBoundingClientRect()
+  onScreenAtLoad.value = !!rect && rect.height > 0 && rect.top < window.innerHeight && rect.bottom > 0
+  mounted.value = true
+})
 
 const state = computed(() => {
-  if (!mounted.value) return undefined
+  if (!mounted.value || onScreenAtLoad.value) return undefined
   return inView.value ? 'shown' : 'hidden'
 })
 </script>

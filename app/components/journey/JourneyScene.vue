@@ -15,7 +15,7 @@ defineProps<{
 const actorTone = {
   traveler: 'bg-accent-soft text-accent-text',
   sender: 'bg-primary-soft text-primary',
-  both: 'bg-success/10 text-success',
+  both: 'bg-success/10 text-ink',
 } as const
 </script>
 

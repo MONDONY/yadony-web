@@ -16,7 +16,7 @@ const { inView } = useInView(scene, { once: true })
     <UiContainer>
       <div class="grid gap-14 lg:grid-cols-2 lg:items-center">
         <div>
-          <p class="font-display text-sm font-bold uppercase tracking-[0.16em] text-accent">{{ t('landing.recipient.kicker') }}</p>
+          <p class="font-display text-sm font-bold uppercase tracking-[0.16em] text-accent-soft">{{ t('landing.recipient.kicker') }}</p>
           <h2 class="mt-3 text-display-lg">{{ t('landing.recipient.title') }}</h2>
           <p class="mt-5 text-lg text-white/80">{{ t('landing.recipient.lead') }}</p>
           <ul class="mt-8 flex list-none flex-col gap-3">

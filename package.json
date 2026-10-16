@@ -17,7 +17,8 @@
     "e2e": "playwright test",
     "e2e:ui": "playwright test --ui",
     "lighthouse": "lhci autorun",
-    "images": "node scripts/images/build.mjs"
+    "images": "node scripts/images/build.mjs",
+    "og": "node scripts/images/og.mjs"
   },
   "dependencies": {
     "@nuxtjs/i18n": "^10.6.0",

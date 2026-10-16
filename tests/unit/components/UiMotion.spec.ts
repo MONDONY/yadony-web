@@ -21,6 +21,16 @@ describe('UiReveal', () => {
     expect(wrapper.attributes('data-state')).toBe('shown')
   })
 
+  it('ne masque jamais un bloc déjà à l’écran au chargement (titre du haut de page, LCP)', async () => {
+    installObservers()
+    const rect = { top: 120, bottom: 400, left: 0, right: 800, width: 800, height: 280, x: 0, y: 120, toJSON: () => ({}) }
+    const spy = vi.spyOn(HTMLElement.prototype, 'getBoundingClientRect').mockReturnValue(rect as DOMRect)
+    const wrapper = mount(UiReveal, { slots: { default: 'Titre' } })
+    await nextTick()
+    expect(wrapper.attributes('data-state')).toBeUndefined()
+    spy.mockRestore()
+  })
+
   it('ne masque rien quand le visiteur demande moins d’animations', async () => {
     installObservers({ reducedMotion: true })
     const wrapper = mount(UiReveal, { slots: { default: 'Bonjour' } })

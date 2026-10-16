@@ -26,118 +26,9 @@
     "en": "English"
   },
   "home": {
-    "seo": {
-      "title": "Send a parcel to Africa with a verified traveller",
-      "description": "Yadony connects travellers with spare luggage room and senders from the diaspora. Verified identity, payment held until delivery, handover validated with a code."
-    },
     "hero": {
-      "title": "Your parcel travels with someone you can trust",
-      "lead": "A verified traveller carries your parcel in their luggage. Pay through the app and the traveller receives nothing until your loved one has the parcel in hand.",
-      "note": "Paris to Abidjan, Lyon to Dakar, Bamako to Paris: you pick the departure and arrival cities.",
       "appStore": "Download on the App Store",
-      "playStore": "Get it on Google Play",
-      "video": {
-        "description": "Walkthrough of the Yadony app: finding travellers near you on the map, negotiating the price of a trip, money held until delivery, a parcel scanned at every step.",
-        "play": "Play the video",
-        "pause": "Pause the video"
-      },
-      "kicker": "The diaspora's app",
-      "stats": {
-        "scans": {
-          "figure": "6",
-          "label": "digits: the code without which a parcel cannot be marked as delivered"
-        },
-        "identity": {
-          "figure": "100%",
-          "label": "of trips and parcels posted by identity-verified accounts"
-        },
-        "escrow": {
-          "figure": "€0",
-          "label": "paid to the traveller before confirmed delivery, when you pay through the app"
-        }
-      }
-    },
-    "problem": {
-      "title": "Three ways to send a parcel. Only one of them is traceable.",
-      "columns": {
-        "channel": "Channel",
-        "price": "Price for 5 kg",
-        "tracking": "Tracking",
-        "recourse": "Recourse"
-      },
-      "rows": {
-        "whatsapp": {
-          "channel": "WhatsApp group",
-          "price": "Varies",
-          "tracking": "None",
-          "recourse": "None"
-        },
-        "carrier": {
-          "channel": "Conventional carrier",
-          "price": "€150 and up",
-          "tracking": "Full",
-          "recourse": "Contractual"
-        },
-        "yadony": {
-          "channel": "Yadony",
-          "price": "Set by the traveller",
-          "tracking": "QR scan at every step",
-          "recourse": "Held payment and disputes"
-        }
-      }
-    },
-    "tracking": {
-      "title": "From handover to delivery, every step on record",
-      "lead": "The traveller scans the parcel's QR code when you hand it over, and delivery is only validated with the recipient's code. In between, sender and recipient see the same tracking page.",
-      "scrollLabel": "Journey steps, from handover to delivery. Scroll to see all four screens.",
-      "steps": {
-        "deposit": {
-          "label": "Handover to the traveller",
-          "text": "You hand the parcel to the traveller, who scans its QR code and takes a photo. In My parcels, the shipment switches to \"Handed over\": time and place are recorded.",
-          "alt": "My parcels screen showing a Paris to Bamako shipment marked handed over, with the handed over, on the way, arrived, delivery timeline"
-        },
-        "airport": {
-          "label": "The traveller scans",
-          "text": "At each step, the traveller scans the parcel's QR code and the next step is validated automatically. Transit is optional; on arrival, they confirm it in one tap.",
-          "alt": "Traveller tracking screen: QR code scanner and a button to confirm a parcel's arrival"
-        },
-        "transit": {
-          "label": "On the way, pickup code",
-          "text": "Your parcel is on its way. In its page, the pickup code button shows the 6-digit code: pass it on to the recipient. The tracking link can be shared without installing the app.",
-          "alt": "Page of a parcel on its way from Paris to Bamako, with the parcel QR and pickup code buttons"
-        },
-        "delivery": {
-          "label": "Delivered, payment released",
-          "text": "The recipient gives the code to the traveller, who takes a handover photo. The parcel switches to \"Delivered\" and the payment is released to the traveller.",
-          "alt": "Page of a parcel delivered between Madrid and Bamako, stating that the payment was released to the traveller"
-        }
-      },
-      "kicker": "End-to-end tracking"
-    },
-    "trust": {
-      "title": "Three things a WhatsApp group cannot guarantee you",
-      "lead": "You are handing a parcel to someone you do not know. Here is what the platform puts in place so that it is not a gamble.",
-      "identity": {
-        "figure": "100%",
-        "label": "Identities verified",
-        "text": "To post a trip or a parcel request, you must first verify your identity with Didit: ID document and selfie. By default, travellers only accept verified senders."
-      },
-      "escrow": {
-        "figure": "€0",
-        "label": "Paid to the traveller before delivery",
-        "text": "Paid by card, your money is held on the platform and only released to the traveller once delivery is confirmed with the recipient's code."
-      },
-      "code": {
-        "figure": "6",
-        "label": "Digits to validate the handover",
-        "text": "The delivery code is sent to you when you hand over the parcel, and only you pass it on to the recipient. Without it, the traveller cannot mark the parcel as delivered."
-      }
-    },
-    "traveler": {
-      "title": "Your suitcase has room to spare. It can pay for part of the trip.",
-      "text": "You are flying to Abidjan and will only use half of your baggage allowance. Ten spare kilos at 8 euros a kilo is 80 euros on a flight you were taking anyway. You set your price, you choose what you agree to carry, and you receive your full asking price: the service fee is paid by the sender, on top.",
-      "cta": "See how it works for travellers",
-      "kicker": "For travellers"
+      "playStore": "Get it on Google Play"
     },
     "faq": {
       "title": "The questions people ask us before downloading",
@@ -183,36 +74,6 @@
           "answer": "You freely pick the departure and arrival cities, in France, Europe, Africa or elsewhere. The most frequent trips link Paris, Lyon and Marseille with Abidjan, Dakar, Bamako and Douala, in both directions."
         }
       ]
-    },
-    "download": {
-      "title": "The rest happens in the app",
-      "text": "Posting a parcel, comparing travellers, scanning, tracking, paying: it is all in there. This site exists only to explain how it works before you download it.",
-      "screenshotAlt": "Activities screen of the Yadony app, with the active trip counter and the buttons to post a trip and send a parcel"
-    },
-    "corridors": {
-      "title": "Send a parcel from France to West and Central Africa",
-      "lead": "Yadony connects major French cities to the capitals where your family lives. A traveller is already heading the right way: your parcel rides in their suitcase.",
-      "routes": {
-        "dakar": {
-          "route": "Paris → Dakar",
-          "text": "The most active corridor: regular departures between the Paris region and Senegal."
-        },
-        "abidjan": {
-          "route": "Paris → Abidjan",
-          "text": "The flagship corridor: ship to Côte d'Ivoire from Paris, at the price the traveller sets."
-        },
-        "bamako": {
-          "route": "Marseille → Bamako",
-          "text": "Mali from the south of France, without going through a classic carrier."
-        },
-        "douala": {
-          "route": "Paris → Douala",
-          "text": "Cameroon direct, with the same QR-code tracking at every step."
-        }
-      },
-      "outro": "Prices are set freely by travellers, per kilo. See {pricing} for a worked example, or read {howItWorks} before downloading the app.",
-      "outroPricing": "the pricing page",
-      "outroHow": "how it works"
     }
   },
   "howItWorks": {

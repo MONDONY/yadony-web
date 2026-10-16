@@ -53,14 +53,15 @@ export default defineNuxtConfig({
     // Le module @nuxtjs/sitemap scinde automatiquement le sitemap en un
     // sitemap-index avec un fichier par langue dès qu'il détecte @nuxtjs/i18n
     // avec plusieurs locales. On force un seul fichier `sitemap.xml` listant
-    // les 18 URLs (9 pages x 2 langues) avec leurs alternates hreflang.
+    // toutes les pages des deux langues avec leurs alternates hreflang ; les
+    // pages GP, en français seulement, n'ont que fr-FR et x-default.
     sitemaps: false,
   },
   css: ['~/assets/css/main.css'],
   vite: {
     vue: {
       template: {
-        // Les images référencées par un `src` absolu (ex. `/screenshots/...`)
+        // Les images référencées par un `src` absolu (ex. `/img/...`)
         // vivent dans `public/` et sont servies telles quelles : elles ne
         // doivent jamais être résolues comme un import de module au build.
         // Par défaut, @vitejs/plugin-vue transforme aussi les chemins

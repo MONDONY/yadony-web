@@ -24,6 +24,8 @@ const { items } = useTexts()
 const route = useRoute()
 const localePath = useLocalePath()
 const base = `journeys.${props.ns}`
+// Carte de partage propre à chaque parcours (générée par `pnpm og`).
+const ogImages = { sender: '/og/expediteur.jpg', traveler: '/og/voyageur.jpg', flights: '/og/billets.jpg' } as const
 
 const stepTexts = items<{ title: string; text: string }>(`${base}.steps`)
 const faq = items<{ question: string; answer: string }>(`${base}.faq`)
@@ -35,6 +37,7 @@ useSeoMeta(
     description: t(`${base}.seo.description`),
     path: route.path,
     locale: locale.value as 'fr' | 'en',
+    image: ogImages[props.ns],
   }),
 )
 

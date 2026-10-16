@@ -59,7 +59,6 @@ const identifierPaths = Array.from({ length: 8 }, (_, index) => `home.faq.items[
 const sameWordPaths = [
   'nav.contact',
   'nav.menu',
-  'home.problem.rows.yadony.channel',
   // Page du classement : « pts », « Points », « Tests » et « bug » sont
   // communs aux deux langues.
   'contest.points',
@@ -79,10 +78,6 @@ const sameWordPaths = [
  * France » non plus.
  */
 const properNounPaths = [
-  'home.corridors.routes.dakar.route',
-  'home.corridors.routes.abidjan.route',
-  'home.corridors.routes.bamako.route',
-  'home.corridors.routes.douala.route',
   'footer.company.name',
   'footer.company.line2',
   'footer.proTitle',
@@ -91,9 +86,6 @@ const properNounPaths = [
   'footer.servicesTitle',
   'footer.companyTitle',
   'footer.routeLabel',
-  // Un numéral seul s'écrit pareil dans les deux langues.
-  'home.hero.stats.scans.figure',
-  'home.trust.code.figure',
   // L'adresse du siège social ne se traduit pas.
   'footer.company.line1',
   // « Commission » s'écrit pareil dans les deux langues (sous-titre de
@@ -139,10 +131,6 @@ const sharedValuePaths = new Set([
 const markerExemptPaths = new Set([
   ...sharedValuePaths,
   'legal.confidentialite.sections.rights.text',
-  // « Côte d'Ivoire » est un nom propre : il garde son accent circonflexe
-  // dans la version anglaise (l'exonyme « Ivory Coast » n'est pas la forme
-  // officielle du pays).
-  'home.corridors.routes.abidjan.text',
   // Textes légaux anglais citant des noms propres accentués qui ne se
   // traduisent pas : « Côte d'Ivoire » et « RCS Créteil » (registre du
   // commerce du siège social).

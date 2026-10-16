@@ -27,6 +27,9 @@ const props = withDefaults(defineProps<{
 
 const video = ref<HTMLVideoElement | null>(null)
 const playing = ref(false)
+// Vrai dès que la source est attachée : l'affiche différée laisse alors la
+// place à la vidéo.
+const started = ref(false)
 // Vrai dès que le visiteur a mis en pause : la vidéo ne repart plus seule
 // quand elle revient à l'écran.
 const pausedByUser = ref(false)
@@ -39,6 +42,7 @@ function attachSource(): HTMLVideoElement | null {
     el.muted = true
     el.src = props.src
   }
+  started.value = true
   return el
 }
 
@@ -101,7 +105,7 @@ onBeforeUnmount(() => {
   >
     <video
       ref="video"
-      :poster="poster"
+      :poster="autoplay ? poster : undefined"
       width="720"
       height="1280"
       muted
@@ -116,8 +120,20 @@ onBeforeUnmount(() => {
       @pause="playing = false"
     />
     <figcaption class="sr-only">{{ description }}</figcaption>
+    <!-- Sans lecture automatique, la vidéo est sous la ligne de flottaison :
+         son affiche est une image en chargement différé. -->
+    <img
+      v-if="!autoplay && !started"
+      :src="poster"
+      alt=""
+      width="720"
+      height="1280"
+      loading="lazy"
+      decoding="async"
+      class="absolute inset-[10px] h-[calc(100%-20px)] w-[calc(100%-20px)] rounded-[36px] object-cover"
+    >
     <button
-      v-if="!autoplay && !playing && !video?.getAttribute('src')"
+      v-if="!autoplay && !started"
       type="button"
       class="absolute inset-[10px] grid place-items-center rounded-[36px] bg-navy-deep/25 transition-colors duration-base hover:bg-navy-deep/35"
       :aria-label="playLabel"

@@ -33,13 +33,16 @@ useHead({
   <div>
     <HomeHero />
     <HomePromises />
-    <HomeVideo />
-    <JourneyCrossed />
-    <HomeTrust />
-    <HomePayments />
-    <HomeCorridors />
-    <HomeRecipient />
-    <HomeFaq />
-    <DownloadCta />
+    <!-- Sous la ligne de flottaison : HTML prérendu tout de suite (robots,
+         lecteurs sans JS), JavaScript chargé et hydraté à l'approche de
+         l'écran seulement, pour ne pas retarder l'affichage du haut de page. -->
+    <LazyHomeVideo hydrate-on-visible />
+    <LazyJourneyCrossed hydrate-on-visible />
+    <LazyHomeTrust hydrate-on-visible />
+    <LazyHomePayments hydrate-on-visible />
+    <LazyHomeCorridors hydrate-on-visible />
+    <LazyHomeRecipient hydrate-on-visible />
+    <LazyHomeFaq hydrate-on-visible />
+    <LazyDownloadCta hydrate-on-visible />
   </div>
 </template>

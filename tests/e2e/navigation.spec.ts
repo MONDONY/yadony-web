@@ -4,6 +4,9 @@ import { storesLive } from '../../app/lib/site'
 const PAGES = [
   '/', '/comment-ca-marche', '/tarifs', '/securite',
   '/a-propos', '/contact', '/mentions-legales', '/cgu', '/confidentialite',
+  '/envoyer-colis', '/envoyer-colis/paris-dakar', '/envoyer-colis/marseille-douala',
+  '/devenir-voyageur', '/billets-avion', '/gp/paris-dakar',
+  '/en', '/en/send-a-parcel', '/en/send-a-parcel/lyon-bamako', '/en/become-a-traveler', '/en/flight-deals',
 ]
 
 for (const path of PAGES) {
@@ -11,10 +14,6 @@ for (const path of PAGES) {
     const errors: string[] = []
     page.on('console', (msg) => {
       if (msg.type() !== 'error') return
-      // Les captures d'écran de l'application sous /screenshots/ ne sont pas
-      // encore fournies par le client (cf. brief de la tâche 14) : leur 404
-      // est attendue et ne doit pas masquer une vraie erreur console.
-      if (msg.location().url.includes('/screenshots/')) return
       errors.push(msg.text())
     })
     page.on('pageerror', (err) => errors.push(err.message))
@@ -61,19 +60,21 @@ test('les boutons de stores se comportent selon la disponibilité de l’app', a
   }
 })
 
-test('le header mène au classement du concours', async ({ page, isMobile }) => {
+// Le concours a quitté la barre de navigation (place laissée aux trois
+// parcours) : il reste joignable depuis le pied de page de chaque page.
+test('le pied de page mène au classement du concours', async ({ page }) => {
   await page.goto('/')
-  const lien = page.getByRole('link', { name: 'Concours bêta-testeurs' }).locator('visible=true').first()
-  if (isMobile) {
-    // Un clic reçu avant l'hydratation de Vue est perdu : on reclique sur
-    // « Menu » jusqu'à ce que le lien du menu mobile apparaisse.
-    await expect(async () => {
-      await page.getByRole('button', { name: 'Menu' }).click()
-      await expect(lien).toBeVisible({ timeout: 1000 })
-    }).toPass({ timeout: 10000 })
-  }
-  await lien.click()
+  await page.locator('footer').getByRole('link', { name: 'Concours bêta-testeurs' }).click()
   await expect(page).toHaveURL(/\/classement\/?$/)
+})
+
+test('le pied de page relie chaque trajet et chaque page GP', async ({ page }) => {
+  await page.goto('/')
+  const footer = page.locator('footer')
+  await expect(footer.locator('a[href^="/envoyer-colis/"]')).toHaveCount(12)
+  await expect(footer.locator('a[href^="/gp/"]')).toHaveCount(4)
+  await page.goto('/en')
+  await expect(page.locator('footer a[href^="/gp/"]')).toHaveCount(0)
 })
 
 // Six liens tiennent sur une ligne à partir de 1280 px ; en dessous, le menu
@@ -89,11 +90,11 @@ for (const width of [768, 1024, 1280]) {
     const header = page.locator('header').first()
     const nav = header.getByRole('navigation', { name: 'Navigation principale' })
     if (width >= 1280) {
-      await expect(nav.getByRole('link', { name: 'Concours bêta-testeurs' })).toBeVisible()
+      await expect(nav.getByRole('link', { name: "Billets d'avion" })).toBeVisible()
     } else {
       await expect(nav).toBeHidden()
       // Clic perdu s'il arrive avant l'hydratation : on reclique au besoin.
-      const lienMobile = header.getByRole('link', { name: 'Concours bêta-testeurs' }).locator('visible=true')
+      const lienMobile = header.getByRole('link', { name: "Billets d'avion" }).locator('visible=true')
       await expect(async () => {
         await header.getByRole('button', { name: 'Menu' }).click()
         await expect(lienMobile).toBeVisible({ timeout: 1000 })

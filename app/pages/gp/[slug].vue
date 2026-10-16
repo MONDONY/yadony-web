@@ -91,7 +91,7 @@ const faqAccordion = computed(() => faq.map((item, index) => ({ id: `gp-${page.s
     <section class="bg-sand py-14 sm:py-20">
       <UiContainer>
         <h2 class="text-display-md text-ink">{{ t('gp.common.comparison.title') }}</h2>
-        <div class="mt-8 overflow-x-auto rounded-card border border-line bg-surface">
+        <div class="mt-8 overflow-x-auto rounded-card border border-line bg-surface focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary" tabindex="0" role="region" :aria-label="t('gp.common.comparison.title')">
           <table class="w-full min-w-[560px] text-left">
             <thead class="bg-bg text-sm">
               <tr>

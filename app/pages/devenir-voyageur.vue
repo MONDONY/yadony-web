@@ -16,7 +16,7 @@ const localePath = useLocalePath()
     hero-pose="travel"
     :video="{ src: '/video/tuto-publier-trajet.mp4', poster: '/video/tuto-publier-trajet-poster.jpg' }"
   >
-    <section class="bg-sand py-20 sm:py-24">
+    <section class="bg-sand py-14 sm:py-20">
       <UiContainer>
         <div class="grid gap-6 lg:grid-cols-2">
           <UiReveal class="rounded-sheet bg-surface p-8 shadow-sm sm:p-10">

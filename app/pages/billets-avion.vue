@@ -11,7 +11,7 @@ const localePath = useLocalePath()
 
 <template>
   <JourneyPage ns="flights" :steps="flightsJourney" :hero-screens="['flights-found']" hero-pose="ticket">
-    <section class="bg-sand py-20 sm:py-24">
+    <section class="bg-sand py-14 sm:py-20">
       <UiContainer>
         <p class="mx-auto max-w-3xl rounded-card border border-line bg-surface p-6 text-center text-ink-muted">{{ t('journeys.flights.partnerNote') }}</p>
         <UiReveal class="mx-auto mt-10 grid max-w-4xl items-center gap-8 rounded-sheet bg-accent-soft p-8 sm:grid-cols-[auto_1fr] sm:p-10">

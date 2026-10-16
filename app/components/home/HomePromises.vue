@@ -10,13 +10,13 @@ const promises = items<{ title: string; text: string; cta: string }>('landing.pr
 
 const targets: Array<{ to: string; pose: DonyPoseId; tone: string }> = [
   { to: '/billets-avion', pose: 'price-alert', tone: 'bg-primary-soft' },
-  { to: '/devenir-voyageur', pose: 'scale', tone: 'bg-accent-soft' },
+  { to: '/devenir-voyageur', pose: 'travel', tone: 'bg-accent-soft' },
   { to: '/envoyer-colis', pose: 'padlock', tone: 'bg-sand' },
 ]
 </script>
 
 <template>
-  <section class="bg-bg py-20 sm:py-28">
+  <section class="bg-bg py-14 sm:py-20">
     <UiContainer>
       <p class="font-display text-sm font-bold uppercase tracking-[0.16em] text-accent-text">{{ t('landing.promises.kicker') }}</p>
       <h2 class="mt-3 max-w-[20ch] text-display-lg text-ink">{{ t('landing.promises.title') }}</h2>

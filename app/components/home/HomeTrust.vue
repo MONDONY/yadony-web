@@ -18,7 +18,7 @@ const icons = [
 </script>
 
 <template>
-  <section class="bg-sand py-20 sm:py-28">
+  <section class="bg-sand py-14 sm:py-20">
     <UiContainer>
       <div class="grid gap-12 lg:grid-cols-12 lg:items-center">
         <div class="lg:col-span-4">

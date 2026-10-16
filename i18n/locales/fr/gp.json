@@ -43,7 +43,9 @@
             "yadony": "Litige ouvrable sous 15 jours, tranché sous 72 h ouvrées sur preuves"
           }
         ]
-      }
+      },
+      "footerTitle": "GP vérifiés",
+      "footerLabel": "GP {from} {to}"
     },
     "pages": {
       "parisDakar": {

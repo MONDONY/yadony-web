@@ -73,7 +73,7 @@ const faqAccordion = computed(() => faq.map((item, index) => ({ id: `gp-${page.s
       </UiContainer>
     </section>
 
-    <section class="bg-surface py-16 sm:py-24">
+    <section class="bg-surface py-14 sm:py-20">
       <UiContainer>
         <ProseBlock>
           <h2>{{ t('gp.common.whatTitle') }}</h2>
@@ -88,7 +88,7 @@ const faqAccordion = computed(() => faq.map((item, index) => ({ id: `gp-${page.s
       </UiContainer>
     </section>
 
-    <section class="bg-sand py-16 sm:py-24">
+    <section class="bg-sand py-14 sm:py-20">
       <UiContainer>
         <h2 class="text-display-md text-ink">{{ t('gp.common.comparison.title') }}</h2>
         <div class="mt-8 overflow-x-auto rounded-card border border-line bg-surface">
@@ -110,7 +110,7 @@ const faqAccordion = computed(() => faq.map((item, index) => ({ id: `gp-${page.s
           </table>
         </div>
 
-        <h2 class="mt-16 text-display-md text-ink">{{ t('gp.common.howTitle') }}</h2>
+        <h2 class="mt-12 text-display-md text-ink">{{ t('gp.common.howTitle') }}</h2>
         <ol class="mt-8 grid list-none gap-4 sm:grid-cols-2 lg:grid-cols-4">
           <UiReveal v-for="(step, index) in steps" :key="step" as="li" :delay="index * 60" class="rounded-card bg-surface p-6 shadow-sm">
             <span class="grid size-10 place-items-center rounded-full bg-primary font-display font-bold text-white">{{ index + 1 }}</span>
@@ -120,7 +120,7 @@ const faqAccordion = computed(() => faq.map((item, index) => ({ id: `gp-${page.s
       </UiContainer>
     </section>
 
-    <section class="bg-bg py-16 sm:py-24">
+    <section class="bg-bg py-14 sm:py-20">
       <UiContainer>
         <h2 class="text-display-md text-ink">{{ t('gp.common.faqTitle') }}</h2>
         <div class="mt-8 max-w-3xl">

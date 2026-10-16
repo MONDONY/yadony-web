@@ -49,30 +49,29 @@ function onSubmit() {
 
 <template>
   <div>
-    <PageHero :title="t('contact.title')" :lead="t('contact.lead')" />
-    <UiSection tone="white">
+    <PageHero :title="t('contact.title')" :lead="t('contact.lead')" pose="waiting" :pose-alt="t('contact.donyAlt')" />
+    <UiSection tone="sand">
       <UiContainer>
-        <div>
-          <p class="text-sm text-ink-muted">{{ t('contact.emailLabel') }}</p>
-          <a :href="`mailto:${contactEmail}`" class="mt-1 inline-block font-display text-lg font-semibold">{{ contactEmail }}</a>
-        </div>
+        <div class="grid items-start gap-10 lg:grid-cols-12">
+          <div class="lg:col-span-5">
+            <div>
+              <p class="text-sm text-ink-muted">{{ t('contact.emailLabel') }}</p>
+              <a :href="`mailto:${contactEmail}`" class="mt-1 inline-block font-display text-lg font-semibold">{{ contactEmail }}</a>
+            </div>
 
-        <div class="mt-12 grid gap-10 sm:grid-cols-2">
-          <div>
-            <h2 class="text-display-md">{{ t('contact.support.title') }}</h2>
-            <p class="mt-4 max-w-prose text-ink-muted">{{ t('contact.support.text') }}</p>
+            <div class="mt-10 grid gap-8">
+              <div>
+                <h2 class="text-display-md">{{ t('contact.support.title') }}</h2>
+                <p class="mt-4 max-w-prose text-ink-muted">{{ t('contact.support.text') }}</p>
           </div>
           <div>
             <h2 class="text-display-md">{{ t('contact.press.title') }}</h2>
             <p class="mt-4 max-w-prose text-ink-muted">{{ t('contact.press.text') }}</p>
           </div>
         </div>
-      </UiContainer>
-    </UiSection>
+          </div>
 
-    <UiSection tone="sand">
-      <UiContainer>
-        <form class="max-w-xl" novalidate @submit.prevent="onSubmit">
+          <form class="rounded-card bg-surface p-7 shadow-sm sm:p-9 lg:col-span-7" novalidate @submit.prevent="onSubmit">
           <h2 class="text-display-md">{{ t('contact.form.legend') }}</h2>
 
           <div class="mt-8">
@@ -130,6 +129,7 @@ function onSubmit() {
 
           <p class="mt-4 text-sm text-ink-muted">{{ t('contact.form.note') }}</p>
         </form>
+        </div>
       </UiContainer>
     </UiSection>
   </div>

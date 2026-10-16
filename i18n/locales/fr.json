@@ -10,7 +10,9 @@
     "mobileLabel": "Navigation mobile",
     "menu": "Menu",
     "corridors": "Envoyer un colis",
-    "contest": "Concours bêta-testeurs"
+    "contest": "Concours bêta-testeurs",
+    "traveler": "Devenir voyageur",
+    "flights": "Billets d'avion"
   },
   "a11y": {
     "skipToContent": "Aller au contenu",
@@ -286,6 +288,13 @@
         "duration": "Vidéo de 6 min 30, sous-titrée",
         "label": "Tutoriel vidéo : publier un trajet dans l'application Yadony"
       }
+    },
+    "donyAlt": "Dony, la mascotte de Yadony, part en voyage",
+    "more": {
+      "title": "Chaque parcours en détail",
+      "sender": "Le parcours de l'expéditeur",
+      "traveler": "Le parcours du voyageur",
+      "flights": "Les billets d'avion moins chers"
     }
   },
   "pricing": {
@@ -309,6 +318,13 @@
     "comparison": {
       "title": "Le même colis chez un transporteur classique",
       "text": "Cinq kilos Paris → Abidjan démarrent autour de 150 € chez un transporteur international, hors options de délai, contre 40 € plus la commission chez un voyageur à 8 € le kilo. La différence tient à une chose : le voyageur faisait déjà le trajet."
+    },
+    "donyAlt": "Dony, la mascotte de Yadony, pèse un colis",
+    "modes": {
+      "kicker": "Côté voyageur",
+      "title": "Trois façons de fixer son prix",
+      "lead": "Le voyageur choisit sa formule en publiant son trajet : un prix au kilo, un prix ouvert aux propositions, ou une grille de prix par article. L'expéditeur voit la formule avant de réserver.",
+      "cta": "Devenir voyageur"
     }
   },
   "trust": {
@@ -347,7 +363,8 @@
         "title": "Ce que nous ne garantissons pas",
         "text": "Nous ne transportons pas : le colis reste dans le bagage d'un voyageur, soumis aux aléas de son vol et de sa compagnie. Un retard d'avion, une grève ou un contrôle douanier ne relèvent pas de nous. Nous ne fouillons pas les colis à votre place : c'est le voyageur qui vérifie le contenu à la remise, et l'expéditeur qui répond de sa déclaration. Nous ne sommes pas assureur non plus : la commission ne comprend aucune assurance du colis, et un remboursement éventuel reste plafonné. Ce que nous garantissons est plus étroit et plus vérifiable : payé par carte, l'argent n'est pas versé au voyageur tant que la livraison n'est pas confirmée, et un litige est instruit sur des preuves horodatées. Enfin, un envoi convenu en dehors de l'application n'ouvre aucun recours : sans scan et sans paiement passé par la plateforme, il n'y a ni trace ni levier."
       }
-    }
+    },
+    "donyAlt": "Dony, la mascotte de Yadony, tout sourire"
   },
   "about": {
     "seo": {
@@ -362,7 +379,8 @@
       "En face, il y a les transporteurs. Ils sont fiables, ils sont nettement plus chers, et ils ne livrent pas partout. Pour faire parvenir cinq kilos à quelqu'un qu'on connaît, ce n'est pas une solution, c'est un renoncement.",
       "Yadony ne cherche pas à remplacer le voyageur par un camion. Le voyageur existe déjà, il part déjà, sa valise est déjà à moitié vide. Ce qui manquait n'était pas le transport : c'était la trace. Savoir qui porte, quand, et pouvoir le prouver. D'où la vérification d'identité, les scans à chaque étape, les photos horodatées, le code de livraison, et un paiement qui n'arrive au voyageur que quand le colis est dans les mains du destinataire.",
       "Nous sommes partis des trajets que la diaspora fait déjà, entre Paris, Lyon, Marseille et Abidjan, Dakar, Bamako ou Douala, et l'application accepte aujourd'hui n'importe quelle ville de départ et d'arrivée. Nous n'avons pas de chiffres à afficher : nous commençons, et l'application est encore en bêta. Si vous l'utilisez et qu'une chose vous paraît bancale, écrivez-nous. À ce stade, c'est le retour le plus utile qu'on puisse recevoir."
-    ]
+    ],
+    "donyAlt": "Dony, la mascotte de Yadony, fait coucou"
   },
   "contact": {
     "seo": {
@@ -392,7 +410,8 @@
         "email": "Cette adresse email ne semble pas valide.",
         "message": "Décrivez votre demande en quelques lignes."
       }
-    }
+    },
+    "donyAlt": "Dony, la mascotte de Yadony, attend votre message"
   },
   "legal": {
     "mentionsLegales": {
@@ -1281,7 +1300,6 @@
     "terms": "Conditions générales d'utilisation",
     "privacy": "Politique de confidentialité",
     "copyright": "© yadony. Service de mise en relation, pas de transport.",
-    "navTitle": "Explorer",
     "legalTitle": "Légal",
     "cookiesPolicy": "Politique cookies",
     "manageCookies": "Gérer les cookies",
@@ -1293,7 +1311,11 @@
       "line1": "7 avenue Pablo Picasso, 94120 Fontenay-sous-Bois",
       "line2": "SIREN 108 733 510, RCS Créteil"
     },
-    "socialLabel": "Suivez Yadony sur les réseaux"
+    "socialLabel": "Suivez Yadony sur les réseaux",
+    "servicesTitle": "Services",
+    "companyTitle": "Yadony",
+    "destinationsTitle": "Envoyer un colis vers l'Afrique",
+    "routeLabel": "{from} → {to}"
   },
   "error": {
     "seo": {
@@ -1302,7 +1324,8 @@
     },
     "title": "Cette page n'existe pas",
     "lead": "Le lien est peut-être obsolète, ou l'adresse comporte une erreur. Retournez à l'accueil pour continuer votre navigation.",
-    "cta": "Retour à l'accueil"
+    "cta": "Retour à l'accueil",
+    "donyAlt": "Dony, la mascotte de Yadony, cherche la page sans la trouver"
   },
   "cookies": {
     "banner": {

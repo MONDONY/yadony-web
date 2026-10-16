@@ -23,7 +23,7 @@ const base =
 const variants = {
   primary: 'bg-primary text-white shadow-brand hover:bg-primary-hover',
   ghost: 'border border-line text-ink hover:bg-sand',
-  accent: 'bg-accent text-navy-deep hover:bg-accent-hover',
+  accent: 'bg-accent-strong text-white shadow-accent hover:bg-accent-hover',
   light: 'bg-white text-navy hover:bg-sand',
   'ghost-dark': 'border border-white/30 text-white hover:bg-white/10',
   navy: 'bg-navy-deep text-white hover:bg-navy',

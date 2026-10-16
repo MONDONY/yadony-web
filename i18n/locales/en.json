@@ -10,7 +10,9 @@
     "mobileLabel": "Mobile navigation",
     "menu": "Menu",
     "corridors": "Send a parcel",
-    "contest": "Beta tester contest"
+    "contest": "Beta tester contest",
+    "traveler": "Become a traveller",
+    "flights": "Flight deals"
   },
   "a11y": {
     "skipToContent": "Skip to content",
@@ -286,6 +288,13 @@
         "duration": "6 min 30 video, with French subtitles",
         "label": "Video tutorial: posting a trip in the Yadony app"
       }
+    },
+    "donyAlt": "Dony, the Yadony mascot, setting off on a trip",
+    "more": {
+      "title": "Each journey in detail",
+      "sender": "The sender's journey",
+      "traveler": "The traveller's journey",
+      "flights": "Cheaper flights"
     }
   },
   "pricing": {
@@ -309,6 +318,13 @@
     "comparison": {
       "title": "The same parcel with a conventional carrier",
       "text": "Five kilos from Paris to Abidjan start at around 150 euros with an international carrier, before delivery-speed options, against 40 euros plus the fee with a traveller at 8 euros per kilo. The difference comes down to one thing: the traveller was making the trip anyway."
+    },
+    "donyAlt": "Dony, the Yadony mascot, weighing a parcel",
+    "modes": {
+      "kicker": "For travellers",
+      "title": "Three ways to set your price",
+      "lead": "Travellers pick a pricing mode when they publish their trip: a price per kilo, a price open to offers, or a price list per item. Senders see the mode before they book.",
+      "cta": "Become a traveller"
     }
   },
   "trust": {
@@ -347,7 +363,8 @@
         "title": "What we do not guarantee",
         "text": "We do not carry parcels: the parcel stays in a traveller's luggage, subject to the ups and downs of their flight and airline. A flight delay, a strike or a customs check are outside our control. We do not search parcels for you: the traveller checks the contents at handover, and the sender is accountable for their declaration. We are not an insurer either: the fee includes no parcel insurance, and any refund remains capped. What we do guarantee is narrower and easier to verify: paid by card, the money is not released to the traveller until delivery is confirmed, and a dispute is decided on time-stamped evidence. Finally, a shipment arranged outside the app gives no recourse: without scans and without a payment through the platform, there is no record and no leverage."
       }
-    }
+    },
+    "donyAlt": "Dony, the Yadony mascot, all smiles"
   },
   "about": {
     "seo": {
@@ -362,7 +379,8 @@
       "On the other side, there are the carriers. They are reliable, they are considerably more expensive, and they do not deliver everywhere. To get five kilos to someone you know, that is not a solution, it is giving up.",
       "Yadony is not trying to replace the traveller with a lorry. The traveller already exists, is already leaving, and their suitcase is already half empty. What was missing was not transport: it was a record. Knowing who carries what, when, and being able to prove it. Hence identity checks, scans at every step, time-stamped photos, the delivery code, and a payment that only reaches the traveller once the parcel is in the recipient's hands.",
       "We started from the trips the diaspora already makes, between Paris, Lyon, Marseille and Abidjan, Dakar, Bamako or Douala, and the app now accepts any departure and arrival city. We have no numbers to show off: we are just starting, and the app is still in beta. If you use it and something feels off, write to us. At this stage, it is the most useful feedback we could get."
-    ]
+    ],
+    "donyAlt": "Dony, the Yadony mascot, waving hello"
   },
   "contact": {
     "seo": {
@@ -392,7 +410,8 @@
         "email": "This email address does not look valid.",
         "message": "Describe your request in a few lines."
       }
-    }
+    },
+    "donyAlt": "Dony, the Yadony mascot, waiting for your message"
   },
   "legal": {
     "mentionsLegales": {
@@ -1281,7 +1300,6 @@
     "terms": "Terms of use",
     "privacy": "Privacy policy",
     "copyright": "© yadony. A matching service, not a carrier.",
-    "navTitle": "Explore",
     "legalTitle": "Legal",
     "cookiesPolicy": "Cookie policy",
     "manageCookies": "Manage cookies",
@@ -1293,7 +1311,11 @@
       "line1": "7 avenue Pablo Picasso, 94120 Fontenay-sous-Bois",
       "line2": "SIREN 108 733 510, Créteil Trade Register"
     },
-    "socialLabel": "Follow Yadony on social media"
+    "socialLabel": "Follow Yadony on social media",
+    "servicesTitle": "Services",
+    "companyTitle": "Yadony",
+    "destinationsTitle": "Send a parcel to Africa",
+    "routeLabel": "{from} → {to}"
   },
   "error": {
     "seo": {
@@ -1302,7 +1324,8 @@
     },
     "title": "This page does not exist",
     "lead": "The link may be outdated, or the address may contain a typo. Head back to the homepage to keep browsing.",
-    "cta": "Back to homepage"
+    "cta": "Back to homepage",
+    "donyAlt": "Dony, the Yadony mascot, looking for a page it cannot find"
   },
   "cookies": {
     "banner": {

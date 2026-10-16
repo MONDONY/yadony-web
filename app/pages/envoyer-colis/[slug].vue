@@ -92,7 +92,7 @@ const faqAccordion = computed(() => faqItems.map((item, index) => ({ id: `${corr
       </UiContainer>
     </section>
 
-    <section class="bg-surface py-16 sm:py-24">
+    <section class="bg-surface py-14 sm:py-20">
       <UiContainer>
         <div class="grid gap-12 lg:grid-cols-12">
           <ProseBlock class="lg:col-span-8">
@@ -115,14 +115,14 @@ const faqAccordion = computed(() => faqItems.map((item, index) => ({ id: `${corr
       </UiContainer>
     </section>
 
-    <section class="bg-bg py-16 sm:py-24">
+    <section class="bg-bg py-14 sm:py-20">
       <UiContainer>
         <h2 class="max-w-[24ch] text-display-md text-ink">{{ t('corridorPages.common.faqTitle') }}</h2>
         <div class="mt-8 max-w-3xl">
           <UiAccordion :items="faqAccordion" />
         </div>
 
-        <h2 class="mt-16 font-display text-xl font-bold text-ink">{{ t('corridorPages.common.othersTitle') }}</h2>
+        <h2 class="mt-12 font-display text-xl font-bold text-ink">{{ t('corridorPages.common.othersTitle') }}</h2>
         <ul class="mt-5 flex list-none flex-wrap gap-3">
           <li v-for="other in others" :key="other.slug">
             <NuxtLink

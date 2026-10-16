@@ -7,7 +7,7 @@ const { list } = useTexts()
 </script>
 
 <template>
-  <section class="overflow-hidden bg-bg py-20 sm:py-24">
+  <section class="overflow-hidden bg-bg py-14 sm:py-20">
     <UiContainer>
       <div class="max-w-2xl">
         <p class="font-display text-sm font-bold uppercase tracking-[0.16em] text-accent-text">{{ t('landing.payments.kicker') }}</p>

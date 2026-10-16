@@ -86,6 +86,11 @@ const properNounPaths = [
   'footer.company.name',
   'footer.company.line2',
   'footer.proTitle',
+  // « Services » s'écrit pareil, « Yadony » est le nom de la marque, et le
+  // libellé d'un trajet n'est qu'un gabarit « {from} → {to} ».
+  'footer.servicesTitle',
+  'footer.companyTitle',
+  'footer.routeLabel',
   // Un numéral seul s'écrit pareil dans les deux langues.
   'home.hero.stats.scans.figure',
   'home.trust.code.figure',

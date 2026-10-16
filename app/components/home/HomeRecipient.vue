@@ -12,7 +12,7 @@ const { inView } = useInView(scene, { once: true })
 </script>
 
 <template>
-  <section class="bg-navy py-20 text-white sm:py-28">
+  <section class="bg-navy py-14 text-white sm:py-20">
     <UiContainer>
       <div class="grid gap-14 lg:grid-cols-2 lg:items-center">
         <div>

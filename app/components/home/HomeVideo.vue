@@ -5,7 +5,7 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <section id="en-une-minute" class="scroll-mt-24 bg-navy-deep py-20 text-white sm:py-28">
+  <section id="en-une-minute" class="scroll-mt-24 bg-navy-deep py-14 text-white sm:py-20">
     <UiContainer>
       <div class="grid items-center gap-12 lg:grid-cols-12">
         <div class="lg:col-span-6">

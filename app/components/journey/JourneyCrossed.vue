@@ -13,7 +13,7 @@ const actorLabel = (actor: JourneyStep['actor']) => t(`landing.crossed.actors.${
 </script>
 
 <template>
-  <section class="bg-surface py-20 sm:py-28">
+  <section class="bg-surface py-14 sm:py-20">
     <UiContainer>
       <div class="max-w-3xl">
         <p class="font-display text-sm font-bold uppercase tracking-[0.16em] text-accent-text">{{ t('landing.crossed.kicker') }}</p>

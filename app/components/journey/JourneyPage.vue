@@ -87,7 +87,7 @@ const stepLabel = (n: number) => t('journeys.common.stepLabel', { n })
       </UiContainer>
     </section>
 
-    <section class="bg-surface py-16 sm:py-24">
+    <section class="bg-surface py-14 sm:py-20">
       <UiContainer>
         <JourneyScene :steps="props.steps" :texts="stepTexts" :label="t(`${base}.listLabel`)" :step-label="stepLabel" />
       </UiContainer>
@@ -95,7 +95,7 @@ const stepLabel = (n: number) => t('journeys.common.stepLabel', { n })
 
     <slot />
 
-    <section v-if="video" class="bg-navy-deep py-20 text-white sm:py-24">
+    <section v-if="video" class="bg-navy-deep py-14 text-white sm:py-20">
       <UiContainer>
         <div class="grid items-center gap-12 lg:grid-cols-2">
           <div>
@@ -116,7 +116,7 @@ const stepLabel = (n: number) => t('journeys.common.stepLabel', { n })
       </UiContainer>
     </section>
 
-    <section class="bg-bg py-20 sm:py-24">
+    <section class="bg-bg py-14 sm:py-20">
       <UiContainer>
         <h2 class="text-display-md text-ink">{{ t('journeys.common.faqTitle') }}</h2>
         <div class="mt-8 max-w-3xl">

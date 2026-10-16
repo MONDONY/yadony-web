@@ -8,7 +8,7 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <section id="telecharger" class="scroll-mt-24 overflow-hidden bg-navy-deep py-20 text-white sm:py-28">
+  <section id="telecharger" class="scroll-mt-24 overflow-hidden bg-navy-deep py-14 text-white sm:py-20">
     <UiContainer>
       <div class="grid items-center gap-12 lg:grid-cols-12">
         <div class="relative lg:col-span-7">

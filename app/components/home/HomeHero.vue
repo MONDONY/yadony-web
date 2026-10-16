@@ -30,7 +30,7 @@ function resumeIfAuto() {
     <div class="pointer-events-none absolute -right-40 -top-40 size-[640px] rounded-full bg-primary-soft" aria-hidden="true" />
     <div class="pointer-events-none absolute -bottom-24 left-1/3 size-48 rounded-full bg-accent-soft" aria-hidden="true" />
     <UiContainer>
-      <div class="relative grid items-center gap-12 py-14 sm:py-20 lg:grid-cols-12 lg:gap-8 lg:py-24">
+      <div class="relative grid items-center gap-12 py-14 sm:py-20 lg:grid-cols-12 lg:gap-8 lg:py-16">
         <div class="lg:col-span-7">
           <p class="inline-flex items-center gap-2 rounded-pill bg-surface px-3.5 py-1.5 text-sm font-semibold text-accent-text shadow-xs">
             <span class="size-2 rounded-full bg-accent" aria-hidden="true" />

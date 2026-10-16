@@ -18,7 +18,7 @@ const localePath = useLocalePath()
     :video="{ src: '/video/tuto-envoyer-colis.mp4', poster: '/video/tuto-envoyer-colis-poster.jpg' }"
   >
     <HomeRecipient />
-    <section class="bg-surface py-20 sm:py-24">
+    <section class="bg-surface py-14 sm:py-20">
       <UiContainer>
         <h2 class="text-display-md text-ink">{{ t('journeys.sender.corridorsTitle') }}</h2>
         <ul class="mt-8 grid list-none gap-4 sm:grid-cols-2 lg:grid-cols-3">

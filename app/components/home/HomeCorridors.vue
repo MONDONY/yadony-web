@@ -13,7 +13,7 @@ const { inView } = useInView(map, { once: true })
 </script>
 
 <template>
-  <section class="bg-surface py-20 sm:py-28">
+  <section class="bg-surface py-14 sm:py-20">
     <UiContainer>
       <div class="grid gap-12 lg:grid-cols-12 lg:items-center">
         <div class="lg:col-span-7">

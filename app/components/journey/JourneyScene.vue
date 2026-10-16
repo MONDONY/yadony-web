@@ -23,7 +23,7 @@ const actorTone = {
   <UiScrollScene :count="steps.length" :label="label">
     <template #step="{ index, active }">
       <div
-        class="border-l-4 pl-5 transition-colors duration-slow ease-dony lg:max-w-md"
+        class="border-l-4 pl-5 transition-colors duration-slow ease-dony lg:max-w-xl"
         :class="active ? 'border-primary' : 'border-line'"
       >
         <p class="flex flex-wrap items-center gap-2 text-sm font-semibold">

@@ -10,12 +10,12 @@ describe('buildSeoMeta', () => {
   }
 
   it('suffixe le titre avec le nom du site', () => {
-    expect(buildSeoMeta(input).title).toBe('Tarifs | yadony')
+    expect(buildSeoMeta(input).title).toBe('Tarifs | Yadony')
   })
 
   it('ne suffixe pas deux fois la page d’accueil', () => {
-    const meta = buildSeoMeta({ ...input, title: 'yadony', path: '/' })
-    expect(meta.title).toBe('yadony')
+    const meta = buildSeoMeta({ ...input, title: 'Yadony', path: '/' })
+    expect(meta.title).toBe('Yadony')
   })
 
   it('reprend la description en og:description', () => {

@@ -1,4 +1,4 @@
-export const siteName = 'yadony'
+export const siteName = 'Yadony'
 export const siteUrl = 'https://yadony.com'
 export const contactEmail = 'contact@yadony.com'
 

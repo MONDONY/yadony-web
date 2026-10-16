@@ -31,7 +31,7 @@ export default defineNuxtConfig({
     vueI18n: './i18n.config.ts',
   },
   ssr: true,
-  site: { url: 'https://yadony.com', name: 'yadony' },
+  site: { url: 'https://yadony.com', name: 'Yadony' },
   sitemap: {
     autoLastmod: false,
     // /classement : page temporaire du concours, en noindex (prénoms affichés).
@@ -60,6 +60,15 @@ export default defineNuxtConfig({
   },
   nitro: {
     prerender: {
+      // Une page = un fichier `tarifs.html`, jamais `tarifs/index.html`.
+      // Cloudflare Pages sert un dossier `tarifs/` en redirigeant (308)
+      // `/tarifs` vers `/tarifs/`, alors que le sitemap, les hreflang et la
+      // canonical publient `/tarifs` : chaque URL du sitemap redirigeait vers
+      // une page dont la canonical pointait sur la redirection. Google ne
+      // trouvait aucune adresse stable et laissait 30 pages sur 42 en
+      // « Détectée, actuellement non indexée ». Avec un fichier `.html`,
+      // Cloudflare sert `/tarifs` en 200 et redirige `/tarifs/` vers `/tarifs`.
+      autoSubfolderIndex: false,
       crawlLinks: true,
       // /parrainage n'est lié depuis aucune page : cible du lien de
       // parrainage partagé par l'app (via /r/{code}, cf. public/_redirects),

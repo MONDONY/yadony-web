@@ -26,7 +26,7 @@
   "home": {
     "seo": {
       "title": "Send a parcel to Africa with a verified traveller",
-      "description": "yadony connects travellers with spare luggage room and senders from the diaspora. Verified identity, payment held until delivery, handover validated with a code."
+      "description": "Yadony connects travellers with spare luggage room and senders from the diaspora. Verified identity, payment held until delivery, handover validated with a code."
     },
     "hero": {
       "title": "Your parcel travels with someone you can trust",
@@ -35,7 +35,7 @@
       "appStore": "Download on the App Store",
       "playStore": "Get it on Google Play",
       "video": {
-        "description": "Walkthrough of the yadony app: finding travellers near you on the map, negotiating the price of a trip, money held until delivery, a parcel scanned at every step.",
+        "description": "Walkthrough of the Yadony app: finding travellers near you on the map, negotiating the price of a trip, money held until delivery, a parcel scanned at every step.",
         "play": "Play the video",
         "pause": "Pause the video"
       },
@@ -77,7 +77,7 @@
           "recourse": "Contractual"
         },
         "yadony": {
-          "channel": "yadony",
+          "channel": "Yadony",
           "price": "Set by the traveller",
           "tracking": "QR scan at every step",
           "recourse": "Held payment and disputes"
@@ -215,7 +215,7 @@
   },
   "howItWorks": {
     "seo": {
-      "title": "How to send or carry a parcel with yadony",
+      "title": "How to send or carry a parcel with Yadony",
       "description": "The five steps of a shipment, on the sender's side and on the traveller's side: posting, matching, scanned handover, carriage, confirmed delivery and released payment."
     },
     "title": "Two journeys, five steps each",
@@ -225,7 +225,7 @@
       "kicker": "In one minute",
       "title": "A parcel's journey, from Paris to Abidjan",
       "lead": "From finding a traveller to the handover against the delivery code: the whole journey of a shipment, step by step, in one minute.",
-      "videoLabel": "Animated video: a parcel's journey from Paris to Abidjan with yadony"
+      "videoLabel": "Animated video: a parcel's journey from Paris to Abidjan with Yadony"
     },
     "expediteur": {
       "tab": "I am a sender",
@@ -254,7 +254,7 @@
       "video": {
         "title": "Tutorial: sending a parcel",
         "duration": "3 min 20 video, with French subtitles",
-        "label": "Video tutorial: posting a parcel request in the yadony app"
+        "label": "Video tutorial: posting a parcel request in the Yadony app"
       }
     },
     "voyageur": {
@@ -284,13 +284,13 @@
       "video": {
         "title": "Tutorial: posting a trip",
         "duration": "6 min 30 video, with French subtitles",
-        "label": "Video tutorial: posting a trip in the yadony app"
+        "label": "Video tutorial: posting a trip in the Yadony app"
       }
     }
   },
   "pricing": {
     "seo": {
-      "title": "yadony pricing: one transparent commission, nothing else",
+      "title": "Yadony pricing: one transparent commission, nothing else",
       "description": "The traveller sets their price per kilo; a service fee is added on top and shown before every payment. Worked example for a 5 kg parcel from Paris to Abidjan."
     },
     "title": "The traveller sets the price. The commission is transparent.",
@@ -314,7 +314,7 @@
   "trust": {
     "seo": {
       "title": "Trust and safety: verified identity, escrow payment, disputes",
-      "description": "How yadony secures a parcel between individuals: identity checks with Didit, payment held until delivery, a 6-digit handover code, a dispute process and data handling."
+      "description": "How Yadony secures a parcel between individuals: identity checks with Didit, payment held until delivery, a 6-digit handover code, a dispute process and data handling."
     },
     "title": "What the platform guarantees, and what it does not",
     "lead": "This page describes the mechanisms in place, without dressing them up. If something here looks insufficient to you, write to us: it is more useful to say so now than to find out when something goes wrong.",
@@ -351,8 +351,8 @@
   },
   "about": {
     "seo": {
-      "title": "About yadony",
-      "description": "Why we built yadony: the story of a problem the diaspora has been solving for thirty years in WhatsApp groups, with no record of any of it."
+      "title": "About Yadony",
+      "description": "Why we built Yadony: the story of a problem the diaspora has been solving for thirty years in WhatsApp groups, with no record of any of it."
     },
     "title": "Why we ended up building it",
     "paragraphs": [
@@ -360,13 +360,13 @@
       "It happens in a WhatsApp group of two hundred people. Someone answers, you swap numbers, you meet on a Saturday in a car park. You hand a box to a stranger vouched for by a cousin, you pay in cash, and you wait. Most of the time, it works. It works remarkably well, in fact: that is how clothes, school supplies, spare parts and presents have been moving for thirty years.",
       "The problem only shows up the day it does not work. The parcel does not arrive. The number stops answering. There is no record, no proof of handover, no receipt, nobody to call. You cannot even say what happened: lost, forgotten, kept. And because the person was doing you a favour, you do not dare push. You lose the parcel, and often you lose the relationship as well.",
       "On the other side, there are the carriers. They are reliable, they are considerably more expensive, and they do not deliver everywhere. To get five kilos to someone you know, that is not a solution, it is giving up.",
-      "yadony is not trying to replace the traveller with a lorry. The traveller already exists, is already leaving, and their suitcase is already half empty. What was missing was not transport: it was a record. Knowing who carries what, when, and being able to prove it. Hence identity checks, scans at every step, time-stamped photos, the delivery code, and a payment that only reaches the traveller once the parcel is in the recipient's hands.",
+      "Yadony is not trying to replace the traveller with a lorry. The traveller already exists, is already leaving, and their suitcase is already half empty. What was missing was not transport: it was a record. Knowing who carries what, when, and being able to prove it. Hence identity checks, scans at every step, time-stamped photos, the delivery code, and a payment that only reaches the traveller once the parcel is in the recipient's hands.",
       "We started from the trips the diaspora already makes, between Paris, Lyon, Marseille and Abidjan, Dakar, Bamako or Douala, and the app now accepts any departure and arrival city. We have no numbers to show off: we are just starting, and the app is still in beta. If you use it and something feels off, write to us. At this stage, it is the most useful feedback we could get."
     ]
   },
   "contact": {
     "seo": {
-      "title": "Contact yadony",
+      "title": "Contact Yadony",
       "description": "User support, press and partnerships: who to write to, what to include, and which channel gets you an answer fastest."
     },
     "title": "Write to us",
@@ -416,7 +416,7 @@
         },
         "ip": {
           "title": "Intellectual property",
-          "text": "The yadony trade mark, the logo, the visual identity, the texts and the app screenshots are the property of the publishing company. Any reproduction, even partial, without prior written permission is prohibited. Quotation in a journalistic context remains permitted, provided the source is named."
+          "text": "The Yadony trade mark, the logo, the visual identity, the texts and the app screenshots are the property of the publishing company. Any reproduction, even partial, without prior written permission is prohibited. Quotation in a journalistic context remains permitted, provided the source is named."
         },
         "liability": {
           "title": "Liability",
@@ -1274,7 +1274,7 @@
     }
   },
   "footer": {
-    "pitch": "yadony connects travellers who have room in their suitcase with people who have a parcel to send. Verified identity, scans at every step, payment released on delivery.",
+    "pitch": "Yadony connects travellers who have room in their suitcase with people who have a parcel to send. Verified identity, scans at every step, payment released on delivery.",
     "navLabel": "Footer navigation",
     "legalLabel": "Legal information",
     "legalNotice": "Legal notice",
@@ -1508,10 +1508,10 @@
   "contest": {
     "seo": {
       "title": "Beta tester contest leaderboard",
-      "description": "Live leaderboard of the yadony app beta tester contest, with the points table."
+      "description": "Live leaderboard of the Yadony app beta tester contest, with the points table."
     },
     "eyebrow": "Beta tester contest",
-    "title": "The yadony tester leaderboard",
+    "title": "The Yadony tester leaderboard",
     "lead": "Every test you complete in the app earns points, from 20 to 100 depending on how critical it is. Bugs, reviews and ideas count once the team has handled them.",
     "status": {
       "bientot": "Coming soon",

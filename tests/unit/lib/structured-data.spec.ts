@@ -5,7 +5,7 @@ describe('organizationJsonLd', () => {
   it('déclare une Organization avec son URL et son logo', () => {
     const data = organizationJsonLd() as Record<string, unknown>
     expect(data['@type']).toBe('Organization')
-    expect(data.name).toBe('yadony')
+    expect(data.name).toBe('Yadony')
     expect(data.url).toBe('https://yadony.com')
     expect(data.logo).toBe('https://yadony.com/logos/logo-yadony.png')
   })

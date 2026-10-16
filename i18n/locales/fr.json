@@ -26,7 +26,7 @@
   "home": {
     "seo": {
       "title": "Envoyer un colis en Afrique, par un voyageur vérifié",
-      "description": "yadony met en relation les voyageurs qui ont de la place dans leur valise et les expéditeurs de la diaspora. Identité vérifiée, paiement bloqué jusqu'à la livraison, remise validée par un code."
+      "description": "Yadony met en relation les voyageurs qui ont de la place dans leur valise et les expéditeurs de la diaspora. Identité vérifiée, paiement bloqué jusqu'à la livraison, remise validée par un code."
     },
     "hero": {
       "title": "Votre colis part avec quelqu'un de confiance",
@@ -35,7 +35,7 @@
       "appStore": "Télécharger sur l'App Store",
       "playStore": "Disponible sur Google Play",
       "video": {
-        "description": "Vidéo de présentation de l'application yadony : recherche des voyageurs autour de vous sur la carte, négociation du prix d'un trajet, argent bloqué jusqu'à la livraison, colis scanné à chaque étape.",
+        "description": "Vidéo de présentation de l'application Yadony : recherche des voyageurs autour de vous sur la carte, négociation du prix d'un trajet, argent bloqué jusqu'à la livraison, colis scanné à chaque étape.",
         "play": "Lire la vidéo",
         "pause": "Mettre la vidéo en pause"
       },
@@ -77,7 +77,7 @@
           "recourse": "Contractuel"
         },
         "yadony": {
-          "channel": "yadony",
+          "channel": "Yadony",
           "price": "Fixé par le voyageur",
           "tracking": "QR à chaque étape",
           "recourse": "Paiement bloqué et litige"
@@ -215,7 +215,7 @@
   },
   "howItWorks": {
     "seo": {
-      "title": "Comment envoyer ou transporter un colis avec yadony",
+      "title": "Comment envoyer ou transporter un colis avec Yadony",
       "description": "Les cinq étapes d'un envoi, côté expéditeur et côté voyageur : publication, mise en relation, dépôt scanné, transport, livraison confirmée et paiement libéré."
     },
     "title": "Deux parcours, cinq étapes chacun",
@@ -225,7 +225,7 @@
       "kicker": "En une minute",
       "title": "Le voyage d'un colis, de Paris à Abidjan",
       "lead": "De la recherche d'un voyageur à la remise contre le code de livraison : tout le parcours d'un envoi, étape par étape, en une minute.",
-      "videoLabel": "Vidéo animée : le voyage d'un colis de Paris à Abidjan avec yadony"
+      "videoLabel": "Vidéo animée : le voyage d'un colis de Paris à Abidjan avec Yadony"
     },
     "expediteur": {
       "tab": "Je suis expéditeur",
@@ -254,7 +254,7 @@
       "video": {
         "title": "Le tutoriel : envoyer un colis",
         "duration": "Vidéo de 3 min 20, sous-titrée",
-        "label": "Tutoriel vidéo : publier une demande d'envoi de colis dans l'application yadony"
+        "label": "Tutoriel vidéo : publier une demande d'envoi de colis dans l'application Yadony"
       }
     },
     "voyageur": {
@@ -284,13 +284,13 @@
       "video": {
         "title": "Le tutoriel : publier un trajet",
         "duration": "Vidéo de 6 min 30, sous-titrée",
-        "label": "Tutoriel vidéo : publier un trajet dans l'application yadony"
+        "label": "Tutoriel vidéo : publier un trajet dans l'application Yadony"
       }
     }
   },
   "pricing": {
     "seo": {
-      "title": "Tarifs yadony : une commission transparente, rien d'autre",
+      "title": "Tarifs Yadony : une commission transparente, rien d'autre",
       "description": "Le voyageur fixe son prix au kilo ; une commission de service s'y ajoute, affichée avant chaque paiement. Exemple chiffré pour un colis de 5 kg Paris → Abidjan."
     },
     "title": "Le voyageur fixe son prix. La commission est transparente.",
@@ -314,7 +314,7 @@
   "trust": {
     "seo": {
       "title": "Sécurité : identité vérifiée, paiement séquestre, litiges",
-      "description": "Comment yadony sécurise un envoi entre particuliers : vérification d'identité avec Didit, paiement bloqué jusqu'à la livraison, code de remise à 6 chiffres, procédure de litige et traitement des données."
+      "description": "Comment Yadony sécurise un envoi entre particuliers : vérification d'identité avec Didit, paiement bloqué jusqu'à la livraison, code de remise à 6 chiffres, procédure de litige et traitement des données."
     },
     "title": "Ce que la plateforme garantit, et ce qu'elle ne garantit pas",
     "lead": "Cette page décrit les mécanismes en place, sans les enjoliver. Si un point vous paraît insuffisant, écrivez-nous : c'est plus utile de le dire maintenant que de le découvrir au moment d'un problème.",
@@ -351,8 +351,8 @@
   },
   "about": {
     "seo": {
-      "title": "À propos de yadony",
-      "description": "Pourquoi nous avons construit yadony : le récit d'un problème que la diaspora règle depuis trente ans dans des groupes WhatsApp, sans aucune trace."
+      "title": "À propos de Yadony",
+      "description": "Pourquoi nous avons construit Yadony : le récit d'un problème que la diaspora règle depuis trente ans dans des groupes WhatsApp, sans aucune trace."
     },
     "title": "Pourquoi on a fini par le construire",
     "paragraphs": [
@@ -360,13 +360,13 @@
       "Ça se passe dans un groupe WhatsApp de deux cents personnes. Quelqu'un répond, on échange un numéro, on se retrouve un samedi sur un parking. On confie un carton à un inconnu recommandé par un cousin, on paie en liquide, et on attend. La plupart du temps, ça marche. Ça marche même remarquablement bien : c'est comme ça que circulent les vêtements, le matériel scolaire, les pièces détachées et les cadeaux depuis trente ans.",
       "Le problème n'apparaît que le jour où ça ne marche pas. Le colis n'arrive pas. Le numéro ne répond plus. Il n'y a pas de trace, pas de preuve de remise, pas de reçu, personne à appeler. On ne peut même pas dire ce qui s'est passé : perdu, oublié, gardé. Et comme la personne rendait service, on n'ose pas insister. On perd le colis, et souvent on perd aussi la relation.",
       "En face, il y a les transporteurs. Ils sont fiables, ils sont nettement plus chers, et ils ne livrent pas partout. Pour faire parvenir cinq kilos à quelqu'un qu'on connaît, ce n'est pas une solution, c'est un renoncement.",
-      "yadony ne cherche pas à remplacer le voyageur par un camion. Le voyageur existe déjà, il part déjà, sa valise est déjà à moitié vide. Ce qui manquait n'était pas le transport : c'était la trace. Savoir qui porte, quand, et pouvoir le prouver. D'où la vérification d'identité, les scans à chaque étape, les photos horodatées, le code de livraison, et un paiement qui n'arrive au voyageur que quand le colis est dans les mains du destinataire.",
+      "Yadony ne cherche pas à remplacer le voyageur par un camion. Le voyageur existe déjà, il part déjà, sa valise est déjà à moitié vide. Ce qui manquait n'était pas le transport : c'était la trace. Savoir qui porte, quand, et pouvoir le prouver. D'où la vérification d'identité, les scans à chaque étape, les photos horodatées, le code de livraison, et un paiement qui n'arrive au voyageur que quand le colis est dans les mains du destinataire.",
       "Nous sommes partis des trajets que la diaspora fait déjà, entre Paris, Lyon, Marseille et Abidjan, Dakar, Bamako ou Douala, et l'application accepte aujourd'hui n'importe quelle ville de départ et d'arrivée. Nous n'avons pas de chiffres à afficher : nous commençons, et l'application est encore en bêta. Si vous l'utilisez et qu'une chose vous paraît bancale, écrivez-nous. À ce stade, c'est le retour le plus utile qu'on puisse recevoir."
     ]
   },
   "contact": {
     "seo": {
-      "title": "Contacter yadony",
+      "title": "Contacter Yadony",
       "description": "Support utilisateur, presse et partenariats : à qui écrire, ce qu'il faut indiquer, et par quel canal la réponse arrive le plus vite."
     },
     "title": "Nous écrire",
@@ -416,7 +416,7 @@
         },
         "ip": {
           "title": "Propriété intellectuelle",
-          "text": "La marque yadony, le logo, la charte graphique, les textes et les captures d'écran de l'application sont la propriété de la société éditrice. Toute reproduction, même partielle, sans autorisation écrite préalable est interdite. Les citations dans un cadre journalistique restent libres, sous réserve de mentionner la source."
+          "text": "La marque Yadony, le logo, la charte graphique, les textes et les captures d'écran de l'application sont la propriété de la société éditrice. Toute reproduction, même partielle, sans autorisation écrite préalable est interdite. Les citations dans un cadre journalistique restent libres, sous réserve de mentionner la source."
         },
         "liability": {
           "title": "Responsabilité",
@@ -1274,7 +1274,7 @@
     }
   },
   "footer": {
-    "pitch": "yadony met en relation les voyageurs qui ont de la place dans leur valise et les personnes qui ont un colis à faire partir. Identité vérifiée, scans à chaque étape, paiement libéré à la livraison.",
+    "pitch": "Yadony met en relation les voyageurs qui ont de la place dans leur valise et les personnes qui ont un colis à faire partir. Identité vérifiée, scans à chaque étape, paiement libéré à la livraison.",
     "navLabel": "Navigation du pied de page",
     "legalLabel": "Informations légales",
     "legalNotice": "Mentions légales",
@@ -1508,10 +1508,10 @@
   "contest": {
     "seo": {
       "title": "Classement du concours bêta-testeurs",
-      "description": "Le classement en direct du concours des bêta-testeurs de l'application yadony, et le barème des points."
+      "description": "Le classement en direct du concours des bêta-testeurs de l'application Yadony, et le barème des points."
     },
     "eyebrow": "Concours bêta-testeurs",
-    "title": "Le classement des testeurs yadony",
+    "title": "Le classement des testeurs Yadony",
     "lead": "Chaque test réalisé dans l'application rapporte des points, de 20 à 100 selon son importance. Les bugs, avis et suggestions comptent une fois traités par l'équipe.",
     "status": {
       "bientot": "Bientôt",

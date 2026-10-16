@@ -17,7 +17,7 @@ const largest = computed(() => {
 </script>
 
 <template>
-  <picture>
+  <picture class="block">
     <source type="image/avif" :srcset="srcset(image.base, 'avif', image.kind)" :sizes="sizes">
     <source type="image/webp" :srcset="srcset(image.base, 'webp', image.kind)" :sizes="sizes">
     <img

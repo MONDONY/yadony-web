@@ -78,10 +78,6 @@
       "width": 768,
       "height": 768
     },
-    "handover": {
-      "width": 1254,
-      "height": 1254
-    },
     "hello": {
       "width": 768,
       "height": 768
@@ -89,10 +85,6 @@
     "no-result": {
       "width": 768,
       "height": 768
-    },
-    "publish": {
-      "width": 1254,
-      "height": 1254
     },
     "search": {
       "width": 768,

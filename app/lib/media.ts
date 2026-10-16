@@ -36,7 +36,7 @@ export const APP_SCREEN_IDS = [
 ] as const
 export type AppScreenId = (typeof APP_SCREEN_IDS)[number]
 
-// Poses existantes (dony_app/assets/mascotte) et poses demandées au
+// Poses détourées existantes (dony_app/assets/mascotte) et poses demandées au
 // propriétaire. Une pose absente du manifeste retombe sur sa pose de repli :
 // déposer le fichier dans assets-src/dony/ puis lancer `pnpm images` suffit.
 const POSE_FALLBACKS = {
@@ -48,8 +48,6 @@ const POSE_FALLBACKS = {
   celebration: 'celebration',
   welcome: 'welcome',
   'no-result': 'no-result',
-  publish: 'publish',
-  handover: 'handover',
   'price-alert': 'search',
   ticket: 'travel',
   scale: 'success',

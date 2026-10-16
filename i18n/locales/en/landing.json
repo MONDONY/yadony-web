@@ -8,7 +8,11 @@
       "kicker": "Parcels, kilos and flights to Africa",
       "title": "Your trip home, paid for.",
       "lead": "Cheaper flights, kilos sold, parcels delivered safely. It is all in Yadony, the app that brings the diaspora and travellers together.",
-      "chips": ["Cheaper flights", "Kilos sold", "Parcels delivered"],
+      "chips": [
+        "Cheaper flights",
+        "Kilos sold",
+        "Parcels delivered"
+      ],
       "videoCta": "Yadony in 1 minute",
       "note": "Free on iPhone and Android. Payment held until delivery.",
       "screensAlt": [
@@ -98,14 +102,27 @@
           "detail": "Paris – Dakar · the cheapest one is now under your budget"
         },
         "priceModes": [
-          { "title": "Per kilo", "example": "8 € per kilo" },
-          { "title": "Negotiable", "example": "Make me an offer" },
-          { "title": "Per item", "example": "Phone 20 € · Laptop 40 €" }
+          {
+            "title": "Per kilo",
+            "example": "8 € per kilo"
+          },
+          {
+            "title": "Negotiable",
+            "example": "Make me an offer"
+          },
+          {
+            "title": "Per item",
+            "example": "Phone 20 € · Laptop 40 €"
+          }
         ],
         "negotiation": {
           "sender": "Moussa",
           "traveler": "Awa",
-          "messages": ["I can offer 60 €", "Counter-offer: 70 €", "Shall we say 65 €?"],
+          "messages": [
+            "I can offer 60 €",
+            "Counter-offer: 70 €",
+            "Shall we say 65 €?"
+          ],
           "agreed": "Agreed at 65 €"
         },
         "padlock": {
@@ -113,8 +130,16 @@
           "locked": "Held until delivery",
           "released": "Paid to Awa"
         },
-        "route": { "from": "Paris", "to": "Dakar" },
-        "timeline": ["Handed over", "In the air", "Arrived", "Delivered"]
+        "route": {
+          "from": "Paris",
+          "to": "Dakar"
+        },
+        "timeline": [
+          "Handed over",
+          "In the air",
+          "Arrived",
+          "Delivered"
+        ]
       }
     },
     "trust": {
@@ -122,10 +147,22 @@
       "title": "What WhatsApp groups were missing",
       "lead": "The traveller was already there. Yadony adds the record: who is carrying it, when, and proof at every step.",
       "items": [
-        { "title": "Verified identity", "text": "ID document and selfie checked before anything is posted. The name you see is the verified name." },
-        { "title": "Payment held", "text": "The money waits for delivery. If there is a dispute, it stays on hold while the case is reviewed." },
-        { "title": "Proof at every step", "text": "QR code scan, time-stamped and geotagged photo, at handover and in transit." },
-        { "title": "Delivery code", "text": "The parcel is only handed over against the 6-digit code that only your recipient knows." }
+        {
+          "title": "Verified identity",
+          "text": "ID document and selfie checked before anything is posted. The name you see is the verified name."
+        },
+        {
+          "title": "Payment held",
+          "text": "The money waits for delivery. If there is a dispute, it stays on hold while the case is reviewed."
+        },
+        {
+          "title": "Proof at every step",
+          "text": "QR code scan, time-stamped and geotagged photo, at handover and in transit."
+        },
+        {
+          "title": "Delivery code",
+          "text": "The parcel is only handed over against the 6-digit code that only your recipient knows."
+        }
       ],
       "cta": "All about safety",
       "donyAlt": "Dony, the Yadony mascot, all smiles"
@@ -134,7 +171,15 @@
       "kicker": "Payment",
       "title": "Pay the way you do at home",
       "lead": "Bank card in Europe and North America, mobile money in West and Central Africa, the Yadony wallet everywhere.",
-      "items": ["Bank card", "Wave", "Orange Money", "MTN MoMo", "Moov Money", "Yadony wallet", "Cash"],
+      "items": [
+        "Bank card",
+        "Wave",
+        "Orange Money",
+        "MTN MoMo",
+        "Moov Money",
+        "Yadony wallet",
+        "Cash"
+      ],
       "note": "Cash is still an option, but without the held payment: the protection only applies to payments made in the app."
     },
     "corridors": {
@@ -164,8 +209,6 @@
     "final": {
       "title": "Install Yadony before your next trip",
       "lead": "Whether you are flying home or sending a parcel there, it all starts in the app.",
-      "qr": "Scan to download the app",
-      "qrAlt": "QR code to download the Yadony app",
       "donyAlt": "Dony, the Yadony mascot, celebrating a successful delivery",
       "video": {
         "description": "Promotional video for the Yadony app.",

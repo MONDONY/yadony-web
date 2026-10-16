@@ -68,15 +68,6 @@
           "text": "Votre proche donne son code à 6 chiffres au voyageur. La livraison est confirmée, le paiement libéré, et vous notez le voyageur."
         }
       ],
-      "requestCard": {
-        "kicker": "Demande d'envoi",
-        "title": "2 kg · Vêtements · Paris → Dakar",
-        "modes": [
-          "J'ouvre aux offres",
-          "Je fixe mon prix"
-        ],
-        "offers": "3 voyageurs vous ont fait une offre"
-      },
       "video": {
         "title": "Le tutoriel : envoyer un colis",
         "lead": "Publier une demande d'envoi, choisir un voyageur et payer, pas à pas dans l'app.",

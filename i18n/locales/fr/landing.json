@@ -8,7 +8,11 @@
       "kicker": "Colis, kilos et billets vers l'Afrique",
       "title": "Votre voyage au pays, rentabilisé.",
       "lead": "Billets moins chers, kilos vendus, colis livrés en sécurité. Tout est dans Yadony, l'app qui relie la diaspora et ceux qui voyagent.",
-      "chips": ["Billets moins chers", "Kilos vendus", "Colis livrés"],
+      "chips": [
+        "Billets moins chers",
+        "Kilos vendus",
+        "Colis livrés"
+      ],
       "videoCta": "Yadony en 1 minute",
       "note": "Gratuit sur iPhone et Android. Paiement bloqué jusqu'à la livraison.",
       "screensAlt": [
@@ -98,14 +102,27 @@
           "detail": "Paris – Dakar · le moins cher passe sous votre budget"
         },
         "priceModes": [
-          { "title": "Au kilo", "example": "8 € le kilo" },
-          { "title": "Négociable", "example": "Faites-moi une offre" },
-          { "title": "Par article", "example": "Téléphone 20 € · Ordinateur 40 €" }
+          {
+            "title": "Au kilo",
+            "example": "8 € le kilo"
+          },
+          {
+            "title": "Négociable",
+            "example": "Faites-moi une offre"
+          },
+          {
+            "title": "Par article",
+            "example": "Téléphone 20 € · Ordinateur 40 €"
+          }
         ],
         "negotiation": {
           "sender": "Moussa",
           "traveler": "Awa",
-          "messages": ["Je propose 60 €", "Contre-offre : 70 €", "On dit 65 € ?"],
+          "messages": [
+            "Je propose 60 €",
+            "Contre-offre : 70 €",
+            "On dit 65 € ?"
+          ],
           "agreed": "Accord à 65 €"
         },
         "padlock": {
@@ -113,8 +130,16 @@
           "locked": "Bloqué jusqu'à la livraison",
           "released": "Versé à Awa"
         },
-        "route": { "from": "Paris", "to": "Dakar" },
-        "timeline": ["Remis", "En vol", "Arrivé", "Livré"]
+        "route": {
+          "from": "Paris",
+          "to": "Dakar"
+        },
+        "timeline": [
+          "Remis",
+          "En vol",
+          "Arrivé",
+          "Livré"
+        ]
       }
     },
     "trust": {
@@ -122,10 +147,22 @@
       "title": "Ce qui manquait aux groupes WhatsApp",
       "lead": "Le voyageur existait déjà. Yadony ajoute la trace : qui porte, quand, et la preuve à chaque étape.",
       "items": [
-        { "title": "Identité vérifiée", "text": "Pièce d'identité et selfie contrôlés avant toute publication. Le nom affiché est le nom vérifié." },
-        { "title": "Paiement bloqué", "text": "L'argent attend la livraison. En cas de litige, il reste suspendu le temps de l'examen." },
-        { "title": "Preuve à chaque étape", "text": "Scan du QR code, photo horodatée et géolocalisée, à la remise comme en transit." },
-        { "title": "Code de livraison", "text": "Le colis n'est livré que contre le code à 6 chiffres que seul votre destinataire connaît." }
+        {
+          "title": "Identité vérifiée",
+          "text": "Pièce d'identité et selfie contrôlés avant toute publication. Le nom affiché est le nom vérifié."
+        },
+        {
+          "title": "Paiement bloqué",
+          "text": "L'argent attend la livraison. En cas de litige, il reste suspendu le temps de l'examen."
+        },
+        {
+          "title": "Preuve à chaque étape",
+          "text": "Scan du QR code, photo horodatée et géolocalisée, à la remise comme en transit."
+        },
+        {
+          "title": "Code de livraison",
+          "text": "Le colis n'est livré que contre le code à 6 chiffres que seul votre destinataire connaît."
+        }
       ],
       "cta": "Tout sur la sécurité",
       "donyAlt": "Dony, la mascotte de Yadony, tout sourire"
@@ -134,7 +171,15 @@
       "kicker": "Paiement",
       "title": "On paie comme chez soi",
       "lead": "Carte bancaire en Europe et en Amérique du Nord, mobile money en Afrique de l'Ouest et centrale, portefeuille Yadony partout.",
-      "items": ["Carte bancaire", "Wave", "Orange Money", "MTN MoMo", "Moov Money", "Portefeuille Yadony", "Espèces"],
+      "items": [
+        "Carte bancaire",
+        "Wave",
+        "Orange Money",
+        "MTN MoMo",
+        "Moov Money",
+        "Portefeuille Yadony",
+        "Espèces"
+      ],
       "note": "Les espèces restent possibles, mais sans paiement bloqué : la protection ne s'applique qu'aux paiements faits dans l'app."
     },
     "corridors": {
@@ -164,8 +209,6 @@
     "final": {
       "title": "Installez Yadony avant votre prochain voyage",
       "lead": "Que vous partiez au pays ou que vous y envoyiez un colis, tout commence dans l'app.",
-      "qr": "Scannez pour télécharger l'app",
-      "qrAlt": "QR code de téléchargement de l'application Yadony",
       "donyAlt": "Dony, la mascotte de Yadony, fête une livraison réussie",
       "video": {
         "description": "Vidéo promotionnelle de l'application Yadony.",

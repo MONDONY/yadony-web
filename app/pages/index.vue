@@ -3,23 +3,22 @@ import { useI18n } from 'vue-i18n'
 import { useRoute } from 'vue-router'
 import { buildSeoMeta } from '@/lib/seo'
 import { organizationJsonLd, mobileAppJsonLd, faqJsonLd } from '@/lib/structured-data'
+import { useTexts } from '@/composables/useTexts'
 
-const { t, tm, rt, locale } = useI18n()
+const { t, locale } = useI18n()
 const route = useRoute()
+const { items } = useTexts()
 
 useSeoMeta(
   buildSeoMeta({
-    title: t('home.seo.title'),
-    description: t('home.seo.description'),
+    title: t('landing.seo.title'),
+    description: t('landing.seo.description'),
     path: route.path,
     locale: locale.value as 'fr' | 'en',
   }),
 )
 
-const faqItems = (tm('home.faq.items') as unknown[]).map((raw) => {
-  const entry = raw as { question: unknown; answer: unknown }
-  return { question: rt(entry.question as never), answer: rt(entry.answer as never) }
-})
+const faqItems = items<{ question: string; answer: string }>('home.faq.items')
 
 useHead({
   script: [
@@ -32,12 +31,14 @@ useHead({
 
 <template>
   <div>
-    <HeroDownload />
-    <ProblemComparison />
-    <TrackingWalkthrough />
-    <TrustPillars />
-    <CorridorsSeo />
-    <TravelerBanner />
+    <HomeHero />
+    <HomePromises />
+    <HomeVideo />
+    <JourneyCrossed />
+    <HomeTrust />
+    <HomePayments />
+    <HomeCorridors />
+    <HomeRecipient />
     <HomeFaq />
     <DownloadCta />
   </div>

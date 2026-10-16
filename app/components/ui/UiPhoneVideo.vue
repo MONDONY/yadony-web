@@ -13,13 +13,17 @@ import { onBeforeUnmount, onMounted, ref } from 'vue'
 // active l'économiseur de données : le poster reste affiché et le bouton
 // lance la vidéo à la demande. Au-delà de 5 s de mouvement, WCAG 2.2.2 exige
 // de pouvoir l'arrêter : le bouton pause est toujours présent.
-const props = defineProps<{
+// `autoplay: false` : rien n'est téléchargé avant le clic du visiteur
+// (vidéos longues, sous la ligne de flottaison) ; un grand bouton de
+// lecture couvre alors le poster.
+const props = withDefaults(defineProps<{
   src: string
   poster: string
   description: string
   playLabel: string
   pauseLabel: string
-}>()
+  autoplay?: boolean
+}>(), { autoplay: true })
 
 const video = ref<HTMLVideoElement | null>(null)
 const playing = ref(false)
@@ -65,7 +69,7 @@ function prefersStill(): boolean {
 }
 
 function startWhenPageLoaded() {
-  if (prefersStill()) return
+  if (!props.autoplay || prefersStill()) return
   if (document.readyState === 'complete') play()
   else window.addEventListener('load', play, { once: true })
 }
@@ -93,7 +97,7 @@ onBeforeUnmount(() => {
 
 <template>
   <figure
-    class="relative rounded-[46px] bg-navy-deep p-[10px] shadow-[0_1px_2px_rgb(10_20_48/0.2),0_12px_32px_-8px_rgb(10_20_48/0.35),0_32px_64px_-16px_rgb(10_20_48/0.3)]"
+    class="relative rounded-[46px] bg-navy-deep p-[10px] shadow-xl"
   >
     <video
       ref="video"
@@ -113,6 +117,18 @@ onBeforeUnmount(() => {
     />
     <figcaption class="sr-only">{{ description }}</figcaption>
     <button
+      v-if="!autoplay && !playing && !video?.getAttribute('src')"
+      type="button"
+      class="absolute inset-[10px] grid place-items-center rounded-[36px] bg-navy-deep/25 transition-colors duration-base hover:bg-navy-deep/35"
+      :aria-label="playLabel"
+      @click="toggle"
+    >
+      <span class="grid size-16 place-items-center rounded-full bg-surface text-primary shadow-lg transition-transform duration-micro ease-dony group-hover:scale-105">
+        <svg aria-hidden="true" viewBox="0 0 24 24" class="size-6 translate-x-0.5" fill="currentColor"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5Z" /></svg>
+      </span>
+    </button>
+    <button
+      v-else
       type="button"
       class="absolute right-6 top-6 grid size-10 place-items-center rounded-full bg-navy-deep/70 text-white backdrop-blur-sm transition-[background-color,transform] duration-150 ease-out hover:bg-navy-deep/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent active:scale-[0.96]"
       :aria-label="playing ? pauseLabel : playLabel"

@@ -114,4 +114,15 @@ describe('UiPhoneVideo', () => {
     expect(wrapper.find('video').attributes('aria-hidden')).toBe('true')
     expect(wrapper.find('figcaption').text()).toBe(props.description)
   })
+
+  it('ne télécharge rien avant le clic quand la lecture automatique est coupée', async () => {
+    const wrapper = mount(UiPhoneVideo, { props: { ...props, autoplay: false } })
+    await flushPromises()
+    expect(wrapper.get('video').attributes('src')).toBeUndefined()
+    expect(play).not.toHaveBeenCalled()
+    await wrapper.get('button[aria-label="Lire la vidéo"]').trigger('click')
+    await flushPromises()
+    expect(wrapper.get('video').attributes('src')).toBe('/video/yadony-promo.mp4')
+    expect(play).toHaveBeenCalled()
+  })
 })

@@ -1,6 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { fr } from '../helpers/messages'
-import { en } from '../helpers/messages'
+import { en, fr } from '../helpers/messages'
 
 /**
  * Aplatit une arborescence de traduction en couples [chemin, valeur].

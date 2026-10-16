@@ -21,7 +21,7 @@ function register(index: number, el: unknown) {
   <div class="lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-16">
     <div class="order-2 hidden lg:block" aria-hidden="true">
       <div class="sticky top-[12vh] flex h-[76vh] items-center justify-center">
-        <slot name="visual" :active="active" />
+        <slot name="visual" :active="active" :mobile="false" />
       </div>
     </div>
     <ol class="order-1 list-none" :aria-label="label">
@@ -36,7 +36,7 @@ function register(index: number, el: unknown) {
         <div class="w-full">
           <slot name="step" :index="index" :active="active === index" />
           <div class="mt-8 lg:hidden">
-            <slot name="visual" :active="index" />
+            <slot name="visual" :active="index" :mobile="true" />
           </div>
         </div>
       </li>

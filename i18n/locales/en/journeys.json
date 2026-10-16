@@ -68,15 +68,6 @@
           "text": "Your loved one gives their 6-digit code to the traveller. Delivery is confirmed, the payment is released, and you rate the traveller."
         }
       ],
-      "requestCard": {
-        "kicker": "Shipping request",
-        "title": "2 kg · Clothes · Paris → Dakar",
-        "modes": [
-          "I'm open to offers",
-          "I set my price"
-        ],
-        "offers": "3 travellers have made you an offer"
-      },
       "video": {
         "title": "The tutorial: sending a parcel",
         "lead": "Posting a shipping request, choosing a traveller and paying, step by step in the app.",

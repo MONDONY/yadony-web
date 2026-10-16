@@ -25,8 +25,9 @@ defineProps<{ modes: Array<{ title: string; example: string }>; flipped: boolean
             <span class="hidden text-sm text-ink-muted motion-reduce:block">{{ mode.example }}</span>
           </span>
         </div>
-        <div class="absolute inset-0 flex items-center justify-center rounded-card bg-primary px-5 text-center font-display text-lg font-bold text-white [backface-visibility:hidden] [transform:rotateY(180deg)] motion-reduce:hidden">
-          {{ mode.example }}
+        <div class="absolute inset-0 flex flex-col justify-center rounded-card bg-primary px-5 text-white [backface-visibility:hidden] [transform:rotateY(180deg)] motion-reduce:hidden">
+          <span class="text-sm font-semibold text-white/80">{{ mode.title }}</span>
+          <span class="font-display text-base font-bold leading-snug sm:text-lg">{{ mode.example }}</span>
         </div>
       </div>
     </li>

@@ -59,7 +59,8 @@ const routes = departures.flatMap((from, i) => arrivals.map((to, j) => ({ d: rou
     <g v-for="city in arrivals" :key="city.name">
       <circle :cx="x(city.lon)" :cy="y(city.lat)" r="10" fill="rgb(var(--accent) / 0.25)" class="animate-ping-soft origin-center [transform-box:fill-box]" />
       <circle :cx="x(city.lon)" :cy="y(city.lat)" r="5.5" fill="rgb(var(--accent))" />
-      <text :x="x(city.lon) + 10" :y="y(city.lat) + 5" class="fill-ink font-display text-[13px] font-bold">{{ city.name }}</text>
+      <!-- Libellé sous le point : Douala, à l'est, sortirait du cadre à droite. -->
+      <text :x="x(city.lon)" :y="y(city.lat) + 24" text-anchor="middle" class="fill-ink font-display text-[13px] font-bold">{{ city.name }}</text>
     </g>
   </svg>
 </template>

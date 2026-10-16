@@ -36,7 +36,7 @@ describe('UiScrollScene', () => {
       props: { count: 3, label: 'Le parcours' },
       slots: {
         step: `<template #step="{ index, active }"><h3>Étape {{ index + 1 }}</h3><span v-if="active">active</span></template>`,
-        visual: `<template #visual="{ active }"><p class="visual">visuel {{ active }}</p></template>`,
+        visual: `<template #visual="{ active, mobile }"><p class="visual">visuel {{ active }} {{ mobile ? 'mobile' : 'épinglé' }}</p></template>`,
       },
     })
     await nextTick()
@@ -49,7 +49,9 @@ describe('UiScrollScene', () => {
     expect(steps[2]!.attributes('aria-current')).toBe('step')
     expect(steps[0]!.attributes('aria-current')).toBeUndefined()
     // Visuel épinglé (desktop) + un visuel par étape (mobile).
-    expect(wrapper.findAll('.visual').map(node => node.text())).toEqual(['visuel 2', 'visuel 0', 'visuel 1', 'visuel 2'])
+    expect(wrapper.findAll('.visual').map(node => node.text())).toEqual([
+      'visuel 2 épinglé', 'visuel 0 mobile', 'visuel 1 mobile', 'visuel 2 mobile',
+    ])
   })
 })
 

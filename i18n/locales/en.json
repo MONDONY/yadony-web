@@ -668,7 +668,7 @@
         "description": "How Yadony protects your data: minimal internal data, certified partners (Firebase, Stripe, Cloudflare), retention periods and GDPR rights."
       },
       "title": "Privacy policy",
-      "intro": "Last updated: October 15, 2026. Yadony is a mobile marketplace connecting travellers with spare luggage space to senders wishing to send parcels to their relatives. Our service covers corridors from Europe, the United States, Canada and Africa to all the destinations we serve. We designed Yadony around one core principle: we keep only the strict minimum of personal data internally. Sensitive data (identity, authentication, official documents) is entrusted to trusted, globally recognised specialised partners who process it with a level of security and compliance we could not reach alone. By using Yadony, you accept the practices described in this document. This English version is provided for convenience; the French version prevails.",
+      "intro": "Last updated: October 16, 2026. Yadony is a mobile marketplace connecting travellers with spare luggage space to senders wishing to send parcels to their relatives. Our service covers corridors from Europe, the United States, Canada and Africa to all the destinations we serve. We designed Yadony around one core principle: we keep only the strict minimum of personal data internally. Sensitive data (identity, authentication, official documents) is entrusted to trusted, globally recognised specialised partners who process it with a level of security and compliance we could not reach alone. By using Yadony, you accept the practices described in this document. This English version is provided for convenience; the French version prevails.",
       "articles": [
         {
           "title": "1. Who is responsible for your data?",
@@ -839,6 +839,26 @@
               "p": [
                 "The maps shown in the app and the address search (autocomplete) use Google Maps services. Google receives the addresses and places you search for, as well as the map areas displayed. Google privacy policy: https://policies.google.com/privacy"
               ]
+            },
+            {
+              "sub": "3.12 AI assistant: help with how the app works",
+              "p": [
+                "The app offers an AI assistant that answers your questions about how Yadony works, based on help articles written by Yadony. When you ask it a question, the assistant receives:"
+              ],
+              "ul": [
+                "The text of your question and of the exchanges in the current conversation (at most the last 12)",
+                "The language of the app"
+              ]
+            },
+            {
+              "p": [
+                "Yadony adds no identifier, name, phone number or account data to it.",
+                "Questions are processed by third-party AI providers. At the time of writing: OpenRouter, Inc. (United States), which forwards the question to the host of the model in use (Google for Gemini, Mistral AI or another host for Mistral), as well as Groq, Inc. (United States) and Google (Gemini API) directly. This list is kept up to date on this page. As these providers are established outside the European Union, your questions are transferred outside the EU.",
+                "The free tiers of these providers may reuse the data they receive to improve their models: we therefore ask you not to enter any personal data in the assistant.",
+                "Yadony does not keep the content of conversations: they stay on your device for the duration of the session and disappear when you close the app. Yadony only keeps usage counters, without the text (number of questions, answer found or not).",
+                "Exception: if you choose to \"talk to a human\", your last question and the exchange are copied into a Yadony support ticket, kept like other support requests.",
+                "You can hide the assistant bubble in Settings."
+              ]
             }
           ]
         },
@@ -883,6 +903,7 @@
                 "Error reports and problem reports: Sentry",
                 "Parcel and delivery photos: Cloudflare. Access only through secure temporary links",
                 "Transaction history, scans, ratings: Yadony (internal database). Access: yes, needed to run the service",
+                "Questions asked to the AI assistant: third-party AI providers (OpenRouter, Google Gemini, Mistral AI, Groq), with no identifier or account data. Yadony does not keep the content of conversations, unless you choose to talk to a human (support ticket)",
                 "Messages between users: Yadony (encrypted). Encrypted content, access restricted to disputes"
               ]
             }
@@ -1118,7 +1139,7 @@
               "ul": [
                 "Company name: YADONY SAS, SIREN 108 733 510",
                 "Publication director: Mr Dramane DIAKITE, President",
-                "Technical partners: Google Firebase, Stripe, Didit, pawaPay (Mobile Money: Wave, Orange Money and other operators), Cloudflare, PostHog, Sentry, Twilio, Resend, Stream, Google Maps",
+                "Technical partners: Google Firebase, Stripe, Didit, pawaPay (Mobile Money: Wave, Orange Money and other operators), Cloudflare, PostHog, Sentry, Twilio, Resend, Stream, Google Maps, OpenRouter, Google Gemini, Mistral AI and Groq (AI assistant)",
                 "French supervisory authority: CNIL (www.cnil.fr)"
               ]
             }

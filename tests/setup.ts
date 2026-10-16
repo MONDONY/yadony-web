@@ -7,7 +7,7 @@ config.global.stubs = {
   ClientOnly: passthrough,
   UiContainer: passthrough,
   UiSection: passthrough,
-  UiRevealOnScroll: passthrough,
+  UiReveal: passthrough,
   // Reproduit le contrat réel du composant : une figure contenant l'image
   // avec ses dimensions intrinsèques, pour que les tests d'alt et de
   // dimensions continuent de vérifier le HTML effectivement servi.

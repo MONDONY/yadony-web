@@ -20,7 +20,7 @@ const corridors = [
 
       <ul class="mt-12 grid list-none gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <li v-for="(corridor, index) in corridors" :key="corridor.key">
-          <UiRevealOnScroll :delay="index * 80" class="h-full">
+          <UiReveal :delay="index * 80" class="h-full">
             <NuxtLink
               :to="localePath(`/envoyer-colis/${corridor.slug}`)"
               class="flex h-full flex-col rounded-card bg-surface p-6 shadow-[0_1px_2px_rgb(10_37_64/0.06),0_8px_24px_-12px_rgb(10_37_64/0.12)] transition-transform duration-150 hover:-translate-y-0.5 active:scale-[0.98]"
@@ -32,7 +32,7 @@ const corridors = [
                 {{ t(`home.corridors.routes.${corridor.key}.text`) }}
               </p>
             </NuxtLink>
-          </UiRevealOnScroll>
+          </UiReveal>
         </li>
       </ul>
 

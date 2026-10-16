@@ -33,7 +33,7 @@ const steps = [
         :key="step.key"
         class="w-[248px] shrink-0 snap-start list-none sm:w-[272px]"
       >
-        <UiRevealOnScroll :delay="index * 100">
+        <UiReveal :delay="index * 100">
           <article data-step>
             <UiPhoneFrame :src="step.image" :alt="t(`home.tracking.steps.${step.key}.alt`)" />
             <p data-step-number class="mt-5 text-center font-display text-sm font-bold text-accent tabular-nums">
@@ -46,7 +46,7 @@ const steps = [
               {{ t(`home.tracking.steps.${step.key}.text`) }}
             </p>
           </article>
-        </UiRevealOnScroll>
+        </UiReveal>
       </li>
     </ol>
   </UiSection>

@@ -1,24 +1,24 @@
 {
   "landing": {
     "seo": {
-      "title": "Colis, kilos et billets vers l'Afrique, avec un voyageur vérifié",
-      "description": "Yadony rentabilise votre voyage au pays : billets d'avion moins chers grâce aux alertes de prix, kilos de valise vendus, colis livrés en sécurité et suivis en temps réel."
+      "title": "Envoyer un colis en Afrique ou vendre vos kilos de bagage",
+      "description": "Yadony relie la diaspora et ceux qui voyagent : colis confiés à un voyageur vérifié, paiement bloqué jusqu'à la livraison et suivi en direct ; kilos de valise vendus ; alertes de prix pour repérer un vol moins cher."
     },
     "hero": {
-      "kicker": "Colis, kilos et billets vers l'Afrique",
-      "title": "Votre voyage au pays, rentabilisé.",
-      "lead": "Billets moins chers, kilos vendus, colis livrés en sécurité. Tout est dans Yadony, l'app qui relie la diaspora et ceux qui voyagent.",
+      "kicker": "Colis et kilos vers l'Afrique",
+      "title": "Envoyez vos colis, vendez vos kilos.",
+      "lead": "Votre colis voyage avec une personne vérifiée, et votre valise vous rapporte. Tout est dans Yadony, l'app qui relie la diaspora et ceux qui voyagent.",
       "chips": [
-        "Billets moins chers",
+        "Colis livrés",
         "Kilos vendus",
-        "Colis livrés"
+        "Alertes de prix"
       ],
       "videoCta": "Yadony en 1 minute",
       "note": "Gratuit sur iPhone et Android. Paiement bloqué jusqu'à la livraison.",
       "screensAlt": [
-        "Écran « Vols trouvés » de Yadony : quatre vols sous le prix fixé par l'alerte",
+        "Écran « Mes colis » de Yadony : un colis Paris – Bamako arrivé, prêt à être récupéré",
         "Écran « Mes trajets » de Yadony : les kilos vendus et disponibles de chaque trajet",
-        "Écran « Mes colis » de Yadony : un colis Paris – Bamako arrivé, prêt à être récupéré"
+        "Écran « Vols trouvés » de Yadony : quatre vols sous le prix fixé par l'alerte"
       ],
       "donyAlt": "Dony, la mascotte de Yadony, fait coucou"
     },
@@ -27,9 +27,9 @@
       "title": "Une seule app pour tout votre voyage",
       "items": [
         {
-          "title": "Voyagez moins cher",
-          "text": "Créez une alerte de prix sur votre trajet. Dès qu'un vol passe sous votre budget, Yadony vous prévient.",
-          "cta": "Les billets d'avion"
+          "title": "Envoyez en sécurité",
+          "text": "Votre colis voyage avec une personne vérifiée. L'argent reste bloqué jusqu'à la livraison, et vous suivez tout en direct.",
+          "cta": "Envoyer un colis"
         },
         {
           "title": "Vendez vos kilos",
@@ -37,9 +37,9 @@
           "cta": "Devenir voyageur"
         },
         {
-          "title": "Envoyez en sécurité",
-          "text": "Votre colis voyage avec une personne vérifiée. L'argent reste bloqué jusqu'à la livraison, et vous suivez tout en direct.",
-          "cta": "Envoyer un colis"
+          "title": "Soyez prévenu des bons prix",
+          "text": "Yadony ne vend pas de billets. Créez une alerte sur votre trajet : l'app vous prévient quand un vol passe sous votre budget, et vous réservez chez notre partenaire.",
+          "cta": "Les alertes de prix"
         }
       ]
     },
@@ -55,17 +55,13 @@
       "kicker": "Une histoire, deux parcours",
       "title": "Awa part à Dakar. Moussa envoie un colis à sa mère.",
       "lead": "Suivez-les étape par étape : leurs chemins se croisent dans Yadony.",
-      "listLabel": "Le parcours d'Awa et de Moussa, en huit étapes",
+      "listLabel": "Le parcours d'Awa et de Moussa, en sept étapes",
       "actors": {
         "traveler": "Awa · voyageuse",
         "sender": "Moussa · expéditeur",
         "both": "Awa et Moussa"
       },
       "steps": [
-        {
-          "title": "L'alerte sonne : le vol est moins cher",
-          "text": "Awa a créé une alerte de prix sur Paris – Dakar. Un vol passe sous son budget : Yadony la prévient, et elle réserve chez notre partenaire."
-        },
         {
           "title": "Awa publie son trajet",
           "text": "Date, kilos disponibles, lieux de remise. Elle choisit sa formule : un prix au kilo, un prix ouvert aux propositions, ou une grille de prix par article."

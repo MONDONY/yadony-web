@@ -8,10 +8,12 @@ const { items } = useTexts()
 const localePath = useLocalePath()
 const promises = items<{ title: string; text: string; cta: string }>('landing.promises.items')
 
+// Même ordre que les textes : envoyer un colis, vendre ses kilos, puis les
+// alertes de prix (Yadony ne vend pas de billets, il prévient).
 const targets: Array<{ to: string; pose: DonyPoseId; tone: string }> = [
-  { to: '/billets-avion', pose: 'price-alert', tone: 'bg-primary-soft' },
+  { to: '/envoyer-colis', pose: 'padlock', tone: 'bg-primary-soft' },
   { to: '/devenir-voyageur', pose: 'travel', tone: 'bg-accent-soft' },
-  { to: '/envoyer-colis', pose: 'padlock', tone: 'bg-sand' },
+  { to: '/billets-avion', pose: 'price-alert', tone: 'bg-sand' },
 ]
 </script>
 

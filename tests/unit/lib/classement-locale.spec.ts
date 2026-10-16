@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
-import fr from '../../../i18n/locales/fr.json'
-import en from '../../../i18n/locales/en.json'
+import { fr } from '../helpers/messages'
+import { en } from '../helpers/messages'
 import { TEST_GROUPS, TEST_KEYS } from '@/lib/classement/bareme'
 import donnees from '@/data/classement.json'
 

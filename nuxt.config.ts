@@ -23,8 +23,21 @@ export default defineNuxtConfig({
     langDir: 'locales',
     baseUrl: 'https://yadony.com',
     locales: [
-      { code: 'fr', language: 'fr-FR', name: 'Français', file: 'fr.json' },
-      { code: 'en', language: 'en-GB', name: 'English', file: 'en.json' },
+      {
+        code: 'fr',
+        language: 'fr-FR',
+        name: 'Français',
+        // Une locale = un fichier commun + un fichier par domaine (accueil,
+        // parcours, corridors, GP). Les clés de premier niveau ne se
+        // chevauchent jamais d'un fichier à l'autre.
+        files: ['fr.json', 'fr/landing.json', 'fr/journeys.json', 'fr/corridors.json', 'fr/gp.json'],
+      },
+      {
+        code: 'en',
+        language: 'en-GB',
+        name: 'English',
+        files: ['en.json', 'en/landing.json', 'en/journeys.json', 'en/corridors.json'],
+      },
     ],
     customRoutes: 'page',
     detectBrowserLanguage: false,

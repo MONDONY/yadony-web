@@ -15,6 +15,7 @@ export interface SiteImage {
 }
 
 export const APP_SCREEN_IDS = [
+  'flights-search',
   'flights-hub',
   'flight-alerts',
   'flights-found',
@@ -30,6 +31,8 @@ export const APP_SCREEN_IDS = [
   'parcel-tracking',
   'wallet',
   'mobile-money',
+  'money-overview',
+  'request-step1',
 ] as const
 export type AppScreenId = (typeof APP_SCREEN_IDS)[number]
 

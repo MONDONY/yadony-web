@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest'
 import { mount } from '@vue/test-utils'
 import { createI18n } from 'vue-i18n'
-import fr from '../../../i18n/locales/fr.json'
+import { fr } from '../helpers/messages'
 import RoleTabs from '@/components/sections/RoleTabs.vue'
 
 const i18n = createI18n({ legacy: false, locale: 'fr', messages: { fr } })

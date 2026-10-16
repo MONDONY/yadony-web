@@ -3,7 +3,7 @@ import { existsSync } from 'node:fs'
 import { join } from 'node:path'
 import { mount } from '@vue/test-utils'
 import { createI18n } from 'vue-i18n'
-import fr from '../../../i18n/locales/fr.json'
+import { fr } from '../helpers/messages'
 import TrackingWalkthrough from '@/components/sections/TrackingWalkthrough.vue'
 
 const i18n = createI18n({ legacy: false, locale: 'fr', messages: { fr } })

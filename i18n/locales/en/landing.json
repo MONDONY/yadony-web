@@ -1,0 +1,177 @@
+{
+  "landing": {
+    "seo": {
+      "title": "Send a parcel to Africa, sell spare kilos, fly cheaper",
+      "description": "Make your trip home pay with Yadony: cheap flights to Africa with price alerts, spare baggage allowance sold, parcels delivered safely and tracked live."
+    },
+    "hero": {
+      "kicker": "Parcels, kilos and flights to Africa",
+      "title": "Your trip home, paid for.",
+      "lead": "Cheaper flights, kilos sold, parcels delivered safely. It is all in Yadony, the app that brings the diaspora and travellers together.",
+      "chips": ["Cheaper flights", "Kilos sold", "Parcels delivered"],
+      "videoCta": "Yadony in 1 minute",
+      "note": "Free on iPhone and Android. Payment held until delivery.",
+      "screensAlt": [
+        "The Yadony \"Vols trouvés\" (Flights found) screen: four flights under the price set by the alert",
+        "The Yadony \"Mes trajets\" (My trips) screen: the kilos sold and still available on each trip",
+        "The Yadony \"Mes colis\" (My parcels) screen: a Paris – Bamako parcel that has arrived, ready to be collected"
+      ],
+      "donyAlt": "Dony, the Yadony mascot, waving hello"
+    },
+    "promises": {
+      "kicker": "Three reasons to install it",
+      "title": "One app for your whole trip",
+      "items": [
+        {
+          "title": "Fly for less",
+          "text": "Set a price alert on your route. As soon as a flight drops below your budget, Yadony lets you know.",
+          "cta": "Flights"
+        },
+        {
+          "title": "Sell your kilos",
+          "text": "Suitcase not full? Post your trip, set your price and carry parcels for verified senders.",
+          "cta": "Become a traveller"
+        },
+        {
+          "title": "Send with peace of mind",
+          "text": "Your parcel travels with a verified person. The money is held until delivery, and you follow every step live.",
+          "cta": "Send a parcel"
+        }
+      ]
+    },
+    "video": {
+      "kicker": "In one minute",
+      "title": "Yadony: how does it work?",
+      "lead": "The map of travellers around you, price negotiation, money held until delivery, the parcel scanned at every step.",
+      "description": "Introduction video for the Yadony app.",
+      "play": "Play the video",
+      "pause": "Pause the video"
+    },
+    "crossed": {
+      "kicker": "One story, two journeys",
+      "title": "Awa is flying to Dakar. Moussa is sending a parcel to his mother.",
+      "lead": "Follow them step by step: their paths cross in Yadony.",
+      "listLabel": "Awa and Moussa's journey, in eight steps",
+      "actors": {
+        "traveler": "Awa · traveller",
+        "sender": "Moussa · sender",
+        "both": "Awa and Moussa"
+      },
+      "steps": [
+        {
+          "title": "The alert goes off: the flight is cheaper",
+          "text": "Awa set a price alert on Paris – Dakar. A flight drops below her budget: Yadony lets her know, and she books with our partner."
+        },
+        {
+          "title": "Awa posts her trip",
+          "text": "Date, kilos available, handover points. She picks her pricing: a price per kilo, a price open to offers, or a price list per item."
+        },
+        {
+          "title": "Moussa looks for a traveller",
+          "text": "On the map or in the list, he sees the verified travellers heading to Dakar. He can also post a shipping request and let travellers make him an offer."
+        },
+        {
+          "title": "They negotiate in the app",
+          "text": "Moussa suggests a price, Awa makes a counter-offer, and they reach a deal. Everything stays in writing in the app, with no need to swap numbers."
+        },
+        {
+          "title": "The payment is held",
+          "text": "Moussa pays by card, mobile money or wallet. The money does not go to Awa: it waits for delivery."
+        },
+        {
+          "title": "The handover, scanned and photographed",
+          "text": "Moussa hands over the parcel in person. Awa scans its QR code: the photo and time are recorded, even without signal."
+        },
+        {
+          "title": "The parcel travels, the family follows",
+          "text": "Handed over, in the air, arrived: every step shows up live. Moussa's mother follows it all on a web page, without installing the app."
+        },
+        {
+          "title": "Delivered against a code, Awa gets paid",
+          "text": "In Dakar, Moussa's mother gives her 6-digit code. Delivery is confirmed and the money is paid out to Awa."
+        }
+      ],
+      "art": {
+        "priceCurve": {
+          "threshold": "Your max price",
+          "notification": "4 flights under your price",
+          "detail": "Paris – Dakar · the cheapest one is now under your budget"
+        },
+        "priceModes": [
+          { "title": "Per kilo", "example": "8 € per kilo" },
+          { "title": "Negotiable", "example": "Make me an offer" },
+          { "title": "Per item", "example": "Phone 20 € · Laptop 40 €" }
+        ],
+        "negotiation": {
+          "sender": "Moussa",
+          "traveler": "Awa",
+          "messages": ["I can offer 60 €", "Counter-offer: 70 €", "Shall we say 65 €?"],
+          "agreed": "Agreed at 65 €"
+        },
+        "padlock": {
+          "amount": "65 €",
+          "locked": "Held until delivery",
+          "released": "Paid to Awa"
+        },
+        "route": { "from": "Paris", "to": "Dakar" },
+        "timeline": ["Handed over", "In the air", "Arrived", "Delivered"]
+      }
+    },
+    "trust": {
+      "kicker": "Trust",
+      "title": "What WhatsApp groups were missing",
+      "lead": "The traveller was already there. Yadony adds the record: who is carrying it, when, and proof at every step.",
+      "items": [
+        { "title": "Verified identity", "text": "ID document and selfie checked before anything is posted. The name you see is the verified name." },
+        { "title": "Payment held", "text": "The money waits for delivery. If there is a dispute, it stays on hold while the case is reviewed." },
+        { "title": "Proof at every step", "text": "QR code scan, time-stamped and geotagged photo, at handover and in transit." },
+        { "title": "Delivery code", "text": "The parcel is only handed over against the 6-digit code that only your recipient knows." }
+      ],
+      "cta": "All about safety",
+      "donyAlt": "Dony, the Yadony mascot, all smiles"
+    },
+    "payments": {
+      "kicker": "Payment",
+      "title": "Pay the way you do at home",
+      "lead": "Bank card in Europe and North America, mobile money in West and Central Africa, the Yadony wallet everywhere.",
+      "items": ["Bank card", "Wave", "Orange Money", "MTN MoMo", "Moov Money", "Yadony wallet", "Cash"],
+      "note": "Cash is still an option, but without the held payment: the protection only applies to payments made in the app."
+    },
+    "corridors": {
+      "kicker": "Destinations",
+      "title": "From France to West and Central Africa",
+      "lead": "Travellers leave from Paris, Lyon and Marseille for Dakar, Abidjan, Bamako and Douala. Choose your route.",
+      "listLabel": "Routes served",
+      "cta": "All destinations",
+      "gp": "Looking for a GP? Discover verified GPs"
+    },
+    "recipient": {
+      "kicker": "The recipient",
+      "title": "Your mum tracks the parcel without installing the app",
+      "lead": "You send her the tracking link on WhatsApp. She sees where the parcel is, live, and keeps the pickup code for the big day.",
+      "points": [
+        "A simple web page, no account or password needed",
+        "Every step with its time: handed over, in the air, arrived",
+        "The 6-digit code to give to the traveller, and to no one else"
+      ],
+      "chat": {
+        "message": "Mum, your parcel leaves on Saturday with Awa. You can track it here:",
+        "link": "yadony.com/tracking/…",
+        "page": "Arrived in Dakar",
+        "pageDetail": "The traveller will contact you to arrange the handover"
+      }
+    },
+    "final": {
+      "title": "Install Yadony before your next trip",
+      "lead": "Whether you are flying home or sending a parcel there, it all starts in the app.",
+      "qr": "Scan to download the app",
+      "qrAlt": "QR code to download the Yadony app",
+      "donyAlt": "Dony, the Yadony mascot, celebrating a successful delivery",
+      "video": {
+        "description": "Promotional video for the Yadony app.",
+        "play": "Play the video",
+        "pause": "Pause the video"
+      }
+    }
+  }
+}

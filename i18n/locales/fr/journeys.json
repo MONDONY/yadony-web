@@ -1,0 +1,240 @@
+{
+  "journeys": {
+    "common": {
+      "home": "Accueil",
+      "stepLabel": "Étape {n}",
+      "faqTitle": "Questions fréquentes",
+      "downloadTitle": "Prêt à essayer ?",
+      "downloadLead": "Installez Yadony : l'inscription prend deux minutes, la vérification d'identité se fait dans l'app.",
+      "videoPlay": "Lire le tutoriel",
+      "videoPause": "Mettre le tutoriel en pause"
+    },
+    "screens": {
+      "flights-hub": "Écran Activités de Yadony : le bloc « Billets d'avion » avec deux bons plans à moins 49 % et moins 48 %",
+      "flight-alerts": "Écran Outils de Yadony : une alerte prix Paris – Malte qui a trouvé quatre vols, dont un à 180 €",
+      "flights-found": "Écran « Vols trouvés » : quatre vols sous le prix maximal fixé par l'alerte",
+      "search-map": "Écran Rechercher de Yadony : carte et liste des voyageurs disponibles, avec leur prix au kilo",
+      "trip-detail": "Détail d'un trajet dans Yadony : prix au kilo, date limite de dépôt, voyageuse vérifiée, boutons « Faire une demande » et « Proposer un prix »",
+      "traveler-profile": "Profil public d'une voyageuse : note, nombre de livraisons, téléphone, e-mail et pièce d'identité vérifiés",
+      "publish-trip": "Écran « Publier un trajet » : première étape sur trois, devise de publication et modèles de trajet",
+      "my-trips": "Écran « Mes trajets » : kilos vendus et kilos disponibles pour chaque trajet",
+      "negotiation": "Fil de négociation dans Yadony : proposition, contre-offre, puis demande acceptée au quatrième tour",
+      "scan": "Onglet Suivi de Yadony en mode « Valider une étape » : la caméra prête à scanner le QR code d'un colis",
+      "my-parcels": "Écran « Mes colis » : la frise Remis, En route, Arrivé, Livraison de chaque envoi",
+      "parcel-ticket": "Billet d'un colis Paris – Bamako : QR du colis, code de retrait et numéro de suivi",
+      "parcel-tracking": "Suivi en lecture seule d'un colis arrivé à Bamako, avec la photo prise à la remise",
+      "wallet": "Écran Moi de Yadony : portefeuille, versement mobile money et réputation",
+      "mobile-money": "Versement mobile money actif : Orange Money, Moov Money et MTN MoMo acceptés",
+      "flights-search": "Écran « Billets » de Yadony : recherche d'un vol Paris – Abidjan, aller simple, avec les recherches récentes",
+      "money-overview": "Écran « Mon argent » : les paiements versés récemment pour chaque colis livré, en euros et en francs CFA",
+      "request-step1": "Première étape d'une demande d'envoi : villes de départ et d'arrivée, date et souplesse de plus ou moins deux jours"
+    },
+    "sender": {
+      "seo": {
+        "title": "Envoyer un colis en Afrique avec un voyageur vérifié",
+        "description": "Envoyez un colis vers Dakar, Abidjan, Bamako ou Douala avec un voyageur vérifié : prix négocié, paiement bloqué jusqu'à la livraison, suivi en temps réel."
+      },
+      "kicker": "Expéditeurs",
+      "title": "Envoyer un colis en Afrique, avec quelqu'un de confiance",
+      "lead": "Trouvez un voyageur vérifié qui part déjà vers votre ville, mettez-vous d'accord sur le prix, et suivez votre colis jusqu'aux mains de votre proche.",
+      "listLabel": "Les étapes d'un envoi",
+      "steps": [
+        {
+          "title": "Cherchez un trajet, ou publiez votre demande",
+          "text": "Sur la carte ou dans la liste, filtrez par date, prix, kilos ou note. Pas de voyageur à vos dates ? Publiez votre demande d'envoi : « J'ouvre aux offres » ou « Je fixe mon prix », et les voyageurs viennent à vous."
+        },
+        {
+          "title": "Choisissez quelqu'un de vérifié",
+          "text": "Chaque voyageur a vérifié son identité. Vous voyez sa note, ses livraisons, ses vérifications et ce qu'il accepte de transporter."
+        },
+        {
+          "title": "Négociez le prix",
+          "text": "Prenez le prix affiché, ou proposez le vôtre. Offre, contre-offre : la discussion reste dans l'app, jusqu'à l'accord."
+        },
+        {
+          "title": "Payez, l'argent est bloqué",
+          "text": "Carte, mobile money ou portefeuille Yadony. Le montant est bloqué jusqu'à la livraison : le voyageur n'est payé que lorsque votre proche a reçu le colis."
+        },
+        {
+          "title": "Remettez le colis en main propre",
+          "text": "Le voyageur vérifie le contenu devant vous, scanne le QR code du colis et prend une photo. Vous recevez le code de retrait à transmettre au destinataire."
+        },
+        {
+          "title": "Suivez-le en temps réel",
+          "text": "Remis, en vol, arrivé : chaque étape est horodatée. Partagez le lien de suivi, votre proche suit sans installer l'app."
+        },
+        {
+          "title": "Livraison contre le code",
+          "text": "Votre proche donne son code à 6 chiffres au voyageur. La livraison est confirmée, le paiement libéré, et vous notez le voyageur."
+        }
+      ],
+      "requestCard": {
+        "kicker": "Demande d'envoi",
+        "title": "2 kg · Vêtements · Paris → Dakar",
+        "modes": [
+          "J'ouvre aux offres",
+          "Je fixe mon prix"
+        ],
+        "offers": "3 voyageurs vous ont fait une offre"
+      },
+      "video": {
+        "title": "Le tutoriel : envoyer un colis",
+        "lead": "Publier une demande d'envoi, choisir un voyageur et payer, pas à pas dans l'app.",
+        "label": "Tutoriel vidéo : envoyer un colis avec l'application Yadony"
+      },
+      "corridorsTitle": "Choisissez votre trajet",
+      "faq": [
+        {
+          "question": "Je ne trouve pas de voyageur à mes dates, que faire ?",
+          "answer": "Publiez une demande d'envoi : trajet, poids, photos et budget. Les voyageurs qui partent sur votre axe la voient et vous font une offre. Vous pouvez aussi créer une alerte sur votre trajet pour être prévenu dès qu'un voyageur publie."
+        },
+        {
+          "question": "Puis-je négocier le prix ?",
+          "answer": "Oui, si le voyageur accepte les propositions de prix. Vous proposez un montant, il peut accepter, refuser ou faire une contre-offre. Certains voyageurs affichent un prix ferme : vous le prenez ou vous en choisissez un autre."
+        },
+        {
+          "question": "Comment je paie, et quand le voyageur est-il payé ?",
+          "answer": "Par carte, mobile money (Wave, Orange Money, MTN, Moov) ou portefeuille Yadony. Le montant est bloqué jusqu'à la livraison et n'est versé au voyageur qu'après la remise contre le code. Les espèces sont possibles si le voyageur les accepte, mais sans paiement bloqué."
+        },
+        {
+          "question": "Mon destinataire doit-il installer l'application ?",
+          "answer": "Non. Il suit le colis sur une page web, sans compte. Le jour de la remise, il donne au voyageur le code à 6 chiffres que vous lui avez transmis."
+        }
+      ]
+    },
+    "traveler": {
+      "seo": {
+        "title": "Vendre ses kilos de bagage : rentabilisez votre valise",
+        "description": "Vous partez en Afrique ? Vendez les kilos libres de votre valise à des expéditeurs vérifiés : prix au kilo, négociable ou par article, paiement garanti à la livraison."
+      },
+      "kicker": "Voyageurs",
+      "title": "Vendez vos kilos, rentabilisez votre voyage",
+      "lead": "Votre valise part avec de la place libre. Publiez votre trajet, fixez votre prix, et transportez les colis d'expéditeurs vérifiés : vous êtes payé à la livraison.",
+      "listLabel": "Les étapes d'un trajet",
+      "steps": [
+        {
+          "title": "Trouvez votre billet moins cher",
+          "text": "Créez une alerte de prix sur votre trajet : Yadony vous prévient quand un vol passe sous votre budget. Vous réservez chez notre partenaire."
+        },
+        {
+          "title": "Publiez votre trajet en trois étapes",
+          "text": "Trajet, lieux et capacité, prix et conditions. Avion, voiture ou bateau, avec escales ou plusieurs étapes. Ce que vous acceptez, ce que vous refusez : c'est vous qui décidez."
+        },
+        {
+          "title": "Choisissez votre formule de prix",
+          "text": "Un prix au kilo, un prix ouvert aux propositions des expéditeurs, ou une grille de prix par article : téléphone, ordinateur, carton de vêtements."
+        },
+        {
+          "title": "Partagez votre affiche",
+          "text": "Yadony crée une affiche de votre trajet avec son QR code. Partagez-la sur WhatsApp et vos réseaux : vos contacts réservent directement dans l'app."
+        },
+        {
+          "title": "Recevez des demandes, négociez",
+          "text": "Les expéditeurs réservent ou vous proposent un prix. Vous acceptez, refusez avec un motif ou faites une contre-offre. Vous pouvez aussi proposer votre prix sur leurs demandes d'envoi."
+        },
+        {
+          "title": "Scannez à la remise, même hors ligne",
+          "text": "Vous vérifiez le contenu, scannez le QR code et prenez une photo. Sans réseau à l'aéroport ? Le scan est gardé et envoyé dès le retour de la connexion."
+        },
+        {
+          "title": "Arrivé : prévenez les destinataires",
+          "text": "Un geste pour marquer votre arrivée, puis WhatsApp, SMS, appel ou message dans l'app pour fixer chaque remise."
+        },
+        {
+          "title": "Livrez contre le code, soyez payé",
+          "text": "Le destinataire vous donne son code à 6 chiffres : la livraison est confirmée et le paiement vous est versé, sur votre compte bancaire ou en mobile money."
+        }
+      ],
+      "earnings": {
+        "kicker": "Exemple",
+        "title": "Ce que peuvent rapporter vos kilos",
+        "text": "15 kg libres à 8 € le kilo, c'est 120 € pour un voyage que vous faites déjà. Le prix, c'est vous qui le fixez.",
+        "note": "Exemple indicatif : chaque voyageur fixe son propre prix."
+      },
+      "payouts": {
+        "title": "Payé comme vous voulez",
+        "text": "Virement sur votre compte bancaire, ou versement mobile money (Orange Money, Wave, MTN, Moov) en Afrique de l'Ouest et centrale. Vous suivez vos revenus et vos kilos vendus dans « Mes statistiques »."
+      },
+      "video": {
+        "title": "Le tutoriel : publier un trajet",
+        "lead": "De la publication du trajet à la première demande reçue, pas à pas dans l'app.",
+        "label": "Tutoriel vidéo : publier un trajet dans l'application Yadony"
+      },
+      "flightsLink": "Trouver mon billet avec les alertes de prix",
+      "faq": [
+        {
+          "question": "Combien puis-je gagner en vendant mes kilos ?",
+          "answer": "C'est vous qui fixez le prix, au kilo, par article ou en négociant. Par exemple, 15 kg libres à 8 € le kilo rapportent 120 €. Yadony prélève sa commission de service sur le paiement de l'expéditeur : le montant que vous recevez est affiché avant que vous n'acceptiez."
+        },
+        {
+          "question": "Suis-je obligé d'accepter tous les colis ?",
+          "answer": "Non. Vous indiquez ce que vous acceptez et ce que vous refusez, vous voyez la description et les photos de chaque colis, et vous vérifiez le contenu à la remise. Vous pouvez refuser une demande avec un motif."
+        },
+        {
+          "question": "Quand suis-je payé ?",
+          "answer": "Dès que le destinataire vous donne son code à 6 chiffres à la livraison. Le paiement de l'expéditeur était bloqué depuis la réservation : vous savez qu'il existe avant même de partir."
+        },
+        {
+          "question": "Que se passe-t-il si je n'ai pas de réseau ?",
+          "answer": "Le scan du QR code et la photo fonctionnent hors ligne. Ils sont gardés sur votre téléphone et envoyés automatiquement dès que la connexion revient."
+        }
+      ]
+    },
+    "flights": {
+      "seo": {
+        "title": "Billet d'avion pas cher vers l'Afrique : alertes de prix",
+        "description": "Trouvez un billet d'avion moins cher vers Dakar, Abidjan, Bamako ou Douala : bons plans, alertes de prix et vols sous votre budget, dans l'app Yadony."
+      },
+      "kicker": "Billets d'avion",
+      "title": "Votre billet moins cher, sans surveiller les prix",
+      "lead": "Fixez votre prix maximum, Yadony surveille les vols pour vous. Dès qu'un vol passe en dessous, vous êtes prévenu.",
+      "listLabel": "Trouver un billet avec Yadony",
+      "steps": [
+        {
+          "title": "Cherchez votre vol",
+          "text": "Aller simple ou aller-retour, nombre de passagers, vols directs uniquement si vous préférez. Les résultats se trient du moins cher au plus rapide."
+        },
+        {
+          "title": "Repérez les bons plans",
+          "text": "« Bons plans pour vous » met en avant les vols nettement moins chers que d'habitude sur vos trajets."
+        },
+        {
+          "title": "Créez une alerte de prix",
+          "text": "Votre trajet, vos dates ou votre période, votre prix maximum. Yadony surveille les vols à votre place."
+        },
+        {
+          "title": "Recevez les vols sous votre prix",
+          "text": "Une notification, puis l'écran « Vols trouvés » : les vols sous votre budget, avec l'écart par rapport à votre prix."
+        },
+        {
+          "title": "Réservez, puis vendez vos kilos",
+          "text": "Vous réservez chez notre partenaire en un geste. Et puisque vous partez, publiez votre trajet : vos kilos libres peuvent rembourser une partie du billet."
+        }
+      ],
+      "partnerNote": "Yadony ne vend pas de billets : l'app trouve les vols et vous alerte, la réservation se fait sur le site de notre partenaire.",
+      "sellKilos": {
+        "title": "Votre billet peut se rembourser en partie",
+        "text": "Avec 15 kg libres à 8 € le kilo, vos kilos rapportent 120 €. Publiez votre trajet dès votre billet en poche.",
+        "cta": "Vendre mes kilos"
+      },
+      "faq": [
+        {
+          "question": "Comment fonctionne une alerte de prix ?",
+          "answer": "Vous indiquez votre trajet, vos dates ou une période, et votre prix maximum. Yadony vérifie les vols disponibles et vous envoie une notification dès qu'un vol passe sous ce prix. Vous retrouvez vos alertes dans « Mes alertes »."
+        },
+        {
+          "question": "Yadony vend-il des billets d'avion ?",
+          "answer": "Non. Yadony trouve les vols et vous alerte. La réservation se fait sur le site de notre partenaire, qui émet votre billet."
+        },
+        {
+          "question": "Les alertes sont-elles payantes ?",
+          "answer": "Non, la recherche de vols et les alertes de prix sont incluses dans l'application, jusqu'à 10 alertes actives en même temps."
+        },
+        {
+          "question": "Puis-je chercher un vol direct uniquement ?",
+          "answer": "Oui. Cochez « Direct uniquement » dans la recherche, ou triez les résultats par l'onglet « Direct »."
+        }
+      ]
+    }
+  }
+}

@@ -12,7 +12,15 @@
       "width": 1170,
       "height": 2392
     },
+    "flights-search": {
+      "width": 1170,
+      "height": 2392
+    },
     "mobile-money": {
+      "width": 1170,
+      "height": 2392
+    },
+    "money-overview": {
       "width": 1170,
       "height": 2392
     },
@@ -37,6 +45,10 @@
       "height": 2392
     },
     "publish-trip": {
+      "width": 1170,
+      "height": 2392
+    },
+    "request-step1": {
       "width": 1170,
       "height": 2392
     },

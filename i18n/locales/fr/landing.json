@@ -1,0 +1,177 @@
+{
+  "landing": {
+    "seo": {
+      "title": "Colis, kilos et billets vers l'Afrique, avec un voyageur vérifié",
+      "description": "Yadony rentabilise votre voyage au pays : billets d'avion moins chers grâce aux alertes de prix, kilos de valise vendus, colis livrés en sécurité et suivis en temps réel."
+    },
+    "hero": {
+      "kicker": "Colis, kilos et billets vers l'Afrique",
+      "title": "Votre voyage au pays, rentabilisé.",
+      "lead": "Billets moins chers, kilos vendus, colis livrés en sécurité. Tout est dans Yadony, l'app qui relie la diaspora et ceux qui voyagent.",
+      "chips": ["Billets moins chers", "Kilos vendus", "Colis livrés"],
+      "videoCta": "Yadony en 1 minute",
+      "note": "Gratuit sur iPhone et Android. Paiement bloqué jusqu'à la livraison.",
+      "screensAlt": [
+        "Écran « Vols trouvés » de Yadony : quatre vols sous le prix fixé par l'alerte",
+        "Écran « Mes trajets » de Yadony : les kilos vendus et disponibles de chaque trajet",
+        "Écran « Mes colis » de Yadony : un colis Paris – Bamako arrivé, prêt à être récupéré"
+      ],
+      "donyAlt": "Dony, la mascotte de Yadony, fait coucou"
+    },
+    "promises": {
+      "kicker": "Trois raisons de l'installer",
+      "title": "Une seule app pour tout votre voyage",
+      "items": [
+        {
+          "title": "Voyagez moins cher",
+          "text": "Créez une alerte de prix sur votre trajet. Dès qu'un vol passe sous votre budget, Yadony vous prévient.",
+          "cta": "Les billets d'avion"
+        },
+        {
+          "title": "Vendez vos kilos",
+          "text": "Votre valise n'est pas pleine ? Publiez votre trajet, fixez votre prix et transportez les colis d'expéditeurs vérifiés.",
+          "cta": "Devenir voyageur"
+        },
+        {
+          "title": "Envoyez en sécurité",
+          "text": "Votre colis voyage avec une personne vérifiée. L'argent reste bloqué jusqu'à la livraison, et vous suivez tout en direct.",
+          "cta": "Envoyer un colis"
+        }
+      ]
+    },
+    "video": {
+      "kicker": "En une minute",
+      "title": "Yadony, comment ça marche ?",
+      "lead": "La carte des voyageurs autour de vous, la négociation du prix, l'argent bloqué jusqu'à la livraison, le colis scanné à chaque étape.",
+      "description": "Vidéo de présentation de l'application Yadony.",
+      "play": "Lire la vidéo",
+      "pause": "Mettre la vidéo en pause"
+    },
+    "crossed": {
+      "kicker": "Une histoire, deux parcours",
+      "title": "Awa part à Dakar. Moussa envoie un colis à sa mère.",
+      "lead": "Suivez-les étape par étape : leurs chemins se croisent dans Yadony.",
+      "listLabel": "Le parcours d'Awa et de Moussa, en huit étapes",
+      "actors": {
+        "traveler": "Awa · voyageuse",
+        "sender": "Moussa · expéditeur",
+        "both": "Awa et Moussa"
+      },
+      "steps": [
+        {
+          "title": "L'alerte sonne : le vol est moins cher",
+          "text": "Awa a créé une alerte de prix sur Paris – Dakar. Un vol passe sous son budget : Yadony la prévient, et elle réserve chez notre partenaire."
+        },
+        {
+          "title": "Awa publie son trajet",
+          "text": "Date, kilos disponibles, lieux de remise. Elle choisit sa formule : un prix au kilo, un prix ouvert aux propositions, ou une grille de prix par article."
+        },
+        {
+          "title": "Moussa cherche un voyageur",
+          "text": "Sur la carte ou dans la liste, il voit les voyageurs vérifiés qui partent vers Dakar. Il peut aussi publier sa demande d'envoi et laisser les voyageurs lui faire une offre."
+        },
+        {
+          "title": "Ils négocient dans l'app",
+          "text": "Moussa propose un prix, Awa fait une contre-offre, ils tombent d'accord. Tout reste écrit dans l'app, sans échanger de numéro."
+        },
+        {
+          "title": "Le paiement est bloqué",
+          "text": "Moussa paie par carte, mobile money ou portefeuille. L'argent ne part pas chez Awa : il attend la livraison."
+        },
+        {
+          "title": "La remise, scannée et photographiée",
+          "text": "Moussa remet le colis en main propre. Awa scanne son QR code : la photo et l'heure sont enregistrées, même sans réseau."
+        },
+        {
+          "title": "Le colis voyage, la famille suit",
+          "text": "Remis, en vol, arrivé : chaque étape s'affiche en direct. La mère de Moussa suit tout sur une page web, sans installer l'app."
+        },
+        {
+          "title": "Livré contre un code, Awa est payée",
+          "text": "À Dakar, la mère de Moussa donne son code à 6 chiffres. La livraison est confirmée et l'argent est versé à Awa."
+        }
+      ],
+      "art": {
+        "priceCurve": {
+          "threshold": "Votre prix max",
+          "notification": "4 vols sous votre prix",
+          "detail": "Paris – Dakar · le moins cher passe sous votre budget"
+        },
+        "priceModes": [
+          { "title": "Au kilo", "example": "8 € le kilo" },
+          { "title": "Négociable", "example": "Faites-moi une offre" },
+          { "title": "Par article", "example": "Téléphone 20 € · Ordinateur 40 €" }
+        ],
+        "negotiation": {
+          "sender": "Moussa",
+          "traveler": "Awa",
+          "messages": ["Je propose 60 €", "Contre-offre : 70 €", "On dit 65 € ?"],
+          "agreed": "Accord à 65 €"
+        },
+        "padlock": {
+          "amount": "65 €",
+          "locked": "Bloqué jusqu'à la livraison",
+          "released": "Versé à Awa"
+        },
+        "route": { "from": "Paris", "to": "Dakar" },
+        "timeline": ["Remis", "En vol", "Arrivé", "Livré"]
+      }
+    },
+    "trust": {
+      "kicker": "Confiance",
+      "title": "Ce qui manquait aux groupes WhatsApp",
+      "lead": "Le voyageur existait déjà. Yadony ajoute la trace : qui porte, quand, et la preuve à chaque étape.",
+      "items": [
+        { "title": "Identité vérifiée", "text": "Pièce d'identité et selfie contrôlés avant toute publication. Le nom affiché est le nom vérifié." },
+        { "title": "Paiement bloqué", "text": "L'argent attend la livraison. En cas de litige, il reste suspendu le temps de l'examen." },
+        { "title": "Preuve à chaque étape", "text": "Scan du QR code, photo horodatée et géolocalisée, à la remise comme en transit." },
+        { "title": "Code de livraison", "text": "Le colis n'est livré que contre le code à 6 chiffres que seul votre destinataire connaît." }
+      ],
+      "cta": "Tout sur la sécurité",
+      "donyAlt": "Dony, la mascotte de Yadony, tout sourire"
+    },
+    "payments": {
+      "kicker": "Paiement",
+      "title": "On paie comme chez soi",
+      "lead": "Carte bancaire en Europe et en Amérique du Nord, mobile money en Afrique de l'Ouest et centrale, portefeuille Yadony partout.",
+      "items": ["Carte bancaire", "Wave", "Orange Money", "MTN MoMo", "Moov Money", "Portefeuille Yadony", "Espèces"],
+      "note": "Les espèces restent possibles, mais sans paiement bloqué : la protection ne s'applique qu'aux paiements faits dans l'app."
+    },
+    "corridors": {
+      "kicker": "Destinations",
+      "title": "De la France vers l'Afrique de l'Ouest et centrale",
+      "lead": "Des voyageurs partent de Paris, Lyon et Marseille vers Dakar, Abidjan, Bamako et Douala. Choisissez votre trajet.",
+      "listLabel": "Trajets desservis",
+      "cta": "Toutes les destinations",
+      "gp": "Vous cherchez un GP ? Découvrez les GP vérifiés"
+    },
+    "recipient": {
+      "kicker": "Le destinataire",
+      "title": "Votre maman suit le colis sans installer l'app",
+      "lead": "Vous lui envoyez le lien de suivi sur WhatsApp. Elle voit où en est le colis, en direct, et garde le code de retrait pour le jour J.",
+      "points": [
+        "Une simple page web, sans compte ni mot de passe",
+        "Chaque étape avec son heure : remis, en vol, arrivé",
+        "Le code à 6 chiffres à donner au voyageur, et à personne d'autre"
+      ],
+      "chat": {
+        "message": "Maman, ton colis part samedi avec Awa. Tu peux le suivre ici :",
+        "link": "yadony.com/tracking/…",
+        "page": "Arrivé à Dakar",
+        "pageDetail": "Le voyageur vous contacte pour la remise"
+      }
+    },
+    "final": {
+      "title": "Installez Yadony avant votre prochain voyage",
+      "lead": "Que vous partiez au pays ou que vous y envoyiez un colis, tout commence dans l'app.",
+      "qr": "Scannez pour télécharger l'app",
+      "qrAlt": "QR code de téléchargement de l'application Yadony",
+      "donyAlt": "Dony, la mascotte de Yadony, fête une livraison réussie",
+      "video": {
+        "description": "Vidéo promotionnelle de l'application Yadony.",
+        "play": "Lire la vidéo",
+        "pause": "Mettre la vidéo en pause"
+      }
+    }
+  }
+}

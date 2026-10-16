@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest'
 import { corridors, findCorridor } from '@/lib/corridors'
-import fr from '../../../i18n/locales/fr.json'
-import en from '../../../i18n/locales/en.json'
+import { fr } from '../helpers/messages'
+import { en } from '../helpers/messages'
 
 describe('corridors', () => {
   it('expose les cinq corridors de lancement, Paris–Abidjan en tête', () => {

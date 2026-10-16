@@ -1,0 +1,195 @@
+{
+  "gp": {
+    "common": {
+      "breadcrumb": "GP vérifiés",
+      "whatTitle": "Qu'est-ce qu'un GP ?",
+      "risksTitle": "Les risques d'un GP trouvé sur un groupe",
+      "yadonyTitle": "Ce que Yadony ajoute au GP",
+      "priceTitle": "Combien coûte un GP",
+      "howTitle": "Envoyer un colis avec un GP vérifié, en 4 étapes",
+      "faqTitle": "Questions fréquentes sur les GP",
+      "corridorLink": "Tout savoir pour envoyer un colis de {from} à {to}",
+      "othersTitle": "Autres GP vérifiés",
+      "comparison": {
+        "title": "GP de groupe ou GP vérifié : ce qui change",
+        "columns": {
+          "usual": "GP trouvé sur un groupe",
+          "yadony": "GP vérifié sur Yadony"
+        },
+        "rows": [
+          {
+            "label": "Identité du voyageur",
+            "usual": "Un prénom, une photo de profil et un numéro",
+            "yadony": "Pièce d'identité et selfie vérifiés"
+          },
+          {
+            "label": "Prix",
+            "usual": "Annoncé dans un message, parfois revu au dépôt",
+            "yadony": "Au kilo, par article ou négocié, commission affichée avant de payer"
+          },
+          {
+            "label": "Paiement",
+            "usual": "Souvent en espèces, avant le voyage",
+            "yadony": "Carte, mobile money ou portefeuille, bloqué jusqu'à la livraison"
+          },
+          {
+            "label": "Suivi du colis",
+            "usual": "Des nouvelles quand le GP répond",
+            "yadony": "Scan du QR code, photo géolocalisée, suivi en temps réel"
+          },
+          {
+            "label": "En cas de problème",
+            "usual": "Une discussion, sans personne pour trancher",
+            "yadony": "Litige ouvrable sous 15 jours, tranché sous 72 h ouvrées sur preuves"
+          }
+        ]
+      }
+    },
+    "pages": {
+      "parisDakar": {
+        "seo": {
+          "title": "GP Paris Dakar vérifié : envoyez vos colis en confiance",
+          "description": "Trouvez un GP Paris Dakar à l'identité vérifiée : prix au kilo affiché, paiement bloqué jusqu'à la livraison à Dakar, remise par QR code, suivi en direct."
+        },
+        "title": "GP Paris Dakar, en vérifié",
+        "lead": "Le GP fait partie de la vie de la diaspora sénégalaise : un parent, un voisin ou une connaissance qui part de Paris avec quelques kilos de libres et rapporte au pays ce que la famille attend. Yadony garde ce principe et y ajoute ce qui manquait souvent : savoir à qui l'on confie son colis, et être protégé si quelque chose se passe mal.",
+        "what": "Au Sénégal, « GP » désigne la personne qui transporte des colis dans ses bagages contre un prix au kilo. Entre Paris et Dakar, on les trouve surtout par le bouche-à-oreille et dans les groupes WhatsApp ou Facebook : une annonce avec une date de vol depuis Roissy-Charles-de-Gaulle ou Orly, un prix au kilo, un numéro à appeler. Le colis est déposé quelques jours avant le départ, souvent à Château-Rouge, à Montreuil ou directement chez le GP, puis récupéré par la famille à Dakar après l'atterrissage à l'aéroport Blaise-Diagne. Beaucoup de GP font ce trajet depuis des années et rendent un vrai service, en particulier avant la Tabaski, le Magal ou la rentrée scolaire.",
+        "risks": "Le système repose sur la confiance, et c'est aussi sa limite. Le plus souvent, il n'existe aucune trace écrite : le poids, le prix et le contenu se règlent par message vocal. Le paiement se fait en espèces au moment du dépôt, donc avant le voyage. L'identité du GP se résume à un prénom et un numéro, sans moyen de la vérifier. Si le colis arrive ouvert, incomplet, ou n'arrive pas, il ne reste que la discussion, sans tiers pour trancher. La plupart des envois se passent bien, mais quand ce n'est pas le cas, l'expéditeur n'a aucun recours.",
+        "yadony": "Sur Yadony, chaque voyageur fait vérifier son identité avec une pièce d'identité et un selfie avant de transporter des colis. Vous pouvez chercher un trajet Paris–Dakar ou publier votre demande d'envoi et recevoir des offres. Le prix est clair dès le départ : prix au kilo fixé par le voyageur, propositions et contre-propositions dans l'app, ou grille de prix par article. Vous payez par carte, par mobile money (Orange Money, Wave, MTN, Moov) ou avec votre portefeuille Yadony, et l'argent reste bloqué jusqu'à la livraison. À la remise en région parisienne, le voyageur scanne le QR code du colis et prend une photo géolocalisée. Votre famille à Dakar suit le colis sur une page web, sans créer de compte, et valide la livraison avec un code à 6 chiffres. En cas de souci, vous ouvrez un litige sous 15 jours, tranché sous 72 h ouvrées sur preuves.",
+        "price": "Comme chez les GP que vous connaissez, le prix se compte au kilo, et c'est le voyageur qui le fixe selon son vol et ce qu'il lui reste de franchise bagage. Par exemple, un voyageur à 8 €/kg vous facture 40 € pour un colis de 5 kg. S'il accepte la négociation, vous pouvez lui faire une proposition et il peut répondre par une contre-proposition : tout reste écrit dans l'app. D'autres voyageurs préfèrent une grille de prix par article. La commission de service de Yadony est toujours affichée avant de payer : vous connaissez le total avant de vous engager.",
+        "how": [
+          "Cherchez un trajet Paris–Dakar ou publiez votre demande d'envoi avec le poids et une photo du colis.",
+          "Choisissez un voyageur vérifié ou acceptez l'offre qui vous convient, puis payez : l'argent reste bloqué.",
+          "Remettez le colis en main propre en Île-de-France : le voyageur scanne le QR code et prend une photo.",
+          "Votre proche suit le colis jusqu'à Dakar et donne son code à 6 chiffres à la réception pour valider la livraison."
+        ],
+        "faq": [
+          {
+            "question": "Combien coûte un GP Paris Dakar au kilo ?",
+            "answer": "Il n'y a pas de tarif unique : chaque voyageur fixe son prix au kilo, et vous comparez les trajets avant de choisir. Pour vous donner un ordre d'idée, un voyageur à 8 €/kg vous coûte 40 € pour 5 kg, plus la commission de service de Yadony, affichée avant le paiement. Si le voyageur accepte la négociation, vous pouvez lui proposer un autre prix."
+          },
+          {
+            "question": "Je ne trouve pas de GP à mes dates, que faire ?",
+            "answer": "Publiez une demande d'envoi avec le poids, la description et une photo de votre colis. Les voyageurs vérifiés qui partent vers Dakar la voient et vous font leurs offres. Vous comparez les prix et les profils, puis vous choisissez celle qui vous convient, sans avoir à relancer chaque groupe WhatsApp."
+          },
+          {
+            "question": "Qui récupère le colis à Dakar si je ne suis pas sur place ?",
+            "answer": "La personne que vous indiquez comme destinataire : un parent, un ami, un voisin. Vous lui envoyez le lien de suivi, qu'elle ouvre dans son navigateur sans télécharger l'app, et elle convient du rendez-vous avec le voyageur. À la remise, elle donne le code à 6 chiffres : c'est ce code qui valide la livraison et déclenche le paiement du voyageur."
+          },
+          {
+            "question": "Que se passe-t-il si mon colis n'arrive pas à Dakar ?",
+            "answer": "Sans le code à 6 chiffres de votre destinataire, la livraison n'est pas validée et votre paiement reste bloqué. Vous pouvez ouvrir un litige dans les 15 jours. L'équipe Yadony examine les preuves, comme le scan de remise, les photos et vos échanges dans l'app, et tranche sous 72 h ouvrées."
+          }
+        ]
+      },
+      "parisAbidjan": {
+        "seo": {
+          "title": "GP Paris Abidjan vérifié : vos colis entre de bonnes mains",
+          "description": "Envoyez vos colis à Abidjan avec un GP vérifié : identité contrôlée, prix clair, paiement bloqué jusqu'à la livraison et suivi en direct pour vos proches."
+        },
+        "title": "GP Paris Abidjan, en vérifié",
+        "lead": "Entre Paris et Abidjan, les colis voyagent depuis longtemps dans les valises des uns et des autres : pagnes, chaussures, fournitures scolaires, petits appareils pour la famille. Yadony ne change pas cette habitude. Il vous donne les moyens de savoir qui part avec votre colis et de garder la main jusqu'à la remise à Abidjan.",
+        "what": "Le terme « GP » vient de la diaspora sénégalaise, mais les Ivoiriens de France l'emploient aussi, à côté de « voyageur » ou de « colis par bagage ». Le principe reste le même : une personne qui part de Roissy-Charles-de-Gaulle vers l'aéroport Félix-Houphouët-Boigny, à Port-Bouët, propose ses kilos libres sur un groupe Facebook ou WhatsApp. Le dépôt se fait chez elle, à Saint-Denis, à Créteil ou ailleurs en Île-de-France, et un proche récupère le colis à Abidjan, à Cocody, Yopougon ou Abobo, une fois le voyageur arrivé. Pour beaucoup de familles, c'est le moyen le plus simple de faire parvenir quelque chose rapidement, surtout à l'approche des fêtes de fin d'année.",
+        "risks": "Avec une annonce de groupe, on confie souvent son colis à quelqu'un dont on ne connaît que le pseudo et la photo de profil. Le prix est convenu à l'oral et réglé d'avance, en liquide, au dépôt. Aucun document ne dit ce qui a été remis ni dans quel état. Si le colis est ouvert pendant le trajet, s'il manque un article à l'arrivée ou si le voyageur ne répond plus, aucune procédure ne permet de faire valoir ses droits. Ce n'est pas la règle, mais c'est un risque que chaque expéditeur porte seul.",
+        "yadony": "Yadony garde le geste du GP, une personne qui voyage et emporte votre colis, et l'encadre. Le voyageur a fait vérifier son identité avec une pièce d'identité et un selfie. Vous parcourez les trajets vers Abidjan ou vous publiez une demande d'envoi pour que les voyageurs vous fassent des offres. Vous échangez par messagerie ou par appel dans l'app, en masquant votre numéro si vous le souhaitez. Le paiement par carte, mobile money ou portefeuille Yadony reste bloqué tant que la livraison n'est pas confirmée. La remise se fait en main propre, avec scan du QR code et photo géolocalisée, puis le colis se suit en temps réel. À Abidjan, votre proche suit l'envoi sur une page web sans compte et donne son code à 6 chiffres à la réception. Après la livraison, vous notez le voyageur, ce qui aide les prochains expéditeurs à choisir.",
+        "price": "Le voyageur fixe son tarif, et il peut le présenter de trois façons. Au kilo : par exemple un voyageur à 9 €/kg pour un colis de 4 kg, soit 36 €. Par article, avec une grille de prix : un tarif pour un carton, un autre pour un téléphone ou un ordinateur portable. Ou par négociation, s'il l'accepte : vous proposez un prix, il peut vous faire une contre-proposition. Dans tous les cas, la commission de service de Yadony est toujours affichée avant de payer, et vous payez le montant que vous avez accepté dans l'app.",
+        "how": [
+          "Ouvrez Yadony et cherchez un trajet vers Abidjan, ou publiez votre colis pour recevoir des offres.",
+          "Comparez les voyageurs vérifiés, leurs notes et leurs prix, puis payez : la somme reste bloquée.",
+          "Donnez le colis au voyageur en main propre : il scanne le QR code et prend une photo géolocalisée.",
+          "Partagez le lien de suivi avec votre proche à Abidjan : il valide la réception avec son code à 6 chiffres."
+        ],
+        "faq": [
+          {
+            "question": "Quel est le prix d'un GP Paris Abidjan ?",
+            "answer": "Chaque voyageur fixe le sien : au kilo, par article ou après négociation. Par exemple, à 9 €/kg, un colis de 4 kg revient à 36 € pour le voyageur. S'y ajoute la commission de service de Yadony, que vous voyez avant de payer. Le plus simple est de comparer plusieurs trajets à des dates proches."
+          },
+          {
+            "question": "Puis-je payer mon GP en espèces ?",
+            "answer": "Oui, si le voyageur l'accepte. Sachez simplement qu'un paiement en espèces n'est pas protégé : l'argent ne reste pas bloqué jusqu'à la livraison. Par carte, par mobile money (Orange Money, Wave, MTN, Moov) ou avec le portefeuille Yadony, il ne part au voyageur qu'une fois la livraison validée par le code de votre destinataire."
+          },
+          {
+            "question": "Mes proches à Abidjan doivent-ils installer l'application ?",
+            "answer": "Non. Vous leur envoyez le lien de suivi, qu'ils ouvrent dans leur navigateur pour voir où en est le colis. Ils ont seulement besoin du code à 6 chiffres que vous leur transmettez, à donner au voyageur au moment de la remise."
+          },
+          {
+            "question": "Comment savoir si le voyageur a bien pris mon colis ?",
+            "answer": "Au moment du dépôt, le voyageur scanne le QR code du colis et prend une photo géolocalisée. Cette étape apparaît aussitôt dans votre suivi, avec l'heure et le lieu. Vous gardez ainsi une trace de la remise, que vous pourrez produire en cas de litige."
+          }
+        ]
+      },
+      "parisBamako": {
+        "seo": {
+          "title": "GP Paris Bamako vérifié : envoyez vos colis sereinement",
+          "description": "Un GP Paris Bamako vérifié pour vos colis : identité contrôlée, prix au kilo ou négocié, paiement bloqué jusqu'à la livraison et suivi pour la famille."
+        },
+        "title": "GP Paris Bamako, en vérifié",
+        "lead": "De Montreuil à Bamako, la diaspora malienne fait voyager les colis entre la France et le pays par des gens du même village ou du même foyer. Yadony s'appuie sur cette solidarité et y ajoute des garanties : un voyageur vérifié, un prix écrit, et un paiement qui ne lui est versé qu'une fois le colis remis.",
+        "what": "Pour la communauté malienne, le GP est souvent une connaissance : quelqu'un du foyer, un cousin, un commerçant qui fait régulièrement l'aller-retour entre Paris et l'aéroport de Bamako-Sénou. Les annonces circulent dans les groupes WhatsApp et de bouche à oreille, avec la date du vol, le prix au kilo et le lieu de dépôt, souvent à Montreuil, à Aubervilliers ou dans un foyer de travailleurs. À l'arrivée, la famille vient chercher le colis à Bamako, parfois pour le faire repartir ensuite vers Kayes, Ségou ou le village. Pour la Tabaski, un mariage ou la rentrée, c'est souvent la voie la plus directe.",
+        "risks": "Entre gens qui se connaissent, on hésite à demander des garanties, et c'est là que naissent les difficultés quand elles arrivent. Le prix est fixé à la parole, le paiement se fait d'avance, et rien n'est écrit sur ce que contient le colis. Quand le GP n'est qu'une connaissance de connaissance, personne n'a vérifié son identité. Un colis égaré, un sac rouvert ou une livraison qui traîne se règle alors entre familles, sans preuve et sans personne pour trancher.",
+        "yadony": "Avec Yadony, vous gardez la souplesse du GP sans dépendre uniquement de la confiance. Chaque voyageur vérifie son identité avec une pièce d'identité et un selfie. Vous trouvez un trajet vers Bamako ou vous publiez votre demande d'envoi, et les voyageurs vous font leurs offres. Prix au kilo, grille par article ou négociation : tout est écrit dans l'app. Vous réglez par carte, par mobile money ou avec votre portefeuille Yadony, et le paiement reste bloqué jusqu'à la livraison. Le dépôt est enregistré par le scan du QR code et une photo géolocalisée, puis vous suivez le colis en temps réel. À Bamako, votre destinataire suit l'envoi sur une page web, sans compte, et confirme la réception avec un code à 6 chiffres. En cas de désaccord, un litige peut être ouvert sous 15 jours et il est tranché sous 72 h ouvrées sur preuves.",
+        "price": "Le tarif d'un GP Paris Bamako dépend du voyageur, de sa date de départ et de la place qu'il lui reste. Sur Yadony, c'est lui qui fixe son prix au kilo : par exemple 7 €/kg, soit 21 € pour un colis de 3 kg. Quand le voyageur accepte la négociation, vous pouvez proposer un prix pour un envoi plus lourd ; il accepte, refuse ou répond par une contre-proposition, et l'échange reste dans l'app. Certains voyageurs proposent aussi une grille de prix par article. La commission de service de Yadony est toujours affichée avant de payer, jamais découverte après coup.",
+        "how": [
+          "Indiquez Paris et Bamako, puis choisissez un trajet ou publiez votre demande d'envoi.",
+          "Échangez avec le voyageur dans l'app, mettez-vous d'accord sur le prix et payez : l'argent est bloqué.",
+          "Remettez le colis en main propre en Île-de-France : scan du QR code et photo géolocalisée.",
+          "À Bamako, votre destinataire donne son code à 6 chiffres au voyageur : la livraison est validée."
+        ],
+        "faq": [
+          {
+            "question": "Combien prend un GP pour Bamako au kilo ?",
+            "answer": "Cela dépend de chaque voyageur : il fixe son prix au kilo et vous le voyez avant de réserver. Par exemple, à 7 €/kg, un colis de 3 kg coûte 21 €, plus la commission de service de Yadony affichée avant le paiement. Pour un colis lourd, la négociation, quand le voyageur l'accepte, permet de proposer un prix d'ensemble."
+          },
+          {
+            "question": "Je connais déjà un GP, puis-je passer par Yadony avec lui ?",
+            "answer": "Oui, s'il publie son trajet sur Yadony après avoir fait vérifier son identité. Vous le retrouvez alors parmi les trajets Paris–Bamako et vous profitez du paiement bloqué jusqu'à la livraison, du suivi et du recours en cas de litige, tout en gardant le voyageur que vous connaissez."
+          },
+          {
+            "question": "Comment être sûr qu'un GP est fiable ?",
+            "answer": "Regardez trois choses dans son profil : son identité vérifiée (pièce d'identité et selfie), les notes laissées après ses livraisons précédentes, et la façon dont il répond à vos messages. Payez ensuite par un moyen protégé : tant que votre destinataire n'a pas donné son code, le voyageur ne touche pas l'argent."
+          },
+          {
+            "question": "Que faire si mon colis arrive abîmé ou incomplet à Bamako ?",
+            "answer": "Signalez-le sans attendre : vous pouvez ouvrir un litige dans les 15 jours. La photo prise au dépôt, le scan du QR code et vos échanges dans l'app servent de preuves, et l'équipe Yadony rend sa décision sous 72 h ouvrées. Pensez aussi à photographier le contenu avant de fermer le colis : c'est une preuve de plus."
+          }
+        ]
+      },
+      "parisDouala": {
+        "seo": {
+          "title": "GP Paris Douala vérifié : un voyageur sûr pour vos colis",
+          "description": "Envoyez un colis à Douala avec un GP vérifié : voyageur identifié, prix fixé ou négocié dans l'app, paiement bloqué jusqu'à la livraison, suivi par QR code."
+        },
+        "title": "GP Paris Douala, en vérifié",
+        "lead": "Les Camerounais de France ont leurs propres circuits pour envoyer des colis au pays : un frère qui rentre, une connaissance de la paroisse, une annonce repérée sur Facebook. Yadony reprend ce réflexe de passer par quelqu'un qui voyage et le rend plus sûr, pour l'expéditeur comme pour la famille qui attend à Douala.",
+        "what": "Le mot « GP » est né dans la diaspora sénégalaise et s'est répandu bien au-delà : les Camerounais de France l'emploient aussi, à côté de « colis par voyageur » ou d'« envoi par bagage ». Un voyageur qui part de Roissy-Charles-de-Gaulle vers l'aéroport international de Douala propose les kilos qu'il n'utilise pas. On lui remet le colis en région parisienne, par exemple à Château-Rouge, à Évry ou à Cergy, et un proche le récupère à Douala, à Akwa, à Bonapriso ou à Bonabéri, avant parfois de le faire suivre vers Yaoundé ou l'Ouest.",
+        "risks": "Le fonctionnement informel a ses angles morts. On s'accorde par téléphone et on paie d'avance, souvent en espèces et sans reçu. On ne sait pas toujours qui se trouve réellement derrière le profil Facebook. Si le colis est retenu, ouvert ou perdu, ni l'expéditeur ni le destinataire n'ont de preuve de ce qui a été remis, et personne ne peut arbitrer. Beaucoup de voyageurs sont parfaitement honnêtes, mais rien ne permet de le savoir à l'avance.",
+        "yadony": "Sur Yadony, vous savez à qui vous parlez : chaque voyageur a fait vérifier son identité avec une pièce d'identité et un selfie. Vous parcourez les trajets Paris–Douala ou vous publiez une demande d'envoi et recevez des offres. Le prix est fixé par le voyageur, au kilo ou avec une grille par article, ou négocié par propositions et contre-propositions dans l'app. Le paiement, par carte, mobile money (Orange Money, MTN, Wave, Moov) ou portefeuille Yadony, reste bloqué jusqu'à la livraison. La remise en main propre est attestée par le scan du QR code et une photo géolocalisée, et chaque étape s'affiche en temps réel. Votre famille à Douala suit le colis sur une page web, sans créer de compte, et valide la réception avec un code à 6 chiffres. Messagerie et appel passent par l'app, votre numéro peut rester masqué, et vous notez le voyageur après la livraison.",
+        "price": "Sur ce trajet, les voyageurs fixent eux-mêmes leur prix. Au kilo d'abord : par exemple un voyageur à 10 €/kg, soit 60 € pour un colis de 6 kg. Avec une grille par article, pratique pour un téléphone, un ordinateur ou un carton de vêtements, chaque objet a son tarif. Ou par négociation, quand le voyageur l'accepte : vous proposez, il répond. La commission de service de Yadony est toujours affichée avant de payer, pour que le total ne réserve aucune surprise.",
+        "how": [
+          "Recherchez un trajet Paris–Douala ou publiez votre colis avec son poids, sa description et une photo.",
+          "Choisissez votre voyageur vérifié et réglez par carte, mobile money ou portefeuille : le paiement est bloqué.",
+          "Remettez le colis en main propre : le voyageur scanne son QR code et prend une photo géolocalisée.",
+          "À Douala, votre proche donne son code à 6 chiffres au voyageur, ce qui valide la livraison."
+        ],
+        "faq": [
+          {
+            "question": "Combien coûte un GP Paris Douala ?",
+            "answer": "Le prix est fixé par chaque voyageur. À titre d'exemple, un voyageur à 10 €/kg demande 60 € pour 6 kg ; un autre peut proposer une grille par article ou accepter la négociation. Vous voyez la commission de service de Yadony avant de payer, donc vous connaissez le total exact avant de confirmer."
+          },
+          {
+            "question": "Puis-je payer le voyageur en espèces ?",
+            "answer": "C'est possible si vous vous mettez d'accord avec lui, mais ce paiement n'est pas protégé : aucune somme ne reste bloquée en attendant la livraison. Pour être couvert, payez dans l'app par carte, mobile money ou portefeuille Yadony : le voyageur n'est payé qu'une fois la livraison validée par le code de votre destinataire."
+          },
+          {
+            "question": "Que se passe-t-il si le voyageur ne livre pas mon colis à Douala ?",
+            "answer": "Tant que votre destinataire n'a pas donné son code à 6 chiffres, la livraison n'est pas validée. Vous pouvez ouvrir un litige dans un délai de 15 jours ; l'équipe Yadony s'appuie sur les preuves disponibles, comme le scan du QR code, les photos géolocalisées et vos messages, et tranche sous 72 h ouvrées."
+          },
+          {
+            "question": "Puis-je garder mon numéro privé avec le voyageur ?",
+            "answer": "Oui. La messagerie et les appels passent par l'application, et vous pouvez masquer votre numéro. Vous vous organisez pour le dépôt et pour la remise à Douala sans communiquer vos coordonnées personnelles."
+          }
+        ]
+      }
+    }
+  }
+}

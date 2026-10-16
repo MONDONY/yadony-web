@@ -1,0 +1,240 @@
+{
+  "journeys": {
+    "common": {
+      "home": "Home",
+      "stepLabel": "Step {n}",
+      "faqTitle": "Frequently asked questions",
+      "downloadTitle": "Ready to give it a go?",
+      "downloadLead": "Install Yadony: signing up takes two minutes, and identity verification happens in the app.",
+      "videoPlay": "Play the tutorial",
+      "videoPause": "Pause the tutorial"
+    },
+    "screens": {
+      "flights-hub": "The Yadony \"Activités\" (Activities) screen: the \"Billets d'avion\" (Flight tickets) section with two deals at 49% and 48% off",
+      "flight-alerts": "The Yadony \"Outils\" (Tools) screen: a Paris – Malta price alert that has found four flights, one of them at 180 €",
+      "flights-found": "The \"Vols trouvés\" (Flights found) screen: four flights under the maximum price set by the alert",
+      "search-map": "The Yadony \"Rechercher\" (Search) screen: map and list of available travellers, with their price per kilo",
+      "trip-detail": "A trip's details in Yadony: price per kilo, drop-off deadline, verified traveller, and the \"Faire une demande\" (Make a request) and \"Proposer un prix\" (Propose a price) buttons",
+      "traveler-profile": "A traveller's public profile: rating, number of deliveries, verified phone, email and ID",
+      "publish-trip": "The \"Publier un trajet\" (Post a trip) screen: step one of three, listing currency and trip templates",
+      "my-trips": "The \"Mes trajets\" (My trips) screen: kilos sold and kilos available on each trip",
+      "negotiation": "A negotiation thread in Yadony: offer, counter-offer, then the request accepted in the fourth round",
+      "scan": "The Yadony \"Suivi\" (Tracking) tab in \"Valider une étape\" (Validate a step) mode: the camera ready to scan a parcel's QR code",
+      "my-parcels": "The \"Mes colis\" (My parcels) screen: the \"Remis, En route, Arrivé, Livraison\" (Handed over, On the way, Arrived, Delivery) timeline for each shipment",
+      "parcel-ticket": "A Paris – Bamako parcel ticket: parcel QR code, pickup code and tracking number",
+      "parcel-tracking": "Read-only tracking of a parcel that has arrived in Bamako, with the photo taken at handover",
+      "wallet": "The Yadony \"Moi\" (Me) screen: wallet, mobile money payouts and reputation",
+      "mobile-money": "Mobile money payouts switched on: Orange Money, Moov Money and MTN MoMo accepted",
+      "flights-search": "Yadony's \"Billets\" (Flights) screen: a one-way Paris – Abidjan search, with recent searches",
+      "money-overview": "The \"Mon argent\" (My money) screen: recent payouts for each delivered parcel, in euros and CFA francs",
+      "request-step1": "First step of a delivery request: departure and arrival cities, date and a plus or minus two-day flexibility"
+    },
+    "sender": {
+      "seo": {
+        "title": "Send a parcel to Africa with a verified traveller",
+        "description": "Send a parcel to Dakar, Abidjan, Bamako or Douala with a verified traveller: a negotiated price, payment held until delivery and real-time tracking."
+      },
+      "kicker": "Senders",
+      "title": "Send a parcel to Africa with someone you can trust",
+      "lead": "Find a verified traveller already heading to your city, agree on a price, and follow your parcel right into your loved one's hands.",
+      "listLabel": "The steps of a shipment",
+      "steps": [
+        {
+          "title": "Find a trip, or post your request",
+          "text": "On the map or in the list, filter by date, price, kilos or rating. No traveller on your dates? Post a shipping request, choose \"I'm open to offers\" or \"I set my price\", and let travellers come to you."
+        },
+        {
+          "title": "Choose someone verified",
+          "text": "Every traveller has verified their identity. You can see their rating, their deliveries, their checks and what they agree to carry."
+        },
+        {
+          "title": "Negotiate the price",
+          "text": "Take the listed price, or suggest your own. Offer, counter-offer: the conversation stays in the app until you reach a deal."
+        },
+        {
+          "title": "Pay, and the money is held",
+          "text": "Card, mobile money or Yadony wallet. The amount is held until delivery: the traveller only gets paid once your loved one has the parcel."
+        },
+        {
+          "title": "Hand over the parcel in person",
+          "text": "The traveller checks the contents in front of you, scans the parcel's QR code and takes a photo. You receive the pickup code to pass on to the recipient."
+        },
+        {
+          "title": "Track it in real time",
+          "text": "Handed over, in the air, arrived: every step is time-stamped. Share the tracking link and your loved one can follow along without installing the app."
+        },
+        {
+          "title": "Delivery against the code",
+          "text": "Your loved one gives their 6-digit code to the traveller. Delivery is confirmed, the payment is released, and you rate the traveller."
+        }
+      ],
+      "requestCard": {
+        "kicker": "Shipping request",
+        "title": "2 kg · Clothes · Paris → Dakar",
+        "modes": [
+          "I'm open to offers",
+          "I set my price"
+        ],
+        "offers": "3 travellers have made you an offer"
+      },
+      "video": {
+        "title": "The tutorial: sending a parcel",
+        "lead": "Posting a shipping request, choosing a traveller and paying, step by step in the app.",
+        "label": "Video tutorial: sending a parcel with the Yadony app"
+      },
+      "corridorsTitle": "Choose your route",
+      "faq": [
+        {
+          "question": "I can't find a traveller on my dates. What should I do?",
+          "answer": "Post a shipping request: route, weight, photos and budget. Travellers flying your route see it and make you an offer. You can also set an alert on your route to hear as soon as a traveller posts a trip."
+        },
+        {
+          "question": "Can I negotiate the price?",
+          "answer": "Yes, if the traveller accepts price offers. You suggest an amount, and they can accept, decline or make a counter-offer. Some travellers show a fixed price: you either take it or choose someone else."
+        },
+        {
+          "question": "How do I pay, and when does the traveller get paid?",
+          "answer": "By card, mobile money (Wave, Orange Money, MTN, Moov) or Yadony wallet. The amount is held until delivery and is only paid out to the traveller after the handover against the code. Cash is possible if the traveller accepts it, but without the held payment."
+        },
+        {
+          "question": "Does my recipient need to install the app?",
+          "answer": "No. They track the parcel on a web page, with no account. On handover day, they give the traveller the 6-digit code you passed on to them."
+        }
+      ]
+    },
+    "traveler": {
+      "seo": {
+        "title": "Sell your luggage space and make your trip to Africa pay",
+        "description": "Flying to Africa? Sell your spare baggage allowance to verified senders: per kilo, open to offers or per item, with payment guaranteed on delivery."
+      },
+      "kicker": "Travellers",
+      "title": "Sell your kilos, make your trip pay",
+      "lead": "Your suitcase leaves with room to spare. Post your trip, set your price and carry parcels for verified senders: you get paid on delivery.",
+      "listLabel": "The steps of a trip",
+      "steps": [
+        {
+          "title": "Find a cheaper flight",
+          "text": "Set a price alert on your route: Yadony lets you know when a flight drops below your budget. You book with our partner."
+        },
+        {
+          "title": "Post your trip in three steps",
+          "text": "Route, places and capacity, price and conditions. Plane, car or boat, with stopovers or several legs. What you accept and what you turn down: you decide."
+        },
+        {
+          "title": "Choose how you price",
+          "text": "A price per kilo, a price open to offers from senders, or a price list per item: phone, laptop, box of clothes."
+        },
+        {
+          "title": "Share your poster",
+          "text": "Yadony creates a poster of your trip with its own QR code. Share it on WhatsApp and social media: your contacts book straight in the app."
+        },
+        {
+          "title": "Get requests, negotiate",
+          "text": "Senders book or suggest a price. You accept, decline with a reason or make a counter-offer. You can also offer your price on their shipping requests."
+        },
+        {
+          "title": "Scan at handover, even offline",
+          "text": "You check the contents, scan the QR code and take a photo. No signal at the airport? The scan is saved and sent as soon as you are back online."
+        },
+        {
+          "title": "Arrived: let the recipients know",
+          "text": "One tap to mark your arrival, then WhatsApp, text, call or in-app message to arrange each handover."
+        },
+        {
+          "title": "Deliver against the code, get paid",
+          "text": "The recipient gives you their 6-digit code: delivery is confirmed and the payment is sent to you, to your bank account or by mobile money."
+        }
+      ],
+      "earnings": {
+        "kicker": "Example",
+        "title": "What your kilos could earn you",
+        "text": "15 spare kg at 8 € per kilo comes to 120 € on a trip you are making anyway. And you set the price.",
+        "note": "Example for illustration only: every traveller sets their own price."
+      },
+      "payouts": {
+        "title": "Paid the way you want",
+        "text": "Bank transfer to your account, or mobile money payout (Orange Money, Wave, MTN, Moov) in West and Central Africa. Keep track of your earnings and kilos sold in \"My statistics\"."
+      },
+      "video": {
+        "title": "The tutorial: posting a trip",
+        "lead": "From posting your trip to your first request, step by step in the app.",
+        "label": "Video tutorial: posting a trip in the Yadony app"
+      },
+      "flightsLink": "Find my flight with price alerts",
+      "faq": [
+        {
+          "question": "How much can I earn by selling my kilos?",
+          "answer": "You set the price, per kilo, per item or by negotiating. For example, 15 spare kg at 8 € per kilo earns you 120 €. Yadony takes its service fee from the sender's payment: the amount you will receive is shown before you accept."
+        },
+        {
+          "question": "Do I have to accept every parcel?",
+          "answer": "No. You state what you accept and what you turn down, you see the description and photos of each parcel, and you check the contents at handover. You can decline a request with a reason."
+        },
+        {
+          "question": "When do I get paid?",
+          "answer": "As soon as the recipient gives you their 6-digit code on delivery. The sender's payment has been held since the booking: you know the money is there before you even set off."
+        },
+        {
+          "question": "What happens if I have no signal?",
+          "answer": "The QR code scan and the photo work offline. They are saved on your phone and sent automatically as soon as you are back online."
+        }
+      ]
+    },
+    "flights": {
+      "seo": {
+        "title": "Cheap flights to Africa: price alerts with Yadony",
+        "description": "Find cheap flights to Africa, to Dakar, Abidjan, Bamako or Douala: deals, price alerts and flights within your budget, all in the Yadony app."
+      },
+      "kicker": "Flights",
+      "title": "Your cheaper flight, without watching the prices",
+      "lead": "Set your maximum price and Yadony keeps an eye on flights for you. As soon as one drops below it, you will know.",
+      "listLabel": "Finding a flight with Yadony",
+      "steps": [
+        {
+          "title": "Search for your flight",
+          "text": "One way or return, number of passengers, direct flights only if you prefer. Results can be sorted from cheapest to fastest."
+        },
+        {
+          "title": "Spot the deals",
+          "text": "\"Deals for you\" highlights flights that are much cheaper than usual on your routes."
+        },
+        {
+          "title": "Set a price alert",
+          "text": "Your route, your dates or a time window, your maximum price. Yadony watches the flights so you don't have to."
+        },
+        {
+          "title": "Get the flights under your price",
+          "text": "A notification, then the \"Flights found\" screen: the flights within your budget, with how much each one saves against your price."
+        },
+        {
+          "title": "Book, then sell your kilos",
+          "text": "You book with our partner in a single tap. And since you are flying anyway, post your trip: your spare kilos can pay back part of the ticket."
+        }
+      ],
+      "partnerNote": "Yadony does not sell tickets: the app finds flights and alerts you, and you book on our partner's website.",
+      "sellKilos": {
+        "title": "Your ticket can partly pay for itself",
+        "text": "With 15 spare kg at 8 € per kilo, your kilos earn you 120 €. Post your trip as soon as your ticket is booked.",
+        "cta": "Sell my kilos"
+      },
+      "faq": [
+        {
+          "question": "How does a price alert work?",
+          "answer": "You enter your route, your dates or a time window, and your maximum price. Yadony checks the available flights and sends you a notification as soon as one drops below that price. You will find your alerts in \"My alerts\"."
+        },
+        {
+          "question": "Does Yadony sell plane tickets?",
+          "answer": "No. Yadony finds flights and alerts you. Booking happens on our partner's website, which issues your ticket."
+        },
+        {
+          "question": "Do the alerts cost anything?",
+          "answer": "No, flight search and price alerts are included in the app, with up to 10 active alerts at a time."
+        },
+        {
+          "question": "Can I search for direct flights only?",
+          "answer": "Yes. Tick \"Direct only\" in the search, or sort the results with the \"Direct\" tab."
+        }
+      ]
+    }
+  }
+}

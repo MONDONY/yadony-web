@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { mount } from '@vue/test-utils'
 import { createI18n } from 'vue-i18n'
-import fr from '../../../i18n/locales/fr.json'
+import { fr } from '../helpers/messages'
 import ContestPodium from '@/components/contest/ContestPodium.vue'
 import ContestTable from '@/components/contest/ContestTable.vue'
 import { classer } from '@/lib/classement/score'

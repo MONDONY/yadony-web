@@ -18,7 +18,7 @@ const { t } = useI18n()
     <UiContainer>
       <div class="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 py-2 text-center">
         <span
-          class="inline-flex shrink-0 items-center rounded-full bg-orange px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-navy-deep"
+          class="inline-flex shrink-0 items-center rounded-full bg-accent px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-navy-deep"
         >{{ t('beta.banner.badge') }}</span>
 
         <p class="hidden text-[13px] text-white/80 sm:block sm:text-sm">{{ t('beta.banner.text') }}</p>
@@ -27,7 +27,7 @@ const { t } = useI18n()
           :href="betaWhatsAppGroupUrl"
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex shrink-0 items-center gap-1.5 rounded-el text-[13px] font-semibold text-orange underline decoration-orange/40 underline-offset-4 transition-[color,text-decoration-color,transform] duration-150 hover:text-orange-hover hover:decoration-orange-hover active:scale-[0.96] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:text-sm"
+          class="inline-flex shrink-0 items-center gap-1.5 rounded-el text-[13px] font-semibold text-accent underline decoration-accent/40 underline-offset-4 transition-[color,text-decoration-color,transform] duration-150 hover:text-accent-hover hover:decoration-accent-hover active:scale-[0.96] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:text-sm"
         >
           <svg class="h-4 w-4 shrink-0 fill-current" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
             <path :d="whatsappIconPath" />

@@ -10,7 +10,7 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-surface text-ink font-sans antialiased;
+    @apply bg-bg text-ink font-sans antialiased;
     text-rendering: optimizeLegibility;
   }
   h1, h2, h3 {

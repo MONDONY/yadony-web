@@ -114,7 +114,7 @@ onBeforeUnmount(() => {
     <figcaption class="sr-only">{{ description }}</figcaption>
     <button
       type="button"
-      class="absolute right-6 top-6 grid size-10 place-items-center rounded-full bg-navy-deep/70 text-white backdrop-blur-sm transition-[background-color,transform] duration-150 ease-out hover:bg-navy-deep/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange active:scale-[0.96]"
+      class="absolute right-6 top-6 grid size-10 place-items-center rounded-full bg-navy-deep/70 text-white backdrop-blur-sm transition-[background-color,transform] duration-150 ease-out hover:bg-navy-deep/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent active:scale-[0.96]"
       :aria-label="playing ? pauseLabel : playLabel"
       @click="toggle"
     >

@@ -25,7 +25,7 @@ function groupesPartiels(): { parties: number; noms: string[] }[] {
     <p class="font-display text-[12px] font-bold uppercase tracking-[0.12em] text-ink-muted">{{ t('contest.defis.reussitesTitle', { n: defi.reussites.length }) }}</p>
     <ol class="mt-2 divide-y divide-line rounded-el bg-surface">
       <li v-for="(r, i) in defi.reussites" :key="r.nom" class="flex items-center gap-3 px-3.5 py-2.5 text-[14.5px]">
-        <span class="grid h-7 w-7 flex-none place-items-center rounded-full font-display text-[13px] font-extrabold tabular-nums" :class="i === 0 ? 'bg-orange text-navy-deep' : 'bg-sand text-ink'">{{ i + 1 }}</span>
+        <span class="grid h-7 w-7 flex-none place-items-center rounded-full font-display text-[13px] font-extrabold tabular-nums" :class="i === 0 ? 'bg-accent text-navy-deep' : 'bg-sand text-ink'">{{ i + 1 }}</span>
         <span class="min-w-0 flex-1 truncate font-semibold">{{ r.nom }}</span>
         <span class="flex-none tabular-nums text-ink-muted">{{ heure(r.fin) }}</span>
       </li>

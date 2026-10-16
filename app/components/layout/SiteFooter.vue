@@ -29,7 +29,7 @@ const YADONY_PRO_URL = 'https://pro.yadony.com'
             :href="betaWhatsAppGroupUrl"
             target="_blank"
             rel="noopener noreferrer"
-            class="mt-4 inline-flex items-center gap-2 font-semibold text-orange transition-[color,transform] duration-150 hover:text-orange-hover active:scale-[0.96] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+            class="mt-4 inline-flex items-center gap-2 font-semibold text-accent transition-[color,transform] duration-150 hover:text-accent-hover active:scale-[0.96] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
           >
             <svg viewBox="0 0 24 24" class="h-5 w-5 shrink-0" fill="currentColor" aria-hidden="true">
               <path :d="whatsappIconPath" />
@@ -116,7 +116,7 @@ const YADONY_PRO_URL = 'https://pro.yadony.com'
             :href="YADONY_PRO_URL"
             target="_blank"
             rel="noopener noreferrer"
-            class="mt-3 inline-block font-semibold text-orange hover:text-orange-hover"
+            class="mt-3 inline-block font-semibold text-accent hover:text-accent-hover"
           >{{ t('footer.proCta') }}<span class="sr-only"> {{ t('a11y.opensNewTab') }}</span></a>
           <p class="mt-6 text-white/65">
             <a :href="`mailto:${contactEmail}`" class="hover:text-white">{{ contactEmail }}</a>

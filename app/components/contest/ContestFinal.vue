@@ -45,7 +45,7 @@ const premiere2 = computed(() =>
     aria-labelledby="final-title"
     class="relative -mt-12 rounded-card border border-line bg-surface p-5 shadow-[0_1px_2px_rgb(10_20_48/0.06),0_12px_32px_-16px_rgb(10_20_48/0.25)] sm:p-8"
   >
-    <p class="font-display text-xs font-bold uppercase tracking-[0.18em] text-orange-deep">{{ t('contest.final.eyebrow') }}</p>
+    <p class="font-display text-xs font-bold uppercase tracking-[0.18em] text-accent-text">{{ t('contest.final.eyebrow') }}</p>
     <h2 id="final-title" data-testid="final-title" class="mt-1.5 text-balance font-display text-display-md font-extrabold">
       {{ top3.length === 3 ? t('contest.final.title', { a: top3[0]!.nom, b: top3[1]!.nom, c: top3[2]!.nom }) : gagnante.nom }}
     </h2>
@@ -58,7 +58,7 @@ const premiere2 = computed(() =>
       data-testid="final-shareholders"
       class="mt-6 rounded-card bg-navy-deep p-5 text-white sm:p-6"
     >
-      <p class="font-display text-xs font-bold uppercase tracking-[0.18em] text-orange">{{ t('contest.final.shareholdersTitle') }}</p>
+      <p class="font-display text-xs font-bold uppercase tracking-[0.18em] text-accent">{{ t('contest.final.shareholdersTitle') }}</p>
       <p class="mt-2 max-w-prose text-pretty text-[16px] leading-relaxed sm:text-[17px]">
         {{ t('contest.final.shareholdersText', { a: prenoms[0], b: prenoms[1], c: prenoms[2] }) }}
       </p>
@@ -98,7 +98,7 @@ const premiere2 = computed(() =>
     </template>
 
     <div data-testid="final-rewards" class="mt-6 rounded-card bg-sand p-4 sm:p-5">
-      <p class="font-display text-[13px] font-bold uppercase tracking-[0.12em] text-orange-deep">{{ t('contest.final.rewardsTitle') }}</p>
+      <p class="font-display text-[13px] font-bold uppercase tracking-[0.12em] text-accent-text">{{ t('contest.final.rewardsTitle') }}</p>
       <p class="mt-1.5 max-w-prose text-pretty">{{ t('contest.final.rewardsText') }}</p>
     </div>
   </section>

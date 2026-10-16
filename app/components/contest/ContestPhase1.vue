@@ -54,7 +54,7 @@ const nombre = (valeur: number) => n(valeur, { maximumFractionDigits: 1 })
   <section class="mt-12" aria-labelledby="phase1-title" data-testid="contest-phase1">
     <div class="flex flex-wrap items-end justify-between gap-x-6 gap-y-2">
       <div>
-        <p class="font-display text-xs font-bold uppercase tracking-[0.18em] text-orange-deep">{{ t('contest.phase1.eyebrow') }}</p>
+        <p class="font-display text-xs font-bold uppercase tracking-[0.18em] text-accent-text">{{ t('contest.phase1.eyebrow') }}</p>
         <h2 id="phase1-title" class="mt-1.5 text-balance font-display text-display-md font-extrabold">
           {{ t('contest.phase1.title', { debut: date(donnees.debut, false), fin: date(donnees.fin, true) }) }}
         </h2>
@@ -64,9 +64,9 @@ const nombre = (valeur: number) => n(valeur, { maximumFractionDigits: 1 })
         v-if="visible"
         data-testid="phase1-status"
         class="inline-flex items-center gap-2 rounded-full px-3 py-1 text-[13px] font-semibold"
-        :class="donnees.fige ? 'bg-sand-deep text-ink' : 'bg-orange/15 text-orange-deep'"
+        :class="donnees.fige ? 'bg-sand-deep text-ink' : 'bg-accent/15 text-accent-text'"
       >
-        <span class="h-1.5 w-1.5 rounded-full" :class="donnees.fige ? 'bg-ink-muted' : 'bg-orange'" aria-hidden="true" />
+        <span class="h-1.5 w-1.5 rounded-full" :class="donnees.fige ? 'bg-ink-muted' : 'bg-accent'" aria-hidden="true" />
         {{ donnees.fige ? t('contest.phase1.final') : t('contest.phase1.provisional', { date: date(donnees.miseAJour, true) }) }}
       </span>
     </div>
@@ -95,7 +95,7 @@ const nombre = (valeur: number) => n(valeur, { maximumFractionDigits: 1 })
         </thead>
         <tbody>
           <tr v-for="(l, i) in lignesAffichees" :key="i" data-testid="phase1-row" class="transition-colors hover:bg-sand/60">
-            <td class="w-12 border-b border-line px-3.5 py-2.5 font-display font-extrabold" :class="l.rang <= 3 ? 'text-orange-deep' : 'text-ink-muted'">{{ l.rang }}</td>
+            <td class="w-12 border-b border-line px-3.5 py-2.5 font-display font-extrabold" :class="l.rang <= 3 ? 'text-accent-text' : 'text-ink-muted'">{{ l.rang }}</td>
             <td class="border-b border-line px-3.5 py-2.5">
               <span class="block font-semibold" :class="l.nom ? '' : 'font-normal italic text-ink-muted'">{{ l.nom ?? t('contest.phase1.anonymous') }}</span>
               <span data-testid="phase1-meta" class="mt-0.5 block text-[12px] text-ink-muted sm:hidden">
@@ -113,7 +113,7 @@ const nombre = (valeur: number) => n(valeur, { maximumFractionDigits: 1 })
         v-if="lignes.length > LIMITE"
         type="button"
         data-testid="phase1-more"
-        class="flex min-h-12 w-full items-center justify-center gap-2 font-display text-[14.5px] font-bold text-orange-deep transition-[background-color,scale] duration-150 hover:bg-sand/60 focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-orange active:scale-[0.96]"
+        class="flex min-h-12 w-full items-center justify-center gap-2 font-display text-[14.5px] font-bold text-accent-text transition-[background-color,scale] duration-150 hover:bg-sand/60 focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-accent active:scale-[0.96]"
         :aria-expanded="tout ? 'true' : 'false'"
         @click="tout = !tout"
       >

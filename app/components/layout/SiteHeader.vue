@@ -54,7 +54,7 @@ const links = computed(() => [
 
         <div class="flex items-center gap-3">
           <LanguageSwitcher :href="switchHref" :target-locale="targetLocale" :label="switchLabel" />
-          <UiButton :to="`${localePath('/')}#telecharger`" variant="orange" class="hidden sm:inline-flex">
+          <UiButton :to="`${localePath('/')}#telecharger`" variant="accent" class="hidden sm:inline-flex">
             {{ t('nav.download') }}
           </UiButton>
           <button

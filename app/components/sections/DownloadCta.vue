@@ -7,11 +7,6 @@ const { t } = useI18n()
   <section
     id="telecharger"
     class="relative overflow-hidden bg-navy-deep py-20 text-white sm:py-28"
-    :style="{
-      backgroundImage:
-        'radial-gradient(900px 460px at 15% -20%, rgb(246 146 30 / 0.18), transparent 60%),' +
-        'linear-gradient(200deg, rgb(10 20 48) 0%, rgb(20 36 78) 100%)',
-    }"
   >
     <UiContainer>
       <div class="grid items-center gap-12 lg:grid-cols-12">

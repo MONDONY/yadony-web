@@ -8,17 +8,11 @@ const stats = ['scans', 'identity', 'escrow'] as const
 <template>
   <section
     class="relative overflow-hidden bg-navy-deep text-white"
-    :style="{
-      backgroundImage:
-        'radial-gradient(1100px 520px at 82% -10%, rgb(246 146 30 / 0.22), transparent 60%),' +
-        'radial-gradient(900px 600px at -10% 110%, rgb(24 43 92 / 0.9), transparent 65%),' +
-        'linear-gradient(160deg, rgb(10 20 48) 0%, rgb(17 31 70) 55%, rgb(24 43 92) 100%)',
-    }"
   >
     <UiContainer>
       <div class="grid items-center gap-14 py-20 lg:grid-cols-12 lg:gap-8 lg:py-28">
         <div class="lg:col-span-7">
-          <p class="font-display text-sm font-bold uppercase tracking-[0.18em] text-orange">
+          <p class="font-display text-sm font-bold uppercase tracking-[0.18em] text-accent">
             {{ t('home.hero.kicker') }}
           </p>
           <h1 class="mt-5 text-display-xl">{{ t('home.hero.title') }}</h1>
@@ -43,7 +37,7 @@ const stats = ['scans', 'identity', 'escrow'] as const
       <dl class="grid gap-8 border-t border-white/15 py-10 sm:grid-cols-3">
         <div v-for="stat in stats" :key="stat" class="flex flex-col">
           <dt class="order-2 text-sm text-white/70">{{ t(`home.hero.stats.${stat}.label`) }}</dt>
-          <dd class="order-1 font-display text-3xl font-bold text-orange tabular-nums">
+          <dd class="order-1 font-display text-3xl font-bold text-accent tabular-nums">
             {{ t(`home.hero.stats.${stat}.figure`) }}
           </dd>
         </div>

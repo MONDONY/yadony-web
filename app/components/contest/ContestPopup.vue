@@ -114,11 +114,6 @@ const deux = (n: number) => String(n).padStart(2, '0')
     <div class="popup-card overflow-hidden rounded-[28px] bg-surface text-ink shadow-[0_0_0_1px_rgb(10_20_48/0.06),0_2px_4px_rgb(10_20_48/0.08),0_24px_64px_-12px_rgb(10_20_48/0.45)] max-sm:rounded-b-none max-sm:pb-[env(safe-area-inset-bottom,0px)]">
       <div
         class="relative overflow-hidden px-6 pb-5 pt-6 text-white"
-        :style="{
-          backgroundImage:
-            'radial-gradient(420px 220px at 80% -10%, rgb(246 146 30 / 0.35), transparent 65%),' +
-            'linear-gradient(160deg, rgb(10 20 48), rgb(24 43 92))',
-        }"
       >
         <div class="confetti pointer-events-none absolute inset-0" aria-hidden="true">
           <i style="left: 58%; top: 18%; background: rgb(246 146 30)" />
@@ -131,7 +126,7 @@ const deux = (n: number) => String(n).padStart(2, '0')
 
         <button
           type="button"
-          class="absolute right-3 top-3 z-10 grid h-10 w-10 place-items-center rounded-full bg-white/10 text-white transition-[background-color,transform] duration-150 hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-orange active:scale-[0.96]"
+          class="absolute right-3 top-3 z-10 grid h-10 w-10 place-items-center rounded-full bg-white/10 text-white transition-[background-color,transform] duration-150 hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-accent active:scale-[0.96]"
           :aria-label="t('contest.popup.close')"
           @click="fermer"
         >
@@ -148,8 +143,8 @@ const deux = (n: number) => String(n).padStart(2, '0')
             <path d="M15 9.5l1.2 1.8 2.1.3-1.5 1.4.4 2-1.9-1-1.9 1 .4-2-1.5-1.4 2.1-.3z" fill="rgb(255 255 255)" />
           </svg>
         </div>
-        <p class="step s2 mt-4 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.14em] text-orange">
-          <span class="h-2 w-2 rounded-full" :class="statut === 'bientot' ? 'bg-orange' : 'bg-[rgb(80_220_150)] shadow-[0_0_0_4px_rgb(80_220_150/0.2)]'" aria-hidden="true" />
+        <p class="step s2 mt-4 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.14em] text-accent">
+          <span class="h-2 w-2 rounded-full" :class="statut === 'bientot' ? 'bg-accent' : 'bg-[rgb(80_220_150)] shadow-[0_0_0_4px_rgb(80_220_150/0.2)]'" aria-hidden="true" />
           {{ statut === 'bientot' ? t('contest.popup.soon', { date: dateDebut }) : t('contest.popup.live') }}
         </p>
         <h2 id="concours-titre" class="step s2 mt-2 text-balance pr-8 font-display text-[27px] font-extrabold leading-[1.08] tracking-tight">
@@ -182,7 +177,7 @@ const deux = (n: number) => String(n).padStart(2, '0')
         <div class="step s5 mt-5 grid gap-2">
           <NuxtLink
             :to="localePath('/classement')"
-            class="group flex items-center justify-center gap-2 rounded-[14px] bg-orange px-[18px] py-3.5 text-[15px] font-extrabold text-navy-deep shadow-[0_6px_18px_-6px_rgb(246_146_30/0.7)] transition-[background-color,transform] duration-150 hover:bg-orange-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-orange active:scale-[0.96]"
+            class="group flex items-center justify-center gap-2 rounded-[14px] bg-accent px-[18px] py-3.5 text-[15px] font-extrabold text-navy-deep shadow-[0_6px_18px_-6px_rgb(246_146_30/0.7)] transition-[background-color,transform] duration-150 hover:bg-accent-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-accent active:scale-[0.96]"
             @click="fermer"
           >
             {{ t('contest.popup.cta') }}
@@ -192,7 +187,7 @@ const deux = (n: number) => String(n).padStart(2, '0')
           </NuxtLink>
           <button
             type="button"
-            class="rounded-[10px] p-2.5 text-sm font-semibold text-ink-muted transition-colors duration-150 hover:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-orange"
+            class="rounded-[10px] p-2.5 text-sm font-semibold text-ink-muted transition-colors duration-150 hover:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-accent"
             @click="fermer"
           >
             {{ t('contest.popup.later') }}

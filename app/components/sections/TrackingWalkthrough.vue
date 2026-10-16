@@ -15,7 +15,7 @@ const steps = [
   <UiSection tone="navy-deep">
     <UiContainer>
       <div class="mx-auto max-w-3xl text-center">
-        <p class="font-display text-sm font-bold uppercase tracking-[0.18em] text-orange">
+        <p class="font-display text-sm font-bold uppercase tracking-[0.18em] text-accent">
           {{ t('home.tracking.kicker') }}
         </p>
         <h2 class="mx-auto mt-4 max-w-[20ch] text-display-lg text-balance">{{ t('home.tracking.title') }}</h2>
@@ -36,7 +36,7 @@ const steps = [
         <UiRevealOnScroll :delay="index * 100">
           <article data-step>
             <UiPhoneFrame :src="step.image" :alt="t(`home.tracking.steps.${step.key}.alt`)" />
-            <p data-step-number class="mt-5 text-center font-display text-sm font-bold text-orange tabular-nums">
+            <p data-step-number class="mt-5 text-center font-display text-sm font-bold text-accent tabular-nums">
               {{ step.number }}
             </p>
             <h3 class="mt-1 text-center font-display text-lg font-semibold text-white">

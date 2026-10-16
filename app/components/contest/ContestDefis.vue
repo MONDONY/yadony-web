@@ -72,7 +72,7 @@ function gagnant(d: Defi): string | null {
   return new Intl.ListFormat(localeDates(locale.value), { style: 'long', type: 'conjunction' }).format(noms)
 }
 const pastille = computed(() =>
-  etat.value === 'en_cours' ? 'bg-[rgb(40_180_110)] motion-safe:animate-pulse' : etat.value === 'termine' ? 'bg-ink-muted' : 'bg-orange',
+  etat.value === 'en_cours' ? 'bg-[rgb(40_180_110)] motion-safe:animate-pulse' : etat.value === 'termine' ? 'bg-ink-muted' : 'bg-accent',
 )
 </script>
 
@@ -83,9 +83,9 @@ const pastille = computed(() =>
     href="#defis"
     data-testid="defis-bandeau"
     :data-etat="etat"
-    class="relative -mt-16 flex items-center gap-3 rounded-card border border-orange/40 bg-surface px-4 py-3 shadow-[0_1px_2px_rgb(10_20_48/0.06),0_12px_32px_-16px_rgb(10_20_48/0.25)] transition-[scale] duration-150 active:scale-[0.98] sm:px-5"
+    class="relative -mt-16 flex items-center gap-3 rounded-card border border-accent/40 bg-surface px-4 py-3 shadow-[0_1px_2px_rgb(10_20_48/0.06),0_12px_32px_-16px_rgb(10_20_48/0.25)] transition-[scale] duration-150 active:scale-[0.98] sm:px-5"
   >
-    <span class="grid h-10 w-10 flex-none place-items-center rounded-full bg-orange font-display text-lg font-extrabold text-navy-deep" aria-hidden="true">{{ defi.numero }}</span>
+    <span class="grid h-10 w-10 flex-none place-items-center rounded-full bg-accent font-display text-lg font-extrabold text-navy-deep" aria-hidden="true">{{ defi.numero }}</span>
     <span class="min-w-0 flex-1">
       <span class="flex items-center gap-2 font-display text-[15px] font-extrabold leading-tight">
         <span class="h-2 w-2 flex-none rounded-full" :class="pastille" aria-hidden="true" />
@@ -97,7 +97,7 @@ const pastille = computed(() =>
         <template v-else>{{ gagnant(defi) ? t('contest.defis.wonBy', { nom: gagnant(defi) }) : t('contest.defis.nobodyShort') }}</template>
       </span>
     </span>
-    <span class="flex-none text-[13px] font-bold text-orange-deep"><span class="sr-only sm:not-sr-only">{{ t(etat === 'en_cours' ? 'contest.defis.seeStatement' : 'contest.defis.see') }} </span><span class="text-lg sm:text-[13px]" aria-hidden="true">→</span></span>
+    <span class="flex-none text-[13px] font-bold text-accent-text"><span class="sr-only sm:not-sr-only">{{ t(etat === 'en_cours' ? 'contest.defis.seeStatement' : 'contest.defis.see') }} </span><span class="text-lg sm:text-[13px]" aria-hidden="true">→</span></span>
   </a>
 
   <!-- Section complète, compacte. -->
@@ -106,11 +106,11 @@ const pastille = computed(() =>
     id="defis"
     data-testid="defis"
     :data-etat="etat"
-    class="mt-10 scroll-mt-24 rounded-card border border-orange/40 bg-surface p-5 sm:p-7"
+    class="mt-10 scroll-mt-24 rounded-card border border-accent/40 bg-surface p-5 sm:p-7"
     aria-labelledby="defis-title"
   >
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1.5">
-      <span class="rounded-full bg-orange px-2.5 py-0.5 font-display text-[11px] font-bold uppercase tracking-[0.14em] text-navy-deep">{{ t('contest.defis.eyebrow') }}</span>
+      <span class="rounded-full bg-accent px-2.5 py-0.5 font-display text-[11px] font-bold uppercase tracking-[0.14em] text-navy-deep">{{ t('contest.defis.eyebrow') }}</span>
       <span class="inline-flex items-center gap-1.5 text-[13px] font-semibold text-ink-muted"><span class="h-2 w-2 rounded-full" :class="pastille" aria-hidden="true" />{{ t(`contest.defis.state.${etat}`) }}</span>
     </div>
     <h2 id="defis-title" class="mt-2 text-balance font-display text-[24px] font-extrabold leading-tight sm:text-display-md">{{ t('contest.defis.title') }}</h2>
@@ -124,18 +124,18 @@ const pastille = computed(() =>
       </div>
 
       <div v-if="etat === 'a_venir'" class="mt-3">
-        <p class="font-display text-[22px] font-extrabold tabular-nums text-orange-deep" data-testid="defi-compte">{{ t('contest.defis.startsIn', { temps: duree(defi.debut) }) }}</p>
+        <p class="font-display text-[22px] font-extrabold tabular-nums text-accent-text" data-testid="defi-compte">{{ t('contest.defis.startsIn', { temps: duree(defi.debut) }) }}</p>
         <p class="text-pretty text-[14px] text-ink-muted">{{ t('contest.defis.ready', { heure: heure(defi.debut) }) }}</p>
-        <p v-if="defi.podium?.length" class="mt-2 inline-flex rounded-full bg-orange/15 px-3 py-1 text-[13px] font-bold text-orange-deep">{{ t('contest.defis.atStake', { points: enjeu(defi) }) }}</p>
+        <p v-if="defi.podium?.length" class="mt-2 inline-flex rounded-full bg-accent/15 px-3 py-1 text-[13px] font-bold text-accent-text">{{ t('contest.defis.atStake', { points: enjeu(defi) }) }}</p>
       </div>
 
       <div v-else-if="etat === 'en_cours'" class="mt-3">
         <template v-if="enonce(defi)">
           <p class="whitespace-pre-line text-pretty text-[16px] font-semibold leading-relaxed" data-testid="defi-enonce">{{ enonce(defi) }}</p>
-          <p v-if="enjeu(defi)" class="mt-2 inline-flex rounded-full bg-orange/15 px-3 py-1 text-[13px] font-bold text-orange-deep">{{ t('contest.defis.atStake', { points: enjeu(defi) }) }}</p>
+          <p v-if="enjeu(defi)" class="mt-2 inline-flex rounded-full bg-accent/15 px-3 py-1 text-[13px] font-bold text-accent-text">{{ t('contest.defis.atStake', { points: enjeu(defi) }) }}</p>
         </template>
         <p v-else class="text-pretty font-semibold">{{ t('contest.defis.pending') }}</p>
-        <p class="mt-2 font-display text-[20px] font-extrabold tabular-nums text-orange-deep" data-testid="defi-compte">{{ t('contest.defis.endsIn', { temps: duree(defi.fin) }) }}</p>
+        <p class="mt-2 font-display text-[20px] font-extrabold tabular-nums text-accent-text" data-testid="defi-compte">{{ t('contest.defis.endsIn', { temps: duree(defi.fin) }) }}</p>
         <template v-if="defi.suivi?.length">
           <p class="mt-4 font-display text-[12px] font-bold uppercase tracking-[0.12em] text-ink-muted">
             {{ t('contest.defis.provisionalTitle') }}<template v-if="defi.provisoireMaj"> · {{ t('contest.defis.provisionalAt', { heure: heure(defi.provisoireMaj) }) }}</template>
@@ -186,7 +186,7 @@ const pastille = computed(() =>
             <span v-else class="text-ink-muted">{{ t('contest.defis.nobodyShort') }}</span>
           </div>
           <details v-if="aDetail(d)" class="mt-1">
-            <summary class="cursor-pointer text-[13px] font-bold text-orange-deep">{{ t('contest.defis.seeResult') }}</summary>
+            <summary class="cursor-pointer text-[13px] font-bold text-accent-text">{{ t('contest.defis.seeResult') }}</summary>
             <ContestDefiBilan :defi="d" />
           </details>
         </li>

@@ -83,11 +83,11 @@ function dateMiseAJour(iso: string): string {
         <tbody>
           <template v-for="l in lignesAffichees" :key="l.id">
             <tr data-testid="board-row" class="transition-colors hover:bg-sand/60">
-              <td data-testid="board-rank" class="w-12 border-b border-line px-3.5 py-3 font-display text-base font-extrabold" :class="l.rang <= 3 ? 'text-orange-deep' : 'text-ink-muted'">{{ l.rang }}</td>
+              <td data-testid="board-rank" class="w-12 border-b border-line px-3.5 py-3 font-display text-base font-extrabold" :class="l.rang <= 3 ? 'text-accent-text' : 'text-ink-muted'">{{ l.rang }}</td>
               <td class="border-b border-line px-1.5 py-1.5">
                 <button
                   type="button"
-                  class="flex w-full items-center gap-2 rounded-el px-2 py-1.5 text-left font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-orange"
+                  class="flex w-full items-center gap-2 rounded-el px-2 py-1.5 text-left font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent"
                   :aria-expanded="ouverte === l.id ? 'true' : 'false'"
                   :aria-controls="ouverte === l.id ? `detail-${l.id}` : undefined"
                   @click="basculer(l.id)"
@@ -101,7 +101,7 @@ function dateMiseAJour(iso: string): string {
                       <span
                         v-if="nbPremiers(l.id)"
                         data-testid="premier-badge"
-                        class="inline-flex items-center gap-1 whitespace-nowrap rounded-full bg-orange/15 px-2 py-0.5 text-[11.5px] font-bold text-orange-deep"
+                        class="inline-flex items-center gap-1 whitespace-nowrap rounded-full bg-accent/15 px-2 py-0.5 text-[11.5px] font-bold text-accent-text"
                         :title="t('contest.firsts.badgeHint', nbPremiers(l.id))"
                       ><span aria-hidden="true">🥇</span>{{ t('contest.firsts.badge', { n: nbPremiers(l.id) }) }}</span>
                     </span>
@@ -127,7 +127,7 @@ function dateMiseAJour(iso: string): string {
                       <span
                         v-if="estPremier(l.id, d.cle)"
                         data-testid="premier-chip"
-                        class="ml-1 whitespace-nowrap rounded-full bg-orange/15 px-1.5 py-px text-[11px] font-bold text-orange-deep"
+                        class="ml-1 whitespace-nowrap rounded-full bg-accent/15 px-1.5 py-px text-[11px] font-bold text-accent-text"
                       >{{ t('contest.firsts.chip') }}</span>
                     </span>
                     <b class="whitespace-nowrap tabular-nums text-success">+{{ n(d.points) }}</b>
@@ -156,7 +156,7 @@ function dateMiseAJour(iso: string): string {
         v-if="lignes.length > LIMITE"
         type="button"
         data-testid="board-more"
-        class="flex min-h-12 w-full items-center justify-center gap-2 font-display text-[14.5px] font-bold text-orange-deep transition-[background-color,scale] duration-150 hover:bg-sand/60 focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-orange active:scale-[0.96]"
+        class="flex min-h-12 w-full items-center justify-center gap-2 font-display text-[14.5px] font-bold text-accent-text transition-[background-color,scale] duration-150 hover:bg-sand/60 focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-accent active:scale-[0.96]"
         :aria-expanded="tout ? 'true' : 'false'"
         @click="tout = !tout"
       >

@@ -668,7 +668,7 @@
         "description": "Comment Yadony protège vos données : minimum de données en interne, partenaires certifiés (Firebase, Stripe, Cloudflare), durées de conservation et droits RGPD."
       },
       "title": "Politique de confidentialité",
-      "intro": "Dernière mise à jour : 15 octobre 2026. Yadony est une place de marché mobile qui met en relation des voyageurs disposant de place dans leurs bagages avec des expéditeurs souhaitant envoyer des colis à leurs proches. Notre service couvre les corridors depuis l'Europe, les États-Unis, le Canada et l'Afrique vers toutes les destinations que nous desservons. Nous avons conçu Yadony avec un principe fondamental : nous ne conservons que le strict minimum de données personnelles en interne. Les données sensibles (identité, authentification, documents officiels) sont confiées à des partenaires spécialisés de confiance, reconnus mondialement, qui les traitent avec un niveau de sécurité et de conformité que nous ne pourrions pas atteindre seuls. En utilisant Yadony, vous acceptez les pratiques décrites dans ce document.",
+      "intro": "Dernière mise à jour : 16 octobre 2026. Yadony est une place de marché mobile qui met en relation des voyageurs disposant de place dans leurs bagages avec des expéditeurs souhaitant envoyer des colis à leurs proches. Notre service couvre les corridors depuis l'Europe, les États-Unis, le Canada et l'Afrique vers toutes les destinations que nous desservons. Nous avons conçu Yadony avec un principe fondamental : nous ne conservons que le strict minimum de données personnelles en interne. Les données sensibles (identité, authentification, documents officiels) sont confiées à des partenaires spécialisés de confiance, reconnus mondialement, qui les traitent avec un niveau de sécurité et de conformité que nous ne pourrions pas atteindre seuls. En utilisant Yadony, vous acceptez les pratiques décrites dans ce document.",
       "articles": [
         {
           "title": "1. Qui est responsable de vos données ?",
@@ -839,6 +839,26 @@
               "p": [
                 "Les cartes affichées dans l'application et la recherche d'adresses (saisie automatique) utilisent les services Google Maps. Google reçoit les adresses et les lieux que vous recherchez, ainsi que les zones de carte affichées. Politique de confidentialité de Google : https://policies.google.com/privacy"
               ]
+            },
+            {
+              "sub": "3.12 Assistant IA : aide sur le fonctionnement de l'application",
+              "p": [
+                "L'application propose un assistant IA qui répond à vos questions sur le fonctionnement de Yadony à partir de fiches d'aide rédigées par Yadony. Quand vous lui posez une question, l'assistant reçoit :"
+              ],
+              "ul": [
+                "Le texte de votre question et des échanges de la conversation en cours (au plus les 12 derniers)",
+                "La langue de l'application"
+              ]
+            },
+            {
+              "p": [
+                "Yadony n'y ajoute aucun identifiant, nom, numéro de téléphone ni donnée de votre compte.",
+                "Les questions sont traitées par des fournisseurs d'IA tiers. À ce jour : Groq, Inc. (États-Unis) et Google (API Gemini). Cette liste est tenue à jour sur cette page. Il s'agit de transferts hors de l'Union européenne, pour lesquels nous nous appuyons sur les mécanismes de transfert conformes au RGPD décrits à l'article 8 (clauses contractuelles types, décisions d'adéquation ou certifications EU-US Data Privacy Framework).",
+                "Les offres gratuites de ces fournisseurs peuvent réutiliser les données reçues pour améliorer leurs modèles : nous vous demandons donc de ne saisir aucune donnée personnelle dans l'assistant.",
+                "Yadony ne conserve pas le contenu des conversations : elles restent sur votre appareil le temps de la session et disparaissent à la fermeture de l'application. Yadony garde seulement des compteurs d'usage, sans le texte (nombre de questions, réponse trouvée ou non).",
+                "Exception : si vous choisissez de « parler à un humain », votre dernière question et l'échange sont copiés dans un ticket du support Yadony, conservé comme les autres demandes de support.",
+                "Vous pouvez masquer la bulle de l'assistant dans les Réglages."
+              ]
             }
           ]
         },
@@ -883,6 +903,7 @@
                 "Rapports d'erreurs et signalements de problème : Sentry",
                 "Photos de colis, photos de livraison : Cloudflare. Accès via lien temporaire sécurisé uniquement",
                 "Historique des transactions, scans, évaluations : Yadony (base de données interne). Accès : oui, nécessaire au fonctionnement du service",
+                "Questions posées à l'assistant IA : fournisseurs d'IA tiers (Groq, Google Gemini), sans identifiant ni donnée de compte. Yadony ne conserve pas le contenu des conversations, sauf si vous choisissez de parler à un humain (ticket du support)",
                 "Messages entre utilisateurs : Yadony (chiffrés). Contenu chiffré, accès restreint aux litiges"
               ]
             }
@@ -1118,7 +1139,7 @@
               "ul": [
                 "Raison sociale : YADONY SAS, SIREN 108 733 510",
                 "Directeur de la publication : M. Dramane DIAKITE, Président",
-                "Partenaires techniques : Google Firebase, Stripe, Didit, pawaPay (Mobile Money : Wave, Orange Money et autres opérateurs), Cloudflare, PostHog, Sentry, Twilio, Resend, Stream, Google Maps",
+                "Partenaires techniques : Google Firebase, Stripe, Didit, pawaPay (Mobile Money : Wave, Orange Money et autres opérateurs), Cloudflare, PostHog, Sentry, Twilio, Resend, Stream, Google Maps, Groq et Google Gemini (assistant IA)",
                 "Autorité de contrôle française : CNIL (www.cnil.fr)"
               ]
             }

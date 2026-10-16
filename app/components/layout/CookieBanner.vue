@@ -24,7 +24,7 @@ onMounted(hydrate)
       </NuxtLink>
     </p>
     <div class="mt-5 flex flex-wrap gap-3">
-      <UiButton variant="orange" @click="choose('accepted')">{{ t('cookies.banner.accept') }}</UiButton>
+      <UiButton variant="accent" @click="choose('accepted')">{{ t('cookies.banner.accept') }}</UiButton>
       <UiButton variant="ghost-dark" @click="choose('refused')">{{ t('cookies.banner.refuse') }}</UiButton>
     </div>
   </div>

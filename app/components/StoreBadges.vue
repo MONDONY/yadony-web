@@ -9,9 +9,9 @@ const props = withDefaults(
 )
 const { t } = useI18n()
 
-// Sur fond sombre, le bouton principal passe en orange et le secondaire en
+// Sur fond sombre, le bouton principal passe en terracotta et le secondaire en
 // contour clair ; sur fond clair, on garde les variantes d'origine.
-const primaryVariant = props.tone === 'dark' ? 'orange' : 'primary'
+const primaryVariant = props.tone === 'dark' ? 'accent' : 'primary'
 const secondaryVariant = props.tone === 'dark' ? 'ghost-dark' : 'ghost'
 
 // Tant que l'app n'est pas publiée (storesLive = false), les boutons
@@ -49,12 +49,12 @@ function onBackdropClick(event: MouseEvent) {
         @click="onBackdropClick"
       >
         <div class="p-8 text-center">
-          <p class="font-display text-sm font-bold uppercase tracking-[0.18em] text-orange">
+          <p class="font-display text-sm font-bold uppercase tracking-[0.18em] text-accent">
             {{ t('stores.comingSoon.kicker') }}
           </p>
           <p class="mt-3 font-display text-2xl font-bold">{{ t('stores.comingSoon.title') }}</p>
           <p class="mt-3 text-sm text-white/75">{{ t('stores.comingSoon.text') }}</p>
-          <UiButton variant="orange" class="mt-6" @click="close">
+          <UiButton variant="accent" class="mt-6" @click="close">
             {{ t('stores.comingSoon.close') }}
           </UiButton>
         </div>

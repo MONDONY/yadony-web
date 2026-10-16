@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { organizationJsonLd, mobileAppJsonLd, faqJsonLd } from '@/lib/structured-data'
+import { organizationJsonLd, mobileAppJsonLd, faqJsonLd, breadcrumbJsonLd } from '@/lib/structured-data'
 
 describe('organizationJsonLd', () => {
   it('déclare une Organization avec son URL et son logo', () => {
@@ -32,5 +32,21 @@ describe('faqJsonLd', () => {
   it('retourne une liste vide sans question', () => {
     const data = faqJsonLd([])
     expect(data.mainEntity).toEqual([])
+  })
+})
+
+describe('breadcrumbJsonLd', () => {
+  it('produit un fil d’Ariane positionné, aux URL absolues', () => {
+    const data = breadcrumbJsonLd([
+      { name: 'Accueil', path: '/' },
+      { name: 'Envoyer un colis', path: '/envoyer-colis' },
+      { name: 'Paris → Dakar', path: '/envoyer-colis/paris-dakar/' },
+    ])
+    expect(data['@type']).toBe('BreadcrumbList')
+    expect(data.itemListElement).toEqual([
+      { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://yadony.com/' },
+      { '@type': 'ListItem', position: 2, name: 'Envoyer un colis', item: 'https://yadony.com/envoyer-colis' },
+      { '@type': 'ListItem', position: 3, name: 'Paris → Dakar', item: 'https://yadony.com/envoyer-colis/paris-dakar' },
+    ])
   })
 })

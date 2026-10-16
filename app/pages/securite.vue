@@ -22,15 +22,22 @@ const sections = ['identity', 'escrow', 'cap', 'tracking', 'dispute', 'data', 'l
 
 <template>
   <div>
-    <PageHero :title="t('trust.title')" :lead="t('trust.lead')" />
+    <PageHero :title="t('trust.title')" :lead="t('trust.lead')" pose="id-card" :pose-alt="t('trust.donyAlt')" />
     <UiSection tone="white">
       <UiContainer>
-        <ProseBlock>
-          <template v-for="key in sections" :key="key">
-            <h2>{{ t(`trust.sections.${key}.title`) }}</h2>
-            <p>{{ t(`trust.sections.${key}.text`) }}</p>
-          </template>
-        </ProseBlock>
+        <ul class="grid list-none gap-5 md:grid-cols-2">
+          <UiReveal
+            v-for="(key, index) in sections"
+            :key="key"
+            as="li"
+            :delay="(index % 2) * 60"
+            class="rounded-card border border-line bg-surface p-7 shadow-xs"
+            :class="key === 'limits' ? 'md:col-span-2 bg-sand' : ''"
+          >
+            <h2 class="font-display text-xl font-bold text-ink">{{ t(`trust.sections.${key}.title`) }}</h2>
+            <p class="mt-3 text-ink-muted text-pretty">{{ t(`trust.sections.${key}.text`) }}</p>
+          </UiReveal>
+        </ul>
       </UiContainer>
     </UiSection>
 

@@ -30,19 +30,19 @@ const retours = computed(() => [
 
 <template>
   <section id="bareme" class="mb-14 mt-3 scroll-mt-4" aria-labelledby="rules-title" data-testid="contest-rules">
-    <p class="font-display text-xs font-bold uppercase tracking-[0.18em] text-orange-deep">{{ t('contest.rules.eyebrow') }}</p>
+    <p class="font-display text-xs font-bold uppercase tracking-[0.18em] text-accent-text">{{ t('contest.rules.eyebrow') }}</p>
     <h2 id="rules-title" class="mt-1.5 text-balance font-display text-display-md font-extrabold">{{ t('contest.rules.title') }}</h2>
     <p class="mt-1.5 max-w-prose text-ink-muted">{{ t('contest.rules.lead') }}</p>
 
     <p
       data-testid="regle-premier"
-      class="mt-4 inline-flex items-center gap-2 rounded-full bg-orange/15 px-3.5 py-1.5 text-sm font-bold text-orange-deep"
+      class="mt-4 inline-flex items-center gap-2 rounded-full bg-accent/15 px-3.5 py-1.5 text-sm font-bold text-accent-text"
     ><span aria-hidden="true">🥇</span>{{ t('contest.firsts.rule', { n: POINTS.premier }) }}</p>
 
     <div class="mt-5 grid gap-x-6 gap-y-3.5 rounded-card bg-navy px-5 py-5 text-white sm:grid-cols-3">
-      <h3 class="font-display text-[13px] font-bold uppercase tracking-[0.16em] text-orange sm:col-span-3">{{ t('contest.rules.beforeTitle') }}</h3>
+      <h3 class="font-display text-[13px] font-bold uppercase tracking-[0.16em] text-accent sm:col-span-3">{{ t('contest.rules.beforeTitle') }}</h3>
       <div v-for="(item, i) in avant" :key="i" class="flex gap-3 text-sm text-white/85">
-        <span class="grid h-7 w-7 flex-none place-items-center rounded-full bg-white/10 font-display font-extrabold text-orange" aria-hidden="true">{{ i + 1 }}</span>
+        <span class="grid h-7 w-7 flex-none place-items-center rounded-full bg-white/10 font-display font-extrabold text-accent" aria-hidden="true">{{ i + 1 }}</span>
         <span><b class="block text-white">{{ item.title }}</b>{{ item.text }}</span>
       </div>
     </div>
@@ -57,24 +57,24 @@ const retours = computed(() => [
             <small
               v-if="premiers[cle]"
               :data-testid="`premier-${cle}`"
-              class="mt-0.5 block text-[12.5px] font-semibold text-orange-deep"
+              class="mt-0.5 block text-[12.5px] font-semibold text-accent-text"
             ><span aria-hidden="true">🥇 </span>{{ t('contest.firsts.claimed', { nom: premiers[cle]!.nom }) }}</small>
           </span>
-          <span class="flex-none whitespace-nowrap font-display text-sm font-extrabold tabular-nums text-orange-deep">{{ n(BAREME[cle]) }}</span>
+          <span class="flex-none whitespace-nowrap font-display text-sm font-extrabold tabular-nums text-accent-text">{{ n(BAREME[cle]) }}</span>
         </div>
       </div>
       <div data-testid="rules-group" class="min-w-0 rounded-card border border-line bg-surface px-5 pb-3 pt-4">
         <h3 class="mb-2 font-display text-base font-extrabold">{{ t('contest.groups.retours') }}</h3>
         <div v-for="(r, i) in retours" :key="r.titre" class="flex items-baseline justify-between gap-3.5 py-2 text-sm" :class="i > 0 ? 'border-t border-line' : ''">
           <span class="min-w-0">{{ r.titre }}<small class="block text-[12.5px] text-ink-muted">{{ r.sous }}</small></span>
-          <span class="flex-none whitespace-nowrap font-display text-sm font-extrabold tabular-nums text-orange-deep">{{ r.points }}</span>
+          <span class="flex-none whitespace-nowrap font-display text-sm font-extrabold tabular-nums text-accent-text">{{ r.points }}</span>
         </div>
       </div>
     </div>
 
     <div class="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2.5 text-[13.5px] text-ink-muted">
       <span>{{ t('contest.rules.footer') }}</span>
-      <a :href="t('contest.guideUrl')" target="_blank" rel="noopener" class="font-bold text-orange-deep underline-offset-2 hover:underline">{{ t('contest.rules.readGuide') }} <span aria-hidden="true">↗</span><span class="sr-only"> {{ t('contest.newTab') }}</span></a>
+      <a :href="t('contest.guideUrl')" target="_blank" rel="noopener" class="font-bold text-accent-text underline-offset-2 hover:underline">{{ t('contest.rules.readGuide') }} <span aria-hidden="true">↗</span><span class="sr-only"> {{ t('contest.newTab') }}</span></a>
     </div>
   </section>
 </template>

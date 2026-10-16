@@ -15,7 +15,7 @@ const classes = tones[props.tone]
 </script>
 
 <template>
-  <section class="py-20 sm:py-28" :class="classes">
+  <section class="py-14 sm:py-20" :class="classes">
     <slot />
   </section>
 </template>

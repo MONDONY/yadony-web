@@ -1,24 +1,39 @@
+/* Tokens du design system, repris de l'app mobile :
+   dony_app/lib/core/design/tokens/color_tokens.dart (source de vérité).
+   Canaux RGB séparés pour l'opacité Tailwind (`bg-primary/10`). */
 :root {
-  /* Couleurs tirées du logo Yadony : navy profond + orange. */
-  --primary: 24 43 92;
-  --primary-hover: 15 28 64;
-  --navy: 24 43 92;
-  --navy-deep: 10 20 48;
-  /* Orange du logo : réservé aux fonds sombres et aux aplats graphiques
-     (2.2:1 sur blanc — jamais en texte sur fond clair). */
-  --orange: 246 146 30;
-  --orange-hover: 228 128 15;
-  /* Variante assombrie pour le texte accentué sur fond clair (4.6:1). */
-  --orange-deep: 178 96 8;
-  --ink: 10 37 64;
-  --ink-muted: 84 80 74;
+  /* Bleu de l'app (blue500 / 600 / 700 / 50 / 800 / 900). */
+  --primary: 11 95 255;
+  --primary-hover: 10 77 217;
+  --primary-press: 8 60 171;
+  --primary-soft: 237 242 255;
+  --navy: 6 43 125;
+  --navy-deep: 4 29 84;
+
+  /* Accent terracotta (terra500 / 600 / 700 / 50). terra500 pour les aplats
+     et le graphisme ; terra600 sous un texte blanc (contraste AA) ; terra700
+     pour un texte accentué sur fond clair. */
+  --accent: 217 106 58;
+  --accent-strong: 185 85 36;
+  --accent-hover: 147 66 27;
+  --accent-text: 147 66 27;
+  --accent-soft: 252 240 233;
+
+  /* Neutres et surfaces. */
+  --bg: 250 250 248;
+  --surface: 255 255 255;
   --sand: 247 243 237;
   --sand-deep: 237 230 216;
   --line: 232 229 223;
-  --surface: 255 255 255;
-  --success: 12 122 84;
-  /* Bleu de l'app mobile (#0B5FFF) et son fond pâle (#EDF2FF) : page
-     d'invitation de parrainage, pour rester dans le ton de l'app. */
+  --ink: 10 37 64;
+  --ink-muted: 84 80 74;
+
+  /* États. */
+  --success: 14 138 95;
+  --warning: 232 162 59;
+  --error: 217 52 43;
+
+  /* Page d'invitation de parrainage : bleu de l'app et son fond pâle. */
   --invite: 11 95 255;
   --invite-soft: 237 242 255;
 }

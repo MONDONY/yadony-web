@@ -3,23 +3,22 @@ import { useI18n } from 'vue-i18n'
 import { useRoute } from 'vue-router'
 import { buildSeoMeta } from '@/lib/seo'
 import { organizationJsonLd, mobileAppJsonLd, faqJsonLd } from '@/lib/structured-data'
+import { useTexts } from '@/composables/useTexts'
 
-const { t, tm, rt, locale } = useI18n()
+const { t, locale } = useI18n()
 const route = useRoute()
+const { items } = useTexts()
 
 useSeoMeta(
   buildSeoMeta({
-    title: t('home.seo.title'),
-    description: t('home.seo.description'),
+    title: t('landing.seo.title'),
+    description: t('landing.seo.description'),
     path: route.path,
     locale: locale.value as 'fr' | 'en',
   }),
 )
 
-const faqItems = (tm('home.faq.items') as unknown[]).map((raw) => {
-  const entry = raw as { question: unknown; answer: unknown }
-  return { question: rt(entry.question as never), answer: rt(entry.answer as never) }
-})
+const faqItems = items<{ question: string; answer: string }>('home.faq.items')
 
 useHead({
   script: [
@@ -32,13 +31,20 @@ useHead({
 
 <template>
   <div>
-    <HeroDownload />
-    <ProblemComparison />
-    <TrackingWalkthrough />
-    <TrustPillars />
-    <CorridorsSeo />
-    <TravelerBanner />
-    <HomeFaq />
+    <HomeHero />
+    <HomePromises />
+    <!-- Sous la ligne de flottaison : HTML prérendu tout de suite (robots,
+         lecteurs sans JS), JavaScript chargé et hydraté à l'approche de
+         l'écran seulement, pour ne pas retarder l'affichage du haut de page. -->
+    <LazyHomeVideo hydrate-on-visible />
+    <LazyJourneyCrossed hydrate-on-visible />
+    <LazyHomeTrust hydrate-on-visible />
+    <LazyHomePayments hydrate-on-visible />
+    <LazyHomeCorridors hydrate-on-visible />
+    <LazyHomeRecipient hydrate-on-visible />
+    <LazyHomeFaq hydrate-on-visible />
+    <!-- Hydraté tout de suite : le bouton « Télécharger » de l'en-tête y mène
+         directement, le premier clic sur les badges ne doit pas se perdre. -->
     <DownloadCta />
   </div>
 </template>

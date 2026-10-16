@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest'
 import { mount } from '@vue/test-utils'
 import { createI18n } from 'vue-i18n'
-import fr from '../../../i18n/locales/fr.json'
+import { fr } from '../helpers/messages'
 import JourneySteps from '@/components/sections/JourneySteps.vue'
 import UiPhoneVideoPlayer from '@/components/ui/UiPhoneVideoPlayer.vue'
 

@@ -1,6 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import fr from '../../../i18n/locales/fr.json'
-import en from '../../../i18n/locales/en.json'
+import { en, fr } from '../helpers/messages'
 
 /**
  * Aplatit une arborescence de traduction en couples [chemin, valeur].
@@ -60,7 +59,6 @@ const identifierPaths = Array.from({ length: 8 }, (_, index) => `home.faq.items[
 const sameWordPaths = [
   'nav.contact',
   'nav.menu',
-  'home.problem.rows.yadony.channel',
   // Page du classement : « pts », « Points », « Tests » et « bug » sont
   // communs aux deux langues.
   'contest.points',
@@ -69,6 +67,8 @@ const sameWordPaths = [
   'contest.rules.perBug',
   // Résultat final : « 651 + 2 220 », une addition sans mot.
   'contest.final.podiumSub',
+  // Refonte : « Destinations » s'écrit pareil dans les deux langues.
+  'landing.corridors.kicker',
 ]
 
 /**
@@ -78,21 +78,31 @@ const sameWordPaths = [
  * France » non plus.
  */
 const properNounPaths = [
-  'home.corridors.routes.dakar.route',
-  'home.corridors.routes.abidjan.route',
-  'home.corridors.routes.bamako.route',
-  'home.corridors.routes.douala.route',
   'footer.company.name',
   'footer.company.line2',
   'footer.proTitle',
-  // Un numéral seul s'écrit pareil dans les deux langues.
-  'home.hero.stats.scans.figure',
-  'home.trust.code.figure',
+  // « Services » s'écrit pareil, « Yadony » est le nom de la marque, et le
+  // libellé d'un trajet n'est qu'un gabarit « {from} → {to} ».
+  'footer.servicesTitle',
+  'footer.companyTitle',
+  'footer.routeLabel',
   // L'adresse du siège social ne se traduit pas.
   'footer.company.line1',
   // « Commission » s'écrit pareil dans les deux langues (sous-titre de
   // l'article 7 des CGU).
   'legal.cgu.articles[6].blocks[3].sub',
+  // Refonte : prénoms des personnages, villes, montant d'exemple, noms
+  // commerciaux des opérateurs de mobile money, adresse d'un lien de suivi.
+  'landing.crossed.art.negotiation.sender',
+  'landing.crossed.art.negotiation.traveler',
+  'landing.crossed.art.padlock.amount',
+  'landing.crossed.art.route.from',
+  'landing.crossed.art.route.to',
+  'landing.payments.items[1]',
+  'landing.payments.items[2]',
+  'landing.payments.items[3]',
+  'landing.payments.items[4]',
+  'landing.recipient.chat.link',
 ]
 
 /**
@@ -121,10 +131,6 @@ const sharedValuePaths = new Set([
 const markerExemptPaths = new Set([
   ...sharedValuePaths,
   'legal.confidentialite.sections.rights.text',
-  // « Côte d'Ivoire » est un nom propre : il garde son accent circonflexe
-  // dans la version anglaise (l'exonyme « Ivory Coast » n'est pas la forme
-  // officielle du pays).
-  'home.corridors.routes.abidjan.text',
   // Textes légaux anglais citant des noms propres accentués qui ne se
   // traduisent pas : « Côte d'Ivoire » et « RCS Créteil » (registre du
   // commerce du siège social).
@@ -133,6 +139,23 @@ const markerExemptPaths = new Set([
   'legal.cgu.articles[20].blocks[0].ul[4]',
   'legal.confidentialite.articles[7].blocks[3].p[0]',
   'legal.confidentialite.articles[10].blocks[1].p[1]',
+  // Noms d'aéroports et de villes accentués (Lyon-Saint-Exupéry, Bamako-Sénou,
+  // Félix Houphouët-Boigny, Saint-Étienne, Vénissieux).
+  'corridorPages.pages.lyonBamako.how',
+  'corridorPages.pages.lyonBamako.lead',
+  'corridorPages.pages.lyonBamako.safety',
+  'corridorPages.pages.lyonDakar.lead',
+  'corridorPages.pages.marseilleAbidjan.delay',
+  'corridorPages.pages.parisBamako.delay',
+  // Les captures de l'app sont en français : leur description anglaise cite
+  // le libellé français de l'écran, suivi de sa traduction.
+  'journeys.screens.flights-found',
+  'journeys.screens.flights-hub',
+  'journeys.screens.my-parcels',
+  'journeys.screens.publish-trip',
+  'journeys.screens.scan',
+  'journeys.screens.trip-detail',
+  'landing.hero.screensAlt[0]',
   // « Yaoundé » garde son accent dans la version anglaise (nom propre).
   'corridorPages.pages.parisDouala.faq[0].question',
   'corridorPages.pages.parisDouala.faq[0].answer',
@@ -156,7 +179,9 @@ const frenchMarkers: RegExp[] = [
 
 describe('fichiers de locale', () => {
   it('fr et en exposent exactement les mêmes clés', () => {
-    const frKeys = flatten(fr).sort()
+    // Les pages GP (« GP Paris Dakar ») n'existent qu'en français : le terme
+    // n'a pas d'équivalent anglais (spec refonte, §3).
+    const frKeys = flatten(fr).filter(path => !path.startsWith('gp.')).sort()
     const enKeys = flatten(en).sort()
     expect(enKeys).toEqual(frKeys)
   })

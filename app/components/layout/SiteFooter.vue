@@ -2,12 +2,29 @@
 import { useI18n } from 'vue-i18n'
 import { betaTesting, betaWhatsAppGroupUrl, contactEmail } from '@/lib/site'
 import { socialLinks, whatsappIconPath } from '@/lib/social'
+import { corridors } from '@/lib/corridors'
+import { gpPages } from '@/lib/gp'
 
-const { t } = useI18n()
+const { t, locale } = useI18n()
 const p = useLocalePath()
 const { reopen } = useCookieConsent()
 
 const YADONY_PRO_URL = 'https://pro.yadony.com'
+
+const services = [
+  { to: '/envoyer-colis', key: 'nav.corridors' },
+  { to: '/devenir-voyageur', key: 'nav.traveler' },
+  { to: '/billets-avion', key: 'nav.flights' },
+  { to: '/comment-ca-marche', key: 'nav.howItWorks' },
+  { to: '/tarifs', key: 'nav.pricing' },
+  { to: '/securite', key: 'nav.trust' },
+]
+
+const company = [
+  { to: '/a-propos', key: 'nav.about' },
+  { to: '/contact', key: 'nav.contact' },
+  { to: '/classement', key: 'nav.contest' },
+]
 </script>
 
 <template>
@@ -29,7 +46,7 @@ const YADONY_PRO_URL = 'https://pro.yadony.com'
             :href="betaWhatsAppGroupUrl"
             target="_blank"
             rel="noopener noreferrer"
-            class="mt-4 inline-flex items-center gap-2 font-semibold text-orange transition-[color,transform] duration-150 hover:text-orange-hover active:scale-[0.96] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+            class="mt-4 inline-flex items-center gap-2 font-semibold text-accent transition-[color,transform] duration-150 hover:text-accent-hover active:scale-[0.96] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
           >
             <svg viewBox="0 0 24 24" class="h-5 w-5 shrink-0" fill="currentColor" aria-hidden="true">
               <path :d="whatsappIconPath" />
@@ -53,7 +70,7 @@ const YADONY_PRO_URL = 'https://pro.yadony.com'
         </figure>
       </div>
 
-      <div class="grid gap-10 py-16 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-[1.2fr_1.7fr_1fr_1fr]">
         <div>
           <img
             src="/logos/logo-yadony-480.webp"
@@ -86,15 +103,28 @@ const YADONY_PRO_URL = 'https://pro.yadony.com'
           </ul>
         </div>
 
-        <nav :aria-label="t('footer.navLabel')" class="text-sm">
-          <p class="font-display font-semibold text-white">{{ t('footer.navTitle') }}</p>
-          <NuxtLink :to="p('/envoyer-colis')" class="mt-3 block py-1 text-white/65 hover:text-white">{{ t('nav.corridors') }}</NuxtLink>
-          <NuxtLink :to="p('/comment-ca-marche')" class="block py-1 text-white/65 hover:text-white">{{ t('nav.howItWorks') }}</NuxtLink>
-          <NuxtLink :to="p('/tarifs')" class="block py-1 text-white/65 hover:text-white">{{ t('nav.pricing') }}</NuxtLink>
-          <NuxtLink :to="p('/securite')" class="block py-1 text-white/65 hover:text-white">{{ t('nav.trust') }}</NuxtLink>
-          <NuxtLink :to="p('/a-propos')" class="block py-1 text-white/65 hover:text-white">{{ t('nav.about') }}</NuxtLink>
-          <NuxtLink :to="p('/contact')" class="block py-1 text-white/65 hover:text-white">{{ t('nav.contact') }}</NuxtLink>
-        </nav>
+        <div class="grid grid-cols-2 gap-8 text-sm">
+          <nav :aria-label="t('footer.navLabel')">
+            <p class="font-display font-semibold text-white">{{ t('footer.servicesTitle') }}</p>
+            <NuxtLink
+              v-for="(link, index) in services"
+              :key="link.to"
+              :to="p(link.to)"
+              class="block py-1 text-white/65 hover:text-white"
+              :class="index === 0 ? 'mt-3' : ''"
+            >{{ t(link.key) }}</NuxtLink>
+          </nav>
+          <div>
+            <p class="font-display font-semibold text-white">{{ t('footer.companyTitle') }}</p>
+            <NuxtLink
+              v-for="(link, index) in company"
+              :key="link.to"
+              :to="p(link.to)"
+              class="block py-1 text-white/65 hover:text-white"
+              :class="index === 0 ? 'mt-3' : ''"
+            >{{ t(link.key) }}</NuxtLink>
+          </div>
+        </div>
 
         <nav :aria-label="t('footer.legalLabel')" class="text-sm">
           <p class="font-display font-semibold text-white">{{ t('footer.legalTitle') }}</p>
@@ -116,12 +146,36 @@ const YADONY_PRO_URL = 'https://pro.yadony.com'
             :href="YADONY_PRO_URL"
             target="_blank"
             rel="noopener noreferrer"
-            class="mt-3 inline-block font-semibold text-orange hover:text-orange-hover"
+            class="mt-3 inline-block font-semibold text-accent hover:text-accent-hover"
           >{{ t('footer.proCta') }}<span class="sr-only"> {{ t('a11y.opensNewTab') }}</span></a>
           <p class="mt-6 text-white/65">
             <a :href="`mailto:${contactEmail}`" class="hover:text-white">{{ contactEmail }}</a>
           </p>
         </div>
+      </div>
+      <!-- Maillage interne : chaque page corridor et GP reçoit un lien depuis
+           toutes les pages du site. -->
+      <div class="grid gap-8 border-t border-white/15 py-10 text-sm lg:grid-cols-12">
+        <nav :aria-label="t('footer.destinationsTitle')" class="lg:col-span-8">
+          <p class="font-display font-semibold text-white">{{ t('footer.destinationsTitle') }}</p>
+          <ul class="mt-3 grid list-none grid-cols-2 gap-x-6 sm:grid-cols-3">
+            <li v-for="corridor in corridors" :key="corridor.slug">
+              <NuxtLink :to="p(`/envoyer-colis/${corridor.slug}`)" class="block py-1 text-white/65 hover:text-white">
+                {{ t('footer.routeLabel', { from: corridor.from, to: corridor.to }) }}
+              </NuxtLink>
+            </li>
+          </ul>
+        </nav>
+        <nav v-if="locale === 'fr'" :aria-label="t('gp.common.footerTitle')" class="lg:col-span-4">
+          <p class="font-display font-semibold text-white">{{ t('gp.common.footerTitle') }}</p>
+          <ul class="mt-3 grid list-none grid-cols-2 gap-x-6">
+            <li v-for="page in gpPages" :key="page.slug">
+              <NuxtLink :to="`/gp/${page.slug}`" class="block py-1 text-white/65 hover:text-white">
+                {{ t('gp.common.footerLabel', { from: page.from, to: page.to }) }}
+              </NuxtLink>
+            </li>
+          </ul>
+        </nav>
       </div>
       <p class="border-t border-white/15 py-6 text-xs text-white/55">{{ t('footer.copyright') }}</p>
     </UiContainer>

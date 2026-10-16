@@ -2,7 +2,7 @@
   "ci": {
     "collect": {
       "staticDistDir": ".output/public",
-      "url": ["http://localhost/index.html", "http://localhost/tarifs.html"],
+      "url": ["http://localhost/index.html", "http://localhost/devenir-voyageur.html", "http://localhost/tarifs.html"],
       "numberOfRuns": 3
     },
     "assert": {

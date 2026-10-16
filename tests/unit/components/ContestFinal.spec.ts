@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { mount } from '@vue/test-utils'
 import { createI18n } from 'vue-i18n'
-import fr from '../../../i18n/locales/fr.json'
+import { fr } from '../helpers/messages'
 import ContestFinal from '@/components/contest/ContestFinal.vue'
 
 const i18n = createI18n({ legacy: false, locale: 'fr', messages: { fr } })

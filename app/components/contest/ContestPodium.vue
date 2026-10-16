@@ -23,10 +23,10 @@ const colonnes: Record<number, string> = { 1: 'col-start-2', 2: 'col-start-1', 3
 
 const styles: Record<number, { medal: string; card: string; name: string; pts: string }> = {
   1: {
-    medal: 'h-10 w-10 bg-orange text-lg sm:h-12 sm:w-12 sm:text-[21px]',
-    card: 'border-orange pt-5 pb-4 sm:pt-7 sm:pb-6',
+    medal: 'h-10 w-10 bg-accent text-lg sm:h-12 sm:w-12 sm:text-[21px]',
+    card: 'border-accent pt-5 pb-4 sm:pt-7 sm:pb-6',
     name: 'text-[15px] sm:text-[21px]',
-    pts: 'text-[26px] text-orange-deep sm:text-[38px]',
+    pts: 'text-[26px] text-accent-text sm:text-[38px]',
   },
   2: {
     medal: 'h-8 w-8 bg-[rgb(150_160_178)] text-[15px] sm:h-10 sm:w-10 sm:text-lg',

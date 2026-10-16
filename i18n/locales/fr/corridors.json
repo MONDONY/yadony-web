@@ -1,0 +1,337 @@
+{
+  "corridorPages": {
+    "hub": {
+      "seo": {
+        "title": "Envoyer un colis en Afrique par un voyageur vérifié",
+        "description": "Paris–Abidjan, Paris–Dakar, Lyon–Abidjan, Marseille–Bamako, Paris–Douala : confiez votre colis à un voyageur vérifié, payez sous séquestre, suivez chaque scan."
+      },
+      "title": "Envoyer un colis en Afrique, corridor par corridor",
+      "lead": "Yadony relie les villes françaises aux capitales d'Afrique de l'Ouest et centrale. Choisissez votre corridor : chaque page détaille les prix, les délais et le fonctionnement exact du suivi.",
+      "listLabel": "Corridors desservis",
+      "cardCta": "Voir le corridor"
+    },
+    "common": {
+      "othersTitle": "Les autres corridors",
+      "faqTitle": "Questions fréquentes sur ce corridor",
+      "howTitle": "Comment ça marche",
+      "priceTitle": "Combien ça coûte",
+      "delayTitle": "Quels délais prévoir",
+      "safetyTitle": "Suivi et sécurité",
+      "backToHub": "Tous les corridors"
+    },
+    "pages": {
+      "parisDakar": {
+        "seo": {
+          "title": "Envoyer un colis de Paris à Dakar par un voyageur vérifié",
+          "description": "Un voyageur vérifié qui part déjà pour Dakar emporte votre colis : prix au kilo fixé par le voyageur, paiement bloqué jusqu'à la livraison, suivi par QR code."
+        },
+        "title": "Envoyer un colis de Paris à Dakar",
+        "lead": "Paris–Dakar est le corridor le plus actif de Yadony : la diaspora sénégalaise d'Île-de-France envoie chaque semaine des colis à Dakar, et des voyageurs font le trajet dans les deux sens toute l'année.",
+        "how": "Publiez votre colis dans l'app avec son poids, sa description et sa photo. Les voyageurs vérifiés qui partent de Paris vers Dakar voient votre demande et proposent leur prix au kilo. Vous choisissez, vous remettez le colis en main propre en région parisienne, et votre proche le récupère à Dakar auprès du voyageur.",
+        "price": "Le prix au kilo est fixé librement par chaque voyageur selon son vol et sa franchise bagage. Vous comparez les annonces avant de choisir. Une commission de service, toujours affichée avant paiement, est prélevée sur la transaction.",
+        "delay": "Un vol direct Paris–Dakar dure environ 5 h 30. Votre colis arrive donc le jour du vol du voyageur : dès la remise, vous connaissez la date exacte, et le rendez-vous de récupération à Dakar se cale dans les jours qui suivent l'atterrissage.",
+        "safety": "Identité du voyageur vérifiée avec Didit, paiement par carte bloqué jusqu'à la confirmation de livraison, remise validée par un code à 6 chiffres, chaque étape horodatée et géolocalisée. Votre proche suit tout depuis une simple page web, sans compte.",
+        "faq": [
+          {
+            "question": "Combien coûte un envoi de colis Paris–Dakar ?",
+            "answer": "C'est le voyageur qui fixe son prix au kilo ; vous comparez les annonces avant de choisir. Pour un colis de 5 kg chez un voyageur à 8 €/kg, le voyageur touche 40 € et vous payez 40 € plus la commission de service, affichée avant paiement."
+          },
+          {
+            "question": "Combien de temps met un colis pour arriver à Dakar ?",
+            "answer": "Le temps du vol du voyageur (environ 5 h 30 en direct), plus le rendez-vous de remise à Dakar. Vous voyez la date de départ avant de réserver, donc vous savez dès le début quand votre colis arrive."
+          },
+          {
+            "question": "Comment mon proche récupère-t-il le colis à Dakar ?",
+            "answer": "Le voyageur et le destinataire conviennent d'un rendez-vous. À la remise, le destinataire donne le code à 6 chiffres que vous lui avez transmis, et le voyageur prend une photo : la livraison est confirmée et le paiement du voyageur est déclenché."
+          }
+        ]
+      },
+      "lyonAbidjan": {
+        "seo": {
+          "title": "Envoyer un colis de Lyon à Abidjan par un voyageur vérifié",
+          "description": "Confiez votre colis à un voyageur vérifié qui part de Lyon pour Abidjan : prix au kilo transparent, séquestre jusqu'à la livraison, suivi par QR code."
+        },
+        "title": "Envoyer un colis de Lyon à Abidjan",
+        "lead": "La communauté ivoirienne de Lyon et de sa région n'a plus besoin de passer par Paris : des voyageurs relient directement Lyon à Abidjan, et votre colis voyage dans leur valise.",
+        "how": "Décrivez votre colis dans l'app : poids, contenu, photos. Les voyageurs vérifiés au départ de Lyon (ou de Paris si vous préférez élargir) proposent leur prix. Après acceptation, vous remettez le colis en main propre et chaque étape est tracée jusqu'à Abidjan.",
+        "price": "Chaque voyageur annonce son prix au kilo ; c'est souvent plus avantageux qu'un transporteur classique pour les colis de quelques kilos, et vous savez exactement qui transporte. La commission de service est affichée avant que vous ne validiez.",
+        "delay": "Comptez environ 6 h 30 de vol direct Lyon–Abidjan. Le colis arrive avec le voyageur : la date est connue dès la réservation, sans fourchette floue de plusieurs semaines.",
+        "safety": "Vérification d'identité obligatoire, paiement par carte bloqué jusqu'à la confirmation du destinataire, scans horodatés et géolocalisés. En cas de problème, vous avez 15 jours pour ouvrir un litige, tranché sous 72 heures ouvrées sur preuves.",
+        "faq": [
+          {
+            "question": "Y a-t-il souvent des voyageurs entre Lyon et Abidjan ?",
+            "answer": "Lyon–Abidjan fait partie des corridors de lancement de Yadony. Si aucun voyageur ne part de Lyon aux dates voulues, l'app vous montre aussi les départs de Paris vers Abidjan pour élargir le choix."
+          },
+          {
+            "question": "Que puis-je envoyer à Abidjan ?",
+            "answer": "Tout ce qui est légal et déclaré : vêtements, médicaments non réglementés, documents non officiels, produits du quotidien. Sont interdits notamment : drogues, armes, contrefaçons, animaux vivants et documents d'identité. Le voyageur voit votre déclaration complète avant d'accepter."
+          },
+          {
+            "question": "Comment le paiement est-il protégé ?",
+            "answer": "Par carte, vous êtes débité quand le voyageur accepte, mais l'argent reste bloqué sur la plateforme : le voyageur n'est payé qu'après la confirmation de livraison, avec le code à 6 chiffres que vous transmettez au destinataire. En cas d'annulation avant la remise, vous êtes remboursé intégralement."
+          }
+        ]
+      },
+      "marseilleBamako": {
+        "seo": {
+          "title": "Envoyer un colis de Marseille à Bamako par un voyageur vérifié",
+          "description": "Un voyageur vérifié qui part de Marseille pour Bamako transporte votre colis : prix fixé par le voyageur, paiement bloqué jusqu'à la livraison, suivi complet."
+        },
+        "title": "Envoyer un colis de Marseille à Bamako",
+        "lead": "Depuis Marseille et tout le sud de la France, la communauté malienne envoie ses colis à Bamako sans détour : un voyageur qui fait déjà le trajet les emporte, avec un vrai suivi à chaque étape.",
+        "how": "Créez votre demande dans l'app avec le poids et la description du colis. Un voyageur vérifié partant de Marseille vers Bamako l'accepte, vous fixez ensemble un rendez-vous de remise, et le colis est scanné à la remise puis livré contre le code du destinataire.",
+        "price": "Le prix au kilo est celui qu'annonce le voyageur : pas de grille cachée, pas de suppléments découverts au guichet. Une commission de service est prélevée sur la transaction, affichée avant paiement.",
+        "delay": "Selon les compagnies et la saison, le trajet Marseille–Bamako se fait souvent avec une escale ; quand un vol direct existe, il dure environ 5 h 30. Votre colis arrive le jour où le voyageur atterrit, et vous connaissez cette date avant de réserver. La remise au destinataire se fait ensuite au rendez-vous convenu dans l'app.",
+        "safety": "Chaque voyageur vérifie son identité avec Didit, pièce d'identité et selfie, avant de pouvoir publier un trajet. Payé par carte, l'argent reste bloqué jusqu'au code de confirmation du destinataire, et l'historique des scans fait foi en cas de litige.",
+        "faq": [
+          {
+            "question": "Combien coûte un envoi Marseille–Bamako ?",
+            "answer": "Le voyageur fixe son prix au kilo et vous le voyez avant de réserver. Exemple : 5 kg à 8 €/kg, le voyageur touche 40 € et vous payez 40 € plus la commission de service, affichée avant paiement."
+          },
+          {
+            "question": "Mon proche à Bamako doit-il installer l'application ?",
+            "answer": "Non. Le destinataire suit le colis depuis une simple page web, même sur un téléphone basique en connexion lente. À la remise, il donne au voyageur le code à 6 chiffres que vous lui avez transmis."
+          },
+          {
+            "question": "Et si le voyageur annule son trajet ?",
+            "answer": "Vous êtes remboursé intégralement et automatiquement, commission comprise, et l'application vous suggère d'autres voyageurs qui partent à des dates proches."
+          }
+        ]
+      },
+      "parisDouala": {
+        "seo": {
+          "title": "Envoyer un colis de Paris à Douala par un voyageur vérifié",
+          "description": "Envoyez vos colis au Cameroun avec un voyageur vérifié Paris–Douala : prix au kilo transparent, paiement bloqué jusqu'à la livraison, remise validée par un code."
+        },
+        "title": "Envoyer un colis de Paris à Douala",
+        "lead": "Pour la diaspora camerounaise, Paris–Douala est le chemin le plus direct : un voyageur vérifié qui prend ce vol emporte votre colis et votre famille le récupère en main propre, preuve de livraison à l'appui.",
+        "how": "Publiez le colis dans l'app : poids, contenu, photos, coordonnées du destinataire à Douala. Un voyageur vérifié l'accepte, vous le lui remettez en région parisienne, et vous suivez les scans jusqu'à la remise finale, photo comprise.",
+        "price": "Le prix dépend du voyageur et de sa franchise bagage : chacun annonce son tarif au kilo et vous choisissez. La commission de service est prélevée sur la transaction et toujours affichée avant que vous ne payiez.",
+        "delay": "Environ 6 h 30 de vol direct Paris–Douala. La date d'arrivée est celle du vol du voyageur, connue avant la réservation : vous pouvez prévenir votre famille du jour exact dès le départ.",
+        "safety": "Identités vérifiées avec Didit, paiement par carte bloqué jusqu'au code de confirmation du destinataire, chaque étape tracée de Paris à Douala. Le destinataire suit tout depuis une page web, sans compte.",
+        "faq": [
+          {
+            "question": "Puis-je envoyer un colis à Yaoundé plutôt qu'à Douala ?",
+            "answer": "Le corridor dessert Douala, où le voyageur atterrit. La remise finale se fait au rendez-vous convenu entre le voyageur et votre destinataire ; si votre proche est à Yaoundé, il peut convenir d'un point de rencontre avec le voyageur, mais la livraison de référence reste Douala."
+          },
+          {
+            "question": "Que se passe-t-il si le colis est perdu ?",
+            "answer": "Ouvrez un litige depuis l'application dans les 15 jours qui suivent la date prévue. Le versement au voyageur est suspendu, l'équipe examine les preuves et Yadony peut rembourser l'envoi, dans la limite d'un plafond et sous les conditions affichés dans l'application."
+          },
+          {
+            "question": "Comment savoir où en est mon colis ?",
+            "answer": "Le voyageur scanne le colis à la remise, peut ajouter un scan de transit, marque son arrivée, puis la livraison est validée par le code du destinataire. Chaque étape est horodatée et géolocalisée, et vous comme le destinataire voyez la même fiche de suivi en temps réel."
+          }
+        ]
+      },
+      "parisAbidjan": {
+        "seo": {
+          "title": "Envoyer un colis de Paris à Abidjan par un voyageur vérifié",
+          "description": "Le corridor vedette de Yadony : un voyageur vérifié Paris–Abidjan emporte votre colis, paiement bloqué jusqu'à la livraison, suivi par QR code."
+        },
+        "title": "Envoyer un colis de Paris à Abidjan",
+        "lead": "Paris–Abidjan est le corridor vedette de Yadony : la communauté ivoirienne d'Île-de-France est l'une des plus actives de la diaspora, et les vols quotidiens vers Abidjan font qu'un voyageur part presque chaque jour.",
+        "how": "Publiez votre colis dans l'app : poids, description, photos, coordonnées du destinataire à Abidjan. Les voyageurs vérifiés qui partent de Paris proposent leur prix au kilo ; vous choisissez, vous remettez le colis en main propre en région parisienne, et chaque étape est scannée jusqu'à la remise à Abidjan.",
+        "price": "Chaque voyageur fixe son prix au kilo selon son vol et sa franchise bagage ; vous comparez avant de choisir. Une commission de service, toujours affichée avant paiement, est prélevée sur la transaction.",
+        "delay": "Le vol direct Paris–Abidjan dure environ 6 h 30. Votre colis atterrit avec le voyageur : la date est connue dès la réservation, et le rendez-vous de remise à Abidjan se cale dans les jours qui suivent.",
+        "safety": "Identité du voyageur vérifiée avec Didit, paiement par carte bloqué jusqu'au code de confirmation du destinataire, scans horodatés et géolocalisés de Paris à Abidjan. Votre proche suit tout depuis une simple page web, sans compte.",
+        "faq": [
+          {
+            "question": "Combien coûte un envoi de colis Paris–Abidjan ?",
+            "answer": "C'est le voyageur qui fixe son prix au kilo, et vous comparez les annonces avant de réserver. Exemple : 5 kg chez un voyageur à 8 €/kg, le voyageur touche 40 € et vous payez 40 € plus la commission de service, affichée avant paiement."
+          },
+          {
+            "question": "Y a-t-il des voyageurs Paris–Abidjan toute l'année ?",
+            "answer": "C'est le corridor le plus fourni de Yadony : les vols quotidiens entre Paris et Abidjan et la taille de la communauté ivoirienne en France font qu'il y a des départs réguliers toute l'année, y compris en dehors des fêtes."
+          },
+          {
+            "question": "Mon proche à Abidjan doit-il installer l'application ?",
+            "answer": "Non. Le destinataire suit le colis depuis une simple page web, même sur un téléphone basique. À la remise, il donne au voyageur le code à 6 chiffres que vous lui avez transmis : c'est ce qui confirme la livraison et déclenche le paiement du voyageur."
+          }
+        ]
+      },
+      "parisBamako": {
+        "seo": {
+          "title": "Envoyer un colis de Paris à Bamako par un voyageur vérifié",
+          "description": "De Paris à Bamako, un voyageur vérifié emporte votre colis : prix fixé par le voyageur, paiement bloqué jusqu'à la livraison, remise validée par un code."
+        },
+        "title": "Envoyer un colis de Paris à Bamako",
+        "lead": "De Montreuil à la Seine-Saint-Denis, la diaspora malienne d'Île-de-France a l'habitude de confier ses colis à ceux qui rentrent au pays. Yadony donne un cadre à cette habitude : pour envoyer un colis de Paris à Bamako, vous choisissez un voyageur à l'identité vérifiée et vous suivez votre envoi jusqu'à la remise.",
+        "how": "Deux façons de faire. Vous parcourez les trajets Paris–Bamako publiés par les voyageurs et vous réservez de la place dans leur valise, ou vous publiez votre demande d'envoi (poids, contenu, photos) et les voyageurs vous font leurs offres. Vous fixez ensuite un rendez-vous en Île-de-France, par exemple près de Roissy-Charles-de-Gaulle ou d'Orly, et le voyageur scanne le QR code du colis au moment où vous le lui confiez.",
+        "price": "Chaque voyageur choisit sa formule : un prix au kilo, une grille par article (un carton de vêtements, un téléphone, des boîtes de lait infantile) ou l'ouverture aux propositions de prix. Vous pouvez donc discuter le montant avant de vous engager. La commission de service de Yadony est toujours affichée avant le paiement.",
+        "delay": "Si le voyageur a un vol direct, comptez environ 5 h 30 jusqu'à l'aéroport de Bamako-Sénou ; avec une escale, le trajet prend souvent entre 8 et 14 heures selon la correspondance. La date de départ est visible avant la réservation, et le colis arrive avec le voyageur, pas des semaines plus tard au fond d'un conteneur.",
+        "safety": "Le voyageur a vérifié son identité (pièce d'identité et selfie, avec Didit ou Stripe Identity) avant de publier son trajet. Que vous payiez par carte, par mobile money ou depuis votre portefeuille Yadony, l'argent reste bloqué jusqu'à la livraison. Votre famille à Bamako suit chaque étape (remis, en vol, arrivé, livré) sur une page web, sans créer de compte.",
+        "faq": [
+          {
+            "question": "Puis-je payer un envoi pour Bamako par mobile money ?",
+            "answer": "Oui. En plus de la carte et du portefeuille Yadony, vous pouvez régler par mobile money (Orange Money, Moov, Wave ou MTN, selon les opérateurs proposés), pratique si vous avez un compte en francs CFA. Comme pour la carte, la somme reste bloquée jusqu'à la confirmation de livraison."
+          },
+          {
+            "question": "Et si je préfère payer le voyageur en espèces ?",
+            "answer": "C'est possible si le voyageur l'accepte, mais l'argent ne passe alors pas par le séquestre : Yadony ne peut ni le bloquer jusqu'à la livraison, ni vous le rembourser en cas de problème. Pour un colis de valeur, le paiement dans l'application reste la solution la plus protectrice."
+          },
+          {
+            "question": "Comment se passe la remise à Bamako ?",
+            "answer": "Le voyageur et votre destinataire conviennent d'un lieu et d'une heure après l'atterrissage. Votre proche donne le code de retrait à 6 chiffres que vous lui avez transmis, le voyageur prend une photo géolocalisée, et la livraison est validée : c'est seulement à ce moment que le voyageur est payé."
+          }
+        ]
+      },
+      "lyonDakar": {
+        "seo": {
+          "title": "Envoyer un colis de Lyon à Dakar par un voyageur vérifié",
+          "description": "Envoyer un colis de Lyon à Dakar sans passer par Paris : un voyageur vérifié l'emporte, vous payez sous séquestre et suivez chaque étape jusqu'à la remise."
+        },
+        "title": "Envoyer un colis de Lyon à Dakar",
+        "lead": "Vous vivez à Lyon, à Villeurbanne ou à Vénissieux et vous voulez envoyer un colis à Dakar ? Plutôt que de monter à Paris déposer un carton, confiez-le à un voyageur vérifié qui part de Lyon-Saint-Exupéry et qui a encore de la place dans sa valise.",
+        "how": "Sur ce corridor, le plus simple est souvent de publier une demande d'envoi : vous indiquez le poids, le contenu et la période souhaitée, et les voyageurs qui partent vers Dakar vous envoient leurs offres. Vous pouvez aussi chercher vous-même parmi les trajets publiés. Si aucun départ lyonnais ne tombe à vos dates, élargissez la recherche aux départs de Paris.",
+        "price": "Le voyageur annonce son prix au kilo, ou accepte que vous lui fassiez une proposition. Vous discutez dans l'application, chacun peut contre-proposer, et le prix retenu est celui sur lequel vous tombez d'accord. S'y ajoute seulement la commission de service, toujours affichée avant paiement.",
+        "delay": "Entre Lyon et Dakar, le voyage se fait souvent avec une escale, à Paris ou ailleurs : comptez fréquemment 8 à 12 heures selon la correspondance. Le colis atterrit à l'aéroport Blaise-Diagne (AIBD), à une cinquantaine de kilomètres du centre de Dakar ; le rendez-vous de remise se fixe donc souvent en ville, une fois le voyageur arrivé.",
+        "safety": "Avant de publier un trajet, chaque voyageur fait vérifier son identité. À la remise, il scanne le QR code du colis et prend une photo géolocalisée ; vous voyez ensuite le colis passer de « remis » à « en vol », « arrivé » puis « livré ». Le paiement, par carte, Wave, Orange Money ou portefeuille, reste bloqué jusqu'à ce que votre destinataire donne son code à 6 chiffres.",
+        "faq": [
+          {
+            "question": "Faut-il forcément trouver un voyageur qui part de Lyon ?",
+            "answer": "Non. Si un voyageur au départ de Paris vous convient, vous pouvez lui remettre le colis en Île-de-France. L'intérêt de chercher d'abord à Lyon, c'est d'éviter l'aller-retour : la remise se fait près de chez vous, au rendez-vous fixé avec le voyageur."
+          },
+          {
+            "question": "Que mettre dans un colis pour Dakar ?",
+            "answer": "Tout ce qui est légal et déclaré : vêtements, chaussures, produits de beauté, accessoires, cadeaux pour la famille. Les drogues, armes, contrefaçons, animaux vivants et documents d'identité sont interdits. Le voyageur voit votre déclaration et vos photos avant d'accepter le colis."
+          },
+          {
+            "question": "Que se passe-t-il si le colis n'arrive pas ?",
+            "answer": "Vous ouvrez un litige depuis l'application dans les 15 jours. Le versement au voyageur est suspendu, l'équipe Yadony examine les preuves (scans, photos, échanges) et tranche sous 72 heures ouvrées."
+          }
+        ]
+      },
+      "lyonBamako": {
+        "seo": {
+          "title": "Envoyer un colis de Lyon à Bamako par un voyageur vérifié",
+          "description": "Envoyer un colis de Lyon à Bamako avec un voyageur vérifié : prix au kilo ou par article, paiement par carte ou mobile money bloqué jusqu'à la livraison."
+        },
+        "title": "Envoyer un colis de Lyon à Bamako",
+        "lead": "De Lyon à Saint-Étienne en passant par Grenoble, de nombreuses familles maliennes d'Auvergne-Rhône-Alpes ont des proches à Bamako. Avec Yadony, vous pouvez envoyer un colis de Lyon à Bamako en le confiant à un voyageur dont l'identité a été vérifiée, sans remonter jusqu'à Paris.",
+        "how": "Cherchez les trajets vers Bamako au départ de Lyon-Saint-Exupéry, ou publiez votre demande et laissez les voyageurs vous faire une offre. Certains voyageurs proposent une grille de prix par article : un tarif pour un carton de vêtements, un autre pour un téléphone ou un ordinateur portable. Vous réservez, vous remettez le colis en main propre, et le voyageur le scanne devant vous.",
+        "price": "Selon le voyageur, le prix se fixe au kilo, par article, ou par une négociation où vous proposez votre montant. Exemple : 4 kg chez un voyageur à 9 €/kg, le voyageur touche 36 € et vous payez 36 € plus la commission de service, affichée avant paiement.",
+        "delay": "Entre Lyon et Bamako, le trajet se fait généralement avec une escale et dure fréquemment de 9 à 15 heures selon la correspondance. Si vous êtes pressé, élargissez la recherche aux départs de Paris, où les vols vers Bamako sont plus fréquents. Dans tous les cas, vous connaissez la date du vol avant de réserver.",
+        "safety": "Pour Bamako, le mobile money (Orange Money, Moov ou Wave, selon les opérateurs proposés) s'ajoute à la carte et au portefeuille Yadony, et la somme reste bloquée jusqu'à la livraison. À l'atterrissage à Bamako-Sénou, le voyageur signale son arrivée ; votre destinataire suit tout depuis une page web et valide la remise avec le code de retrait à 6 chiffres.",
+        "faq": [
+          {
+            "question": "Puis-je envoyer un téléphone ou un ordinateur à Bamako ?",
+            "answer": "Oui, s'il est déclaré honnêtement, avec sa description et des photos. Le voyageur voit votre déclaration avant d'accepter et reste libre de refuser. Les règles de douane maliennes s'appliquent comme pour n'importe quel bagage : mieux vaut éviter les appareils neufs en série."
+          },
+          {
+            "question": "Peut-on négocier le prix avec le voyageur ?",
+            "answer": "Oui, si le voyageur accepte les propositions de prix. Vous proposez un montant, il peut accepter, refuser ou contre-proposer, et inversement. Une fois d'accord, le prix convenu est celui que vous payez dans l'application, commission de service en plus."
+          },
+          {
+            "question": "Mon destinataire doit-il venir à l'aéroport ?",
+            "answer": "Pas forcément. Le lieu et l'heure de la remise se décident entre le voyageur et votre destinataire : à l'aéroport, en ville ou dans un quartier pratique pour les deux. L'essentiel est le code à 6 chiffres que vous transmettez à votre proche : sans lui, la livraison ne peut pas être validée."
+          }
+        ]
+      },
+      "lyonDouala": {
+        "seo": {
+          "title": "Envoyer un colis de Lyon à Douala par un voyageur vérifié",
+          "description": "Envoyer un colis de Lyon à Douala avec un voyageur vérifié : prix fixé par le voyageur, paiement bloqué jusqu'à la livraison, suivi de chaque étape en direct."
+        },
+        "title": "Envoyer un colis de Lyon à Douala",
+        "lead": "Étudiants, jeunes actifs, familles installées entre Lyon et Villeurbanne : la communauté camerounaise lyonnaise a souvent quelque chose à faire parvenir au pays. Pour envoyer un colis de Lyon à Douala, Yadony vous met en relation avec des voyageurs vérifiés qui ont de la place dans leurs bagages.",
+        "how": "Publiez votre colis avec son poids, son contenu et le nom de la personne qui le recevra à Douala. Les voyageurs qui font le trajet vous proposent leur prix ; vous pouvez aussi parcourir leurs annonces et réserver directement. La remise se fait en main propre dans la région lyonnaise, avec scan du QR code et photo.",
+        "price": "Pas de tarif unique : chaque voyageur fixe son prix au kilo selon sa franchise bagage et son billet, et certains acceptent les propositions. Comparez plusieurs annonces avant de choisir. La commission de service est toujours affichée avant le paiement, jamais découverte après.",
+        "delay": "Il faut généralement compter une escale entre Lyon et Douala, à Paris ou dans un autre aéroport de correspondance : le trajet dure souvent de 10 à 16 heures. Faute de voyageur lyonnais à vos dates, élargissez la recherche aux départs de Paris. Dans tous les cas, la date d'arrivée est celle du vol du voyageur, visible avant de réserver.",
+        "safety": "Le colis passe par des étapes visibles en temps réel : remis au voyageur, en vol, arrivé à Douala, livré. Chaque scan est horodaté et géolocalisé. Votre paiement (carte, mobile money comme MTN ou Orange Money, ou portefeuille) reste bloqué jusqu'à la remise, validée par le code de retrait à 6 chiffres de votre destinataire.",
+        "faq": [
+          {
+            "question": "Pourquoi passer par un voyageur plutôt que par un transporteur ?",
+            "answer": "Pour quelques kilos, c'est souvent plus rapide : le colis voyage avec le voyageur au lieu d'attendre le départ d'un groupage. Vous savez qui le transporte, son identité est vérifiée, et votre argent ne lui est versé qu'après la livraison."
+          },
+          {
+            "question": "Mon destinataire à Douala doit-il créer un compte ?",
+            "answer": "Non. Vous lui partagez le lien de suivi, par WhatsApp par exemple : la page s'ouvre dans un navigateur, sans compte ni application. Le jour de la remise, il donne au voyageur le code à 6 chiffres que vous lui avez communiqué."
+          },
+          {
+            "question": "Que faire si le colis arrive abîmé ?",
+            "answer": "Signalez-le dans l'application : vous avez 15 jours pour ouvrir un litige. Le versement au voyageur est suspendu, l'équipe Yadony examine les photos de remise, les scans et vos échanges, puis rend sa décision sous 72 heures ouvrées."
+          }
+        ]
+      },
+      "marseilleDakar": {
+        "seo": {
+          "title": "Envoyer un colis Marseille–Dakar par un voyageur vérifié",
+          "description": "Envoyer un colis de Marseille à Dakar dans la valise d'un voyageur vérifié : prix négociable, paiement sous séquestre, remise validée par un code à 6 chiffres."
+        },
+        "title": "Envoyer un colis de Marseille à Dakar",
+        "lead": "Marseille compte une communauté sénégalaise implantée de longue date, de Belsunce aux quartiers nord. Yadony vous permet d'envoyer un colis de Marseille à Dakar en le confiant à un voyageur qui part de Marseille-Provence, après vérification de son identité.",
+        "how": "Ici, le prix se discute dans les deux sens. Vous trouvez un trajet Marseille–Dakar et vous faites une proposition au voyageur, ou vous publiez votre demande et ce sont les voyageurs qui vous font une offre. Une fois d'accord, vous fixez un rendez-vous dans la région marseillaise et le colis est scanné au moment de la remise.",
+        "price": "Le voyageur choisit sa formule : prix au kilo, grille par article ou ouverture aux propositions. Vous payez par carte, par mobile money ou depuis votre portefeuille Yadony, et la somme reste bloquée jusqu'à la livraison. Les espèces sont possibles si le voyageur les accepte, mais sans cette protection. La commission de service est affichée avant tout paiement.",
+        "delay": "Depuis Marseille-Provence, le trajet vers Dakar se fait souvent avec une escale et prend fréquemment 7 à 11 heures selon la correspondance ; si votre voyageur a un vol direct, c'est nettement plus court. Le colis arrive à l'aéroport Blaise-Diagne le jour du vol, et la remise se cale ensuite avec votre destinataire.",
+        "safety": "Identité du voyageur contrôlée (pièce d'identité et selfie) avant toute publication de trajet. À la remise à Marseille, scan du QR code et photo géolocalisée ; à Dakar, la livraison n'est validée qu'avec le code de retrait à 6 chiffres. Un souci ? Vous avez 15 jours pour ouvrir un litige, tranché sous 72 heures ouvrées sur preuves.",
+        "faq": [
+          {
+            "question": "Puis-je proposer mon propre prix au voyageur ?",
+            "answer": "Oui, si son annonce accepte les propositions. Vous envoyez un montant, il accepte, refuse ou contre-propose, et vous pouvez faire de même avec ses offres. Tant que rien n'est accepté, vous n'êtes engagé à rien."
+          },
+          {
+            "question": "Pourquoi éviter de payer en espèces ?",
+            "answer": "En espèces, l'argent ne transite pas par Yadony : il ne peut ni être bloqué jusqu'à la livraison, ni vous être rendu en cas de litige. Par carte, par mobile money (Wave ou Orange Money, par exemple) ou par portefeuille, le voyageur n'est payé qu'une fois le colis remis à votre destinataire."
+          },
+          {
+            "question": "Où mon destinataire récupère-t-il le colis à Dakar ?",
+            "answer": "Au rendez-vous qu'il fixe avec le voyageur : à l'aéroport, en centre-ville ou dans un quartier pratique pour les deux. Il suit l'arrivée du colis depuis une page web, sans compte, et donne le code à 6 chiffres au moment de la remise."
+          }
+        ]
+      },
+      "marseilleAbidjan": {
+        "seo": {
+          "title": "Envoyer un colis Marseille–Abidjan par un voyageur vérifié",
+          "description": "Envoyer un colis de Marseille à Abidjan avec un voyageur vérifié : remise en main propre, scan QR, photo géolocalisée, paiement bloqué jusqu'à la livraison."
+        },
+        "title": "Envoyer un colis de Marseille à Abidjan",
+        "lead": "Marseille, Toulon, Nice, Montpellier : la diaspora ivoirienne du sud de la France n'a pas à faire le détour par Paris pour envoyer un colis à Abidjan. Sur Yadony, des voyageurs vérifiés au départ de Marseille-Provence peuvent proposer la place libre de leur valise.",
+        "how": "Vous choisissez un trajet Marseille–Abidjan dans l'application, ou vous publiez une demande avec le poids et le contenu du colis pour recevoir des offres. Le jour de la remise, vous retrouvez le voyageur : il scanne le QR code de votre colis et prend une photo géolocalisée. C'est le point de départ du suivi.",
+        "price": "Le prix au kilo est fixé par le voyageur, selon la franchise bagage qu'il lui reste ou ce que lui coûte un bagage supplémentaire. Exemple : 3 kg chez un voyageur à 10 €/kg, le voyageur touche 30 €, auxquels s'ajoute la commission de service affichée avant paiement. Certains voyageurs acceptent aussi qu'on leur propose un prix.",
+        "delay": "Le trajet Marseille–Abidjan se fait souvent avec une escale et prend alors fréquemment 9 à 14 heures ; un vol direct, quand le voyageur en a un, dure environ 6 heures. Quel que soit l'itinéraire, le colis atterrit à l'aéroport Félix-Houphouët-Boigny à la date du vol du voyageur, connue avant la réservation.",
+        "safety": "Vous suivez votre colis en temps réel, étape par étape : remis, en vol, arrivé, livré. Votre destinataire à Abidjan voit la même chose depuis une page web, sans compte. Le paiement, par carte, mobile money (Orange Money, MTN, Moov ou Wave) ou portefeuille, n'est versé au voyageur qu'après la remise validée par le code à 6 chiffres.",
+        "faq": [
+          {
+            "question": "Que se passe-t-il entre l'atterrissage et la remise ?",
+            "answer": "Le voyageur indique son arrivée à Abidjan dans l'application, et le suivi passe à « arrivé ». Il convient ensuite d'un rendez-vous avec votre destinataire, à l'aéroport ou en ville, et la remise est validée par le code de retrait à 6 chiffres."
+          },
+          {
+            "question": "Les voyageurs sont-ils vraiment vérifiés ?",
+            "answer": "Oui. Avant de publier un trajet, chaque voyageur passe une vérification d'identité avec Didit ou Stripe Identity : pièce d'identité et selfie. Avant de réserver, vous voyez aussi son profil et les avis laissés par d'autres expéditeurs."
+          },
+          {
+            "question": "Puis-je récupérer mon argent si le voyageur ne livre pas ?",
+            "answer": "Tant que la livraison n'est pas confirmée, le voyageur n'est pas payé. En cas de problème, ouvrez un litige dans les 15 jours : l'équipe Yadony examine les scans, les photos et vos échanges, et tranche sous 72 heures ouvrées. Si l'envoi est annulé avant la remise du colis, vous êtes remboursé."
+          }
+        ]
+      },
+      "marseilleDouala": {
+        "seo": {
+          "title": "Envoyer un colis Marseille–Douala par un voyageur vérifié",
+          "description": "Envoyer un colis de Marseille à Douala avec un voyageur vérifié : prix fixé par le voyageur, paiement sous séquestre, suivi de chaque étape jusqu'au Cameroun."
+        },
+        "title": "Envoyer un colis de Marseille à Douala",
+        "lead": "Pièces auto, vêtements de rentrée, téléphones, cadeaux : depuis Marseille et la région PACA, la diaspora camerounaise a souvent de quoi remplir un carton pour Douala. Yadony vous aide à envoyer un colis de Marseille à Douala avec un voyageur vérifié qui fait déjà le déplacement.",
+        "how": "Deux possibilités : réserver de la place sur un trajet publié par un voyageur, ou publier votre demande d'envoi et attendre les offres. Si aucun voyageur ne part de Marseille à vos dates, élargissez la recherche aux départs de Paris, à condition de pouvoir y remettre le colis en main propre.",
+        "price": "Chaque voyageur fixe son prix, au kilo ou par article, et peut accepter les propositions de prix. Pour un objet encombrant mais léger, une grille par article est souvent plus juste qu'un tarif au kilo : posez la question au voyageur dans l'application. La commission de service est toujours affichée avant que vous ne payiez.",
+        "delay": "Il faut généralement compter une escale entre Marseille et Douala, et le trajet prend souvent de 10 à 16 heures. Le colis arrive à l'aéroport international de Douala avec le voyageur, à la date de son vol, connue dès la réservation : vous pouvez prévenir votre famille du jour exact.",
+        "safety": "Identité vérifiée pour chaque voyageur, scan du QR code et photo géolocalisée à la remise, puis suivi en temps réel jusqu'à Douala. Votre paiement, par carte, mobile money (MTN ou Orange Money, par exemple) ou portefeuille, reste bloqué jusqu'à ce que votre destinataire donne son code de retrait à 6 chiffres.",
+        "faq": [
+          {
+            "question": "Puis-je envoyer des pièces détachées automobiles ?",
+            "answer": "Oui, si elles sont légales, déclarées et acceptées par le voyageur. Décrivez-les précisément, avec des photos et le poids réel : le voyageur voit votre déclaration avant d'accepter. Les objets interdits, comme les armes, les drogues, les contrefaçons ou les animaux vivants, sont refusés."
+          },
+          {
+            "question": "Combien coûte un envoi Marseille–Douala ?",
+            "answer": "Cela dépend du voyageur : chacun annonce son tarif, au kilo ou par article. Exemple : 6 kg chez un voyageur à 8 €/kg, le voyageur touche 48 € et vous payez 48 € plus la commission de service, affichée avant paiement."
+          },
+          {
+            "question": "Mon proche à Douala peut-il suivre le colis ?",
+            "answer": "Oui, depuis une page web qui ne demande ni compte ni application. Il voit le colis passer de « remis » à « en vol », puis « arrivé » et « livré », et il donne au voyageur le code à 6 chiffres le jour de la remise."
+          }
+        ]
+      }
+    }
+  }
+}

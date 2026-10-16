@@ -1,0 +1,337 @@
+{
+  "corridorPages": {
+    "hub": {
+      "seo": {
+        "title": "Send a parcel to Africa with a verified traveller",
+        "description": "Paris–Abidjan, Paris–Dakar, Lyon–Abidjan, Marseille–Bamako, Paris–Douala: entrust your parcel to a verified traveller, pay into escrow, follow every scan."
+      },
+      "title": "Send a parcel to Africa, corridor by corridor",
+      "lead": "Yadony connects French cities to the capitals of West and Central Africa. Pick your corridor: each page details prices, timelines and exactly how tracking works.",
+      "listLabel": "Corridors served",
+      "cardCta": "View this corridor"
+    },
+    "common": {
+      "othersTitle": "Other corridors",
+      "faqTitle": "Frequently asked questions about this corridor",
+      "howTitle": "How it works",
+      "priceTitle": "What it costs",
+      "delayTitle": "How long it takes",
+      "safetyTitle": "Tracking and safety",
+      "backToHub": "All corridors"
+    },
+    "pages": {
+      "parisDakar": {
+        "seo": {
+          "title": "Send a parcel from Paris to Dakar with a verified traveller",
+          "description": "A verified traveller already flying to Dakar carries your parcel: per-kilo price set by the traveller, payment held until delivery, QR-code tracking."
+        },
+        "title": "Send a parcel from Paris to Dakar",
+        "lead": "Paris–Dakar is Yadony's most active corridor: the Senegalese community of the Paris region sends parcels to Dakar every week, and travellers fly the route in both directions all year round.",
+        "how": "Publish your parcel in the app with its weight, description and photo. Verified travellers flying from Paris to Dakar see your request and offer their price per kilo. You choose, hand the parcel over in person in the Paris region, and your relative collects it in Dakar from the traveller.",
+        "price": "The price per kilo is set freely by each traveller according to their flight and baggage allowance. You compare listings before choosing. A service commission, always shown before payment, is deducted from the transaction.",
+        "delay": "A direct Paris–Dakar flight takes about 5.5 hours. Your parcel arrives on the day of the traveller's flight: from handover, you know the exact date, and the pick-up in Dakar is arranged in the days after landing.",
+        "safety": "Traveller identity verified with Didit, card payment held until delivery is confirmed, handover validated with a 6-digit code, every step time-stamped and geolocated. Your loved one follows everything from a simple web page, no account needed.",
+        "faq": [
+          {
+            "question": "How much does sending a parcel Paris–Dakar cost?",
+            "answer": "The traveller sets their price per kilo; you compare listings before choosing. For a 5 kg parcel with a traveller at 8 euros per kilo, the traveller receives 40 euros and you pay 40 euros plus the service fee, shown before payment."
+          },
+          {
+            "question": "How long does a parcel take to reach Dakar?",
+            "answer": "The traveller's flight time (about 5.5 hours direct), plus the handover appointment in Dakar. You see the departure date before booking, so you know from the start when your parcel arrives."
+          },
+          {
+            "question": "How does my relative collect the parcel in Dakar?",
+            "answer": "The traveller and the recipient agree on a meeting. At handover, the recipient gives the 6-digit code you passed on to them and the traveller takes a photo: delivery is confirmed and the traveller's payment is released."
+          }
+        ]
+      },
+      "lyonAbidjan": {
+        "seo": {
+          "title": "Send a parcel from Lyon to Abidjan with a verified traveller",
+          "description": "Entrust your parcel to a verified traveller flying from Lyon to Abidjan: transparent per-kilo price, escrow until delivery, QR-code tracking."
+        },
+        "title": "Send a parcel from Lyon to Abidjan",
+        "lead": "The Ivorian community of Lyon and its region no longer needs to go through Paris: travellers connect Lyon directly to Abidjan, and your parcel rides in their suitcase.",
+        "how": "Describe your parcel in the app: weight, contents, photos. Verified travellers leaving from Lyon (or Paris if you want more options) offer their price. Once accepted, you hand over the parcel in person and every step is tracked all the way to Abidjan.",
+        "price": "Each traveller advertises their price per kilo; for parcels of a few kilos it is often better value than a classic carrier, and you know exactly who is carrying. The service commission is shown before you confirm.",
+        "delay": "Allow about 6.5 hours for a direct Lyon–Abidjan flight. The parcel arrives with the traveller: the date is known at booking time, with no vague multi-week window.",
+        "safety": "Mandatory identity check, card payment held until the recipient confirms, time-stamped and geolocated scans. If something goes wrong, you have 15 days to open a dispute, settled within 72 business hours on evidence.",
+        "faq": [
+          {
+            "question": "Are there often travellers between Lyon and Abidjan?",
+            "answer": "Lyon–Abidjan is one of Yadony's launch corridors. If no traveller departs from Lyon on your dates, the app also shows departures from Paris to Abidjan to widen the choice."
+          },
+          {
+            "question": "What can I send to Abidjan?",
+            "answer": "Anything legal and declared: clothes, non-regulated medicines, non-official documents, everyday products. Prohibited items include drugs, weapons, counterfeits, live animals and identity documents. The traveller sees your full declaration before accepting."
+          },
+          {
+            "question": "How is the payment protected?",
+            "answer": "By card, you are charged when the traveller accepts, but the money stays held on the platform: the traveller is only paid after delivery is confirmed, with the 6-digit code you pass on to the recipient. If the shipment is cancelled before handover, you get a full refund."
+          }
+        ]
+      },
+      "marseilleBamako": {
+        "seo": {
+          "title": "Send a parcel from Marseille to Bamako with a verified traveller",
+          "description": "A verified traveller flying from Marseille to Bamako carries your parcel: price set by the traveller, payment held until delivery, full tracking."
+        },
+        "title": "Send a parcel from Marseille to Bamako",
+        "lead": "From Marseille and the whole south of France, the Malian community sends parcels to Bamako without detours: a traveller already making the trip carries them, with real tracking at every step.",
+        "how": "Create your request in the app with the weight and a description of the parcel. A verified traveller flying from Marseille to Bamako accepts it, you agree on a handover meeting together, and the parcel is scanned at handover then delivered against the recipient's code.",
+        "price": "The price per kilo is the one the traveller advertises: no hidden rate card, no surprises at a counter. A service commission is deducted from the transaction, shown before payment.",
+        "delay": "Depending on the airline and the season, the Marseille–Bamako journey often involves a stopover; when a direct flight is available, it takes about 5.5 hours. Your parcel arrives the day the traveller lands, and you know that date before you book. Delivery to the recipient then follows at the appointment agreed in the app.",
+        "safety": "Every traveller verifies their identity with Didit, ID document and selfie, before they can post a trip. Paid by card, the money stays held until the recipient's confirmation code, and the scan history is the reference in any dispute.",
+        "faq": [
+          {
+            "question": "How much does a Marseille–Bamako shipment cost?",
+            "answer": "The traveller sets their price per kilo and you see it before booking. Example: 5 kg at 8 euros per kilo, the traveller receives 40 euros and you pay 40 euros plus the service fee, shown before payment."
+          },
+          {
+            "question": "Does my relative in Bamako need to install the app?",
+            "answer": "No. The recipient follows the parcel from a simple web page, even on a basic phone with a slow connection. At handover, they give the traveller the 6-digit code you passed on to them."
+          },
+          {
+            "question": "What if the traveller cancels their trip?",
+            "answer": "You get a full, automatic refund, fee included, and the app suggests other travellers leaving around the same dates."
+          }
+        ]
+      },
+      "parisDouala": {
+        "seo": {
+          "title": "Send a parcel from Paris to Douala with a verified traveller",
+          "description": "Send parcels to Cameroon with a verified traveller from Paris to Douala: clear price per kilo, payment held until delivery, handover validated with a code."
+        },
+        "title": "Send a parcel from Paris to Douala",
+        "lead": "For the Cameroonian diaspora, Paris–Douala is the most direct path: a verified traveller on that flight carries your parcel and your family collects it in person, proof of delivery included.",
+        "how": "Publish the parcel in the app: weight, contents, photos, the recipient's details in Douala. A verified traveller accepts it, you hand it over in the Paris region, and you follow the scans through to final delivery, photo included.",
+        "price": "The price depends on the traveller and their baggage allowance: each one advertises a per-kilo rate and you choose. The service commission is deducted from the transaction and always shown before you pay.",
+        "delay": "About 6.5 hours of direct flight Paris–Douala. The arrival date is the traveller's flight date, known before booking, so you can tell your family the exact day from the start.",
+        "safety": "Identities verified with Didit, card payment held until the recipient's confirmation code, every step tracked from Paris to Douala. The recipient follows everything from a web page, no account needed.",
+        "faq": [
+          {
+            "question": "Can I send a parcel to Yaoundé instead of Douala?",
+            "answer": "The corridor serves Douala, where the traveller lands. Final delivery happens at the appointment agreed between the traveller and your recipient; if your relative is in Yaoundé, they can arrange a meeting point with the traveller, but the reference delivery city remains Douala."
+          },
+          {
+            "question": "What happens if the parcel is lost?",
+            "answer": "Open a dispute from the app within 15 days of the planned date. The payout to the traveller is suspended, the team reviews the evidence, and Yadony may refund the shipment, up to a cap and under the conditions shown in the app."
+          },
+          {
+            "question": "How do I know where my parcel is?",
+            "answer": "The traveller scans the parcel at handover, may add a transit scan, marks their arrival, and delivery is then validated with the recipient's code. Each step is time-stamped and geolocated, and you and the recipient see the same tracking page in real time."
+          }
+        ]
+      },
+      "parisAbidjan": {
+        "seo": {
+          "title": "Send a parcel from Paris to Abidjan with a verified traveller",
+          "description": "Yadony's flagship corridor: a verified Paris–Abidjan traveller carries your parcel, payment held until delivery, QR-code tracking."
+        },
+        "title": "Send a parcel from Paris to Abidjan",
+        "lead": "Paris–Abidjan is Yadony's flagship corridor: the Ivorian community of the Paris region is one of the most active in the diaspora, and daily flights to Abidjan mean a traveller departs almost every day.",
+        "how": "Publish your parcel in the app: weight, description, photos, the recipient's details in Abidjan. Verified travellers departing from Paris offer their price per kilo; you choose, hand the parcel over in person in the Paris region, and every step is scanned through to delivery in Abidjan.",
+        "price": "Each traveller sets their price per kilo according to their flight and baggage allowance; you compare before choosing. A service commission, always shown before payment, is deducted from the transaction.",
+        "delay": "The direct Paris–Abidjan flight takes about 6.5 hours. Your parcel lands with the traveller: the date is known at booking time, and the handover in Abidjan is arranged in the days that follow.",
+        "safety": "Traveller identity verified with Didit, card payment held until the recipient's confirmation code, time-stamped and geolocated scans from Paris to Abidjan. Your loved one follows everything from a simple web page, no account needed.",
+        "faq": [
+          {
+            "question": "How much does sending a parcel Paris–Abidjan cost?",
+            "answer": "The traveller sets their price per kilo, and you compare listings before booking. Example: 5 kg with a traveller at 8 euros per kilo, the traveller receives 40 euros and you pay 40 euros plus the service fee, shown before payment."
+          },
+          {
+            "question": "Are there Paris–Abidjan travellers all year round?",
+            "answer": "It is Yadony's busiest corridor: daily flights between Paris and Abidjan and the size of the Ivorian community in France mean regular departures all year, not just around the holidays."
+          },
+          {
+            "question": "Does my relative in Abidjan need to install the app?",
+            "answer": "No. The recipient follows the parcel from a simple web page, even on a basic phone. At handover, they give the traveller the 6-digit code you passed on to them: that is what confirms delivery and releases the traveller's payment."
+          }
+        ]
+      },
+      "parisBamako": {
+        "seo": {
+          "title": "Send a parcel from Paris to Bamako with a verified traveller",
+          "description": "From Paris to Bamako, a verified traveller carries your parcel: price set by the traveller, payment held until delivery, handover confirmed with a code."
+        },
+        "title": "Send a parcel from Paris to Bamako",
+        "lead": "From Montreuil to Seine-Saint-Denis, the Malian diaspora of the Paris region has long entrusted parcels to whoever is flying home. Yadony puts a proper framework around that habit: to send a parcel from Paris to Bamako, you pick a traveller whose identity has been verified and follow your shipment right through to handover.",
+        "how": "There are two ways to go about it. Browse the Paris–Bamako trips posted by travellers and book space in their suitcase, or post your own shipping request (weight, contents, photos) and let travellers send you offers. You then arrange a meeting in the Paris region, near Charles de Gaulle or Orly for instance, and the traveller scans the parcel's QR code the moment you hand it over.",
+        "price": "Each traveller picks their own pricing: a rate per kilo, a per-item price list (a box of clothes, a phone, tins of baby formula) or an openness to price offers. So you can discuss the amount before committing. Yadony's service fee is always shown before you pay.",
+        "delay": "If the traveller has a direct flight, allow about 5.5 hours to Bamako-Sénou airport; with a stopover, the journey often takes between 8 and 14 hours depending on the connection. You see the departure date before booking, and the parcel arrives with the traveller, not weeks later at the bottom of a shipping container.",
+        "safety": "The traveller has verified their identity (ID document and selfie, with Didit or Stripe Identity) before posting their trip. Whether you pay by card, mobile money or from your Yadony wallet, the money is held until delivery. Your family in Bamako follows every stage (handed over, in flight, arrived, delivered) on a web page, without creating an account.",
+        "faq": [
+          {
+            "question": "Can I pay for a Bamako shipment with mobile money?",
+            "answer": "Yes. As well as card and your Yadony wallet, you can pay with mobile money (Orange Money, Moov, Wave or MTN, depending on the operators available), which is handy if you hold an account in CFA francs. Just as with a card, the amount is held until delivery is confirmed."
+          },
+          {
+            "question": "What if I would rather pay the traveller in cash?",
+            "answer": "You can if the traveller agrees, but the money then bypasses escrow: Yadony can neither hold it until delivery nor refund you if something goes wrong. For a valuable parcel, paying in the app remains the safest option."
+          },
+          {
+            "question": "How does the handover work in Bamako?",
+            "answer": "The traveller and your recipient agree on a time and place after landing. Your relative gives the 6-digit collection code you passed on to them, the traveller takes a geotagged photo, and delivery is confirmed: only then is the traveller paid."
+          }
+        ]
+      },
+      "lyonDakar": {
+        "seo": {
+          "title": "Send a parcel from Lyon to Dakar with a verified traveller",
+          "description": "Send a parcel from Lyon to Dakar without going via Paris: a verified traveller carries it, you pay into escrow and follow every step through to handover."
+        },
+        "title": "Send a parcel from Lyon to Dakar",
+        "lead": "Live in Lyon, Villeurbanne or Vénissieux and need to send a parcel to Dakar? Rather than trekking up to Paris to drop off a box, hand it to a verified traveller flying out of Lyon-Saint-Exupéry with room to spare in their suitcase.",
+        "how": "On this route, the easiest option is often to post a shipping request: you give the weight, the contents and roughly when you want it to go, and travellers heading to Dakar send you their offers. You can also search the posted trips yourself. If no departure from Lyon matches your dates, widen the search to flights from Paris.",
+        "price": "The traveller sets a price per kilo, or is happy for you to make them an offer. You talk it through in the app, either side can counter, and the price you settle on is the one that applies. The only addition is the service fee, always shown before payment.",
+        "delay": "Between Lyon and Dakar, the journey often involves a stopover, in Paris or elsewhere: expect 8 to 12 hours in many cases, depending on the connection. The parcel lands at Blaise Diagne International Airport (AIBD), some 50 kilometres from central Dakar, so the handover is usually arranged in town once the traveller has arrived.",
+        "safety": "Every traveller has their identity checked before posting a trip. At handover, they scan the parcel's QR code and take a geotagged photo; you then watch it move from handed over to in flight, arrived and delivered. Payment by card, Wave, Orange Money or wallet stays held until your recipient gives their 6-digit code.",
+        "faq": [
+          {
+            "question": "Do I have to find a traveller leaving from Lyon?",
+            "answer": "No. If a traveller departing from Paris suits you, you can hand the parcel over in the Paris region. The point of searching Lyon first is to save yourself the round trip: the handover happens close to home, at a meeting arranged with the traveller."
+          },
+          {
+            "question": "What can I put in a parcel for Dakar?",
+            "answer": "Anything legal and declared: clothes, shoes, beauty products, accessories, presents for the family. Drugs, weapons, counterfeit goods, live animals and identity documents are prohibited. The traveller sees your declaration and photos before accepting the parcel."
+          },
+          {
+            "question": "What happens if the parcel does not arrive?",
+            "answer": "Open a dispute from the app within 15 days. The traveller's payout is suspended, the Yadony team reviews the evidence (scans, photos, messages) and reaches a decision within 72 business hours."
+          }
+        ]
+      },
+      "lyonBamako": {
+        "seo": {
+          "title": "Send a parcel from Lyon to Bamako with a verified traveller",
+          "description": "Send a parcel from Lyon to Bamako with a verified traveller: price per kilo or per item, card or mobile money payment held until delivery is confirmed."
+        },
+        "title": "Send a parcel from Lyon to Bamako",
+        "lead": "From Lyon to Saint-Étienne by way of Grenoble, plenty of Malian families in the Auvergne-Rhône-Alpes region have relatives in Bamako. With Yadony, you can send a parcel from Lyon to Bamako by entrusting it to a traveller whose identity has been verified, without heading up to Paris.",
+        "how": "Search for trips to Bamako departing from Lyon-Saint-Exupéry, or post your request and let travellers make you an offer. Some travellers publish a per-item price list: one rate for a box of clothes, another for a phone or a laptop. You book, hand the parcel over in person, and the traveller scans it in front of you.",
+        "price": "Depending on the traveller, the price is set per kilo, per item, or through negotiation where you put forward your own figure. For example: 4 kg with a traveller charging 9 euros per kilo, the traveller receives 36 euros and you pay 36 euros plus the service fee, shown before payment.",
+        "delay": "Between Lyon and Bamako, the journey usually involves a stopover and often takes 9 to 15 hours depending on the connection. If you are in a hurry, widen your search to departures from Paris, where flights to Bamako are more frequent. Either way, you know the flight date before booking.",
+        "safety": "For Bamako, mobile money (Orange Money, Moov or Wave, depending on the operators available) sits alongside card and your Yadony wallet, and the amount is held until delivery. On landing at Bamako-Sénou, the traveller marks their arrival; your recipient follows everything from a web page and confirms the handover with the 6-digit collection code.",
+        "faq": [
+          {
+            "question": "Can I send a phone or a laptop to Bamako?",
+            "answer": "Yes, as long as it is declared honestly, with a description and photos. The traveller sees your declaration before accepting and is free to say no. Malian customs rules apply as they would to any luggage, so it is best to avoid sending several brand-new devices at once."
+          },
+          {
+            "question": "Can I negotiate the price with the traveller?",
+            "answer": "Yes, if the traveller accepts price offers. You suggest an amount and they can accept, decline or counter, and the same goes the other way. Once you agree, the agreed price is what you pay in the app, plus the service fee."
+          },
+          {
+            "question": "Does my recipient have to come to the airport?",
+            "answer": "Not necessarily. The time and place of the handover are decided between the traveller and your recipient: at the airport, in town or in a neighbourhood that suits both. What matters is the 6-digit code you pass on to your relative: without it, delivery cannot be confirmed."
+          }
+        ]
+      },
+      "lyonDouala": {
+        "seo": {
+          "title": "Send a parcel from Lyon to Douala with a verified traveller",
+          "description": "Send a parcel from Lyon to Douala with a verified traveller: price set by the traveller, payment held until delivery, every stage of the journey tracked live."
+        },
+        "title": "Send a parcel from Lyon to Douala",
+        "lead": "Students, young professionals, families settled between Lyon and Villeurbanne: Lyon's Cameroonian community often has something to get back home. To send a parcel from Lyon to Douala, Yadony puts you in touch with verified travellers who have room in their luggage.",
+        "how": "Post your parcel with its weight, its contents and the name of the person collecting it in Douala. Travellers making the trip send you their price; you can also browse their listings and book directly. The handover takes place in person in the Lyon area, with a QR code scan and a photo.",
+        "price": "There is no single rate: each traveller sets a price per kilo based on their baggage allowance and ticket, and some accept price offers. Compare several listings before choosing. The service fee is always shown before payment, never sprung on you afterwards.",
+        "delay": "Expect a stopover between Lyon and Douala in most cases, in Paris or another hub airport: the journey often takes 10 to 16 hours. If no traveller is leaving Lyon on your dates, widen the search to departures from Paris. Either way, the arrival date is the traveller's flight date, visible before you book.",
+        "safety": "The parcel moves through stages you can follow in real time: handed over to the traveller, in flight, arrived in Douala, delivered. Every scan is time-stamped and geotagged. Your payment (card, mobile money such as MTN or Orange Money, or wallet) stays held until handover, confirmed by your recipient's 6-digit collection code.",
+        "faq": [
+          {
+            "question": "Why use a traveller rather than a courier?",
+            "answer": "For a few kilos, it is often quicker: the parcel travels with the traveller instead of waiting for a consolidated shipment to leave. You know who is carrying it, their identity has been verified, and they are only paid once the parcel has been delivered."
+          },
+          {
+            "question": "Does my recipient in Douala need to create an account?",
+            "answer": "No. You share the tracking link with them, over WhatsApp for example: the page opens in a browser, with no account or app required. On the day of the handover, they give the traveller the 6-digit code you passed on to them."
+          },
+          {
+            "question": "What should I do if the parcel arrives damaged?",
+            "answer": "Report it in the app: you have 15 days to open a dispute. The traveller's payout is suspended, the Yadony team reviews the handover photos, the scans and your messages, then reaches a decision within 72 business hours."
+          }
+        ]
+      },
+      "marseilleDakar": {
+        "seo": {
+          "title": "Send a parcel Marseille to Dakar with a verified traveller",
+          "description": "Send a parcel from Marseille to Dakar in a verified traveller's suitcase: negotiable price, payment held in escrow, handover confirmed with a 6-digit code."
+        },
+        "title": "Send a parcel from Marseille to Dakar",
+        "lead": "Marseille has a long-established Senegalese community, from Belsunce to the northern districts. Yadony lets you send a parcel from Marseille to Dakar by entrusting it to a traveller flying out of Marseille Provence, once their identity has been checked.",
+        "how": "On this route, the price is open to discussion both ways. You find a Marseille–Dakar trip and make the traveller an offer, or you post your request and travellers make offers to you. Once you agree, you arrange a meeting in the Marseille area and the parcel is scanned at handover.",
+        "price": "The traveller chooses how to charge: per kilo, a per-item price list, or open to offers. You pay by card, mobile money or from your Yadony wallet, and the amount is held until delivery. Cash is possible if the traveller accepts it, but without that protection. The service fee is shown before any payment.",
+        "delay": "From Marseille Provence, the journey to Dakar often involves a stopover and frequently takes 7 to 11 hours depending on the connection; if your traveller has a direct flight, it is considerably shorter. The parcel lands at Blaise Diagne International Airport on the day of the flight, and the handover is then arranged with your recipient.",
+        "safety": "Traveller identity checked (ID document and selfie) before any trip is posted. At handover in Marseille, a QR code scan and a geotagged photo; in Dakar, delivery is only confirmed with the 6-digit collection code. A problem? You have 15 days to open a dispute, settled on the evidence within 72 business hours.",
+        "faq": [
+          {
+            "question": "Can I offer the traveller my own price?",
+            "answer": "Yes, if their listing accepts offers. You send an amount and they accept, decline or counter, and you can do the same with their offers. Until something is accepted, you are not committed to anything."
+          },
+          {
+            "question": "Why is it better not to pay in cash?",
+            "answer": "With cash, the money does not go through Yadony: it cannot be held until delivery, nor returned to you in a dispute. By card, mobile money (Wave or Orange Money, for instance) or wallet, the traveller is only paid once the parcel has reached your recipient."
+          },
+          {
+            "question": "Where does my recipient collect the parcel in Dakar?",
+            "answer": "At the meeting they arrange with the traveller: at the airport, in the city centre or in a neighbourhood that suits both. They follow the parcel's arrival from a web page, with no account, and give the 6-digit code at handover."
+          }
+        ]
+      },
+      "marseilleAbidjan": {
+        "seo": {
+          "title": "Send a parcel Marseille to Abidjan with a verified traveller",
+          "description": "Send a parcel from Marseille to Abidjan with a verified traveller: handed over in person, QR scan, geotagged photo, payment held until it is delivered."
+        },
+        "title": "Send a parcel from Marseille to Abidjan",
+        "lead": "Marseille, Toulon, Nice, Montpellier: the Ivorian diaspora in the south of France need not detour via Paris to send a parcel to Abidjan. On Yadony, verified travellers departing from Marseille Provence can offer the spare room in their suitcase.",
+        "how": "Pick a Marseille–Abidjan trip in the app, or post a request with the weight and contents of your parcel to receive offers. On handover day, you meet the traveller: they scan your parcel's QR code and take a geotagged photo. That is where tracking begins.",
+        "price": "The price per kilo is set by the traveller, depending on how much baggage allowance they have left or what an extra bag costs them. For example: 3 kg with a traveller charging 10 euros per kilo, the traveller receives 30 euros, plus the service fee shown before payment. Some travellers are also open to price offers.",
+        "delay": "The Marseille–Abidjan journey often involves a stopover and then frequently takes 9 to 14 hours; a direct flight, when the traveller has one, takes about 6 hours. Whatever the routing, the parcel lands at Félix Houphouët-Boigny International Airport on the traveller's flight date, known before you book.",
+        "safety": "You follow your parcel in real time, step by step: handed over, in flight, arrived, delivered. Your recipient in Abidjan sees exactly the same from a web page, no account needed. Payment by card, mobile money (Orange Money, MTN, Moov or Wave) or wallet is only released to the traveller after the handover is confirmed with the 6-digit code.",
+        "faq": [
+          {
+            "question": "What happens between landing and handover?",
+            "answer": "The traveller records their arrival in Abidjan in the app, and the tracking moves to arrived. They then arrange a meeting with your recipient, at the airport or in town, and the handover is confirmed with the 6-digit collection code."
+          },
+          {
+            "question": "Are the travellers really verified?",
+            "answer": "Yes. Before posting a trip, every traveller goes through an identity check with Didit or Stripe Identity: ID document and selfie. Before booking, you can also see their profile and the reviews left by other senders."
+          },
+          {
+            "question": "Can I get my money back if the traveller does not deliver?",
+            "answer": "Until delivery is confirmed, the traveller is not paid. If something goes wrong, open a dispute within 15 days: the Yadony team reviews the scans, the photos and your messages, and reaches a decision within 72 business hours. If the shipment is cancelled before the parcel is handed over, you are refunded."
+          }
+        ]
+      },
+      "marseilleDouala": {
+        "seo": {
+          "title": "Send a parcel Marseille to Douala with a verified traveller",
+          "description": "Send a parcel from Marseille to Douala with a verified traveller: price set by the traveller, payment held in escrow, every step tracked through to Cameroon."
+        },
+        "title": "Send a parcel from Marseille to Douala",
+        "lead": "Car parts, back-to-school clothes, phones, presents: from Marseille and the wider Provence region, the Cameroonian diaspora often has a box to fill for Douala. Yadony helps you send a parcel from Marseille to Douala with a verified traveller who is already making the trip.",
+        "how": "You have two options: book space on a trip posted by a traveller, or post your shipping request and wait for offers. If nobody is leaving Marseille on your dates, widen the search to departures from Paris, provided you can hand the parcel over there in person.",
+        "price": "Each traveller sets their price, per kilo or per item, and may accept price offers. For something bulky but light, a per-item price is often fairer than a per-kilo rate: ask the traveller in the app. The service fee is always shown before you pay.",
+        "delay": "Expect a stopover between Marseille and Douala in most cases, with the journey often taking 10 to 16 hours. The parcel reaches Douala International Airport with the traveller, on their flight date, known at booking: you can tell your family the exact day.",
+        "safety": "Identity verified for every traveller, QR code scan and geotagged photo at handover, then real-time tracking all the way to Douala. Your payment, by card, mobile money (MTN or Orange Money, for instance) or wallet, stays held until your recipient gives their 6-digit collection code.",
+        "faq": [
+          {
+            "question": "Can I send car parts?",
+            "answer": "Yes, if they are legal, declared and accepted by the traveller. Describe them precisely, with photos and the actual weight: the traveller sees your declaration before accepting. Prohibited items such as weapons, drugs, counterfeit goods or live animals are refused."
+          },
+          {
+            "question": "How much does a Marseille–Douala shipment cost?",
+            "answer": "It depends on the traveller: each one sets their own rate, per kilo or per item. For example: 6 kg with a traveller charging 8 euros per kilo, the traveller receives 48 euros and you pay 48 euros plus the service fee, shown before payment."
+          },
+          {
+            "question": "Can my relative in Douala follow the parcel?",
+            "answer": "Yes, from a web page that needs no account or app. They watch the parcel move from handed over to in flight, then arrived and delivered, and give the traveller the 6-digit code on handover day."
+          }
+        ]
+      }
+    }
+  }
+}

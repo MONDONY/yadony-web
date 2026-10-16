@@ -853,7 +853,7 @@
             {
               "p": [
                 "Yadony adds no identifier, name, phone number or account data to it.",
-                "Questions are processed by third-party AI providers. At the time of writing: Groq, Inc. (United States) and Google (Gemini API). This list is kept up to date on this page. These are transfers outside the European Union, for which we rely on the GDPR-compliant transfer mechanisms described in article 8 (standard contractual clauses, adequacy decisions or EU-US Data Privacy Framework certifications).",
+                "Questions are processed by third-party AI providers. At the time of writing: Groq, Inc. (United States) and Google (Gemini API). This list is kept up to date on this page. As these providers are established outside the European Union, your questions are transferred outside the EU.",
                 "The free tiers of these providers may reuse the data they receive to improve their models: we therefore ask you not to enter any personal data in the assistant.",
                 "Yadony does not keep the content of conversations: they stay on your device for the duration of the session and disappear when you close the app. Yadony only keeps usage counters, without the text (number of questions, answer found or not).",
                 "Exception: if you choose to \"talk to a human\", your last question and the exchange are copied into a Yadony support ticket, kept like other support requests.",

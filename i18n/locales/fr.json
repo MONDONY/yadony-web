@@ -853,7 +853,7 @@
             {
               "p": [
                 "Yadony n'y ajoute aucun identifiant, nom, numéro de téléphone ni donnée de votre compte.",
-                "Les questions sont traitées par des fournisseurs d'IA tiers. À ce jour : Groq, Inc. (États-Unis) et Google (API Gemini). Cette liste est tenue à jour sur cette page. Il s'agit de transferts hors de l'Union européenne, pour lesquels nous nous appuyons sur les mécanismes de transfert conformes au RGPD décrits à l'article 8 (clauses contractuelles types, décisions d'adéquation ou certifications EU-US Data Privacy Framework).",
+                "Les questions sont traitées par des fournisseurs d'IA tiers. À ce jour : Groq, Inc. (États-Unis) et Google (API Gemini). Cette liste est tenue à jour sur cette page. Ces fournisseurs étant établis hors de l'Union européenne, vos questions sont transférées hors de l'UE.",
                 "Les offres gratuites de ces fournisseurs peuvent réutiliser les données reçues pour améliorer leurs modèles : nous vous demandons donc de ne saisir aucune donnée personnelle dans l'assistant.",
                 "Yadony ne conserve pas le contenu des conversations : elles restent sur votre appareil le temps de la session et disparaissent à la fermeture de l'application. Yadony garde seulement des compteurs d'usage, sans le texte (nombre de questions, réponse trouvée ou non).",
                 "Exception : si vous choisissez de « parler à un humain », votre dernière question et l'échange sont copiés dans un ticket du support Yadony, conservé comme les autres demandes de support.",

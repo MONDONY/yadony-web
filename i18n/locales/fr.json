@@ -853,7 +853,7 @@
             {
               "p": [
                 "Yadony n'y ajoute aucun identifiant, nom, numéro de téléphone ni donnée de votre compte.",
-                "Les questions sont traitées par des fournisseurs d'IA tiers. À ce jour : Groq, Inc. (États-Unis) et Google (API Gemini). Cette liste est tenue à jour sur cette page. Ces fournisseurs étant établis hors de l'Union européenne, vos questions sont transférées hors de l'UE.",
+                "Les questions sont traitées par des fournisseurs d'IA tiers. À ce jour : OpenRouter, Inc. (États-Unis), qui transmet la question à l'hébergeur du modèle utilisé (Google pour Gemini, Mistral AI ou un autre hébergeur pour Mistral), ainsi que Groq, Inc. (États-Unis) et Google (API Gemini) en direct. Cette liste est tenue à jour sur cette page. Ces fournisseurs étant établis hors de l'Union européenne, vos questions sont transférées hors de l'UE.",
                 "Les offres gratuites de ces fournisseurs peuvent réutiliser les données reçues pour améliorer leurs modèles : nous vous demandons donc de ne saisir aucune donnée personnelle dans l'assistant.",
                 "Yadony ne conserve pas le contenu des conversations : elles restent sur votre appareil le temps de la session et disparaissent à la fermeture de l'application. Yadony garde seulement des compteurs d'usage, sans le texte (nombre de questions, réponse trouvée ou non).",
                 "Exception : si vous choisissez de « parler à un humain », votre dernière question et l'échange sont copiés dans un ticket du support Yadony, conservé comme les autres demandes de support.",
@@ -903,7 +903,7 @@
                 "Rapports d'erreurs et signalements de problème : Sentry",
                 "Photos de colis, photos de livraison : Cloudflare. Accès via lien temporaire sécurisé uniquement",
                 "Historique des transactions, scans, évaluations : Yadony (base de données interne). Accès : oui, nécessaire au fonctionnement du service",
-                "Questions posées à l'assistant IA : fournisseurs d'IA tiers (Groq, Google Gemini), sans identifiant ni donnée de compte. Yadony ne conserve pas le contenu des conversations, sauf si vous choisissez de parler à un humain (ticket du support)",
+                "Questions posées à l'assistant IA : fournisseurs d'IA tiers (OpenRouter, Google Gemini, Mistral AI, Groq), sans identifiant ni donnée de compte. Yadony ne conserve pas le contenu des conversations, sauf si vous choisissez de parler à un humain (ticket du support)",
                 "Messages entre utilisateurs : Yadony (chiffrés). Contenu chiffré, accès restreint aux litiges"
               ]
             }
@@ -1139,7 +1139,7 @@
               "ul": [
                 "Raison sociale : YADONY SAS, SIREN 108 733 510",
                 "Directeur de la publication : M. Dramane DIAKITE, Président",
-                "Partenaires techniques : Google Firebase, Stripe, Didit, pawaPay (Mobile Money : Wave, Orange Money et autres opérateurs), Cloudflare, PostHog, Sentry, Twilio, Resend, Stream, Google Maps, Groq et Google Gemini (assistant IA)",
+                "Partenaires techniques : Google Firebase, Stripe, Didit, pawaPay (Mobile Money : Wave, Orange Money et autres opérateurs), Cloudflare, PostHog, Sentry, Twilio, Resend, Stream, Google Maps, OpenRouter, Google Gemini, Mistral AI et Groq (assistant IA)",
                 "Autorité de contrôle française : CNIL (www.cnil.fr)"
               ]
             }

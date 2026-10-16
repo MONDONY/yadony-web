@@ -853,7 +853,7 @@
             {
               "p": [
                 "Yadony adds no identifier, name, phone number or account data to it.",
-                "Questions are processed by third-party AI providers. At the time of writing: Groq, Inc. (United States) and Google (Gemini API). This list is kept up to date on this page. As these providers are established outside the European Union, your questions are transferred outside the EU.",
+                "Questions are processed by third-party AI providers. At the time of writing: OpenRouter, Inc. (United States), which forwards the question to the host of the model in use (Google for Gemini, Mistral AI or another host for Mistral), as well as Groq, Inc. (United States) and Google (Gemini API) directly. This list is kept up to date on this page. As these providers are established outside the European Union, your questions are transferred outside the EU.",
                 "The free tiers of these providers may reuse the data they receive to improve their models: we therefore ask you not to enter any personal data in the assistant.",
                 "Yadony does not keep the content of conversations: they stay on your device for the duration of the session and disappear when you close the app. Yadony only keeps usage counters, without the text (number of questions, answer found or not).",
                 "Exception: if you choose to \"talk to a human\", your last question and the exchange are copied into a Yadony support ticket, kept like other support requests.",
@@ -903,7 +903,7 @@
                 "Error reports and problem reports: Sentry",
                 "Parcel and delivery photos: Cloudflare. Access only through secure temporary links",
                 "Transaction history, scans, ratings: Yadony (internal database). Access: yes, needed to run the service",
-                "Questions asked to the AI assistant: third-party AI providers (Groq, Google Gemini), with no identifier or account data. Yadony does not keep the content of conversations, unless you choose to talk to a human (support ticket)",
+                "Questions asked to the AI assistant: third-party AI providers (OpenRouter, Google Gemini, Mistral AI, Groq), with no identifier or account data. Yadony does not keep the content of conversations, unless you choose to talk to a human (support ticket)",
                 "Messages between users: Yadony (encrypted). Encrypted content, access restricted to disputes"
               ]
             }
@@ -1139,7 +1139,7 @@
               "ul": [
                 "Company name: YADONY SAS, SIREN 108 733 510",
                 "Publication director: Mr Dramane DIAKITE, President",
-                "Technical partners: Google Firebase, Stripe, Didit, pawaPay (Mobile Money: Wave, Orange Money and other operators), Cloudflare, PostHog, Sentry, Twilio, Resend, Stream, Google Maps, Groq and Google Gemini (AI assistant)",
+                "Technical partners: Google Firebase, Stripe, Didit, pawaPay (Mobile Money: Wave, Orange Money and other operators), Cloudflare, PostHog, Sentry, Twilio, Resend, Stream, Google Maps, OpenRouter, Google Gemini, Mistral AI and Groq (AI assistant)",
                 "French supervisory authority: CNIL (www.cnil.fr)"
               ]
             }

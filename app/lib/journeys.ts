@@ -22,7 +22,6 @@ export interface JourneyStep {
 
 // Accueil : Awa (voyageuse) et Moussa (expéditeur) se croisent.
 export const crossedJourney: JourneyStep[] = [
-  { id: 'alert', actor: 'traveler', art: 'priceCurve', pose: 'price-alert' },
   { id: 'publish', actor: 'traveler', art: 'priceModes', pose: 'scale' },
   { id: 'search', actor: 'sender', screen: 'search-map', pose: 'search' },
   { id: 'negotiate', actor: 'both', art: 'negotiation', pose: 'handshake' },
@@ -43,7 +42,6 @@ export const senderJourney: JourneyStep[] = [
 ]
 
 export const travelerJourney: JourneyStep[] = [
-  { id: 'ticket', actor: 'traveler', screen: 'flights-found' },
   { id: 'publish', actor: 'traveler', screen: 'publish-trip' },
   { id: 'price', actor: 'traveler', art: 'priceModes' },
   { id: 'poster', actor: 'traveler', screen: 'trip-detail' },

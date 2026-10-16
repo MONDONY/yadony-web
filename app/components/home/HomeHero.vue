@@ -5,12 +5,14 @@ import { useTexts } from '@/composables/useTexts'
 import { donyPose, type AppScreenId } from '@/lib/media'
 
 // Haut de page : une seule promesse, trois usages. Le téléphone fait défiler
-// un écran par usage (billets, kilos, colis) et la pastille correspondante
+// un écran par usage (colis, kilos, alertes de prix) et la pastille correspondante
 // s'allume. Le visiteur peut choisir une pastille : la rotation s'arrête
 // alors (WCAG 2.2.2, contenu qui défile seul).
 const { t } = useI18n()
 const { list } = useTexts()
-const screens: AppScreenId[] = ['flights-found', 'my-trips', 'my-parcels']
+// Yadony ne vend pas de billets : le colis d'abord, les kilos ensuite, les
+// alertes de prix en dernier.
+const screens: AppScreenId[] = ['my-parcels', 'my-trips', 'flights-found']
 const { index, pause, resume, select } = useCycle(screens.length, 3400)
 let chosen = false
 

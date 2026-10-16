@@ -155,7 +155,7 @@ const markerExemptPaths = new Set([
   'journeys.screens.publish-trip',
   'journeys.screens.scan',
   'journeys.screens.trip-detail',
-  'landing.hero.screensAlt[0]',
+  'landing.hero.screensAlt[2]',
   // « Yaoundé » garde son accent dans la version anglaise (nom propre).
   'corridorPages.pages.parisDouala.faq[0].question',
   'corridorPages.pages.parisDouala.faq[0].answer',

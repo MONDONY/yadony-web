@@ -105,10 +105,6 @@
       "listLabel": "The steps of a trip",
       "steps": [
         {
-          "title": "Find a cheaper flight",
-          "text": "Set a price alert on your route: Yadony lets you know when a flight drops below your budget. You book with our partner."
-        },
-        {
           "title": "Post your trip in three steps",
           "text": "Route, places and capacity, price and conditions. Plane, car or boat, with stopovers or several legs. What you accept and what you turn down: you decide."
         },

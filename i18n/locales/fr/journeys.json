@@ -105,10 +105,6 @@
       "listLabel": "Les étapes d'un trajet",
       "steps": [
         {
-          "title": "Trouvez votre billet moins cher",
-          "text": "Créez une alerte de prix sur votre trajet : Yadony vous prévient quand un vol passe sous votre budget. Vous réservez chez notre partenaire."
-        },
-        {
           "title": "Publiez votre trajet en trois étapes",
           "text": "Trajet, lieux et capacité, prix et conditions. Avion, voiture ou bateau, avec escales ou plusieurs étapes. Ce que vous acceptez, ce que vous refusez : c'est vous qui décidez."
         },

@@ -4,14 +4,23 @@ import { test, expect } from './fixtures'
 // doit rester lisible sans JavaScript, sur un téléphone étroit et en
 // mouvement réduit, où chaque illustration montre directement son état final.
 
+test('le haut de page met le colis en avant, jamais la vente de billets', async ({ page }) => {
+  await page.goto('/')
+  const chips = page.locator('section').first().locator('button[aria-pressed]')
+  await expect(chips.first()).toContainText(/colis/i)
+  await expect(page.locator('title')).not.toHaveText(/billet/i)
+  const promises = page.locator('section').nth(1).locator('h3')
+  await expect(promises.first()).toContainText(/envoy/i)
+})
+
 test.describe('sans JavaScript (robots, navigateurs limités)', () => {
   test.use({ javaScriptEnabled: false })
 
-  test('les huit étapes du parcours croisé sont dans le HTML prérendu et visibles', async ({ page }) => {
+  test('les sept étapes du parcours croisé sont dans le HTML prérendu et visibles', async ({ page }) => {
     await page.goto('/')
     await expect(page.locator('h1')).toHaveCount(1)
     const steps = page.locator('.scene-step h3')
-    await expect(steps).toHaveCount(8)
+    await expect(steps).toHaveCount(7)
     for (const step of await steps.all()) await expect(step).toBeVisible()
   })
 
@@ -39,7 +48,7 @@ test.describe('téléphone étroit (360 px)', () => {
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)
     expect(overflow).toBeLessThanOrEqual(0)
     const steps = page.locator('.scene-step h3')
-    await expect(steps).toHaveCount(8)
+    await expect(steps).toHaveCount(7)
     for (const step of await steps.all()) {
       await step.scrollIntoViewIfNeeded()
       await expect(step).toBeVisible()
@@ -62,9 +71,9 @@ test.describe('mouvement réduit', () => {
     for (const step of await steps.all()) await step.scrollIntoViewIfNeeded()
 
     const scope = isMobile ? page.locator('.scene-step') : page.locator('main')
-    await steps.nth(3).scrollIntoViewIfNeeded()
+    await steps.nth(2).scrollIntoViewIfNeeded()
     await expect(scope.locator('[data-agreed][data-shown="true"]').first()).toBeVisible()
-    await steps.nth(7).scrollIntoViewIfNeeded()
+    await steps.nth(6).scrollIntoViewIfNeeded()
     await expect(scope.locator('[data-locked="false"]').first()).toBeVisible()
     const fill = scope.locator('[data-fill]').locator('visible=true').first()
     await expect(fill).toHaveAttribute('style', /width:\s*100%/)

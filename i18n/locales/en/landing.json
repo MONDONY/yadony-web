@@ -1,24 +1,24 @@
 {
   "landing": {
     "seo": {
-      "title": "Send a parcel to Africa, sell spare kilos, fly cheaper",
-      "description": "Make your trip home pay with Yadony: cheap flights to Africa with price alerts, spare baggage allowance sold, parcels delivered safely and tracked live."
+      "title": "Send a parcel to Africa or sell your spare baggage kilos",
+      "description": "Yadony brings the diaspora and travellers together: parcels carried by a verified traveller, payment held until delivery and live tracking; spare suitcase kilos sold; price alerts to spot a cheaper flight."
     },
     "hero": {
-      "kicker": "Parcels, kilos and flights to Africa",
-      "title": "Your trip home, paid for.",
-      "lead": "Cheaper flights, kilos sold, parcels delivered safely. It is all in Yadony, the app that brings the diaspora and travellers together.",
+      "kicker": "Parcels and kilos to Africa",
+      "title": "Send your parcels, sell your kilos.",
+      "lead": "Your parcel travels with a verified person, and your suitcase earns you money. It is all in Yadony, the app that brings the diaspora and travellers together.",
       "chips": [
-        "Cheaper flights",
+        "Parcels delivered",
         "Kilos sold",
-        "Parcels delivered"
+        "Price alerts"
       ],
       "videoCta": "Yadony in 1 minute",
       "note": "Free on iPhone and Android. Payment held until delivery.",
       "screensAlt": [
-        "The Yadony \"Vols trouvés\" (Flights found) screen: four flights under the price set by the alert",
+        "The Yadony \"Mes colis\" (My parcels) screen: a Paris – Bamako parcel that has arrived, ready to be collected",
         "The Yadony \"Mes trajets\" (My trips) screen: the kilos sold and still available on each trip",
-        "The Yadony \"Mes colis\" (My parcels) screen: a Paris – Bamako parcel that has arrived, ready to be collected"
+        "The Yadony \"Vols trouvés\" (Flights found) screen: four flights under the price set by the alert"
       ],
       "donyAlt": "Dony, the Yadony mascot, waving hello"
     },
@@ -27,9 +27,9 @@
       "title": "One app for your whole trip",
       "items": [
         {
-          "title": "Fly for less",
-          "text": "Set a price alert on your route. As soon as a flight drops below your budget, Yadony lets you know.",
-          "cta": "Flights"
+          "title": "Send with peace of mind",
+          "text": "Your parcel travels with a verified person. The money is held until delivery, and you follow every step live.",
+          "cta": "Send a parcel"
         },
         {
           "title": "Sell your kilos",
@@ -37,9 +37,9 @@
           "cta": "Become a traveller"
         },
         {
-          "title": "Send with peace of mind",
-          "text": "Your parcel travels with a verified person. The money is held until delivery, and you follow every step live.",
-          "cta": "Send a parcel"
+          "title": "Hear about good fares",
+          "text": "Yadony does not sell tickets. Set an alert on your route: the app lets you know when a flight drops below your budget, and you book with our partner.",
+          "cta": "Price alerts"
         }
       ]
     },
@@ -55,17 +55,13 @@
       "kicker": "One story, two journeys",
       "title": "Awa is flying to Dakar. Moussa is sending a parcel to his mother.",
       "lead": "Follow them step by step: their paths cross in Yadony.",
-      "listLabel": "Awa and Moussa's journey, in eight steps",
+      "listLabel": "Awa and Moussa's journey, in seven steps",
       "actors": {
         "traveler": "Awa · traveller",
         "sender": "Moussa · sender",
         "both": "Awa and Moussa"
       },
       "steps": [
-        {
-          "title": "The alert goes off: the flight is cheaper",
-          "text": "Awa set a price alert on Paris – Dakar. A flight drops below her budget: Yadony lets her know, and she books with our partner."
-        },
         {
           "title": "Awa posts her trip",
           "text": "Date, kilos available, handover points. She picks her pricing: a price per kilo, a price open to offers, or a price list per item."

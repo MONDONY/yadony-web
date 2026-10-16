@@ -6,8 +6,19 @@ import { fr, en } from '../helpers/messages'
 const journeys = { crossedJourney, senderJourney, travelerJourney, flightsJourney }
 
 describe('parcours racontés', () => {
-  it('le parcours croisé de l’accueil compte huit étapes', () => {
-    expect(crossedJourney).toHaveLength(8)
+  it('le parcours croisé de l’accueil compte sept étapes', () => {
+    expect(crossedJourney).toHaveLength(7)
+  })
+
+  // Yadony ne vend pas de billets : les alertes de prix ne sont jamais le
+  // premier argument. Les parcours commencent par le colis ou les kilos.
+  it('aucun parcours de colis ou de kilos ne commence par les billets d’avion', () => {
+    expect(crossedJourney[0]!.id).toBe('publish')
+    expect(travelerJourney[0]!.id).toBe('publish')
+    for (const steps of [crossedJourney, senderJourney, travelerJourney]) {
+      expect(steps.map(step => step.id)).not.toContain('alert')
+      expect(steps.map(step => step.id)).not.toContain('ticket')
+    }
   })
 
   it.each(Object.entries(journeys))('%s : identifiants uniques, écrans et poses existants', (_name, steps) => {

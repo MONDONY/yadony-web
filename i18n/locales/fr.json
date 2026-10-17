@@ -466,15 +466,51 @@
               ]
             },
             {
-              "sub": "Le badge Kilo Pro",
+              "sub": "Le badge GP Pro",
               "p": [
-                "Ce badge distingue les voyageurs fiables. Il est accordé aux voyageurs qui ont :"
+                "Le badge GP Pro distingue les GP : les voyageurs qui transportent régulièrement des colis en avion sur un même corridor, souvent chaque semaine. Il est ouvert aux particuliers comme aux entreprises. Il n'existe qu'un seul badge, sans distinction entre eux.",
+                "Le badge n'est jamais accordé automatiquement. Il ne dépend d'aucun nombre de livraisons ni d'aucune note minimale : chaque demande est examinée par l'équipe Yadony."
+              ]
+            },
+            {
+              "sub": "Demander le badge",
+              "p": [
+                "Le voyageur demande le badge lui-même, à l'inscription en cochant « Je suis GP », ou plus tard depuis son profil. Son identité doit être vérifiée. Une demande faite à l'inscription part à l'examen dès que l'identité est vérifiée.",
+                "La demande indique :"
               ],
               "ul": [
-                "Au moins 5 livraisons confirmées",
-                "Une note moyenne de 4,0 ou plus sur les 5 dernières livraisons",
-                "Aucune suspension en cours",
-                "Des livraisons faites pour au moins 5 destinataires différents, espacées de 7 jours minimum (pour éviter la triche)"
+                "La fréquence de voyage : chaque semaine, deux fois par mois, une fois par mois ou moins souvent",
+                "Un nom commercial, si le voyageur en a un (facultatif)",
+                "Jusqu'à 4 justificatifs, toujours facultatifs (photo ou PDF, 10 Mo maximum par fichier) : extrait d'un registre d'entreprise (Kbis, SIRET, NINEA, RCCM ou équivalent), billets ou cartes d'embarquement, capture d'un profil de réseau social, ou tout autre fichier utile"
+              ]
+            },
+            {
+              "p": [
+                "Le voyageur peut annuler sa demande tant qu'elle est en cours d'examen."
+              ]
+            },
+            {
+              "sub": "L'examen et la décision",
+              "p": [
+                "L'équipe Yadony examine chaque demande au cas par cas. Elle tient compte notamment de l'identité vérifiée, des trajets publiés, des livraisons effectuées, des notes reçues, des litiges, des signalements et de l'ancienneté du compte.",
+                "L'équipe accepte la demande ou la refuse. Tout refus est motivé. Après un refus, le voyageur peut déposer une nouvelle demande sans délai.",
+                "L'équipe peut aussi accorder le badge à un voyageur qui ne l'a pas demandé.",
+                "La décision est communiquée par notification push, par e-mail si le compte comporte une adresse e-mail, et dans l'application."
+              ]
+            },
+            {
+              "sub": "Le retrait du badge",
+              "p": [
+                "Le badge peut être retiré à tout moment, toujours par une décision de l'équipe Yadony. Le motif du retrait est communiqué au voyageur, par les mêmes canaux que la décision d'attribution.",
+                "Certaines situations conduisent l'équipe à réexaminer un profil : des notes récentes basses, un litige, un signalement, une inactivité de 8 semaines ou une identité qui n'est plus vérifiée. Elles n'entraînent jamais de retrait automatique."
+              ]
+            },
+            {
+              "sub": "Ce que le badge apporte",
+              "p": [
+                "Le badge GP Pro est affiché sur les trajets, le profil, la messagerie, l'affiche partageable et les offres du voyageur. Les expéditeurs peuvent filtrer les résultats de recherche pour n'afficher que les GP Pro. À critères égaux, un GP Pro est placé avant un autre voyageur dans les résultats de recherche.",
+                "Le badge n'apporte aucun avantage tarifaire : la commission de Yadony est la même pour tous. Il est indépendant de l'abonnement Yadony PRO (article 9).",
+                "Le badge n'est pas une garantie de Yadony sur la qualité du transport. Il indique que l'équipe Yadony a examiné le profil du voyageur."
               ]
             }
           ]
@@ -668,7 +704,7 @@
         "description": "Comment Yadony protège vos données : minimum de données en interne, partenaires certifiés (Firebase, Stripe, Cloudflare), durées de conservation et droits RGPD."
       },
       "title": "Politique de confidentialité",
-      "intro": "Dernière mise à jour : 15 octobre 2026. Yadony est une place de marché mobile qui met en relation des voyageurs disposant de place dans leurs bagages avec des expéditeurs souhaitant envoyer des colis à leurs proches. Notre service couvre les corridors depuis l'Europe, les États-Unis, le Canada et l'Afrique vers toutes les destinations que nous desservons. Nous avons conçu Yadony avec un principe fondamental : nous ne conservons que le strict minimum de données personnelles en interne. Les données sensibles (identité, authentification, documents officiels) sont confiées à des partenaires spécialisés de confiance, reconnus mondialement, qui les traitent avec un niveau de sécurité et de conformité que nous ne pourrions pas atteindre seuls. En utilisant Yadony, vous acceptez les pratiques décrites dans ce document.",
+      "intro": "Dernière mise à jour : 17 octobre 2026. Yadony est une place de marché mobile qui met en relation des voyageurs disposant de place dans leurs bagages avec des expéditeurs souhaitant envoyer des colis à leurs proches. Notre service couvre les corridors depuis l'Europe, les États-Unis, le Canada et l'Afrique vers toutes les destinations que nous desservons. Nous avons conçu Yadony avec un principe fondamental : nous ne conservons que le strict minimum de données personnelles en interne. Les données sensibles (identité, authentification, documents officiels) sont confiées à des partenaires spécialisés de confiance, reconnus mondialement, qui les traitent avec un niveau de sécurité et de conformité que nous ne pourrions pas atteindre seuls. En utilisant Yadony, vous acceptez les pratiques décrites dans ce document.",
       "articles": [
         {
           "title": "1. Qui est responsable de vos données ?",
@@ -862,6 +898,25 @@
               "p": [
                 "Les données d'usage de l'application (écrans consultés, actions effectuées, enregistrements de session) sont mesurées avec PostHog (voir l'article 3.6). Elles sont rattachées à l'identifiant technique de votre compte, jamais à votre numéro de téléphone, à votre adresse e-mail ni à votre nom, et les textes et images des enregistrements de session sont masqués sur votre appareil. Dans l'Union européenne, l'Espace économique européen, au Royaume-Uni et en Suisse (ou si votre pays ne peut pas être déterminé), cette mesure n'est activée qu'avec votre consentement explicite, demandé lors de votre première connexion. Ailleurs, elle est activée par défaut. Dans tous les cas, vous pouvez la désactiver à tout moment dans l'application : onglet Moi, menu ☰, Paramètres, Confidentialité, « Statistiques d'utilisation »."
               ]
+            },
+            {
+              "sub": "Le badge GP Pro",
+              "p": [
+                "Si vous demandez le badge GP Pro (article 8 des CGU), Yadony traite les données suivantes, dans le seul but d'examiner votre demande et d'afficher le badge :"
+              ],
+              "ul": [
+                "La fréquence de voyage que vous indiquez",
+                "Votre nom commercial, si vous en donnez un",
+                "Les justificatifs que vous choisissez d'ajouter (facultatifs, 4 au maximum)",
+                "Le statut de votre demande et l'historique des décisions de l'équipe, avec leurs motifs"
+              ]
+            },
+            {
+              "p": [
+                "Pour examiner la demande, l'équipe s'appuie aussi sur des données que Yadony détient déjà : le résultat de votre vérification d'identité, vos trajets publiés, vos livraisons, vos notes, les litiges, les signalements et l'ancienneté de votre compte.",
+                "Les justificatifs ne sont jamais publics. Seuls les administrateurs Yadony peuvent les consulter, par des liens temporaires valables 15 minutes. Ils sont supprimés dès que la demande est tranchée : acceptation, refus, annulation de la demande ou suppression du compte. Un fichier envoyé mais jamais rattaché à une demande est supprimé sous 24 heures.",
+                "La décision et son motif sont conservés dans le journal d'audit. Pendant l'examen, aucune information de votre demande n'est visible des autres utilisateurs. Une fois accordé, le badge est visible des autres utilisateurs (article 7)."
+              ]
             }
           ]
         },
@@ -882,6 +937,7 @@
                 "Données d'usage de l'application : PostHog, rattachées à l'identifiant technique du compte, selon les règles de consentement de l'article 4",
                 "Rapports d'erreurs et signalements de problème : Sentry",
                 "Photos de colis, photos de livraison : Cloudflare. Accès via lien temporaire sécurisé uniquement",
+                "Demande de badge GP Pro (fréquence, nom commercial, statut, décisions et motifs) : Yadony (base de données interne). Justificatifs facultatifs : consultables uniquement par les administrateurs Yadony, par lien temporaire de 15 minutes, et supprimés dès la décision",
                 "Historique des transactions, scans, évaluations : Yadony (base de données interne). Accès : oui, nécessaire au fonctionnement du service",
                 "Messages entre utilisateurs : Yadony (chiffrés). Contenu chiffré, accès restreint aux litiges"
               ]
@@ -902,6 +958,7 @@
                 "Scans et traçabilité du colis : exécution du contrat et intérêt légitime",
                 "Détection de fraude et sécurité : intérêt légitime",
                 "Évaluations et réputation : intérêt légitime",
+                "Examen des demandes de badge GP Pro, affichage du badge et trace des décisions : exécution du contrat (CGU, article 8) et intérêt légitime (fiabilité des profils mis en avant)",
                 "Communications marketing : consentement (révocable à tout moment)"
               ],
               "p": [
@@ -974,6 +1031,8 @@
                 "Scans et géolocalisation : 5 ans, preuve en cas de litige",
                 "Messages dans la messagerie : 2 ans après la transaction, résolution de litiges",
                 "Données de mesure d'audience : 13 mois, conformité CNIL",
+                "Justificatifs d'une demande de badge GP Pro : supprimés dès la décision (acceptation, refus, annulation ou suppression du compte). Fichiers jamais rattachés à une demande : supprimés sous 24 heures",
+                "Décisions sur le badge GP Pro et leurs motifs : conservées dans le journal d'audit",
                 "Comptes supprimés : anonymisation des données de profil à la suppression définitive, 30 jours après la demande, sauf historique financier conservé 5 ans"
               ],
               "p": [
@@ -1079,6 +1138,7 @@
                 "Images des colis (Cloudflare) : les liens deviennent inaccessibles. Les fichiers sont supprimés selon la politique Cloudflare.",
                 "Messages dans la messagerie : supprimés.",
                 "Carnet de destinataires : nettoyé.",
+                "Justificatifs d'une demande de badge GP Pro : supprimés.",
                 "Historique des transactions : conservé 5 ans (obligation légale comptable). Ces données sont anonymisées au maximum.",
                 "Si un litige est en cours, le compte est maintenu jusqu'à la clôture du litige, puis supprimé."
               ],

@@ -704,7 +704,7 @@
         "description": "How Yadony protects your data: minimal internal data, certified partners (Firebase, Stripe, Cloudflare), retention periods and GDPR rights."
       },
       "title": "Privacy policy",
-      "intro": "Last updated: October 17, 2026. Yadony is a mobile marketplace connecting travellers with spare luggage space to senders wishing to send parcels to their relatives. Our service covers corridors from Europe, the United States, Canada and Africa to all the destinations we serve. We designed Yadony around one core principle: we keep only the strict minimum of personal data internally. Sensitive data (identity, authentication, official documents) is entrusted to trusted, globally recognised specialised partners who process it with a level of security and compliance we could not reach alone. By using Yadony, you accept the practices described in this document. This English version is provided for convenience; the French version prevails.",
+      "intro": "Last updated: October 18, 2026. Yadony is a mobile marketplace connecting travellers with spare luggage space to senders wishing to send parcels to their relatives. Our service covers corridors from Europe, the United States, Canada and Africa to all the destinations we serve. We designed Yadony around one core principle: we keep only the strict minimum of personal data internally. Sensitive data (identity, authentication, official documents) is entrusted to trusted, globally recognised specialised partners who process it with a level of security and compliance we could not reach alone. By using Yadony, you accept the practices described in this document. This English version is provided for convenience; the French version prevails.",
       "articles": [
         {
           "title": "1. Who is responsible for your data?",
@@ -875,6 +875,29 @@
               "p": [
                 "The maps shown in the app and the address search (autocomplete) use Google Maps services. Google receives the addresses and places you search for, as well as the map areas displayed. Google privacy policy: https://policies.google.com/privacy"
               ]
+            },
+            {
+              "sub": "3.12 AI assistant and “Create with AI” forms",
+              "p": [
+                "The app offers an AI assistant that answers your questions about how Yadony works, based on help articles written by Yadony, and a “Create with AI” button that prepares a trip or parcel request form from what you dictate or type. What is sent to the AI provider:"
+              ],
+              "ul": [
+                "The text of your question and of the current conversation (at most the last 12 exchanges)",
+                "If your question is about one of your parcels: the facts needed to answer (trip cities and date, parcel step, status of the payment, of a cancellation or of a dispute), with no name, phone number, tracking number or code",
+                "For “Create with AI”: the text you dictate or type (transcribed on your device) and the fields of the form in progress (cities, dates, weight, price, description)",
+                "The app language"
+              ]
+            },
+            {
+              "p": [
+                "Yadony does not add your name, phone number, email address or account identifier.",
+                "Questions are processed by a third-party AI provider. At the time of writing: Anthropic, PBC (United States), through its commercial API (Claude model). This list is kept up to date on this page, including if another provider were to take over. As this provider is established outside the European Union, your questions are transferred outside the EU.",
+                "Before the first use, the app asks for your consent in a window that details these transfers. If you decline, nothing is sent; consent is asked again after you sign out.",
+                "Under its commercial terms, Anthropic does not use questions received through its API to train its models. We still ask you not to enter any personal data in the assistant: it does not need any to answer you.",
+                "Yadony does not keep the content of conversations: they stay on your device for the duration of the session and disappear when you close the app. Yadony only keeps usage counters, without the text (number of questions, answer found or not).",
+                "Exception: if you choose to \"talk to a human\", your last question and the exchange are copied into a Yadony support ticket, kept like other support requests.",
+                "You can hide the assistant bubble in Settings."
+              ]
             }
           ]
         },
@@ -939,6 +962,7 @@
                 "Parcel and delivery photos: Cloudflare. Access only through secure temporary links",
                 "GP Pro badge request (frequency, trading name, status, decisions and reasons): Yadony (internal database). Optional supporting documents: viewable only by Yadony administrators, through a 15-minute temporary link, and deleted as soon as the decision is made",
                 "Transaction history, scans, ratings: Yadony (internal database). Access: yes, needed to run the service",
+                "AI assistant and “Create with AI”: third-party AI provider (Anthropic, Claude model), after your consent in the app, with no name, phone number, email or identifier. Yadony does not keep the content of conversations, unless you choose to talk to a human (support ticket)",
                 "Messages between users: Yadony (encrypted). Encrypted content, access restricted to disputes"
               ]
             }
@@ -1178,7 +1202,7 @@
               "ul": [
                 "Company name: YADONY SAS, SIREN 108 733 510",
                 "Publication director: Mr Dramane DIAKITE, President",
-                "Technical partners: Google Firebase, Stripe, Didit, pawaPay (Mobile Money: Wave, Orange Money and other operators), Cloudflare, PostHog, Sentry, Twilio, Resend, Stream, Google Maps",
+                "Technical partners: Google Firebase, Stripe, Didit, pawaPay (Mobile Money: Wave, Orange Money and other operators), Cloudflare, PostHog, Sentry, Twilio, Resend, Stream, Google Maps, Anthropic (AI assistant)",
                 "French supervisory authority: CNIL (www.cnil.fr)"
               ]
             }

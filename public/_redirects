@@ -11,23 +11,22 @@
 
 # Chemins dynamiques que l'ancien vhost racine du VPS servait et que des
 # liens déjà émis (QR codes, SMS, partages réseaux sociaux, app mobile)
-# continuent d'utiliser. Le vhost pro.yadony.com du VPS sert les mêmes
-# routes. 308 pour l'API : préserve la méthode HTTP (un 301 dégraderait un
-# POST en GET).
-/tracking/* https://pro.yadony.com/tracking/:splat 301
-/annonce/* https://pro.yadony.com/annonce/:splat 301
-/demande/* https://pro.yadony.com/demande/:splat 301
+# continuent d'utiliser. Ils visent prod.yadony.com, le nom du VPS pour tout
+# ce qui n'est pas l'espace pro : pro.yadony.com reste réservé au portail
+# professionnel, sinon les deux usages se mélangent dans les liens partagés
+# et dans la documentation. 308 pour l'API : préserve la méthode HTTP (un
+# 301 dégraderait un POST en GET).
+/tracking/* https://prod.yadony.com/tracking/:splat 301
+/annonce/* https://prod.yadony.com/annonce/:splat 301
+/demande/* https://prod.yadony.com/demande/:splat 301
 
 # Lien de parrainage partagé par l'app (ReferralService, yadony-back) :
-# https://yadony.com/r/{code}. La page d'invitation est prérendue une seule
+# https://yadony.com/r/{code}. La page d'atterrissage est prérendue une seule
 # fois, sans le code, et le lit dans la requête (app/pages/parrainage.vue).
-# Une réécriture 200 ne convient pas : le routeur Nuxt verrait /r/{code}, qui
-# n'est pas une route, et afficherait une 404 à l'hydratation.
 /r/:code /parrainage?code=:code 302
-/en/r/:code /en/referral?code=:code 302
-/siragbe/* https://pro.yadony.com/siragbe/:splat 301
-/api/* https://pro.yadony.com/api/:splat 308
+/siragbe/* https://prod.yadony.com/siragbe/:splat 301
+/api/* https://prod.yadony.com/api/:splat 308
 
 # Page de suppression de compte exigée par les fiches store, servie en
 # statique par le VPS.
-/legal/account-deletion https://pro.yadony.com/legal/account-deletion 301
+/legal/account-deletion https://prod.yadony.com/legal/account-deletion 301

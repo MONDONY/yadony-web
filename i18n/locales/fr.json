@@ -877,19 +877,22 @@
               ]
             },
             {
-              "sub": "3.12 Assistant IA : aide sur le fonctionnement de l'application",
+              "sub": "3.12 Assistant IA et formulaires « Créer avec l'IA »",
               "p": [
-                "L'application propose un assistant IA qui répond à vos questions sur le fonctionnement de Yadony à partir de fiches d'aide rédigées par Yadony. Quand vous lui posez une question, l'assistant reçoit :"
+                "L'application propose un assistant IA qui répond à vos questions sur le fonctionnement de Yadony à partir de fiches d'aide rédigées par Yadony, ainsi qu'un bouton « Créer avec l'IA » qui prépare un formulaire de trajet ou de demande d'envoi à partir de ce que vous dictez ou écrivez. Ce qui est envoyé au fournisseur d'IA :"
               ],
               "ul": [
                 "Le texte de votre question et des échanges de la conversation en cours (au plus les 12 derniers)",
+                "Si votre question porte sur l'un de vos colis : les faits utiles pour y répondre (villes et date du trajet, étape du colis, état du paiement, d'une annulation ou d'un litige), sans nom, numéro de téléphone, numéro de suivi ni code",
+                "Pour « Créer avec l'IA » : le texte que vous dictez ou écrivez (transcrit sur votre appareil), et les champs du formulaire en cours (villes, dates, poids, prix, description)",
                 "La langue de l'application"
               ]
             },
             {
               "p": [
-                "Yadony n'y ajoute aucun identifiant, nom, numéro de téléphone ni donnée de votre compte.",
+                "Yadony n'y ajoute ni votre nom, ni votre numéro de téléphone, ni votre e-mail, ni votre identifiant de compte.",
                 "Les questions sont traitées par un fournisseur d'IA tiers. À ce jour : Anthropic, PBC (États-Unis), via son API professionnelle (modèle Claude). Cette liste est tenue à jour sur cette page, y compris si un autre fournisseur venait à prendre le relais. Ce fournisseur étant établi hors de l'Union européenne, vos questions sont transférées hors de l'UE.",
+                "Avant la première utilisation, l'application vous demande votre accord dans une fenêtre qui détaille ces envois. Si vous refusez, rien n'est envoyé ; l'accord est redemandé après une déconnexion.",
                 "Selon ses conditions commerciales, Anthropic n'utilise pas les questions reçues par son API pour entraîner ses modèles. Nous vous demandons tout de même de ne saisir aucune donnée personnelle dans l'assistant : il n'en a pas besoin pour vous répondre.",
                 "Yadony ne conserve pas le contenu des conversations : elles restent sur votre appareil le temps de la session et disparaissent à la fermeture de l'application. Yadony garde seulement des compteurs d'usage, sans le texte (nombre de questions, réponse trouvée ou non).",
                 "Exception : si vous choisissez de « parler à un humain », votre dernière question et l'échange sont copiés dans un ticket du support Yadony, conservé comme les autres demandes de support.",
@@ -959,7 +962,7 @@
                 "Photos de colis, photos de livraison : Cloudflare. Accès via lien temporaire sécurisé uniquement",
                 "Demande de badge GP Pro (fréquence, nom commercial, statut, décisions et motifs) : Yadony (base de données interne). Justificatifs facultatifs : consultables uniquement par les administrateurs Yadony, par lien temporaire de 15 minutes, et supprimés dès la décision",
                 "Historique des transactions, scans, évaluations : Yadony (base de données interne). Accès : oui, nécessaire au fonctionnement du service",
-                "Questions posées à l'assistant IA : fournisseur d'IA tiers (Anthropic, modèle Claude), sans identifiant ni donnée de compte. Yadony ne conserve pas le contenu des conversations, sauf si vous choisissez de parler à un humain (ticket du support)",
+                "Assistant IA et « Créer avec l'IA » : fournisseur d'IA tiers (Anthropic, modèle Claude), après votre accord dans l'application, sans nom, téléphone, e-mail ni identifiant. Yadony ne conserve pas le contenu des conversations, sauf si vous choisissez de parler à un humain (ticket du support)",
                 "Messages entre utilisateurs : Yadony (chiffrés). Contenu chiffré, accès restreint aux litiges"
               ]
             }

@@ -466,15 +466,51 @@
               ]
             },
             {
-              "sub": "The Kilo Pro badge",
+              "sub": "The GP Pro badge",
               "p": [
-                "This badge distinguishes reliable travellers. It is granted to travellers who have:"
+                "The GP Pro badge distinguishes GPs: travellers who regularly carry parcels by plane on the same corridor, often every week. It is open to individuals and businesses alike. There is a single badge, with no distinction between them.",
+                "The badge is never granted automatically. It does not depend on a number of deliveries or a minimum rating: each request is reviewed by the Yadony team."
+              ]
+            },
+            {
+              "sub": "Requesting the badge",
+              "p": [
+                "Travellers request the badge themselves, at sign-up by ticking “I am a GP”, or later from their profile. Their identity must be verified. A request made at sign-up goes to review as soon as the identity is verified.",
+                "The request states:"
               ],
               "ul": [
-                "At least 5 confirmed deliveries",
-                "An average rating of 4.0 or higher over the last 5 deliveries",
-                "No active suspension",
-                "Deliveries made to at least 5 different recipients, at least 7 days apart (to prevent gaming)"
+                "Travel frequency: every week, twice a month, once a month or less often",
+                "A trading name, if the traveller has one (optional)",
+                "Up to 4 supporting documents, always optional (photo or PDF, 10 MB maximum per file): extract from a business register (Kbis, SIRET, NINEA, RCCM or equivalent), tickets or boarding passes, a screenshot of a social media profile, or any other useful file"
+              ]
+            },
+            {
+              "p": [
+                "Travellers can cancel their request while it is under review."
+              ]
+            },
+            {
+              "sub": "Review and decision",
+              "p": [
+                "The Yadony team reviews each request case by case. It takes into account, in particular, the verified identity, published trips, completed deliveries, ratings received, disputes, reports and the age of the account.",
+                "The team accepts or refuses the request. Every refusal states its reason. After a refusal, the traveller can submit a new request straight away.",
+                "The team may also grant the badge to a traveller who has not requested it.",
+                "The decision is sent by push notification, by e-mail if the account has an e-mail address, and in the app."
+              ]
+            },
+            {
+              "sub": "Withdrawal of the badge",
+              "p": [
+                "The badge can be withdrawn at any time, always by a decision of the Yadony team. The reason for the withdrawal is sent to the traveller through the same channels as the decision to grant it.",
+                "Some situations lead the team to review a profile again: low recent ratings, a dispute, a report, 8 weeks of inactivity or an identity that is no longer verified. They never lead to automatic withdrawal."
+              ]
+            },
+            {
+              "sub": "What the badge provides",
+              "p": [
+                "The GP Pro badge is shown on the traveller's trips, profile, messages, shareable poster and offers. Senders can filter search results to show GP Pros only. All other things being equal, a GP Pro is placed ahead of another traveller in search results.",
+                "The badge carries no pricing advantage: Yadony's commission is the same for everyone. It is independent of the Yadony PRO subscription (article 9).",
+                "The badge is not a guarantee by Yadony of the quality of the transport. It shows that the Yadony team has reviewed the traveller's profile."
               ]
             }
           ]
@@ -668,7 +704,7 @@
         "description": "How Yadony protects your data: minimal internal data, certified partners (Firebase, Stripe, Cloudflare), retention periods and GDPR rights."
       },
       "title": "Privacy policy",
-      "intro": "Last updated: October 16, 2026. Yadony is a mobile marketplace connecting travellers with spare luggage space to senders wishing to send parcels to their relatives. Our service covers corridors from Europe, the United States, Canada and Africa to all the destinations we serve. We designed Yadony around one core principle: we keep only the strict minimum of personal data internally. Sensitive data (identity, authentication, official documents) is entrusted to trusted, globally recognised specialised partners who process it with a level of security and compliance we could not reach alone. By using Yadony, you accept the practices described in this document. This English version is provided for convenience; the French version prevails.",
+      "intro": "Last updated: October 18, 2026. Yadony is a mobile marketplace connecting travellers with spare luggage space to senders wishing to send parcels to their relatives. Our service covers corridors from Europe, the United States, Canada and Africa to all the destinations we serve. We designed Yadony around one core principle: we keep only the strict minimum of personal data internally. Sensitive data (identity, authentication, official documents) is entrusted to trusted, globally recognised specialised partners who process it with a level of security and compliance we could not reach alone. By using Yadony, you accept the practices described in this document. This English version is provided for convenience; the French version prevails.",
       "articles": [
         {
           "title": "1. Who is responsible for your data?",
@@ -853,8 +889,8 @@
             {
               "p": [
                 "Yadony adds no identifier, name, phone number or account data to it.",
-                "Questions are processed by third-party AI providers. At the time of writing: OpenRouter, Inc. (United States), which forwards the question to the host of the model in use (Google for Gemini, Mistral AI or another host for Mistral), as well as Groq, Inc. (United States) and Google (Gemini API) directly. This list is kept up to date on this page. As these providers are established outside the European Union, your questions are transferred outside the EU.",
-                "The free tiers of these providers may reuse the data they receive to improve their models: we therefore ask you not to enter any personal data in the assistant.",
+                "Questions are processed by a third-party AI provider. At the time of writing: Anthropic, PBC (United States), through its commercial API (Claude model). This list is kept up to date on this page, including if another provider were to take over. As this provider is established outside the European Union, your questions are transferred outside the EU.",
+                "Under its commercial terms, Anthropic does not use questions received through its API to train its models. We still ask you not to enter any personal data in the assistant: it does not need any to answer you.",
                 "Yadony does not keep the content of conversations: they stay on your device for the duration of the session and disappear when you close the app. Yadony only keeps usage counters, without the text (number of questions, answer found or not).",
                 "Exception: if you choose to \"talk to a human\", your last question and the exchange are copied into a Yadony support ticket, kept like other support requests.",
                 "You can hide the assistant bubble in Settings."
@@ -882,6 +918,25 @@
               "p": [
                 "App usage data (screens viewed, actions taken, session recordings) is measured with PostHog (see article 3.6). It is linked to your account's technical identifier, never to your phone number, e-mail address or name, and the text and images in session recordings are masked on your device. In the European Union, the European Economic Area, the United Kingdom and Switzerland (or if your country cannot be determined), this measurement is only turned on with your explicit consent, requested at your first sign-in. Elsewhere, it is on by default. In every case, you can turn it off at any time in the app: Profile tab, ☰ menu, Settings, Privacy, “Usage statistics”."
               ]
+            },
+            {
+              "sub": "The GP Pro badge",
+              "p": [
+                "If you request the GP Pro badge (article 8 of the Terms of Use), Yadony processes the following data, solely to review your request and display the badge:"
+              ],
+              "ul": [
+                "The travel frequency you state",
+                "Your trading name, if you give one",
+                "The supporting documents you choose to add (optional, 4 at most)",
+                "The status of your request and the history of the team's decisions, with their reasons"
+              ]
+            },
+            {
+              "p": [
+                "To review the request, the team also relies on data Yadony already holds: the result of your identity verification, your published trips, your deliveries, your ratings, disputes, reports and the age of your account.",
+                "Supporting documents are never public. Only Yadony administrators can view them, through temporary links valid for 15 minutes. They are deleted as soon as the request is decided: acceptance, refusal, cancellation of the request or deletion of the account. A file uploaded but never attached to a request is deleted within 24 hours.",
+                "The decision and its reason are kept in the audit log. During the review, no information from your request is visible to other users. Once granted, the badge is visible to other users (article 7)."
+              ]
             }
           ]
         },
@@ -902,8 +957,9 @@
                 "App usage data: PostHog, linked to the account's technical identifier, under the consent rules of article 4",
                 "Error reports and problem reports: Sentry",
                 "Parcel and delivery photos: Cloudflare. Access only through secure temporary links",
+                "GP Pro badge request (frequency, trading name, status, decisions and reasons): Yadony (internal database). Optional supporting documents: viewable only by Yadony administrators, through a 15-minute temporary link, and deleted as soon as the decision is made",
                 "Transaction history, scans, ratings: Yadony (internal database). Access: yes, needed to run the service",
-                "Questions asked to the AI assistant: third-party AI providers (OpenRouter, Google Gemini, Mistral AI, Groq), with no identifier or account data. Yadony does not keep the content of conversations, unless you choose to talk to a human (support ticket)",
+                "Questions asked to the AI assistant: third-party AI provider (Anthropic, Claude model), with no identifier or account data. Yadony does not keep the content of conversations, unless you choose to talk to a human (support ticket)",
                 "Messages between users: Yadony (encrypted). Encrypted content, access restricted to disputes"
               ]
             }
@@ -923,6 +979,7 @@
                 "Parcel scans and traceability: performance of the contract and legitimate interest",
                 "Fraud detection and security: legitimate interest",
                 "Ratings and reputation: legitimate interest",
+                "Review of GP Pro badge requests, display of the badge and record of decisions: performance of the contract (Terms of Use, article 8) and legitimate interest (reliability of the profiles highlighted)",
                 "Marketing communications: consent (revocable at any time)"
               ],
               "p": [
@@ -995,6 +1052,8 @@
                 "Scans and geolocation: 5 years, evidence in disputes",
                 "Messages in the messaging system: 2 years after the transaction, dispute resolution",
                 "Audience measurement data: 13 months, CNIL compliance",
+                "Supporting documents for a GP Pro badge request: deleted as soon as the decision is made (acceptance, refusal, cancellation or deletion of the account). Files never attached to a request: deleted within 24 hours",
+                "Decisions on the GP Pro badge and their reasons: kept in the audit log",
                 "Deleted accounts: profile data anonymised upon final deletion, 30 days after the request, except financial history kept for 5 years"
               ],
               "p": [
@@ -1100,6 +1159,7 @@
                 "Parcel images (Cloudflare): the links become inaccessible. Files are deleted under Cloudflare's policy.",
                 "Messages in the messaging system: deleted.",
                 "Recipient address book: cleared.",
+                "Supporting documents for a GP Pro badge request: deleted.",
                 "Transaction history: kept for 5 years (statutory accounting obligation). This data is anonymised as far as possible.",
                 "If a dispute is in progress, the account is kept until the dispute is closed, then deleted."
               ],
@@ -1139,7 +1199,7 @@
               "ul": [
                 "Company name: YADONY SAS, SIREN 108 733 510",
                 "Publication director: Mr Dramane DIAKITE, President",
-                "Technical partners: Google Firebase, Stripe, Didit, pawaPay (Mobile Money: Wave, Orange Money and other operators), Cloudflare, PostHog, Sentry, Twilio, Resend, Stream, Google Maps, OpenRouter, Google Gemini, Mistral AI and Groq (AI assistant)",
+                "Technical partners: Google Firebase, Stripe, Didit, pawaPay (Mobile Money: Wave, Orange Money and other operators), Cloudflare, PostHog, Sentry, Twilio, Resend, Stream, Google Maps, Anthropic (AI assistant)",
                 "French supervisory authority: CNIL (www.cnil.fr)"
               ]
             }

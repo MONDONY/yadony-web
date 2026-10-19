@@ -312,7 +312,7 @@
     "cgu": {
       "seo": {
         "title": "Terms of use",
-        "description": "The terms of use of the Yadony platform: roles, escrowed payment, commission, disputes, personal data and legal notice."
+        "description": "The terms of use of the Yadony platform: roles, escrowed payment, service fees, disputes, personal data and legal notice."
       },
       "title": "Terms of use",
       "intro": "YADONY SAS (\"Yadony\") publishes a mobile and web application connecting travellers leaving France for West Africa with senders wishing to send parcels to their relatives. Yadony secures these exchanges through identity verification, payment held until delivery, and parcel traceability at every step. These Terms of Use apply to any use of the platform. Signing up constitutes acceptance of these Terms. If you do not accept them, you must not use the platform. This English version is provided for convenience; the French version prevails.",
@@ -432,9 +432,25 @@
               ]
             },
             {
-              "sub": "Commission",
+              "sub": "Service fees",
               "p": [
-                "Yadony charges a service commission on each transaction, at the rate in force shown before payment. It is deducted automatically. In the event of a refund, the commission is never kept: you get back everything you paid."
+                "Yadony charges a service fee on each transaction. It is paid by the sender, on top of the traveller's price: the traveller receives the full price they set. The fee is deducted automatically.",
+                "The fee is calculated in marginal tiers: each rate applies only to the part of the traveller's price that falls within its tier, as with income tax. Crossing a threshold therefore never changes the rate applied to the whole amount. As an example, from [EFFECTIVE DATE]:"
+              ],
+              "ul": [
+                "7% on the part of the price up to 100 €",
+                "6% on the part of the price between 100 € and 300 €",
+                "5% on the part of the price above 300 €"
+              ]
+            },
+            {
+              "p": [
+                "The fee is never below a minimum of 1 € (650 FCFA when the price is in CFA francs, XOF or XAF). Examples: for a traveller price of 150 €, the fee is 7 € for the first 100 euros plus 3 € for the next 50, so 10 €; for a price of 5 €, it is 1 €, the minimum.",
+                "The service fee is the same whichever payment method you use (bank card, Mobile Money, Yadony wallet or cash) and whichever currency the price is in.",
+                "The exact amount of the fee, minimum included, and the total to pay are shown before you confirm anything.",
+                "A \"free commission\" promo code removes the fee: nothing is then charged. Any other promo code reduces the fee but cannot take it below the minimum. A referral voucher reduces the fee after the minimum has been applied.",
+                "Yadony may change this fee (rates, tiers or minimum). Any change is announced at least 30 days before it takes effect and does not apply to offers, requests and negotiations already created, which keep the fee shown when they were created.",
+                "In the event of a refund, the service fee is never kept: you get back everything you paid."
               ]
             },
             {
@@ -509,7 +525,7 @@
               "sub": "What the badge provides",
               "p": [
                 "The GP Pro badge is shown on the traveller's trips, profile, messages, shareable poster and offers. Senders can filter search results to show GP Pros only. All other things being equal, a GP Pro is placed ahead of another traveller in search results.",
-                "The badge carries no pricing advantage: Yadony's commission is the same for everyone. It is independent of the Yadony PRO subscription (article 9).",
+                "The badge carries no pricing advantage: Yadony's service fee is calculated the same way for everyone. It is independent of the Yadony PRO subscription (article 9).",
                 "The badge is not a guarantee by Yadony of the quality of the transport. It shows that the Yadony team has reviewed the traveller's profile."
               ]
             }
@@ -627,7 +643,7 @@
           "blocks": [
             {
               "p": [
-                "It is prohibited to publish false information, to contact other users off the platform to avoid paying the commission, to use Yadony for illicit purposes or to attempt to bypass the security systems.",
+                "It is prohibited to publish false information, to contact other users off the platform to avoid paying the service fee, to use Yadony for illicit purposes or to attempt to bypass the security systems.",
                 "In the event of a violation, Yadony may remove your content, suspend or permanently close your account, and report the facts to the competent authorities."
               ]
             },

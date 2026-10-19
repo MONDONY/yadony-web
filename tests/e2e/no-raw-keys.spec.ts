@@ -8,9 +8,10 @@ const PAGES = [
   '/gp/paris-dakar', '/comment-ca-marche', '/tarifs', '/securite', '/a-propos', '/contact',
   '/en', '/en/send-a-parcel', '/en/send-a-parcel/paris-dakar', '/en/become-a-traveler',
   '/en/flight-deals', '/en/how-it-works', '/en/pricing', '/en/trust-and-safety', '/en/about', '/en/contact',
+  '/suppression-compte', '/en/delete-account',
 ]
 
-const RAW_KEY = /\b(?:landing|journeys|corridorPages|gp|nav|footer|home|pricing|trust|about|contact|howItWorks|error|language|beta|a11y)\.[A-Za-z][\w.[\]]*/
+const RAW_KEY = /\b(?:landing|journeys|corridorPages|gp|nav|footer|home|pricing|trust|about|contact|howItWorks|error|language|beta|a11y|legal)\.[A-Za-z][\w.[\]]*/
 
 for (const path of PAGES) {
   test(`la page ${path} n'affiche aucune clé de traduction brute`, async ({ page }) => {

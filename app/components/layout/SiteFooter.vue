@@ -131,6 +131,7 @@ const company = [
           <NuxtLink :to="p('/mentions-legales')" class="mt-3 block py-1 text-white/65 hover:text-white">{{ t('footer.legalNotice') }}</NuxtLink>
           <NuxtLink :to="p('/cgu')" class="block py-1 text-white/65 hover:text-white">{{ t('footer.terms') }}</NuxtLink>
           <NuxtLink :to="p('/confidentialite')" class="block py-1 text-white/65 hover:text-white">{{ t('footer.privacy') }}</NuxtLink>
+          <NuxtLink :to="p('/suppression-compte')" class="block py-1 text-white/65 hover:text-white">{{ t('footer.deleteAccount') }}</NuxtLink>
           <NuxtLink :to="p('/cookies')" class="block py-1 text-white/65 hover:text-white">{{ t('footer.cookiesPolicy') }}</NuxtLink>
           <button
             type="button"

@@ -1101,7 +1101,7 @@
               "ul": [
                 "Right of access: obtain a copy of all the data Yadony holds about you, via Settings → My data or dpo{'@'}yadony.com",
                 "Right of rectification: correct your profile data (name, e-mail, city), directly in your profile in the application",
-                "Right to erasure: delete your account and profile data, in the app: Profile tab, ☰ menu, then “Delete my account”",
+                "Right to erasure: delete your account and profile data, in the app: Profile tab, ☰ menu, then “Delete my account”. Without the app: yadony.com/en/delete-account",
                 "Right to portability: receive your data in JSON or CSV format, on request to dpo{'@'}yadony.com",
                 "Right to object: object to processing based on legitimate interest, on request to dpo{'@'}yadony.com",
                 "Withdrawal of consent: turn off marketing or analytics, via Settings → Privacy",
@@ -1210,6 +1210,94 @@
         }
       ]
     },
+    "suppressionCompte": {
+      "seo": {
+        "title": "Delete your Yadony account",
+        "description": "How to delete your Yadony account and your data, from the app or by e-mail: timing, data deleted and data kept."
+      },
+      "title": "Delete your Yadony account",
+      "intro": "You can delete your account and your data at any time, from the app or by e-mail.",
+      "privacyLink": "Read the privacy policy",
+      "articles": [
+        {
+          "title": "1. From the app",
+          "blocks": [
+            {
+              "p": [
+                "Open the “Profile” tab, tap the Menu button (☰), then “Delete my account”. You are offered two choices:"
+              ],
+              "ul": [
+                "“30-day pause” (reversible): your account is permanently deleted after 30 days. During that period, you can cancel the deletion with the “Cancel deletion” button on your profile. Logging in again does not cancel the deletion.",
+                "“Delete permanently” (irreversible): your account is deleted immediately, after you confirm."
+              ]
+            }
+          ]
+        },
+        {
+          "title": "2. Without the app",
+          "blocks": [
+            {
+              "p": [
+                "Write to dpo{'@'}yadony.com with the subject “Account deletion”, if possible from the e-mail address linked to your account, and include your account's phone number.",
+                "We check that the request really comes from the account holder before deleting the account, and we reply within one month at most, as required by the GDPR.",
+                "You can also write to us by post: Yadony, 7 avenue Pablo Picasso, Appt 375, 94120 Fontenay-sous-Bois, France."
+              ]
+            }
+          ]
+        },
+        {
+          "title": "3. Before deletion",
+          "blocks": [
+            {
+              "ul": [
+                "If one of your shipments is being delivered and its payment is held in escrow, deletion is not possible until the delivery is confirmed.",
+                "As soon as you make the request, your open shipping requests and your active trips are cancelled. The senders concerned are refunded and notified.",
+                "Balance: the refundable part of your balance is refunded to you automatically, to the original payment method (card or mobile money). Bonuses and free credits are permanently lost. The app shows you these amounts before you confirm."
+              ]
+            }
+          ]
+        },
+        {
+          "title": "4. Data deleted",
+          "blocks": [
+            {
+              "p": [
+                "When your account is deleted, we delete:"
+              ],
+              "ul": [
+                "your profile identity: name (replaced by “Utilisateur supprimé”, “deleted user”), date of birth, city, address;",
+                "your login account: phone number and e-mail address;",
+                "your identity verification file on our servers, and its photos;",
+                "attachments sent to support;",
+                "your recipient address book;",
+                "your notification tokens."
+              ]
+            }
+          ]
+        },
+        {
+          "title": "5. Data kept",
+          "blocks": [
+            {
+              "p": [
+                "Some data is kept:"
+              ],
+              "ul": [
+                "the history of payments and transactions, for our legal and accounting obligations (up to 5 years, as stated in our privacy policy);",
+                "the security log, which cannot be modified, with personal data masked;",
+                "messages already exchanged remain visible to the people you talked to, with your name replaced by “Utilisateur supprimé” (“deleted user”);",
+                "identity verification data held by our provider (Didit) is kept according to its own retention period."
+              ]
+            },
+            {
+              "p": [
+                "To learn more about your data, how long it is kept and your rights, read our privacy policy."
+              ]
+            }
+          ]
+        }
+      ]
+    },
     "cookies": {
       "seo": {
         "title": "Cookie policy",
@@ -1245,6 +1333,7 @@
     "legalNotice": "Legal notice",
     "terms": "Terms of use",
     "privacy": "Privacy policy",
+    "deleteAccount": "Delete my account",
     "copyright": "© yadony. A matching service, not a carrier.",
     "legalTitle": "Legal",
     "cookiesPolicy": "Cookie policy",

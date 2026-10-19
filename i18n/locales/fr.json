@@ -1101,7 +1101,7 @@
               "ul": [
                 "Droit d'accès : obtenir une copie de toutes les données Yadony sur vous, via Paramètres → Mes données ou dpo{'@'}yadony.com",
                 "Droit de rectification : corriger vos données de profil (nom, e-mail, ville), directement dans votre profil dans l'application",
-                "Droit à l'effacement : supprimer votre compte et vos données de profil, dans l'application : onglet Moi, menu ☰, puis « Supprimer mon compte »",
+                "Droit à l'effacement : supprimer votre compte et vos données de profil, dans l'application : onglet Moi, menu ☰, puis « Supprimer mon compte ». Sans l'application : yadony.com/suppression-compte",
                 "Droit à la portabilité : recevoir vos données en format JSON ou CSV, sur demande à dpo{'@'}yadony.com",
                 "Droit d'opposition : vous opposer aux traitements fondés sur l'intérêt légitime, sur demande à dpo{'@'}yadony.com",
                 "Retrait du consentement : désactiver le marketing ou les analytics, via Paramètres → Confidentialité",
@@ -1210,6 +1210,94 @@
         }
       ]
     },
+    "suppressionCompte": {
+      "seo": {
+        "title": "Supprimer votre compte Yadony",
+        "description": "Comment supprimer votre compte Yadony et vos données, depuis l'application ou par e-mail : délais, données supprimées et données conservées."
+      },
+      "title": "Supprimer votre compte Yadony",
+      "intro": "Vous pouvez supprimer votre compte et vos données à tout moment, depuis l'application ou par e-mail.",
+      "privacyLink": "Consulter la politique de confidentialité",
+      "articles": [
+        {
+          "title": "1. Depuis l'application",
+          "blocks": [
+            {
+              "p": [
+                "Ouvrez l'onglet « Moi », touchez le bouton Menu (☰), puis « Supprimer mon compte ». Deux choix vous sont proposés :"
+              ],
+              "ul": [
+                "« Pause 30 jours » (réversible) : votre compte est supprimé définitivement au bout de 30 jours. Pendant ce délai, vous pouvez annuler la suppression avec le bouton « Annuler la suppression » de votre profil. Se reconnecter n'annule pas la suppression.",
+                "« Supprimer définitivement » (irréversible) : votre compte est supprimé immédiatement, après votre confirmation."
+              ]
+            }
+          ]
+        },
+        {
+          "title": "2. Sans l'application",
+          "blocks": [
+            {
+              "p": [
+                "Écrivez à dpo{'@'}yadony.com avec l'objet « Suppression de compte », si possible depuis l'adresse e-mail liée à votre compte, en indiquant le numéro de téléphone de votre compte.",
+                "Nous vérifions que la demande vient bien du titulaire du compte avant de le supprimer, et nous vous répondons dans un délai d'un mois au plus, comme le prévoit le RGPD.",
+                "Vous pouvez aussi nous écrire par courrier : Yadony, 7 avenue Pablo Picasso, Appt 375, 94120 Fontenay-sous-Bois, France."
+              ]
+            }
+          ]
+        },
+        {
+          "title": "3. Avant la suppression",
+          "blocks": [
+            {
+              "ul": [
+                "Si l'un de vos envois est en cours de livraison et que son paiement est bloqué en séquestre, la suppression est impossible jusqu'à la confirmation de la livraison.",
+                "Dès votre demande, vos demandes d'envoi ouvertes et vos trajets actifs sont annulés. Les expéditeurs concernés sont remboursés et prévenus.",
+                "Solde : la part remboursable de votre solde vous est remboursée automatiquement, sur le moyen de paiement d'origine (carte ou mobile money). Les bonus et crédits gratuits sont perdus définitivement. L'application vous affiche ces montants avant votre confirmation."
+              ]
+            }
+          ]
+        },
+        {
+          "title": "4. Données supprimées",
+          "blocks": [
+            {
+              "p": [
+                "À la suppression de votre compte, nous supprimons :"
+              ],
+              "ul": [
+                "votre identité de profil : nom (remplacé par « Utilisateur supprimé »), date de naissance, ville, adresse ;",
+                "votre compte de connexion : numéro de téléphone et adresse e-mail ;",
+                "votre dossier de vérification d'identité sur nos serveurs, et ses photos ;",
+                "les pièces jointes envoyées au support ;",
+                "votre carnet de destinataires ;",
+                "vos jetons de notification."
+              ]
+            }
+          ]
+        },
+        {
+          "title": "5. Données conservées",
+          "blocks": [
+            {
+              "p": [
+                "Certaines données sont conservées :"
+              ],
+              "ul": [
+                "l'historique des paiements et des transactions, pour nos obligations légales et comptables (jusqu'à 5 ans, comme l'indique notre politique de confidentialité) ;",
+                "le journal de sécurité, non modifiable, dont les données personnelles sont masquées ;",
+                "les messages déjà échangés restent visibles par vos interlocuteurs, avec votre nom remplacé par « Utilisateur supprimé » ;",
+                "les données de vérification d'identité détenues par notre prestataire (Didit) sont conservées selon sa propre durée de conservation."
+              ]
+            },
+            {
+              "p": [
+                "Pour en savoir plus sur vos données, leurs durées de conservation et vos droits, consultez notre politique de confidentialité."
+              ]
+            }
+          ]
+        }
+      ]
+    },
     "cookies": {
       "seo": {
         "title": "Politique cookies",
@@ -1245,6 +1333,7 @@
     "legalNotice": "Mentions légales",
     "terms": "Conditions générales d'utilisation",
     "privacy": "Politique de confidentialité",
+    "deleteAccount": "Supprimer mon compte",
     "copyright": "© yadony. Service de mise en relation, pas de transport.",
     "legalTitle": "Légal",
     "cookiesPolicy": "Politique cookies",

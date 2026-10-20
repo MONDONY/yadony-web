@@ -1,5 +1,13 @@
 import { describe, it, expect } from 'vitest'
-import { betaTesting, betaWhatsAppGroupUrl, siteUrl } from '@/lib/site'
+import {
+  appStoreLive,
+  appStoreUrl,
+  betaTesting,
+  betaWhatsAppGroupUrl,
+  playStoreLive,
+  playStoreUrl,
+  siteUrl,
+} from '@/lib/site'
 
 describe('constantes du site', () => {
   it('sert le site en HTTPS sans barre oblique finale', () => {
@@ -20,5 +28,19 @@ describe('constantes du site', () => {
 
   it('affiche le bandeau tant que la bêta dure', () => {
     expect(betaTesting).toBe(true)
+  })
+
+  /**
+   * L'app Android est publiée sur Google Play ; l'app iOS est encore en
+   * examen chez Apple. Les boutons du site suivent chacun leur drapeau.
+   */
+  it('publie le lien Google Play et garde l’App Store en attente', () => {
+    expect(playStoreLive).toBe(true)
+    expect(appStoreLive).toBe(false)
+  })
+
+  it('pointe vers les vraies fiches des stores', () => {
+    expect(playStoreUrl).toBe('https://play.google.com/store/apps/details?id=com.yadony.yadony')
+    expect(appStoreUrl).toBe('https://apps.apple.com/app/id6797821239')
   })
 })

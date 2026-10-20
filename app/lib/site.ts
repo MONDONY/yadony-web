@@ -2,13 +2,16 @@ export const siteName = 'Yadony'
 export const siteUrl = 'https://yadony.com'
 export const contactEmail = 'contact@yadony.com'
 
-// L'application n'est pas encore publiée : tant que ce drapeau est à false,
-// les boutons de téléchargement ouvrent une fenêtre « bientôt disponible »
-// au lieu de pointer vers des fiches store inexistantes. Passer à true (et
-// vérifier les deux URL) le jour de la publication.
-export const storesLive = false
-export const appStoreUrl = 'https://apps.apple.com/app/yadony/id0000000000'
-export const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.dony.app'
+// Chaque store a son propre drapeau : un bouton dont la fiche est publiée
+// pointe vers elle, l'autre ouvre une fenêtre « bientôt disponible » au lieu
+// d'un lien mort. L'app Android est en ligne sur Google Play depuis le
+// 2026-10-20 ; l'app iOS est encore en examen chez Apple. Passer appStoreLive
+// à true le jour où Apple publie la fiche (l'identifiant ci-dessous est déjà
+// le bon).
+export const playStoreLive = true
+export const appStoreLive = false
+export const appStoreUrl = 'https://apps.apple.com/app/id6797821239'
+export const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.yadony.yadony'
 
 // Phase de bêta test : un bandeau en haut du site invite les visiteurs à
 // rejoindre le groupe WhatsApp des testeurs. Passer betaTesting à false le

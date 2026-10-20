@@ -312,7 +312,7 @@
     "cgu": {
       "seo": {
         "title": "Conditions générales d'utilisation",
-        "description": "Les conditions générales d'utilisation de la plateforme Yadony : rôles, paiement sous séquestre, commission, litiges, données personnelles et mentions légales."
+        "description": "Les conditions générales d'utilisation de la plateforme Yadony : rôles, paiement sous séquestre, frais de service, litiges, données personnelles et mentions légales."
       },
       "title": "Conditions générales d'utilisation",
       "intro": "YADONY SAS (ci-après « Yadony ») édite une application mobile et web qui met en relation des voyageurs partant de France vers l'Afrique de l'Ouest avec des expéditeurs souhaitant envoyer des colis à leurs proches. Yadony sécurise ces échanges grâce à la vérification des identités, au blocage du paiement jusqu'à la livraison et à la traçabilité du colis à chaque étape. Les présentes Conditions Générales d'Utilisation (CGU) s'appliquent à toute utilisation de la plateforme. Toute inscription vaut acceptation de ces CGU. Si vous n'acceptez pas ces conditions, vous ne devez pas utiliser la plateforme.",
@@ -432,9 +432,26 @@
               ]
             },
             {
-              "sub": "Commission",
+              "sub": "Frais de service",
               "p": [
-                "Yadony prélève une commission de service sur chaque transaction, au taux en vigueur affiché avant le paiement. Elle est prélevée automatiquement. En cas de remboursement, la commission n'est jamais retenue : vous récupérez la totalité de ce que vous avez payé."
+                "Yadony prélève des frais de service sur chaque transaction. Ils sont payés par l'expéditeur, en plus du prix du voyageur : le voyageur reçoit en entier le prix qu'il a fixé. Les frais sont prélevés automatiquement.",
+                "Jusqu'au 19 novembre 2026 inclus, les frais sont calculés au taux en vigueur, affiché avant le paiement.",
+                "À compter du 20 novembre 2026, les frais sont calculés par paliers marginaux : chaque taux ne s'applique qu'à la part du prix du voyageur comprise dans sa tranche, comme pour l'impôt sur le revenu. Passer un seuil ne fait donc jamais changer le taux appliqué à l'ensemble du montant. Les taux sont alors les suivants :"
+              ],
+              "ul": [
+                "7 % sur la part du prix jusqu'à 100 €",
+                "6 % sur la part du prix comprise entre 100 € et 300 €",
+                "5 % sur la part du prix au-delà de 300 €"
+              ]
+            },
+            {
+              "p": [
+                "À compter de la même date, les frais ne sont jamais inférieurs à un minimum de 1 € (650 FCFA lorsque le prix est en francs CFA, XOF ou XAF). Exemples : pour un prix de voyageur de 150 €, les frais sont de 7 € pour les 100 premiers euros plus 3 € pour les 50 suivants, soit 10 € ; pour un prix de 5 €, ils sont de 1 €, le minimum.",
+                "Les frais de service sont les mêmes quel que soit le moyen de paiement (carte bancaire, Mobile Money, portefeuille Yadony ou espèces) et quelle que soit la devise du prix.",
+                "Le montant exact des frais, minimum compris, et le total à payer sont affichés avant toute validation.",
+                "Un code promo « commission offerte » supprime les frais : aucun frais n'est alors prélevé. Un autre code promo réduit les frais sans pouvoir les faire descendre sous le minimum. Un bon de parrainage réduit les frais après application du minimum.",
+                "Yadony peut modifier ces frais (taux, tranches ou minimum). Toute modification est annoncée au moins 30 jours avant son entrée en vigueur et ne s'applique pas aux offres, demandes et négociations déjà créées, qui gardent les frais affichés au moment de leur création.",
+                "En cas de remboursement, les frais de service ne sont jamais retenus : vous récupérez la totalité de ce que vous avez payé."
               ]
             },
             {
@@ -509,7 +526,7 @@
               "sub": "Ce que le badge apporte",
               "p": [
                 "Le badge GP Pro est affiché sur les trajets, le profil, la messagerie, l'affiche partageable et les offres du voyageur. Les expéditeurs peuvent filtrer les résultats de recherche pour n'afficher que les GP Pro. À critères égaux, un GP Pro est placé avant un autre voyageur dans les résultats de recherche.",
-                "Le badge n'apporte aucun avantage tarifaire : la commission de Yadony est la même pour tous. Il est indépendant de l'abonnement Yadony PRO (article 9).",
+                "Le badge n'apporte aucun avantage tarifaire : les frais de service de Yadony se calculent de la même façon pour tous. Il est indépendant de l'abonnement Yadony PRO (article 9).",
                 "Le badge n'est pas une garantie de Yadony sur la qualité du transport. Il indique que l'équipe Yadony a examiné le profil du voyageur."
               ]
             }
@@ -627,7 +644,7 @@
           "blocks": [
             {
               "p": [
-                "Il est interdit de publier de fausses informations, de contacter d'autres utilisateurs hors de la plateforme pour éviter de payer la commission, d'utiliser Yadony à des fins illicites ou de tenter de contourner les systèmes de sécurité.",
+                "Il est interdit de publier de fausses informations, de contacter d'autres utilisateurs hors de la plateforme pour éviter de payer les frais de service, d'utiliser Yadony à des fins illicites ou de tenter de contourner les systèmes de sécurité.",
                 "En cas de violation, Yadony peut supprimer votre contenu, suspendre ou fermer définitivement votre compte, et signaler les faits aux autorités compétentes."
               ]
             },

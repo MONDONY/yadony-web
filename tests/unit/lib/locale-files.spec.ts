@@ -88,9 +88,6 @@ const properNounPaths = [
   'footer.routeLabel',
   // L'adresse du siège social ne se traduit pas.
   'footer.company.line1',
-  // « Commission » s'écrit pareil dans les deux langues (sous-titre de
-  // l'article 7 des CGU).
-  'legal.cgu.articles[6].blocks[3].sub',
   // Refonte : prénoms des personnages, villes, montant d'exemple, noms
   // commerciaux des opérateurs de mobile money, adresse d'un lien de suivi.
   'landing.crossed.art.negotiation.sender',

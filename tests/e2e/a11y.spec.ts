@@ -4,6 +4,7 @@ import AxeBuilder from '@axe-core/playwright'
 const PAGES = [
   '/', '/comment-ca-marche', '/tarifs', '/securite', '/a-propos', '/contact', '/parrainage?code=ABOU1890',
   '/envoyer-colis', '/envoyer-colis/paris-dakar', '/devenir-voyageur', '/billets-avion', '/gp/paris-dakar', '/en',
+  '/suppression-compte', '/en/delete-account',
 ]
 
 for (const path of PAGES) {

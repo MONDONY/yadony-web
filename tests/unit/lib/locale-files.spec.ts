@@ -153,6 +153,11 @@ const markerExemptPaths = new Set([
   'journeys.screens.scan',
   'journeys.screens.trip-detail',
   'landing.hero.screensAlt[2]',
+  // Page de suppression de compte : le nom affiché à la place de celui d'un
+  // compte supprimé est le libellé français « Utilisateur supprimé », que la
+  // version anglaise cite tel quel, suivi de sa traduction.
+  'legal.suppressionCompte.articles[3].blocks[0].ul[0]',
+  'legal.suppressionCompte.articles[4].blocks[0].ul[2]',
   // « Yaoundé » garde son accent dans la version anglaise (nom propre).
   'corridorPages.pages.parisDouala.faq[0].question',
   'corridorPages.pages.parisDouala.faq[0].answer',

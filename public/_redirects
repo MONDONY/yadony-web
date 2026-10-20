@@ -27,6 +27,7 @@
 /siragbe/* https://prod.yadony.com/siragbe/:splat 301
 /api/* https://prod.yadony.com/api/:splat 308
 
-# Page de suppression de compte exigée par les fiches store, servie en
-# statique par le VPS.
-/legal/account-deletion https://prod.yadony.com/legal/account-deletion 301
+# Adresse de suppression de compte déclarée sur les fiches store (Google Play) :
+# elle mène à la page publique de ce site, qui explique comment supprimer son
+# compte avec ou sans l'app (app/pages/suppression-compte.vue).
+/legal/account-deletion /suppression-compte 301

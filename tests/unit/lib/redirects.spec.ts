@@ -22,8 +22,15 @@ describe('public/_redirects', () => {
     ['/demande/*', 'https://prod.yadony.com/demande/:splat'],
     ['/tracking/*', 'https://prod.yadony.com/tracking/:splat'],
     ['/siragbe/*', 'https://prod.yadony.com/siragbe/:splat'],
-    ['/legal/account-deletion', 'https://prod.yadony.com/legal/account-deletion'],
   ])('redirige %s vers le VPS en 301', (from, to) => {
+    expect(ruleFor(from)).toEqual([from, to, '301'])
+  })
+
+  it.each([
+    ['/legal/terms', '/cgu'],
+    ['/legal/privacy', '/confidentialite'],
+    ['/legal/account-deletion', '/suppression-compte'],
+  ])('redirige %s vers la page légale du site en 301', (from, to) => {
     expect(ruleFor(from)).toEqual([from, to, '301'])
   })
 

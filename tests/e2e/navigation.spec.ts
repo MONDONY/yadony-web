@@ -4,6 +4,7 @@ import { storesLive } from '../../app/lib/site'
 const PAGES = [
   '/', '/comment-ca-marche', '/tarifs', '/securite',
   '/a-propos', '/contact', '/mentions-legales', '/cgu', '/confidentialite',
+  '/suppression-compte', '/en/delete-account',
   '/envoyer-colis', '/envoyer-colis/paris-dakar', '/envoyer-colis/marseille-douala',
   '/devenir-voyageur', '/billets-avion', '/gp/paris-dakar',
   '/en', '/en/send-a-parcel', '/en/send-a-parcel/lyon-bamako', '/en/become-a-traveler', '/en/flight-deals',

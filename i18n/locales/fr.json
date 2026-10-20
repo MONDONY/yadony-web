@@ -435,7 +435,8 @@
               "sub": "Frais de service",
               "p": [
                 "Yadony prélève des frais de service sur chaque transaction. Ils sont payés par l'expéditeur, en plus du prix du voyageur : le voyageur reçoit en entier le prix qu'il a fixé. Les frais sont prélevés automatiquement.",
-                "Les frais sont calculés par paliers marginaux : chaque taux ne s'applique qu'à la part du prix du voyageur comprise dans sa tranche, comme pour l'impôt sur le revenu. Passer un seuil ne fait donc jamais changer le taux appliqué à l'ensemble du montant. À titre d'exemple, à compter du [DATE D'EFFET] :"
+                "Jusqu'au 19 novembre 2026 inclus, les frais sont calculés au taux en vigueur, affiché avant le paiement.",
+                "À compter du 20 novembre 2026, les frais sont calculés par paliers marginaux : chaque taux ne s'applique qu'à la part du prix du voyageur comprise dans sa tranche, comme pour l'impôt sur le revenu. Passer un seuil ne fait donc jamais changer le taux appliqué à l'ensemble du montant. Les taux sont alors les suivants :"
               ],
               "ul": [
                 "7 % sur la part du prix jusqu'à 100 €",
@@ -445,7 +446,7 @@
             },
             {
               "p": [
-                "Les frais ne sont jamais inférieurs à un minimum de 1 € (650 FCFA lorsque le prix est en francs CFA, XOF ou XAF). Exemples : pour un prix de voyageur de 150 €, les frais sont de 7 € pour les 100 premiers euros plus 3 € pour les 50 suivants, soit 10 € ; pour un prix de 5 €, ils sont de 1 €, le minimum.",
+                "À compter de la même date, les frais ne sont jamais inférieurs à un minimum de 1 € (650 FCFA lorsque le prix est en francs CFA, XOF ou XAF). Exemples : pour un prix de voyageur de 150 €, les frais sont de 7 € pour les 100 premiers euros plus 3 € pour les 50 suivants, soit 10 € ; pour un prix de 5 €, ils sont de 1 €, le minimum.",
                 "Les frais de service sont les mêmes quel que soit le moyen de paiement (carte bancaire, Mobile Money, portefeuille Yadony ou espèces) et quelle que soit la devise du prix.",
                 "Le montant exact des frais, minimum compris, et le total à payer sont affichés avant toute validation.",
                 "Un code promo « commission offerte » supprime les frais : aucun frais n'est alors prélevé. Un autre code promo réduit les frais sans pouvoir les faire descendre sous le minimum. Un bon de parrainage réduit les frais après application du minimum.",

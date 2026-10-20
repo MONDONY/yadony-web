@@ -435,7 +435,8 @@
               "sub": "Service fees",
               "p": [
                 "Yadony charges a service fee on each transaction. It is paid by the sender, on top of the traveller's price: the traveller receives the full price they set. The fee is deducted automatically.",
-                "The fee is calculated in marginal tiers: each rate applies only to the part of the traveller's price that falls within its tier, as with income tax. Crossing a threshold therefore never changes the rate applied to the whole amount. As an example, from [EFFECTIVE DATE]:"
+                "Until 19 November 2026 inclusive, the fee is calculated at the current rate, shown before payment.",
+                "From 20 November 2026, the fee is calculated in marginal tiers: each rate applies only to the part of the traveller's price that falls within its tier, as with income tax. Crossing a threshold therefore never changes the rate applied to the whole amount. The rates are then as follows:"
               ],
               "ul": [
                 "7% on the part of the price up to 100 €",
@@ -445,7 +446,7 @@
             },
             {
               "p": [
-                "The fee is never below a minimum of 1 € (650 FCFA when the price is in CFA francs, XOF or XAF). Examples: for a traveller price of 150 €, the fee is 7 € for the first 100 euros plus 3 € for the next 50, so 10 €; for a price of 5 €, it is 1 €, the minimum.",
+                "From the same date, the fee is never below a minimum of 1 € (650 FCFA when the price is in CFA francs, XOF or XAF). Examples: for a traveller price of 150 €, the fee is 7 € for the first 100 euros plus 3 € for the next 50, so 10 €; for a price of 5 €, it is 1 €, the minimum.",
                 "The service fee is the same whichever payment method you use (bank card, Mobile Money, Yadony wallet or cash) and whichever currency the price is in.",
                 "The exact amount of the fee, minimum included, and the total to pay are shown before you confirm anything.",
                 "A \"free commission\" promo code removes the fee: nothing is then charged. Any other promo code reduces the fee but cannot take it below the minimum. A referral voucher reduces the fee after the minimum has been applied.",

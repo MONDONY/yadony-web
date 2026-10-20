@@ -1,5 +1,5 @@
 import { test, expect } from './fixtures'
-import { storesLive } from '../../app/lib/site'
+import { appStoreLive, playStoreLive, playStoreUrl } from '../../app/lib/site'
 
 const PAGES = [
   '/', '/comment-ca-marche', '/tarifs', '/securite',
@@ -35,17 +35,20 @@ test('la navigation du header mène aux bonnes pages', async ({ page, isMobile }
   await expect(page).toHaveURL('/tarifs')
 })
 
-test('les boutons de stores se comportent selon la disponibilité de l’app', async ({ page }) => {
+test('chaque bouton de store suit la disponibilité de sa fiche', async ({ page }) => {
   await page.goto('/')
-  if (storesLive) {
-    // App publiée : de vrais liens vers les fiches officielles.
-    const appStore = page.getByRole('link', { name: /App Store/i }).first()
+  if (playStoreLive) {
+    // Fiche Google Play publiée : un vrai lien, ouvert dans un nouvel onglet.
     const playStore = page.getByRole('link', { name: /Google Play/i }).first()
+    await expect(playStore).toHaveAttribute('href', playStoreUrl)
+    await expect(playStore).toHaveAttribute('target', '_blank')
+  }
+  if (appStoreLive) {
+    const appStore = page.getByRole('link', { name: /App Store/i }).first()
     await expect(appStore).toHaveAttribute('href', /apps\.apple\.com/)
-    await expect(playStore).toHaveAttribute('href', /play\.google\.com/)
   } else {
-    // App pas encore publiée : aucun lien mort, le clic ouvre la fenêtre
-    // « bientôt disponible », refermable au clavier (Échap).
+    // Fiche App Store pas encore publiée : aucun lien mort, le clic ouvre la
+    // fenêtre « bientôt disponible », refermable au clavier (Échap).
     await expect(page.getByRole('link', { name: /App Store/i })).toHaveCount(0)
     // Un clic reçu avant l'hydratation de Vue est perdu (le HTML statique
     // n'a pas encore d'écouteur) : le test échouait par intermittence sur une
@@ -55,7 +58,10 @@ test('les boutons de stores se comportent selon la disponibilité de l’app', a
       await page.getByRole('button', { name: /App Store/i }).first().click()
       await expect(dialog).toBeVisible({ timeout: 1000 })
     }).toPass({ timeout: 10000 })
-    await expect(dialog).toContainText(/App Store et Google Play/i)
+    await expect(dialog).toContainText(/Bientôt sur l'App Store/i)
+    if (playStoreLive) {
+      await expect(dialog.getByRole('link', { name: /Google Play/i })).toHaveAttribute('href', playStoreUrl)
+    }
     await page.keyboard.press('Escape')
     await expect(page.locator('dialog[open]')).toHaveCount(0)
   }

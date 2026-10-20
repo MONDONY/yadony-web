@@ -1408,10 +1408,11 @@
   },
   "stores": {
     "comingSoon": {
-      "kicker": "Tout bientôt",
-      "title": "L'application arrive",
-      "text": "Yadony sera très prochainement disponible sur l'App Store et Google Play. Revenez dans quelques jours. Le site, lui, est déjà là.",
-      "close": "Compris"
+      "kicker": "Sur iPhone",
+      "title": "Bientôt sur l'App Store",
+      "text": "L'application iOS arrive très vite. Elle est déjà disponible sur Google Play.",
+      "close": "Compris",
+      "playStore": "Voir sur Google Play"
     }
   },
   "referral": {

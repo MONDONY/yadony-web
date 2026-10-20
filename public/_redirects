@@ -31,3 +31,8 @@
 # elle mène à la page publique de ce site, qui explique comment supprimer son
 # compte avec ou sans l'app (app/pages/suppression-compte.vue).
 /legal/account-deletion /suppression-compte 301
+
+# Lien court vers la fiche Google Play (affiches, SMS, réseaux sociaux) :
+# yadony.com/android. 302 pour pouvoir changer de cible sans cache tenace
+# chez les navigateurs.
+/android https://play.google.com/store/apps/details?id=com.yadony.yadony 302

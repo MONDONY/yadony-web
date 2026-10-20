@@ -285,7 +285,7 @@
       "sections": {
         "editor": {
           "title": "Site publisher",
-          "text": "The yadony.com website is published by YADONY SAS, a simplified joint-stock company whose registration is in progress, with a share capital of €10, whose registered office is at 7 avenue Pablo Picasso, Appartement 375, 94120 Fontenay-sous-Bois, France. SIREN: 108 733 510, RCS Créteil 108 733 510. Contact: contact{'@'}yadony.com. DPO: dpo{'@'}yadony.com."
+          "text": "The yadony.com website is published by YADONY SAS, a simplified joint-stock company with a share capital of €10, whose registered office is at 7 avenue Pablo Picasso, Appartement 375, 94120 Fontenay-sous-Bois, France. SIREN: 108 733 510, RCS Créteil 108 733 510. Contact: contact{'@'}yadony.com. DPO: dpo{'@'}yadony.com."
         },
         "publication": {
           "title": "Publication director",
@@ -413,13 +413,14 @@
               ],
               "ul": [
                 "Bank card (Visa, Mastercard), Apple Pay or Google Pay via Stripe",
-                "Mobile Money: Wave and Orange Money",
+                "Mobile Money: Wave, Orange Money and other operators depending on the country",
+                "Cash, handed to the traveller in person when the parcel is handed over, if the traveller accepts it",
                 "Yadony wallet (balance top-up in the application)"
               ]
             },
             {
               "p": [
-                "Any payment made outside the platform is prohibited. The messaging system automatically blocks attempts to exchange contact details to bypass Yadony.",
+                "Except for cash agreed in the application and handed to the traveller when the parcel is handed over, any payment made outside the platform is prohibited. The messaging system automatically blocks attempts to exchange contact details to bypass Yadony.",
                 "Biometric validation (fingerprint, Face ID or PIN code) is optional before any payment."
               ]
             },
@@ -427,6 +428,7 @@
               "sub": "Money held in escrow",
               "p": [
                 "As soon as you pay, the money is immediately held by Stripe. No one can touch it before delivery is confirmed.",
+                "With cash, the money passes from hand to hand: this hold does not apply.",
                 "Delivery is confirmed by the recipient: they enter a 6-digit code received by SMS on the tracking page. The traveller is paid within the following 24 hours.",
                 "If the recipient does not confirm within 48 hours, the Yadony team can release the payment manually, only after a check. That action is logged. An honest traveller never waits indefinitely."
               ]
@@ -434,7 +436,7 @@
             {
               "sub": "Service fees",
               "p": [
-                "Yadony charges a service fee on each transaction. It is paid by the sender, on top of the traveller's price: the traveller receives the full price they set. The fee is deducted automatically.",
+                "Yadony charges a service fee on each transaction. It is paid by the sender, on top of the traveller's price: the traveller receives the full price they set. The fee is deducted automatically. All fee amounts shown in these Terms and in the application include all taxes (VAT included).",
                 "Until 19 November 2026 inclusive, the fee is calculated at the current rate, shown before payment.",
                 "From 20 November 2026, the fee is calculated in marginal tiers: each rate applies only to the part of the traveller's price that falls within its tier, as with income tax. Crossing a threshold therefore never changes the rate applied to the whole amount. The rates are then as follows:"
               ],
@@ -446,10 +448,11 @@
             },
             {
               "p": [
-                "From the same date, the fee is never below a minimum of 1 € (650 FCFA when the price is in CFA francs, XOF or XAF). Examples: for a traveller price of 150 €, the fee is 7 € for the first 100 euros plus 3 € for the next 50, so 10 €; for a price of 5 €, it is 1 €, the minimum.",
+                "From the same date, the fee is never below a minimum of 1 € (650 FCFA when the price is in CFA francs, XOF or XAF; in another currency, the equivalent amount shown in the application). For a price in a currency other than the euro, the tier thresholds are converted from the euro at a fixed rate: 655.957 FCFA for 1 € for CFA francs, and a reference rate set by Yadony for other currencies. Examples: for a traveller price of 150 €, the fee is 7 € for the first 100 euros plus 3 € for the next 50, so 10 €; for a price of 5 €, it is 1 €, the minimum.",
                 "The service fee is the same whichever payment method you use (bank card, Mobile Money, Yadony wallet or cash) and whichever currency the price is in.",
+                "With cash, the sender hands the traveller the total, service fee included. Yadony then deducts the fee from the traveller's Yadony wallet, or from their service fee card, when they accept the parcel.",
                 "The exact amount of the fee, minimum included, and the total to pay are shown before you confirm anything.",
-                "A \"free commission\" promo code removes the fee: nothing is then charged. Any other promo code reduces the fee but cannot take it below the minimum. A referral voucher reduces the fee after the minimum has been applied.",
+                "A \"free service fee\" promo code removes the fee: nothing is then charged. Any other promo code reduces the fee but cannot take it below the minimum. A referral voucher reduces the fee after the minimum has been applied.",
                 "Yadony may change this fee (rates, tiers or minimum). Any change is announced at least 30 days before it takes effect and does not apply to offers, requests and negotiations already created, which keep the fee shown when they were created.",
                 "In the event of a refund, the service fee is never kept: you get back everything you paid."
               ]
@@ -686,7 +689,7 @@
           "blocks": [
             {
               "p": [
-                "These Terms are governed by French law. In the event of a dispute not resolved amicably, the courts of Paris have jurisdiction. Users residing in Europe can also use the European online dispute resolution platform: https://ec.europa.eu/consumers/odr."
+                "These Terms are governed by French law. In the event of a dispute not resolved amicably, a consumer may bring proceedings, at their choice, before any court having territorial jurisdiction under the French Code of Civil Procedure or before the court of the place where they lived when the contract was concluded or when the harmful event occurred. Between Yadony and a user acting in a professional capacity, the courts of Paris have exclusive jurisdiction."
               ]
             }
           ]
@@ -699,7 +702,7 @@
                 "The publisher's legal information:"
               ],
               "ul": [
-                "Company: YADONY SAS (registration in progress)",
+                "Company: YADONY SAS",
                 "Form: simplified joint-stock company (SAS)",
                 "Share capital: €10",
                 "Registered office: 7 avenue Pablo Picasso, Appartement 375, 94120 Fontenay-sous-Bois, France",

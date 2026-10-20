@@ -285,7 +285,7 @@
       "sections": {
         "editor": {
           "title": "Éditeur du site",
-          "text": "Le site yadony.com est édité par YADONY SAS, société par actions simplifiée en cours d'immatriculation au capital de 10 €, dont le siège social est situé 7 avenue Pablo Picasso, Appartement 375, 94120 Fontenay-sous-Bois, France. SIREN : 108 733 510, RCS Créteil 108 733 510. Contact : contact{'@'}yadony.com. DPO : dpo{'@'}yadony.com."
+          "text": "Le site yadony.com est édité par YADONY SAS, société par actions simplifiée au capital de 10 €, dont le siège social est situé 7 avenue Pablo Picasso, Appartement 375, 94120 Fontenay-sous-Bois, France. SIREN : 108 733 510, RCS Créteil 108 733 510. Contact : contact{'@'}yadony.com. DPO : dpo{'@'}yadony.com."
         },
         "publication": {
           "title": "Directeur de la publication",
@@ -413,13 +413,14 @@
               ],
               "ul": [
                 "Carte bancaire (Visa, Mastercard), Apple Pay ou Google Pay via Stripe",
-                "Mobile Money : Wave et Orange Money",
+                "Mobile Money : Wave, Orange Money et autres opérateurs selon le pays",
+                "Espèces, remises en main propre au voyageur lors de la remise du colis, si le voyageur les accepte",
                 "Portefeuille Yadony (solde rechargeable dans l'application)"
               ]
             },
             {
               "p": [
-                "Tout paiement effectué en dehors de la plateforme est interdit. La messagerie bloque automatiquement les tentatives d'échange de coordonnées pour contourner Yadony.",
+                "À l'exception des espèces convenues dans l'application et remises au voyageur lors de la remise du colis, tout paiement effectué en dehors de la plateforme est interdit. La messagerie bloque automatiquement les tentatives d'échange de coordonnées pour contourner Yadony.",
                 "Une validation biométrique (empreinte, Face ID ou code PIN) est optionnelle avant tout paiement."
               ]
             },
@@ -427,6 +428,7 @@
               "sub": "L'argent bloqué (séquestre)",
               "p": [
                 "Dès votre paiement, l'argent est immédiatement bloqué chez Stripe. Personne ne peut y toucher avant la confirmation de livraison.",
+                "En espèces, l'argent passe de main à main : ce blocage ne s'applique pas.",
                 "La livraison est confirmée par le destinataire : il saisit un code à 6 chiffres reçu par SMS sur la page de suivi. Le voyageur est payé dans les 24 heures suivantes.",
                 "Si le destinataire ne confirme pas sous 48 heures, l'équipe Yadony peut débloquer le paiement manuellement, uniquement après une vérification. Cette action est tracée. Un voyageur honnête n'attend jamais indéfiniment."
               ]
@@ -434,7 +436,7 @@
             {
               "sub": "Frais de service",
               "p": [
-                "Yadony prélève des frais de service sur chaque transaction. Ils sont payés par l'expéditeur, en plus du prix du voyageur : le voyageur reçoit en entier le prix qu'il a fixé. Les frais sont prélevés automatiquement.",
+                "Yadony prélève des frais de service sur chaque transaction. Ils sont payés par l'expéditeur, en plus du prix du voyageur : le voyageur reçoit en entier le prix qu'il a fixé. Les frais sont prélevés automatiquement. Tous les montants de frais indiqués dans ces CGU et dans l'application sont toutes taxes comprises (TTC).",
                 "Jusqu'au 19 novembre 2026 inclus, les frais sont calculés au taux en vigueur, affiché avant le paiement.",
                 "À compter du 20 novembre 2026, les frais sont calculés par paliers marginaux : chaque taux ne s'applique qu'à la part du prix du voyageur comprise dans sa tranche, comme pour l'impôt sur le revenu. Passer un seuil ne fait donc jamais changer le taux appliqué à l'ensemble du montant. Les taux sont alors les suivants :"
               ],
@@ -446,10 +448,11 @@
             },
             {
               "p": [
-                "À compter de la même date, les frais ne sont jamais inférieurs à un minimum de 1 € (650 FCFA lorsque le prix est en francs CFA, XOF ou XAF). Exemples : pour un prix de voyageur de 150 €, les frais sont de 7 € pour les 100 premiers euros plus 3 € pour les 50 suivants, soit 10 € ; pour un prix de 5 €, ils sont de 1 €, le minimum.",
+                "À compter de la même date, les frais ne sont jamais inférieurs à un minimum de 1 € (650 FCFA lorsque le prix est en francs CFA, XOF ou XAF ; dans une autre devise, le montant équivalent affiché dans l'application). Pour un prix dans une autre devise que l'euro, les seuils des tranches sont convertis depuis l'euro à une parité fixe : 655,957 FCFA pour 1 € pour les francs CFA, et une parité de référence fixée par Yadony pour les autres devises. Exemples : pour un prix de voyageur de 150 €, les frais sont de 7 € pour les 100 premiers euros plus 3 € pour les 50 suivants, soit 10 € ; pour un prix de 5 €, ils sont de 1 €, le minimum.",
                 "Les frais de service sont les mêmes quel que soit le moyen de paiement (carte bancaire, Mobile Money, portefeuille Yadony ou espèces) et quelle que soit la devise du prix.",
+                "En espèces, l'expéditeur remet au voyageur le total, frais de service compris. Yadony prélève alors les frais sur le portefeuille Yadony du voyageur, ou sur sa carte des frais de service, quand il accepte le colis.",
                 "Le montant exact des frais, minimum compris, et le total à payer sont affichés avant toute validation.",
-                "Un code promo « commission offerte » supprime les frais : aucun frais n'est alors prélevé. Un autre code promo réduit les frais sans pouvoir les faire descendre sous le minimum. Un bon de parrainage réduit les frais après application du minimum.",
+                "Un code promo « frais de service offerts » supprime les frais : aucun frais n'est alors prélevé. Un autre code promo réduit les frais sans pouvoir les faire descendre sous le minimum. Un bon de parrainage réduit les frais après application du minimum.",
                 "Yadony peut modifier ces frais (taux, tranches ou minimum). Toute modification est annoncée au moins 30 jours avant son entrée en vigueur et ne s'applique pas aux offres, demandes et négociations déjà créées, qui gardent les frais affichés au moment de leur création.",
                 "En cas de remboursement, les frais de service ne sont jamais retenus : vous récupérez la totalité de ce que vous avez payé."
               ]
@@ -686,7 +689,7 @@
           "blocks": [
             {
               "p": [
-                "Ces CGU sont soumises au droit français. En cas de litige non résolu à l'amiable, les tribunaux de Paris sont compétents. Les utilisateurs résidant en Europe peuvent aussi utiliser la plateforme européenne de règlement des litiges : https://ec.europa.eu/consumers/odr."
+                "Ces CGU sont soumises au droit français. En cas de litige non résolu à l'amiable, le consommateur peut saisir, à son choix, l'une des juridictions territorialement compétentes en vertu du code de procédure civile ou la juridiction du lieu où il demeurait au moment de la conclusion du contrat ou de la survenance du fait dommageable. Entre Yadony et un utilisateur agissant à titre professionnel, les tribunaux de Paris sont seuls compétents."
               ]
             }
           ]
@@ -699,7 +702,7 @@
                 "Les informations légales de l'éditeur :"
               ],
               "ul": [
-                "Société : YADONY SAS (en cours d'immatriculation)",
+                "Société : YADONY SAS",
                 "Forme : Société par Actions Simplifiée",
                 "Capital : 10 €",
                 "Siège : 7 avenue Pablo Picasso, Appartement 375, 94120 Fontenay-sous-Bois, France",

@@ -29,9 +29,12 @@ afterEach(() => {
 const playLabel = fr.home.hero.playStore
 const appLabel = fr.home.hero.appStore
 
+// Android publié, iOS encore en examen.
+const playOnly = { appStoreLive: false, playStoreLive: true }
+
 describe('StoreBadges', () => {
   it('pointe le bouton Google Play vers la fiche publiée, dans un nouvel onglet', async () => {
-    const wrapper = await mountBadges()
+    const wrapper = await mountBadges(playOnly)
     const play = wrapper.findAll('a').find((a) => a.text().includes(playLabel))
     expect(play?.attributes('href')).toBe('https://play.google.com/store/apps/details?id=com.yadony.yadony')
     expect(play?.attributes('href')).toBe(site.playStoreUrl)
@@ -40,7 +43,7 @@ describe('StoreBadges', () => {
   })
 
   it('garde l’App Store en bouton qui ouvre la fenêtre « bientôt disponible »', async () => {
-    const wrapper = await mountBadges()
+    const wrapper = await mountBadges(playOnly)
     expect(wrapper.findAll('a').some((a) => a.text().includes(appLabel))).toBe(false)
     const dialog = wrapper.find('dialog')
     expect(dialog.attributes('aria-label')).toBe(fr.stores.comingSoon.title)
@@ -53,7 +56,7 @@ describe('StoreBadges', () => {
   })
 
   it('propose Google Play depuis la fenêtre et se referme', async () => {
-    const wrapper = await mountBadges()
+    const wrapper = await mountBadges(playOnly)
     const dialog = wrapper.find('dialog')
     ;(dialog.element as HTMLDialogElement).showModal()
 
@@ -66,7 +69,7 @@ describe('StoreBadges', () => {
   })
 
   it('se referme au clic sur l’arrière-plan, pas sur le contenu', async () => {
-    const wrapper = await mountBadges()
+    const wrapper = await mountBadges(playOnly)
     const dialog = wrapper.find('dialog')
     ;(dialog.element as HTMLDialogElement).showModal()
 
@@ -77,7 +80,7 @@ describe('StoreBadges', () => {
   })
 
   it('traduit la fenêtre en anglais', async () => {
-    const wrapper = await mountBadges({}, 'en')
+    const wrapper = await mountBadges(playOnly, 'en')
     const dialog = wrapper.find('dialog')
     expect(dialog.text()).toContain(en.stores.comingSoon.title)
     expect(dialog.text()).toContain(en.stores.comingSoon.text)
@@ -96,6 +99,25 @@ describe('StoreBadges', () => {
     const dialog = wrapper.find('dialog')
     await wrapper.findAll('button').find((b) => b.text() === playLabel)?.trigger('click')
     expect(dialog.attributes('open')).toBeDefined()
+  })
+
+  it('annonce la sortie sur les deux stores quand aucune fiche n’est publiée', async () => {
+    const wrapper = await mountBadges({ appStoreLive: false, playStoreLive: false })
+    const dialog = wrapper.find('dialog')
+    expect(dialog.attributes('aria-label')).toBe(fr.stores.comingSoonAll.title)
+    expect(dialog.text()).toContain(fr.stores.comingSoonAll.text)
+    expect(dialog.text()).not.toContain(fr.stores.comingSoon.text)
+    // Aucun renvoi vers une fiche Google Play masquée.
+    expect(dialog.find('a').exists()).toBe(false)
+    expect(dialog.text()).not.toContain(fr.stores.comingSoon.playStore)
+  })
+
+  it('traduit l’annonce commune en anglais', async () => {
+    const wrapper = await mountBadges({ appStoreLive: false, playStoreLive: false }, 'en')
+    const dialog = wrapper.find('dialog')
+    expect(dialog.text()).toContain(en.stores.comingSoonAll.title)
+    expect(dialog.text()).toContain(en.stores.comingSoonAll.text)
+    expect(dialog.text()).toContain(en.stores.comingSoonAll.close)
   })
 
   it('passe aux variantes sombres sur fond foncé', async () => {

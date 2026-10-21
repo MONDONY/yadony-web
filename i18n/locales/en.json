@@ -1413,6 +1413,12 @@
       "text": "The iOS app is on its way. It is already available on Google Play.",
       "close": "Got it",
       "playStore": "View on Google Play"
+    },
+    "comingSoonAll": {
+      "kicker": "Launch",
+      "title": "Coming soon",
+      "text": "The Yadony app is coming very soon to the App Store and Google Play.",
+      "close": "Got it"
     }
   },
   "referral": {

@@ -42,6 +42,9 @@ test('chaque bouton de store suit la disponibilité de sa fiche', async ({ page 
     const playStore = page.getByRole('link', { name: /Google Play/i }).first()
     await expect(playStore).toHaveAttribute('href', playStoreUrl)
     await expect(playStore).toHaveAttribute('target', '_blank')
+  } else {
+    // Fiche Google Play masquée : aucun lien vers elle.
+    await expect(page.getByRole('link', { name: /Google Play/i })).toHaveCount(0)
   }
   if (appStoreLive) {
     const appStore = page.getByRole('link', { name: /App Store/i }).first()
@@ -58,9 +61,15 @@ test('chaque bouton de store suit la disponibilité de sa fiche', async ({ page 
       await page.getByRole('button', { name: /App Store/i }).first().click()
       await expect(dialog).toBeVisible({ timeout: 1000 })
     }).toPass({ timeout: 10000 })
-    await expect(dialog).toContainText(/Bientôt sur l'App Store/i)
     if (playStoreLive) {
+      // Seul l'App Store est en attente : la fenêtre renvoie vers Google Play.
+      await expect(dialog).toContainText(/Bientôt sur l'App Store/i)
       await expect(dialog.getByRole('link', { name: /Google Play/i })).toHaveAttribute('href', playStoreUrl)
+    } else {
+      // Sortie commune : la fenêtre annonce les deux stores, sans lien.
+      await expect(dialog).toContainText(/Bientôt disponible/i)
+      await expect(dialog).toContainText(/App Store et Google Play/i)
+      await expect(dialog.getByRole('link')).toHaveCount(0)
     }
     await page.keyboard.press('Escape')
     await expect(page.locator('dialog[open]')).toHaveCount(0)

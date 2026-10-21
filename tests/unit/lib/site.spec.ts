@@ -31,11 +31,11 @@ describe('constantes du site', () => {
   })
 
   /**
-   * L'app Android est publiée sur Google Play ; l'app iOS est encore en
-   * examen chez Apple. Les boutons du site suivent chacun leur drapeau.
+   * Sortie commune : la fiche Google Play est masquée jusqu'à la validation
+   * de l'app iOS par Apple, les deux boutons ouvrent la fenêtre « bientôt ».
    */
-  it('publie le lien Google Play et garde l’App Store en attente', () => {
-    expect(playStoreLive).toBe(true)
+  it('garde les deux stores en attente jusqu’à la sortie commune', () => {
+    expect(playStoreLive).toBe(false)
     expect(appStoreLive).toBe(false)
   })
 

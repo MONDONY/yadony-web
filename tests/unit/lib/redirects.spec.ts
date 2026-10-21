@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { describe, expect, it } from 'vitest'
-import { playStoreUrl } from '@/lib/site'
+import { playStoreLive } from '@/lib/site'
 
 // Les liens partagés par l'app mobile (affiche d'un trajet, demande d'envoi,
 // suivi d'un colis) pointent sur yadony.com, servi par ce site. Le VPS rend
@@ -50,8 +50,9 @@ describe('public/_redirects', () => {
     expect(ruleFor('/api/*')).toEqual(['/api/*', 'https://prod.yadony.com/api/:splat', '308'])
   })
 
-  it('raccourcit /android vers la fiche Google Play (302)', () => {
-    expect(ruleFor('/android')).toEqual(['/android', playStoreUrl, '302'])
+  it('mène /android vers l’accueil tant que la fiche Google Play est masquée (302)', () => {
+    expect(playStoreLive).toBe(false)
+    expect(ruleFor('/android')).toEqual(['/android', '/', '302'])
   })
 
   it('ne laisse plus pro.yadony.com que sur les chemins du portail pro', () => {

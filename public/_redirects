@@ -34,5 +34,7 @@
 
 # Lien court vers la fiche Google Play (affiches, SMS, réseaux sociaux) :
 # yadony.com/android. 302 pour pouvoir changer de cible sans cache tenace
-# chez les navigateurs.
-/android https://play.google.com/store/apps/details?id=com.yadony.yadony 302
+# chez les navigateurs. Fiche masquée jusqu'à la sortie commune avec l'App
+# Store (playStoreLive, app/lib/site.ts) : le lien mène à l'accueil. Le jour
+# de la sortie, cible https://play.google.com/store/apps/details?id=com.yadony.yadony
+/android / 302

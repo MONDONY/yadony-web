@@ -4,11 +4,13 @@ export const contactEmail = 'contact@yadony.com'
 
 // Chaque store a son propre drapeau : un bouton dont la fiche est publiée
 // pointe vers elle, l'autre ouvre une fenêtre « bientôt disponible » au lieu
-// d'un lien mort. L'app Android est en ligne sur Google Play depuis le
-// 2026-10-20 ; l'app iOS est encore en examen chez Apple. Passer appStoreLive
-// à true le jour où Apple publie la fiche (l'identifiant ci-dessous est déjà
-// le bon).
-export const playStoreLive = true
+// d'un lien mort. L'app Android a été publiée sur Google Play le 2026-10-20,
+// puis masquée le 2026-10-21 : la sortie officielle se fera sur les deux
+// stores en même temps, une fois l'app iOS validée par Apple. Ce jour-là,
+// passer les deux drapeaux à true et remettre la redirection /android vers
+// Google Play (public/_redirects). Les identifiants ci-dessous sont déjà les
+// bons.
+export const playStoreLive = false
 export const appStoreLive = false
 export const appStoreUrl = 'https://apps.apple.com/app/id6797821239'
 export const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.yadony.yadony'

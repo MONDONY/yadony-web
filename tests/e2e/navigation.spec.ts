@@ -42,6 +42,9 @@ test('chaque bouton de store suit la disponibilité de sa fiche', async ({ page 
     const playStore = page.getByRole('link', { name: /Google Play/i }).first()
     await expect(playStore).toHaveAttribute('href', playStoreUrl)
     await expect(playStore).toHaveAttribute('target', '_blank')
+  } else {
+    // Fiche Google Play masquée : aucun lien vers elle.
+    await expect(page.getByRole('link', { name: /Google Play/i })).toHaveCount(0)
   }
   if (appStoreLive) {
     const appStore = page.getByRole('link', { name: /App Store/i }).first()

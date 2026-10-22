@@ -49,7 +49,7 @@ export default defineNuxtConfig({
     autoLastmod: false,
     // /classement : page temporaire du concours, en noindex (prénoms affichés).
     // /parrainage : page d'invitation du lien /r/{code}, en noindex.
-    exclude: ['/404', '/classement', '/en/leaderboard', '/parrainage', '/en/referral'],
+    exclude: ['/404', '/classement', '/en/leaderboard', '/parrainage', '/en/referral', '/ouvrir', '/en/open'],
     // Le module @nuxtjs/sitemap scinde automatiquement le sitemap en un
     // sitemap-index avec un fichier par langue dès qu'il détecte @nuxtjs/i18n
     // avec plusieurs locales. On force un seul fichier `sitemap.xml` listant
@@ -88,7 +88,7 @@ export default defineNuxtConfig({
       // parrainage partagé par l'app (via /r/{code}, cf. public/_redirects),
       // elle doit être listée ici pour être générée.
       // /classement n'est lié depuis aucune page : partagé aux testeurs par lien.
-      routes: ['/', '/parrainage', '/en/referral', '/classement', '/en/leaderboard'],
+      routes: ['/', '/parrainage', '/en/referral', '/ouvrir', '/en/open', '/classement', '/en/leaderboard'],
       failOnError: true,
     },
   },

@@ -1421,6 +1421,17 @@
       "close": "Compris"
     }
   },
+  "openLink": {
+    "seo": {
+      "title": "Ouvrir Yadony",
+      "description": "Ouvrez cette notification dans l'application Yadony."
+    },
+    "title": "Ouvrez cette notification dans l'app",
+    "lead": "Ce lien s'ouvre directement dans l'application Yadony. Si rien ne se passe, touchez le bouton ci-dessous.",
+    "openApp": "Ouvrir dans l'app Yadony",
+    "install": "Pas encore l'app ? Installez-la, puis rouvrez le lien depuis votre e-mail.",
+    "invalid": "Ce lien n'est pas valide. Ouvrez l'application Yadony pour retrouver vos notifications."
+  },
   "referral": {
     "seo": {
       "title": "Invitation Yadony",

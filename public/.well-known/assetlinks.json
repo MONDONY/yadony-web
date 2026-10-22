@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.yadony.yadony",
+      "sha256_cert_fingerprints": [
+        "F7:97:65:B4:20:22:51:05:22:60:09:10:D5:BB:67:7D:AF:C4:B1:69:DB:EA:1E:5B:E9:A9:61:4C:B6:EB:FF:90"
+      ]
+    }
+  }
+]

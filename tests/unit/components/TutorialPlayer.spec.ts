@@ -5,6 +5,7 @@ import { en, fr } from '../helpers/messages'
 import TutorialPlayer from '@/components/tutorials/TutorialPlayer.vue'
 import TutorialCard from '@/components/tutorials/TutorialCard.vue'
 import StoreBadges from '@/components/StoreBadges.vue'
+import TutorialPath from '@/components/tutorials/TutorialPath.vue'
 import UiButton from '@/components/ui/UiButton.vue'
 import { tutorials } from '@/lib/tutorials'
 
@@ -19,7 +20,7 @@ function mountPlayer(props: Record<string, unknown>, locale: 'fr' | 'en' = 'fr')
     global: {
       plugins: [i18n],
       stubs: { StoreBadges: false },
-      components: { StoreBadges, UiButton },
+      components: { StoreBadges, UiButton, TutorialPath },
     },
   })
 }
@@ -204,7 +205,7 @@ describe('TutorialPlayer', () => {
 describe('TutorialCard', () => {
   it('affiche titre, durée, chemin et affiche, sans aucune balise <video>', () => {
     const i18n = createI18n({ legacy: false, locale: 'fr', messages: { fr, en } })
-    const wrapper = mount(TutorialCard, { props: { tutorial: search }, global: { plugins: [i18n] } })
+    const wrapper = mount(TutorialCard, { props: { tutorial: search }, global: { plugins: [i18n], components: { TutorialPath } } })
     expect(wrapper.text()).toContain(fr.tutorials.items.search.title)
     expect(wrapper.text()).toContain('1 min 29')
     expect(wrapper.text()).toContain(fr.tutorials.items.search.path)
@@ -214,7 +215,7 @@ describe('TutorialCard', () => {
 
   it('émet open avec l’identifiant au clic', async () => {
     const i18n = createI18n({ legacy: false, locale: 'en', messages: { fr, en } })
-    const wrapper = mount(TutorialCard, { props: { tutorial: track }, global: { plugins: [i18n] } })
+    const wrapper = mount(TutorialCard, { props: { tutorial: track }, global: { plugins: [i18n], components: { TutorialPath } } })
     expect(wrapper.text()).toContain('1 min 16 s')
     expect(wrapper.find('img').attributes('src')).toBe('/video/tutos/track-en-poster.jpg')
     await wrapper.find('button').trigger('click')

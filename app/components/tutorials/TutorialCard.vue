@@ -47,7 +47,7 @@ const duration = computed(() => tutorialDuration(props.tutorial, lang.value))
       </span>
       <span class="mt-1 text-sm font-semibold tabular-nums text-ink-muted">{{ duration }}</span>
       <span class="mt-auto pt-3 text-sm text-ink-muted">
-        <span class="sr-only">{{ t('tutorials.pathLabel') }} : </span>{{ t(`tutorials.items.${tutorial.id}.path`) }}
+        <span class="sr-only">{{ t('tutorials.pathLabel') }} : </span><TutorialPath :id="tutorial.id" />
       </span>
     </span>
   </button>

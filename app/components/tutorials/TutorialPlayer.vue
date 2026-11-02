@@ -103,7 +103,7 @@ function onNativeClose() {
             {{ t(`tutorials.items.${tutorial.id}.title`) }}
           </h2>
           <p class="mt-1 text-sm text-white/75">
-            <span class="sr-only">{{ t('tutorials.pathLabel') }} : </span>{{ t(`tutorials.items.${tutorial.id}.path`) }}
+            <span class="sr-only">{{ t('tutorials.pathLabel') }} : </span><TutorialPath :id="tutorial.id" />
           </p>
         </div>
         <button

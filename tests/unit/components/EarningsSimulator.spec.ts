@@ -1,3 +1,5 @@
+import { readFileSync } from 'node:fs'
+import { resolve } from 'node:path'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { mount } from '@vue/test-utils'
 import { createI18n } from 'vue-i18n'
@@ -57,5 +59,44 @@ describe('EarningsSimulator', () => {
     const wrapper = mountSimulator()
     await wrapper.find('#earnings-kg').setValue('5')
     expect(fetchSpy).not.toHaveBeenCalled()
+  })
+
+  it.each(['fr', 'en'] as const)('donne au total le nom accessible de son libellé (%s)', (locale) => {
+    const wrapper = mountSimulator(locale)
+    const output = wrapper.find('output')
+    const labelId = output.attributes('aria-labelledby')
+    expect(labelId).toBeTruthy()
+    const label = wrapper.find(`#${labelId}`)
+    expect(label.text()).toBe((locale === 'fr' ? fr : en).journeys.traveler.simulator.totalLabel)
+    expect(output.attributes('for')).toBe('earnings-kg earnings-price')
+  })
+})
+
+// Les pseudo-éléments de la poignée ne se testent pas dans happy-dom : on lit
+// la feuille de style du composant.
+describe('EarningsSimulator : poignée des curseurs', () => {
+  const source = readFileSync(resolve(__dirname, '../../../app/components/journey/EarningsSimulator.vue'), 'utf8')
+  const style = source.slice(source.indexOf('<style'))
+  const rule = (selector: string) => {
+    const start = style.indexOf(`${selector} {`)
+    expect(start, selector).toBeGreaterThan(-1)
+    return style.slice(start, style.indexOf('}', start))
+  }
+
+  it('fait 28 px de côté, bordure comprise, dans les deux moteurs', () => {
+    for (const selector of ['.earnings-range::-webkit-slider-thumb', '.earnings-range::-moz-range-thumb']) {
+      const body = rule(selector)
+      expect(body).toContain('box-sizing: border-box')
+      expect(body).toContain('width: 28px')
+      expect(body).toContain('height: 28px')
+    }
+  })
+
+  it('coupe la transition et l’agrandissement en mouvement réduit', () => {
+    const reduced = style.slice(style.indexOf('@media (prefers-reduced-motion: reduce)'))
+    expect(reduced).toContain('.earnings-range::-webkit-slider-thumb')
+    expect(reduced).toContain('.earnings-range::-moz-range-thumb')
+    expect(reduced).toContain('transition: none')
+    expect(reduced).toContain('scale: none')
   })
 })

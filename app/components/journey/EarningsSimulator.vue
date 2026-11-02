@@ -63,8 +63,8 @@ const priceText = computed(() => euros.value(pricePerKg.value))
     </div>
 
     <div class="mt-6 rounded-card bg-sand p-5">
-      <p class="text-sm font-semibold text-ink-muted">{{ t(`${base}.totalLabel`) }}</p>
-      <output for="earnings-kg earnings-price" aria-live="polite" class="mt-1 block font-display text-display-md font-bold tabular-nums text-ink">{{ total }}</output>
+      <p id="earnings-total-label" class="text-sm font-semibold text-ink-muted">{{ t(`${base}.totalLabel`) }}</p>
+      <output for="earnings-kg earnings-price" aria-labelledby="earnings-total-label" aria-live="polite" class="mt-1 block font-display text-display-md font-bold tabular-nums text-ink">{{ total }}</output>
     </div>
 
     <p class="mt-6 text-sm text-ink-muted">{{ t(`${base}.note`) }}</p>
@@ -73,7 +73,8 @@ const priceText = computed(() => euros.value(pricePerKg.value))
 
 <style scoped>
 /* Zone de saisie de 44 px de haut (cible tactile), piste et poignée pleines
-   (aucun dégradé). La poignée garde 28 px, centrée dans cette zone. */
+   (aucun dégradé). La poignée fait 28 px bordure comprise dans les deux
+   moteurs, centrée dans cette zone. */
 .earnings-range {
   appearance: none;
   -webkit-appearance: none;
@@ -97,6 +98,7 @@ const priceText = computed(() => euros.value(pricePerKg.value))
 }
 .earnings-range::-webkit-slider-thumb {
   -webkit-appearance: none;
+  box-sizing: border-box;
   width: 28px;
   height: 28px;
   margin-top: -10px;
@@ -107,8 +109,9 @@ const priceText = computed(() => euros.value(pricePerKg.value))
   transition: scale 150ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 .earnings-range::-moz-range-thumb {
-  width: 22px;
-  height: 22px;
+  box-sizing: border-box;
+  width: 28px;
+  height: 28px;
   border: 3px solid rgb(var(--surface));
   border-radius: 50%;
   background: rgb(var(--primary));
@@ -117,4 +120,10 @@ const priceText = computed(() => euros.value(pricePerKg.value))
 }
 .earnings-range:active::-webkit-slider-thumb { scale: 1.08; }
 .earnings-range:active::-moz-range-thumb { scale: 1.08; }
+@media (prefers-reduced-motion: reduce) {
+  .earnings-range::-webkit-slider-thumb,
+  .earnings-range::-moz-range-thumb { transition: none; }
+  .earnings-range:active::-webkit-slider-thumb,
+  .earnings-range:active::-moz-range-thumb { scale: none; }
+}
 </style>

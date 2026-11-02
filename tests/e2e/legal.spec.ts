@@ -194,3 +194,22 @@ test('le lien du fil d’Ariane mesure au moins 44 px sur grand écran', async (
     expect((await link.boundingBox())!.height).toBeGreaterThanOrEqual(44)
   }
 })
+
+// La coupure des mots longs (overflow-wrap: anywhere) vaut pour le texte
+// (paragraphes, puces, titres) et non pour les boutons de la page, dont le
+// libellé garde sa coupure normale.
+for (const path of ['/cookies', '/en/cookies', '/confidentialite']) {
+  test(`${path} : la coupure des mots longs touche le texte, pas le bouton`, async ({ page }) => {
+    await page.goto(path)
+    // Texte du contenu juridique (hors fil d'Ariane et sommaire).
+    const texte = await page
+      .locator('main :is(p,li,h2,h3):not(nav *)')
+      .evaluateAll(list => list.map(el => getComputedStyle(el).overflowWrap))
+    expect(texte.length).toBeGreaterThan(0)
+    expect(new Set(texte)).toEqual(new Set(['anywhere']))
+    const boutons = await page
+      .locator('main button:not(nav button)')
+      .evaluateAll(list => list.map(el => getComputedStyle(el).overflowWrap))
+    expect(new Set(boutons)).toEqual(new Set(boutons.length ? ['normal'] : []))
+  })
+}

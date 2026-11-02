@@ -84,7 +84,7 @@ const open = ref(false)
           </ol>
         </nav>
 
-        <div class="min-w-0 [overflow-wrap:anywhere] [&_h2]:scroll-mt-28 [&_h2:first-child]:mt-0">
+        <div class="min-w-0 [&_p]:[overflow-wrap:anywhere] [&_li]:[overflow-wrap:anywhere] [&_h2]:[overflow-wrap:anywhere] [&_h3]:[overflow-wrap:anywhere] [&_h2]:scroll-mt-28 [&_h2:first-child]:mt-0">
           <slot />
         </div>
       </div>

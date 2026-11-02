@@ -4,6 +4,61 @@
       "title": "Send a parcel to Africa or sell your spare baggage kilos",
       "description": "Yadony brings the diaspora and travellers together: parcels carried by a verified traveller, payment held until delivery and live tracking; spare suitcase kilos sold; price alerts to spot a cheaper flight."
     },
+    "searchHero": {
+      "title": "Which traveler is heading your way?",
+      "lead": "Pick the cities and the date. See the travelers and their price per kilo, no account needed.",
+      "frequent": "Popular routes"
+    },
+    "upcoming": {
+      "title": "Next departures"
+    },
+    "handoff": {
+      "title": "Search here, book in the app.",
+      "steps": [
+        {
+          "lead": "Search",
+          "text": "for a trip on the site, no account needed."
+        },
+        {
+          "lead": "Request",
+          "text": "in the app: booking and payment happen there."
+        },
+        {
+          "lead": "Track",
+          "text": "the parcel until handover, against a code."
+        }
+      ]
+    },
+    "today": {
+      "title": "Yadony today.",
+      "lead": "Everything the app does, in one list.",
+      "items": [
+        {
+          "title": "Send a parcel",
+          "text": "Find a traveler, compare prices per kilo, track the parcel."
+        },
+        {
+          "title": "Sell your kilos",
+          "text": "Publish your trip, get paid on delivery."
+        },
+        {
+          "title": "Flight deals",
+          "text": "Deals and price alerts, in the Activities tab."
+        },
+        {
+          "title": "Pay like at home",
+          "text": "Bank card or mobile money."
+        },
+        {
+          "title": "Tracking for your family",
+          "text": "The recipient follows the parcel without installing the app."
+        },
+        {
+          "title": "Yadony Pro",
+          "text": "The space for professionals who ship regularly."
+        }
+      ]
+    },
     "hero": {
       "kicker": "Parcels and kilos to Africa",
       "title": "Send your parcels, sell your kilos.",

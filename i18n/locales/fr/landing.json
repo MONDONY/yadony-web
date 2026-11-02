@@ -4,6 +4,61 @@
       "title": "Envoyer un colis en Afrique ou vendre vos kilos de bagage",
       "description": "Yadony relie la diaspora et ceux qui voyagent : colis confiés à un voyageur vérifié, paiement bloqué jusqu'à la livraison et suivi en direct ; kilos de valise vendus ; alertes de prix pour repérer un vol moins cher."
     },
+    "searchHero": {
+      "title": "Quel voyageur part vers chez vous ?",
+      "lead": "Choisissez les villes et la date. Vous voyez les voyageurs et leur prix au kilo, sans créer de compte.",
+      "frequent": "Trajets fréquents"
+    },
+    "upcoming": {
+      "title": "Prochains départs"
+    },
+    "handoff": {
+      "title": "Chercher ici, réserver dans l'app.",
+      "steps": [
+        {
+          "lead": "Cherchez",
+          "text": "un trajet sur le site, sans compte."
+        },
+        {
+          "lead": "Demandez",
+          "text": "dans l'app : la réservation et le paiement s'y font."
+        },
+        {
+          "lead": "Suivez",
+          "text": "le colis jusqu'à la remise, contre un code."
+        }
+      ]
+    },
+    "today": {
+      "title": "Yadony aujourd'hui.",
+      "lead": "Tout ce que fait l'app, en une liste.",
+      "items": [
+        {
+          "title": "Envoyer un colis",
+          "text": "Trouvez un voyageur, comparez les prix au kilo, suivez le colis."
+        },
+        {
+          "title": "Vendre ses kilos",
+          "text": "Publiez votre trajet, soyez payé à la livraison."
+        },
+        {
+          "title": "Billets d'avion",
+          "text": "Bons plans et alertes de prix, dans l'onglet Activités."
+        },
+        {
+          "title": "Payer comme chez soi",
+          "text": "Carte bancaire ou mobile money."
+        },
+        {
+          "title": "Un suivi pour vos proches",
+          "text": "Le destinataire suit le colis sans installer l'app."
+        },
+        {
+          "title": "Yadony Pro",
+          "text": "L'espace des professionnels qui expédient régulièrement."
+        }
+      ]
+    },
     "hero": {
       "kicker": "Colis et kilos vers l'Afrique",
       "title": "Envoyez vos colis, vendez vos kilos.",

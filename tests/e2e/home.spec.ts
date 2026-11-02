@@ -1,58 +1,387 @@
-import { test, expect } from './fixtures'
+import AxeBuilder from '@axe-core/playwright'
+import { test, expect, type Page, type Route } from './fixtures'
 
-// Points d'attention de la revue (plan, « Review Focus ») : le parcours croisé
-// doit rester lisible sans JavaScript, sur un téléphone étroit et en
-// mouvement réduit, où chaque illustration montre directement son état final.
+// Accueil centré sur la recherche publique. L'API est simulée par `page.route` :
+// aucun appel réel ne part du navigateur de test. Le formulaire est rendu côté
+// serveur : ce qui est saisi avant l'hydratation est effacé, d'où `hydrated`.
+const API = '**/public/announcements**'
+const CORS = { 'access-control-allow-origin': '*' }
 
-test('le haut de page met le colis en avant, jamais la vente de billets', async ({ page }) => {
-  await page.goto('/')
-  const chips = page.locator('section').first().locator('button[aria-pressed]')
-  await expect(chips.first()).toContainText(/colis/i)
-  await expect(page.locator('title')).not.toHaveText(/billet/i)
-  const promises = page.locator('section').nth(1).locator('h3')
-  await expect(promises.first()).toContainText(/envoy/i)
+function card(id: string, name: string, extra: Record<string, unknown> = {}) {
+  return {
+    id,
+    departureCity: 'Paris',
+    arrivalCity: 'Abidjan',
+    departureDate: '2026-12-20',
+    availableKg: 24,
+    pricePerKgDisplay: 10.7,
+    currency: 'EUR',
+    transportMode: 'PLANE',
+    urgent: false,
+    capacityUnit: 'KG_EXACT',
+    traveler: { displayName: name, averageRating: 4.9, totalTrips: 21, identityVerified: true },
+    ...extra,
+  }
+}
+
+const FOUR = [card('a1', 'Mariam S.'), card('a2', 'Oumar S.', { urgent: true }), card('a3', 'Voyageur D.'), card('a4', 'Quatrième Q.')]
+
+function ok(content: unknown[]) {
+  return { content, totalElements: content.length, page: 0, size: 20, totalPages: 1 }
+}
+
+async function respondWith(page: Page, body: unknown, status = 200) {
+  await page.route(API, (route: Route) =>
+    route.fulfill({ status, contentType: 'application/json', headers: CORS, body: JSON.stringify(body) }),
+  )
+}
+
+// Par défaut l'API répond « aucun trajet » : aucun test ne sort sur le réseau.
+// Un `respondWith` posé ensuite dans le test a la priorité.
+test.beforeEach(async ({ page }) => {
+  await page.route(API, (route: Route) =>
+    route.fulfill({ status: 200, contentType: 'application/json', headers: CORS, body: JSON.stringify(ok([])) }),
+  )
+})
+
+async function hydrated(page: Page) {
+  await page.waitForFunction(() => (window as unknown as { useNuxtApp?: () => { isHydrating: boolean } }).useNuxtApp?.().isHydrating === false)
+}
+
+// Nombre de lignes occupées par le texte d'un élément (1 = sur une seule ligne).
+async function lineCount(locator: ReturnType<Page['locator']>): Promise<number> {
+  return locator.evaluate((el) => {
+    const range = document.createRange()
+    range.selectNodeContents(el)
+    return new Set([...range.getClientRects()].map(rect => Math.round(rect.top))).size
+  })
+}
+
+test.describe('haut de page', () => {
+  test('un seul h1, la question posée au visiteur, et le titre ne parle pas de billets', async ({ page }) => {
+    await page.goto('/')
+    await expect(page.locator('h1')).toHaveCount(1)
+    await expect(page.locator('h1')).toHaveText('Quel voyageur part vers chez vous ?')
+    await expect(page.locator('title')).not.toHaveText(/billet/i)
+  })
+
+  test('le h1 anglais (texte à valider par le propriétaire)', async ({ page }) => {
+    await page.goto('/en')
+    await expect(page.locator('h1')).toHaveCount(1)
+    await expect(page.locator('h1')).toHaveText('Which traveler is heading your way?')
+  })
+
+  test('le formulaire est le premier contrôle atteignable après le lien d’évitement', async ({ page }) => {
+    await page.goto('/')
+    await hydrated(page)
+    await page.keyboard.press('Tab')
+    const skip = page.getByRole('link', { name: /contenu/i })
+    await expect(skip).toBeFocused()
+    await page.keyboard.press('Enter')
+    await page.keyboard.press('Tab')
+    await expect(page.getByRole('search').getByLabel('Départ')).toBeFocused()
+  })
+
+  test('cinq trajets fréquents mènent à la recherche, avec la langue de la page', async ({ page }) => {
+    await page.goto('/')
+    const links = page.locator('main a[href^="/envoyer-colis?"]')
+    await expect(links).toHaveCount(5)
+    expect(await links.evaluateAll(els => els.map(el => el.getAttribute('href')))).toEqual([
+      '/envoyer-colis?depart=Paris&arrivee=Dakar',
+      '/envoyer-colis?depart=Paris&arrivee=Abidjan',
+      '/envoyer-colis?depart=Paris&arrivee=Bamako',
+      '/envoyer-colis?depart=Lyon&arrivee=Dakar',
+      '/envoyer-colis?depart=Marseille&arrivee=Douala',
+    ])
+    await expect(links.first()).toHaveText('Paris → Dakar')
+
+    await page.goto('/en')
+    const english = page.locator('main a[href^="/en/send-a-parcel?"]')
+    await expect(english).toHaveCount(5)
+    await expect(english.nth(4)).toHaveAttribute('href', '/en/send-a-parcel?depart=Marseille&arrivee=Douala')
+  })
+
+  test('un trajet fréquent ouvre les résultats sur la page Envoyer un colis', async ({ page }) => {
+    await respondWith(page, ok(FOUR.slice(0, 3)))
+    await page.goto('/')
+    await hydrated(page)
+    await page.getByRole('main').getByRole('link', { name: 'Paris → Dakar' }).click()
+    await expect(page).toHaveURL(/\/envoyer-colis\?depart=Paris&arrivee=Dakar$/)
+    await expect(page.locator('#recherche').getByRole('article')).toHaveCount(3)
+  })
+
+  test('le formulaire envoie la recherche vers la page Envoyer un colis', async ({ page }) => {
+    await respondWith(page, ok(FOUR.slice(0, 3)))
+    await page.goto('/')
+    await hydrated(page)
+    const form = page.getByRole('search')
+    await form.getByLabel('Départ').fill('Paris')
+    await form.getByLabel('Arrivée').fill('Abidjan')
+    await form.getByLabel('Quand').selectOption('ce-mois')
+    await form.getByRole('button', { name: 'Voir les voyageurs' }).click()
+    await expect(page).toHaveURL(/\/envoyer-colis\?depart=Paris&arrivee=Abidjan&quand=ce-mois$/)
+    await expect(page.locator('#recherche').getByRole('article')).toHaveCount(3)
+  })
+
+  test('en anglais, le formulaire mène à la page anglaise', async ({ page }) => {
+    await respondWith(page, ok(FOUR.slice(0, 3)))
+    await page.goto('/en')
+    await hydrated(page)
+    const form = page.getByRole('search')
+    await form.getByLabel('From').fill('Paris')
+    await form.getByLabel('To').fill('Dakar')
+    await form.getByRole('button', { name: 'See travelers' }).click()
+    await expect(page).toHaveURL(/\/en\/send-a-parcel\?depart=Paris&arrivee=Dakar$/)
+  })
+
+  test('l’accueil n’affiche jamais la liste des résultats de la recherche', async ({ page }) => {
+    await respondWith(page, ok(FOUR))
+    await page.goto('/')
+    await hydrated(page)
+    await page.getByRole('search').getByLabel('Départ').fill('Paris')
+    await page.getByRole('search').getByRole('button', { name: 'Voir les voyageurs' }).click()
+    await expect(page).toHaveURL(/\/envoyer-colis/)
+    await page.goBack()
+    await expect(page.locator('[data-state="loading"], [data-state="empty"], [data-state="error"], [data-state="rate-limited"]')).toHaveCount(0)
+    await expect(page.locator('main article')).toHaveCount(0)
+  })
+})
+
+test.describe('prochains départs', () => {
+  test('trois départs seulement, une fois l’API répondue', async ({ page }) => {
+    await respondWith(page, ok(FOUR))
+    await page.goto('/')
+    const section = page.getByRole('region', { name: 'Prochains départs' })
+    await expect(section).toBeVisible()
+    await expect(section.getByRole('article')).toHaveCount(3)
+    await expect(section).not.toContainText('Quatrième Q.')
+    await expect(section.getByRole('heading', { level: 2 })).toHaveText('Prochains départs')
+  })
+
+  test('sans filtre de ville', async ({ page }) => {
+    await respondWith(page, ok(FOUR))
+    const calls: URL[] = []
+    page.on('request', request => { if (request.url().includes('/public/announcements')) calls.push(new URL(request.url())) })
+    await page.goto('/')
+    await expect(page.getByRole('region', { name: 'Prochains départs' })).toBeVisible()
+    expect(calls).toHaveLength(1)
+    expect(calls[0]!.searchParams.has('departureCity')).toBe(false)
+    expect(calls[0]!.searchParams.has('arrivalCity')).toBe(false)
+  })
+
+  test('« Demander » ouvre la remise à l’app', async ({ page }) => {
+    await respondWith(page, ok(FOUR))
+    await page.goto('/')
+    await hydrated(page)
+    await page.getByRole('button', { name: /Demander à Mariam S\./ }).click()
+    await expect(page.getByRole('dialog', { name: 'Pour réserver, passez par l\'app.' })).toBeVisible()
+  })
+
+  for (const [name, status, body] of [
+    ['une erreur 500', 500, { message: 'boom' }],
+    ['un 429', 429, { status: 429 }],
+    ['une liste vide', 200, ok([])],
+    ['une réponse illisible', 200, { oops: true }],
+  ] as const) {
+    test(`${name} laisse l’accueil intact : section absente, aucune erreur de la page`, async ({ page }) => {
+      const problems: string[] = []
+      // Le navigateur journalise lui-même « Failed to load resource » pour un
+      // statut HTTP d'erreur : ce n'est pas une erreur du code de la page.
+      page.on('console', (message) => {
+        if (message.type() === 'error' && !/Failed to load resource/.test(message.text())) problems.push(message.text())
+      })
+      page.on('pageerror', error => problems.push(error.message))
+      await respondWith(page, body, status)
+      await page.goto('/')
+      await hydrated(page)
+      await page.waitForLoadState('networkidle')
+      await expect(page.getByText('Prochains départs')).toHaveCount(0)
+      await expect(page.locator('h1')).toBeVisible()
+      await expect(page.getByRole('search')).toBeVisible()
+      await expect(page.locator('main article')).toHaveCount(0)
+      expect(problems).toEqual([])
+    })
+  }
+
+  test('une coupure réseau laisse l’accueil intact', async ({ page }) => {
+    const problems: string[] = []
+    page.on('pageerror', error => problems.push(error.message))
+    await page.route(API, route => route.abort())
+    await page.goto('/')
+    await hydrated(page)
+    await page.waitForLoadState('networkidle')
+    await expect(page.getByText('Prochains départs')).toHaveCount(0)
+    await expect(page.getByRole('search')).toBeVisible()
+    expect(problems).toEqual([])
+  })
+
+  test('le HTML prérendu ne contient aucune donnée de voyageur', async ({ request }) => {
+    for (const path of ['/', '/en']) {
+      const html = await (await request.get(path)).text()
+      expect(html).not.toMatch(/Prochains départs|Next departures/)
+      expect(html).not.toContain('Mariam')
+      expect(html).not.toContain('<article')
+    }
+  })
+})
+
+test.describe('sections de l’accueil', () => {
+  test('Chercher ici, réserver dans l’app : trois étapes, sans téléchargement dans la section', async ({ page }) => {
+    await page.goto('/')
+    const section = page.locator('section').filter({ has: page.getByRole('heading', { name: 'Chercher ici, réserver dans l\'app.' }) })
+    await expect(section.locator('ol > li')).toHaveCount(3)
+    await expect(section.getByRole('link')).toHaveCount(0)
+    await expect(section.getByRole('button')).toHaveCount(0)
+  })
+
+  test('« Yadony aujourd’hui » : six entrées qui mènent aux bonnes pages', async ({ page }) => {
+    await page.goto('/')
+    const section = page.locator('section').filter({ has: page.getByRole('heading', { name: 'Yadony aujourd\'hui.' }) })
+    const links = section.getByRole('link')
+    await expect(links).toHaveCount(6)
+    expect(await links.evaluateAll(els => els.map(el => el.getAttribute('href')))).toEqual([
+      '/envoyer-colis',
+      '/devenir-voyageur',
+      '/billets-avion',
+      '/securite',
+      '/comment-ca-marche',
+      'https://pro.yadony.com',
+    ])
+    await expect(links.nth(5)).toHaveAttribute('target', '_blank')
+    await links.nth(1).click()
+    await expect(page).toHaveURL('/devenir-voyageur')
+    await expect(page.locator('h1')).toHaveCount(1)
+  })
+
+  test('l’ordre des sections est celui de la recherche d’abord, avec le bas de page de téléchargement', async ({ page }) => {
+    await page.goto('/')
+    const headings = await page.locator('main h2').allTextContents()
+    expect(headings.map(h => h.trim())).toEqual([
+      'Chercher ici, réserver dans l\'app.',
+      'Yadony aujourd\'hui.',
+      'Ce qui manquait aux groupes WhatsApp',
+      'Les questions qu\'on nous pose avant de télécharger',
+      'Installez Yadony avant votre prochain voyage',
+    ])
+  })
+
+  test('les badges des stores restent le seul moyen de télécharger l’app', async ({ page }) => {
+    await page.goto('/')
+    await expect(page.locator('main a[href*="apps.apple.com"], main a[href*="play.google.com"]')).toHaveCount(0)
+    await expect(page.locator('main a[href*="/ouvrir"], main a[href*="/open"]')).toHaveCount(0)
+    await expect(page.locator('main canvas, main img[alt*="QR" i]')).toHaveCount(0)
+  })
+})
+
+test.describe('accessibilité', () => {
+  for (const path of ['/', '/en']) {
+    test(`${path} avec les prochains départs affichés : aucune violation critique`, async ({ page }) => {
+      await respondWith(page, ok(FOUR))
+      await page.goto(path)
+      await expect(page.locator('main article')).toHaveCount(3)
+      await page.waitForLoadState('networkidle')
+      const settled = () => document.getAnimations()
+        .filter(animation => animation.effect?.getTiming().iterations !== Infinity)
+        .every(animation => animation.playState !== 'running')
+      await page.waitForFunction(settled)
+      await page.waitForTimeout(700)
+      await page.waitForFunction(settled)
+      const results = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa']).analyze()
+      const serious = results.violations.filter(v => v.impact === 'critical' || v.impact === 'serious')
+      expect(serious.map(v => `${v.id} sur ${v.nodes.length} noeud(s)`)).toEqual([])
+    })
+  }
 })
 
 test.describe('sans JavaScript (robots, navigateurs limités)', () => {
   test.use({ javaScriptEnabled: false })
 
-  test('les sept étapes du parcours croisé sont dans le HTML prérendu et visibles', async ({ page }) => {
+  test('le haut de page, les trajets fréquents et les sections sont dans le HTML prérendu', async ({ page }) => {
     await page.goto('/')
     await expect(page.locator('h1')).toHaveCount(1)
-    const steps = page.locator('.scene-step h3')
-    await expect(steps).toHaveCount(7)
-    for (const step of await steps.all()) await expect(step).toBeVisible()
-  })
-
-  test('le message WhatsApp et la page de suivi du destinataire sont visibles', async ({ page }) => {
-    await page.goto('/')
-    // Playwright tient un élément en `opacity: 0` pour visible : on lit
-    // l'opacité calculée du bloc.
-    for (const text of ['Maman, ton colis part samedi avec Awa', 'Arrivé à Dakar']) {
-      const opacity = await page.getByText(text).first().evaluate((el) => {
-        let node: Element | null = el
-        let value = 1
-        while (node) { value *= Number(getComputedStyle(node).opacity); node = node.parentElement }
-        return value
-      })
-      expect(opacity, text).toBe(1)
-    }
+    await expect(page.getByRole('search')).toBeVisible()
+    await expect(page.getByRole('main').getByRole('link', { name: 'Paris → Abidjan' })).toBeVisible()
+    await expect(page.getByRole('heading', { name: 'Chercher ici, réserver dans l\'app.' })).toBeVisible()
+    await expect(page.getByRole('heading', { name: 'Yadony aujourd\'hui.' })).toBeVisible()
+    await expect(page.getByText('Prochains départs')).toHaveCount(0)
   })
 })
 
 test.describe('téléphone étroit (360 px)', () => {
   test.use({ viewport: { width: 360, height: 760 } })
 
-  test('aucun débordement horizontal et chaque étape garde son titre visible', async ({ page }) => {
-    await page.goto('/')
-    const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)
-    expect(overflow).toBeLessThanOrEqual(0)
-    const steps = page.locator('.scene-step h3')
-    await expect(steps).toHaveCount(7)
-    for (const step of await steps.all()) {
-      await step.scrollIntoViewIfNeeded()
-      await expect(step).toBeVisible()
-    }
+  for (const [path, submit, labels] of [
+    ['/', 'Voir les voyageurs', ['Paris → Dakar', 'Marseille → Douala']],
+    ['/en', 'See travelers', ['Paris → Dakar', 'Marseille → Douala']],
+  ] as const) {
+    test(`${path} : aucun débordement horizontal, libellés des boutons sur une ligne`, async ({ page }) => {
+      await respondWith(page, ok(FOUR))
+      await page.goto(path)
+      await hydrated(page)
+      await expect(page.locator('main article').first()).toBeVisible()
+      const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)
+      expect(overflow).toBeLessThanOrEqual(0)
+      const button = page.getByRole('search').getByRole('button', { name: submit })
+      await expect(button).toBeVisible()
+      expect(await lineCount(button)).toBe(1)
+      const link = (label: string) => page.getByRole('main').getByRole('link', { name: label })
+      for (const label of labels) expect(await lineCount(link(label))).toBe(1)
+      const request = page.locator('main article').first().locator('button')
+      expect(await lineCount(request)).toBe(1)
+      // Cibles tactiles d'au moins 44 px.
+      for (const target of [button, link(labels[0]), request]) {
+        expect((await target.boundingBox())!.height).toBeGreaterThanOrEqual(44)
+      }
+    })
+  }
+})
+
+// Parcours racontés, qui vivaient sur l'accueil et vivent désormais sur la page
+// « Envoyer un colis » (même scène à sept étapes) : lisibles sans JavaScript,
+// sur un téléphone étroit et en mouvement réduit, où chaque illustration
+// montre directement son état final.
+test.describe('parcours de la page Envoyer un colis', () => {
+  test.describe('sans JavaScript', () => {
+    test.use({ javaScriptEnabled: false })
+
+    test('les sept étapes sont dans le HTML prérendu et visibles', async ({ page }) => {
+      await page.goto('/envoyer-colis')
+      await expect(page.locator('h1')).toHaveCount(1)
+      const steps = page.locator('.scene-step h3')
+      await expect(steps).toHaveCount(7)
+      for (const step of await steps.all()) await expect(step).toBeVisible()
+    })
+
+    test('le message WhatsApp et la page de suivi du destinataire sont visibles', async ({ page }) => {
+      await page.goto('/envoyer-colis')
+      // Playwright tient un élément en `opacity: 0` pour visible : on lit
+      // l'opacité calculée du bloc.
+      for (const text of ['Maman, ton colis part samedi avec Awa', 'Arrivé à Dakar']) {
+        const opacity = await page.getByText(text).first().evaluate((el) => {
+          let node: Element | null = el
+          let value = 1
+          while (node) { value *= Number(getComputedStyle(node).opacity); node = node.parentElement }
+          return value
+        })
+        expect(opacity, text).toBe(1)
+      }
+    })
+  })
+
+  test.describe('téléphone étroit (360 px)', () => {
+    test.use({ viewport: { width: 360, height: 760 } })
+
+    test('aucun débordement horizontal et chaque étape garde son titre visible', async ({ page }) => {
+      await page.goto('/envoyer-colis')
+      const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)
+      expect(overflow).toBeLessThanOrEqual(0)
+      const steps = page.locator('.scene-step h3')
+      await expect(steps).toHaveCount(7)
+      for (const step of await steps.all()) {
+        await step.scrollIntoViewIfNeeded()
+        await expect(step).toBeVisible()
+      }
+    })
   })
 })
 
@@ -63,8 +392,8 @@ test.describe('mouvement réduit', () => {
     await page.emulateMedia({ reducedMotion: 'reduce' })
   })
 
-  test('chaque illustration affiche directement son état final', async ({ page, isMobile }) => {
-    await page.goto('/')
+  test('chaque illustration du parcours affiche directement son état final', async ({ page, isMobile }) => {
+    await page.goto('/envoyer-colis')
     // Sur grand écran, seul le visuel de l'étape active est montré : on amène
     // chaque étape à l'écran. Sur téléphone, chaque étape porte son visuel.
     const steps = page.locator('.scene-step')
@@ -73,8 +402,9 @@ test.describe('mouvement réduit', () => {
     const scope = isMobile ? page.locator('.scene-step') : page.locator('main')
     await steps.nth(2).scrollIntoViewIfNeeded()
     await expect(scope.locator('[data-agreed][data-shown="true"]').first()).toBeVisible()
+    await steps.nth(3).scrollIntoViewIfNeeded()
+    await expect(scope.locator('[data-locked="true"]').first()).toBeVisible()
     await steps.nth(6).scrollIntoViewIfNeeded()
-    await expect(scope.locator('[data-locked="false"]').first()).toBeVisible()
     const fill = scope.locator('[data-fill]').locator('visible=true').first()
     await expect(fill).toHaveAttribute('style', /width:\s*100%/)
   })
@@ -88,17 +418,5 @@ test.describe('mouvement réduit', () => {
     // Playwright ignore `backface-visibility` : une carte retournée paraîtrait
     // « visible » alors que son recto est de dos. On vérifie qu'elle ne tourne pas.
     await expect(card.locator('.flip-inner')).toHaveCSS('transform', 'none')
-  })
-
-  test('tous les moyens de paiement sont visibles sur un téléphone étroit', async ({ page }) => {
-    await page.setViewportSize({ width: 360, height: 760 })
-    await page.goto('/')
-    const list = page.locator('ul').filter({ hasText: 'Carte bancaire' }).filter({ hasText: 'Espèces' }).first()
-    await list.scrollIntoViewIfNeeded()
-    // Chaque pastille doit tenir dans la largeur de l'écran (rien de coupé
-    // par le conteneur en overflow-hidden).
-    const outside = await list.locator('li').evaluateAll(items =>
-      items.filter(item => item.getBoundingClientRect().right > window.innerWidth).map(item => item.textContent?.trim()))
-    expect(outside).toEqual([])
   })
 })

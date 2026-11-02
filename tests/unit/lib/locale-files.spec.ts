@@ -107,6 +107,8 @@ const properNounPaths = [
   'landing.payments.items[3]',
   'landing.payments.items[4]',
   'landing.recipient.chat.link',
+  // Accueil : « Yadony Pro » est le nom de l'espace des professionnels.
+  'landing.today.items[5].title',
 ]
 
 /**

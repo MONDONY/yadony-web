@@ -1,0 +1,58 @@
+{
+  "search": {
+    "form": {
+      "label": "Rechercher un voyageur",
+      "from": "Départ",
+      "to": "Arrivée",
+      "when": "Quand",
+      "whenAny": "Toutes les dates",
+      "whenMonth": "Ce mois-ci",
+      "whenThreeMonths": "Dans les 3 mois",
+      "submit": "Voir les voyageurs",
+      "filters": "Filtres",
+      "minKg": "≥ {kg} kg",
+      "maxPrice": "Prix max",
+      "maxPriceField": "Prix max par kg",
+      "urgent": "Urgent",
+      "plane": "Avion"
+    },
+    "card": {
+      "urgent": "Urgent",
+      "verified": "Identité vérifiée",
+      "rating": "Note {rating} sur 5",
+      "trips": "{count} trajet | {count} trajets",
+      "perKg": "/ kg",
+      "details": "Détails",
+      "detailsLabel": "Détails du trajet de {name}, {from} vers {to}",
+      "request": "Demander",
+      "requestLabel": "Demander à {name}, {from} vers {to}"
+    },
+    "handoff": {
+      "title": "Pour réserver, passez par l'app.",
+      "trip": "Trajet de {name}, {from} vers {to}, {date}",
+      "steps": [
+        "Décrivez votre colis et envoyez la demande",
+        "Payez en sécurité : l'argent reste bloqué",
+        "Suivez chaque étape jusqu'au code de livraison"
+      ],
+      "close": "Fermer"
+    },
+    "states": {
+      "loading": "Recherche en cours",
+      "empty": {
+        "title": "Aucun voyageur pour {route}",
+        "titleAny": "Aucun voyageur pour cette recherche",
+        "text": "Essayez une date plus large, ou créez une alerte dans l'app pour être prévenu dès qu'un voyageur part."
+      },
+      "error": {
+        "title": "La recherche ne répond pas pour l'instant.",
+        "text": "Réessayez dans un instant.",
+        "retry": "Réessayer"
+      },
+      "rateLimited": {
+        "title": "Doucement, trop de recherches d'un coup.",
+        "text": "Patientez une minute, puis relancez la recherche."
+      }
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "search": {
+    "form": {
+      "label": "Search for a traveler",
+      "from": "From",
+      "to": "To",
+      "when": "When",
+      "whenAny": "Any date",
+      "whenMonth": "This month",
+      "whenThreeMonths": "Within 3 months",
+      "submit": "See travelers",
+      "filters": "Filters",
+      "minKg": "≥ {kg} kg",
+      "maxPrice": "Max price",
+      "maxPriceField": "Max price per kg",
+      "urgent": "Urgent",
+      "plane": "Plane"
+    },
+    "card": {
+      "urgent": "Urgent",
+      "verified": "Verified identity",
+      "rating": "Rated {rating} out of 5",
+      "trips": "{count} trip | {count} trips",
+      "perKg": "/ kg",
+      "details": "Details",
+      "detailsLabel": "Details of {name}'s trip, {from} to {to}",
+      "request": "Request",
+      "requestLabel": "Request {name}'s trip, {from} to {to}"
+    },
+    "handoff": {
+      "title": "To book, go through the app.",
+      "trip": "{name}'s trip, {from} to {to}, {date}",
+      "steps": [
+        "Describe your parcel and send the request",
+        "Pay securely: the money stays held",
+        "Follow every step up to the delivery code"
+      ],
+      "close": "Close"
+    },
+    "states": {
+      "loading": "Searching",
+      "empty": {
+        "title": "No traveler for {route}",
+        "titleAny": "No traveler for this search",
+        "text": "Try a wider date, or set up an alert in the app to be told as soon as a traveler leaves."
+      },
+      "error": {
+        "title": "Search is not responding right now.",
+        "text": "Try again in a moment.",
+        "retry": "Try again"
+      },
+      "rateLimited": {
+        "title": "Easy there, too many searches at once.",
+        "text": "Wait a minute, then search again."
+      }
+    }
+  }
+}

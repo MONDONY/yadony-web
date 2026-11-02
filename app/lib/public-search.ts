@@ -133,7 +133,12 @@ export function hasSearch(q: SearchQuery): boolean {
 
 export function formatPrice(value: number | undefined, currency: string, locale: Locale): string {
   if (value === undefined) return ''
-  return new Intl.NumberFormat(locale === 'fr' ? 'fr-FR' : 'en-GB', { style: 'currency', currency }).format(value)
+  try {
+    return new Intl.NumberFormat(locale === 'fr' ? 'fr-FR' : 'en-GB', { style: 'currency', currency }).format(value)
+  } catch {
+    // Code de devise mal formé venu de l'API : RangeError. On montre le prix brut.
+    return `${value} ${currency}`
+  }
 }
 
 const labels = {

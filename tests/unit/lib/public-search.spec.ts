@@ -154,6 +154,11 @@ describe('formatPrice', () => {
   it('rend une chaîne vide sans valeur', () => {
     expect(formatPrice(undefined, 'EUR', 'fr')).toBe('')
   })
+
+  it('ne lève rien sur un code de devise mal formé et affiche valeur et code', () => {
+    expect(formatPrice(12, 'EURO!', 'fr')).toBe('12 EURO!')
+    expect(formatPrice(12.5, '', 'en')).toBe('12.5 ')
+  })
 })
 
 describe('formatCardPrice', () => {

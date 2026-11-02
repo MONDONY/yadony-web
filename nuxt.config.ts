@@ -28,15 +28,15 @@ export default defineNuxtConfig({
         language: 'fr-FR',
         name: 'Français',
         // Une locale = un fichier commun + un fichier par domaine (accueil,
-        // parcours, corridors, GP). Les clés de premier niveau ne se
+        // parcours, corridors, GP, recherche). Les clés de premier niveau ne se
         // chevauchent jamais d'un fichier à l'autre.
-        files: ['fr.json', 'fr/landing.json', 'fr/journeys.json', 'fr/corridors.json', 'fr/gp.json'],
+        files: ['fr.json', 'fr/landing.json', 'fr/journeys.json', 'fr/corridors.json', 'fr/gp.json', 'fr/search.json'],
       },
       {
         code: 'en',
         language: 'en-GB',
         name: 'English',
-        files: ['en.json', 'en/landing.json', 'en/journeys.json', 'en/corridors.json'],
+        files: ['en.json', 'en/landing.json', 'en/journeys.json', 'en/corridors.json', 'en/search.json'],
       },
     ],
     customRoutes: 'page',

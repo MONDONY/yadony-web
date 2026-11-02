@@ -69,6 +69,11 @@ const sameWordPaths = [
   'contest.final.podiumSub',
   // Refonte : « Destinations » s'écrit pareil dans les deux langues.
   'landing.corridors.kicker',
+  // Recherche : « Urgent » et « ≥ 16 kg » s'écrivent pareil dans les deux langues.
+  'search.form.urgent',
+  'search.form.minKg',
+  'search.card.urgent',
+  'search.card.perKg',
 ]
 
 /**

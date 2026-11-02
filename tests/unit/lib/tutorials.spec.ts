@@ -1,3 +1,5 @@
+import { existsSync } from 'node:fs'
+import { resolve } from 'node:path'
 import { describe, it, expect } from 'vitest'
 import {
   tutorials,
@@ -88,5 +90,15 @@ describe('videoSrc et posterSrc', () => {
   it('pointe vers les fichiers anglais avec le suffixe -en', () => {
     expect(videoSrc('search', 'en')).toBe('/video/tutos/search-en.mp4')
     expect(posterSrc('search', 'en')).toBe('/video/tutos/search-en-poster.jpg')
+  })
+
+  it('a le fichier vidéo et l’affiche de chaque tutoriel dans public/, dans les deux langues', () => {
+    const publicDir = resolve(__dirname, '../../../public')
+    const missing = tutorials.flatMap(t =>
+      (['fr', 'en'] as const).flatMap(locale =>
+        [videoSrc(t.id, locale), posterSrc(t.id, locale)].filter(src => !existsSync(publicDir + src)),
+      ),
+    )
+    expect(missing).toEqual([])
   })
 })

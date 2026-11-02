@@ -129,6 +129,7 @@ test('version anglaise sur /en/tutorials', async ({ page }) => {
     if (VIDEOS.test(request.url())) videoRequests.push(request.url())
   })
   await ouvrirPage(page, '/en/tutorials')
+  expect(videoRequests).toEqual([])
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Video tutorials')
   await expect(page.getByTestId('tutorial-card')).toHaveCount(6)
   await expect(page.getByTestId('tutorial-card').first()).toContainText('1 min 35 s')

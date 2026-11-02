@@ -133,6 +133,15 @@
           "text": "Le destinataire vous donne son code à 6 chiffres : la livraison est confirmée et le paiement vous est versé, sur votre compte bancaire ou en mobile money."
         }
       ],
+      "temps": {
+        "publish": "Publiez votre trajet",
+        "price": "Choisissez votre prix",
+        "poster": "Partagez votre affiche",
+        "deliver": "Livrez contre le code"
+      },
+      "control": {
+        "title": "Vous gardez la main"
+      },
       "simulator": {
         "kicker": "Simulateur",
         "title": "Ce que peuvent rapporter vos kilos",

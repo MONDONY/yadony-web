@@ -133,6 +133,15 @@
           "text": "The recipient gives you their 6-digit code: delivery is confirmed and the payment is sent to you, to your bank account or by mobile money."
         }
       ],
+      "temps": {
+        "publish": "Post your trip",
+        "price": "Choose your price",
+        "poster": "Share your poster",
+        "deliver": "Deliver against the code"
+      },
+      "control": {
+        "title": "You stay in control"
+      },
       "simulator": {
         "kicker": "Simulator",
         "title": "What your kilos could earn you",

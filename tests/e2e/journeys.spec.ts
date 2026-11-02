@@ -49,3 +49,39 @@ test.describe('simulateur de gain du voyageur', () => {
     await regler(page.getByLabel('Spare kilos'), '20', total, '€160')
   })
 })
+
+test.describe('page voyageur simplifiée', () => {
+  const pages = [
+    { chemin: '/devenir-voyageur', temps: 'Publiez votre trajet', main: 'Vous gardez la main', paye: 'Payé comme vous voulez', liste: 'Les étapes d\'un trajet', tuto: /Tutoriel vidéo/ },
+    { chemin: '/en/become-a-traveler', temps: 'Post your trip', main: 'You stay in control', paye: 'Paid the way you want', liste: 'The steps of a trip', tuto: /Video tutorial/ },
+  ]
+
+  for (const { chemin, temps, main, paye, liste, tuto } of pages) {
+    test(`${chemin} : un seul h1, quatre temps, FAQ de quatre questions, Orange Money`, async ({ page }) => {
+      await page.goto(chemin)
+      await expect(page.locator('h1')).toHaveCount(1)
+      await expect(page.getByRole('list', { name: liste }).locator('> li')).toHaveCount(4)
+      await expect(page.getByRole('heading', { level: 3, name: temps })).toBeVisible()
+      await expect(page.getByRole('heading', { name: main })).toBeVisible()
+      await expect(page.getByRole('heading', { name: paye })).toBeVisible()
+      await expect(page.getByText('Orange Money').first()).toBeVisible()
+      await expect(page.locator('main details')).toHaveCount(4)
+      await expect(page.getByRole('figure', { name: tuto })).toHaveCount(1)
+    })
+
+    test(`${chemin} : le JSON-LD de la FAQ et le fil d'Ariane sont conservés`, async ({ request }) => {
+      const html = await (await request.get(chemin)).text()
+      const blocs = [...html.matchAll(/<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)].map(m => JSON.parse(m[1]!))
+      const faq = blocs.find(b => b['@type'] === 'FAQPage')
+      expect(faq.mainEntity).toHaveLength(4)
+      expect(blocs.some(b => b['@type'] === 'BreadcrumbList')).toBe(true)
+    })
+  }
+
+  test('la page expéditeur ne change pas : un h1 et sept étapes', async ({ page }) => {
+    await page.goto('/envoyer-colis')
+    await expect(page.locator('h1')).toHaveCount(1)
+    await expect(page.locator('h1')).toHaveText("Envoyer un colis en Afrique, avec quelqu'un de confiance")
+    await expect(page.getByRole('list', { name: 'Les étapes d\'un envoi' }).locator('> li')).toHaveCount(7)
+  })
+})

@@ -35,16 +35,12 @@ const next = computed(() => {
   const index = visible.value.findIndex(item => item.id === openId.value)
   return index >= 0 ? (visible.value[index + 1] ?? null) : null
 })
-// Dernière carte ouverte : le focus lui revient à la fermeture.
+// Carte qui a ouvert le lecteur : le focus lui revient à la fermeture, même
+// après un passage par « Vidéo suivante ».
 let opener: string | null = null
 
 function open(id: string) {
-  opener = id
-  openId.value = id
-}
-
-function openNext(id: string) {
-  opener = id
+  if (openId.value === null) opener = id
   openId.value = id
 }
 
@@ -91,7 +87,7 @@ async function close() {
       :next="next"
       :open-app-to="localePath('/ouvrir')"
       @close="close"
-      @next="openNext"
+      @next="open"
     />
   </div>
 </template>

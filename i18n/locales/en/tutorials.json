@@ -14,19 +14,17 @@
       "traveler": "Traveler"
     },
     "items": {
-      "search": { "title": "Search for a trip", "path": "Search › All routes" },
+      "search": { "title": "Find a traveler", "path": "Search › All routes" },
       "track": { "title": "Track a parcel", "path": "Tracking › Track a parcel" },
-      "payments": { "title": "Pay and use your wallet", "path": "Activity › ☰ › Wallet" },
-      "alerts": { "title": "Create a trip alert", "path": "Activity › ☰ › My alerts" },
-      "poster": { "title": "Post and share a parcel", "path": "Activity › My parcels › Posted › Share" },
+      "payments": { "title": "Payment methods", "path": "Activity › ☰ › Wallet" },
+      "alerts": { "title": "Route alerts", "path": "Activity › ☰ › My alerts" },
+      "poster": { "title": "My poster", "path": "Activity › My parcels › Posted › Share" },
       "flights": { "title": "Flight tickets", "path": "Activity › Flight tickets › See all" }
     },
     "pathLabel": "In the app",
-    "watch": "Watch the video",
     "playerLabel": "Tutorial player",
     "close": "Close",
     "openApp": "Open the app",
-    "trySearch": "Try the search",
     "seeNext": "Next video",
     "demoNote": "The videos are recorded in the app with demo data."
   }

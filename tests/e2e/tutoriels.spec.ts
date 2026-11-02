@@ -12,7 +12,7 @@ async function ouvrirPage(page: Page, path: string) {
 
 test('la page liste les six tutoriels dans le HTML prérendu', async ({ request }) => {
   const html = await (await request.get('/tutoriels')).text()
-  expect(html).toContain('Chercher un trajet')
+  expect(html).toContain('Rechercher un voyageur')
   expect(html).toContain('1 min 29')
   expect(html).toContain('Rechercher › Tous les trajets')
   expect(html).not.toContain('<video')
@@ -40,7 +40,7 @@ test('aucune requête vidéo avant le clic ; le clic ouvre le lecteur ; Échap l
 
   const card = page.locator('[data-tutorial="search"]')
   await card.click()
-  const dialog = page.getByRole('dialog', { name: 'Chercher un trajet' })
+  const dialog = page.getByRole('dialog', { name: 'Rechercher un voyageur' })
   await expect(dialog).toBeVisible()
   await expect(dialog.locator('video')).toHaveAttribute('preload', 'none')
   await expect.poll(() => videoRequests.length).toBeGreaterThan(0)
@@ -68,6 +68,10 @@ test('« Vidéo suivante » passe au tutoriel suivant', async ({ page }) => {
   await page.locator('[data-tutorial="search"]').click()
   await page.getByRole('button', { name: 'Vidéo suivante' }).click()
   await expect(page.getByRole('dialog', { name: 'Suivre un colis' })).toBeVisible()
+  // Le focus revient à la carte qui a ouvert le lecteur, pas à la dernière vue.
+  await page.keyboard.press('Escape')
+  await expect(page.getByRole('dialog')).toBeHidden()
+  await expect(page.locator('[data-tutorial="search"]')).toBeFocused()
 })
 
 test('les boutons tiennent sur une ligne à 360 px', async ({ page }) => {

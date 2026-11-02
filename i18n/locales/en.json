@@ -1234,6 +1234,43 @@
               ]
             }
           ]
+        },
+        {
+          "title": "18. Public display of trips",
+          "blocks": [
+            {
+              "p": [
+                "The trips that travelers publish on Yadony can be viewed on yadony.com without creating an account, through a search of upcoming trips."
+              ]
+            },
+            {
+              "sub": "What is displayed",
+              "ul": [
+                "The route: the departure city and the arrival city",
+                "The departure date",
+                "The available capacity",
+                "The price per kilo paid by the sender",
+                "The traveler's first name and the initial of their last name",
+                "The traveler's rating",
+                "The traveler's number of trips",
+                "The verified identity badge"
+              ]
+            },
+            {
+              "sub": "What is never displayed",
+              "ul": [
+                "The phone number",
+                "The e-mail address",
+                "The photo"
+              ]
+            },
+            {
+              "sub": "Removing a trip",
+              "p": [
+                "A traveler who does not want their trips displayed in this way can ask for their removal by writing to {email}."
+              ]
+            }
+          ]
         }
       ]
     },

@@ -213,3 +213,28 @@ for (const path of ['/cookies', '/en/cookies', '/confidentialite']) {
     expect(new Set(boutons)).toEqual(new Set(boutons.length ? ['normal'] : []))
   })
 }
+
+
+// Affichage public des trajets : la section figure dans la politique de
+// confidentialité (donc dans son sommaire) et donne l'adresse de retrait.
+for (const { path, title, toc, mail } of [
+  { path: '/confidentialite', title: 'Affichage public des trajets', toc: 'Sommaire', mail: /contact@yadony\.com/ },
+  { path: '/en/privacy', title: 'Public display of trips', toc: 'Table of contents', mail: /contact@yadony\.com/ },
+]) {
+  test(`${path} : la section « ${title} » est présente avec l’adresse de retrait`, async ({ page }) => {
+    await page.goto(path)
+    const heading = page.locator('main h2', { hasText: title })
+    await expect(heading).toHaveCount(1)
+    const id = (await heading.getAttribute('id'))!
+    await expect(page.locator(`main nav[aria-label="${toc}"] a[href="#${id}"]`)).toContainText(title)
+    // Le texte de la section : du titre jusqu’au titre suivant (ou la fin).
+    const section = await heading.evaluate((el) => {
+      const parts: string[] = []
+      for (let n = el.nextElementSibling; n && n.tagName !== 'H2'; n = n.nextElementSibling) {
+        parts.push((n.textContent ?? '').replace(/\s+/g, ' ').trim())
+      }
+      return parts.join('\n')
+    })
+    expect(section).toMatch(mail)
+  })
+}

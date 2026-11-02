@@ -4,6 +4,7 @@ import { useI18n } from 'vue-i18n'
 import { useRoute } from 'vue-router'
 import { buildSeoMeta } from '@/lib/seo'
 import { legalToc, renderLegalArticles } from '@/lib/legal'
+import { contactEmail } from '@/lib/site'
 
 defineI18nRoute({ paths: { fr: '/confidentialite', en: '/privacy' } })
 
@@ -21,7 +22,7 @@ useSeoMeta(
 
 const articles = computed(() =>
   renderLegalArticles(tm('legal.confidentialite.articles') as unknown[], (message) =>
-    rt(message as never),
+    rt(message as never, { email: contactEmail }),
   ),
 )
 

@@ -210,3 +210,20 @@ Company name: YADONY SAS, SIREN 108 733 510
 Publication director: Mr Dramane DIAKITE, President
 Technical partners: Google Firebase, Stripe, Didit, pawaPay (Mobile Money: Wave, Orange Money and other operators), Cloudflare, PostHog, Sentry, Twilio, Resend, Stream, Google Maps, Anthropic (AI assistant)
 French supervisory authority: CNIL (www.cnil.fr)
+18. Public display of trips
+The trips that travelers publish on Yadony can be viewed on yadony.com without creating an account, through a search of upcoming trips.
+What is displayed
+The route: the departure city and the arrival city
+The departure date
+The available capacity
+The price per kilo paid by the sender
+The traveler's first name and the initial of their last name
+The traveler's rating
+The traveler's number of trips
+The verified identity badge
+What is never displayed
+The phone number
+The e-mail address
+The photo
+Removing a trip
+A traveler who does not want their trips displayed in this way can ask for their removal by writing to contact@yadony.com.

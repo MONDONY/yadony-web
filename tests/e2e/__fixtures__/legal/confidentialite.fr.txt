@@ -210,3 +210,20 @@ Raison sociale : YADONY SAS, SIREN 108 733 510
 Directeur de la publication : M. Dramane DIAKITE, Président
 Partenaires techniques : Google Firebase, Stripe, Didit, pawaPay (Mobile Money : Wave, Orange Money et autres opérateurs), Cloudflare, PostHog, Sentry, Twilio, Resend, Stream, Google Maps, Anthropic (assistant IA)
 Autorité de contrôle française : CNIL (www.cnil.fr)
+18. Affichage public des trajets
+Les trajets que les voyageurs publient sur Yadony peuvent être consultés sur yadony.com sans créer de compte, grâce à une recherche des trajets à venir.
+Ce qui est affiché
+Le trajet : la ville de départ et la ville d'arrivée
+La date de départ
+La capacité disponible
+Le prix au kilo payé par l'expéditeur
+Le prénom du voyageur et l'initiale de son nom
+La note du voyageur
+Le nombre de trajets du voyageur
+Le badge d'identité vérifiée
+Ce qui n'est jamais affiché
+Le numéro de téléphone
+L'adresse e-mail
+La photo
+Retrait d'un trajet
+Un voyageur qui ne souhaite pas que ses trajets soient affichés ainsi peut en demander le retrait en écrivant à contact@yadony.com.

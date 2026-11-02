@@ -38,7 +38,7 @@ TUTORIALS=(
   "flights|yadony_demo_24_billets_d_avion.mp4|yadony_demo_en_24_flight_tickets.mp4|12|16"
 )
 
-file_size() { stat -f %z "$1" 2>/dev/null || stat -c %s "$1"; }
+file_size() { wc -c < "$1" | tr -d ' '; }
 
 encode() { # source destination
   local src="$1" dest="$2" crf="$CRF_START" tmp="$2.tmp.mp4"

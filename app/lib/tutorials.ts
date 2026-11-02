@@ -8,17 +8,17 @@ export type TutorialAudience = 'sender' | 'recipient' | 'traveler'
 export interface Tutorial {
   id: string
   audience: TutorialAudience
-  /** Durée de la version française, en secondes. */
-  durationSeconds: number
+  /** Durée réelle de chaque version, en secondes (arrondie à la seconde). */
+  durationSeconds: Record<Locale, number>
 }
 
 export const tutorials: Tutorial[] = [
-  { id: 'search', audience: 'sender', durationSeconds: 89 },
-  { id: 'track', audience: 'recipient', durationSeconds: 43 },
-  { id: 'payments', audience: 'sender', durationSeconds: 44 },
-  { id: 'alerts', audience: 'sender', durationSeconds: 81 },
-  { id: 'poster', audience: 'sender', durationSeconds: 40 },
-  { id: 'flights', audience: 'traveler', durationSeconds: 35 },
+  { id: 'search', audience: 'sender', durationSeconds: { fr: 89, en: 95 } },
+  { id: 'track', audience: 'recipient', durationSeconds: { fr: 43, en: 76 } },
+  { id: 'payments', audience: 'sender', durationSeconds: { fr: 44, en: 51 } },
+  { id: 'alerts', audience: 'sender', durationSeconds: { fr: 81, en: 86 } },
+  { id: 'poster', audience: 'sender', durationSeconds: { fr: 40, en: 46 } },
+  { id: 'flights', audience: 'traveler', durationSeconds: { fr: 35, en: 34 } },
 ]
 
 /** « 1 min 29 » / « 1 min 29 s » ; « 43 s » sous la minute. */
@@ -29,6 +29,11 @@ export function formatDuration(seconds: number, locale: Locale): string {
   if (minutes === 0) return `${rest} s`
   if (rest === 0) return `${minutes} min`
   return locale === 'fr' ? `${minutes} min ${rest}` : `${minutes} min ${rest} s`
+}
+
+/** Durée d'un tutoriel dans la langue demandée, prête à afficher. */
+export function tutorialDuration(tutorial: Tutorial, locale: Locale): string {
+  return formatDuration(tutorial.durationSeconds[locale], locale)
 }
 
 function suffix(locale: Locale): string {

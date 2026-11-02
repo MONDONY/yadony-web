@@ -2,20 +2,36 @@ import { describe, it, expect } from 'vitest'
 import {
   tutorials,
   formatDuration,
+  tutorialDuration,
   videoSrc,
   posterSrc,
 } from '../../../app/lib/tutorials'
 
 describe('tutorials', () => {
-  it('liste les 6 tutoriels dans l’ordre voulu, avec public et durée', () => {
-    expect(tutorials).toEqual([
-      { id: 'search', audience: 'sender', durationSeconds: 89 },
-      { id: 'track', audience: 'recipient', durationSeconds: 43 },
-      { id: 'payments', audience: 'sender', durationSeconds: 44 },
-      { id: 'alerts', audience: 'sender', durationSeconds: 81 },
-      { id: 'poster', audience: 'sender', durationSeconds: 40 },
-      { id: 'flights', audience: 'traveler', durationSeconds: 35 },
+  it('liste les 6 tutoriels dans l’ordre voulu, avec leur public', () => {
+    expect(tutorials.map((t) => [t.id, t.audience])).toEqual([
+      ['search', 'sender'],
+      ['track', 'recipient'],
+      ['payments', 'sender'],
+      ['alerts', 'sender'],
+      ['poster', 'sender'],
+      ['flights', 'traveler'],
     ])
+  })
+
+  // Durées réelles des fichiers publiés (ffprobe, arrondies à la seconde) :
+  // FR 89,0 / 42,5 / 43,5 / 81,1 / 40,0 / 34,5 ; EN 95,0 / 75,6 / 50,5 / 85,5 / 46,0 / 34,0.
+  it('porte la durée réelle de chaque version, en français et en anglais', () => {
+    expect(
+      Object.fromEntries(tutorials.map((t) => [t.id, t.durationSeconds])),
+    ).toEqual({
+      search: { fr: 89, en: 95 },
+      track: { fr: 43, en: 76 },
+      payments: { fr: 44, en: 51 },
+      alerts: { fr: 81, en: 86 },
+      poster: { fr: 40, en: 46 },
+      flights: { fr: 35, en: 34 },
+    })
   })
 
   it('compte 6 tutoriels aux identifiants uniques', () => {
@@ -45,6 +61,21 @@ describe('formatDuration', () => {
 
   it('arrondit les secondes décimales', () => {
     expect(formatDuration(42.6, 'en')).toBe('43 s')
+  })
+})
+
+describe('tutorialDuration', () => {
+  const track = tutorials.find((t) => t.id === 'track')!
+
+  it('affiche la durée de la langue demandée', () => {
+    expect(tutorialDuration(track, 'fr')).toBe('43 s')
+    expect(tutorialDuration(track, 'en')).toBe('1 min 16 s')
+  })
+
+  it('formate la durée du français avec minutes', () => {
+    const search = tutorials.find((t) => t.id === 'search')!
+    expect(tutorialDuration(search, 'fr')).toBe('1 min 29')
+    expect(tutorialDuration(search, 'en')).toBe('1 min 35 s')
   })
 })
 

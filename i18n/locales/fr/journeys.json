@@ -133,11 +133,24 @@
           "text": "Le destinataire vous donne son code à 6 chiffres : la livraison est confirmée et le paiement vous est versé, sur votre compte bancaire ou en mobile money."
         }
       ],
-      "earnings": {
-        "kicker": "Exemple",
+      "tempsTitle": "De la publication au paiement, en quatre temps.",
+      "temps": {
+        "publish": "Publiez votre trajet",
+        "price": "Choisissez votre prix",
+        "poster": "Partagez votre affiche",
+        "deliver": "Livrez contre le code"
+      },
+      "control": {
+        "title": "Vous gardez la main"
+      },
+      "simulator": {
+        "kicker": "Simulateur",
         "title": "Ce que peuvent rapporter vos kilos",
-        "text": "15 kg libres à 8 € le kilo, c'est 120 € pour un voyage que vous faites déjà. Le prix, c'est vous qui le fixez.",
-        "note": "Exemple indicatif : chaque voyageur fixe son propre prix."
+        "text": "Réglez vos kilos libres et votre prix au kilo pour voir ce que peut rapporter un voyage que vous faites déjà. Le prix, c'est vous qui le fixez.",
+        "kgLabel": "Kilos libres",
+        "priceLabel": "Prix au kilo",
+        "totalLabel": "Total au prix que vous fixez",
+        "note": "Exemple indicatif : chaque voyageur fixe son propre prix. Le montant que vous recevez, après la commission de service, est affiché avant que vous acceptiez."
       },
       "payouts": {
         "title": "Payé comme vous voulez",

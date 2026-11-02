@@ -21,6 +21,11 @@
       "poster": { "title": "My poster", "path": "Activity › My parcels › Posted › Share" },
       "flights": { "title": "Flight tickets", "path": "Activity › Flight tickets › See all" }
     },
+    "all": "All tutorials",
+    "home": {
+      "title": "See it before you try it.",
+      "lead": "Short videos on the real app screen, with a voice-over."
+    },
     "pathLabel": "In the app",
     "playerLabel": "Tutorial player",
     "close": "Close",

@@ -21,6 +21,11 @@
       "poster": { "title": "Mon affiche", "path": "Activités › Mes colis › Publiés › Partager" },
       "flights": { "title": "Billets d'avion", "path": "Activités › Billets d'avion › Tout voir" }
     },
+    "all": "Tous les tutoriels",
+    "home": {
+      "title": "Voir avant d'essayer.",
+      "lead": "Des vidéos courtes sur l'écran réel de l'app, avec la voix."
+    },
     "pathLabel": "Dans l'app",
     "playerLabel": "Lecteur de tutoriel",
     "close": "Fermer",

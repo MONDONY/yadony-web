@@ -145,3 +145,89 @@ for (const path of ['/tutoriels', '/en/tutorials']) {
     expect(await scan()).toEqual([])
   })
 }
+
+test.describe('teaser d’accueil et lien depuis Comment ça marche', () => {
+  test('l’accueil montre 4 affiches dans l’ordre, sans vidéo, et un lien vers tous les tutoriels', async ({ page }) => {
+    const videoRequests: string[] = []
+    page.on('request', (request) => {
+      if (VIDEOS.test(request.url())) videoRequests.push(request.url())
+    })
+    await ouvrirPage(page, '/')
+    const section = page.locator('section', { has: page.getByRole('heading', { name: 'Voir avant d’essayer.'.replace('’', "'") }) })
+    await section.scrollIntoViewIfNeeded()
+    const tuiles = section.locator('a[data-home-tutorial]')
+    await expect(tuiles).toHaveCount(4)
+    await expect(tuiles).toContainText(['Rechercher un voyageur', 'Suivre un colis', 'Moyens de paiement', 'Billets d\'avion'])
+    await expect(tuiles.first()).toContainText('1 min 29')
+    await expect(section.locator('img[loading="lazy"]')).toHaveCount(4)
+    await expect(section.locator('video')).toHaveCount(0)
+    await expect(section.getByRole('link', { name: 'Tous les tutoriels' })).toHaveAttribute('href', '/tutoriels')
+    expect(videoRequests).toEqual([])
+  })
+
+  test('un clic sur une affiche mène au lecteur ouvert sur cette vidéo', async ({ page }) => {
+    await ouvrirPage(page, '/')
+    const tuile = page.locator('a[data-home-tutorial="track"]')
+    await tuile.scrollIntoViewIfNeeded()
+    await tuile.click()
+    await expect(page).toHaveURL(/\/tutoriels\?v=track$/)
+    await expect(page.getByRole('dialog', { name: 'Suivre un colis' })).toBeVisible()
+  })
+
+  test('version anglaise du teaser et lien vers /en/tutorials', async ({ page }) => {
+    await ouvrirPage(page, '/en')
+    const section = page.locator('section', { has: page.getByRole('heading', { name: 'See it before you try it.' }) })
+    await section.scrollIntoViewIfNeeded()
+    await expect(section.locator('a[data-home-tutorial]')).toHaveCount(4)
+    await expect(section.getByRole('link', { name: 'All tutorials' })).toHaveAttribute('href', '/en/tutorials')
+    await section.locator('a[data-home-tutorial="payments"]').click()
+    await expect(page).toHaveURL(/\/en\/tutorials\?v=payments$/)
+    await expect(page.getByRole('dialog', { name: 'Payment methods' })).toBeVisible()
+  })
+
+  test('?v=<id> ouvre le lecteur, Échap le ferme et retire v de l’adresse sans recharger', async ({ page }) => {
+    await ouvrirPage(page, '/tutoriels?v=flights')
+    const dialog = page.getByRole('dialog', { name: 'Billets d\'avion' })
+    await expect(dialog).toBeVisible()
+    await page.evaluate(() => { (window as unknown as { marqueur: boolean }).marqueur = true })
+    await page.keyboard.press('Escape')
+    await expect(dialog).toBeHidden()
+    await expect(page).toHaveURL(/\/tutoriels$/)
+    await expect(page.locator('[data-tutorial="flights"]')).toBeFocused()
+    expect(await page.evaluate(() => (window as unknown as { marqueur?: boolean }).marqueur)).toBe(true)
+  })
+
+  for (const valeur of ['inconnu', '']) {
+    test(`?v=${valeur || '(vide)'} est ignoré sans erreur ni dialogue`, async ({ page }) => {
+      const erreurs: string[] = []
+      page.on('pageerror', error => erreurs.push(error.message))
+      await ouvrirPage(page, `/tutoriels?v=${valeur}`)
+      await expect(page.getByTestId('tutorial-card')).toHaveCount(6)
+      await expect(page.getByRole('dialog')).toHaveCount(0)
+      expect(erreurs).toEqual([])
+    })
+  }
+
+  test('« Comment ça marche » renvoie vers tous les tutoriels, en français et en anglais', async ({ page }) => {
+    await ouvrirPage(page, '/comment-ca-marche')
+    await expect(page.getByRole('main').getByRole('link', { name: 'Tous les tutoriels' })).toHaveAttribute('href', '/tutoriels')
+    await ouvrirPage(page, '/en/how-it-works')
+    await expect(page.getByRole('main').getByRole('link', { name: 'All tutorials' })).toHaveAttribute('href', '/en/tutorials')
+  })
+
+  test('à 360 px : pas de débordement et cibles d’au moins 44 px', async ({ page }) => {
+    await page.setViewportSize({ width: 360, height: 740 })
+    await ouvrirPage(page, '/')
+    const tuiles = page.locator('a[data-home-tutorial]')
+    await tuiles.first().scrollIntoViewIfNeeded()
+    for (const tuile of await tuiles.all()) {
+      const box = await tuile.boundingBox()
+      expect(box!.height).toBeGreaterThanOrEqual(44)
+    }
+    const lien = page.getByRole('link', { name: 'Tous les tutoriels' }).first()
+    const box = await lien.boundingBox()
+    expect(box!.height).toBeGreaterThanOrEqual(44)
+    expect(box!.height).toBeLessThan(60)
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true)
+  })
+})

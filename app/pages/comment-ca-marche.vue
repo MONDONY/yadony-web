@@ -60,6 +60,7 @@ useSeoMeta(
             </NuxtLink>
           </UiReveal>
         </ul>
+        <UiButton :to="localePath('/tutoriels')" variant="ghost" class="mt-8">{{ t('tutorials.all') }}</UiButton>
       </UiContainer>
     </UiSection>
     <DownloadCta />

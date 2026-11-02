@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { computed, nextTick, ref } from 'vue'
+import { computed, nextTick, onMounted, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import { buildSeoMeta } from '@/lib/seo'
 import { tutorials, type TutorialAudience } from '@/lib/tutorials'
 
@@ -9,6 +9,7 @@ defineI18nRoute({ paths: { fr: '/tutoriels', en: '/tutorials' } })
 
 const { t, locale } = useI18n()
 const route = useRoute()
+const router = useRouter()
 const localePath = useLocalePath()
 
 useSeoMeta(
@@ -44,9 +45,21 @@ function open(id: string) {
   openId.value = id
 }
 
+// Lien direct depuis l'accueil (?v=<id>) : une valeur inconnue ou vide est
+// ignorée. À la fermeture, `v` quitte l'adresse sans recharger la page, pour
+// que le bouton « retour » ne rouvre pas le lecteur.
+onMounted(() => {
+  const requested = route.query.v
+  if (typeof requested === 'string' && tutorials.some(item => item.id === requested)) open(requested)
+})
+
 async function close() {
   const id = opener
   openId.value = null
+  if ('v' in route.query) {
+    const { v: _v, ...rest } = route.query
+    await router.replace({ query: rest })
+  }
   await nextTick()
   if (id) document.querySelector<HTMLElement>(`[data-tutorial="${id}"]`)?.focus()
 }

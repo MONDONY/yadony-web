@@ -133,11 +133,14 @@
           "text": "The recipient gives you their 6-digit code: delivery is confirmed and the payment is sent to you, to your bank account or by mobile money."
         }
       ],
-      "earnings": {
-        "kicker": "Example",
+      "simulator": {
+        "kicker": "Simulator",
         "title": "What your kilos could earn you",
-        "text": "15 spare kg at 8 € per kilo comes to 120 € on a trip you are making anyway. And you set the price.",
-        "note": "Example for illustration only: every traveller sets their own price."
+        "text": "Set your spare kilos and your price per kilo to see what a trip you are making anyway could earn. You set the price.",
+        "kgLabel": "Spare kilos",
+        "priceLabel": "Price per kilo",
+        "totalLabel": "Total at the price you set",
+        "note": "Example for illustration only: every traveller sets their own price. The amount you receive, after the service fee, is shown before you accept."
       },
       "payouts": {
         "title": "Paid the way you want",

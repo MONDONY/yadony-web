@@ -27,8 +27,27 @@ describe('HomeToday', () => {
       '/envoyer-colis',
       '/devenir-voyageur',
       '/billets-avion',
-      '/securite',
       '/comment-ca-marche',
+      '/envoyer-colis#destinataire',
+      'https://pro.yadony.com',
+    ])
+  })
+
+  it('suit la langue de la page : chemins anglais, Yadony Pro inchangé', () => {
+    const english: Record<string, string> = {
+      '/envoyer-colis': '/en/send-a-parcel',
+      '/devenir-voyageur': '/en/become-a-traveler',
+      '/billets-avion': '/en/flight-deals',
+      '/comment-ca-marche': '/en/how-it-works',
+    }
+    vi.stubGlobal('useLocalePath', () => (path: string) => english[path] ?? path)
+    const hrefs = mountToday('en').findAll('li a').map((a) => a.attributes('href'))
+    expect(hrefs).toEqual([
+      '/en/send-a-parcel',
+      '/en/become-a-traveler',
+      '/en/flight-deals',
+      '/en/how-it-works',
+      '/en/send-a-parcel#destinataire',
       'https://pro.yadony.com',
     ])
   })

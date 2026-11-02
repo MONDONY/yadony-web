@@ -1,7 +1,8 @@
 import AxeBuilder from '@axe-core/playwright'
 import { test, expect, type Page, type Route } from './fixtures'
 
-// Accueil centré sur la recherche publique. L'API est simulée par `page.route` :
+// Accueil centré sur la recherche publique. L'API est simulée par `page.route`
+// (par défaut « aucun trajet » via la fixture commune, voir fixtures.ts) :
 // aucun appel réel ne part du navigateur de test. Le formulaire est rendu côté
 // serveur : ce qui est saisi avant l'hydratation est effacé, d'où `hydrated`.
 const API = '**/public/announcements**'
@@ -35,14 +36,6 @@ async function respondWith(page: Page, body: unknown, status = 200) {
     route.fulfill({ status, contentType: 'application/json', headers: CORS, body: JSON.stringify(body) }),
   )
 }
-
-// Par défaut l'API répond « aucun trajet » : aucun test ne sort sur le réseau.
-// Un `respondWith` posé ensuite dans le test a la priorité.
-test.beforeEach(async ({ page }) => {
-  await page.route(API, (route: Route) =>
-    route.fulfill({ status: 200, contentType: 'application/json', headers: CORS, body: JSON.stringify(ok([])) }),
-  )
-})
 
 async function hydrated(page: Page) {
   await page.waitForFunction(() => (window as unknown as { useNuxtApp?: () => { isHydrating: boolean } }).useNuxtApp?.().isHydrating === false)
@@ -186,9 +179,12 @@ test.describe('prochains départs', () => {
     test(`${name} laisse l’accueil intact : section absente, aucune erreur de la page`, async ({ page }) => {
       const problems: string[] = []
       // Le navigateur journalise lui-même « Failed to load resource » pour un
-      // statut HTTP d'erreur : ce n'est pas une erreur du code de la page.
+      // statut HTTP d'erreur de l'API simulée : seul ce message, pour cette
+      // adresse, est toléré. Toute autre erreur console fait échouer le test.
       page.on('console', (message) => {
-        if (message.type() === 'error' && !/Failed to load resource/.test(message.text())) problems.push(message.text())
+        if (message.type() !== 'error') return
+        const apiStatus = /Failed to load resource/.test(message.text()) && message.location().url.includes('/public/announcements')
+        if (!apiStatus) problems.push(message.text())
       })
       page.on('pageerror', error => problems.push(error.message))
       await respondWith(page, body, status)
@@ -205,6 +201,13 @@ test.describe('prochains départs', () => {
 
   test('une coupure réseau laisse l’accueil intact', async ({ page }) => {
     const problems: string[] = []
+    // Une requête coupée est journalisée par le navigateur (net::ERR_FAILED) :
+    // seul ce message, pour l'adresse de l'API, est toléré.
+    page.on('console', (message) => {
+      if (message.type() !== 'error') return
+      const cut = /Failed to load resource/.test(message.text()) && message.location().url.includes('/public/announcements')
+      if (!cut) problems.push(message.text())
+    })
     page.on('pageerror', error => problems.push(error.message))
     await page.route(API, route => route.abort())
     await page.goto('/')
@@ -243,8 +246,8 @@ test.describe('sections de l’accueil', () => {
       '/envoyer-colis',
       '/devenir-voyageur',
       '/billets-avion',
-      '/securite',
       '/comment-ca-marche',
+      '/envoyer-colis#destinataire',
       'https://pro.yadony.com',
     ])
     await expect(links.nth(5)).toHaveAttribute('target', '_blank')
@@ -253,11 +256,37 @@ test.describe('sections de l’accueil', () => {
     await expect(page.locator('h1')).toHaveCount(1)
   })
 
+  test('le bloc voyageur mène à la page Devenir voyageur, sans action de l’app', async ({ page }) => {
+    await page.goto('/')
+    const section = page.locator('section').filter({ has: page.getByRole('heading', { name: 'Vous voyagez ? Vendez vos kilos libres.' }) })
+    await expect(section.getByRole('link')).toHaveCount(1)
+    await expect(section.getByRole('link', { name: 'Devenir voyageur' })).toHaveAttribute('href', '/devenir-voyageur')
+    await expect(section.getByText('Publier mon trajet')).toHaveCount(0)
+    await expect(section.getByRole('button')).toHaveCount(0)
+    await page.goto('/en')
+    await expect(page.getByRole('main').getByRole('link', { name: 'Become a traveler' })).toHaveAttribute('href', '/en/become-a-traveler')
+  })
+
+  test('« Un suivi pour vos proches » amène la section Destinataire sous l’en-tête', async ({ page }) => {
+    await page.goto('/')
+    const section = page.locator('section').filter({ has: page.getByRole('heading', { name: 'Yadony aujourd\'hui.' }) })
+    await section.getByRole('link', { name: /Un suivi pour vos proches/ }).click()
+    await expect(page).toHaveURL(/\/envoyer-colis#destinataire$/)
+    const target = page.locator('#destinataire')
+    await expect(target).toBeVisible()
+    await expect.poll(async () => {
+      const top = (await target.boundingBox())!.y
+      const header = (await page.locator('header').first().boundingBox())!
+      return top >= header.y + header.height - 1 && top < 200
+    }).toBe(true)
+  })
+
   test('l’ordre des sections est celui de la recherche d’abord, avec le bas de page de téléchargement', async ({ page }) => {
     await page.goto('/')
     const headings = await page.locator('main h2').allTextContents()
     expect(headings.map(h => h.trim())).toEqual([
       'Chercher ici, réserver dans l\'app.',
+      'Vous voyagez ? Vendez vos kilos libres.',
       'Yadony aujourd\'hui.',
       'Ce qui manquait aux groupes WhatsApp',
       'Les questions qu\'on nous pose avant de télécharger',
@@ -310,9 +339,9 @@ test.describe('sans JavaScript (robots, navigateurs limités)', () => {
 test.describe('téléphone étroit (360 px)', () => {
   test.use({ viewport: { width: 360, height: 760 } })
 
-  for (const [path, submit, labels] of [
-    ['/', 'Voir les voyageurs', ['Paris → Dakar', 'Marseille → Douala']],
-    ['/en', 'See travelers', ['Paris → Dakar', 'Marseille → Douala']],
+  for (const [path, submit, labels, travelerCta] of [
+    ['/', 'Voir les voyageurs', ['Paris → Dakar', 'Marseille → Douala'], 'Devenir voyageur'],
+    ['/en', 'See travelers', ['Paris → Dakar', 'Marseille → Douala'], 'Become a traveler'],
   ] as const) {
     test(`${path} : aucun débordement horizontal, libellés des boutons sur une ligne`, async ({ page }) => {
       await respondWith(page, ok(FOUR))
@@ -332,6 +361,12 @@ test.describe('téléphone étroit (360 px)', () => {
       for (const target of [button, link(labels[0]), request]) {
         expect((await target.boundingBox())!.height).toBeGreaterThanOrEqual(44)
       }
+      // Bloc voyageur : son appel tient sur une ligne, à sa taille normale.
+      const cta = page.getByRole('main').getByRole('link', { name: travelerCta })
+      await cta.scrollIntoViewIfNeeded()
+      expect(await lineCount(cta)).toBe(1)
+      expect((await cta.boundingBox())!.height).toBeGreaterThanOrEqual(44)
+      expect(await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)).toBeLessThanOrEqual(0)
     })
   }
 })
@@ -392,7 +427,7 @@ test.describe('mouvement réduit', () => {
     await page.emulateMedia({ reducedMotion: 'reduce' })
   })
 
-  test('chaque illustration du parcours affiche directement son état final', async ({ page, isMobile }) => {
+  test('les illustrations du parcours (accord, cadenas ouvert, frise pleine) affichent directement leur état final', async ({ page, isMobile }) => {
     await page.goto('/envoyer-colis')
     // Sur grand écran, seul le visuel de l'étape active est montré : on amène
     // chaque étape à l'écran. Sur téléphone, chaque étape porte son visuel.
@@ -402,9 +437,10 @@ test.describe('mouvement réduit', () => {
     const scope = isMobile ? page.locator('.scene-step') : page.locator('main')
     await steps.nth(2).scrollIntoViewIfNeeded()
     await expect(scope.locator('[data-agreed][data-shown="true"]').first()).toBeVisible()
-    await steps.nth(3).scrollIntoViewIfNeeded()
-    await expect(scope.locator('[data-locked="true"]').first()).toBeVisible()
+    // Dernière étape : le cadenas est déjà ouvert (sans jouer l'animation) et
+    // la frise de suivi est pleine.
     await steps.nth(6).scrollIntoViewIfNeeded()
+    await expect(scope.locator('[data-locked="false"]').first()).toBeVisible()
     const fill = scope.locator('[data-fill]').locator('visible=true').first()
     await expect(fill).toHaveAttribute('style', /width:\s*100%/)
   })

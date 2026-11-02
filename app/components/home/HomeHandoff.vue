@@ -11,7 +11,7 @@ const steps = items<{ lead: string; text: string }>('landing.handoff.steps')
 </script>
 
 <template>
-  <section class="bg-surface py-14 sm:py-20">
+  <section class="bg-bg py-14 sm:py-20">
     <UiContainer>
       <div class="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
         <div class="lg:col-span-7">

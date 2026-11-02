@@ -29,6 +29,11 @@
         }
       ]
     },
+    "traveler": {
+      "title": "Vous voyagez ? Vendez vos kilos libres.",
+      "text": "Publiez votre trajet dans l'app, recevez les demandes, soyez payé à la livraison.",
+      "cta": "Devenir voyageur"
+    },
     "today": {
       "title": "Yadony aujourd'hui.",
       "lead": "Tout ce que fait l'app, en une liste.",

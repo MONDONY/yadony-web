@@ -10,11 +10,24 @@ const { t } = useI18n()
 const { items } = useTexts()
 const localePath = useLocalePath()
 const features = items<{ title: string; text: string }>('landing.today.items')
-const targets = ['/envoyer-colis', '/devenir-voyageur', '/billets-avion', '/securite', '/comment-ca-marche']
+// Une entrée par fonction de l'app, dans l'ordre d'affichage : une page du
+// site (avec une ancre éventuelle) ou un site externe (Yadony Pro).
+type Target = { to: string; hash?: string } | { href: string; external: true }
+const targets: Target[] = [
+  { to: '/envoyer-colis' },
+  { to: '/devenir-voyageur' },
+  { to: '/billets-avion' },
+  { to: '/comment-ca-marche' },
+  { to: '/envoyer-colis', hash: '#destinataire' },
+  { href: proUrl, external: true },
+]
 
-function href(index: number): string {
-  const path = targets[index]
-  return path ? localePath(path) : proUrl
+function isExternal(target: Target | undefined): boolean {
+  return target !== undefined && 'external' in target
+}
+
+function href(target: Target): string {
+  return 'external' in target ? target.href : `${localePath(target.to)}${target.hash ?? ''}`
 }
 
 const link =
@@ -30,8 +43,8 @@ const link =
       <ul class="mt-8 grid list-none gap-4 sm:grid-cols-2 lg:grid-cols-3">
         <li v-for="(feature, index) in features" :key="feature.title">
           <a
-            v-if="index === targets.length"
-            :href="href(index)"
+            v-if="isExternal(targets[index])"
+            :href="href(targets[index]!)"
             target="_blank"
             rel="noopener noreferrer"
             :class="link"
@@ -39,7 +52,7 @@ const link =
             <span class="font-display text-xl font-bold text-ink">{{ feature.title }}<span class="sr-only"> {{ t('a11y.opensNewTab') }}</span></span>
             <span class="mt-2 text-ink-muted">{{ feature.text }}</span>
           </a>
-          <NuxtLink v-else :to="href(index)" :class="link">
+          <NuxtLink v-else :to="href(targets[index]!)" :class="link">
             <span class="font-display text-xl font-bold text-ink">{{ feature.title }}</span>
             <span class="mt-2 text-ink-muted">{{ feature.text }}</span>
           </NuxtLink>

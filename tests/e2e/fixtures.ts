@@ -22,6 +22,17 @@ export const test = base.extend<{ popupDejaFermee: boolean; cookiesTranches: boo
     if (cookiesTranches) {
       await page.addInitScript(cle => window.localStorage.setItem(cle, 'refused'), CONSENT_STORAGE_KEY)
     }
+    // Aucun test ne sort sur le réseau : l'API publique de recherche répond
+    // « aucun trajet » par défaut (avec CORS, donc sans erreur console). Un
+    // `page.route` posé dans un test a la priorité sur ce défaut de contexte.
+    await page.context().route('**/public/announcements**', route =>
+      route.fulfill({
+        status: 200,
+        contentType: 'application/json',
+        headers: { 'access-control-allow-origin': '*' },
+        body: JSON.stringify({ content: [], totalElements: 0, page: 0, size: 20, totalPages: 1, last: true }),
+      }),
+    )
     await use(page)
   },
 })

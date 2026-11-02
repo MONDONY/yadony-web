@@ -29,6 +29,11 @@
         }
       ]
     },
+    "traveler": {
+      "title": "Traveling? Sell your spare kilos.",
+      "text": "Publish your trip in the app, receive requests, get paid on delivery.",
+      "cta": "Become a traveler"
+    },
     "today": {
       "title": "Yadony today.",
       "lead": "Everything the app does, in one list.",

@@ -16,7 +16,7 @@ onMounted(() => { mounted.value = true })
 </script>
 
 <template>
-  <section class="bg-navy py-14 text-white sm:py-20">
+  <section id="destinataire" class="scroll-mt-28 bg-navy py-14 text-white sm:py-20">
     <UiContainer>
       <div class="grid gap-14 lg:grid-cols-2 lg:items-center">
         <div>

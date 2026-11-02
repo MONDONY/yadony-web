@@ -16,7 +16,7 @@ const menuButton = ref<HTMLButtonElement | null>(null)
 // Le menu mobile se referme de lui-même dès que le visiteur passe à autre
 // chose : Échap (le focus revient sur le bouton), un appui hors du header, un
 // changement de page (retour arrière compris) ou un écran assez large pour
-// afficher la navigation en ligne (xl, 1280 px).
+// afficher la navigation en ligne (lg, 1024 px).
 function close(restoreFocus = false) {
   if (!open.value) return
   open.value = false
@@ -38,7 +38,7 @@ function onWideChange(event: MediaQueryListEvent) {
 
 onMounted(() => {
   document.addEventListener('pointerdown', onPointerDown)
-  wide = window.matchMedia?.('(min-width: 1280px)')
+  wide = window.matchMedia?.('(min-width: 1024px)')
   wide?.addEventListener('change', onWideChange)
 })
 
@@ -62,10 +62,8 @@ const switchLabel = computed(() =>
 const links = computed(() => [
   { to: '/envoyer-colis', label: t('nav.corridors') },
   { to: '/devenir-voyageur', label: t('nav.traveler') },
-  { to: '/billets-avion', label: t('nav.flights') },
   { to: '/comment-ca-marche', label: t('nav.howItWorks') },
   { to: '/tarifs', label: t('nav.pricing') },
-  { to: '/securite', label: t('nav.trust') },
 ])
 </script>
 
@@ -85,9 +83,10 @@ const links = computed(() => [
           >
         </NuxtLink>
 
-        <!-- Six liens ne tiennent sur une ligne qu'à partir de 1280 px (xl) ;
-             en dessous, ils passent dans le menu déroulant. -->
-        <nav class="hidden items-center gap-7 xl:flex" :aria-label="t('nav.mainLabel')">
+        <!-- Quatre liens tiennent sur une ligne dès 1024 px (lg) ; en dessous,
+             ils passent dans le menu déroulant. Sécurité et Billets d'avion
+             restent joignables depuis le pied de page. -->
+        <nav class="hidden items-center gap-7 lg:flex" :aria-label="t('nav.mainLabel')">
           <NuxtLink
             v-for="link in links"
             :key="link.to"
@@ -105,7 +104,7 @@ const links = computed(() => [
           <button
             ref="menuButton"
             type="button"
-            class="min-h-11 rounded-btn border border-line px-4 text-sm font-medium transition-[background-color,transform] duration-micro ease-dony hover:bg-sand active:scale-[0.96] xl:hidden"
+            class="min-h-11 rounded-btn border border-line px-4 text-sm font-medium transition-[background-color,transform] duration-micro ease-dony hover:bg-sand active:scale-[0.96] lg:hidden"
             :aria-expanded="open"
             aria-controls="menu-mobile"
             @click="open = !open"
@@ -119,7 +118,7 @@ const links = computed(() => [
            un téléphone en paysage, la liste défile au lieu de déborder de
            l'écran (le header est sticky). -->
       <div
-        class="grid transition-[grid-template-rows,visibility] duration-base ease-dony xl:hidden"
+        class="grid transition-[grid-template-rows,visibility] duration-base ease-dony lg:hidden"
         :class="open ? 'grid-rows-[1fr]' : 'invisible grid-rows-[0fr]'"
         :inert="open ? undefined : true"
         data-testid="menu-mobile-panel"

@@ -1,0 +1,33 @@
+{
+  "tutorials": {
+    "seo": {
+      "title": "Video tutorials",
+      "description": "Six Yadony app demos on video: search for a trip, track a parcel, pay, create an alert, post a parcel and find a flight ticket."
+    },
+    "title": "Video tutorials",
+    "lead": "Six demos of the app, from searching for a trip to tracking a parcel. Pick the one that fits you: the video only loads when you start it.",
+    "filtersLabel": "Filter by profile",
+    "filters": {
+      "all": "All",
+      "sender": "Sender",
+      "recipient": "Recipient",
+      "traveler": "Traveler"
+    },
+    "items": {
+      "search": { "title": "Search for a trip", "path": "Search › All routes" },
+      "track": { "title": "Track a parcel", "path": "Tracking › Track a parcel" },
+      "payments": { "title": "Pay and use your wallet", "path": "Activity › ☰ › Wallet" },
+      "alerts": { "title": "Create a trip alert", "path": "Activity › ☰ › My alerts" },
+      "poster": { "title": "Post and share a parcel", "path": "Activity › My parcels › Posted › Share" },
+      "flights": { "title": "Flight tickets", "path": "Activity › Flight tickets › See all" }
+    },
+    "pathLabel": "In the app",
+    "watch": "Watch the video",
+    "playerLabel": "Tutorial player",
+    "close": "Close",
+    "openApp": "Open the app",
+    "trySearch": "Try the search",
+    "seeNext": "Next video",
+    "demoNote": "The videos are recorded in the app with demo data."
+  }
+}

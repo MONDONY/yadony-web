@@ -30,13 +30,13 @@ export default defineNuxtConfig({
         // Une locale = un fichier commun + un fichier par domaine (accueil,
         // parcours, corridors, GP). Les clés de premier niveau ne se
         // chevauchent jamais d'un fichier à l'autre.
-        files: ['fr.json', 'fr/landing.json', 'fr/journeys.json', 'fr/corridors.json', 'fr/gp.json'],
+        files: ['fr.json', 'fr/landing.json', 'fr/journeys.json', 'fr/corridors.json', 'fr/gp.json', 'fr/tutorials.json'],
       },
       {
         code: 'en',
         language: 'en-GB',
         name: 'English',
-        files: ['en.json', 'en/landing.json', 'en/journeys.json', 'en/corridors.json'],
+        files: ['en.json', 'en/landing.json', 'en/journeys.json', 'en/corridors.json', 'en/tutorials.json'],
       },
     ],
     customRoutes: 'page',
@@ -88,7 +88,8 @@ export default defineNuxtConfig({
       // parrainage partagé par l'app (via /r/{code}, cf. public/_redirects),
       // elle doit être listée ici pour être générée.
       // /classement n'est lié depuis aucune page : partagé aux testeurs par lien.
-      routes: ['/', '/parrainage', '/en/referral', '/ouvrir', '/en/open', '/classement', '/en/leaderboard'],
+      // /tutoriels : listée ici pour être générée sans dépendre d'un lien entrant.
+      routes: ['/', '/parrainage', '/en/referral', '/ouvrir', '/en/open', '/classement', '/en/leaderboard', '/tutoriels', '/en/tutorials'],
       failOnError: true,
     },
   },

@@ -14,9 +14,8 @@ const props = withDefaults(
     tutorial: Tutorial | null
     /** Tutoriel proposé ensuite ; le bouton n'apparaît que s'il existe. */
     next?: Tutorial | null
-    openAppTo?: string
   }>(),
-  { next: null, openAppTo: '/ouvrir' },
+  { next: null },
 )
 const emit = defineEmits<{ close: []; next: [id: string] }>()
 
@@ -56,6 +55,15 @@ function onBackdropClick(event: MouseEvent) {
   if (event.target === dialog.value) emit('close')
 }
 
+// La fenêtre « bientôt disponible » de StoreBadges est un <dialog> imbriqué :
+// son Échap remonte jusqu'ici. On ne le traite (et on ne l'annule) que s'il
+// vient du lecteur lui-même ; sinon le navigateur ferme la petite fenêtre seule.
+function onEscape(event: KeyboardEvent) {
+  if ((event.target as Element | null)?.closest('dialog') !== dialog.value) return
+  event.preventDefault()
+  emit('close')
+}
+
 // Fermeture par un autre moyen que le parent (ex. bouton retour Android).
 function onNativeClose() {
   if (props.tutorial) emit('close')
@@ -70,7 +78,7 @@ function onNativeClose() {
     :class="shown ? 'opacity-100' : 'opacity-0'"
     @click="onBackdropClick"
     @cancel.prevent="emit('close')"
-    @keydown.esc.prevent="emit('close')"
+    @keydown.esc="onEscape"
     @close="onNativeClose"
   >
     <div v-if="tutorial" class="p-4 sm:p-5">
@@ -118,12 +126,7 @@ function onNativeClose() {
         >
           {{ t('tutorials.seeNext') }}
         </button>
-        <NuxtLink
-          :to="openAppTo"
-          class="inline-flex min-h-11 w-full items-center justify-center whitespace-nowrap rounded-btn border border-white/30 px-5 text-sm font-semibold text-white transition-colors duration-micro hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-        >
-          {{ t('tutorials.openApp') }}
-        </NuxtLink>
+        <StoreBadges tone="dark" />
       </div>
     </div>
   </dialog>

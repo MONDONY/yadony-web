@@ -74,6 +74,23 @@ test('« Vidéo suivante » passe au tutoriel suivant', async ({ page }) => {
   await expect(page.locator('[data-tutorial="search"]')).toBeFocused()
 })
 
+test('le lecteur propose les boutons des stores ; Échap ferme « bientôt disponible » sans fermer le lecteur', async ({ page }) => {
+  await ouvrirPage(page, '/tutoriels')
+  await expect(page.locator('a[href*="ouvrir"]')).toHaveCount(0)
+  await page.locator('[data-tutorial="search"]').click()
+  const player = page.getByRole('dialog', { name: 'Rechercher un voyageur' })
+  await expect(player).toBeVisible()
+  await expect(player.locator('a[href*="ouvrir"]')).toHaveCount(0)
+  await player.getByRole('button', { name: 'App Store' }).click()
+  const soon = page.getByRole('dialog', { name: 'Bientôt disponible' })
+  await expect(soon).toBeVisible()
+  await page.keyboard.press('Escape')
+  await expect(soon).toBeHidden()
+  await expect(player).toBeVisible()
+  await page.keyboard.press('Escape')
+  await expect(player).toBeHidden()
+})
+
 test('les boutons tiennent sur une ligne à 360 px', async ({ page }) => {
   await page.setViewportSize({ width: 360, height: 740 })
   await ouvrirPage(page, '/tutoriels')

@@ -10,7 +10,6 @@ defineI18nRoute({ paths: { fr: '/tutoriels', en: '/tutorials' } })
 const { t, locale } = useI18n()
 const route = useRoute()
 const router = useRouter()
-const localePath = useLocalePath()
 
 useSeoMeta(
   buildSeoMeta({
@@ -95,12 +94,6 @@ async function close() {
       </UiContainer>
     </UiSection>
 
-    <TutorialPlayer
-      :tutorial="current"
-      :next="next"
-      :open-app-to="localePath('/ouvrir')"
-      @close="close"
-      @next="open"
-    />
+    <TutorialPlayer :tutorial="current" :next="next" @close="close" @next="open" />
   </div>
 </template>

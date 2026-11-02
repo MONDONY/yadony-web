@@ -4,13 +4,24 @@ import { createI18n } from 'vue-i18n'
 import { en, fr } from '../helpers/messages'
 import TutorialPlayer from '@/components/tutorials/TutorialPlayer.vue'
 import TutorialCard from '@/components/tutorials/TutorialCard.vue'
+import StoreBadges from '@/components/StoreBadges.vue'
+import UiButton from '@/components/ui/UiButton.vue'
 import { tutorials } from '@/lib/tutorials'
 
 const [search, track] = tutorials
 
 function mountPlayer(props: Record<string, unknown>, locale: 'fr' | 'en' = 'fr') {
   const i18n = createI18n({ legacy: false, locale, messages: { fr, en } })
-  return mount(TutorialPlayer, { props, attachTo: document.body, global: { plugins: [i18n] } })
+  // Les vrais boutons des stores (le setup global les remplace par un stub).
+  return mount(TutorialPlayer, {
+    props,
+    attachTo: document.body,
+    global: {
+      plugins: [i18n],
+      stubs: { StoreBadges: false },
+      components: { StoreBadges, UiButton },
+    },
+  })
 }
 
 describe('TutorialPlayer', () => {
@@ -123,11 +134,41 @@ describe('TutorialPlayer', () => {
     expect(wrapper.find('video').exists()).toBe(true)
   })
 
-  it('pointe « Ouvrir l’app » vers l’adresse fournie', async () => {
-    const wrapper = mountPlayer({ tutorial: search, openAppTo: '/en/open' })
+  it('propose les boutons des stores, sans aucun lien vers /ouvrir', async () => {
+    const wrapper = mountPlayer({ tutorial: search })
     await flushPromises()
-    expect(wrapper.find('a').attributes('href')).toBe('/en/open')
-    expect(wrapper.find('a').text()).toBe(fr.tutorials.openApp)
+    const labels = wrapper.findAll('button').map(b => b.text())
+    expect(labels).toContain(fr.home.hero.appStore)
+    expect(labels).toContain(fr.home.hero.playStore)
+    expect(wrapper.findAll('a')).toHaveLength(0)
+    expect(wrapper.html()).not.toContain('/ouvrir')
+  })
+
+  it('un bouton de store ouvre la fenêtre « bientôt disponible » dans le lecteur', async () => {
+    const showModal = vi.spyOn(HTMLDialogElement.prototype, 'showModal')
+    const wrapper = mountPlayer({ tutorial: search })
+    await flushPromises()
+    showModal.mockClear()
+    const store = wrapper.findAll('button').find(b => b.text() === fr.home.hero.appStore)
+    await store!.trigger('click')
+    expect(showModal).toHaveBeenCalledTimes(1)
+    const comingSoon = wrapper.find(`dialog[aria-label="${fr.stores.comingSoonAll.title}"]`)
+    expect(comingSoon.exists()).toBe(true)
+    expect(comingSoon.attributes('open')).toBeDefined()
+  })
+
+  it('Échap dans la fenêtre « bientôt disponible » ne ferme pas le lecteur', async () => {
+    const wrapper = mountPlayer({ tutorial: search })
+    await flushPromises()
+    const comingSoon = wrapper.find(`dialog[aria-label="${fr.stores.comingSoonAll.title}"]`)
+    const event = new KeyboardEvent('keydown', { key: 'Escape', bubbles: true, cancelable: true })
+    comingSoon.element.dispatchEvent(event)
+    expect(wrapper.emitted('close')).toBeUndefined()
+    // Le navigateur doit pouvoir fermer la petite fenêtre : pas de preventDefault.
+    expect(event.defaultPrevented).toBe(false)
+    // Échap depuis le lecteur lui-même ferme toujours le lecteur.
+    await wrapper.find('video').trigger('keydown', { key: 'Escape' })
+    expect(wrapper.emitted('close')).toHaveLength(1)
   })
 })
 

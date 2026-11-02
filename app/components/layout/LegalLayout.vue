@@ -28,7 +28,7 @@ const open = ref(false)
     <UiContainer>
       <nav :aria-label="t('legal.layout.breadcrumb')" class="text-sm text-ink-muted">
         <ol class="flex list-none flex-wrap items-center gap-x-2 gap-y-1">
-          <li><NuxtLink :to="localePath('/')" class="hover:text-ink">{{ t('legal.layout.home') }}</NuxtLink></li>
+          <li><NuxtLink :to="localePath('/')" class="inline-flex min-h-11 items-center hover:text-ink">{{ t('legal.layout.home') }}</NuxtLink></li>
           <li aria-hidden="true">›</li>
           <li>{{ t('legal.layout.legal') }}</li>
           <li aria-hidden="true">›</li>

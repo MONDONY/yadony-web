@@ -129,3 +129,27 @@ for (const { path, label } of [
     expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(360)
   })
 }
+
+for (const { path, crumb } of [
+  { path: '/mentions-legales', crumb: 'Accueil' },
+  { path: '/en/legal-notice', crumb: 'Home' },
+]) {
+  test(`${path} : le lien « ${crumb} » du fil d’Ariane est une cible de 44 px, sur une ligne à 360 px`, async ({ page, isMobile }) => {
+    test.skip(!isMobile, 'comportement mobile')
+    await page.setViewportSize({ width: 360, height: 740 })
+    await page.goto(path)
+    const crumbs = page.locator('main nav').first()
+    const link = crumbs.getByRole('link', { name: crumb })
+    expect((await link.boundingBox())!.height).toBeGreaterThanOrEqual(44)
+    expect((await crumbs.boundingBox())!.height).toBeLessThan(60)
+  })
+}
+
+test('le lien du fil d’Ariane mesure au moins 44 px sur grand écran', async ({ page, isMobile }) => {
+  test.skip(isMobile, 'comportement grand écran')
+  for (const [path, name] of [['/cgu', 'Accueil'], ['/en/terms', 'Home']]) {
+    await page.goto(path!)
+    const link = page.locator('main nav').first().getByRole('link', { name })
+    expect((await link.boundingBox())!.height).toBeGreaterThanOrEqual(44)
+  }
+})

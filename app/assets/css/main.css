@@ -77,4 +77,12 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+  /* Mouvement réduit ne veut pas dire sans retour : un fondu court aide à
+     comprendre qu'un élément apparaît ou disparaît, sans déplacement ni
+     échelle. Un élément qui le veut porte `motion-fade` (plus spécifique que
+     le `*` ci-dessus, donc il l'emporte malgré les deux `!important`). */
+  .motion-fade {
+    transition-property: opacity !important;
+    transition-duration: 200ms !important;
+  }
 }

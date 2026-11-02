@@ -1,6 +1,9 @@
 import type { Config } from 'tailwindcss'
 
 export default {
+  // `hover:` n'agit que sur les appareils qui survolent vraiment (souris,
+  // trackpad) : sur téléphone, un appui ne laisse plus l'état survolé collé.
+  future: { hoverOnlyWhenSupported: true },
   content: [
     './app/components/**/*.{vue,ts}',
     './app/layouts/**/*.vue',

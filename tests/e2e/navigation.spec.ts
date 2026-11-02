@@ -118,3 +118,64 @@ for (const width of [768, 1024, 1280]) {
     }
   })
 }
+
+// Menu mobile : il se referme dès que le visiteur passe à autre chose, et ses
+// liens ne sont atteignables au clavier que lorsqu'il est ouvert.
+test.describe('menu mobile', () => {
+  test.beforeEach(async ({ page, isMobile }) => {
+    test.skip(!isMobile, 'le menu en ligne remplace le menu déroulant au-delà de 1280 px')
+    await page.goto('/')
+  })
+
+  async function ouvrir(page: import('@playwright/test').Page) {
+    const bouton = page.getByRole('button', { name: 'Menu' })
+    // Clic perdu s'il arrive avant l'hydratation : on reclique au besoin.
+    await expect(async () => {
+      await bouton.click()
+      await expect(bouton).toHaveAttribute('aria-expanded', 'true', { timeout: 1000 })
+    }).toPass({ timeout: 10000 })
+    return bouton
+  }
+
+  test('fermé, il est inerte et masqué', async ({ page }) => {
+    const panneau = page.getByTestId('menu-mobile-panel')
+    await expect(panneau).toHaveAttribute('inert', /.*/)
+    await expect(panneau.getByRole('link', { name: 'Tarifs' })).toBeHidden()
+  })
+
+  test('Échap le referme et rend le focus au bouton', async ({ page }) => {
+    const bouton = await ouvrir(page)
+    const panneau = page.getByTestId('menu-mobile-panel')
+    await expect(panneau.getByRole('link', { name: 'Tarifs' })).toBeVisible()
+    await page.keyboard.press('Escape')
+    await expect(bouton).toHaveAttribute('aria-expanded', 'false')
+    await expect(panneau.getByRole('link', { name: 'Tarifs' })).toBeHidden()
+    await expect(bouton).toBeFocused()
+  })
+
+  test('un appui hors du header le referme', async ({ page }) => {
+    const bouton = await ouvrir(page)
+    await page.mouse.click(10, 600)
+    await expect(bouton).toHaveAttribute('aria-expanded', 'false')
+  })
+
+  test('le retour arrière du navigateur le referme', async ({ page }) => {
+    const bouton = await ouvrir(page)
+    await page.getByTestId('menu-mobile-panel').getByRole('link', { name: 'Tarifs' }).click()
+    await expect(page).toHaveURL('/tarifs')
+    await expect(bouton).toHaveAttribute('aria-expanded', 'false')
+    await ouvrir(page)
+    await page.goBack()
+    await expect(page).toHaveURL('/')
+    await expect(bouton).toHaveAttribute('aria-expanded', 'false')
+  })
+
+  test('en paysage, la liste défile au lieu de déborder de l’écran', async ({ page }) => {
+    await page.setViewportSize({ width: 740, height: 360 })
+    await ouvrir(page)
+    const nav = page.getByRole('navigation', { name: 'Navigation mobile' })
+    const bas = await nav.evaluate(el => el.getBoundingClientRect().bottom)
+    expect(bas).toBeLessThanOrEqual(360)
+    await expect(nav).toHaveCSS('overflow-y', 'auto')
+  })
+})

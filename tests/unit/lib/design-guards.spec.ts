@@ -1,6 +1,7 @@
 import { readdirSync, readFileSync, statSync } from 'node:fs'
 import { join, relative } from 'node:path'
 import { describe, expect, it } from 'vitest'
+import tailwind from '../../../tailwind.config'
 
 // Règles du design system partagées avec l'app (dony_app/lib/core/design) :
 // couleurs unies uniquement, jamais de dégradé.
@@ -29,5 +30,24 @@ describe('design system', () => {
     expect(tokens).toContain('--accent: 217 106 58;')
     expect(tokens).toContain('--ink: 10 37 64;')
     expect(tokens).toContain('--sand: 247 243 237;')
+  })
+
+  it('le survol n’agit que sur les appareils qui survolent', () => {
+    // Sans cette option, un appui sur téléphone laisse l'état `hover:` collé.
+    expect(tailwind.future).toEqual({ hoverOnlyWhenSupported: true })
+  })
+
+  it('le mouvement réduit garde un fondu pour les éléments qui le demandent', () => {
+    const css = readFileSync(join(APP, 'assets/css/main.css'), 'utf8')
+    const bloc = css.slice(css.indexOf('@media (prefers-reduced-motion: reduce)'))
+    // La règle globale coupe toutes les transitions (!important) : seule une
+    // classe plus spécifique peut rétablir le fondu.
+    expect(bloc).toContain('transition-duration: 0.01ms !important')
+    expect(bloc).toMatch(/\.motion-fade\s*{[^}]*transition-property: opacity !important[^}]*transition-duration: 200ms !important/)
+  })
+
+  it('le popup du concours utilise le fondu du mouvement réduit', () => {
+    const popup = readFileSync(join(APP, 'components/contest/ContestPopup.vue'), 'utf8')
+    expect(popup).toMatch(/class="popup-card motion-fade /)
   })
 })

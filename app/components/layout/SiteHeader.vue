@@ -1,13 +1,53 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { useRoute } from 'vue-router'
 import type { Locale } from '@/lib/locale'
 import { betaTesting } from '@/lib/site'
 
 const { t, locale } = useI18n()
 const localePath = useLocalePath()
 const switchLocalePath = useSwitchLocalePath()
+const route = useRoute()
 const open = ref(false)
+const header = ref<HTMLElement | null>(null)
+const menuButton = ref<HTMLButtonElement | null>(null)
+
+// Le menu mobile se referme de lui-même dès que le visiteur passe à autre
+// chose : Échap (le focus revient sur le bouton), un appui hors du header, un
+// changement de page (retour arrière compris) ou un écran assez large pour
+// afficher la navigation en ligne (xl, 1280 px).
+function close(restoreFocus = false) {
+  if (!open.value) return
+  open.value = false
+  if (restoreFocus) void nextTick(() => menuButton.value?.focus())
+}
+
+function onKeydown(event: KeyboardEvent) {
+  if (event.key === 'Escape') close(true)
+}
+
+function onPointerDown(event: PointerEvent) {
+  if (open.value && !header.value?.contains(event.target as Node)) close()
+}
+
+let wide: MediaQueryList | undefined
+function onWideChange(event: MediaQueryListEvent) {
+  if (event.matches) close()
+}
+
+onMounted(() => {
+  document.addEventListener('pointerdown', onPointerDown)
+  wide = window.matchMedia?.('(min-width: 1280px)')
+  wide?.addEventListener('change', onWideChange)
+})
+
+onBeforeUnmount(() => {
+  document.removeEventListener('pointerdown', onPointerDown)
+  wide?.removeEventListener('change', onWideChange)
+})
+
+watch(() => route.fullPath, () => close())
 
 const targetLocale = computed<Locale>(() => (locale.value === 'fr' ? 'en' : 'fr'))
 // Une page sans version dans l'autre langue (pages GP, en français seulement)
@@ -30,7 +70,7 @@ const links = computed(() => [
 </script>
 
 <template>
-  <header class="sticky top-0 z-40 border-b border-line bg-surface/90 backdrop-blur">
+  <header ref="header" class="sticky top-0 z-40 border-b border-line bg-surface/90 backdrop-blur" @keydown="onKeydown">
     <BetaBanner v-if="betaTesting" />
     <UiContainer>
       <div class="flex h-16 items-center justify-between gap-6">
@@ -63,8 +103,9 @@ const links = computed(() => [
             {{ t('nav.download') }}
           </UiButton>
           <button
+            ref="menuButton"
             type="button"
-            class="min-h-11 rounded-btn border border-line px-4 text-sm font-medium transition-colors duration-micro ease-dony hover:bg-sand xl:hidden"
+            class="min-h-11 rounded-btn border border-line px-4 text-sm font-medium transition-[background-color,transform] duration-micro ease-dony hover:bg-sand active:scale-[0.96] xl:hidden"
             :aria-expanded="open"
             aria-controls="menu-mobile"
             @click="open = !open"
@@ -72,16 +113,34 @@ const links = computed(() => [
         </div>
       </div>
 
-      <nav v-show="open" id="menu-mobile" class="grid gap-1 border-t border-line py-4 xl:hidden" :aria-label="t('nav.mobileLabel')">
-        <NuxtLink
-          v-for="link in links"
-          :key="link.to"
-          :to="localePath(link.to)"
-          class="flex min-h-11 items-center rounded-el px-3 font-medium text-ink transition-colors duration-micro ease-dony hover:bg-sand"
-          active-class="bg-primary-soft !text-primary"
-          @click="open = false"
-        >{{ link.label }}</NuxtLink>
-      </nav>
+      <!-- Le panneau se déplie en animant sa hauteur (grid 0fr → 1fr) : une
+           transition, donc interrompable à tout moment. Fermé, il est `inert`
+           et `invisible` : ses liens sortent de l'ordre de tabulation. Dans
+           un téléphone en paysage, la liste défile au lieu de déborder de
+           l'écran (le header est sticky). -->
+      <div
+        class="grid transition-[grid-template-rows,visibility] duration-base ease-dony xl:hidden"
+        :class="open ? 'grid-rows-[1fr]' : 'invisible grid-rows-[0fr]'"
+        :inert="open ? undefined : true"
+        data-testid="menu-mobile-panel"
+      >
+        <div class="min-h-0 overflow-hidden">
+          <nav
+            id="menu-mobile"
+            class="grid max-h-[calc(100dvh-9rem)] gap-1 overflow-y-auto overscroll-contain border-t border-line py-4"
+            :aria-label="t('nav.mobileLabel')"
+          >
+            <NuxtLink
+              v-for="link in links"
+              :key="link.to"
+              :to="localePath(link.to)"
+              class="flex min-h-11 items-center rounded-el px-3 font-medium text-ink transition-colors duration-micro ease-dony hover:bg-sand"
+              active-class="bg-primary-soft !text-primary"
+              @click="close()"
+            >{{ link.label }}</NuxtLink>
+          </nav>
+        </div>
+      </div>
     </UiContainer>
   </header>
 </template>

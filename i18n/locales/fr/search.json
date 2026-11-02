@@ -74,11 +74,10 @@
       "titleAny": "{count} voyageur | {count} voyageurs",
       "appLead": "La demande, le paiement bloqué et le suivi s'y font, en quelques touches."
     },
-    "pager": {
-      "label": "Pages de résultats",
-      "prev": "Page précédente",
-      "next": "Page suivante",
-      "status": "Page {page} sur {total}"
+    "more": {
+      "button": "Voir {n} autre | Voir les {n} autres",
+      "error": "Impossible de charger la suite. Réessayez.",
+      "loaded": "{count} voyageur de plus affiché | {count} voyageurs de plus affichés"
     }
   }
 }

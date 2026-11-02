@@ -58,19 +58,6 @@ describe('usePublicSearch', () => {
     expect(search.total.value).toBe(42)
   })
 
-  it('expose le nombre de pages, 1 quand le back ne le donne pas', async () => {
-    fetchMock.mockResolvedValueOnce(jsonResponse({ ...page([card('a')], 45), totalPages: 3 }))
-    const search = usePublicSearch()
-    await search.run(query)
-    expect(search.totalPages.value).toBe(3)
-    fetchMock.mockResolvedValueOnce(jsonResponse({ content: [card('a')], totalElements: 1 }))
-    await search.run(query)
-    expect(search.totalPages.value).toBe(1)
-    fetchMock.mockResolvedValueOnce(jsonResponse({}, 500))
-    await search.run(query)
-    expect(search.totalPages.value).toBe(0)
-  })
-
   it('200 avec content vide : empty', async () => {
     fetchMock.mockResolvedValue(jsonResponse(page([])))
     const search = usePublicSearch()
@@ -185,5 +172,153 @@ describe('usePublicSearch', () => {
     await first
     expect(search.status.value).toBe('ok')
     expect(search.results.value.map(c => c.id)).toEqual(['second'])
+  })
+
+  describe('more', () => {
+    const paged = (ids: string[], total: number, totalPages: number, size = 20) =>
+      jsonResponse({ content: ids.map(card), totalElements: total, page: 0, size, totalPages })
+
+    it('charge la page suivante et ajoute les cartes sans repasser par loading', async () => {
+      fetchMock.mockResolvedValueOnce(paged(['a', 'b'], 5, 3, 2))
+      const search = usePublicSearch()
+      await search.run(query)
+      expect(search.remaining.value).toBe(2)
+      fetchMock.mockResolvedValueOnce(paged(['c', 'd'], 5, 3, 2))
+      const promise = search.more()
+      expect(search.status.value).toBe('ok')
+      expect(search.loadingMore.value).toBe(true)
+      expect(await promise).toBe(2)
+      expect(search.loadingMore.value).toBe(false)
+      expect(search.results.value.map(c => c.id)).toEqual(['a', 'b', 'c', 'd'])
+      const url = new URL(String(fetchMock.mock.calls[1]![0]))
+      expect(url.searchParams.get('page')).toBe('1')
+      expect(url.searchParams.get('departureCity')).toBe('Paris')
+      expect(search.remaining.value).toBe(1)
+    })
+
+    it('ne propose rien quand tout est affiché', async () => {
+      fetchMock.mockResolvedValueOnce(paged(['a', 'b'], 2, 1, 2))
+      const search = usePublicSearch()
+      await search.run(query)
+      expect(search.remaining.value).toBe(0)
+      expect(await search.more()).toBe(0)
+      expect(fetchMock).toHaveBeenCalledTimes(1)
+    })
+
+    it('ne propose rien avant la première recherche', async () => {
+      const search = usePublicSearch()
+      expect(search.remaining.value).toBe(0)
+      expect(await search.more()).toBe(0)
+      expect(fetchMock).not.toHaveBeenCalled()
+    })
+
+    it('ne demande jamais la page 5 : la page 4 est la dernière atteignable', async () => {
+      fetchMock.mockImplementation(async (url) => {
+        const index = Number(new URL(String(url)).searchParams.get('page'))
+        return paged([`p${index}a`, `p${index}b`], 200, 100, 2)
+      })
+      const search = usePublicSearch()
+      await search.run(query)
+      for (let i = 0; i < 4; i++) {
+        expect(search.remaining.value).toBe(2)
+        await search.more()
+      }
+      expect(search.results.value).toHaveLength(10)
+      expect(search.remaining.value).toBe(0)
+      expect(await search.more()).toBe(0)
+      const pages = fetchMock.mock.calls.map(([url]) => new URL(String(url)).searchParams.get('page'))
+      expect(pages).toEqual(['0', '1', '2', '3', '4'])
+    })
+
+    it('annonce au plus une page de cartes, et seulement ce qu’il reste', async () => {
+      fetchMock.mockResolvedValueOnce(paged(['a', 'b'], 3, 2, 2))
+      const search = usePublicSearch()
+      await search.run(query)
+      expect(search.remaining.value).toBe(1)
+    })
+
+    it.each([
+      ['une erreur réseau', () => fetchMock.mockRejectedValueOnce(new TypeError('Failed to fetch'))],
+      ['un 500', () => fetchMock.mockResolvedValueOnce(jsonResponse({}, 500))],
+      ['un 429', () => fetchMock.mockResolvedValueOnce(jsonResponse({}, 429))],
+      ['une réponse sans content', () => fetchMock.mockResolvedValueOnce(jsonResponse({ totalElements: 9 }))],
+    ])('%s garde les cartes déjà affichées et lève moreError', async (_label, fail) => {
+      fetchMock.mockResolvedValueOnce(paged(['a', 'b'], 6, 3, 2))
+      const search = usePublicSearch()
+      await search.run(query)
+      fail()
+      expect(await search.more()).toBe(0)
+      expect(search.status.value).toBe('ok')
+      expect(search.results.value.map(c => c.id)).toEqual(['a', 'b'])
+      expect(search.moreError.value).toBe(true)
+      expect(search.loadingMore.value).toBe(false)
+      // Un nouvel essai repart de la même page et efface l'erreur.
+      fetchMock.mockResolvedValueOnce(paged(['c', 'd'], 6, 3, 2))
+      await search.more()
+      expect(search.moreError.value).toBe(false)
+      expect(search.results.value.map(c => c.id)).toEqual(['a', 'b', 'c', 'd'])
+      const retried = new URL(String(fetchMock.mock.calls.at(-1)![0]))
+      expect(retried.searchParams.get('page')).toBe('1')
+    })
+
+    it('ignore les doublons de cartes et réajuste le total quand la page ne rapporte rien', async () => {
+      fetchMock.mockResolvedValueOnce(paged(['a', 'b'], 9, 3, 2))
+      const search = usePublicSearch()
+      await search.run(query)
+      fetchMock.mockResolvedValueOnce(paged(['b', 'c'], 9, 3, 2))
+      expect(await search.more()).toBe(1)
+      expect(search.results.value.map(c => c.id)).toEqual(['a', 'b', 'c'])
+      fetchMock.mockResolvedValueOnce(paged(['a', 'c'], 9, 3, 2))
+      expect(await search.more()).toBe(0)
+      expect(search.total.value).toBe(3)
+      expect(search.remaining.value).toBe(0)
+    })
+
+    it('un appel à more annulé par une nouvelle recherche ne change rien', async () => {
+      fetchMock.mockResolvedValueOnce(paged(['a', 'b'], 6, 3, 2))
+      const search = usePublicSearch()
+      await search.run(query)
+      let resolveMore!: (r: Response) => void
+      const signals: AbortSignal[] = []
+      fetchMock.mockImplementationOnce((_url, init) => {
+        signals.push(init!.signal!)
+        return new Promise<Response>((resolve) => { resolveMore = resolve })
+      })
+      const pending = search.more()
+      fetchMock.mockResolvedValueOnce(paged(['x'], 1, 1, 2))
+      await search.run(query)
+      expect(signals[0]!.aborted).toBe(true)
+      expect(search.loadingMore.value).toBe(false)
+      resolveMore(paged(['c', 'd'], 6, 3, 2))
+      expect(await pending).toBe(0)
+      expect(search.results.value.map(c => c.id)).toEqual(['x'])
+    })
+
+    it('un more annulé qui échoue ne lève pas moreError', async () => {
+      fetchMock.mockResolvedValueOnce(paged(['a', 'b'], 6, 3, 2))
+      const search = usePublicSearch()
+      await search.run(query)
+      fetchMock.mockImplementationOnce((_url, init) => new Promise<Response>((_resolve, reject) => {
+        init!.signal!.addEventListener('abort', () => reject(new DOMException('Aborted', 'AbortError')))
+      }))
+      const pending = search.more()
+      fetchMock.mockResolvedValueOnce(paged(['x'], 1, 1, 2))
+      await search.run(query)
+      expect(await pending).toBe(0)
+      expect(search.moreError.value).toBe(false)
+    })
+
+    it('ignore un second appel pendant qu’un chargement est en cours', async () => {
+      fetchMock.mockResolvedValueOnce(paged(['a', 'b'], 6, 3, 2))
+      const search = usePublicSearch()
+      await search.run(query)
+      let resolveMore!: (r: Response) => void
+      fetchMock.mockImplementationOnce(() => new Promise<Response>((resolve) => { resolveMore = resolve }))
+      const first = search.more()
+      expect(await search.more()).toBe(0)
+      resolveMore(paged(['c', 'd'], 6, 3, 2))
+      expect(await first).toBe(2)
+      expect(fetchMock).toHaveBeenCalledTimes(2)
+    })
   })
 })

@@ -74,11 +74,10 @@
       "titleAny": "{count} traveler | {count} travelers",
       "appLead": "The request, the held payment and the tracking all happen there, in a few taps."
     },
-    "pager": {
-      "label": "Result pages",
-      "prev": "Previous page",
-      "next": "Next page",
-      "status": "Page {page} of {total}"
+    "more": {
+      "button": "See {n} more | See {n} more",
+      "error": "Could not load more. Try again.",
+      "loaded": "{count} more traveler shown | {count} more travelers shown"
     }
   }
 }

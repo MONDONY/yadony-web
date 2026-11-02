@@ -20,7 +20,9 @@ const root = ref<HTMLElement | null>(null)
 // montée, la requête reste donc vide : le formulaire hydraté correspond au HTML
 // du serveur, et il reprend les valeurs de l'adresse juste après.
 const ready = ref(false)
-const query = computed<SearchQuery>(() => parseSearchQuery(ready.value ? route.query : {}))
+// La page ne vient jamais de l'adresse : une adresse partagée repart des
+// premiers résultats, la suite se charge avec « Voir les autres ».
+const query = computed<SearchQuery>(() => ({ ...parseSearchQuery(ready.value ? route.query : {}), page: 0 }))
 const key = computed(() => JSON.stringify(toUrlQuery(query.value)))
 
 // Une recherche est affichée : adresse avec critères, ou envoi d'un formulaire
@@ -69,12 +71,21 @@ function submit(next: SearchQuery) {
 }
 
 function widen() {
-  submit(parseSearchQuery({ ...toUrlQuery(query.value), quand: '3-mois', page: '0' }))
+  submit(parseSearchQuery({ ...toUrlQuery(query.value), quand: '3-mois' }))
 }
 
-function goToPage(page: number) {
-  submit(parseSearchQuery({ ...toUrlQuery(query.value), page: String(page) }))
-  scrollToSection()
+// « Voir les autres » : la suite s'ajoute à la liste, et le focus passe à la
+// première carte ajoutée pour que le clavier continue de là (le bouton, lui,
+// disparaît quand tout est affiché).
+const list = ref<HTMLElement | null>(null)
+
+async function loadMore() {
+  const before = search.results.value.length
+  const added = await search.more()
+  if (added === 0) return
+  announce.value = t('search.more.loaded', { count: added }, added)
+  await nextTick()
+  ;(list.value?.children[before] as HTMLElement | undefined)?.focus()
 }
 
 const routeText = computed(() => [query.value.depart, query.value.arrivee].filter(Boolean).join(' → '))
@@ -85,13 +96,18 @@ const title = computed(() => {
     : t('search.results.titleAny', { count }, count)
 })
 const showResults = computed(() => active.value && search.status.value === 'ok')
-const hasPrev = computed(() => query.value.page > 0)
-const hasNext = computed(() => query.value.page + 1 < search.totalPages.value)
-const pageStatus = computed(() => t('search.pager.status', { page: query.value.page + 1, total: search.totalPages.value }))
+
+// Une seule région vocale, toujours présente : son texte change, elle n'est
+// jamais insérée avec son contenu (les lecteurs d'écran l'annonceraient mal).
+const announce = ref('')
+watch(() => search.status.value, (status) => {
+  announce.value = status === 'ok' ? title.value : ''
+})
 </script>
 
 <template>
   <section id="recherche" ref="root" :aria-labelledby="titleId" class="scroll-mt-20 bg-bg py-12 sm:py-16">
+    <p role="status" class="sr-only">{{ announce }}</p>
     <UiContainer>
       <h2 :id="titleId" class="text-display-md text-ink">{{ t('search.section.title') }}</h2>
       <p class="mt-3 max-w-prose text-lg text-ink-muted">{{ t('search.section.lead') }}</p>
@@ -99,31 +115,37 @@ const pageStatus = computed(() => t('search.pager.status', { page: query.value.p
         <SearchForm :model-value="query" @submit="submit" />
       </div>
 
-      <div v-if="active" class="mt-10">
-        <SearchStates :status="search.status.value" :query="query" @retry="launch" @widen="widen" />
+      <div v-if="active" class="mt-10 grid gap-10 lg:grid-cols-[minmax(0,1fr)_20rem] lg:items-start lg:gap-14">
+        <div>
+          <SearchStates :status="search.status.value" :query="query" @retry="launch" @widen="widen" />
 
-        <div v-if="showResults" class="grid gap-10 lg:grid-cols-[minmax(0,1fr)_20rem] lg:items-start lg:gap-14">
-          <div>
-            <h3 aria-live="polite" class="text-display-md text-ink">{{ title }}</h3>
-            <ul class="mt-6 grid list-none gap-4">
-              <li v-for="card in search.results.value" :key="card.id">
+          <template v-if="showResults">
+            <h3 class="text-display-md text-ink">{{ title }}</h3>
+            <ul ref="list" class="mt-6 grid list-none gap-4">
+              <li
+                v-for="card in search.results.value"
+                :key="card.id"
+                tabindex="-1"
+                class="rounded-card focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+              >
                 <SearchResultCard :card="card" />
               </li>
             </ul>
-            <nav v-if="hasPrev || hasNext" :aria-label="t('search.pager.label')" class="mt-8 flex flex-col-reverse gap-3 sm:flex-row sm:items-center sm:justify-between">
-              <UiButton v-if="hasPrev" variant="ghost" @click="goToPage(query.page - 1)">{{ t('search.pager.prev') }}</UiButton>
-              <p class="text-center text-sm text-ink-muted">{{ pageStatus }}</p>
-              <UiButton v-if="hasNext" @click="goToPage(query.page + 1)">{{ t('search.pager.next') }}</UiButton>
-            </nav>
-          </div>
-          <aside class="rounded-card border border-line bg-surface p-6">
-            <h3 class="font-display text-2xl font-bold text-ink">{{ t('search.handoff.title') }}</h3>
-            <p class="mt-3 text-ink-muted">{{ t('search.results.appLead') }}</p>
-            <div class="mt-5">
-              <StoreBadges />
+            <div v-if="search.remaining.value > 0" class="mt-6 grid gap-3">
+              <UiButton variant="ghost" :aria-busy="search.loadingMore.value ? 'true' : 'false'" class="w-full sm:w-auto sm:justify-self-start" @click="loadMore">
+                {{ t('search.more.button', { n: search.remaining.value }, search.remaining.value) }}
+              </UiButton>
+              <p v-if="search.moreError.value" role="alert" class="text-sm font-semibold text-accent-text">{{ t('search.more.error') }}</p>
             </div>
-          </aside>
+          </template>
         </div>
+        <aside class="rounded-card border border-line bg-surface p-6">
+          <h3 class="font-display text-2xl font-bold text-ink">{{ t('search.handoff.title') }}</h3>
+          <p class="mt-3 text-ink-muted">{{ t('search.results.appLead') }}</p>
+          <div class="mt-5">
+            <StoreBadges />
+          </div>
+        </aside>
       </div>
     </UiContainer>
   </section>

@@ -53,7 +53,8 @@ export interface SearchQuery {
 }
 
 const MAX_CITY_LENGTH = 80
-const MAX_PAGE = 4
+// Dernière page atteignable (pages 0 à 4) : le back refuse au-delà.
+export const MAX_PAGE = 4
 const MAX_MIN_KG = 1000
 const MAX_PRICE_PER_KG = 100000
 const MAX_RANGE_DAYS = 90
@@ -127,7 +128,8 @@ export function toApiParams(q: SearchQuery, today: Date): URLSearchParams {
 }
 
 // Adresse de la recherche : seuls les champs renseignés y figurent, de sorte
-// que l'adresse nue reste celle de la page sans recherche. Relue par
+// que l'adresse nue reste celle de la page sans recherche. La page n'y est
+// jamais : une adresse partagée repart des premiers résultats. Relue par
 // `parseSearchQuery`, jamais utilisée telle quelle.
 export function toUrlQuery(q: SearchQuery): Record<string, string> {
   const query: Record<string, string> = {}
@@ -138,7 +140,6 @@ export function toUrlQuery(q: SearchQuery): Record<string, string> {
   if (q.maxPrix !== undefined) query.maxPrix = String(q.maxPrix)
   if (q.urgent) query.urgent = '1'
   if (q.mode) query.mode = q.mode
-  if (q.page > 0) query.page = String(q.page)
   return query
 }
 

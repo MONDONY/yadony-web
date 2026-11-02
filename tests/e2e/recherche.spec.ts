@@ -35,6 +35,21 @@ async function respondWith(page: Page, body: unknown, status = 200) {
   )
 }
 
+// API paginée : `page` n renvoie jusqu'à `size` cartes d'identifiants uniques.
+async function respondPaged(page: Page, totalElements: number, totalPages: number, size = 20) {
+  await page.route(API, (route: Route) => {
+    const index = Number(new URL(route.request().url()).searchParams.get('page') ?? '0')
+    const count = Math.max(0, Math.min(size, totalElements - index * size))
+    const content = Array.from({ length: count }, (_, n) => card(`p${index}-${n}`, `Voyageur ${index * size + n + 1}`))
+    return route.fulfill({
+      status: 200,
+      contentType: 'application/json',
+      headers: CORS,
+      body: JSON.stringify({ content, totalElements, page: index, size, totalPages }),
+    })
+  })
+}
+
 function apiCalls(page: Page): URL[] {
   const calls: URL[] = []
   page.on('request', (request) => {
@@ -244,23 +259,97 @@ test.describe('recherche anonyme', () => {
     expect(calls).toHaveLength(1)
   })
 
-  test('pagination : Suivant charge la page suivante', async ({ page }) => {
-    await page.route(API, (route) => {
-      const index = Number(new URL(route.request().url()).searchParams.get('page'))
-      return route.fulfill({
-        status: 200,
-        contentType: 'application/json',
-        headers: CORS,
-        body: JSON.stringify(ok(THREE, { totalElements: 45, page: index, totalPages: 3 })),
-      })
-    })
+  test('« Voir les 5 autres » ajoute la suite à la liste, sans rechargement', async ({ page }) => {
+    await respondPaged(page, 25, 2)
     const calls = apiCalls(page)
     await page.goto(SEARCH)
+    await expect(page.getByRole('article')).toHaveCount(20)
+    await page.evaluate(() => { (window as unknown as { __kept: boolean }).__kept = true })
+    const more = page.getByRole('button', { name: 'Voir les 5 autres' })
+    await expect(more).toBeVisible()
+    await more.click()
+    await expect(page.getByRole('article')).toHaveCount(25)
+    await expect(page.getByRole('button', { name: /Voir les .* autres/ })).toHaveCount(0)
+    expect(calls.map(url => url.searchParams.get('page'))).toEqual(['0', '1'])
+    expect(await page.evaluate(() => (window as unknown as { __kept?: boolean }).__kept)).toBe(true)
+    // La page n'entre jamais dans l'adresse.
+    await expect(page).not.toHaveURL(/page=/)
+    // Le titre garde le total, et la région vocale annonce l'ajout.
+    await expect(page.getByRole('heading', { name: '25 voyageurs pour Paris → Abidjan' })).toBeVisible()
+    await expect(page.locator('#recherche [role="status"].sr-only')).toContainText('5 voyageurs de plus')
+  })
+
+  test('après « Voir les autres », le focus passe à la première carte ajoutée', async ({ page }) => {
+    await respondPaged(page, 25, 2)
+    await page.goto(SEARCH)
+    await expect(page.getByRole('article')).toHaveCount(20)
+    await page.getByRole('button', { name: 'Voir les 5 autres' }).focus()
+    await page.keyboard.press('Enter')
+    await expect(page.getByRole('article')).toHaveCount(25)
+    const focusedText = await page.evaluate(() => document.activeElement?.textContent ?? '')
+    expect(focusedText).toContain('Voyageur 21')
+    expect(await page.evaluate(() => document.activeElement?.closest('#recherche') !== null)).toBe(true)
+  })
+
+  test('la page 5 n’est jamais demandée : le bouton disparaît après la page 4', async ({ page }) => {
+    await respondPaged(page, 200, 10)
+    const calls = apiCalls(page)
+    await page.goto(SEARCH)
+    await expect(page.getByRole('article')).toHaveCount(20)
+    for (let loaded = 1; loaded <= 4; loaded++) {
+      await page.getByRole('button', { name: 'Voir les 20 autres' }).click()
+      await expect(page.getByRole('article')).toHaveCount(20 * (loaded + 1))
+    }
+    await expect(page.getByRole('button', { name: /Voir les .* autres/ })).toHaveCount(0)
+    await page.waitForTimeout(300)
+    expect(calls.map(url => url.searchParams.get('page'))).toEqual(['0', '1', '2', '3', '4'])
+  })
+
+  test('un échec de « Voir les autres » garde les cartes et l’indique près du bouton', async ({ page }) => {
+    await respondPaged(page, 25, 2)
+    await page.goto(SEARCH)
+    await expect(page.getByRole('article')).toHaveCount(20)
+    await page.route(API, route => route.fulfill({ status: 500, headers: CORS, body: '{}' }))
+    await page.getByRole('button', { name: 'Voir les 5 autres' }).click()
+    await expect(page.getByRole('alert')).toContainText('Impossible de charger la suite')
+    await expect(page.getByRole('article')).toHaveCount(20)
+    await expect(page.locator('#recherche [data-state]')).toHaveCount(0)
+    await respondPaged(page, 25, 2)
+    await page.getByRole('button', { name: 'Voir les 5 autres' }).click()
+    await expect(page.getByRole('article')).toHaveCount(25)
+    await expect(page.getByRole('alert')).toHaveCount(0)
+  })
+
+  test('les états vide, erreur et 429 gardent un appel vers l’app', async ({ page }) => {
+    const states: Array<[string, number, unknown]> = [
+      ['empty', 200, ok([])],
+      ['error', 404, {}],
+      ['rate-limited', 429, {}],
+    ]
+    for (const [state, status, body] of states) {
+      await respondWith(page, body, status)
+      await page.goto(SEARCH)
+      await expect(page.locator(`#recherche [data-state="${state}"]`)).toBeVisible()
+      const badges = page.locator('#recherche aside')
+      await expect(badges.getByRole('button', { name: /App Store/ })).toBeVisible()
+      await badges.getByRole('button', { name: /App Store/ }).click()
+      await expect(page.getByRole('dialog').filter({ visible: true })).toBeVisible()
+      await page.keyboard.press('Escape')
+    }
+  })
+
+  test('une adresse avec paramètres amène la section à l’écran, l’adresse nue ne défile pas', async ({ page }) => {
+    await respondWith(page, ok(THREE))
+    await page.goto('/envoyer-colis')
+    await page.waitForLoadState('networkidle')
+    await hydrated(page)
+    expect(await page.evaluate(() => window.scrollY)).toBe(0)
+    await page.goto(SEARCH)
     await expect(page.getByRole('article')).toHaveCount(3)
-    await page.getByRole('button', { name: 'Page suivante' }).click()
-    await expect(page).toHaveURL(/page=1/)
-    await expect.poll(() => calls.at(-1)?.searchParams.get('page')).toBe('1')
-    await expect(page.getByRole('button', { name: 'Page précédente' })).toBeVisible()
+    await expect.poll(() => page.evaluate(() => {
+      const top = document.querySelector('#recherche')!.getBoundingClientRect().top
+      return top >= -1 && top < window.innerHeight / 2
+    })).toBe(true)
   })
 })
 
@@ -272,14 +361,19 @@ for (const [label, path, search] of [
     test.use({ viewport: { width: 360, height: 800 } })
 
     test('aucun défilement horizontal, boutons sur une ligne', async ({ page }) => {
-      await respondWith(page, ok(THREE, { totalElements: 45, totalPages: 3 }))
+      await respondPaged(page, 45, 3)
       for (const url of [path, search]) {
         await page.goto(url)
-        if (url === search) await expect(page.getByRole('article')).toHaveCount(3)
+        if (url === search) await expect(page.getByRole('button', { name: /Voir les 20 autres|See 20 more/ })).toBeVisible()
         const overflow = await page.evaluate(
           () => document.documentElement.scrollWidth - document.documentElement.clientWidth,
         )
         expect(overflow, url).toBeLessThanOrEqual(0)
+        if (url === search) {
+          const box = (await page.getByRole('button', { name: /Voir les 20 autres|See 20 more/ }).boundingBox())!
+          expect(box.height).toBeGreaterThanOrEqual(44)
+          expect(box.x + box.width).toBeLessThanOrEqual(360)
+        }
         // Une ligne = un seul `top` parmi les rectangles du texte du bouton.
         const wrapped = await page.evaluate(() =>
           [...document.querySelectorAll('main button, main a.rounded-btn, #recherche a')]
@@ -310,9 +404,10 @@ for (const [label, path, search] of [
 
 for (const [label, url] of [['FR', SEARCH], ['EN', '/en/send-a-parcel?depart=Paris&arrivee=Abidjan']] as const) {
   test(`axe : aucune violation grave avec des résultats (${label})`, async ({ page }) => {
-    await respondWith(page, ok(THREE))
+    await respondPaged(page, 45, 3)
     await page.goto(url)
-    await expect(page.getByRole('article')).toHaveCount(3)
+    await expect(page.getByRole('article')).toHaveCount(20)
+    await expect(page.getByRole('button', { name: /Voir les 20 autres|See 20 more/ })).toBeVisible()
     await page.waitForLoadState('networkidle')
     const settled = () => document.getAnimations()
       .filter(animation => animation.effect?.getTiming().iterations !== Infinity)
@@ -326,9 +421,9 @@ for (const [label, url] of [['FR', SEARCH], ['EN', '/en/send-a-parcel?depart=Par
   })
 }
 
-test('axe : aucune violation grave dans les états erreur et 429', async ({ page }) => {
-  for (const status of [404, 429]) {
-    await respondWith(page, {}, status)
+test('axe : aucune violation grave dans les états vide, erreur et 429', async ({ page }) => {
+  for (const status of [200, 404, 429]) {
+    await respondWith(page, status === 200 ? ok([]) : {}, status)
     await page.goto(SEARCH)
     await expect(page.locator('#recherche [data-state]')).toHaveCount(1)
     await page.waitForLoadState('networkidle')

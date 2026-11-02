@@ -5,6 +5,7 @@ import {
   formatDepartureDate,
   formatPrice,
   hasSearch,
+  MAX_PAGE,
   parseSearchQuery,
   suggestCities,
   toApiParams,
@@ -123,24 +124,31 @@ describe('toApiParams', () => {
 })
 
 describe('toUrlQuery', () => {
-  it('ne produit rien pour une recherche vide, même paginée à 0', () => {
+  it('ne produit rien pour une recherche vide', () => {
     expect(toUrlQuery(parseSearchQuery({}))).toEqual({})
   })
 
-  it('ne retient que les champs renseignés', () => {
+  it('ne retient que les champs renseignés, jamais la page', () => {
     const q = parseSearchQuery({
       depart: 'Paris', arrivee: 'Abidjan', quand: 'ce-mois', minKg: '16', maxPrix: '12.5',
       urgent: '1', mode: 'plane', page: '2',
     })
     expect(toUrlQuery(q)).toEqual({
       depart: 'Paris', arrivee: 'Abidjan', quand: 'ce-mois', minKg: '16', maxPrix: '12.5',
-      urgent: '1', mode: 'PLANE', page: '2',
+      urgent: '1', mode: 'PLANE',
     })
   })
 
   it('est relu à l’identique par parseSearchQuery', () => {
-    const q = parseSearchQuery({ depart: 'Lyon', quand: '3-mois', urgent: 'true', page: '1' })
+    const q = parseSearchQuery({ depart: 'Lyon', quand: '3-mois', urgent: 'true' })
     expect(parseSearchQuery(toUrlQuery(q))).toEqual(q)
+  })
+})
+
+describe('MAX_PAGE', () => {
+  it('est la dernière page atteignable et borne la page lue dans l’adresse', () => {
+    expect(MAX_PAGE).toBe(4)
+    expect(parseSearchQuery({ page: '99' }).page).toBe(MAX_PAGE)
   })
 })
 

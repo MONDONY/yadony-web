@@ -50,7 +50,14 @@ describe('EarningsSimulator', () => {
     const text = flat(mountSimulator().text())
     expect(text).toContain('Exemple indicatif : chaque voyageur fixe son propre prix.')
     expect(text).toContain('Le montant que vous recevez, après la commission de service, est affiché avant que vous acceptiez.')
-    expect(text).not.toMatch(/net/i)
+    expect(text).not.toMatch(/\bnet\b/i)
+  })
+
+  it('affiche la mention indicative en anglais, sans net estimé', () => {
+    const text = flat(mountSimulator('en').text())
+    expect(text).toContain('Example for illustration only: every traveller sets their own price.')
+    expect(text).toContain('The amount you receive, after the service fee, is shown before you accept.')
+    expect(text).not.toMatch(/\bnet\b/i)
   })
 
   it('n’appelle jamais le réseau', async () => {

@@ -1,4 +1,4 @@
-import { test, expect, type Locator } from './fixtures'
+import { test, expect, type Locator, type Page } from './fixtures'
 
 // Un réglage reçu avant l'hydratation de Vue est perdu (le HTML statique est
 // déjà affiché) : on le répète jusqu'à ce que le total réagisse.
@@ -9,10 +9,14 @@ async function regler(curseur: Locator, valeur: string, total: Locator, attendu:
   }).toPass()
 }
 
+// Le total du simulateur, cherché dans sa section et non dans toute la page.
+const totalDuSimulateur = (page: Page) =>
+  page.locator('section').filter({ has: page.locator('#earnings-kg') }).locator('output')
+
 test.describe('simulateur de gain du voyageur', () => {
   test('le total prérendu vaut 120 € et suit les curseurs', async ({ page }) => {
     await page.goto('/devenir-voyageur')
-    const total = page.locator('output')
+    const total = totalDuSimulateur(page)
     await expect(total).toHaveText(/120\s€/)
     await regler(page.getByLabel('Kilos libres'), '20', total, /160\s€/)
     await regler(page.getByLabel('Prix au kilo'), '10', total, /200\s€/)
@@ -25,7 +29,7 @@ test.describe('simulateur de gain du voyageur', () => {
 
   test('les curseurs se règlent au clavier', async ({ page }) => {
     await page.goto('/devenir-voyageur')
-    const total = page.locator('output')
+    const total = totalDuSimulateur(page)
     await expect(async () => {
       await page.getByLabel('Kilos libres').focus()
       await page.keyboard.press('ArrowRight')
@@ -43,7 +47,7 @@ test.describe('simulateur de gain du voyageur', () => {
 
   test('la page anglaise affiche le simulateur en anglais', async ({ page }) => {
     await page.goto('/en/become-a-traveler')
-    const total = page.locator('output')
+    const total = totalDuSimulateur(page)
     await expect(total).toHaveText('€120')
     await expect(page.getByLabel('Price per kilo')).toBeVisible()
     await regler(page.getByLabel('Spare kilos'), '20', total, '€160')

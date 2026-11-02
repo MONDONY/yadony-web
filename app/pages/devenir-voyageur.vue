@@ -30,6 +30,7 @@ const control = [
     <template #steps>
       <section class="bg-surface py-14 sm:py-20">
         <UiContainer>
+          <h2 class="mb-8 max-w-[18ch] text-display-md text-ink sm:mb-12">{{ t('journeys.traveler.tempsTitle') }}</h2>
           <TravelerTemps :steps="travelerJourney" />
         </UiContainer>
       </section>

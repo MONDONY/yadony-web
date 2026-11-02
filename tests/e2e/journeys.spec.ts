@@ -78,6 +78,19 @@ test.describe('page voyageur simplifiée', () => {
     })
   }
 
+  for (const { chemin } of pages) {
+    test(`${chemin} : aucun niveau de titre sauté`, async ({ page }) => {
+      await page.goto(chemin)
+      const niveaux = await page.locator('main').locator('h1, h2, h3, h4, h5, h6').evaluateAll(
+        titres => titres.map(titre => Number(titre.tagName.slice(1))),
+      )
+      expect(niveaux.length).toBeGreaterThan(5)
+      niveaux.forEach((niveau, index) => {
+        expect(niveau, `titre n° ${index + 1} de niveau h${niveau}`).toBeLessThanOrEqual(index === 0 ? 1 : niveaux[index - 1]! + 1)
+      })
+    })
+  }
+
   test('la page expéditeur ne change pas : un h1 et sept étapes', async ({ page }) => {
     await page.goto('/envoyer-colis')
     await expect(page.locator('h1')).toHaveCount(1)

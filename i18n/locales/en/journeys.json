@@ -133,6 +133,7 @@
           "text": "The recipient gives you their 6-digit code: delivery is confirmed and the payment is sent to you, to your bank account or by mobile money."
         }
       ],
+      "tempsTitle": "From posting to payment, in four steps.",
       "temps": {
         "publish": "Post your trip",
         "price": "Choose your price",

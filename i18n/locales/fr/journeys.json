@@ -133,6 +133,7 @@
           "text": "Le destinataire vous donne son code à 6 chiffres : la livraison est confirmée et le paiement vous est versé, sur votre compte bancaire ou en mobile money."
         }
       ],
+      "tempsTitle": "De la publication au paiement, en quatre temps.",
       "temps": {
         "publish": "Publiez votre trajet",
         "price": "Choisissez votre prix",

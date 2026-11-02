@@ -11,8 +11,8 @@
       "submit": "See travelers",
       "filters": "Filters",
       "minKg": "≥ {kg} kg",
-      "maxPrice": "Max price",
-      "maxPriceField": "Max price per kg",
+      "maxPrice": "Max price (€/kg)",
+      "maxPriceField": "Max price per kg, in euros",
       "urgent": "Urgent",
       "plane": "Plane"
     },
@@ -21,11 +21,19 @@
       "verified": "Verified identity",
       "rating": "Rated {rating} out of 5",
       "trips": "{count} trip | {count} trips",
-      "perKg": "/ kg",
+      "perKg": "/kg",
       "details": "Details",
       "detailsLabel": "Details of {name}'s trip, {from} to {to}",
       "request": "Request",
-      "requestLabel": "Request {name}'s trip, {from} to {to}"
+      "requestLabel": "Request {name}'s trip, {from} to {to}",
+      "mode": {
+        "PLANE": "Plane",
+        "CAR": "Car",
+        "TRAIN": "Train",
+        "BUS": "Bus",
+        "BOAT": "Boat",
+        "OTHER": "Other"
+      }
     },
     "handoff": {
       "title": "To book, go through the app.",
@@ -40,9 +48,12 @@
     "states": {
       "loading": "Searching",
       "empty": {
-        "title": "No traveler for {route}",
-        "titleAny": "No traveler for this search",
-        "text": "Try a wider date, or set up an alert in the app to be told as soon as a traveler leaves."
+        "title": "No traveler for {route}.",
+        "titleAny": "No traveler for this search.",
+        "text": "Try a wider date, or set up an alert in the app to be told as soon as a traveler leaves.",
+        "titleMonth": "No traveler for {route} this month.",
+        "titleAnyMonth": "No traveler this month.",
+        "widen": "See the next 3 months"
       },
       "error": {
         "title": "Search is not responding right now.",

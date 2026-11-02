@@ -17,10 +17,15 @@ const { t, locale } = useI18n()
 // Tout vient des champs de l'API, rendu comme du texte (jamais v-html).
 const lang = computed(() => locale.value as Locale)
 const date = computed(() => formatDepartureDate(props.card.departureDate, lang.value))
+const MODES = ['PLANE', 'CAR', 'TRAIN', 'BUS', 'BOAT', 'OTHER']
+const mode = computed(() => {
+  const value = props.card.transportMode
+  return value !== undefined && MODES.includes(value) ? t(`search.card.mode.${value}`) : ''
+})
 const capacity = computed(() => formatCapacity(props.card, lang.value))
 const price = computed(() => formatCardPrice(props.card, lang.value))
 const priceText = computed(() =>
-  props.card.pricePerKgDisplay !== undefined ? `${price.value} ${t('search.card.perKg')}` : price.value,
+  props.card.pricePerKgDisplay !== undefined ? `${price.value}${t('search.card.perKg')}` : price.value,
 )
 const name = computed(() => props.card.traveler.displayName)
 const initial = computed(() => Array.from(name.value.trim())[0]?.toUpperCase() ?? '?')
@@ -59,6 +64,10 @@ function request() {
 
     <p class="flex flex-wrap items-center gap-x-2 text-sm text-ink-muted">
       <span>{{ date }}</span>
+      <template v-if="mode">
+        <span aria-hidden="true">·</span>
+        <span data-mode>{{ mode }}</span>
+      </template>
       <template v-if="capacity">
         <span aria-hidden="true">·</span>
         <span data-capacity>{{ capacity }}</span>

@@ -18,11 +18,14 @@ const MIN_KG_FILTER = 16
 const draft = ref<SearchQuery>({ ...props.modelValue })
 const priceOpen = ref(props.modelValue.maxPrix !== undefined)
 
+// Le champ « Prix max » reste dans l'état choisi par l'utilisateur tant que la
+// valeur de l'adresse ne change pas : ouvert et vide, il ne doit pas se replier
+// quand la requête revient sans prix.
 watch(
   () => props.modelValue,
-  (value) => {
+  (value, previous) => {
     draft.value = { ...value }
-    priceOpen.value = value.maxPrix !== undefined
+    if (value.maxPrix !== previous?.maxPrix) priceOpen.value = value.maxPrix !== undefined
   },
 )
 
@@ -168,7 +171,7 @@ const chips = computed(() => [
         :class="[chipBase, chip.on ? chipOn : chipOff]"
         @click="chip.click"
       >{{ chip.label }}</button>
-      <div v-if="priceOpen" class="w-full sm:w-auto">
+      <div v-if="priceOpen" class="flex w-full items-center gap-2 sm:w-auto">
         <label :for="`${uid}-prix`" class="sr-only">{{ t('search.form.maxPriceField') }}</label>
         <input
           :id="`${uid}-prix`"
@@ -177,11 +180,11 @@ const chips = computed(() => [
           inputmode="decimal"
           min="1"
           step="any"
-          :placeholder="t('search.form.maxPriceField')"
           :value="draft.maxPrix ?? ''"
-          :class="[field, 'sm:w-52']"
+          :class="[field, 'w-36']"
           @input="onPriceInput"
         >
+        <span aria-hidden="true" class="whitespace-nowrap text-sm font-semibold text-ink">€/kg</span>
       </div>
     </div>
   </form>

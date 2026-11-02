@@ -44,13 +44,33 @@ describe('SearchStates', () => {
 
   it('nomme le trajet cherché quand rien ne correspond', () => {
     const wrapper = mountStates('empty')
-    expect(wrapper.text()).toContain('Aucun voyageur pour Paris → Abidjan')
+    expect(wrapper.find('[data-state] > p').text()).toBe('Aucun voyageur pour Paris → Abidjan.')
     expect(wrapper.text()).toContain(fr.search.states.empty.text)
   })
 
   it('nomme un départ seul ou une arrivée seule', () => {
     expect(mountStates('empty', { ...query, arrivee: '' }).text()).toContain('Aucun voyageur pour Paris')
     expect(mountStates('empty', { ...query, depart: '' }).text()).toContain('Aucun voyageur pour Abidjan')
+  })
+
+  it('ajoute « ce mois-ci » seulement pour la recherche du mois', () => {
+    const month = { ...query, quand: 'ce-mois' as const }
+    expect(mountStates('empty', month).find('[data-state] > p').text()).toBe('Aucun voyageur pour Paris → Abidjan ce mois-ci.')
+    expect(mountStates('empty', { ...month, depart: '', arrivee: '' }).find('[data-state] > p').text()).toBe(fr.search.states.empty.titleAnyMonth)
+    expect(mountStates('empty', { ...query, quand: '3-mois' }).text()).not.toContain('ce mois-ci')
+    expect(mountStates('empty', month, 'en').find('[data-state] > p').text()).toBe('No traveler for Paris → Abidjan this month.')
+  })
+
+  it('propose « Voir les 3 prochains mois » sauf si la recherche les couvre déjà, et émet widen', async () => {
+    for (const quand of ['', 'ce-mois'] as const) {
+      const wrapper = mountStates('empty', { ...query, quand })
+      const widen = wrapper.findAll('button').find((b) => b.text() === fr.search.states.empty.widen)!
+      expect(widen.attributes('type')).toBe('button')
+      await widen.trigger('click')
+      expect(wrapper.emitted('widen')).toHaveLength(1)
+    }
+    expect(mountStates('empty', { ...query, quand: '3-mois' }).find('button').exists()).toBe(false)
+    expect(mountStates('empty', query, 'en').find('button').text()).toBe('See the next 3 months')
   })
 
   it('reste correct sans ville dans la requête', () => {
@@ -75,7 +95,7 @@ describe('SearchStates', () => {
   })
 
   it('annonce les états non bloquants aux lecteurs d’écran', () => {
-    expect(mountStates('error').find('[data-state]').attributes('role')).toBe('status')
+    expect(mountStates('error').find('[data-state]').attributes('role')).toBe('alert')
     expect(mountStates('empty').find('[data-state]').attributes('role')).toBe('status')
   })
 

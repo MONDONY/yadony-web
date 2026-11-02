@@ -74,6 +74,8 @@ const sameWordPaths = [
   'search.form.minKg',
   'search.card.urgent',
   'search.card.perKg',
+  'search.card.mode.TRAIN',
+  'search.card.mode.BUS',
 ]
 
 /**

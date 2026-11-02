@@ -93,6 +93,41 @@ describe('SearchForm', () => {
     expect(wrapper.emitted('submit')!.at(-1)).toEqual([empty])
   })
 
+  it('affiche l’unité € permanente à côté du champ, en français et en anglais', async () => {
+    for (const locale of ['fr', 'en'] as const) {
+      const wrapper = mountForm(empty, locale)
+      const chip = wrapper.findAll('button[aria-pressed]').find((b) => b.text().includes('€/kg'))!
+      expect(chip.text()).toBe(locale === 'fr' ? 'Prix max (€/kg)' : 'Max price (€/kg)')
+      await chip.trigger('click')
+      const input = wrapper.find('input[name="maxPrix"]')
+      expect(input.element.parentElement!.textContent).toContain('€/kg')
+      expect(wrapper.find(`label[for="${input.attributes('id')}"]`).text()).toMatch(/euro/)
+    }
+  })
+
+  it('garde le champ « Prix max » ouvert et vide quand la requête revient sans prix', async () => {
+    const wrapper = mountForm()
+    await wrapper.setProps({ 'onUpdate:modelValue': (value: SearchQuery) => wrapper.setProps({ modelValue: value }) })
+    const chip = () => wrapper.findAll('button[aria-pressed]').find((b) => b.text() === fr.search.form.maxPrice)!
+    await chip().trigger('click')
+    expect(wrapper.find('input[name="maxPrix"]').exists()).toBe(true)
+
+    await wrapper.find('form').trigger('submit')
+    await wrapper.vm.$nextTick()
+    expect(wrapper.find('input[name="maxPrix"]').exists()).toBe(true)
+
+    await wrapper.findAll('button[aria-pressed]').find((b) => b.text() === 'Urgent')!.trigger('click')
+    await wrapper.vm.$nextTick()
+    expect(wrapper.find('input[name="maxPrix"]').exists()).toBe(true)
+    expect(chip().attributes('aria-pressed')).toBe('true')
+
+    // Un changement réel du prix (retour arrière dans l'historique) referme le champ.
+    await wrapper.setProps({ modelValue: { ...empty, maxPrix: 5 } })
+    expect(wrapper.find('input[name="maxPrix"]').exists()).toBe(true)
+    await wrapper.setProps({ modelValue: empty })
+    expect(wrapper.find('input[name="maxPrix"]').exists()).toBe(false)
+  })
+
   it('écarte un prix max hors bornes ou vide', async () => {
     const wrapper = mountForm()
     await wrapper.findAll('button[aria-pressed]').find((b) => b.text() === fr.search.form.maxPrice)!.trigger('click')

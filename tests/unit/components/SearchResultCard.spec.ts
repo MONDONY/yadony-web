@@ -42,8 +42,9 @@ describe('SearchResultCard', () => {
     expect(text).toContain('Paris')
     expect(text).toContain('Abidjan')
     expect(text).toContain('20 kg')
-    expect(text).toContain('10,70')
+    expect(text).toContain('10,70\u00a0€/kg')
     expect(text).toContain('ven.')
+    expect(wrapper.find('[data-mode]').text()).toBe('Avion')
     expect(text).toContain('Awa')
     expect(text).toContain('4,8')
     expect(text).toContain('12 trajets')
@@ -57,7 +58,7 @@ describe('SearchResultCard', () => {
     expect(text).not.toMatch(/undefined|NaN|null/)
     expect(text).not.toContain(fr.search.card.verified)
     expect(text).not.toContain(fr.search.card.urgent)
-    expect(text).not.toContain('/ kg')
+    expect(text).not.toContain('/kg')
     expect(wrapper.find('[data-price]').exists()).toBe(false)
     expect(wrapper.find('[data-capacity]').exists()).toBe(false)
   })
@@ -65,7 +66,7 @@ describe('SearchResultCard', () => {
   it('affiche « Prix par article » pour un trajet MIXED sans prix au kilo', () => {
     const wrapper = mountCard(card({ pricingMode: 'MIXED' }))
     expect(wrapper.find('[data-price]').text()).toBe('Prix par article')
-    expect(wrapper.text()).not.toContain('/ kg')
+    expect(wrapper.text()).not.toContain('/kg')
   })
 
   it('affiche le franc CFA correctement', () => {
@@ -73,8 +74,27 @@ describe('SearchResultCard', () => {
     const price = wrapper.find('[data-price]').text()
     expect(price).toMatch(/3\s?000/)
     expect(price).toContain('CFA')
-    expect(price).toContain('/ kg')
+    expect(price).toMatch(/CFA\/kg$/)
     expect(price).not.toMatch(/undefined|NaN/)
+  })
+
+  it.each([
+    ['PLANE', 'Avion', 'Plane'],
+    ['CAR', 'Voiture', 'Car'],
+    ['TRAIN', 'Train', 'Train'],
+    ['BUS', 'Bus', 'Bus'],
+    ['BOAT', 'Bateau', 'Boat'],
+    ['OTHER', 'Autre', 'Other'],
+  ])('traduit le mode de transport %s', (mode, frLabel, enLabel) => {
+    expect(mountCard(card({ transportMode: mode })).find('[data-mode]').text()).toBe(frLabel)
+    expect(mountCard(card({ transportMode: mode }), 'en').find('[data-mode]').text()).toBe(enLabel)
+  })
+
+  it('n’affiche aucun mode quand il est absent ou inconnu', () => {
+    expect(mountCard(card()).find('[data-mode]').exists()).toBe(false)
+    const unknown = mountCard(card({ transportMode: 'ROCKET' }))
+    expect(unknown.find('[data-mode]').exists()).toBe(false)
+    expect(unknown.text()).not.toContain('ROCKET')
   })
 
   it('affiche le badge Urgent', () => {

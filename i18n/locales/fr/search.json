@@ -11,8 +11,8 @@
       "submit": "Voir les voyageurs",
       "filters": "Filtres",
       "minKg": "≥ {kg} kg",
-      "maxPrice": "Prix max",
-      "maxPriceField": "Prix max par kg",
+      "maxPrice": "Prix max (€/kg)",
+      "maxPriceField": "Prix max par kg, en euros",
       "urgent": "Urgent",
       "plane": "Avion"
     },
@@ -21,11 +21,19 @@
       "verified": "Identité vérifiée",
       "rating": "Note {rating} sur 5",
       "trips": "{count} trajet | {count} trajets",
-      "perKg": "/ kg",
+      "perKg": "/kg",
       "details": "Détails",
       "detailsLabel": "Détails du trajet de {name}, {from} vers {to}",
       "request": "Demander",
-      "requestLabel": "Demander à {name}, {from} vers {to}"
+      "requestLabel": "Demander à {name}, {from} vers {to}",
+      "mode": {
+        "PLANE": "Avion",
+        "CAR": "Voiture",
+        "TRAIN": "Train",
+        "BUS": "Bus",
+        "BOAT": "Bateau",
+        "OTHER": "Autre"
+      }
     },
     "handoff": {
       "title": "Pour réserver, passez par l'app.",
@@ -40,9 +48,12 @@
     "states": {
       "loading": "Recherche en cours",
       "empty": {
-        "title": "Aucun voyageur pour {route}",
-        "titleAny": "Aucun voyageur pour cette recherche",
-        "text": "Essayez une date plus large, ou créez une alerte dans l'app pour être prévenu dès qu'un voyageur part."
+        "title": "Aucun voyageur pour {route}.",
+        "titleAny": "Aucun voyageur pour cette recherche.",
+        "text": "Essayez une date plus large, ou créez une alerte dans l'app pour être prévenu dès qu'un voyageur part.",
+        "titleMonth": "Aucun voyageur pour {route} ce mois-ci.",
+        "titleAnyMonth": "Aucun voyageur ce mois-ci.",
+        "widen": "Voir les 3 prochains mois"
       },
       "error": {
         "title": "La recherche ne répond pas pour l'instant.",

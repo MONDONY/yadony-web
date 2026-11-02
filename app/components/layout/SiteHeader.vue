@@ -91,7 +91,7 @@ const links = computed(() => [
             v-for="link in links"
             :key="link.to"
             :to="localePath(link.to)"
-            class="text-sm font-medium text-ink-muted transition-colors duration-micro ease-dony hover:text-ink"
+            class="inline-flex min-h-11 items-center text-sm font-medium text-ink-muted transition-colors duration-micro ease-dony hover:text-ink"
             active-class="!text-primary"
           >{{ link.label }}</NuxtLink>
         </nav>

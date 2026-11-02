@@ -131,8 +131,14 @@ for (const path of ['/', '/en']) {
     const liens = page.locator('header nav').first().getByRole('link')
     await expect(liens).toHaveCount(4)
     for (const lien of await liens.all()) {
-      const box = await lien.boundingBox()
-      expect(box?.height ?? 99).toBeLessThan(28)
+      // Le texte du lien tient sur une seule ligne (la boîte, elle, mesure
+      // 44 px : voir le test des cibles tactiles plus bas).
+      const lignes = await lien.evaluate((el) => {
+        const range = document.createRange()
+        range.selectNodeContents(el)
+        return new Set([...range.getClientRects()].map(r => Math.round(r.top))).size
+      })
+      expect(lignes).toBe(1)
     }
     const logo = await page.locator('header img[alt="Yadony"]').boundingBox()
     const premier = await liens.first().boundingBox()
@@ -142,6 +148,29 @@ for (const path of ['/', '/en']) {
     )
     expect(overflow).toBeLessThanOrEqual(0)
   })
+}
+
+// Cibles tactiles : chaque lien en ligne de l'en-tête mesure au moins 44 px de
+// haut, dès 1024 px (tablettes en paysage comprises), en français et en anglais.
+for (const width of [1024, 1280]) {
+  for (const path of ['/', '/en']) {
+    test(`à ${width} px, les liens de l'en-tête de ${path} font au moins 44 px de haut`, async ({ page }) => {
+      await page.setViewportSize({ width, height: 800 })
+      await page.goto(path)
+      const liens = page.locator('header nav').first().getByRole('link')
+      await expect(liens).toHaveCount(4)
+      for (const lien of await liens.all()) {
+        const box = await lien.boundingBox()
+        expect(box?.height ?? 0).toBeGreaterThanOrEqual(44)
+      }
+      const rangee = await page.locator('header .h-16').first().boundingBox()
+      expect(rangee?.height).toBe(64)
+      const overflow = await page.evaluate(
+        () => document.documentElement.scrollWidth - document.documentElement.clientWidth,
+      )
+      expect(overflow).toBeLessThanOrEqual(0)
+    })
+  }
 }
 
 test("l'en-tête à 1280 px affiche exactement 4 liens de navigation", async ({ page }) => {

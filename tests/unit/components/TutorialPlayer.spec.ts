@@ -58,6 +58,8 @@ describe('TutorialPlayer', () => {
     expect(video.attributes('poster')).toBe('/video/tutos/search-poster.jpg')
     expect(video.attributes('playsinline')).toBeDefined()
     expect(video.attributes('controls')).toBeDefined()
+    // Pas de téléchargement, mais la vitesse de lecture reste réglable.
+    expect(video.attributes('controlslist')).toBe('nodownload')
     expect(wrapper.find('dialog').attributes('open')).toBeDefined()
     expect(wrapper.text()).toContain(fr.tutorials.items.search.title)
     expect(wrapper.text()).toContain(fr.tutorials.items.search.path)

@@ -112,7 +112,7 @@ function onNativeClose() {
         playsinline
         preload="none"
         disablepictureinpicture
-        controlslist="nodownload noplaybackrate"
+        controlslist="nodownload"
         class="mx-auto mt-4 block aspect-[9/16] max-h-[62dvh] w-auto max-w-full rounded-el bg-navy outline outline-1 outline-white/10"
       />
 

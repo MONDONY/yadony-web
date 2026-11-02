@@ -46,7 +46,7 @@ const open = ref(false)
         <nav
           v-if="toc.length"
           :aria-label="t('legal.layout.toc')"
-          class="lg:sticky lg:top-24 lg:max-h-[calc(100dvh-8rem)] lg:self-start lg:overflow-y-auto"
+          class="lg:sticky lg:top-28 lg:max-h-[calc(100dvh-8rem)] lg:self-start lg:overflow-y-auto"
         >
           <button
             type="button"
@@ -84,7 +84,7 @@ const open = ref(false)
           </ol>
         </nav>
 
-        <div class="min-w-0 [overflow-wrap:anywhere] [&_h2]:scroll-mt-24 [&_h2:first-child]:mt-0">
+        <div class="min-w-0 [overflow-wrap:anywhere] [&_h2]:scroll-mt-28 [&_h2:first-child]:mt-0">
           <slot />
         </div>
       </div>

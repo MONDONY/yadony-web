@@ -90,6 +90,47 @@ test('un clic dans le sommaire amène à la section', async ({ page, isMobile })
   await expect(page.locator(`#${target}`)).toBeInViewport()
 })
 
+// Le défilement est progressif (scroll-behavior: smooth) : on attend que la
+// position verticale ne bouge plus avant de mesurer.
+async function scrollSettled(page: Page) {
+  let last = -1
+  await expect.poll(async () => {
+    const y = await page.evaluate(() => window.scrollY)
+    const stable = y === last && y > 0
+    last = y
+    return stable
+  }, { intervals: [150], timeout: 8000 }).toBe(true)
+}
+
+// L'en-tête est collant (bandeau bêta compris, environ 102 px) : le titre atteint
+// par le sommaire et le sommaire collant ne doivent pas passer dessous.
+test('après un clic dans le sommaire, le titre reste sous l’en-tête collant', async ({ page, isMobile }) => {
+  await page.goto('/cgu')
+  const nav = await openToc(page, isMobile, 'Sommaire')
+  const link = nav.getByRole('link').nth(4)
+  const target = (await link.getAttribute('href'))!.slice(1)
+  await link.click()
+  await expect(page).toHaveURL(new RegExp(`#${target}$`))
+  const top = () => page.locator(`#${target}`).evaluate(el => el.getBoundingClientRect().top)
+  const bottom = () => page.locator('header').first().evaluate(el => el.getBoundingClientRect().bottom)
+  await scrollSettled(page)
+  expect(await top()).toBeGreaterThanOrEqual(await bottom())
+})
+
+test('sur grand écran, le sommaire collant reste sous l’en-tête', async ({ page, isMobile }) => {
+  test.skip(isMobile, 'comportement grand écran')
+  await page.goto('/cgu')
+  // Un défilement lancé avant l'hydratation est perdu : on le relance.
+  await expect(async () => {
+    await page.evaluate(() => window.scrollTo(0, 3000))
+    await scrollSettled(page)
+  }).toPass({ timeout: 15000 })
+  const nav = page.getByRole('navigation', { name: 'Sommaire' })
+  const toc = await nav.evaluate(el => el.getBoundingClientRect().top)
+  const header = await page.locator('header').first().evaluate(el => el.getBoundingClientRect().bottom)
+  expect(toc).toBeGreaterThanOrEqual(header)
+})
+
 test('sur grand écran, le sommaire est déplié et reste visible au défilement', async ({ page, isMobile }) => {
   test.skip(isMobile, 'comportement grand écran')
   await page.goto('/cgu')

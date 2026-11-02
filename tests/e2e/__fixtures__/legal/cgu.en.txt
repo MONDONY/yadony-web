@@ -1,0 +1,161 @@
+Terms of use
+YADONY SAS ("Yadony") publishes a mobile and web application connecting travellers leaving France for West Africa with senders wishing to send parcels to their relatives. Yadony secures these exchanges through identity verification, payment held until delivery, and parcel traceability at every step. These Terms of Use apply to any use of the platform. Signing up constitutes acceptance of these Terms. If you do not accept them, you must not use the platform. This English version is provided for convenience; the French version prevails.
+Article 1. Who can use Yadony?
+The application is open to any adult (18 or over) with the capacity to contract. One account per phone number.
+Every user can both send parcels and carry them. There is no role to choose at sign-up: both possibilities are available to everyone from account creation.
+Before posting a trip or a parcel request, every user must verify their identity with our provider Didit: a photo of their ID document and a selfie. The result is usually known within minutes. Verified accounts display the "Identity verified" badge.
+Article 2. What Yadony does (and does not do)
+Yadony is an intermediary. It connects travellers and senders, secures payments and provides tracking and dispute-management tools. Yadony is not a carrier: it does not physically transport parcels.
+Travellers are private individuals or transport professionals.
+Yadony operates on international corridors between Europe, the United States, Canada and Africa. The list of available corridors can be consulted in the application and may change.
+Article 3. Publishing a listing (traveller)
+Any verified traveller can publish a listing. It must state the route, departure date, available kilos (1 to 30 kg), price per kilo, the handover and pick-up locations (with the geographic area and practical arrangements), and the accepted payment methods.
+You can create listing templates and schedule recurring trips (automatic publication according to your calendar).
+A listing can be edited as long as no request has been accepted. If you delete it, pending requests are automatically declined and the senders concerned are informed. If senders had already paid, they are refunded in full, automatically. In that case the traveller must return any parcels already handed over: the application generates a return code the traveller must enter to confirm the sender has recovered their parcel. Until that code is validated, the traveller's account is blocked.
+Article 4. Sending a parcel (sender)
+To send a parcel, you fill in a form: weight, description of the contents, photos, declared value (maximum €500) and the recipient's details.
+Before confirming, you electronically sign a warning about prohibited goods and your customs liability. That signature is kept as evidence.
+The traveller reviews your full declaration before accepting. If they find at handover that the contents do not match, they can refuse the parcel without penalty. You are then refunded automatically.
+Prohibited items
+The following items may not be sent:
+Drugs, narcotics or illicit substances
+Weapons, explosives or hazardous materials
+Counterfeits or goods prohibited by customs
+Live animals
+Official documents (passports, identity cards, residence permits)
+Any item whose transport, import or export is prohibited or subject to special authorisation under the law of the departure country, destination country or any transit country
+Article 5. Matching
+When a sender submits a request compatible with your listing, you receive a notification. You accept or decline (reason optional). If you accept, you set a handover appointment: a place and a time slot of 4 hours maximum.
+If you do not confirm your presence as the appointment approaches, the sender receives an alert 2 hours before.
+Price negotiation happens directly in the application. All offers and counter-offers are recorded.
+Article 6. Parcel tracking
+At handover, the traveller scans the parcel's QR code (DON-XXXXXX format) and takes a photo. The parcel is then scanned at three stages: Departure, Transit and Arrival. Every scan is timestamped and geolocated.
+The sender follows the journey in real time in the application. The recipient in the destination country can track the parcel from a simple web page, with no account or application, even on a basic phone with a slow connection.
+If the traveller has no network (airport, plane), scans are stored and sent automatically as soon as the connection returns.
+Article 7. Payment
+Payment methods
+Payments are processed by licensed providers. Yadony never stores card numbers. You can pay by:
+Bank card (Visa, Mastercard), Apple Pay or Google Pay via Stripe
+Mobile Money: Wave, Orange Money and other operators depending on the country
+Cash, handed to the traveller in person when the parcel is handed over, if the traveller accepts it
+Yadony wallet (balance top-up in the application)
+Except for cash agreed in the application and handed to the traveller when the parcel is handed over, any payment made outside the platform is prohibited. The messaging system automatically blocks attempts to exchange contact details to bypass Yadony.
+Biometric validation (fingerprint, Face ID or PIN code) is optional before any payment.
+Money held in escrow
+As soon as you pay, the money is immediately held by Stripe. No one can touch it before delivery is confirmed.
+With cash, the money passes from hand to hand: this hold does not apply.
+Delivery is confirmed by the recipient: they enter a 6-digit code received by SMS on the tracking page. The traveller is paid within the following 24 hours.
+If the recipient does not confirm within 48 hours, the Yadony team can release the payment manually, only after a check. That action is logged. An honest traveller never waits indefinitely.
+Service fees
+Yadony charges a service fee on each transaction. It is paid by the sender, on top of the traveller's price: the traveller receives the full price they set. The fee is deducted automatically. All fee amounts shown in these Terms and in the application include all taxes (VAT included).
+Until 19 November 2026 inclusive, the fee is calculated at the current rate, shown before payment.
+From 20 November 2026, the fee is calculated in marginal tiers: each rate applies only to the part of the traveller's price that falls within its tier, as with income tax. Crossing a threshold therefore never changes the rate applied to the whole amount. The rates are then as follows:
+7% on the part of the price up to 100 €
+6% on the part of the price between 100 € and 300 €
+5% on the part of the price above 300 €
+From the same date, the fee is never below a minimum of 1 € (650 FCFA when the price is in CFA francs, XOF or XAF; in another currency, the equivalent amount shown in the application). For a price in a currency other than the euro, the tier thresholds are converted from the euro at a fixed rate: 655.957 FCFA for 1 € for CFA francs, and a reference rate set by Yadony for other currencies. Examples: for a traveller price of 150 €, the fee is 7 € for the first 100 euros plus 3 € for the next 50, so 10 €; for a price of 5 €, it is 1 €, the minimum.
+The service fee is the same whichever payment method you use (bank card, Mobile Money, Yadony wallet or cash) and whichever currency the price is in.
+With cash, the sender hands the traveller the total, service fee included. Yadony then deducts the fee from the traveller's Yadony wallet, or from their service fee card, when they accept the parcel.
+The exact amount of the fee, minimum included, and the total to pay are shown before you confirm anything.
+A "free service fee" promo code removes the fee: nothing is then charged. Any other promo code reduces the fee but cannot take it below the minimum. A referral voucher reduces the fee after the minimum has been applied.
+Yadony may change this fee (rates, tiers or minimum). Any change is announced at least 30 days before it takes effect and does not apply to offers, requests and negotiations already created, which keep the fee shown when they were created.
+In the event of a refund, the service fee is never kept: you get back everything you paid.
+Cancellations and refunds
+If the traveller cancels their trip: automatic full refund of all senders (3 to 5 business days). Yadony offers you a replacement traveller within 72 hours.
+If the sender cancels before handover, they are refunded in full.
+Yadony wallet
+The wallet is topped up by bank card, Apple Pay or Google Pay. It can also receive free credits: referral rewards and amounts credited back to the wallet by Yadony, for example after cancelling a parcel paid with the wallet.
+Every payment made with the wallet uses free credits first, then topped-up money, starting with the most recent top-up.
+You can at any time request a refund of topped-up money you have not spent, from the Wallet screen in the application. It is paid back to the payment method used for the top-up, within 5 to 10 business days depending on your bank. A partly spent top-up is refunded for the remaining part. While the request is in progress, the balance in that currency cannot be used.
+If the refund to the original payment method fails (expired card, top-up too old, refusal by the payment provider), the Yadony team refunds the amount concerned by another means.
+Free credits are neither refundable nor convertible into cash. They can only be used to pay for parcels on Yadony.
+Article 8. Ratings
+After each delivery, the sender and the traveller can rate each other (1 to 5 stars plus a comment), within 7 days. The recipient can also rate the traveller from the web page, without an account.
+Ratings must reflect a real experience. Yadony automatically detects fake ratings and excludes them from the average.
+The GP Pro badge
+The GP Pro badge distinguishes GPs: travellers who regularly carry parcels by plane on the same corridor, often every week. It is open to individuals and businesses alike. There is a single badge, with no distinction between them.
+The badge is never granted automatically. It does not depend on a number of deliveries or a minimum rating: each request is reviewed by the Yadony team.
+Requesting the badge
+Travellers request the badge themselves, at sign-up by ticking “I am a GP”, or later from their profile. Their identity must be verified. A request made at sign-up goes to review as soon as the identity is verified.
+The request states:
+Travel frequency: every week, twice a month, once a month or less often
+A trading name, if the traveller has one (optional)
+Up to 4 supporting documents, always optional (photo or PDF, 10 MB maximum per file): extract from a business register (Kbis, SIRET, NINEA, RCCM or equivalent), tickets or boarding passes, a screenshot of a social media profile, or any other useful file
+Travellers can cancel their request while it is under review.
+Review and decision
+The Yadony team reviews each request case by case. It takes into account, in particular, the verified identity, published trips, completed deliveries, ratings received, disputes, reports and the age of the account.
+The team accepts or refuses the request. Every refusal states its reason. After a refusal, the traveller can submit a new request straight away.
+The team may also grant the badge to a traveller who has not requested it.
+The decision is sent by push notification, by e-mail if the account has an e-mail address, and in the app.
+Withdrawal of the badge
+The badge can be withdrawn at any time, always by a decision of the Yadony team. The reason for the withdrawal is sent to the traveller through the same channels as the decision to grant it.
+Some situations lead the team to review a profile again: low recent ratings, a dispute, a report, 8 weeks of inactivity or an identity that is no longer verified. They never lead to automatic withdrawal.
+What the badge provides
+The GP Pro badge is shown on the traveller's trips, profile, messages, shareable poster and offers. Senders can filter search results to show GP Pros only. All other things being equal, a GP Pro is placed ahead of another traveller in search results.
+The badge carries no pricing advantage: Yadony's service fee is calculated the same way for everyone. It is independent of the Yadony PRO subscription (article 9).
+The badge is not a guarantee by Yadony of the quality of the transport. It shows that the Yadony team has reviewed the traveller's profile.
+Article 9. Yadony PRO (professional travellers)
+Travellers who work the route regularly (several times a month) can access the Yadony PRO web space. It offers a full dashboard: recurring-trip management with automatic publication, automations, rate cards, a pricing assistant, tax export and activity statistics.
+Access is reserved for PRO accounts. A regular traveller can request an upgrade to a PRO account from the application.
+Article 10. Disputes
+You have 48 hours after delivery to report a problem through the application. After that, the delivery is deemed compliant and the traveller is paid.
+The Yadony team holds all the evidence: scans, photos, messages, signed declaration. It notifies the traveller within 24 hours and issues a decision within 72 hours at most. In case of disagreement, Yadony decides on evidence, not on word.
+In the event of proven loss or damage, Yadony may refund up to €50 per incident (internal guarantee fund), within the limit of the declared value. Excluded from the guarantee: undeclared or prohibited contents, the absence of a geolocated delivery photo, and disputes reported late.
+A sender who opens 3 disputes without evidence is suspended automatically.
+If the dispute is not resolved to your satisfaction, you can turn free of charge to an approved consumer mediator.
+Article 11. Fraud protection
+Yadony includes several automatic protections:
+One phone number = one account
+Detection of accounts sharing the same bank details
+Automatic filtering of messages attempting to exchange contact details to bypass the platform
+Automatic suspension after 2 parcels refused for non-compliant contents
+Detection of fake ratings (the same people rating each other, series of 5 stars with no comment)
+A tamper-proof log of all sensitive actions
+Article 12. Liability
+Yadony: responsible for the proper operation of the platform and the escrow. Yadony is not responsible for the contents of parcels, for damage during transport, or for users' actions.
+The traveller: responsible for the parcel from the departure scan until delivery is confirmed. In the event of loss or damage, their liability is engaged up to the declared value.
+The sender: responsible for the compliance of their parcel. Any false declaration engages their sole liability, including in the event of customs or criminal proceedings.
+Article 12bis. Travellers' tax responsibility
+Yadony is an intermediation platform. Income received by travellers through the application (payments received for carrying parcels) is personal income falling under their own tax responsibility.
+Each traveller is solely responsible for declaring their income to the competent tax authorities of their country of residence, in accordance with applicable local law. Yadony provides no tax advice and assumes no responsibility for non-declaration or incorrect declaration of income generated through the platform.
+The Yadony PRO space provides professional travellers with an export of their transaction history for personal accounting purposes. This tool is provided for information only and does not constitute tax assistance.
+Article 13. Your personal data (GDPR)
+Yadony complies with the European General Data Protection Regulation (GDPR). For any question: dpo@yadony.com.
+We collect only the data needed to run the service: identity (KYC), contact details, transaction data, delivery photos and browsing data. We never store your bank details (handled directly by Stripe). Images of your ID document and your face are processed by Didit, our verification provider: Yadony keeps no copy of them.
+Your data is kept for as long as you use your account plus 3 years. Transaction data is kept for 5 years (statutory accounting obligation). Identity documents are kept for 5 years after your relationship with Yadony ends.
+You can at any time view, edit, export or delete your data from the application settings. When an account is deleted: profile data anonymised, identity documents erased, recipient address book cleared (except payment history, kept for 5 years).
+For any unresolved complaint, you can contact the CNIL: www.cnil.fr.
+Transfers outside the European Union
+As part of the corridors to West Africa, some data may be transferred to Côte d'Ivoire, Senegal, Mali or Cameroon. These transfers are governed by the mechanisms provided for by the GDPR. Photos and documents are stored on European servers.
+Article 14. Notifications
+Yadony sends you notifications through the application (primary channel) and by SMS (backup channel). For the 3 critical events (payment received, delivery confirmed, dispute opened), if your phone does not acknowledge receipt within 60 seconds, an SMS is sent automatically. Two different SMS operators ensure continuity in case of outage.
+Article 15. Intellectual property
+All platform content (brand, logo, code, database, design) belongs to YADONY SAS. Any unauthorised reproduction is prohibited. By publishing content on Yadony, you grant Yadony the right to use it to operate the service.
+Article 16. What is prohibited
+It is prohibited to publish false information, to contact other users off the platform to avoid paying the service fee, to use Yadony for illicit purposes or to attempt to bypass the security systems.
+In the event of a violation, Yadony may remove your content, suspend or permanently close your account, and report the facts to the competent authorities.
+Zero tolerance
+Yadony does not tolerate any objectionable content: hateful, violent, sexual or discriminatory content, harassment, threats or insults. Nor does Yadony tolerate abusive users.
+Every message, listing, request, review, photo and profile can be reported from the app. You can also block another user at any time.
+Our team handles every report within 24 hours: the offending content is removed and its author is excluded from Yadony.
+Article 17. Account closure
+You can delete your account at any time from the application settings, unless a transaction is in progress. Yadony may close an account without notice in the event of a serious breach of these Terms or fraudulent behaviour.
+A wallet balance does not prevent you from deleting your account. As soon as you request deletion, topped-up money you have not spent is refunded to you automatically, under the conditions of Article 7, with nothing more to do on your side.
+Deletion takes effect 30 days after your request. During that period your account is suspended and you can reactivate it from the application: you then get your free credits back. Reactivation does not cancel refunds already started.
+When the account is actually deleted, or straight away if you choose immediate deletion, free credits left in the wallet are permanently lost. Before you confirm, the application shows the amount that will be refunded and the amount that will be lost.
+Article 18. Changes to these Terms
+Yadony may change these Terms at any time. You will be informed by e-mail or in-app notification at least 30 days in advance. If you continue to use the platform after that date, you accept the new Terms. Otherwise, you can close your account.
+Article 19. Governing law
+These Terms are governed by French law. In the event of a dispute not resolved amicably, a consumer may bring proceedings, at their choice, before any court having territorial jurisdiction under the French Code of Civil Procedure or before the court of the place where they lived when the contract was concluded or when the harmful event occurred. Between Yadony and a user acting in a professional capacity, the courts of Paris have exclusive jurisdiction.
+Article 20. Legal notice
+The publisher's legal information:
+Company: YADONY SAS
+Form: simplified joint-stock company (SAS)
+Share capital: €10
+Registered office: 7 avenue Pablo Picasso, Appartement 375, 94120 Fontenay-sous-Bois, France
+SIREN: 108 733 510, Companies register: RCS Créteil 108 733 510
+Publication director: Mr Dramane DIAKITE, President
+Contact: contact@yadony.com
+DPO: dpo@yadony.com
+Hosting: OVH SAS, Cloudflare, Firebase (Google)
+By using Yadony, you confirm that you have read and accepted these Terms in full.

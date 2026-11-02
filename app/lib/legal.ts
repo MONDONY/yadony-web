@@ -32,3 +32,15 @@ export function renderLegalArticles(raw: unknown[], render: RenderMessage): Lega
     }
   })
 }
+
+export interface LegalTocEntry {
+  id: string
+  label: string
+}
+
+// Sommaire d'une page légale : les libellés sont les vrais titres de section
+// du texte (jamais réécrits), les ancres sont numérotées dans l'ordre. Le même
+// index sert à poser l'`id` sur le titre correspondant dans la page.
+export function legalToc(titles: string[], prefix = 'section'): LegalTocEntry[] {
+  return titles.map((label, index) => ({ id: `${prefix}-${index + 1}`, label }))
+}

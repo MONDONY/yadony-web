@@ -1,7 +1,9 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRoute } from 'vue-router'
 import { buildSeoMeta } from '@/lib/seo'
+import { legalToc } from '@/lib/legal'
 
 defineI18nRoute({ paths: { fr: '/mentions-legales', en: '/legal-notice' } })
 
@@ -18,19 +20,19 @@ useSeoMeta(
 )
 
 const sections = ['editor', 'publication', 'hosting', 'ip', 'liability', 'report'] as const
+
+const toc = computed(() =>
+  legalToc(sections.map(key => t(`legal.mentionsLegales.sections.${key}.title`))),
+)
 </script>
 
 <template>
-  <UiSection tone="white">
-    <UiContainer>
-      <h1 class="max-w-[20ch] text-display-xl">{{ t('legal.mentionsLegales.title') }}</h1>
-
-      <ProseBlock class="mt-10">
-        <template v-for="key in sections" :key="key">
-          <h2>{{ t(`legal.mentionsLegales.sections.${key}.title`) }}</h2>
-          <p>{{ t(`legal.mentionsLegales.sections.${key}.text`) }}</p>
-        </template>
-      </ProseBlock>
-    </UiContainer>
-  </UiSection>
+  <LegalLayout :title="t('legal.mentionsLegales.title')" :toc="toc">
+    <ProseBlock>
+      <template v-for="(key, index) in sections" :key="key">
+        <h2 :id="toc[index]?.id">{{ t(`legal.mentionsLegales.sections.${key}.title`) }}</h2>
+        <p>{{ t(`legal.mentionsLegales.sections.${key}.text`) }}</p>
+      </template>
+    </ProseBlock>
+  </LegalLayout>
 </template>

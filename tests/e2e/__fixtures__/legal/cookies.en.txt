@@ -1,0 +1,10 @@
+Cookie policy
+This page describes what yadony.com stores on your device, why, and how to stay in control.
+What a cookie is
+A cookie is a small file a website places on your device to remember information between visits. The browser's local storage plays a comparable role.
+What yadony.com uses today
+This site sets no advertising cookie and no third-party tracker. Traffic is measured with Cloudflare Web Analytics, a cookieless tool: it stores nothing on your device, creates no identifier, does not follow visitors from site to site, and only collects aggregate statistics (page views, country, device type). This kind of measurement is exempt from consent under CNIL guidance. The only information stored on your device is your answer to the banner, kept in your browser's local storage.
+Duration and scope
+Your choice stays on your device until you delete it, and is never sent to our servers or to third parties. Cloudflare Web Analytics statistics are anonymous and aggregated: they cannot identify you. If we ever add a tool that sets cookies or tracks visitors, this page will be updated and your consent requested before anything is activated.
+Staying in control
+You can reopen the banner at any time with the button below or the “Manage cookies” link in the footer, and clear the stored choice through your browser settings.

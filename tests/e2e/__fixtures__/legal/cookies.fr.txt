@@ -1,0 +1,10 @@
+Politique cookies
+Cette page décrit ce que yadony.com enregistre sur votre appareil, pourquoi, et comment garder la main dessus.
+Ce qu'est un cookie
+Un cookie est un petit fichier déposé par un site sur votre appareil pour mémoriser des informations entre deux visites. Le stockage local du navigateur (localStorage) joue un rôle comparable.
+Ce que yadony.com utilise aujourd'hui
+Ce site ne dépose aucun cookie publicitaire et aucun traceur tiers. La fréquentation est mesurée avec Cloudflare Web Analytics, un outil sans cookie : il ne dépose rien sur votre appareil, ne crée aucun identifiant, ne suit pas les visiteurs d'un site à l'autre et ne collecte que des statistiques agrégées (pages vues, pays, type d'appareil). Ce type de mesure est exempté de consentement par la CNIL. La seule information enregistrée sur votre appareil est votre réponse à la bannière, conservée dans le stockage local de votre navigateur.
+Durée et portée
+Votre choix reste sur votre appareil jusqu'à ce que vous le supprimiez, et n'est jamais transmis à nos serveurs ni à des tiers. Les statistiques de Cloudflare Web Analytics sont anonymes et agrégées : elles ne permettent pas de vous identifier. Si nous ajoutons un jour un outil qui dépose des cookies ou suit les visiteurs, cette page sera mise à jour et votre consentement sera demandé avant toute activation.
+Garder la main
+Vous pouvez rouvrir la bannière à tout moment avec le bouton ci-dessous ou le lien « Gérer les cookies » du pied de page, et effacer le choix mémorisé via les réglages de votre navigateur.

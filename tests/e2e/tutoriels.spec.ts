@@ -74,6 +74,19 @@ test('« Vidéo suivante » passe au tutoriel suivant', async ({ page }) => {
   await expect(page.locator('[data-tutorial="search"]')).toBeFocused()
 })
 
+test('à la dernière vidéo du filtre, « Vidéo suivante » disparaît et le focus passe à Fermer', async ({ page }) => {
+  await ouvrirPage(page, '/tutoriels')
+  await page.getByRole('button', { name: 'Expéditeur', exact: true }).click()
+  await page.locator('[data-tutorial="alerts"]').click()
+  const dialog = page.getByRole('dialog', { name: 'Alertes de trajet' })
+  await dialog.getByRole('button', { name: 'Vidéo suivante' }).focus()
+  await page.keyboard.press('Enter')
+  const last = page.getByRole('dialog', { name: 'Mon affiche' })
+  await expect(last).toBeVisible()
+  await expect(last.getByRole('button', { name: 'Vidéo suivante' })).toHaveCount(0)
+  await expect(last.getByRole('button', { name: 'Fermer' })).toBeFocused()
+})
+
 test('le lecteur propose les boutons des stores ; Échap ferme « bientôt disponible » sans fermer le lecteur', async ({ page }) => {
   await ouvrirPage(page, '/tutoriels')
   await expect(page.locator('a[href*="ouvrir"]')).toHaveCount(0)

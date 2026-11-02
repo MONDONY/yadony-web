@@ -22,6 +22,8 @@ const emit = defineEmits<{ close: []; next: [id: string] }>()
 const { t, locale } = useI18n()
 const dialog = ref<HTMLDialogElement | null>(null)
 const video = ref<HTMLVideoElement | null>(null)
+const closeButton = ref<HTMLButtonElement | null>(null)
+const nextButton = ref<HTMLButtonElement | null>(null)
 const shown = ref(false)
 let frame = 0
 
@@ -47,6 +49,19 @@ watch(
       // Lecture refusée : les commandes natives restent disponibles.
     }
   },
+)
+
+// À la dernière vidéo de la liste, « Vidéo suivante » disparaît : s'il avait
+// le focus, il tomberait sur <body>. Le watcher tourne avant la mise à jour du
+// DOM pour voir le bouton encore présent ; le focus passe à Fermer ensuite.
+watch(
+  () => props.next,
+  async (now, before) => {
+    if (now || !before || document.activeElement !== nextButton.value) return
+    await nextTick()
+    closeButton.value?.focus()
+  },
+  { flush: 'pre' },
 )
 
 onBeforeUnmount(() => cancelAnimationFrame(frame))
@@ -92,6 +107,7 @@ function onNativeClose() {
           </p>
         </div>
         <button
+          ref="closeButton"
           type="button"
           class="inline-flex min-h-11 shrink-0 items-center justify-center whitespace-nowrap rounded-btn border border-white/30 px-4 text-sm font-semibold text-white transition-colors duration-micro hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
           @click="emit('close')"
@@ -120,6 +136,7 @@ function onNativeClose() {
       <div class="mt-4 flex flex-col gap-3">
         <button
           v-if="next"
+          ref="nextButton"
           type="button"
           class="inline-flex min-h-11 w-full items-center justify-center whitespace-nowrap rounded-btn bg-accent-strong px-5 text-sm font-semibold text-white shadow-accent transition-colors duration-micro hover:bg-accent-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
           @click="emit('next', next.id)"

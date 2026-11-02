@@ -129,6 +129,33 @@ describe('TutorialPlayer', () => {
     expect(wrapper.findAll('button').some(b => b.text() === fr.tutorials.seeNext)).toBe(false)
   })
 
+  it('rend le focus à Fermer quand « Vidéo suivante » disparaît alors qu’il l’avait', async () => {
+    const wrapper = mountPlayer({ tutorial: search, next: track })
+    await flushPromises()
+    const buttons = () => wrapper.findAll('button')
+    const next = buttons().find(b => b.text() === fr.tutorials.seeNext)!
+    ;(next.element as HTMLElement).focus()
+    expect(document.activeElement).toBe(next.element)
+    await wrapper.setProps({ tutorial: track, next: null })
+    await flushPromises()
+    const close = buttons().find(b => b.text() === fr.tutorials.close)!
+    expect(buttons().some(b => b.text() === fr.tutorials.seeNext)).toBe(false)
+    expect(document.activeElement).toBe(close.element)
+  })
+
+  it('ne déplace pas le focus quand « Vidéo suivante » disparaît sans l’avoir', async () => {
+    const wrapper = mountPlayer({ tutorial: search, next: track })
+    await flushPromises()
+    const close = wrapper.findAll('button').find(b => b.text() === fr.tutorials.close)!
+    const video = wrapper.find('video').element as HTMLElement
+    video.tabIndex = 0
+    video.focus()
+    await wrapper.setProps({ next: null })
+    await flushPromises()
+    expect(document.activeElement).toBe(video)
+    expect(document.activeElement).not.toBe(close.element)
+  })
+
   it('garde la lecture manuelle si le navigateur refuse la lecture automatique', async () => {
     vi.spyOn(HTMLMediaElement.prototype, 'play').mockRejectedValue(new Error('NotAllowedError'))
     const wrapper = mountPlayer({ tutorial: search })

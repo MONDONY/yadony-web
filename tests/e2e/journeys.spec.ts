@@ -91,6 +91,27 @@ test.describe('page voyageur simplifiée', () => {
     })
   }
 
+  const ordres = [
+    {
+      chemin: '/devenir-voyageur',
+      titres: ['Ce que peuvent rapporter vos kilos', 'De la publication au paiement, en quatre temps.', 'Vous gardez la main', 'Payé comme vous voulez', 'Questions fréquentes'],
+    },
+    {
+      chemin: '/en/become-a-traveler',
+      titres: ['What your kilos could earn you', 'From posting to payment, in four steps.', 'You stay in control', 'Paid the way you want', 'Frequently asked questions'],
+    },
+  ]
+
+  for (const { chemin, titres } of ordres) {
+    test(`${chemin} : sections dans l'ordre de la maquette`, async ({ page }) => {
+      await page.goto(chemin)
+      const textes = await page.locator('main h2').allTextContents()
+      const positions = titres.map(titre => textes.findIndex(texte => texte.includes(titre)))
+      expect(positions, `h2 trouvés : ${textes.join(' | ')}`).not.toContain(-1)
+      expect(positions).toEqual([...positions].sort((a, b) => a - b))
+    })
+  }
+
   test('la page expéditeur ne change pas : un h1 et sept étapes', async ({ page }) => {
     await page.goto('/envoyer-colis')
     await expect(page.locator('h1')).toHaveCount(1)

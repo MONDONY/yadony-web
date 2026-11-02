@@ -27,7 +27,17 @@ const control = [
     hero-pose="travel"
     :video="{ src: '/video/tuto-publier-trajet.mp4', poster: '/video/tuto-publier-trajet-poster.jpg' }"
   >
+    <!-- Ordre de la maquette : simulateur, quatre temps, puis « Vous gardez la
+         main » et « Payé » côte à côte ; la vidéo et la FAQ viennent du gabarit. -->
     <template #steps>
+      <section class="bg-bg py-14 sm:py-20">
+        <UiContainer>
+          <UiReveal class="mx-auto max-w-3xl rounded-sheet bg-surface p-8 shadow-sm sm:p-10">
+            <EarningsSimulator />
+          </UiReveal>
+        </UiContainer>
+      </section>
+
       <section class="bg-surface py-14 sm:py-20">
         <UiContainer>
           <h2 class="mb-8 max-w-[18ch] text-display-md text-ink sm:mb-12">{{ t('journeys.traveler.tempsTitle') }}</h2>
@@ -36,25 +46,19 @@ const control = [
       </section>
     </template>
 
-    <section class="bg-bg py-14 sm:py-20">
-      <UiContainer>
-        <h2 class="text-display-md text-ink">{{ t('journeys.traveler.control.title') }}</h2>
-        <div class="mt-8 grid gap-6 md:grid-cols-2">
-          <UiReveal v-for="(card, index) in control" :key="card.title" :delay="index * 60" class="rounded-sheet border border-line bg-surface p-6 sm:p-8">
-            <h3 class="font-display text-xl font-bold text-ink">{{ card.title }}</h3>
-            <p class="mt-3 text-lg text-ink-muted">{{ card.text }}</p>
-          </UiReveal>
-        </div>
-      </UiContainer>
-    </section>
-
     <section class="bg-sand py-14 sm:py-20">
       <UiContainer>
-        <div class="grid gap-6 lg:grid-cols-2">
-          <UiReveal class="rounded-sheet bg-surface p-8 shadow-sm sm:p-10">
-            <EarningsSimulator />
-          </UiReveal>
-          <UiReveal :delay="60" class="rounded-sheet bg-navy p-8 text-white shadow-sm sm:p-10">
+        <div class="grid gap-10 lg:grid-cols-2 lg:gap-12">
+          <div>
+            <h2 class="text-display-md text-ink">{{ t('journeys.traveler.control.title') }}</h2>
+            <div class="mt-8 space-y-6">
+              <UiReveal v-for="(card, index) in control" :key="card.title" :delay="index * 60" class="rounded-sheet border border-line bg-surface p-6 sm:p-8">
+                <h3 class="font-display text-xl font-bold text-ink">{{ card.title }}</h3>
+                <p class="mt-3 text-lg text-ink-muted">{{ card.text }}</p>
+              </UiReveal>
+            </div>
+          </div>
+          <UiReveal :delay="60" class="self-start rounded-sheet bg-navy p-8 text-white shadow-sm sm:p-10">
             <h2 class="text-display-md">{{ t('journeys.traveler.payouts.title') }}</h2>
             <p class="mt-4 text-lg text-white/80">{{ t('journeys.traveler.payouts.text') }}</p>
             <NuxtLink :to="localePath('/billets-avion')" class="mt-8 inline-flex min-h-11 items-center gap-2 font-semibold text-accent hover:underline">

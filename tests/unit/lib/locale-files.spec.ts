@@ -67,8 +67,6 @@ const sameWordPaths = [
   'contest.rules.perBug',
   // Résultat final : « 651 + 2 220 », une addition sans mot.
   'contest.final.podiumSub',
-  // Refonte : « Destinations » s'écrit pareil dans les deux langues.
-  'landing.corridors.kicker',
   // Recherche : « Urgent » et « ≥ 16 kg » s'écrivent pareil dans les deux langues.
   'search.form.urgent',
   'search.form.minKg',
@@ -102,10 +100,6 @@ const properNounPaths = [
   'landing.crossed.art.padlock.amount',
   'landing.crossed.art.route.from',
   'landing.crossed.art.route.to',
-  'landing.payments.items[1]',
-  'landing.payments.items[2]',
-  'landing.payments.items[3]',
-  'landing.payments.items[4]',
   'landing.recipient.chat.link',
   // Accueil : « Yadony Pro » est le nom de l'espace des professionnels.
   'landing.today.items[5].title',
@@ -161,7 +155,6 @@ const markerExemptPaths = new Set([
   'journeys.screens.publish-trip',
   'journeys.screens.scan',
   'journeys.screens.trip-detail',
-  'landing.hero.screensAlt[2]',
   // Page de suppression de compte : le nom affiché à la place de celui d'un
   // compte supprimé est le libellé français « Utilisateur supprimé », que la
   // version anglaise cite tel quel, suivi de sa traduction.

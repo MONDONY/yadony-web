@@ -1,21 +1,16 @@
 import { describe, expect, it } from 'vitest'
-import { crossedJourney, senderJourney, travelerJourney, flightsJourney } from '@/lib/journeys'
+import { senderJourney, travelerJourney, flightsJourney } from '@/lib/journeys'
 import { APP_SCREEN_IDS, DONY_POSE_IDS } from '@/lib/media'
 import { fr, en } from '../helpers/messages'
 
-const journeys = { crossedJourney, senderJourney, travelerJourney, flightsJourney }
+const journeys = { senderJourney, travelerJourney, flightsJourney }
 
 describe('parcours racontés', () => {
-  it('le parcours croisé de l’accueil compte sept étapes', () => {
-    expect(crossedJourney).toHaveLength(7)
-  })
-
   // Yadony ne vend pas de billets : les alertes de prix ne sont jamais le
   // premier argument. Les parcours commencent par le colis ou les kilos.
   it('aucun parcours de colis ou de kilos ne commence par les billets d’avion', () => {
-    expect(crossedJourney[0]!.id).toBe('publish')
     expect(travelerJourney[0]!.id).toBe('publish')
-    for (const steps of [crossedJourney, senderJourney, travelerJourney]) {
+    for (const steps of [senderJourney, travelerJourney]) {
       expect(steps.map(step => step.id)).not.toContain('alert')
       expect(steps.map(step => step.id)).not.toContain('ticket')
     }
@@ -32,7 +27,6 @@ describe('parcours racontés', () => {
 
   it('chaque étape a son titre et son texte dans les deux langues', () => {
     const sizes = {
-      'landing.crossed.steps': crossedJourney.length,
       'journeys.sender.steps': senderJourney.length,
       'journeys.traveler.steps': travelerJourney.length,
       'journeys.flights.steps': flightsJourney.length,

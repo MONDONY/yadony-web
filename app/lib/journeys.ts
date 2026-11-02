@@ -20,17 +20,6 @@ export interface JourneyStep {
   pose?: DonyPoseId
 }
 
-// Accueil : Awa (voyageuse) et Moussa (expéditeur) se croisent.
-export const crossedJourney: JourneyStep[] = [
-  { id: 'publish', actor: 'traveler', art: 'priceModes', pose: 'scale' },
-  { id: 'search', actor: 'sender', screen: 'search-map', pose: 'search' },
-  { id: 'negotiate', actor: 'both', art: 'negotiation', pose: 'handshake' },
-  { id: 'escrow', actor: 'sender', art: 'padlock', pose: 'padlock' },
-  { id: 'handover', actor: 'both', screen: 'scan', pose: 'scan' },
-  { id: 'flight', actor: 'both', art: 'route', pose: 'travel' },
-  { id: 'delivery', actor: 'both', art: 'timeline', pose: 'delivery' },
-]
-
 export const senderJourney: JourneyStep[] = [
   { id: 'search', actor: 'sender', screen: ['search-map', 'request-step1'] },
   { id: 'choose', actor: 'sender', screen: 'traveler-profile' },

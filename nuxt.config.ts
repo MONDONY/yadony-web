@@ -44,6 +44,13 @@ export default defineNuxtConfig({
     vueI18n: './i18n.config.ts',
   },
   ssr: true,
+  runtimeConfig: {
+    public: {
+      // API publique du back (recherche de trajets). Surchargeable au build
+      // par NUXT_PUBLIC_API_BASE, par exemple vers staging.
+      apiBase: process.env.NUXT_PUBLIC_API_BASE ?? 'https://api.yadony.com/api/v1',
+    },
+  },
   site: { url: 'https://yadony.com', name: 'Yadony' },
   sitemap: {
     autoLastmod: false,

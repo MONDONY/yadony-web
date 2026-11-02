@@ -3,7 +3,7 @@ import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRoute } from 'vue-router'
 import { buildSeoMeta } from '@/lib/seo'
-import { renderLegalArticles } from '@/lib/legal'
+import { legalToc, renderLegalArticles } from '@/lib/legal'
 
 // Page publique exigée par Google Play : l'utilisateur doit pouvoir demander
 // la suppression de son compte et de ses données sans l'application.
@@ -28,32 +28,31 @@ const articles = computed(() =>
     rt(message as never),
   ),
 )
+
+const toc = computed(() => legalToc(articles.value.map(article => article.title)))
 </script>
 
 <template>
-  <UiSection tone="white">
-    <UiContainer>
-      <h1 class="max-w-[22ch] text-display-xl">{{ t('legal.suppressionCompte.title') }}</h1>
-      <p class="mt-6 max-w-prose text-lg text-ink-muted">{{ t('legal.suppressionCompte.intro') }}</p>
+  <LegalLayout :title="t('legal.suppressionCompte.title')" :toc="toc">
+    <p class="max-w-prose text-lg text-ink-muted">{{ t('legal.suppressionCompte.intro') }}</p>
 
-      <ProseBlock class="mt-12">
-        <template v-for="article in articles" :key="article.title">
-          <h2>{{ article.title }}</h2>
-          <template v-for="(block, index) in article.blocks" :key="index">
-            <h3 v-if="block.sub">{{ block.sub }}</h3>
-            <p v-for="paragraph in block.p" :key="paragraph">{{ paragraph }}</p>
-            <ul v-if="block.ul.length">
-              <li v-for="item in block.ul" :key="item">{{ item }}</li>
-            </ul>
-          </template>
+    <ProseBlock class="mt-12">
+      <template v-for="(article, articleIndex) in articles" :key="article.title">
+        <h2 :id="toc[articleIndex]?.id">{{ article.title }}</h2>
+        <template v-for="(block, index) in article.blocks" :key="index">
+          <h3 v-if="block.sub">{{ block.sub }}</h3>
+          <p v-for="paragraph in block.p" :key="paragraph">{{ paragraph }}</p>
+          <ul v-if="block.ul.length">
+            <li v-for="item in block.ul" :key="item">{{ item }}</li>
+          </ul>
         </template>
-        <p>
-          <NuxtLink
-            :to="p('/confidentialite')"
-            class="font-semibold text-ink underline underline-offset-2 hover:text-accent-hover"
-          >{{ t('legal.suppressionCompte.privacyLink') }}</NuxtLink>
-        </p>
-      </ProseBlock>
-    </UiContainer>
-  </UiSection>
+      </template>
+      <p>
+        <NuxtLink
+          :to="p('/confidentialite')"
+          class="font-semibold text-ink underline underline-offset-2 hover:text-accent-hover"
+        >{{ t('legal.suppressionCompte.privacyLink') }}</NuxtLink>
+      </p>
+    </ProseBlock>
+  </LegalLayout>
 </template>

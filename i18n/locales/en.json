@@ -276,6 +276,13 @@
     "donyAlt": "Dony, the Yadony mascot, waiting for your message"
   },
   "legal": {
+    "layout": {
+      "home": "Home",
+      "legal": "Legal",
+      "breadcrumb": "Breadcrumb",
+      "toc": "Table of contents",
+      "tocToggle": "Contents"
+    },
     "mentionsLegales": {
       "seo": {
         "title": "Legal notice",

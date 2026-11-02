@@ -276,6 +276,13 @@
     "donyAlt": "Dony, la mascotte de Yadony, attend votre message"
   },
   "legal": {
+    "layout": {
+      "home": "Accueil",
+      "legal": "Légal",
+      "breadcrumb": "Fil d’Ariane",
+      "toc": "Sommaire",
+      "tocToggle": "Sommaire"
+    },
     "mentionsLegales": {
       "seo": {
         "title": "Mentions légales",

@@ -1,7 +1,9 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRoute } from 'vue-router'
 import { buildSeoMeta } from '@/lib/seo'
+import { legalToc } from '@/lib/legal'
 
 defineI18nRoute({ paths: { fr: '/cookies', en: '/cookies' } })
 
@@ -19,24 +21,25 @@ useSeoMeta(
 )
 
 const sections = ['what', 'current', 'storage', 'manage'] as const
+
+const toc = computed(() =>
+  legalToc(sections.map(key => t(`legal.cookies.sections.${key}.title`))),
+)
 </script>
 
 <template>
-  <UiSection tone="white">
-    <UiContainer>
-      <h1 class="max-w-[22ch] text-display-xl">{{ t('legal.cookies.title') }}</h1>
-      <p class="mt-6 max-w-prose text-lg text-ink-muted">{{ t('legal.cookies.intro') }}</p>
+  <LegalLayout :title="t('legal.cookies.title')" :toc="toc">
+    <p class="max-w-prose text-lg text-ink-muted">{{ t('legal.cookies.intro') }}</p>
 
-      <ProseBlock class="mt-12">
-        <template v-for="key in sections" :key="key">
-          <h2>{{ t(`legal.cookies.sections.${key}.title`) }}</h2>
-          <p>{{ t(`legal.cookies.sections.${key}.text`) }}</p>
-        </template>
-      </ProseBlock>
+    <ProseBlock class="mt-12">
+      <template v-for="(key, index) in sections" :key="key">
+        <h2 :id="toc[index]?.id">{{ t(`legal.cookies.sections.${key}.title`) }}</h2>
+        <p>{{ t(`legal.cookies.sections.${key}.text`) }}</p>
+      </template>
+    </ProseBlock>
 
-      <UiButton variant="primary" class="mt-10" @click="reopen">
-        {{ t('legal.cookies.manageCta') }}
-      </UiButton>
-    </UiContainer>
-  </UiSection>
+    <UiButton variant="primary" class="mt-10" @click="reopen">
+      {{ t('legal.cookies.manageCta') }}
+    </UiButton>
+  </LegalLayout>
 </template>

@@ -33,12 +33,27 @@ describe('TravelerTemps', () => {
     expect(text).not.toContain(steps[4]!.text)
   })
 
-  it('n’affiche le titre de l’étape que dans un temps qui en regroupe plusieurs', () => {
+  it('n’affiche le titre d’une étape que dans un temps groupé et s’il n’en répète pas le titre', () => {
     const items = mountTemps().findAll('ol > li')
     const { steps } = fr.journeys.traveler
     expect(items[0]!.text()).not.toContain(steps[0]!.title)
-    expect(items[2]!.findAll('h4').map(h => h.text())).toEqual([steps[2]!.title, steps[3]!.title])
-    expect(items[3]!.findAll('h4').map(h => h.text())).toEqual([steps[5]!.title, steps[6]!.title])
+    expect(items[2]!.findAll('h4').map(h => h.text())).toEqual([steps[3]!.title])
+    expect(items[3]!.findAll('h4').map(h => h.text())).toEqual([steps[5]!.title])
+  })
+
+  it.each(['fr', 'en'] as const)('chaque titre n’est rendu qu’une fois (%s)', (locale) => {
+    const items = mountTemps(locale).findAll('ol > li')
+    for (const item of items) {
+      const titles = item.findAll('h3, h4').map(h => h.text().toLowerCase())
+      expect(new Set(titles).size).toBe(titles.length)
+      // Aucun titre d'étape ne recommence par le titre du temps.
+      const [temps, ...steps] = titles
+      for (const step of steps) expect(step.startsWith(temps!)).toBe(false)
+    }
+    // Le texte de l'étape dont le titre est omis reste affiché.
+    const { steps } = (locale === 'fr' ? fr : en).journeys.traveler
+    expect(items[2]!.text()).toContain(steps[2]!.text)
+    expect(items[3]!.text()).toContain(steps[6]!.text)
   })
 
   it('parle anglais en anglais', () => {

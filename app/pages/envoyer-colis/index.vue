@@ -17,6 +17,9 @@ const localePath = useLocalePath()
     hero-pose="hello"
     :video="{ src: '/video/tuto-envoyer-colis.mp4', poster: '/video/tuto-envoyer-colis-poster.jpg' }"
   >
+    <template #search>
+      <SearchSection />
+    </template>
     <HomeRecipient />
     <section class="bg-surface py-14 sm:py-20">
       <UiContainer>

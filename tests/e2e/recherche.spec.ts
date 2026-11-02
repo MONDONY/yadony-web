@@ -1,0 +1,340 @@
+import AxeBuilder from '@axe-core/playwright'
+import { test, expect, type Page, type Route } from './fixtures'
+
+// Recherche publique anonyme sur /envoyer-colis. L'API est simulée par
+// `page.route` : aucun appel réel ne part du navigateur de test.
+const API = '**/public/announcements**'
+const CORS = { 'access-control-allow-origin': '*' }
+
+function card(id: string, name: string, extra: Record<string, unknown> = {}) {
+  return {
+    id,
+    departureCity: 'Paris',
+    arrivalCity: 'Abidjan',
+    departureDate: '2026-12-20',
+    availableKg: 24,
+    pricePerKgDisplay: 10.7,
+    currency: 'EUR',
+    transportMode: 'PLANE',
+    urgent: false,
+    capacityUnit: 'KG_EXACT',
+    traveler: { displayName: name, averageRating: 4.9, totalTrips: 21, identityVerified: true },
+    ...extra,
+  }
+}
+
+const THREE = [card('a1', 'Mariam S.'), card('a2', 'Oumar S.', { urgent: true }), card('a3', 'Voyageur D.')]
+
+function ok(content: unknown[], extra: Record<string, unknown> = {}) {
+  return { content, totalElements: content.length, page: 0, size: 20, totalPages: 1, ...extra }
+}
+
+async function respondWith(page: Page, body: unknown, status = 200) {
+  await page.route(API, (route: Route) =>
+    route.fulfill({ status, contentType: 'application/json', headers: CORS, body: JSON.stringify(body) }),
+  )
+}
+
+function apiCalls(page: Page): URL[] {
+  const calls: URL[] = []
+  page.on('request', (request) => {
+    if (request.url().includes('/public/announcements')) calls.push(new URL(request.url()))
+  })
+  return calls
+}
+
+// Le formulaire est rendu côté serveur : ce qui est saisi avant l'hydratation
+// est effacé. Les tests attendent donc la fin de l'hydratation avant de saisir.
+async function hydrated(page: Page) {
+  await page.waitForFunction(() => (window as unknown as { useNuxtApp?: () => { isHydrating: boolean } }).useNuxtApp?.().isHydrating === false)
+}
+
+const SEARCH = '/envoyer-colis?depart=Paris&arrivee=Abidjan&quand=ce-mois'
+
+test.describe('recherche anonyme', () => {
+  test('l’adresse nue affiche le formulaire sans appeler l’API', async ({ page }) => {
+    const calls = apiCalls(page)
+    await page.goto('/envoyer-colis')
+    await page.waitForLoadState('networkidle')
+    await expect(page.getByRole('search')).toBeVisible()
+    await expect(page.locator('#recherche [data-state]')).toHaveCount(0)
+    expect(calls).toHaveLength(0)
+  })
+
+  test('une recherche Paris → Abidjan affiche trois cartes et un compteur', async ({ page }) => {
+    await respondWith(page, ok(THREE))
+    const calls = apiCalls(page)
+    await page.goto('/envoyer-colis')
+    await hydrated(page)
+    const form = page.getByRole('search')
+    await form.getByLabel('Départ').fill('Paris')
+    await form.getByLabel('Arrivée').fill('Abidjan')
+    await form.getByLabel('Quand').selectOption('ce-mois')
+    // Marqueur posé avant la soumission : il disparaît si la page recharge.
+    await page.evaluate(() => { (window as unknown as { __kept: boolean }).__kept = true })
+    await form.getByRole('button', { name: 'Voir les voyageurs' }).click()
+
+    await expect(page.getByRole('article')).toHaveCount(3)
+    await expect(page.getByRole('heading', { name: '3 voyageurs pour Paris → Abidjan' })).toBeVisible()
+    await expect(page).toHaveURL(/\/envoyer-colis\?depart=Paris&arrivee=Abidjan&quand=ce-mois$/)
+    expect(await page.evaluate(() => (window as unknown as { __kept?: boolean }).__kept)).toBe(true)
+    expect(calls).toHaveLength(1)
+    expect(calls[0]!.searchParams.get('departureCity')).toBe('Paris')
+    expect(calls[0]!.searchParams.get('arrivalCity')).toBe('Abidjan')
+    expect(calls[0]!.searchParams.get('departureDateFrom')).not.toBeNull()
+  })
+
+  test('une adresse avec paramètres lance la recherche au chargement, sans erreur console', async ({ page }) => {
+    const problems: string[] = []
+    page.on('console', (message) => {
+      if (['error', 'warning'].includes(message.type())) problems.push(message.text())
+    })
+    page.on('pageerror', error => problems.push(error.message))
+    await respondWith(page, ok(THREE))
+    await page.goto(SEARCH)
+    await expect(page.getByRole('article')).toHaveCount(3)
+    await page.waitForLoadState('networkidle')
+    expect(problems).toEqual([])
+    await expect(page.getByRole('button', { name: 'Urgent' })).toHaveAttribute('aria-pressed', 'false')
+    await expect(page.getByLabel('Départ')).toHaveValue('Paris')
+    await expect(page.getByLabel('Arrivée')).toHaveValue('Abidjan')
+    await expect(page.getByLabel('Quand')).toHaveValue('ce-mois')
+  })
+
+  test('le filtre Urgent ajoute urgent=true à l’appel et à l’adresse', async ({ page }) => {
+    await respondWith(page, ok(THREE))
+    const calls = apiCalls(page)
+    await page.goto(SEARCH)
+    await expect(page.getByRole('article')).toHaveCount(3)
+    await page.getByRole('button', { name: 'Urgent' }).click()
+    await expect(page.getByRole('button', { name: 'Urgent' })).toHaveAttribute('aria-pressed', 'true')
+    await expect.poll(() => calls.at(-1)?.searchParams.get('urgent')).toBe('true')
+    await expect(page).toHaveURL(/urgent=1/)
+  })
+
+  test('Précédent et Suivant du navigateur restaurent la recherche', async ({ page }) => {
+    await respondWith(page, ok(THREE))
+    const calls = apiCalls(page)
+    await page.goto(SEARCH)
+    await expect(page.getByRole('article')).toHaveCount(3)
+    await page.getByRole('button', { name: 'Urgent' }).click()
+    await expect(page).toHaveURL(/urgent=1/)
+    await expect.poll(() => calls.at(-1)?.searchParams.get('urgent')).toBe('true')
+    await page.goBack()
+    await expect(page).not.toHaveURL(/urgent/)
+    await expect(page.getByRole('button', { name: 'Urgent' })).toHaveAttribute('aria-pressed', 'false')
+    await expect.poll(() => calls.at(-1)?.searchParams.get('urgent')).toBeNull()
+    await page.goForward()
+    await expect(page.getByRole('button', { name: 'Urgent' })).toHaveAttribute('aria-pressed', 'true')
+  })
+
+  test('Demander ouvre la remise à l’app, sans QR code', async ({ page }) => {
+    await respondWith(page, ok(THREE))
+    await page.goto(SEARCH)
+    await page.getByRole('button', { name: /Demander à Mariam S\./ }).click()
+    const dialog = page.getByRole('dialog', { name: 'Pour réserver, passez par l\'app.' })
+    await expect(dialog).toBeVisible()
+    await expect(dialog.locator('canvas, img[alt*="QR" i]')).toHaveCount(0)
+    await dialog.getByRole('button', { name: 'Fermer' }).click()
+    await expect(dialog).toBeHidden()
+  })
+
+  test('un 429 affiche le message dédié', async ({ page }) => {
+    await respondWith(page, { status: 429 }, 429)
+    await page.goto(SEARCH)
+    await expect(page.locator('[data-state="rate-limited"]')).toContainText('trop de recherches')
+    await expect(page.getByRole('heading', { level: 1 })).toBeVisible()
+  })
+
+  test('un 404 affiche le repli, le contenu éditorial reste visible et Réessayer relance', async ({ page }) => {
+    await respondWith(page, { status: 404 }, 404)
+    const calls = apiCalls(page)
+    await page.goto(SEARCH)
+    const error = page.locator('[data-state="error"]')
+    await expect(error).toContainText('La recherche ne répond pas')
+    await expect(page.getByRole('heading', { level: 1 })).toBeVisible()
+    await expect(page.locator('a[href^="/envoyer-colis/"]').first()).toBeVisible()
+    await respondWith(page, ok(THREE))
+    await error.getByRole('button', { name: 'Réessayer' }).click()
+    await expect(page.getByRole('article')).toHaveCount(3)
+    expect(calls.length).toBeGreaterThanOrEqual(2)
+  })
+
+  test('aucun résultat : suggestions, et « Voir les 3 prochains mois » élargit sans recharger', async ({ page }) => {
+    await page.route(API, (route) => {
+      const wide = new URL(route.request().url()).searchParams.get('departureDateTo')
+      const month = new Date().getMonth()
+      const endsThisMonth = wide !== null && new Date(`${wide}T12:00:00`).getMonth() === month
+      return route.fulfill({
+        status: 200,
+        contentType: 'application/json',
+        headers: CORS,
+        body: JSON.stringify(endsThisMonth ? ok([]) : ok(THREE)),
+      })
+    })
+    await page.goto('/envoyer-colis?depart=Paris&arrivee=Bamako&quand=ce-mois')
+    const empty = page.locator('[data-state="empty"]')
+    await expect(empty).toContainText('Aucun voyageur pour Paris → Bamako ce mois-ci.')
+    await page.evaluate(() => { (window as unknown as { __kept: boolean }).__kept = true })
+    await empty.getByRole('button', { name: 'Voir les 3 prochains mois' }).click()
+    await expect(page).toHaveURL(/quand=3-mois/)
+    await expect(page.getByRole('article')).toHaveCount(3)
+    await expect(page.getByLabel('Quand')).toHaveValue('3-mois')
+    expect(await page.evaluate(() => (window as unknown as { __kept?: boolean }).__kept)).toBe(true)
+  })
+
+  test('des paramètres corrompus ne cassent rien et ne sont jamais rendus bruts', async ({ page }) => {
+    const errors: string[] = []
+    page.on('pageerror', error => errors.push(error.message))
+    await respondWith(page, ok([]))
+    const calls = apiCalls(page)
+    await page.goto('/envoyer-colis?page=-3&depart=<script>window.__xss=1</script>&quand=xx&minKg=abc')
+    await expect(page.locator('[data-state="empty"]')).toBeVisible()
+    expect(await page.evaluate(() => (window as unknown as { __xss?: number }).__xss)).toBeUndefined()
+    await expect(page.locator('main script', { hasText: '__xss' })).toHaveCount(0)
+    expect(calls[0]!.searchParams.get('page')).toBe('0')
+    expect(calls[0]!.searchParams.get('minAvailableKg')).toBeNull()
+    expect(calls[0]!.searchParams.has('departureDateTo')).toBe(false)
+    expect(errors).toEqual([])
+  })
+
+  test('le texte venu de l’API est rendu comme du texte', async ({ page }) => {
+    await respondWith(page, ok([card('x1', '<img src=x onerror=window.__pwn=1>')]))
+    await page.goto(SEARCH)
+    await expect(page.getByRole('article')).toHaveCount(1)
+    await expect(page.locator('article img')).toHaveCount(0)
+    expect(await page.evaluate(() => (window as unknown as { __pwn?: number }).__pwn)).toBeUndefined()
+  })
+
+  test('adresse nue indexable, adresse avec paramètres en noindex', async ({ page }) => {
+    await respondWith(page, ok(THREE))
+    await page.goto('/envoyer-colis')
+    await page.waitForLoadState('networkidle')
+    const robots = page.locator('meta[name="robots"]')
+    expect(await robots.count() === 0 || !/noindex/.test(await robots.first().getAttribute('content') ?? '')).toBe(true)
+    await page.goto(SEARCH)
+    await expect(page.getByRole('article')).toHaveCount(3)
+    await expect(page.locator('meta[name="robots"][content*="noindex"]')).toHaveCount(1)
+  })
+
+  test('le HTML prérendu de l’adresse nue reste indexable', async ({ request }) => {
+    const html = await (await request.get('/envoyer-colis')).text()
+    expect(html).not.toMatch(/name="robots"[^>]*noindex/)
+  })
+
+  test('le sitemap ne contient aucune adresse avec « ? »', async ({ request }) => {
+    const xml = await (await request.get('/sitemap.xml')).text()
+    expect(xml).toContain('/envoyer-colis</loc>')
+    const locs = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1]!)
+    expect(locs.filter(url => url.includes('?'))).toEqual([])
+  })
+
+  test('/en/send-a-parcel fonctionne en anglais', async ({ page }) => {
+    await respondWith(page, ok(THREE))
+    const calls = apiCalls(page)
+    await page.goto('/en/send-a-parcel')
+    await hydrated(page)
+    const form = page.getByRole('search')
+    await form.getByLabel('From').fill('Paris')
+    await form.getByLabel('To').fill('Abidjan')
+    await form.getByRole('button', { name: 'See travelers' }).click()
+    await expect(page.getByRole('article')).toHaveCount(3)
+    await expect(page.getByRole('heading', { name: '3 travelers for Paris → Abidjan' })).toBeVisible()
+    await expect(page).toHaveURL(/\/en\/send-a-parcel\?depart=Paris&arrivee=Abidjan/)
+    expect(calls).toHaveLength(1)
+  })
+
+  test('pagination : Suivant charge la page suivante', async ({ page }) => {
+    await page.route(API, (route) => {
+      const index = Number(new URL(route.request().url()).searchParams.get('page'))
+      return route.fulfill({
+        status: 200,
+        contentType: 'application/json',
+        headers: CORS,
+        body: JSON.stringify(ok(THREE, { totalElements: 45, page: index, totalPages: 3 })),
+      })
+    })
+    const calls = apiCalls(page)
+    await page.goto(SEARCH)
+    await expect(page.getByRole('article')).toHaveCount(3)
+    await page.getByRole('button', { name: 'Page suivante' }).click()
+    await expect(page).toHaveURL(/page=1/)
+    await expect.poll(() => calls.at(-1)?.searchParams.get('page')).toBe('1')
+    await expect(page.getByRole('button', { name: 'Page précédente' })).toBeVisible()
+  })
+})
+
+for (const [label, path, search] of [
+  ['FR', '/envoyer-colis', SEARCH],
+  ['EN', '/en/send-a-parcel', '/en/send-a-parcel?depart=Paris&arrivee=Abidjan&quand=ce-mois'],
+] as const) {
+  test.describe(`360 px ${label}`, () => {
+    test.use({ viewport: { width: 360, height: 800 } })
+
+    test('aucun défilement horizontal, boutons sur une ligne', async ({ page }) => {
+      await respondWith(page, ok(THREE, { totalElements: 45, totalPages: 3 }))
+      for (const url of [path, search]) {
+        await page.goto(url)
+        if (url === search) await expect(page.getByRole('article')).toHaveCount(3)
+        const overflow = await page.evaluate(
+          () => document.documentElement.scrollWidth - document.documentElement.clientWidth,
+        )
+        expect(overflow, url).toBeLessThanOrEqual(0)
+        // Une ligne = un seul `top` parmi les rectangles du texte du bouton.
+        const wrapped = await page.evaluate(() =>
+          [...document.querySelectorAll('main button, main a.rounded-btn, #recherche a')]
+            .filter((el) => {
+              const range = document.createRange()
+              range.selectNodeContents(el)
+              const tops = new Set([...range.getClientRects()].filter(r => r.width > 0).map(r => Math.round(r.top / 4)))
+              return tops.size > 1
+            })
+            .map(el => el.textContent?.trim()),
+        )
+        expect(wrapped, url).toEqual([])
+      }
+    })
+
+    test('le champ Prix max tient dans la largeur', async ({ page }) => {
+      await page.goto(path)
+      await hydrated(page)
+      await page.getByRole('button', { name: /Prix max|Max price/ }).click()
+      const input = page.locator('input[name="maxPrix"]')
+      await expect(input).toBeVisible()
+      const box = (await input.boundingBox())!
+      expect(box.width).toBeLessThanOrEqual(160)
+      expect(box.x + box.width).toBeLessThanOrEqual(360)
+    })
+  })
+}
+
+for (const [label, url] of [['FR', SEARCH], ['EN', '/en/send-a-parcel?depart=Paris&arrivee=Abidjan']] as const) {
+  test(`axe : aucune violation grave avec des résultats (${label})`, async ({ page }) => {
+    await respondWith(page, ok(THREE))
+    await page.goto(url)
+    await expect(page.getByRole('article')).toHaveCount(3)
+    await page.waitForLoadState('networkidle')
+    const settled = () => document.getAnimations()
+      .filter(animation => animation.effect?.getTiming().iterations !== Infinity)
+      .every(animation => animation.playState !== 'running')
+    await page.waitForFunction(settled)
+    await page.waitForTimeout(700)
+    await page.waitForFunction(settled)
+    const results = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa']).analyze()
+    const serious = results.violations.filter(v => v.impact === 'critical' || v.impact === 'serious')
+    expect(serious.map(v => `${v.id} sur ${v.nodes.map(n => n.target.join(' ')).join(' | ')}`)).toEqual([])
+  })
+}
+
+test('axe : aucune violation grave dans les états erreur et 429', async ({ page }) => {
+  for (const status of [404, 429]) {
+    await respondWith(page, {}, status)
+    await page.goto(SEARCH)
+    await expect(page.locator('#recherche [data-state]')).toHaveCount(1)
+    await page.waitForLoadState('networkidle')
+    await page.waitForTimeout(700)
+    const results = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa']).analyze()
+    const serious = results.violations.filter(v => v.impact === 'critical' || v.impact === 'serious')
+    expect(serious.map(v => `${v.id} sur ${v.nodes.map(n => n.target.join(' ')).join(' | ')}`), String(status)).toEqual([])
+  }
+})

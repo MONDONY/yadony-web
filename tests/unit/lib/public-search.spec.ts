@@ -8,6 +8,7 @@ import {
   parseSearchQuery,
   suggestCities,
   toApiParams,
+  toUrlQuery,
   type PublicAnnouncementCard,
   type SearchQuery,
 } from '@/lib/public-search'
@@ -118,6 +119,28 @@ describe('toApiParams', () => {
     const params = toApiParams({ ...baseQuery, quand: '3-mois' }, today)
     expect(params.get('departureDateFrom')).toBe('2026-11-02')
     expect(params.get('departureDateTo')).toBe('2027-01-31')
+  })
+})
+
+describe('toUrlQuery', () => {
+  it('ne produit rien pour une recherche vide, même paginée à 0', () => {
+    expect(toUrlQuery(parseSearchQuery({}))).toEqual({})
+  })
+
+  it('ne retient que les champs renseignés', () => {
+    const q = parseSearchQuery({
+      depart: 'Paris', arrivee: 'Abidjan', quand: 'ce-mois', minKg: '16', maxPrix: '12.5',
+      urgent: '1', mode: 'plane', page: '2',
+    })
+    expect(toUrlQuery(q)).toEqual({
+      depart: 'Paris', arrivee: 'Abidjan', quand: 'ce-mois', minKg: '16', maxPrix: '12.5',
+      urgent: '1', mode: 'PLANE', page: '2',
+    })
+  })
+
+  it('est relu à l’identique par parseSearchQuery', () => {
+    const q = parseSearchQuery({ depart: 'Lyon', quand: '3-mois', urgent: 'true', page: '1' })
+    expect(parseSearchQuery(toUrlQuery(q))).toEqual(q)
   })
 })
 

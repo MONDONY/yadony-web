@@ -93,7 +93,7 @@ function request() {
             <span aria-hidden="true">{{ rating }}</span>
           </span>
           <span v-if="trips > 0">{{ t('search.card.trips', { count: trips }, trips) }}</span>
-          <span v-if="card.traveler.identityVerified" class="font-semibold text-success">{{ t('search.card.verified') }}</span>
+          <span v-if="card.traveler.identityVerified" class="font-semibold text-primary-hover">{{ t('search.card.verified') }}</span>
         </p>
       </div>
     </div>

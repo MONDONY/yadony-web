@@ -13,6 +13,7 @@ export function usePublicSearch() {
   const status = ref<SearchStatus>('idle')
   const results = ref<PublicAnnouncementCard[]>([])
   const total = ref(0)
+  const totalPages = ref(0)
   let current: AbortController | null = null
 
   // `q` doit être issu de `parseSearchQuery` : `toApiParams` ne borne rien.
@@ -34,6 +35,7 @@ export function usePublicSearch() {
       if (body.content.length === 0) return settle(isStale, 'empty')
       results.value = body.content
       total.value = body.totalElements
+      totalPages.value = body.totalPages > 0 ? body.totalPages : 1
       status.value = 'ok'
     } catch {
       settle(isStale, 'error')
@@ -44,8 +46,9 @@ export function usePublicSearch() {
     if (isStale()) return
     results.value = []
     total.value = 0
+    totalPages.value = 0
     status.value = next
   }
 
-  return { status, results, total, run }
+  return { status, results, total, totalPages, run }
 }

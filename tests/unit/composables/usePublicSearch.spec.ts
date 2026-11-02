@@ -58,6 +58,19 @@ describe('usePublicSearch', () => {
     expect(search.total.value).toBe(42)
   })
 
+  it('expose le nombre de pages, 1 quand le back ne le donne pas', async () => {
+    fetchMock.mockResolvedValueOnce(jsonResponse({ ...page([card('a')], 45), totalPages: 3 }))
+    const search = usePublicSearch()
+    await search.run(query)
+    expect(search.totalPages.value).toBe(3)
+    fetchMock.mockResolvedValueOnce(jsonResponse({ content: [card('a')], totalElements: 1 }))
+    await search.run(query)
+    expect(search.totalPages.value).toBe(1)
+    fetchMock.mockResolvedValueOnce(jsonResponse({}, 500))
+    await search.run(query)
+    expect(search.totalPages.value).toBe(0)
+  })
+
   it('200 avec content vide : empty', async () => {
     fetchMock.mockResolvedValue(jsonResponse(page([])))
     const search = usePublicSearch()

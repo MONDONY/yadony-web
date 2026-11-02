@@ -64,6 +64,21 @@
         "title": "Easy there, too many searches at once.",
         "text": "Wait a minute, then search again."
       }
+    },
+    "section": {
+      "title": "Find a traveler for your parcel",
+      "lead": "Search a trip, compare travelers, then make your request in the app."
+    },
+    "results": {
+      "title": "{count} traveler for {route} | {count} travelers for {route}",
+      "titleAny": "{count} traveler | {count} travelers",
+      "appLead": "The request, the held payment and the tracking all happen there, in a few taps."
+    },
+    "pager": {
+      "label": "Result pages",
+      "prev": "Previous page",
+      "next": "Next page",
+      "status": "Page {page} of {total}"
     }
   }
 }

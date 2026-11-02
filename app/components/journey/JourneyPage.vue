@@ -90,6 +90,8 @@ const stepLabel = (n: number) => t('journeys.common.stepLabel', { n })
       </UiContainer>
     </section>
 
+    <slot name="search" />
+
     <section class="bg-surface py-14 sm:py-20">
       <UiContainer>
         <h2 class="sr-only">{{ t(`${base}.listLabel`) }}</h2>

@@ -99,7 +99,7 @@ function onPriceInput(event: Event) {
 }
 
 const field =
-  'min-h-12 w-full rounded-field border border-line bg-surface px-4 py-2.5 text-base text-ink ' +
+  'min-h-12 rounded-field border border-line bg-surface px-4 py-2.5 text-base text-ink ' +
   'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary'
 const chipBase =
   'inline-flex min-h-11 items-center whitespace-nowrap rounded-pill border px-4 text-sm font-semibold ' +
@@ -129,7 +129,7 @@ const chips = computed(() => [
           maxlength="80"
           autocomplete="off"
           :list="`${uid}-depart-list`"
-          :class="field"
+          :class="[field, 'w-full']"
         >
         <datalist :id="`${uid}-depart-list`">
           <option v-for="name in departSuggestions" :key="name" :value="name" />
@@ -145,7 +145,7 @@ const chips = computed(() => [
           maxlength="80"
           autocomplete="off"
           :list="`${uid}-arrivee-list`"
-          :class="field"
+          :class="[field, 'w-full']"
         >
         <datalist :id="`${uid}-arrivee-list`">
           <option v-for="name in arriveeSuggestions" :key="name" :value="name" />
@@ -153,7 +153,7 @@ const chips = computed(() => [
       </div>
       <div>
         <label :for="`${uid}-quand`" class="mb-1.5 block text-sm font-semibold text-ink">{{ t('search.form.when') }}</label>
-        <select :id="`${uid}-quand`" v-model="draft.quand" name="quand" :class="field">
+        <select :id="`${uid}-quand`" v-model="draft.quand" name="quand" :class="[field, 'w-full']">
           <option value="">{{ t('search.form.whenAny') }}</option>
           <option value="ce-mois">{{ t('search.form.whenMonth') }}</option>
           <option value="3-mois">{{ t('search.form.whenThreeMonths') }}</option>

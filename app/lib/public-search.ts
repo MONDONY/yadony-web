@@ -126,6 +126,22 @@ export function toApiParams(q: SearchQuery, today: Date): URLSearchParams {
   return params
 }
 
+// Adresse de la recherche : seuls les champs renseignés y figurent, de sorte
+// que l'adresse nue reste celle de la page sans recherche. Relue par
+// `parseSearchQuery`, jamais utilisée telle quelle.
+export function toUrlQuery(q: SearchQuery): Record<string, string> {
+  const query: Record<string, string> = {}
+  if (q.depart) query.depart = q.depart
+  if (q.arrivee) query.arrivee = q.arrivee
+  if (q.quand) query.quand = q.quand
+  if (q.minKg !== undefined) query.minKg = String(q.minKg)
+  if (q.maxPrix !== undefined) query.maxPrix = String(q.maxPrix)
+  if (q.urgent) query.urgent = '1'
+  if (q.mode) query.mode = q.mode
+  if (q.page > 0) query.page = String(q.page)
+  return query
+}
+
 // La page n'entre pas dans le test : une page seule ne cherche rien.
 export function hasSearch(q: SearchQuery): boolean {
   return Boolean(q.depart || q.arrivee || q.quand || q.minKg !== undefined || q.maxPrix !== undefined || q.urgent || q.mode)

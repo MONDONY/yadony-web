@@ -64,6 +64,21 @@
         "title": "Doucement, trop de recherches d'un coup.",
         "text": "Patientez une minute, puis relancez la recherche."
       }
+    },
+    "section": {
+      "title": "Trouvez un voyageur pour votre colis",
+      "lead": "Cherchez un trajet, comparez les voyageurs, puis faites votre demande dans l'app."
+    },
+    "results": {
+      "title": "{count} voyageur pour {route} | {count} voyageurs pour {route}",
+      "titleAny": "{count} voyageur | {count} voyageurs",
+      "appLead": "La demande, le paiement bloqué et le suivi s'y font, en quelques touches."
+    },
+    "pager": {
+      "label": "Pages de résultats",
+      "prev": "Page précédente",
+      "next": "Page suivante",
+      "status": "Page {page} sur {total}"
     }
   }
 }

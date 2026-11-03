@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { senderJourney, travelerJourney, flightsJourney } from '@/lib/journeys'
+import { senderJourney, travelerJourney, flightsJourney, travelerTemps, travelerControl } from '@/lib/journeys'
 import { APP_SCREEN_IDS, DONY_POSE_IDS } from '@/lib/media'
 import { fr, en } from '../helpers/messages'
 
@@ -36,6 +36,27 @@ describe('parcours racontés', () => {
         const list = path.split('.').reduce<unknown>((node, key) => (node as Record<string, unknown>)[key], messages) as unknown[]
         expect(list, path).toHaveLength(size)
       }
+    }
+  })
+
+  // Sept étapes en quatre temps : chaque texte existant apparaît une fois dans
+  // les temps ou dans « Vous gardez la main », sans en perdre ni en dupliquer.
+  it('les quatre temps du voyageur et « Vous gardez la main » couvrent les sept étapes une seule fois', () => {
+    expect(travelerTemps).toHaveLength(4)
+    const used = [...travelerTemps.flatMap(temps => temps.steps), travelerControl.step].sort()
+    expect(used).toEqual(travelerJourney.map((_, index) => index))
+    for (const temps of travelerTemps) {
+      expect(temps.steps).toContain(temps.visual)
+      expect(travelerJourney[temps.visual]).toBeDefined()
+    }
+  })
+
+  it('chaque temps a son titre dans les deux langues, et la question de la FAQ existe', () => {
+    for (const messages of [fr, en]) {
+      const traveler = messages.journeys.traveler as unknown as Record<string, Record<string, string> | unknown[]>
+      for (const temps of travelerTemps) expect((traveler.temps as Record<string, string>)[temps.id], temps.id).toBeTruthy()
+      expect((traveler.control as Record<string, string>).title).toBeTruthy()
+      expect(traveler.faq[travelerControl.faq]).toBeDefined()
     }
   })
 })

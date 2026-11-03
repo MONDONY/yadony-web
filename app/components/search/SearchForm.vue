@@ -3,7 +3,10 @@ import { computed, ref, useId, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { parseSearchQuery, suggestCities, type SearchQuery } from '@/lib/public-search'
 
-const props = defineProps<{ modelValue: SearchQuery }>()
+// `filters` : les puces de filtre (≥ 16 kg, prix max, urgent, avion). Chaque puce
+// relance la recherche à l'instant ; l'accueil, où aucune ville n'est encore
+// saisie, n'en montre donc pas.
+const props = withDefaults(defineProps<{ modelValue: SearchQuery; filters?: boolean }>(), { filters: true })
 const emit = defineEmits<{
   'update:modelValue': [query: SearchQuery]
   submit: [query: SearchQuery]
@@ -162,7 +165,7 @@ const chips = computed(() => [
       <UiButton type="submit" size="lg" class="w-full whitespace-nowrap">{{ t('search.form.submit') }}</UiButton>
     </div>
 
-    <div role="group" :aria-label="t('search.form.filters')" class="flex flex-wrap items-center gap-2">
+    <div v-if="filters" role="group" :aria-label="t('search.form.filters')" class="flex flex-wrap items-center gap-2">
       <button
         v-for="chip in chips"
         :key="chip.key"

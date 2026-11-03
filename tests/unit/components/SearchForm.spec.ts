@@ -8,9 +8,9 @@ import type { SearchQuery } from '@/lib/public-search'
 
 const empty: SearchQuery = { depart: '', arrivee: '', quand: '', page: 0 }
 
-function mountForm(modelValue: SearchQuery = empty, locale: 'fr' | 'en' = 'fr') {
+function mountForm(modelValue: SearchQuery = empty, locale: 'fr' | 'en' = 'fr', filters?: boolean) {
   const i18n = createI18n({ legacy: false, locale, messages: { fr, en } })
-  return mount(SearchForm, { props: { modelValue }, global: { plugins: [i18n], components: { UiButton } } })
+  return mount(SearchForm, { props: { modelValue, ...(filters === undefined ? {} : { filters }) }, global: { plugins: [i18n], components: { UiButton } } })
 }
 
 const submitLabel = fr.search.form.submit
@@ -75,6 +75,21 @@ describe('SearchForm', () => {
     await chip('Urgent').trigger('click')
     expect(chip('Urgent').attributes('aria-pressed')).toBe('false')
     expect(wrapper.emitted('submit')!.at(-1)).toEqual([{ ...empty, minKg: 16, mode: 'PLANE' }])
+  })
+
+  it('sans filtres, ne rend ni puce ni groupe de filtres, et le bouton principal reste', async () => {
+    const wrapper = mountForm(empty, 'fr', false)
+    expect(wrapper.findAll('button[aria-pressed]')).toHaveLength(0)
+    expect(wrapper.find('[role="group"]').exists()).toBe(false)
+    expect(wrapper.find('input[name="maxPrix"]').exists()).toBe(false)
+    expect(wrapper.findAll('button').map((b) => b.text())).toEqual([submitLabel])
+    await wrapper.find('form').trigger('submit')
+    expect(wrapper.emitted('submit')).toHaveLength(1)
+  })
+
+  it('rend les puces par défaut (page de recherche)', () => {
+    expect(mountForm().findAll('button[aria-pressed]')).toHaveLength(4)
+    expect(mountForm(empty, 'fr', true).findAll('button[aria-pressed]')).toHaveLength(4)
   })
 
   it('affiche un champ pour le prix max quand la chip est enfoncée', async () => {

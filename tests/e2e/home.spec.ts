@@ -103,6 +103,19 @@ test.describe('haut de page', () => {
     await expect(page.locator('#recherche').getByRole('article')).toHaveCount(3)
   })
 
+  test('le formulaire de l’accueil n’a aucune puce de filtre : rien ne le quitte avant la saisie', async ({ page }) => {
+    await page.goto('/')
+    await hydrated(page)
+    const form = page.getByRole('search')
+    await expect(form.getByRole('button')).toHaveCount(1)
+    await expect(form.getByRole('button', { name: 'Voir les voyageurs' })).toBeVisible()
+    for (const name of ['Urgent', 'Avion', '≥ 16 kg', 'Prix max (€/kg)']) {
+      await expect(form.getByRole('button', { name })).toHaveCount(0)
+    }
+    await expect(form.locator('[aria-pressed]')).toHaveCount(0)
+    await expect(page).toHaveURL(/\/$/)
+  })
+
   test('le formulaire envoie la recherche vers la page Envoyer un colis', async ({ page }) => {
     await respondWith(page, ok(FOUR.slice(0, 3)))
     await page.goto('/')

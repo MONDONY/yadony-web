@@ -51,7 +51,7 @@ const chip =
       <p class="mt-4 max-w-[44ch] text-lg text-ink-muted sm:text-xl">{{ t('landing.searchHero.lead') }}</p>
 
       <div class="mt-8 rounded-card border border-line bg-surface p-4 shadow-sm sm:p-6">
-        <SearchForm v-model="query" @submit="submit" />
+        <SearchForm v-model="query" :filters="false" @submit="submit" />
       </div>
 
       <div class="mt-6 flex flex-wrap items-center gap-x-3 gap-y-2">

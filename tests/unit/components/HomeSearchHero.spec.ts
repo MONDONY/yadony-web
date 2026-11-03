@@ -81,6 +81,12 @@ describe('HomeSearchHero', () => {
     expect(push).toHaveBeenCalledWith({ path: '/en/send-a-parcel', query: {}, hash: '#recherche' })
   })
 
+  it('le formulaire de l’accueil n’a aucune puce de filtre', () => {
+    const wrapper = mountHero()
+    expect(wrapper.findAll('button[aria-pressed]')).toHaveLength(0)
+    expect(wrapper.findAll('form button').map((b) => b.text())).toEqual(['Voir les voyageurs'])
+  })
+
   it('n’affiche aucun résultat ni état de recherche', () => {
     expect(mountHero().find('[data-state]').exists()).toBe(false)
     expect(mountHero().find('article').exists()).toBe(false)

@@ -33,6 +33,17 @@ describe('HomeTraveler', () => {
     expect(mountTraveler('en').find('a').text()).toBe('Become a traveler')
   })
 
+  it('met le texte avant le téléphone dans l\'ordre de lecture, le téléphone repassant à gauche sur grand écran', () => {
+    const wrapper = mountTraveler()
+    const html = wrapper.html()
+    expect(html.indexOf('<h2')).toBeGreaterThan(-1)
+    expect(html.indexOf('<h2')).toBeLessThan(html.indexOf('data-screen="my-trips"'))
+    const phoneColumn = wrapper.find('[data-screen="my-trips"]').element.closest('[class*="lg:col-span-5"]')!
+    const textColumn = wrapper.find('h2').element.closest('[class*="lg:col-span-7"]')!
+    expect(phoneColumn.classList.contains('lg:order-1')).toBe(true)
+    expect(textColumn.classList.contains('lg:order-2')).toBe(true)
+  })
+
   it('montre l\'écran Mes trajets avec un texte alternatif', () => {
     const phone = mountTraveler().find('[data-screen="my-trips"]')
     expect(phone.exists()).toBe(true)

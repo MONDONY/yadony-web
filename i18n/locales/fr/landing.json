@@ -10,7 +10,8 @@
       "frequent": "Trajets fréquents"
     },
     "upcoming": {
-      "title": "Prochains départs"
+      "title": "Prochains départs",
+      "all": "Voir tous les départs"
     },
     "handoff": {
       "title": "Chercher ici, réserver dans l'app.",

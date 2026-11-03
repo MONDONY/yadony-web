@@ -10,7 +10,8 @@
       "frequent": "Popular routes"
     },
     "upcoming": {
-      "title": "Next departures"
+      "title": "Next departures",
+      "all": "See all departures"
     },
     "handoff": {
       "title": "Search here, book in the app.",

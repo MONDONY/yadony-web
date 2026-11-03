@@ -16,6 +16,8 @@ beforeEach(() => {
   fetchMock.mockReset()
   vi.stubGlobal('fetch', fetchMock)
   vi.stubGlobal('useRuntimeConfig', () => ({ public: { apiBase: 'https://api.test/api/v1' } }))
+  // `useLocalePath` est une auto-import de Nuxt : absente hors de l'app.
+  vi.stubGlobal('useLocalePath', () => (path: string) => (path === '/envoyer-colis' ? '/en/send-a-parcel' : path))
 })
 
 afterEach(() => {
@@ -83,6 +85,29 @@ describe('HomeUpcoming', () => {
     const url = new URL(String(fetchMock.mock.calls[0]![0]))
     expect(url.searchParams.get('departureCity')).toBe('Lyon')
     expect(url.searchParams.get('arrivalCity')).toBe('Dakar')
+  })
+
+  it('sans ville, ne propose aucun lien vers la recherche', async () => {
+    respond([card('a')])
+    const wrapper = mountUpcoming()
+    await flushPromises()
+    expect(wrapper.find('a[href*="send-a-parcel"]').exists()).toBe(false)
+  })
+
+  it('avec des villes, propose « Voir tous les départs » vers la recherche déjà remplie', async () => {
+    respond([card('a')])
+    const wrapper = mountUpcoming({ from: 'Paris', to: 'Dakar' })
+    await flushPromises()
+    const link = wrapper.find('a[href*="send-a-parcel"]')
+    expect(link.text()).toBe('Voir tous les départs')
+    expect(link.attributes('href')).toBe('/en/send-a-parcel?depart=Paris&arrivee=Dakar')
+  })
+
+  it('lien traduit en anglais', async () => {
+    respond([card('a')])
+    const wrapper = mountUpcoming({ from: 'Lyon', to: 'Dakar' }, 'en')
+    await flushPromises()
+    expect(wrapper.find('a[href*="send-a-parcel"]').text()).toBe('See all departures')
   })
 
   it.each([

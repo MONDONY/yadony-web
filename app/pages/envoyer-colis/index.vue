@@ -2,8 +2,15 @@
 import { useI18n } from 'vue-i18n'
 import { corridors } from '@/lib/corridors'
 import { senderJourney } from '@/lib/journeys'
+import { hasSearch, parseSearchQuery } from '@/lib/public-search'
 
 defineI18nRoute({ paths: { fr: '/envoyer-colis', en: '/send-a-parcel' } })
+
+// Nuxt remonte en haut de page à chaque changement de chemin, ce qui
+// annulerait le défilement de `SearchSection` vers les résultats d'une
+// recherche. Une navigation vers une adresse avec critères garde donc la main
+// à la section ; sans critère (lien de l'en-tête), la page repart du haut.
+definePageMeta({ scrollToTop: to => !hasSearch(parseSearchQuery(to.query)) })
 
 const { t } = useI18n()
 const localePath = useLocalePath()

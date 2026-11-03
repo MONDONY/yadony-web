@@ -433,3 +433,94 @@ test('axe : aucune violation grave dans les états vide, erreur et 429', async (
     expect(serious.map(v => `${v.id} sur ${v.nodes.map(n => n.target.join(' ')).join(' | ')}`), String(status)).toEqual([])
   }
 })
+
+// Navigation interne vers une recherche : Nuxt remonte en haut de page à chaque
+// changement de chemin, ce qui renvoyait les résultats hors de l'écran. La
+// section de recherche doit rester visible, à 360 px comme sur grand écran.
+async function sectionTop(page: Page): Promise<number> {
+  return page.locator('#recherche').evaluate(el => el.getBoundingClientRect().top)
+}
+
+async function expectSectionInView(page: Page) {
+  await expect.poll(async () => {
+    const top = await sectionTop(page)
+    return top >= 0 && top < 200
+  }, { message: 'le haut de #recherche doit être à l’écran' }).toBe(true)
+}
+
+for (const size of [{ label: 'grand écran', width: 1280, height: 800 }, { label: '360 px', width: 360, height: 740 }]) {
+  test.describe(`navigation interne vers une recherche (${size.label})`, () => {
+    test.beforeEach(async ({ page }) => {
+      await page.setViewportSize({ width: size.width, height: size.height })
+    })
+
+    test('un trajet fréquent de l’accueil laisse les résultats à l’écran', async ({ page }) => {
+      await respondWith(page, ok(THREE))
+      await page.goto('/')
+      await hydrated(page)
+      await page.getByRole('main').getByRole('link', { name: 'Paris → Abidjan' }).click()
+      await expect(page.getByRole('article')).toHaveCount(3)
+      await expectSectionInView(page)
+    })
+
+    test('l’envoi du formulaire de l’accueil laisse les résultats à l’écran', async ({ page }) => {
+      await respondWith(page, ok(THREE))
+      await page.goto('/')
+      await hydrated(page)
+      const form = page.getByRole('search')
+      await form.getByLabel('Départ').fill('Paris')
+      await form.getByLabel('Arrivée').fill('Abidjan')
+      await form.getByRole('button', { name: 'Voir les voyageurs' }).click()
+      await expect(page.getByRole('article')).toHaveCount(3)
+      await expectSectionInView(page)
+    })
+
+    test('« Voir tous les départs » d’une page de trajet laisse les résultats à l’écran', async ({ page }) => {
+      await respondWith(page, ok(THREE))
+      await page.goto('/envoyer-colis/paris-abidjan')
+      await hydrated(page)
+      await page.getByRole('link', { name: 'Voir tous les départs' }).click()
+      await expect(page.locator('#recherche').getByRole('article')).toHaveCount(3)
+      await expectSectionInView(page)
+    })
+  })
+}
+
+test('« Envoyer un colis » de l’en-tête, sans recherche, remonte en haut de la page', async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 800 })
+  await page.goto('/')
+  await hydrated(page)
+  await page.evaluate(() => window.scrollTo({ top: 1500, behavior: 'instant' }))
+  await expect.poll(() => page.evaluate(() => window.scrollY)).toBeGreaterThan(1000)
+  await page.locator('header nav[aria-label="Navigation principale"]').getByRole('link', { name: 'Envoyer un colis' }).click()
+  await expect(page).toHaveURL(/\/envoyer-colis$/)
+  await expect.poll(() => page.evaluate(() => window.scrollY)).toBe(0)
+})
+
+test('Précédent depuis une recherche rend à l’accueil sa position de défilement', async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 800 })
+  await respondWith(page, ok(THREE))
+  await page.goto('/')
+  await hydrated(page)
+  await page.evaluate(() => window.scrollTo({ top: 400, behavior: 'instant' }))
+  await expect.poll(() => page.evaluate(() => window.scrollY)).toBe(400)
+  await page.getByRole('main').getByRole('link', { name: 'Paris → Abidjan' }).click()
+  await expect(page).toHaveURL(/depart=Paris&arrivee=Abidjan/)
+  await expect(page.getByRole('article')).toHaveCount(3)
+  await page.goBack()
+  await expect(page).toHaveURL(/\/$/)
+  await expect.poll(() => page.evaluate(() => window.scrollY)).toBe(400)
+})
+
+test('une adresse de recherche rouverte avec Précédent amène encore les résultats à l’écran', async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 800 })
+  await respondWith(page, ok(THREE))
+  await page.goto(SEARCH)
+  await expect(page.getByRole('article')).toHaveCount(3)
+  await hydrated(page)
+  await page.getByRole('link', { name: 'Paris → Dakar' }).first().click()
+  await expect(page).toHaveURL(/\/envoyer-colis\/paris-dakar$/)
+  await page.goBack()
+  await expect(page.getByRole('article')).toHaveCount(3)
+  await expectSectionInView(page)
+})

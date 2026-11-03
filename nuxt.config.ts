@@ -1,3 +1,5 @@
+import { resolveApiBase } from './app/lib/api-base'
+
 // Cloudflare Web Analytics : mesure d'audience sans cookie (exemptée de
 // consentement par la CNIL). La balise n'est émise que si le token est fourni
 // au moment du build : CF_BEACON_TOKEN=xxx pnpm generate.
@@ -46,9 +48,9 @@ export default defineNuxtConfig({
   ssr: true,
   runtimeConfig: {
     public: {
-      // API publique du back (recherche de trajets). Surchargeable au build
-      // par NUXT_PUBLIC_API_BASE, par exemple vers staging.
-      apiBase: process.env.NUXT_PUBLIC_API_BASE ?? 'https://api.yadony.com/api/v1',
+      // API publique du back (recherche de trajets) : production sur main,
+      // staging sur les aperçus de branche, NUXT_PUBLIC_API_BASE prioritaire.
+      apiBase: resolveApiBase(process.env),
     },
   },
   site: { url: 'https://yadony.com', name: 'Yadony' },

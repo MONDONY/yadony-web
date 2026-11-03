@@ -50,9 +50,13 @@ describe('public/_redirects', () => {
     expect(ruleFor('/api/*')).toEqual(['/api/*', 'https://prod.yadony.com/api/:splat', '308'])
   })
 
-  it('mène /android vers l’accueil tant que la fiche Google Play est masquée (302)', () => {
-    expect(playStoreLive).toBe(false)
-    expect(ruleFor('/android')).toEqual(['/android', '/', '302'])
+  it('mène /android vers la fiche Google Play depuis la sortie (302)', () => {
+    expect(playStoreLive).toBe(true)
+    expect(ruleFor('/android')).toEqual([
+      '/android',
+      'https://play.google.com/store/apps/details?id=com.yadony.yadony',
+      '302',
+    ])
   })
 
   it('ne laisse plus pro.yadony.com que sur les chemins du portail pro', () => {

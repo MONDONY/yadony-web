@@ -1,4 +1,4 @@
-import { afterEach, describe, expect, it } from 'vitest'
+import { afterEach, describe, expect, it, vi } from 'vitest'
 import { mount } from '@vue/test-utils'
 import { createI18n } from 'vue-i18n'
 import { en, fr } from '../helpers/messages'
@@ -6,6 +6,7 @@ import AppHandoff from '@/components/search/AppHandoff.vue'
 import StoreBadges from '@/components/StoreBadges.vue'
 import UiButton from '@/components/ui/UiButton.vue'
 import type { PublicAnnouncementCard } from '@/lib/public-search'
+import * as site from '@/lib/site'
 
 const card: PublicAnnouncementCard = {
   id: 'a1',
@@ -112,7 +113,24 @@ describe('AppHandoff', () => {
   })
 
   it('Échap dans la fenêtre « bientôt disponible » ne ferme que celle-ci', async () => {
-    const wrapper = mountHandoff(true, 'fr', true)
+    // La fenêtre n'existe que pour un store pas encore en ligne : les drapeaux
+    // sont des constantes de module, on recharge les composants avec un
+    // `@/lib/site` simulé (App Store en attente), comme StoreBadges.spec.
+    vi.resetModules()
+    vi.doMock('@/lib/site', () => ({ ...site, appStoreLive: false }))
+    const { default: PendingStoreBadges } = await import('@/components/StoreBadges.vue')
+    const { default: PendingHandoff } = await import('@/components/search/AppHandoff.vue')
+    const i18n = createI18n({ legacy: false, locale: 'fr', messages: { fr, en } })
+    const wrapper = mount(PendingHandoff, {
+      props: { card, open: true },
+      attachTo: document.body,
+      global: {
+        plugins: [i18n],
+        components: { StoreBadges: PendingStoreBadges, UiButton },
+        stubs: { StoreBadges: false },
+      },
+    })
+    vi.doUnmock('@/lib/site')
     const outer = wrapper.find('dialog').element as HTMLDialogElement
     const inner = wrapper.findAll('dialog')[1]!
     expect(inner.element).not.toBe(outer)

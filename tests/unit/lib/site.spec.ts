@@ -31,12 +31,12 @@ describe('constantes du site', () => {
   })
 
   /**
-   * Sortie commune : la fiche Google Play est masquée jusqu'à la validation
-   * de l'app iOS par Apple, les deux boutons ouvrent la fenêtre « bientôt ».
+   * Sortie commune du 2026-11-03 : les deux boutons mènent aux fiches des
+   * stores, plus aucune fenêtre « bientôt ».
    */
-  it('garde les deux stores en attente jusqu’à la sortie commune', () => {
-    expect(playStoreLive).toBe(false)
-    expect(appStoreLive).toBe(false)
+  it('ouvre les deux stores depuis la sortie commune', () => {
+    expect(playStoreLive).toBe(true)
+    expect(appStoreLive).toBe(true)
   })
 
   it('pointe vers les vraies fiches des stores', () => {

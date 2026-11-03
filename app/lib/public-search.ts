@@ -155,6 +155,17 @@ export function hasSearch(q: SearchQuery): boolean {
   return Boolean(q.depart || q.arrivee || q.quand || q.minKg !== undefined || q.maxPrix !== undefined || q.urgent || q.mode || q.all)
 }
 
+type Translate = (key: string, params?: Record<string, string>) => string
+
+// Titre de l'état « aucun résultat », partagé par le panneau et par l'annonce
+// vocale de la section : les deux disent la même phrase.
+export function emptyStateTitle(q: SearchQuery, t: Translate): string {
+  const route = [q.depart, q.arrivee].filter(Boolean).join(' → ')
+  const month = q.quand === 'ce-mois'
+  if (route) return t(month ? 'search.states.empty.titleMonth' : 'search.states.empty.title', { route })
+  return t(month ? 'search.states.empty.titleAnyMonth' : 'search.states.empty.titleAny')
+}
+
 export function formatPrice(value: number | undefined, currency: string, locale: Locale): string {
   if (value === undefined) return ''
   try {

@@ -276,7 +276,7 @@ test.describe('recherche anonyme', () => {
     await expect(page).not.toHaveURL(/page=/)
     // Le titre garde le total, et la région vocale annonce l'ajout.
     await expect(page.getByRole('heading', { name: '25 voyageurs pour Paris → Abidjan' })).toBeVisible()
-    await expect(page.locator('#recherche [role="status"].sr-only')).toContainText('5 voyageurs de plus')
+    await expect(page.locator('#recherche > p.sr-only[role="status"]')).toContainText('5 voyageurs de plus')
   })
 
   test('après « Voir les autres », le focus passe à la première carte ajoutée', async ({ page }) => {
@@ -320,7 +320,76 @@ test.describe('recherche anonyme', () => {
     await expect(page.getByRole('alert')).toHaveCount(0)
   })
 
-  test('les états vide, erreur et 429 gardent un appel vers l’app', async ({ page }) => {
+  // La région vocale persistante de la section : seule source des annonces
+// d'état. Elle est toujours dans la page, seul son texte change.
+const LIVE = '#recherche > p.sr-only[role="status"]'
+
+test.describe('annonces vocales des états', () => {
+  test('aucun panneau d’état ne porte role="status" : seule l’erreur a role="alert"', async ({ page }) => {
+    for (const [state, status, body] of [['empty', 200, ok([])], ['rate-limited', 429, {}]] as const) {
+      await respondWith(page, body, status)
+      await page.goto(SEARCH)
+      await expect(page.locator(`#recherche [data-state="${state}"]`)).toBeVisible()
+      await expect(page.locator(`#recherche [data-state="${state}"]`)).not.toHaveAttribute('role', /.+/)
+    }
+    await respondWith(page, {}, 404)
+    await page.goto(SEARCH)
+    await expect(page.locator('#recherche [data-state="error"]')).toHaveAttribute('role', 'alert')
+  })
+
+  test('« aucun résultat » est annoncé par la région persistante', async ({ page }) => {
+    await respondWith(page, ok([]))
+    await page.goto(SEARCH)
+    await expect(page.locator(LIVE)).toHaveText('Aucun voyageur pour Paris → Abidjan ce mois-ci.')
+  })
+
+  test('« trop de recherches » est annoncé par la région persistante', async ({ page }) => {
+    await respondWith(page, {}, 429)
+    await page.goto(SEARCH)
+    await expect(page.locator(LIVE)).toHaveText('Doucement, trop de recherches d\'un coup.')
+  })
+
+  test('« Recherche en cours » est annoncé pendant le chargement, puis le titre des résultats', async ({ page }) => {
+    let release: () => void = () => {}
+    const gate = new Promise<void>((resolve) => { release = resolve })
+    await page.route(API, async (route: Route) => {
+      await gate
+      await route.fulfill({ status: 200, contentType: 'application/json', headers: CORS, body: JSON.stringify(ok(THREE)) })
+    })
+    await page.goto(SEARCH)
+    await expect(page.locator(LIVE)).toHaveText('Recherche en cours')
+    release()
+    await expect(page.locator(LIVE)).toHaveText('3 voyageurs pour Paris → Abidjan')
+  })
+
+  test('deux « Voir les autres » de même taille re-annoncent le même texte', async ({ page }) => {
+    await respondPaged(page, 60, 3)
+    await page.goto(SEARCH)
+    await expect(page.getByRole('article')).toHaveCount(20)
+    await hydrated(page)
+    await page.evaluate((selector) => {
+      const region = document.querySelector(selector)!
+      const seen: string[] = []
+      ;(window as unknown as { __seen: string[] }).__seen = seen
+      new MutationObserver(() => seen.push(region.textContent ?? '')).observe(region, { childList: true, characterData: true, subtree: true })
+    }, LIVE)
+    await page.getByRole('button', { name: 'Voir les 20 autres' }).click()
+    await expect(page.getByRole('article')).toHaveCount(40)
+    await page.getByRole('button', { name: 'Voir les 20 autres' }).click()
+    await expect(page.getByRole('article')).toHaveCount(60)
+    await expect(page.locator(LIVE)).toHaveText('20 voyageurs de plus affichés')
+    const seen = await page.evaluate(() => (window as unknown as { __seen: string[] }).__seen)
+    const same = '20 voyageurs de plus affichés'
+    const first = seen.indexOf(same)
+    const second = seen.indexOf(same, first + 1)
+    expect(first).toBeGreaterThanOrEqual(0)
+    // Entre les deux annonces identiques, la région a été vidée.
+    expect(second).toBeGreaterThan(first)
+    expect(seen.slice(first, second)).toContain('')
+  })
+})
+
+test('les états vide, erreur et 429 gardent un appel vers l’app', async ({ page }) => {
     const states: Array<[string, number, unknown]> = [
       ['empty', 200, ok([])],
       ['error', 404, {}],

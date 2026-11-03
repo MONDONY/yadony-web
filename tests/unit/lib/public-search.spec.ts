@@ -3,6 +3,7 @@ import {
   formatCapacity,
   formatCardPrice,
   formatDepartureDate,
+  emptyStateTitle,
   formatPrice,
   hasSearch,
   MAX_PAGE,
@@ -308,5 +309,25 @@ describe('suggestCities', () => {
 
   it('ne propose rien quand aucune ville ne correspond', () => {
     expect(suggestCities('zzz')).toEqual([])
+  })
+})
+
+describe('emptyStateTitle', () => {
+  const t = (key: string, params?: Record<string, string>) => `${key}|${params?.route ?? ''}`
+
+  it('nomme le trajet, avec « ce mois-ci » pour la recherche du mois', () => {
+    const q = { ...baseQuery, depart: 'Paris', arrivee: 'Abidjan' }
+    expect(emptyStateTitle(q, t)).toBe('search.states.empty.title|Paris → Abidjan')
+    expect(emptyStateTitle({ ...q, quand: 'ce-mois' }, t)).toBe('search.states.empty.titleMonth|Paris → Abidjan')
+  })
+
+  it('nomme une seule ville quand l’autre manque', () => {
+    expect(emptyStateTitle({ ...baseQuery, depart: 'Lyon' }, t)).toBe('search.states.empty.title|Lyon')
+    expect(emptyStateTitle({ ...baseQuery, arrivee: 'Dakar' }, t)).toBe('search.states.empty.title|Dakar')
+  })
+
+  it('reste générique sans ville', () => {
+    expect(emptyStateTitle(baseQuery, t)).toBe('search.states.empty.titleAny|')
+    expect(emptyStateTitle({ ...baseQuery, quand: 'ce-mois' }, t)).toBe('search.states.empty.titleAnyMonth|')
   })
 })

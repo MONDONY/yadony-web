@@ -3,7 +3,7 @@ import { computed, nextTick, onMounted, ref, useId, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRoute, useRouter } from 'vue-router'
 import { usePublicSearch } from '@/composables/usePublicSearch'
-import { hasSearch, parseSearchQuery, toUrlQuery, type SearchQuery } from '@/lib/public-search'
+import { emptyStateTitle, hasSearch, parseSearchQuery, toUrlQuery, type SearchQuery } from '@/lib/public-search'
 
 // Recherche anonyme de trajets. La requête vit dans l'adresse : chaque envoi du
 // formulaire change l'adresse sans recharger la page, et Précédent/Suivant du
@@ -83,8 +83,7 @@ async function loadMore() {
   const before = search.results.value.length
   const added = await search.more()
   if (added === 0) return
-  announce.value = t('search.more.loaded', { count: added }, added)
-  await nextTick()
+  await say(t('search.more.loaded', { count: added }, added))
   ;(list.value?.children[before] as HTMLElement | undefined)?.focus()
 }
 
@@ -99,9 +98,22 @@ const showResults = computed(() => active.value && search.status.value === 'ok')
 
 // Une seule région vocale, toujours présente : son texte change, elle n'est
 // jamais insérée avec son contenu (les lecteurs d'écran l'annonceraient mal).
+// Un texte identique au précédent n'est pas relu : on vide la région, on laisse
+// le DOM se mettre à jour, puis on écrit.
 const announce = ref('')
+
+async function say(text: string) {
+  announce.value = ''
+  await nextTick()
+  announce.value = text
+}
+
 watch(() => search.status.value, (status) => {
-  announce.value = status === 'ok' ? title.value : ''
+  if (status === 'loading') void say(t('search.states.loading'))
+  else if (status === 'ok') void say(title.value)
+  else if (status === 'empty') void say(emptyStateTitle(query.value, t))
+  else if (status === 'rate-limited') void say(t('search.states.rateLimited.title'))
+  else announce.value = ''
 })
 </script>
 

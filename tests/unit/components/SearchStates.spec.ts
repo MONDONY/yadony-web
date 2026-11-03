@@ -94,9 +94,15 @@ describe('SearchStates', () => {
     expect(wrapper.find('button').exists()).toBe(false)
   })
 
-  it('annonce les états non bloquants aux lecteurs d’écran', () => {
+  it('garde role="alert" sur l’erreur, et aucun role="status" dans les autres panneaux', () => {
     expect(mountStates('error').find('[data-state]').attributes('role')).toBe('alert')
-    expect(mountStates('empty').find('[data-state]').attributes('role')).toBe('status')
+    // Les annonces passent par la région vocale persistante de la section :
+    // un panneau inséré avec son contenu serait annoncé de façon incertaine.
+    for (const status of ['loading', 'empty', 'rate-limited'] as const) {
+      const wrapper = mountStates(status)
+      expect(wrapper.find('[role="status"]').exists(), status).toBe(false)
+      expect(wrapper.find('[role="alert"]').exists(), status).toBe(false)
+    }
   })
 
   it('traduit les états en anglais', () => {

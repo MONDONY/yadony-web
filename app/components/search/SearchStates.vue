@@ -2,22 +2,19 @@
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import type { SearchStatus } from '@/composables/usePublicSearch'
-import type { SearchQuery } from '@/lib/public-search'
+import { emptyStateTitle, type SearchQuery } from '@/lib/public-search'
 
 // Un seul état visible à la fois. `idle` et `ok` ne rendent rien : les
-// résultats sont affichés par l'appelant.
+// résultats sont affichés par l'appelant. Aucun panneau ne porte `role="status"` :
+// un panneau inséré avec son contenu est annoncé de façon incertaine. Les
+// annonces passent par la région vocale persistante de `SearchSection` ; seule
+// l'erreur, qui demande une action, garde `role="alert"`.
 const props = defineProps<{ status: SearchStatus; query: SearchQuery }>()
 defineEmits<{ retry: []; widen: [] }>()
 
 const { t } = useI18n()
 
-const route = computed(() => [props.query.depart, props.query.arrivee].filter(Boolean).join(' → '))
-
-const month = computed(() => props.query.quand === 'ce-mois')
-const title = computed(() => {
-  if (route.value) return t(month.value ? 'search.states.empty.titleMonth' : 'search.states.empty.title', { route: route.value })
-  return t(month.value ? 'search.states.empty.titleAnyMonth' : 'search.states.empty.titleAny')
-})
+const title = computed(() => emptyStateTitle(props.query, t))
 
 const action =
   'inline-flex min-h-11 items-center justify-center whitespace-nowrap rounded-btn bg-primary px-5 text-sm font-semibold text-white shadow-brand ' +
@@ -28,7 +25,7 @@ const panel = 'rounded-card border border-line bg-surface p-6 text-center'
 
 <template>
   <div v-if="status === 'loading'" data-state="loading" aria-busy="true" class="grid gap-4">
-    <p class="sr-only" role="status">{{ t('search.states.loading') }}</p>
+    <p class="sr-only">{{ t('search.states.loading') }}</p>
     <div
       v-for="n in 3"
       :key="n"
@@ -38,7 +35,7 @@ const panel = 'rounded-card border border-line bg-surface p-6 text-center'
     />
   </div>
 
-  <div v-else-if="status === 'empty'" data-state="empty" role="status" :class="panel">
+  <div v-else-if="status === 'empty'" data-state="empty" :class="panel">
     <p class="font-display text-xl font-bold text-ink">
       {{ title }}
     </p>
@@ -58,7 +55,7 @@ const panel = 'rounded-card border border-line bg-surface p-6 text-center'
     >{{ t('search.states.error.retry') }}</button>
   </div>
 
-  <div v-else-if="status === 'rate-limited'" data-state="rate-limited" role="status" :class="panel">
+  <div v-else-if="status === 'rate-limited'" data-state="rate-limited" :class="panel">
     <p class="font-display text-xl font-bold text-ink">{{ t('search.states.rateLimited.title') }}</p>
     <p class="mt-2 text-ink-muted">{{ t('search.states.rateLimited.text') }}</p>
   </div>

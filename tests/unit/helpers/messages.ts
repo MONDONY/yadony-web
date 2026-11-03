@@ -7,10 +7,12 @@ import frLanding from '../../../i18n/locales/fr/landing.json'
 import frJourneys from '../../../i18n/locales/fr/journeys.json'
 import frCorridors from '../../../i18n/locales/fr/corridors.json'
 import frGp from '../../../i18n/locales/fr/gp.json'
+import frSearch from '../../../i18n/locales/fr/search.json'
 import enCommon from '../../../i18n/locales/en.json'
 import enLanding from '../../../i18n/locales/en/landing.json'
 import enJourneys from '../../../i18n/locales/en/journeys.json'
 import enCorridors from '../../../i18n/locales/en/corridors.json'
+import enSearch from '../../../i18n/locales/en/search.json'
 
-export const fr = { ...frCommon, ...frLanding, ...frJourneys, ...frCorridors, ...frGp }
-export const en = { ...enCommon, ...enLanding, ...enJourneys, ...enCorridors }
+export const fr = { ...frCommon, ...frLanding, ...frJourneys, ...frCorridors, ...frGp, ...frSearch }
+export const en = { ...enCommon, ...enLanding, ...enJourneys, ...enCorridors, ...enSearch }

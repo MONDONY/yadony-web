@@ -1,6 +1,8 @@
 export const siteName = 'Yadony'
 export const siteUrl = 'https://yadony.com'
 export const contactEmail = 'contact@yadony.com'
+// Espace des professionnels (pied de page, liste « Yadony aujourd'hui »).
+export const proUrl = 'https://pro.yadony.com'
 
 // Chaque store a son propre drapeau : un bouton dont la fiche est publiée
 // pointe vers elle, l'autre ouvre une fenêtre « bientôt disponible » au lieu

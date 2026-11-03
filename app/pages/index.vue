@@ -31,17 +31,19 @@ useHead({
 
 <template>
   <div>
-    <HomeHero />
-    <HomePromises />
+    <!-- Haut de page hydraté tout de suite : le formulaire doit répondre dès
+         l'affichage. Les prochains départs sont lus par le navigateur après
+         l'hydratation (rien de voyageur dans le HTML prérendu) et la section
+         disparaît tant que l'API ne répond pas bien. -->
+    <HomeSearchHero />
+    <HomeUpcoming />
     <!-- Sous la ligne de flottaison : HTML prérendu tout de suite (robots,
          lecteurs sans JS), JavaScript chargé et hydraté à l'approche de
          l'écran seulement, pour ne pas retarder l'affichage du haut de page. -->
-    <LazyHomeVideo hydrate-on-visible />
-    <LazyJourneyCrossed hydrate-on-visible />
+    <LazyHomeHandoff hydrate-on-visible />
+    <LazyHomeTraveler hydrate-on-visible />
+    <LazyHomeToday hydrate-on-visible />
     <LazyHomeTrust hydrate-on-visible />
-    <LazyHomePayments hydrate-on-visible />
-    <LazyHomeCorridors hydrate-on-visible />
-    <LazyHomeRecipient hydrate-on-visible />
     <LazyHomeFaq hydrate-on-visible />
     <!-- Hydraté tout de suite : le bouton « Télécharger » de l'en-tête y mène
          directement, le premier clic sur les badges ne doit pas se perdre. -->

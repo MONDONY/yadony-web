@@ -9,12 +9,12 @@ import {
 } from '@/lib/media'
 
 describe('registre des écrans de l’app', () => {
-  it('résout chaque écran vers une image générée, au format portrait de l’iPhone', () => {
+  it('résout chaque écran vers une image générée, au format portrait d’un téléphone', () => {
     for (const id of APP_SCREEN_IDS) {
       const image = appScreen(id)
       expect(image.base).toBe(`/img/app/${id}`)
-      expect(image.width).toBe(1170)
-      expect(image.height).toBeGreaterThan(2000)
+      expect(image.width).toBeGreaterThanOrEqual(720)
+      expect(image.height).toBeGreaterThan(image.width * 1.7)
     }
   })
 })

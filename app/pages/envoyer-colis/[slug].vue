@@ -92,6 +92,12 @@ const faqAccordion = computed(() => faqItems.map((item, index) => ({ id: `${corr
       </UiContainer>
     </section>
 
+    <!-- Départs lus par le navigateur après l'hydratation : rien de voyageur
+         dans le HTML prérendu, et la section est absente tant que l'API ne
+         répond pas bien. Placée sous l'introduction, avant le texte long : le
+         lecteur qui veut partir voit les voyageurs avant de lire. -->
+    <HomeUpcoming :from="corridor.from" :to="corridor.to" />
+
     <section class="bg-surface py-14 sm:py-20">
       <UiContainer>
         <div class="grid gap-12 lg:grid-cols-12">

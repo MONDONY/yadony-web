@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
-import { betaTesting, betaWhatsAppGroupUrl, contactEmail } from '@/lib/site'
+import { betaTesting, betaWhatsAppGroupUrl, contactEmail, proUrl } from '@/lib/site'
 import { socialLinks, whatsappIconPath } from '@/lib/social'
 import { corridors } from '@/lib/corridors'
 import { gpPages } from '@/lib/gp'
@@ -8,8 +8,6 @@ import { gpPages } from '@/lib/gp'
 const { t, locale } = useI18n()
 const p = useLocalePath()
 const { reopen } = useCookieConsent()
-
-const YADONY_PRO_URL = 'https://pro.yadony.com'
 
 const services = [
   { to: '/envoyer-colis', key: 'nav.corridors' },
@@ -144,7 +142,7 @@ const company = [
           <p class="font-display font-semibold text-white">{{ t('footer.proTitle') }}</p>
           <p class="mt-3 text-white/65">{{ t('footer.proText') }}</p>
           <a
-            :href="YADONY_PRO_URL"
+            :href="proUrl"
             target="_blank"
             rel="noopener noreferrer"
             class="mt-3 inline-block font-semibold text-accent hover:text-accent-hover"

@@ -1,3 +1,5 @@
+import { resolveApiBase } from './app/lib/api-base'
+
 // Cloudflare Web Analytics : mesure d'audience sans cookie (exemptée de
 // consentement par la CNIL). La balise n'est émise que si le token est fourni
 // au moment du build : CF_BEACON_TOKEN=xxx pnpm generate.
@@ -28,15 +30,15 @@ export default defineNuxtConfig({
         language: 'fr-FR',
         name: 'Français',
         // Une locale = un fichier commun + un fichier par domaine (accueil,
-        // parcours, corridors, GP). Les clés de premier niveau ne se
+        // parcours, corridors, GP, recherche). Les clés de premier niveau ne se
         // chevauchent jamais d'un fichier à l'autre.
-        files: ['fr.json', 'fr/landing.json', 'fr/journeys.json', 'fr/corridors.json', 'fr/gp.json'],
+        files: ['fr.json', 'fr/landing.json', 'fr/journeys.json', 'fr/corridors.json', 'fr/gp.json', 'fr/search.json'],
       },
       {
         code: 'en',
         language: 'en-GB',
         name: 'English',
-        files: ['en.json', 'en/landing.json', 'en/journeys.json', 'en/corridors.json'],
+        files: ['en.json', 'en/landing.json', 'en/journeys.json', 'en/corridors.json', 'en/search.json'],
       },
     ],
     customRoutes: 'page',
@@ -44,6 +46,13 @@ export default defineNuxtConfig({
     vueI18n: './i18n.config.ts',
   },
   ssr: true,
+  runtimeConfig: {
+    public: {
+      // API publique du back (recherche de trajets) : production sur main,
+      // staging sur les aperçus de branche, NUXT_PUBLIC_API_BASE prioritaire.
+      apiBase: resolveApiBase(process.env),
+    },
+  },
   site: { url: 'https://yadony.com', name: 'Yadony' },
   sitemap: {
     autoLastmod: false,

@@ -90,6 +90,8 @@ const stepLabel = (n: number) => t('journeys.common.stepLabel', { n })
       </UiContainer>
     </section>
 
+    <slot name="search" />
+
     <!-- Une page peut remplacer la scène racontée par sa propre présentation. -->
     <slot name="steps">
       <section class="bg-surface py-14 sm:py-20">

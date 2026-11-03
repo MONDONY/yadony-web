@@ -20,14 +20,30 @@ function card(overrides: Partial<PublicAnnouncementCard> = {}): PublicAnnounceme
   }
 }
 
-function mountCard(value: PublicAnnouncementCard, locale: 'fr' | 'en' = 'fr') {
+function mountCard(value: PublicAnnouncementCard, locale: 'fr' | 'en' = 'fr', headingLevel?: 3 | 4) {
   const i18n = createI18n({ legacy: false, locale, messages: { fr, en } })
   return mount(SearchResultCard, {
-    props: { card: value },
+    props: { card: value, ...(headingLevel === undefined ? {} : { headingLevel }) },
     attachTo: document.body,
     global: { plugins: [i18n], components: { AppHandoff, UiButton } },
   })
 }
+
+describe('SearchResultCard : niveau de titre', () => {
+  it('titre le trajet en h3 par défaut (sous un h2)', () => {
+    const wrapper = mountCard(card())
+    expect(wrapper.findAll('h3')).toHaveLength(1)
+    expect(wrapper.find('h3').text()).toBe('Paris → Abidjan')
+    expect(wrapper.findAll('h4')).toHaveLength(0)
+  })
+
+  it('titre le trajet en h4 sous un titre de niveau 3', () => {
+    const wrapper = mountCard(card(), 'fr', 4)
+    expect(wrapper.findAll('h4')).toHaveLength(1)
+    expect(wrapper.find('h4').text()).toBe('Paris → Abidjan')
+    expect(wrapper.findAll('h3')).toHaveLength(0)
+  })
+})
 
 describe('SearchResultCard', () => {
   it('affiche trajet, date, capacité, prix et voyageur', () => {

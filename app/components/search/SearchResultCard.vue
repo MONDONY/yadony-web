@@ -10,7 +10,9 @@ import {
   type PublicAnnouncementCard,
 } from '@/lib/public-search'
 
-const props = defineProps<{ card: PublicAnnouncementCard }>()
+// `headingLevel` : niveau du titre du trajet, un cran sous le titre de la
+// section qui porte la carte (h2 : niveau 3, h3 : niveau 4).
+const props = withDefaults(defineProps<{ card: PublicAnnouncementCard; headingLevel?: 3 | 4 }>(), { headingLevel: 3 })
 
 const { t, locale } = useI18n()
 
@@ -53,9 +55,9 @@ function request() {
 <template>
   <article class="flex min-h-44 flex-col gap-4 rounded-card border border-line bg-surface p-5 shadow-sm">
     <header class="flex flex-wrap items-start justify-between gap-x-3 gap-y-2">
-      <h3 class="font-display text-lg font-bold text-ink">
+      <component :is="`h${headingLevel}`" class="font-display text-lg font-bold text-ink">
         {{ card.departureCity }} → {{ card.arrivalCity }}
-      </h3>
+      </component>
       <span
         v-if="card.urgent"
         class="inline-flex min-h-7 items-center rounded-pill bg-accent-soft px-3 text-sm font-bold text-accent-text"

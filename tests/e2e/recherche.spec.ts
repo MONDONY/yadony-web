@@ -654,3 +654,29 @@ test('une adresse de recherche rouverte avec Précédent amène encore les résu
   await expect(page.getByRole('article')).toHaveCount(3)
   await expectSectionInView(page)
 })
+
+// Plan des titres : un seul h1, aucun niveau sauté, et les cartes un cran sous
+// le titre des résultats.
+async function outline(page: Page): Promise<Array<{ level: number; text: string }>> {
+  return page.locator('main h1, main h2, main h3, main h4, main h5, main h6').evaluateAll(nodes =>
+    nodes.map(node => ({ level: Number(node.tagName[1]), text: node.textContent?.trim() ?? '' })),
+  )
+}
+
+for (const [label, url, resultsTitle] of [
+  ['FR', SEARCH, '3 voyageurs pour Paris → Abidjan'],
+  ['EN', '/en/send-a-parcel?depart=Paris&arrivee=Abidjan&quand=ce-mois', '3 travelers for Paris → Abidjan'],
+] as const) {
+  test(`titres de ${url.split('?')[0]} avec résultats (${label}) : aucun niveau sauté, cartes sous le titre des résultats`, async ({ page }) => {
+    await respondWith(page, ok(THREE))
+    await page.goto(url)
+    await expect(page.getByRole('article')).toHaveCount(3)
+    const headings = await outline(page)
+    expect(headings[0]!.level).toBe(1)
+    expect(headings.filter(h => h.level === 1)).toHaveLength(1)
+    headings.slice(1).forEach((h, index) => expect(h.level - headings[index]!.level, `titre « ${h.text} »`).toBeLessThanOrEqual(1))
+    expect(headings.find(h => h.text === resultsTitle)!.level).toBe(3)
+    await expect(page.locator('#recherche article h4')).toHaveCount(3)
+    await expect(page.locator('#recherche article h3')).toHaveCount(0)
+  })
+}

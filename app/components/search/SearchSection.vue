@@ -149,7 +149,7 @@ watch(() => search.status.value, (status) => {
                 tabindex="-1"
                 class="rounded-card focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
               >
-                <SearchResultCard :card="card" />
+                <SearchResultCard :card="card" :heading-level="4" />
               </li>
             </ul>
             <div v-if="search.remaining.value > 0" class="mt-6 grid gap-3">

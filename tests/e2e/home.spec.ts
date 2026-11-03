@@ -338,6 +338,23 @@ test.describe('sections de l’accueil', () => {
   })
 })
 
+test.describe('plan des titres', () => {
+  for (const path of ['/', '/en']) {
+    test(`${path} avec les prochains départs : aucun niveau sauté, cartes en h3 sous un h2`, async ({ page }) => {
+      await respondWith(page, ok(FOUR))
+      await page.goto(path)
+      await expect(page.locator('main article')).toHaveCount(3)
+      const levels = await page.locator('main h1, main h2, main h3, main h4, main h5, main h6')
+        .evaluateAll(nodes => nodes.map(node => Number(node.tagName[1])))
+      expect(levels[0]).toBe(1)
+      expect(levels.filter(level => level === 1)).toHaveLength(1)
+      levels.slice(1).forEach((level, index) => expect(level - levels[index]!, `titre ${index + 1}`).toBeLessThanOrEqual(1))
+      await expect(page.locator('main article h3')).toHaveCount(3)
+      await expect(page.locator('main article h4')).toHaveCount(0)
+    })
+  }
+})
+
 test.describe('accessibilité', () => {
   for (const path of ['/', '/en']) {
     test(`${path} avec les prochains départs affichés : aucune violation critique`, async ({ page }) => {

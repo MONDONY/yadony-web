@@ -731,7 +731,7 @@
         "description": "How Yadony protects your data: minimal internal data, certified partners (Firebase, Stripe, Cloudflare), retention periods and GDPR rights."
       },
       "title": "Privacy policy",
-      "intro": "Last updated: October 18, 2026. Yadony is a mobile marketplace connecting travellers with spare luggage space to senders wishing to send parcels to their relatives. Our service covers corridors from Europe, the United States, Canada and Africa to all the destinations we serve. We designed Yadony around one core principle: we keep only the strict minimum of personal data internally. Sensitive data (identity, authentication, official documents) is entrusted to trusted, globally recognised specialised partners who process it with a level of security and compliance we could not reach alone. By using Yadony, you accept the practices described in this document. This English version is provided for convenience; the French version prevails.",
+      "intro": "Last updated: November 3, 2026. Yadony is a mobile marketplace connecting travellers with spare luggage space to senders wishing to send parcels to their relatives. Our service covers corridors from Europe, the United States, Canada and Africa to all the destinations we serve. We designed Yadony around one core principle: we keep only the strict minimum of personal data internally. Sensitive data (identity, authentication, official documents) is entrusted to trusted, globally recognised specialised partners who process it with a level of security and compliance we could not reach alone. By using Yadony, you accept the practices described in this document. This English version is provided for convenience; the French version prevails.",
       "articles": [
         {
           "title": "1. Who is responsible for your data?",
@@ -1240,7 +1240,7 @@
           "blocks": [
             {
               "p": [
-                "The trips that travelers publish on Yadony can be viewed on yadony.com without creating an account, through a search of upcoming trips."
+                "The trips that travelers publish on Yadony are displayed on yadony.com, in a search of upcoming trips. Any visitor to the site can view them without creating an account."
               ]
             },
             {
@@ -1248,8 +1248,10 @@
               "ul": [
                 "The route: the departure city and the arrival city",
                 "The departure date",
+                "The mode of transport",
                 "The available capacity",
                 "The price per kilo paid by the sender",
+                "The \"Urgent\" label, when the traveler has chosen it",
                 "The traveler's first name and the initial of their last name",
                 "The traveler's rating",
                 "The traveler's number of trips",
@@ -1267,7 +1269,7 @@
             {
               "sub": "Removing a trip",
               "p": [
-                "A traveler who does not want their trips displayed in this way can ask for their removal by writing to {email}."
+                "A traveler who does not want their trips displayed in this way can ask for their removal by writing to {email}. We handle the request within a reasonable time."
               ]
             }
           ]

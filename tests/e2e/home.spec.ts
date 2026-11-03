@@ -129,6 +129,29 @@ test.describe('haut de page', () => {
     await expect(page.locator('#recherche').getByRole('article')).toHaveCount(3)
   })
 
+  test('un envoi vide affiche tous les trajets, sans ville dans l’appel', async ({ page }) => {
+    await respondWith(page, ok(FOUR.slice(0, 3)))
+    const calls: URL[] = []
+    page.on('request', (request) => {
+      if (request.url().includes('/public/announcements')) calls.push(new URL(request.url()))
+    })
+    await page.goto('/')
+    await hydrated(page)
+    // Les prochains départs de l'accueil ont déjà appelé l'API : seul l'appel
+    // de la recherche nous intéresse.
+    await expect.poll(() => calls.length).toBe(1)
+    calls.length = 0
+    await page.getByRole('search').getByRole('button', { name: 'Voir les voyageurs' }).click()
+    await expect(page).toHaveURL(/\/envoyer-colis\?tous=1$/)
+    await expect(page.locator('#recherche').getByRole('article')).toHaveCount(3)
+    await expect(page.getByRole('heading', { name: '3 voyageurs' })).toBeVisible()
+    await expect(page.locator('meta[name="robots"][content*="noindex"]')).toHaveCount(1)
+    expect(calls).toHaveLength(1)
+    expect(calls[0]!.searchParams.has('departureCity')).toBe(false)
+    expect(calls[0]!.searchParams.has('arrivalCity')).toBe(false)
+    expect(calls[0]!.searchParams.has('tous')).toBe(false)
+  })
+
   test('en anglais, le formulaire mène à la page anglaise', async ({ page }) => {
     await respondWith(page, ok(FOUR.slice(0, 3)))
     await page.goto('/en')

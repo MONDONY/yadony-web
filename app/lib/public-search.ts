@@ -49,6 +49,8 @@ export interface SearchQuery {
   maxPrix?: number
   urgent?: boolean
   mode?: string
+  /** « Tous les trajets » : une recherche sans critère, demandée par l'accueil. */
+  all?: boolean
   page: number
 }
 
@@ -87,6 +89,7 @@ export function parseSearchQuery(raw: Record<string, unknown>): SearchQuery {
   const quand = firstText(raw.quand) as SearchWhen
   const urgent = ['1', 'true'].includes(firstText(raw.urgent))
   const mode = firstText(raw.mode).toUpperCase()
+  const all = ['1', 'true'].includes(firstText(raw.tous))
   const query: SearchQuery = {
     depart: city(raw.depart),
     arrivee: city(raw.arrivee),
@@ -99,6 +102,7 @@ export function parseSearchQuery(raw: Record<string, unknown>): SearchQuery {
   if (maxPrix !== undefined) query.maxPrix = maxPrix
   if (urgent) query.urgent = true
   if (TRANSPORT_MODES.includes(mode)) query.mode = mode
+  if (all) query.all = true
   return query
 }
 
@@ -140,12 +144,15 @@ export function toUrlQuery(q: SearchQuery): Record<string, string> {
   if (q.maxPrix !== undefined) query.maxPrix = String(q.maxPrix)
   if (q.urgent) query.urgent = '1'
   if (q.mode) query.mode = q.mode
+  if (q.all) query.tous = '1'
   return query
 }
 
-// La page n'entre pas dans le test : une page seule ne cherche rien.
+// La page n'entre pas dans le test : une page seule ne cherche rien. Le
+// marqueur « tous » (`tous=1`) est une recherche à part entière : il demande
+// tous les trajets, sans aucun critère.
 export function hasSearch(q: SearchQuery): boolean {
-  return Boolean(q.depart || q.arrivee || q.quand || q.minKg !== undefined || q.maxPrix !== undefined || q.urgent || q.mode)
+  return Boolean(q.depart || q.arrivee || q.quand || q.minKg !== undefined || q.maxPrix !== undefined || q.urgent || q.mode || q.all)
 }
 
 export function formatPrice(value: number | undefined, currency: string, locale: Locale): string {

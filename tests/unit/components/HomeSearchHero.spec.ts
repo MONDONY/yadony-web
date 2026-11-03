@@ -74,11 +74,18 @@ describe('HomeSearchHero', () => {
     })
   })
 
-  it('un formulaire vide mène à la section de recherche de la page', async () => {
+  it('un formulaire vide lance quand même la recherche de tous les trajets', async () => {
     englishPaths()
     const wrapper = mountHero()
     await wrapper.find('form').trigger('submit')
-    expect(push).toHaveBeenCalledWith({ path: '/en/send-a-parcel', query: {}, hash: '#recherche' })
+    expect(push).toHaveBeenCalledWith({ path: '/en/send-a-parcel', query: { tous: '1' } })
+  })
+
+  it('n’ajoute pas le marqueur quand un critère est renseigné', async () => {
+    const wrapper = mountHero()
+    await wrapper.find('select[name="quand"]').setValue('3-mois')
+    await wrapper.find('form').trigger('submit')
+    expect(push).toHaveBeenCalledWith({ path: '/envoyer-colis', query: { quand: '3-mois' } })
   })
 
   it('le formulaire de l’accueil n’a aucune puce de filtre', () => {

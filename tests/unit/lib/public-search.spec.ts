@@ -145,6 +145,31 @@ describe('toUrlQuery', () => {
   })
 })
 
+describe('marqueur « tous les trajets »', () => {
+  it('est lu depuis « tous=1 » ou « tous=true » seulement', () => {
+    expect(parseSearchQuery({ tous: '1' }).all).toBe(true)
+    expect(parseSearchQuery({ tous: 'true' }).all).toBe(true)
+    for (const value of ['', '0', 'oui', '<script>', ['0', '1'], 1, null]) {
+      expect('all' in parseSearchQuery({ tous: value })).toBe(false)
+    }
+  })
+
+  it('compte comme une recherche, sans critère de ville ni de date', () => {
+    expect(hasSearch({ ...baseQuery, all: true })).toBe(true)
+  })
+
+  it('revient dans l’adresse et est relu à l’identique', () => {
+    const q = parseSearchQuery({ tous: '1', page: '2' })
+    expect(toUrlQuery(q)).toEqual({ tous: '1' })
+    expect(parseSearchQuery(toUrlQuery(q))).toEqual({ ...q, page: 0 })
+  })
+
+  it('n’ajoute aucun paramètre à l’appel de l’API : tous les trajets', () => {
+    const params = toApiParams(parseSearchQuery({ tous: '1' }), new Date(2026, 10, 2))
+    expect([...params.keys()]).toEqual(['page'])
+  })
+})
+
 describe('MAX_PAGE', () => {
   it('est la dernière page atteignable et borne la page lue dans l’adresse', () => {
     expect(MAX_PAGE).toBe(4)

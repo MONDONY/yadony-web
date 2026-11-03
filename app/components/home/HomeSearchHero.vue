@@ -30,12 +30,9 @@ function routeHref(route: { depart: string; arrivee: string }): string {
 }
 
 function submit(next: SearchQuery) {
-  // Une recherche vide mène à la section de recherche de la page, sans critère.
-  void router.push(
-    hasSearch(next)
-      ? { path: localePath('/envoyer-colis'), query: toUrlQuery(next) }
-      : { path: localePath('/envoyer-colis'), query: {}, hash: '#recherche' },
-  )
+  // Un envoi vide demande tous les trajets : la page de recherche affiche alors
+  // des résultats, et non un formulaire vide à renvoyer une seconde fois.
+  void router.push({ path: localePath('/envoyer-colis'), query: toUrlQuery(hasSearch(next) ? next : { ...next, all: true }) })
 }
 
 const chip =

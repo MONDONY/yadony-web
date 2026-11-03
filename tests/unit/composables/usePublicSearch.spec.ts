@@ -174,6 +174,94 @@ describe('usePublicSearch', () => {
     expect(search.results.value.map(c => c.id)).toEqual(['second'])
   })
 
+  describe('réponses mal formées et adresse de l’API', () => {
+    it('retire les barres obliques finales de apiBase', async () => {
+      vi.stubGlobal('useRuntimeConfig', () => ({ public: { apiBase: `${API_BASE}///` } }))
+      fetchMock.mockResolvedValue(jsonResponse(page([card('a')])))
+      await usePublicSearch().run(query)
+      expect(String(fetchMock.mock.calls[0]![0]).startsWith(`${API_BASE}/public/announcements?`)).toBe(true)
+    })
+
+    it.each([
+      ['absent', undefined],
+      ['une chaîne', '42'],
+      ['null', null],
+      ['NaN', 'NaN'],
+    ])('totalElements %s : le total retombe sur le nombre de cartes', async (_label, totalElements) => {
+      fetchMock.mockResolvedValue(jsonResponse({ content: [card('a'), card('b')], totalElements, page: 0, size: 20, totalPages: 1 }))
+      const search = usePublicSearch()
+      await search.run(query)
+      expect(search.status.value).toBe('ok')
+      expect(search.total.value).toBe(2)
+    })
+
+    it('retire les cartes sans nom de voyageur, ou sans voyageur, ou nulles', async () => {
+      const broken = [
+        { ...card('x1'), traveler: undefined },
+        { ...card('x2'), traveler: { identityVerified: true } },
+        { ...card('x3'), traveler: { displayName: 42, identityVerified: true } },
+        { ...card('x4'), traveler: { displayName: '', identityVerified: true } },
+        null,
+      ]
+      fetchMock.mockResolvedValue(jsonResponse(page([card('a'), ...broken, card('b')], 7)))
+      const search = usePublicSearch()
+      await search.run(query)
+      expect(search.status.value).toBe('ok')
+      expect(search.results.value.map(c => c.id)).toEqual(['a', 'b'])
+    })
+
+    it('une page où aucune carte n’est affichable est vide', async () => {
+      fetchMock.mockResolvedValue(jsonResponse(page([{ ...card('x1'), traveler: undefined }])))
+      const search = usePublicSearch()
+      await search.run(query)
+      expect(search.status.value).toBe('empty')
+      expect(search.results.value).toEqual([])
+    })
+
+    it('« more » écarte aussi les cartes mal formées et un total illisible', async () => {
+      fetchMock.mockResolvedValueOnce(jsonResponse({ content: [card('a'), card('b')], totalElements: 6, page: 0, size: 2, totalPages: 3 }))
+      const search = usePublicSearch()
+      await search.run(query)
+      fetchMock.mockResolvedValueOnce(jsonResponse({ content: [card('c'), { ...card('d'), traveler: null }], totalElements: 'beaucoup', page: 1, size: 2, totalPages: 3 }))
+      expect(await search.more()).toBe(1)
+      expect(search.results.value.map(c => c.id)).toEqual(['a', 'b', 'c'])
+      expect(search.total.value).toBe(3)
+    })
+  })
+
+  describe('capped', () => {
+    const paged = (ids: string[], total: number, totalPages: number, size: number) =>
+      jsonResponse({ content: ids.map(card), totalElements: total, page: 0, size, totalPages })
+
+    it('est vrai quand la dernière page atteignable est chargée et qu’il reste des trajets', async () => {
+      fetchMock.mockImplementation(async (url) => {
+        const index = Number(new URL(String(url)).searchParams.get('page'))
+        return paged([`p${index}a`, `p${index}b`], 200, 100, 2)
+      })
+      const search = usePublicSearch()
+      await search.run(query)
+      expect(search.capped.value).toBe(false)
+      for (let i = 0; i < 4; i++) await search.more()
+      expect(search.remaining.value).toBe(0)
+      expect(search.total.value).toBe(200)
+      expect(search.capped.value).toBe(true)
+    })
+
+    it('est faux quand tout est affiché, ou avant la dernière page', async () => {
+      fetchMock.mockResolvedValueOnce(paged(['a', 'b'], 2, 1, 2))
+      const search = usePublicSearch()
+      await search.run(query)
+      expect(search.capped.value).toBe(false)
+      fetchMock.mockResolvedValueOnce(paged(['a', 'b'], 6, 3, 2))
+      await search.run(query)
+      expect(search.capped.value).toBe(false)
+    })
+
+    it('est faux sans résultats', () => {
+      expect(usePublicSearch().capped.value).toBe(false)
+    })
+  })
+
   describe('more', () => {
     const paged = (ids: string[], total: number, totalPages: number, size = 20) =>
       jsonResponse({ content: ids.map(card), totalElements: total, page: 0, size, totalPages })

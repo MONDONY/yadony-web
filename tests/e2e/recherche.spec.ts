@@ -64,6 +64,15 @@ async function hydrated(page: Page) {
   await page.waitForFunction(() => (window as unknown as { useNuxtApp?: () => { isHydrating: boolean } }).useNuxtApp?.().isHydrating === false)
 }
 
+// Nombre de lignes occupées par le texte d'un élément (1 = sur une seule ligne).
+async function lineCount(locator: ReturnType<Page['locator']>): Promise<number> {
+  return locator.evaluate((el) => {
+    const range = document.createRange()
+    range.selectNodeContents(el)
+    return new Set([...range.getClientRects()].map(rect => Math.round(rect.top))).size
+  })
+}
+
 const SEARCH = '/envoyer-colis?depart=Paris&arrivee=Abidjan&quand=ce-mois'
 
 test.describe('recherche anonyme', () => {
@@ -305,7 +314,59 @@ test.describe('recherche anonyme', () => {
     expect(calls.map(url => url.searchParams.get('page'))).toEqual(['0', '1', '2', '3', '4'])
   })
 
-  test('un échec de « Voir les autres » garde les cartes et l’indique près du bouton', async ({ page }) => {
+  test('pendant « Voir les autres », le bouton est désactivé, dit « Chargement… » et garde sa largeur', async ({ page }) => {
+  let release: () => void = () => {}
+  const gate = new Promise<void>((resolve) => { release = resolve })
+  await respondPaged(page, 25, 2)
+  await page.goto(SEARCH)
+  await expect(page.getByRole('article')).toHaveCount(20)
+  await hydrated(page)
+  await page.route(API, async (route: Route) => {
+    await gate
+    const content = Array.from({ length: 5 }, (_, n) => card(`late-${n}`, `Tardif ${n + 1}`))
+    await route.fulfill({ status: 200, contentType: 'application/json', headers: CORS, body: JSON.stringify({ content, totalElements: 25, page: 1, size: 20, totalPages: 2 }) })
+  })
+  const button = page.locator('#recherche').getByRole('button', { name: 'Voir les 5 autres' })
+  const before = (await button.boundingBox())!
+  await button.click()
+  const busy = page.locator('#recherche').getByRole('button', { name: 'Chargement…' })
+  await expect(busy).toBeDisabled()
+  await expect(busy).toHaveAttribute('aria-busy', 'true')
+  const during = (await busy.boundingBox())!
+  expect(during.width).toBeGreaterThanOrEqual(before.width - 0.5)
+  expect(during.height).toBeCloseTo(before.height, 0)
+  expect(await lineCount(busy.locator('span span:not(.invisible)'))).toBe(1)
+  release()
+  await expect(page.getByRole('article')).toHaveCount(25)
+})
+
+test('au plafond des pages, une ligne explique qu’il faut affiner la recherche', async ({ page }) => {
+  await respondPaged(page, 200, 10)
+  await page.goto(SEARCH)
+  await expect(page.getByRole('article')).toHaveCount(20)
+  const refine = page.locator('#recherche').getByText('Affinez la recherche pour voir les autres trajets.')
+  await expect(refine).toHaveCount(0)
+  for (let loaded = 1; loaded <= 4; loaded++) {
+    await page.getByRole('button', { name: 'Voir les 20 autres' }).click()
+    await expect(page.getByRole('article')).toHaveCount(20 * (loaded + 1))
+  }
+  await expect(refine).toBeVisible()
+  // Le titre garde le vrai total.
+  await expect(page.getByRole('heading', { name: '200 voyageurs pour Paris → Abidjan' })).toBeVisible()
+})
+
+test('en anglais, le plafond et le bouton occupé sont traduits', async ({ page }) => {
+  await respondPaged(page, 200, 10)
+  await page.goto('/en/send-a-parcel?depart=Paris&arrivee=Abidjan')
+  await expect(page.getByRole('article')).toHaveCount(20)
+  for (let loaded = 1; loaded <= 4; loaded++) {
+    await page.getByRole('button', { name: 'See 20 more' }).click()
+    await expect(page.getByRole('article')).toHaveCount(20 * (loaded + 1))
+  }
+  await expect(page.getByText('Refine your search to see more trips.')).toBeVisible()
+})
+
+test('un échec de « Voir les autres » garde les cartes et l’indique près du bouton', async ({ page }) => {
     await respondPaged(page, 25, 2)
     await page.goto(SEARCH)
     await expect(page.getByRole('article')).toHaveCount(20)

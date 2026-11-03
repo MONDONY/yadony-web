@@ -76,6 +76,8 @@
     },
     "more": {
       "button": "See {n} more | See {n} more",
+      "loading": "Loading…",
+      "refine": "Refine your search to see more trips.",
       "error": "Could not load more. Try again.",
       "loaded": "{count} more traveler shown | {count} more travelers shown"
     }

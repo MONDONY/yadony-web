@@ -7,6 +7,18 @@ import {
   type SearchQuery,
 } from '@/lib/public-search'
 
+// Une carte sans nom de voyageur ferait planter `SearchResultCard` : une
+// réponse mal formée perd ces cartes, jamais la page.
+function displayable(card: unknown): card is PublicAnnouncementCard {
+  const name = (card as PublicAnnouncementCard | null)?.traveler?.displayName
+  return typeof name === 'string' && name !== ''
+}
+
+// Total illisible : on retombe sur ce qu'on sait compter.
+function readTotal(value: unknown, fallback: number): number {
+  return typeof value === 'number' && Number.isFinite(value) ? value : fallback
+}
+
 export type SearchStatus = 'idle' | 'loading' | 'ok' | 'empty' | 'error' | 'rate-limited'
 
 // Recherche publique côté navigateur uniquement : aucun appel pendant le rendu
@@ -39,9 +51,16 @@ export function usePublicSearch() {
     return Math.max(0, Math.min(pageSize.value, total.value - results.value.length))
   })
 
+  // Dernière page atteignable chargée alors que des trajets restent hors de
+  // portée : l'appelant explique qu'il faut affiner la recherche.
+  const capped = computed(() =>
+    status.value === 'ok' && loadedPage.value >= MAX_PAGE && total.value > results.value.length,
+  )
+
   // La date du jour est celle du navigateur, jamais celle du serveur.
   function fetchPage(q: SearchQuery, signal: AbortSignal): Promise<Response> {
-    const url = `${useRuntimeConfig().public.apiBase}/public/announcements?${toApiParams(q, new Date())}`
+    const base = String(useRuntimeConfig().public.apiBase).replace(/\/+$/, '')
+    const url = `${base}/public/announcements?${toApiParams(q, new Date())}`
     return fetch(url, { method: 'GET', mode: 'cors', credentials: 'omit', signal })
   }
 
@@ -62,11 +81,12 @@ export function usePublicSearch() {
       const body = await response.json() as PublicPage
       if (isStale()) return
       if (!Array.isArray(body.content)) return settle(isStale, 'error')
-      if (body.content.length === 0) return settle(isStale, 'empty')
-      results.value = body.content
-      total.value = body.totalElements
+      const cards = body.content.filter(displayable)
+      if (cards.length === 0) return settle(isStale, 'empty')
+      results.value = cards
+      total.value = readTotal(body.totalElements, cards.length)
       totalPages.value = body.totalPages > 0 ? body.totalPages : 1
-      pageSize.value = body.size > 0 ? body.size : body.content.length
+      pageSize.value = body.size > 0 ? body.size : cards.length
       loadedPage.value = q.page
       status.value = 'ok'
     } catch {
@@ -93,11 +113,11 @@ export function usePublicSearch() {
       if (!Array.isArray(body.content)) return failMore(isStale)
       // Les trajets bougent entre deux pages : jamais deux fois la même carte.
       const seen = new Set(results.value.map(card => card.id))
-      const fresh = body.content.filter(card => !seen.has(card.id))
+      const fresh = body.content.filter(displayable).filter(card => !seen.has(card.id))
       results.value = [...results.value, ...fresh]
       loadedPage.value = next
       // Une page qui n'apporte rien met fin à la liste, sans quoi le bouton resterait.
-      total.value = fresh.length === 0 ? results.value.length : body.totalElements
+      total.value = fresh.length === 0 ? results.value.length : readTotal(body.totalElements, results.value.length)
       loadingMore.value = false
       return fresh.length
     } catch {
@@ -122,5 +142,5 @@ export function usePublicSearch() {
     status.value = next
   }
 
-  return { status, results, total, remaining, loadingMore, moreError, run, more }
+  return { status, results, total, remaining, capped, loadingMore, moreError, run, more }
 }

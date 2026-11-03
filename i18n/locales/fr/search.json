@@ -76,6 +76,8 @@
     },
     "more": {
       "button": "Voir {n} autre | Voir les {n} autres",
+      "loading": "Chargement…",
+      "refine": "Affinez la recherche pour voir les autres trajets.",
       "error": "Impossible de charger la suite. Réessayez.",
       "loaded": "{count} voyageur de plus affiché | {count} voyageurs de plus affichés"
     }

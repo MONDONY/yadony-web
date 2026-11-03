@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, nextTick, onMounted, ref, useId, watch } from 'vue'
+import { computed, nextTick, onMounted, ref, useId, watch, type ComponentPublicInstance } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRoute, useRouter } from 'vue-router'
 import { usePublicSearch } from '@/composables/usePublicSearch'
@@ -78,11 +78,20 @@ function widen() {
 // première carte ajoutée pour que le clavier continue de là (le bouton, lui,
 // disparaît quand tout est affiché).
 const list = ref<HTMLElement | null>(null)
+const moreButton = ref<ComponentPublicInstance | null>(null)
 
 async function loadMore() {
   const before = search.results.value.length
   const added = await search.more()
-  if (added === 0) return
+  if (added === 0) {
+    // Le bouton était désactivé pendant le chargement et a perdu le focus : en
+    // cas d'échec, le clavier y revient pour réessayer.
+    if (search.moreError.value) {
+      await nextTick()
+      ;(moreButton.value?.$el as HTMLElement | undefined)?.focus()
+    }
+    return
+  }
   await say(t('search.more.loaded', { count: added }, added))
   ;(list.value?.children[before] as HTMLElement | undefined)?.focus()
 }
@@ -144,11 +153,26 @@ watch(() => search.status.value, (status) => {
               </li>
             </ul>
             <div v-if="search.remaining.value > 0" class="mt-6 grid gap-3">
-              <UiButton variant="ghost" :aria-busy="search.loadingMore.value ? 'true' : 'false'" class="w-full sm:w-auto sm:justify-self-start" @click="loadMore">
-                {{ t('search.more.button', { n: search.remaining.value }, search.remaining.value) }}
+              <!-- Les deux libellés occupent la même cellule : le bouton garde la
+                   largeur du plus long, sans saut quand « Chargement… » prend la place. -->
+              <UiButton
+                ref="moreButton"
+                variant="ghost"
+                :disabled="search.loadingMore.value"
+                :aria-busy="search.loadingMore.value ? 'true' : 'false'"
+                class="w-full whitespace-nowrap disabled:cursor-wait disabled:opacity-70 disabled:active:scale-100 sm:w-auto sm:justify-self-start"
+                @click="loadMore"
+              >
+                <span class="grid justify-items-center">
+                  <span class="col-start-1 row-start-1" :class="{ invisible: search.loadingMore.value }">{{ t('search.more.button', { n: search.remaining.value }, search.remaining.value) }}</span>
+                  <span class="col-start-1 row-start-1" :class="{ invisible: !search.loadingMore.value }">{{ t('search.more.loading') }}</span>
+                </span>
               </UiButton>
               <p v-if="search.moreError.value" role="alert" class="text-sm font-semibold text-accent-text">{{ t('search.more.error') }}</p>
             </div>
+            <!-- Seules les cinq premières pages sont atteignables : le titre garde
+                 le vrai total, cette ligne explique pourquoi la liste s'arrête. -->
+            <p v-else-if="search.capped.value" class="mt-6 text-ink-muted">{{ t('search.more.refine') }}</p>
           </template>
         </div>
         <aside class="rounded-card border border-line bg-surface p-6">

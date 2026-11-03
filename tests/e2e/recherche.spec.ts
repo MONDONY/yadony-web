@@ -508,9 +508,15 @@ for (const [label, path, search] of [
         const wrapped = await page.evaluate(() =>
           [...document.querySelectorAll('main button, main a.rounded-btn, #recherche a')]
             .filter((el) => {
-              const range = document.createRange()
-              range.selectNodeContents(el)
-              const tops = new Set([...range.getClientRects()].filter(r => r.width > 0).map(r => Math.round(r.top / 4)))
+              // Le libellé caché du bouton occupé (`invisible`) ne compte pas.
+              const tops = new Set<number>()
+              const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT)
+              for (let node = walker.nextNode(); node; node = walker.nextNode()) {
+                if (getComputedStyle(node.parentElement!).visibility === 'hidden') continue
+                const range = document.createRange()
+                range.selectNodeContents(node)
+                for (const rect of range.getClientRects()) if (rect.width > 0) tops.add(Math.round(rect.top / 4))
+              }
               return tops.size > 1
             })
             .map(el => el.textContent?.trim()),

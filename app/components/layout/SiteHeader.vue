@@ -97,9 +97,18 @@ const links = computed(() => [
         </nav>
 
         <div class="flex items-center gap-3">
-          <LanguageSwitcher :href="switchHref" :target-locale="targetLocale" :label="switchLabel" />
-          <UiButton :to="`${localePath('/')}#telecharger`" variant="accent" class="hidden sm:inline-flex">
-            {{ t('nav.download') }}
+          <!-- Sur téléphone, le bouton de téléchargement prend la place du sélecteur
+               de langue (repris dans le menu) : c'est l'une des premières choses
+               visibles, à toute largeur. -->
+          <LanguageSwitcher
+            :href="switchHref"
+            :target-locale="targetLocale"
+            :label="switchLabel"
+            class="hidden sm:inline-flex"
+          />
+          <UiButton :to="`${localePath('/')}#telecharger`" variant="accent" class="whitespace-nowrap !px-4 sm:!px-5">
+            <span class="sm:hidden">{{ t('nav.downloadShort') }}</span>
+            <span class="hidden sm:inline">{{ t('nav.download') }}</span>
           </UiButton>
           <button
             ref="menuButton"
@@ -137,6 +146,11 @@ const links = computed(() => [
               active-class="bg-primary-soft !text-primary"
               @click="close()"
             >{{ link.label }}</NuxtLink>
+            <a
+              :href="switchHref"
+              :hreflang="targetLocale"
+              class="flex min-h-11 items-center rounded-el px-3 font-medium text-ink transition-colors duration-micro ease-dony hover:bg-sand sm:hidden"
+            >{{ switchLabel }}</a>
           </nav>
         </div>
       </div>

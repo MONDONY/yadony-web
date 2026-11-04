@@ -17,7 +17,7 @@ const card: PublicAnnouncementCard = {
   traveler: { displayName: 'Awa', identityVerified: true },
 }
 
-function mountHandoff(open: boolean, locale: 'fr' | 'en' = 'fr', realStores = false) {
+function mountHandoff(open: boolean, locale: 'fr' | 'en' = 'fr') {
   const i18n = createI18n({ legacy: false, locale, messages: { fr, en } })
   return mount(AppHandoff, {
     props: { card, open },
@@ -25,7 +25,6 @@ function mountHandoff(open: boolean, locale: 'fr' | 'en' = 'fr', realStores = fa
     global: {
       plugins: [i18n],
       components: { StoreBadges, UiButton },
-      stubs: realStores ? { StoreBadges: false } : {},
     },
   })
 }
@@ -109,26 +108,5 @@ describe('AppHandoff', () => {
     const wrapper = mountHandoff(true, 'en')
     expect(wrapper.text()).toContain(en.search.handoff.title)
     expect(wrapper.findAll('ol > li > span:last-child').map((li) => li.text())).toEqual(en.search.handoff.steps)
-  })
-
-  it('Échap dans la fenêtre « bientôt disponible » ne ferme que celle-ci', async () => {
-    const wrapper = mountHandoff(true, 'fr', true)
-    const outer = wrapper.find('dialog').element as HTMLDialogElement
-    const inner = wrapper.findAll('dialog')[1]!
-    expect(inner.element).not.toBe(outer)
-
-    await wrapper.findAll('button').find((b) => b.text() === fr.home.hero.appStore)!.trigger('click')
-    expect(inner.attributes('open')).toBeDefined()
-
-    pressEscape(inner.element as HTMLDialogElement)
-    await wrapper.vm.$nextTick()
-    expect(inner.attributes('open')).toBeUndefined()
-    expect(outer.hasAttribute('open')).toBe(true)
-    expect(wrapper.emitted('close')).toBeUndefined()
-
-    pressEscape(outer)
-    await wrapper.vm.$nextTick()
-    expect(outer.hasAttribute('open')).toBe(false)
-    expect(wrapper.emitted('close')).toHaveLength(1)
   })
 })

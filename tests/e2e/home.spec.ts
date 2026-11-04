@@ -332,7 +332,9 @@ test.describe('sections de l’accueil', () => {
 
   test('les badges des stores restent le seul moyen de télécharger l’app', async ({ page }) => {
     await page.goto('/')
-    await expect(page.locator('main a[href*="apps.apple.com"], main a[href*="play.google.com"]')).toHaveCount(0)
+    const liens = page.locator('main a[href*="apps.apple.com"], main a[href*="play.google.com"]')
+    expect(await liens.count()).toBeGreaterThan(0)
+    expect(await liens.evaluateAll(list => list.every(a => a.closest('[data-store-badges]') !== null))).toBe(true)
     await expect(page.locator('main a[href*="/ouvrir"], main a[href*="/open"]')).toHaveCount(0)
     await expect(page.locator('main canvas, main img[alt*="QR" i]')).toHaveCount(0)
   })

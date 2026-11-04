@@ -1,10 +1,8 @@
 import { describe, it, expect } from 'vitest'
 import {
-  appStoreLive,
   appStoreUrl,
   betaTesting,
   betaWhatsAppGroupUrl,
-  playStoreLive,
   playStoreUrl,
   siteUrl,
 } from '@/lib/site'
@@ -28,15 +26,6 @@ describe('constantes du site', () => {
 
   it('affiche le bandeau tant que la bêta dure', () => {
     expect(betaTesting).toBe(true)
-  })
-
-  /**
-   * Sortie commune : la fiche Google Play est masquée jusqu'à la validation
-   * de l'app iOS par Apple, les deux boutons ouvrent la fenêtre « bientôt ».
-   */
-  it('garde les deux stores en attente jusqu’à la sortie commune', () => {
-    expect(playStoreLive).toBe(false)
-    expect(appStoreLive).toBe(false)
   })
 
   it('pointe vers les vraies fiches des stores', () => {

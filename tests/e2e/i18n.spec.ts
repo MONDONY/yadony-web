@@ -4,16 +4,29 @@ import { test, expect, type Page, type Locator } from './fixtures'
 // IETF `en-GB`, cohérente avec `ogLocale: 'en_GB'` déjà vérifié par
 // tests/unit/lib/seo.spec.ts. C'est un choix délibéré (anglais britannique,
 // pas un code générique) : `<html lang>` doit donc valoir "en-GB", pas "en".
+// Sur téléphone, le sélecteur de langue quitte l'en-tête pour le menu : on
+// ouvre le menu (clic perdu avant l'hydratation : on reclique au besoin).
+async function switchToEnglish(page: Page) {
+  const lien = page.getByRole('link', { name: /English/i })
+  if (await lien.first().isVisible()) return lien.first().click()
+  const menu = page.locator('header').first().getByRole('button', { name: 'Menu' })
+  await expect(async () => {
+    await menu.click()
+    await expect(lien.first()).toBeVisible({ timeout: 1000 })
+  }).toPass({ timeout: 10000 })
+  await lien.first().click()
+}
+
 test('le sélecteur de langue conserve la page équivalente', async ({ page }) => {
   await page.goto('/tarifs')
-  await page.getByRole('link', { name: /English/i }).click()
+  await switchToEnglish(page)
   await expect(page).toHaveURL('/en/pricing')
   await expect(page.locator('html')).toHaveAttribute('lang', 'en-GB')
 })
 
 test('le sélecteur de langue conserve la page équivalente pour comment-ca-marche', async ({ page }) => {
   await page.goto('/comment-ca-marche')
-  await page.getByRole('link', { name: /English/i }).click()
+  await switchToEnglish(page)
   await expect(page).toHaveURL('/en/how-it-works')
   await expect(page.locator('html')).toHaveAttribute('lang', 'en-GB')
 })

@@ -1,79 +1,46 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { appStoreLive, appStoreUrl, playStoreLive, playStoreUrl } from '@/lib/site'
+import { appStoreUrl, playStoreUrl } from '@/lib/site'
 
-const props = withDefaults(
-  defineProps<{ size?: 'md' | 'lg'; tone?: 'light' | 'dark' }>(),
-  { size: 'md', tone: 'light' },
-)
-const { t } = useI18n()
+withDefaults(defineProps<{ size?: 'md' | 'lg' }>(), { size: 'md' })
+const { t, locale } = useI18n()
 
-// Sur fond sombre, le bouton principal passe en terracotta et le secondaire en
-// contour clair ; sur fond clair, on garde les variantes d'origine.
-const primaryVariant = props.tone === 'dark' ? 'accent' : 'primary'
-const secondaryVariant = props.tone === 'dark' ? 'ghost-dark' : 'ghost'
-
-// Chaque bouton suit le drapeau de son store : fiche publiée, vrai lien
-// (nouvel onglet, rel="noopener noreferrer", géré par UiButton) ; fiche pas
-// encore publiée, le bouton ouvre une fenêtre « bientôt disponible » au lieu
-// d'un lien mort. Si seul l'App Store est en attente, la fenêtre en parle et
-// renvoie vers Google Play ; si Google Play l'est aussi, elle annonce la
-// sortie sur les deux stores.
-// <dialog> natif : focus piégé, Échap et clic sur l'arrière-plan gérés.
-const dialog = ref<HTMLDialogElement | null>(null)
-const copy = computed(() => (playStoreLive ? 'stores.comingSoon' : 'stores.comingSoonAll'))
-
-function openComingSoon() {
-  dialog.value?.showModal()
-}
-
-function close() {
-  dialog.value?.close()
-}
-
-function onBackdropClick(event: MouseEvent) {
-  if (event.target === dialog.value) close()
-}
+// Badges officiels d'Apple (SVG) et de Google (PNG, marges transparentes
+// rognées), dans la langue de la page. Ils ne sont ni recolorés ni
+// redessinés : les chartes des deux stores l'interdisent. Même hauteur pour
+// les deux, au moins 44 px de cible tactile.
+const lang = () => (locale.value === 'fr' ? 'fr' : 'en')
 </script>
 
 <template>
-  <div class="flex flex-wrap gap-3">
-    <UiButton v-if="appStoreLive" :href="appStoreUrl" :variant="primaryVariant" :size="size">
-      {{ t('home.hero.appStore') }}
-    </UiButton>
-    <UiButton v-else :variant="primaryVariant" :size="size" @click="openComingSoon">
-      {{ t('home.hero.appStore') }}
-    </UiButton>
-    <UiButton v-if="playStoreLive" :href="playStoreUrl" :variant="secondaryVariant" :size="size">
-      {{ t('home.hero.playStore') }}
-    </UiButton>
-    <UiButton v-else :variant="secondaryVariant" :size="size" @click="openComingSoon">
-      {{ t('home.hero.playStore') }}
-    </UiButton>
-
-    <dialog
-      v-if="!appStoreLive || !playStoreLive"
-      ref="dialog"
-      :aria-label="t(`${copy}.title`)"
-      class="m-auto w-[min(92vw,26rem)] rounded-card bg-navy-deep p-0 text-white shadow-[0_2px_4px_rgb(10_20_48/0.3),0_24px_64px_-16px_rgb(10_20_48/0.6)] backdrop:bg-navy-deep/60 backdrop:backdrop-blur-sm"
-      @click="onBackdropClick"
+  <div data-store-badges class="flex flex-wrap items-center gap-3">
+    <a
+      :href="appStoreUrl"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex rounded-[10px] transition-transform duration-micro ease-dony focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary active:scale-[0.96]"
     >
-      <div class="p-8 text-center">
-        <p class="font-display text-sm font-bold uppercase tracking-[0.18em] text-accent">
-          {{ t(`${copy}.kicker`) }}
-        </p>
-        <p class="mt-3 font-display text-2xl font-bold">{{ t(`${copy}.title`) }}</p>
-        <p class="mt-3 text-sm text-white/75">{{ t(`${copy}.text`) }}</p>
-        <div class="mt-6 flex flex-wrap justify-center gap-3">
-          <UiButton v-if="playStoreLive" :href="playStoreUrl" variant="accent">
-            {{ t('stores.comingSoon.playStore') }}
-          </UiButton>
-          <UiButton variant="ghost-dark" @click="close">
-            {{ t(`${copy}.close`) }}
-          </UiButton>
-        </div>
-      </div>
-    </dialog>
+      <img
+        :src="`/img/stores/app-store-${lang()}.svg`"
+        :alt="t('home.hero.appStore')"
+        width="127"
+        height="40"
+        :class="size === 'lg' ? 'h-14 w-auto' : 'h-12 w-auto'"
+      >
+    </a>
+    <a
+      :href="playStoreUrl"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex rounded-[10px] transition-transform duration-micro ease-dony focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary active:scale-[0.96]"
+    >
+      <img
+        :src="`/img/stores/google-play-${lang()}.png`"
+        :alt="t('home.hero.playStore')"
+        :width="lang() === 'fr' ? 646 : 564"
+        :height="lang() === 'fr' ? 192 : 168"
+        :class="size === 'lg' ? 'h-14 w-auto' : 'h-12 w-auto'"
+      >
+    </a>
   </div>
 </template>

@@ -461,10 +461,8 @@ test('les états vide, erreur et 429 gardent un appel vers l’app', async ({ pa
       await page.goto(SEARCH)
       await expect(page.locator(`#recherche [data-state="${state}"]`)).toBeVisible()
       const badges = page.locator('#recherche aside')
-      await expect(badges.getByRole('button', { name: /App Store/ })).toBeVisible()
-      await badges.getByRole('button', { name: /App Store/ }).click()
-      await expect(page.getByRole('dialog').filter({ visible: true })).toBeVisible()
-      await page.keyboard.press('Escape')
+      await expect(badges.getByRole('link', { name: /App Store/ })).toHaveAttribute('href', /apps\.apple\.com/)
+      await expect(badges.getByRole('link', { name: /Google Play/ })).toHaveAttribute('href', /play\.google\.com/)
     }
   })
 

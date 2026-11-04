@@ -1,5 +1,5 @@
 import { test, expect } from './fixtures'
-import { appStoreLive, playStoreLive, playStoreUrl } from '../../app/lib/site'
+import { appStoreUrl, playStoreUrl } from '../../app/lib/site'
 
 const PAGES = [
   '/', '/comment-ca-marche', '/tarifs', '/securite',
@@ -35,45 +35,70 @@ test('la navigation du header mène aux bonnes pages', async ({ page, isMobile }
   await expect(page).toHaveURL('/tarifs')
 })
 
-test('chaque bouton de store suit la disponibilité de sa fiche', async ({ page }) => {
-  await page.goto('/')
-  if (playStoreLive) {
-    // Fiche Google Play publiée : un vrai lien, ouvert dans un nouvel onglet.
-    const playStore = page.getByRole('link', { name: /Google Play/i }).first()
-    await expect(playStore).toHaveAttribute('href', playStoreUrl)
-    await expect(playStore).toHaveAttribute('target', '_blank')
-  } else {
-    // Fiche Google Play masquée : aucun lien vers elle.
-    await expect(page.getByRole('link', { name: /Google Play/i })).toHaveCount(0)
-  }
-  if (appStoreLive) {
-    const appStore = page.getByRole('link', { name: /App Store/i }).first()
-    await expect(appStore).toHaveAttribute('href', /apps\.apple\.com/)
-  } else {
-    // Fiche App Store pas encore publiée : aucun lien mort, le clic ouvre la
-    // fenêtre « bientôt disponible », refermable au clavier (Échap).
-    await expect(page.getByRole('link', { name: /App Store/i })).toHaveCount(0)
-    // Un clic reçu avant l'hydratation de Vue est perdu (le HTML statique
-    // n'a pas encore d'écouteur) : le test échouait par intermittence sur une
-    // machine chargée. On reclique jusqu'à ce que la fenêtre s'ouvre.
-    const dialog = page.locator('dialog[open]').first()
-    await expect(async () => {
-      await page.getByRole('button', { name: /App Store/i }).first().click()
-      await expect(dialog).toBeVisible({ timeout: 1000 })
-    }).toPass({ timeout: 10000 })
-    if (playStoreLive) {
-      // Seul l'App Store est en attente : la fenêtre renvoie vers Google Play.
-      await expect(dialog).toContainText(/Bientôt sur l'App Store/i)
-      await expect(dialog.getByRole('link', { name: /Google Play/i })).toHaveAttribute('href', playStoreUrl)
-    } else {
-      // Sortie commune : la fenêtre annonce les deux stores, sans lien.
-      await expect(dialog).toContainText(/Bientôt disponible/i)
-      await expect(dialog).toContainText(/App Store et Google Play/i)
-      await expect(dialog.getByRole('link')).toHaveCount(0)
+// Les deux fiches sont publiées : chaque badge est un vrai lien, ouvert dans un
+// nouvel onglet, avec le badge officiel dans la langue de la page.
+for (const [path, lang] of [['/', 'fr'], ['/en', 'en']] as const) {
+  test(`les badges des stores de ${path} mènent aux fiches, avec les badges officiels`, async ({ page }) => {
+    await page.goto(path)
+    const apple = page.locator(`a[href="${appStoreUrl}"]`).first()
+    const google = page.locator(`a[href="${playStoreUrl}"]`).first()
+    for (const link of [apple, google]) {
+      await expect(link).toHaveAttribute('target', '_blank')
+      await expect(link).toHaveAttribute('rel', 'noopener noreferrer')
     }
-    await page.keyboard.press('Escape')
-    await expect(page.locator('dialog[open]')).toHaveCount(0)
-  }
+    await expect(apple.locator('img')).toHaveAttribute('src', `/img/stores/app-store-${lang}.svg`)
+    await expect(google.locator('img')).toHaveAttribute('src', `/img/stores/google-play-${lang}.png`)
+    for (const img of [apple.locator('img'), google.locator('img')]) {
+      await img.scrollIntoViewIfNeeded()
+      expect(await img.evaluate((el: HTMLImageElement) => el.naturalWidth)).toBeGreaterThan(0)
+      expect((await img.boundingBox())!.height).toBeGreaterThanOrEqual(44)
+    }
+  })
+}
+
+// Sur téléphone, le bouton de téléchargement est visible dès le premier écran
+// de chaque page principale, sans ouvrir le menu ni faire défiler.
+for (const [label, path] of [
+  ['accueil', '/'],
+  ['envoyer un colis', '/envoyer-colis'],
+  ['devenir voyageur', '/devenir-voyageur'],
+  ['comment ça marche', '/comment-ca-marche'],
+  ['tarifs', '/tarifs'],
+  ['accueil anglais', '/en'],
+] as const) {
+  test(`téléphone 360 px : le bouton Télécharger est visible en haut (${label})`, async ({ page }) => {
+    await page.setViewportSize({ width: 360, height: 700 })
+    await page.goto(path)
+    const header = page.locator('header').first()
+    const bouton = header.getByRole('link', { name: /^(Télécharger|Download)$/ })
+    await expect(bouton).toBeVisible()
+    const box = (await bouton.boundingBox())!
+    expect(box.y).toBeGreaterThanOrEqual(0)
+    expect(box.y + box.height).toBeLessThanOrEqual(700)
+    expect(box.height).toBeGreaterThanOrEqual(44)
+    expect(box.x + box.width).toBeLessThanOrEqual(360)
+    // Libellé sur une seule ligne, en-tête sans défilement horizontal.
+    expect(await bouton.evaluate((el) => {
+      const range = document.createRange()
+      range.selectNodeContents(el)
+      return new Set([...range.getClientRects()].filter(r => r.width > 0).map(r => Math.round(r.top / 4))).size
+    })).toBe(1)
+    // L'en-tête lui-même ne déborde pas (la page /tarifs a un bloc animé qui
+    // dépasse un instant : hors sujet ici).
+    expect(await header.evaluate(el => el.scrollWidth - el.clientWidth)).toBeLessThanOrEqual(0)
+  })
+}
+
+test('téléphone : le sélecteur de langue passe dans le menu', async ({ page }) => {
+  await page.setViewportSize({ width: 360, height: 700 })
+  await page.goto('/')
+  const header = page.locator('header').first()
+  await expect(header.locator('a[hreflang="en"]').locator('visible=true')).toHaveCount(0)
+  await expect(async () => {
+    await header.getByRole('button', { name: 'Menu' }).click()
+    await expect(header.locator('#menu-mobile a[hreflang="en"]')).toBeVisible({ timeout: 1000 })
+  }).toPass({ timeout: 10000 })
+  await expect(header.locator('#menu-mobile a[hreflang="en"]')).toHaveAttribute('href', /\/en\/?$/)
 })
 
 // Le concours a quitté la barre de navigation (place laissée aux trois

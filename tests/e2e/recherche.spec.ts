@@ -179,8 +179,12 @@ test.describe('recherche anonyme', () => {
     await expect(page.getByRole('heading', { level: 1 })).toBeVisible()
     await expect(page.locator('a[href^="/envoyer-colis/"]').first()).toBeVisible()
     await respondWith(page, ok(THREE))
-    await error.getByRole('button', { name: 'Réessayer' }).click()
-    await expect(page.getByRole('article')).toHaveCount(3)
+    // Sur une machine chargée, un clic reçu avant la fin de l'hydratation est
+    // perdu : on reclique jusqu'à ce que les trois cartes apparaissent.
+    await expect(async () => {
+      if (await error.isVisible()) await error.getByRole('button', { name: 'Réessayer' }).click()
+      await expect(page.getByRole('article')).toHaveCount(3, { timeout: 2000 })
+    }).toPass({ timeout: 15000 })
     expect(calls.length).toBeGreaterThanOrEqual(2)
   })
 

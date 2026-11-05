@@ -70,11 +70,10 @@ function onBackdropClick(event: MouseEvent) {
   if (event.target === dialog.value) emit('close')
 }
 
-// La fenêtre « bientôt disponible » de StoreBadges est un <dialog> imbriqué :
-// son Échap remonte jusqu'ici. On ne le traite (et on ne l'annule) que s'il
-// vient du lecteur lui-même ; sinon le navigateur ferme la petite fenêtre seule.
+// Échap ferme le lecteur, y compris quand le focus est sur un de ses boutons ou
+// sur la vidéo (le <dialog> natif l'annule déjà : ce relais couvre les cas où
+// le navigateur ne le fait pas).
 function onEscape(event: KeyboardEvent) {
-  if ((event.target as Element | null)?.closest('dialog') !== dialog.value) return
   event.preventDefault()
   emit('close')
 }
@@ -143,7 +142,7 @@ function onNativeClose() {
         >
           {{ t('tutorials.seeNext') }}
         </button>
-        <StoreBadges tone="dark" />
+        <StoreBadges />
       </div>
     </div>
   </dialog>

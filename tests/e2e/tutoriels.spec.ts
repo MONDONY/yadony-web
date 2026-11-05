@@ -87,19 +87,15 @@ test('à la dernière vidéo du filtre, « Vidéo suivante » disparaît et le f
   await expect(last.getByRole('button', { name: 'Fermer' })).toBeFocused()
 })
 
-test('le lecteur propose les boutons des stores ; Échap ferme « bientôt disponible » sans fermer le lecteur', async ({ page }) => {
+test('le lecteur propose les liens des stores ; Échap ferme le lecteur', async ({ page }) => {
   await ouvrirPage(page, '/tutoriels')
   await expect(page.locator('a[href*="ouvrir"]')).toHaveCount(0)
   await page.locator('[data-tutorial="search"]').click()
   const player = page.getByRole('dialog', { name: 'Rechercher un voyageur' })
   await expect(player).toBeVisible()
   await expect(player.locator('a[href*="ouvrir"]')).toHaveCount(0)
-  await player.getByRole('button', { name: 'App Store' }).click()
-  const soon = page.getByRole('dialog', { name: 'Bientôt disponible' })
-  await expect(soon).toBeVisible()
-  await page.keyboard.press('Escape')
-  await expect(soon).toBeHidden()
-  await expect(player).toBeVisible()
+  await expect(player.getByRole('link', { name: /App Store/ })).toHaveAttribute('href', /apps\.apple\.com/)
+  await expect(player.getByRole('link', { name: /Google Play/ })).toHaveAttribute('href', /play\.google\.com/)
   await page.keyboard.press('Escape')
   await expect(player).toBeHidden()
 })

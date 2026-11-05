@@ -1,5 +1,5 @@
 Politique de confidentialité
-Dernière mise à jour : 18 octobre 2026. Yadony est une place de marché mobile qui met en relation des voyageurs disposant de place dans leurs bagages avec des expéditeurs souhaitant envoyer des colis à leurs proches. Notre service couvre les corridors depuis l'Europe, les États-Unis, le Canada et l'Afrique vers toutes les destinations que nous desservons. Nous avons conçu Yadony avec un principe fondamental : nous ne conservons que le strict minimum de données personnelles en interne. Les données sensibles (identité, authentification, documents officiels) sont confiées à des partenaires spécialisés de confiance, reconnus mondialement, qui les traitent avec un niveau de sécurité et de conformité que nous ne pourrions pas atteindre seuls. En utilisant Yadony, vous acceptez les pratiques décrites dans ce document.
+Dernière mise à jour : 3 novembre 2026. Yadony est une place de marché mobile qui met en relation des voyageurs disposant de place dans leurs bagages avec des expéditeurs souhaitant envoyer des colis à leurs proches. Notre service couvre les corridors depuis l'Europe, les États-Unis, le Canada et l'Afrique vers toutes les destinations que nous desservons. Nous avons conçu Yadony avec un principe fondamental : nous ne conservons que le strict minimum de données personnelles en interne. Les données sensibles (identité, authentification, documents officiels) sont confiées à des partenaires spécialisés de confiance, reconnus mondialement, qui les traitent avec un niveau de sécurité et de conformité que nous ne pourrions pas atteindre seuls. En utilisant Yadony, vous acceptez les pratiques décrites dans ce document.
 1. Qui est responsable de vos données ?
 Responsable du traitement : YADONY SAS, société par actions simplifiée immatriculée au RCS de Créteil, SIREN 108 733 510.
 Délégué à la Protection des Données (DPO) : dpo@yadony.com. Contact général : contact@yadony.com.
@@ -210,3 +210,22 @@ Raison sociale : YADONY SAS, SIREN 108 733 510
 Directeur de la publication : M. Dramane DIAKITE, Président
 Partenaires techniques : Google Firebase, Stripe, Didit, pawaPay (Mobile Money : Wave, Orange Money et autres opérateurs), Cloudflare, PostHog, Sentry, Twilio, Resend, Stream, Google Maps, Anthropic (assistant IA)
 Autorité de contrôle française : CNIL (www.cnil.fr)
+18. Affichage public des trajets
+Les trajets que les voyageurs publient sur Yadony sont affichés sur yadony.com, dans une recherche des trajets à venir. Tout visiteur du site peut les consulter sans créer de compte.
+Ce qui est affiché
+Le trajet : la ville de départ et la ville d'arrivée
+La date de départ
+Le mode de transport
+La capacité disponible
+Le prix au kilo payé par l'expéditeur
+La mention « Urgent », lorsque le voyageur l'a choisie
+Le prénom du voyageur et l'initiale de son nom
+La note du voyageur
+Le nombre de trajets du voyageur
+Le badge d'identité vérifiée
+Ce qui n'est jamais affiché
+Le numéro de téléphone
+L'adresse e-mail
+La photo
+Retrait d'un trajet
+Un voyageur qui ne souhaite pas que ses trajets soient affichés ainsi peut en demander le retrait en écrivant à contact@yadony.com. Nous traitons la demande dans un délai raisonnable.

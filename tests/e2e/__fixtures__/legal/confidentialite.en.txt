@@ -1,5 +1,5 @@
 Privacy policy
-Last updated: October 18, 2026. Yadony is a mobile marketplace connecting travellers with spare luggage space to senders wishing to send parcels to their relatives. Our service covers corridors from Europe, the United States, Canada and Africa to all the destinations we serve. We designed Yadony around one core principle: we keep only the strict minimum of personal data internally. Sensitive data (identity, authentication, official documents) is entrusted to trusted, globally recognised specialised partners who process it with a level of security and compliance we could not reach alone. By using Yadony, you accept the practices described in this document. This English version is provided for convenience; the French version prevails.
+Last updated: November 3, 2026. Yadony is a mobile marketplace connecting travellers with spare luggage space to senders wishing to send parcels to their relatives. Our service covers corridors from Europe, the United States, Canada and Africa to all the destinations we serve. We designed Yadony around one core principle: we keep only the strict minimum of personal data internally. Sensitive data (identity, authentication, official documents) is entrusted to trusted, globally recognised specialised partners who process it with a level of security and compliance we could not reach alone. By using Yadony, you accept the practices described in this document. This English version is provided for convenience; the French version prevails.
 1. Who is responsible for your data?
 Data controller: YADONY SAS, a simplified joint-stock company registered in France under SIREN number 108 733 510.
 Data Protection Officer (DPO): dpo@yadony.com. General contact: contact@yadony.com.
@@ -210,3 +210,22 @@ Company name: YADONY SAS, SIREN 108 733 510
 Publication director: Mr Dramane DIAKITE, President
 Technical partners: Google Firebase, Stripe, Didit, pawaPay (Mobile Money: Wave, Orange Money and other operators), Cloudflare, PostHog, Sentry, Twilio, Resend, Stream, Google Maps, Anthropic (AI assistant)
 French supervisory authority: CNIL (www.cnil.fr)
+18. Public display of trips
+The trips that travelers publish on Yadony are displayed on yadony.com, in a search of upcoming trips. Any visitor to the site can view them without creating an account.
+What is displayed
+The route: the departure city and the arrival city
+The departure date
+The mode of transport
+The available capacity
+The price per kilo paid by the sender
+The "Urgent" label, when the traveler has chosen it
+The traveler's first name and the initial of their last name
+The traveler's rating
+The traveler's number of trips
+The verified identity badge
+What is never displayed
+The phone number
+The e-mail address
+The photo
+Removing a trip
+A traveler who does not want their trips displayed in this way can ask for their removal by writing to contact@yadony.com. We handle the request within a reasonable time.

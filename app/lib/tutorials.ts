@@ -35,7 +35,6 @@ export const tutorials: Tutorial[] = [
   { id: 'profile', audience: 'sender', durationSeconds: { fr: 31, en: 35 } },
   { id: 'gppro', audience: 'sender', durationSeconds: { fr: 24, en: 31 } },
   { id: 'security', audience: 'sender', durationSeconds: { fr: 41, en: 43 } },
-  { id: 'disputes', audience: 'sender', durationSeconds: { fr: 27, en: 35 } },
   { id: 'flights', audience: 'traveler', durationSeconds: { fr: 35, en: 34 } },
 ]
 

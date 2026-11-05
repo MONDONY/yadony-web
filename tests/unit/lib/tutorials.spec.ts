@@ -34,7 +34,6 @@ describe('tutorials', () => {
       ['profile', 'sender'],
       ['gppro', 'sender'],
       ['security', 'sender'],
-      ['disputes', 'sender'],
       ['flights', 'traveler'],
     ])
   })
@@ -66,7 +65,6 @@ describe('tutorials', () => {
       profile: { fr: 31, en: 35 },
       gppro: { fr: 24, en: 31 },
       security: { fr: 41, en: 43 },
-      disputes: { fr: 27, en: 35 },
       flights: { fr: 35, en: 34 },
     })
   })

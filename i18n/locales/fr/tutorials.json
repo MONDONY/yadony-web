@@ -14,30 +14,98 @@
       "traveler": "Voyageur"
     },
     "items": {
-      "search": { "title": "Rechercher un voyageur", "path": "Rechercher › Tous les trajets" },
-      "nearby": { "title": "Voyageurs près de moi", "path": "Rechercher › Carte › Près de moi" },
-      "alerts": { "title": "Alertes de trajet", "path": "Activités › ☰ › Mes alertes" },
-      "saved": { "title": "Favoris", "path": "Fiche d'un trajet › signet" },
-      "templates": { "title": "Modèles de trajet", "path": "Activités › ☰ › Modèles de trajet" },
-      "recurring": { "title": "Trajet récurrent", "path": "Modèles de trajet › ⋮ › Programmer la récurrence" },
-      "ai": { "title": "Créer avec l'IA", "path": "+ › Envoyer un colis › Créer avec l'IA" },
-      "itemprices": { "title": "Prix par article", "path": "Activités › ☰ › Mes prix par article" },
-      "poster": { "title": "Mon affiche", "path": "Activités › Mes colis › Publiés › Partager" },
-      "request": { "title": "Publier une demande d'envoi", "path": "+ › Envoyer un colis" },
-      "recipients": { "title": "Mes destinataires", "path": "Activités › ☰ › Mes destinataires" },
-      "receiving": { "title": "Mes réceptions", "path": "Suivi › Suivre un colis › Réceptions" },
-      "track": { "title": "Suivre un colis", "path": "Suivi › Suivre un colis" },
-      "messages": { "title": "Messagerie", "path": "Messages › une conversation" },
-      "call": { "title": "Appel Yadony", "path": "Messages › conversation › Appeler" },
-      "assistant": { "title": "L'assistant", "path": "Bouton bleu étoilé, sur chaque écran" },
-      "money": { "title": "Mon argent", "path": "Activités › Mon argent" },
-      "payments": { "title": "Moyens de paiement", "path": "Activités › ☰ › Portefeuille" },
-      "invite": { "title": "Parrainage", "path": "Moi › Mes avantages › Parrainages" },
-      "profile": { "title": "Profil et avis", "path": "Moi › Ma réputation" },
-      "gppro": { "title": "GP Pro", "path": "Profil d'un voyageur" },
-      "security": { "title": "Sécurité du compte", "path": "Activités › ☰ › Paramètres" },
-      "disputes": { "title": "Litiges", "path": "Moi › Mes litiges" },
-      "flights": { "title": "Billets d'avion", "path": "Activités › Billets d'avion › Tout voir" }
+      "search": {
+        "title": "Rechercher un voyageur",
+        "path": "Rechercher › Tous les trajets"
+      },
+      "nearby": {
+        "title": "Voyageurs près de moi",
+        "path": "Rechercher › Carte › Près de moi"
+      },
+      "alerts": {
+        "title": "Alertes de trajet",
+        "path": "Activités › ☰ › Mes alertes"
+      },
+      "saved": {
+        "title": "Favoris",
+        "path": "Fiche d'un trajet › signet"
+      },
+      "templates": {
+        "title": "Modèles de trajet",
+        "path": "Activités › ☰ › Modèles de trajet"
+      },
+      "recurring": {
+        "title": "Trajet récurrent",
+        "path": "Modèles de trajet › ⋮ › Programmer la récurrence"
+      },
+      "ai": {
+        "title": "Créer avec l'IA",
+        "path": "+ › Envoyer un colis › Créer avec l'IA"
+      },
+      "itemprices": {
+        "title": "Prix par article",
+        "path": "Activités › ☰ › Mes prix par article"
+      },
+      "poster": {
+        "title": "Mon affiche",
+        "path": "Activités › Mes colis › Publiés › Partager"
+      },
+      "request": {
+        "title": "Publier une demande d'envoi",
+        "path": "+ › Envoyer un colis"
+      },
+      "recipients": {
+        "title": "Mes destinataires",
+        "path": "Activités › ☰ › Mes destinataires"
+      },
+      "receiving": {
+        "title": "Mes réceptions",
+        "path": "Suivi › Suivre un colis › Réceptions"
+      },
+      "track": {
+        "title": "Suivre un colis",
+        "path": "Suivi › Suivre un colis"
+      },
+      "messages": {
+        "title": "Messagerie",
+        "path": "Messages › une conversation"
+      },
+      "call": {
+        "title": "Appel Yadony",
+        "path": "Messages › conversation › Appeler"
+      },
+      "assistant": {
+        "title": "L'assistant",
+        "path": "Bouton bleu étoilé, sur chaque écran"
+      },
+      "money": {
+        "title": "Mon argent",
+        "path": "Activités › Mon argent"
+      },
+      "payments": {
+        "title": "Moyens de paiement",
+        "path": "Activités › ☰ › Portefeuille"
+      },
+      "invite": {
+        "title": "Parrainage",
+        "path": "Moi › Mes avantages › Parrainages"
+      },
+      "profile": {
+        "title": "Profil et avis",
+        "path": "Moi › Ma réputation"
+      },
+      "gppro": {
+        "title": "GP Pro",
+        "path": "Profil d'un voyageur"
+      },
+      "security": {
+        "title": "Sécurité du compte",
+        "path": "Activités › ☰ › Paramètres"
+      },
+      "flights": {
+        "title": "Billets d'avion",
+        "path": "Activités › Billets d'avion › Tout voir"
+      }
     },
     "all": "Tous les tutoriels",
     "home": {

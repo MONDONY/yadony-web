@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Compresse les 24 vidéos de tutoriel (FR + EN) et extrait leurs affiches vers
+# Compresse les vidéos de tutoriel (FR + EN) et extrait leurs affiches vers
 # public/video/tutos/. Relançable : les fichiers existants sont réécrits.
 #
 # Usage : scripts/compress-tutorials.sh [dossier_FR] [dossier_EN]
@@ -33,10 +33,10 @@ TUTORIALS=(
   "search|yadony_demo_01_rechercher_un_voyageur.mp4|yadony_demo_en_01_find_a_traveler.mp4|14|20"
   "nearby|yadony_demo_02_voyageurs_pres_de_moi.mp4|yadony_demo_en_02_travelers_near_me.mp4|43|44"
   "alerts|yadony_demo_03_alertes_de_trajet.mp4|yadony_demo_en_03_route_alerts.mp4|14|14"
-  "saved|yadony_demo_04_favoris.mp4|yadony_demo_en_04_saved_trips.mp4|28|32"
+  "saved|yadony_demo_04_favoris.mp4|yadony_demo_en_04_saved_trips.mp4|28|20"
   "templates|yadony_demo_05_modeles_de_trajet.mp4|yadony_demo_en_05_trip_templates.mp4|100|112"
   "recurring|yadony_demo_06_trajet_recurrent.mp4|yadony_demo_en_06_recurring_trip.mp4|35|36"
-  "ai|yadony_demo_07_creer_avec_l_ia.mp4|yadony_demo_en_07_create_with_ai.mp4|61|66"
+  "ai|yadony_demo_07_creer_avec_l_ia.mp4|yadony_demo_en_07_create_with_ai.mp4|61|35"
   "itemprices|yadony_demo_08_prix_par_article.mp4|yadony_demo_en_08_prices_per_item.mp4|39|46"
   "poster|yadony_demo_09_mon_affiche.mp4|yadony_demo_en_09_my_poster.mp4|30|30"
   "request|yadony_demo_10_publier_une_demande_d_envoi.mp4|yadony_demo_en_10_post_a_shipping_request.mp4|106|96"
@@ -52,7 +52,6 @@ TUTORIALS=(
   "profile|yadony_demo_20_profil_et_avis.mp4|yadony_demo_en_20_profile_and_reviews.mp4|13|15"
   "gppro|yadony_demo_21_gp_pro.mp4|yadony_demo_en_21_gp_pro.mp4|13|21"
   "security|yadony_demo_22_securite_du_compte.mp4|yadony_demo_en_22_account_security.mp4|17|18"
-  "disputes|yadony_demo_23_litiges.mp4|yadony_demo_en_23_disputes.mp4|9|15"
   "flights|yadony_demo_24_billets_d_avion.mp4|yadony_demo_en_24_flight_tickets.mp4|12|16"
 )
 

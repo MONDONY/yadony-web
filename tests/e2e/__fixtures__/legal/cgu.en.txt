@@ -3,7 +3,7 @@ YADONY SAS ("Yadony") publishes a mobile and web application connecting travelle
 Article 1. Who can use Yadony?
 The application is open to any adult (18 or over) with the capacity to contract. One account per phone number.
 Every user can both send parcels and carry them. There is no role to choose at sign-up: both possibilities are available to everyone from account creation.
-Before posting a trip or a parcel request, every user must verify their identity with our provider Didit: a photo of their ID document and a selfie. The result is usually known within minutes. Verified accounts display the "Identity verified" badge.
+Before posting a trip or a parcel request, every user must verify their identity with our provider Didit: a photo of their ID document and a selfie. The accepted documents are the national identity card, the passport, the driving licence or the residence permit. The result is usually immediate. If a photo is unreadable or the verification fails, you are invited to try again. Verified accounts display the "Identity verified" badge.
 Article 2. What Yadony does (and does not do)
 Yadony is an intermediary. It connects travellers and senders, secures payments and provides tracking and dispute-management tools. Yadony is not a carrier: it does not physically transport parcels.
 Travellers are private individuals or transport professionals.
@@ -38,13 +38,12 @@ Payments are processed by licensed providers. Yadony never stores card numbers. 
 Bank card (Visa, Mastercard), Apple Pay or Google Pay via Stripe
 Mobile Money: Wave, Orange Money and other operators depending on the country
 Cash, handed to the traveller in person when the parcel is handed over, if the traveller accepts it
-Yadony wallet (balance top-up in the application)
 Except for cash agreed in the application and handed to the traveller when the parcel is handed over, any payment made outside the platform is prohibited. The messaging system automatically blocks attempts to exchange contact details to bypass Yadony.
 Biometric validation (fingerprint, Face ID or PIN code) is optional before any payment.
 Money held in escrow
 As soon as you pay, the money is immediately held by Stripe. No one can touch it before delivery is confirmed.
 With cash, the money passes from hand to hand: this hold does not apply.
-Delivery is confirmed by the recipient: they enter a 6-digit code received by SMS on the tracking page. The traveller is paid within the following 24 hours.
+Delivery is confirmed by the recipient: they enter a 6-digit code received by SMS on the tracking page. The traveller is paid within the following 24 hours, at most 48 hours depending on their bank.
 If the recipient does not confirm within 48 hours, the Yadony team can release the payment manually, only after a check. That action is logged. An honest traveller never waits indefinitely.
 Service fees
 Yadony charges a service fee on each transaction. It is paid by the sender, on top of the traveller's price: the traveller receives the full price they set. The fee is deducted automatically. All fee amounts shown in these Terms and in the application include all taxes (VAT included).
@@ -64,11 +63,12 @@ Cancellations and refunds
 If the traveller cancels their trip: automatic full refund of all senders (3 to 5 business days). Yadony offers you a replacement traveller within 72 hours.
 If the sender cancels before handover, they are refunded in full.
 Yadony wallet
-The wallet is topped up by bank card, Apple Pay or Google Pay. It can also receive free credits: referral rewards and amounts credited back to the wallet by Yadony, for example after cancelling a parcel paid with the wallet.
-Every payment made with the wallet uses free credits first, then topped-up money, starting with the most recent top-up.
+The wallet is not a way to pay for a parcel. It is used only to pay the Yadony commission when the sender chooses to pay the traveller in cash.
+The wallet is topped up by bank card, Apple Pay or Google Pay. It can also receive free credits: referral rewards and amounts credited back to the wallet by Yadony, for example after cancelling a parcel whose commission was paid with the wallet.
+Every commission paid with the wallet uses free credits first, then topped-up money, starting with the most recent top-up.
 You can at any time request a refund of topped-up money you have not spent, from the Wallet screen in the application. It is paid back to the payment method used for the top-up, within 5 to 10 business days depending on your bank. A partly spent top-up is refunded for the remaining part. While the request is in progress, the balance in that currency cannot be used.
 If the refund to the original payment method fails (expired card, top-up too old, refusal by the payment provider), the Yadony team refunds the amount concerned by another means.
-Free credits are neither refundable nor convertible into cash. They can only be used to pay for parcels on Yadony.
+Free credits are neither refundable nor convertible into cash. They can only be used to pay the Yadony commission.
 Article 8. Ratings
 After each delivery, the sender and the traveller can rate each other (1 to 5 stars plus a comment), within 7 days. The recipient can also rate the traveller from the web page, without an account.
 Ratings must reflect a real experience. Yadony automatically detects fake ratings and excludes them from the average.
@@ -98,7 +98,9 @@ Article 9. Yadony PRO (professional travellers)
 Travellers who work the route regularly (several times a month) can access the Yadony PRO web space. It offers a full dashboard: recurring-trip management with automatic publication, automations, rate cards, a pricing assistant, tax export and activity statistics.
 Access is reserved for PRO accounts. A regular traveller can request an upgrade to a PRO account from the application.
 Article 10. Disputes
-You have 48 hours after delivery to report a problem through the application. After that, the delivery is deemed compliant and the traveller is paid.
+Delivery is deemed compliant as soon as the recipient enters the delivery code. The traveller is then paid immediately: the money reaches their account within 24 hours, at most 48 hours depending on their bank.
+If you notice a problem after delivery (damaged parcel, missing contents), report it to support from the application within the following 48 hours. The Yadony team then opens a dispute.
+A parcel that was never delivered must be reported within 15 days of the expected delivery date. This is one of the conditions for coverage under the guarantee described below.
 The Yadony team holds all the evidence: scans, photos, messages, signed declaration. It notifies the traveller within 24 hours and issues a decision within 72 hours at most. In case of disagreement, Yadony decides on evidence, not on word.
 In the event of proven loss or damage, Yadony may refund up to €50 per incident (internal guarantee fund), within the limit of the declared value. Excluded from the guarantee: undeclared or prohibited contents, the absence of a geolocated delivery photo, and disputes reported late.
 A sender who opens 3 disputes without evidence is suspended automatically.

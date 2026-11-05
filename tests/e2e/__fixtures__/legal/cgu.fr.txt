@@ -3,7 +3,7 @@ YADONY SAS (ci-après « Yadony ») édite une application mobile et web qui met
 Article 1. Qui peut utiliser Yadony ?
 L'application est ouverte à toute personne majeure (18 ans minimum) capable de contracter. Un seul compte par numéro de téléphone est autorisé.
 Tout utilisateur peut à la fois envoyer des colis et en transporter. Il n'y a pas de rôle à choisir à l'inscription : ces deux possibilités sont accessibles à tous dès la création du compte.
-Avant de publier un trajet ou une demande de colis, chaque utilisateur doit vérifier son identité auprès de notre prestataire Didit : photo de sa pièce d'identité et selfie. Le résultat est en général connu en quelques minutes. Les comptes vérifiés affichent le badge « Identité vérifiée ».
+Avant de publier un trajet ou une demande de colis, chaque utilisateur doit vérifier son identité auprès de notre prestataire Didit : photo de sa pièce d'identité et selfie. Les pièces acceptées sont la carte nationale d'identité, le passeport, le permis de conduire ou le titre de séjour. Le résultat est en général immédiat. Si une photo est illisible ou si la vérification échoue, vous êtes invité à recommencer. Les comptes vérifiés affichent le badge « Identité vérifiée ».
 Article 2. Ce que fait Yadony (et ce qu'il ne fait pas)
 Yadony est un intermédiaire. Elle met en relation les voyageurs et les expéditeurs, sécurise les paiements et fournit les outils de suivi et de gestion des litiges. Yadony n'est pas un transporteur : elle n'exécute pas le transport physique des colis.
 Les voyageurs sont des particuliers ou des professionnels du transport.
@@ -38,13 +38,12 @@ Les paiements sont traités par des prestataires agréés. Yadony ne stocke jama
 Carte bancaire (Visa, Mastercard), Apple Pay ou Google Pay via Stripe
 Mobile Money : Wave, Orange Money et autres opérateurs selon le pays
 Espèces, remises en main propre au voyageur lors de la remise du colis, si le voyageur les accepte
-Portefeuille Yadony (solde rechargeable dans l'application)
 À l'exception des espèces convenues dans l'application et remises au voyageur lors de la remise du colis, tout paiement effectué en dehors de la plateforme est interdit. La messagerie bloque automatiquement les tentatives d'échange de coordonnées pour contourner Yadony.
 Une validation biométrique (empreinte, Face ID ou code PIN) est optionnelle avant tout paiement.
 L'argent bloqué (séquestre)
 Dès votre paiement, l'argent est immédiatement bloqué chez Stripe. Personne ne peut y toucher avant la confirmation de livraison.
 En espèces, l'argent passe de main à main : ce blocage ne s'applique pas.
-La livraison est confirmée par le destinataire : il saisit un code à 6 chiffres reçu par SMS sur la page de suivi. Le voyageur est payé dans les 24 heures suivantes.
+La livraison est confirmée par le destinataire : il saisit un code à 6 chiffres reçu par SMS sur la page de suivi. Le voyageur est payé dans les 24 heures suivantes, au plus tard 48 heures selon sa banque.
 Si le destinataire ne confirme pas sous 48 heures, l'équipe Yadony peut débloquer le paiement manuellement, uniquement après une vérification. Cette action est tracée. Un voyageur honnête n'attend jamais indéfiniment.
 Frais de service
 Yadony prélève des frais de service sur chaque transaction. Ils sont payés par l'expéditeur, en plus du prix du voyageur : le voyageur reçoit en entier le prix qu'il a fixé. Les frais sont prélevés automatiquement. Tous les montants de frais indiqués dans ces CGU et dans l'application sont toutes taxes comprises (TTC).
@@ -64,11 +63,12 @@ Annulations et remboursements
 Si le voyageur annule son trajet : remboursement intégral automatique de tous les expéditeurs (3 à 5 jours ouvrés). Yadony vous propose un voyageur de remplacement dans les 72 heures.
 Si l'expéditeur annule avant la remise, il est remboursé intégralement.
 Portefeuille Yadony
-Le portefeuille se recharge par carte bancaire, Apple Pay ou Google Pay. Il peut aussi recevoir des crédits offerts : récompenses de parrainage et sommes recréditées sur le portefeuille par Yadony, par exemple après l'annulation d'un envoi payé avec le portefeuille.
-Chaque paiement effectué avec le portefeuille utilise d'abord les crédits offerts, puis l'argent rechargé, en commençant par la recharge la plus récente.
+Le portefeuille ne sert pas à payer un envoi. Il sert uniquement à payer la commission Yadony lorsque l'expéditeur choisit de régler le voyageur en espèces.
+Le portefeuille se recharge par carte bancaire, Apple Pay ou Google Pay. Il peut aussi recevoir des crédits offerts : récompenses de parrainage et sommes recréditées sur le portefeuille par Yadony, par exemple après l'annulation d'un envoi dont la commission a été payée avec le portefeuille.
+Chaque commission payée avec le portefeuille utilise d'abord les crédits offerts, puis l'argent rechargé, en commençant par la recharge la plus récente.
 Vous pouvez à tout moment demander le remboursement de l'argent rechargé et non dépensé, depuis l'écran Portefeuille de l'application. Il est reversé sur le moyen de paiement utilisé pour la recharge, sous 5 à 10 jours ouvrés selon votre banque. Une recharge en partie dépensée est remboursée pour la part restante. Tant que la demande est en cours, le solde de la devise concernée ne peut pas être utilisé.
 Si le remboursement sur le moyen de paiement d'origine échoue (carte expirée, recharge trop ancienne, refus du prestataire de paiement), l'équipe Yadony rembourse la somme concernée par un autre moyen.
-Les crédits offerts ne sont ni remboursables ni convertibles en argent. Ils servent uniquement à payer des envois sur Yadony.
+Les crédits offerts ne sont ni remboursables ni convertibles en argent. Ils servent uniquement à payer la commission Yadony.
 Article 8. Les évaluations
 Après chaque livraison, l'expéditeur et le voyageur peuvent se noter mutuellement (1 à 5 étoiles et commentaire), dans les 7 jours. Le destinataire peut aussi noter le voyageur depuis la page web, sans compte.
 Les notes doivent refléter une expérience réelle. Yadony détecte automatiquement les fausses notes et les exclut de la moyenne.
@@ -98,7 +98,9 @@ Article 9. Yadony PRO (voyageurs professionnels)
 Les voyageurs qui font la ligne régulièrement (plusieurs fois par mois) peuvent accéder à l'espace web Yadony PRO. Cet espace offre un tableau de bord complet : gestion des trajets récurrents avec publication automatique, automatisations, grille tarifaire, assistant de prix, export fiscal et statistiques d'activité.
 L'accès est réservé aux comptes PRO. Un voyageur classique peut demander à passer en compte PRO depuis l'application.
 Article 10. Les litiges
-Vous avez 48 heures après la livraison pour signaler un problème via l'application. Passé ce délai, la livraison est considérée comme conforme et le voyageur est payé.
+La livraison est considérée comme conforme dès que le destinataire saisit le code de livraison. Le voyageur est alors payé aussitôt : l'argent arrive sur son compte sous 24 heures, au plus tard 48 heures selon sa banque.
+Si vous constatez un problème après la livraison (colis abîmé, contenu manquant), signalez-le au support depuis l'application dans les 48 heures qui suivent. L'équipe Yadony ouvre alors un litige.
+Un colis jamais livré doit être signalé dans les 15 jours suivant la date de livraison prévue. C'est l'une des conditions de la prise en charge par la garantie décrite ci-dessous.
 L'équipe Yadony dispose de toutes les preuves : scans, photos, messages, déclaration signée. Elle notifie le voyageur sous 24 heures et rend une décision sous 72 heures maximum. En cas de désaccord, Yadony tranche sur preuves, pas sur parole.
 En cas de perte ou de dommage avéré, Yadony peut rembourser jusqu'à 50 € par incident (fonds de garantie interne), dans la limite de la valeur déclarée. Sont exclus de la garantie : le contenu non déclaré ou interdit, l'absence de photo de livraison géolocalisée, et les litiges déclarés hors délai.
 Un expéditeur qui ouvre 3 litiges sans preuve est suspendu automatiquement.

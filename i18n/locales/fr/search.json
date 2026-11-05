@@ -1,0 +1,85 @@
+{
+  "search": {
+    "form": {
+      "label": "Rechercher un voyageur",
+      "from": "Départ",
+      "to": "Arrivée",
+      "when": "Quand",
+      "whenAny": "Toutes les dates",
+      "whenMonth": "Ce mois-ci",
+      "whenThreeMonths": "Dans les 3 mois",
+      "submit": "Voir les voyageurs",
+      "filters": "Filtres",
+      "minKg": "≥ {kg} kg",
+      "maxPrice": "Prix max (€/kg)",
+      "maxPriceField": "Prix max par kg, en euros",
+      "urgent": "Urgent",
+      "plane": "Avion"
+    },
+    "card": {
+      "urgent": "Urgent",
+      "verified": "Identité vérifiée",
+      "rating": "Note {rating} sur 5",
+      "trips": "{count} trajet | {count} trajets",
+      "perKg": "/kg",
+      "details": "Détails",
+      "detailsLabel": "Détails du trajet de {name}, {from} vers {to}",
+      "request": "Demander",
+      "requestLabel": "Demander à {name}, {from} vers {to}",
+      "mode": {
+        "PLANE": "Avion",
+        "CAR": "Voiture",
+        "TRAIN": "Train",
+        "BUS": "Bus",
+        "BOAT": "Bateau",
+        "OTHER": "Autre"
+      }
+    },
+    "handoff": {
+      "title": "Pour réserver, passez par l'app.",
+      "trip": "Trajet de {name}, {from} vers {to}, {date}",
+      "steps": [
+        "Décrivez votre colis et envoyez la demande",
+        "Payez en sécurité : l'argent reste bloqué",
+        "Suivez chaque étape jusqu'au code de livraison"
+      ],
+      "close": "Fermer"
+    },
+    "states": {
+      "loading": "Recherche en cours",
+      "empty": {
+        "title": "Aucun voyageur pour {route}.",
+        "titleAny": "Aucun voyageur pour cette recherche.",
+        "text": "Essayez une date plus large, ou créez une alerte dans l'app pour être prévenu dès qu'un voyageur part.",
+        "titleMonth": "Aucun voyageur pour {route} ce mois-ci.",
+        "titleAnyMonth": "Aucun voyageur ce mois-ci.",
+        "widen": "Voir les 3 prochains mois"
+      },
+      "error": {
+        "title": "La recherche ne répond pas pour l'instant.",
+        "text": "Réessayez dans un instant.",
+        "retry": "Réessayer"
+      },
+      "rateLimited": {
+        "title": "Doucement, trop de recherches d'un coup.",
+        "text": "Patientez une minute, puis relancez la recherche."
+      }
+    },
+    "section": {
+      "title": "Trouvez un voyageur pour votre colis",
+      "lead": "Cherchez un trajet, comparez les voyageurs, puis faites votre demande dans l'app."
+    },
+    "results": {
+      "title": "{count} voyageur pour {route} | {count} voyageurs pour {route}",
+      "titleAny": "{count} voyageur | {count} voyageurs",
+      "appLead": "La demande, le paiement bloqué et le suivi s'y font, en quelques touches."
+    },
+    "more": {
+      "button": "Voir {n} autre | Voir les {n} autres",
+      "loading": "Chargement…",
+      "refine": "Affinez la recherche pour voir les autres trajets.",
+      "error": "Impossible de charger la suite. Réessayez.",
+      "loaded": "{count} voyageur de plus affiché | {count} voyageurs de plus affichés"
+    }
+  }
+}

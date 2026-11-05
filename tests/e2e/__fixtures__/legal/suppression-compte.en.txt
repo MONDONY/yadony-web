@@ -1,0 +1,30 @@
+Delete your Yadony account
+You can delete your account and your data at any time, from the app or by e-mail.
+1. From the app
+Open the “Profile” tab, tap the Menu button (☰), then “Delete my account”. You are offered two choices:
+“30-day pause” (reversible): your account is permanently deleted after 30 days. During that period, you can cancel the deletion with the “Cancel deletion” button on your profile. Logging in again does not cancel the deletion.
+“Delete permanently” (irreversible): your account is deleted immediately, after you confirm.
+2. Without the app
+Write to dpo@yadony.com with the subject “Account deletion”, if possible from the e-mail address linked to your account, and include your account's phone number.
+We check that the request really comes from the account holder before deleting the account, and we reply within one month at most, as required by the GDPR.
+You can also write to us by post: Yadony, 7 avenue Pablo Picasso, Appt 375, 94120 Fontenay-sous-Bois, France.
+3. Before deletion
+If one of your shipments is being delivered and its payment is held in escrow, deletion is not possible until the delivery is confirmed.
+As soon as you make the request, your open shipping requests and your active trips are cancelled. The senders concerned are refunded and notified.
+Balance: the refundable part of your balance is refunded to you automatically, to the original payment method (card or mobile money). Bonuses and free credits are permanently lost. The app shows you these amounts before you confirm.
+4. Data deleted
+When your account is deleted, we delete:
+your profile identity: name (replaced by “Utilisateur supprimé”, “deleted user”), date of birth, city, address;
+your login account: phone number and e-mail address;
+your identity verification file on our servers, and its photos;
+attachments sent to support;
+your recipient address book;
+your notification tokens.
+5. Data kept
+Some data is kept:
+the history of payments and transactions, for our legal and accounting obligations (up to 5 years, as stated in our privacy policy);
+the security log, which cannot be modified, with personal data masked;
+messages already exchanged remain visible to the people you talked to, with your name replaced by “Utilisateur supprimé” (“deleted user”);
+identity verification data held by our provider (Didit) is kept according to its own retention period.
+To learn more about your data, how long it is kept and your rights, read our privacy policy.
+Read the privacy policy

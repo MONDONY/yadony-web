@@ -11,7 +11,7 @@ describe('UiPicture', () => {
     expect(sources[0]!.attributes('srcset')).toContain('/img/app/scan-480.avif 480w')
     const img = wrapper.get('img')
     expect(img.attributes('alt')).toBe('Écran Suivi')
-    expect(img.attributes('width')).toBe('1170')
+    expect(img.attributes('width')).toBe(String(appScreen('scan').width))
     expect(img.attributes('src')).toBe('/img/app/scan-960.webp')
     expect(img.attributes('loading')).toBe('lazy')
   })

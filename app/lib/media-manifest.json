@@ -1,76 +1,76 @@
 {
   "app": {
     "flight-alerts": {
-      "width": 1170,
-      "height": 2392
+      "width": 720,
+      "height": 1477
     },
     "flights-found": {
-      "width": 1170,
-      "height": 2392
+      "width": 720,
+      "height": 1477
     },
     "flights-hub": {
-      "width": 1170,
-      "height": 2392
+      "width": 720,
+      "height": 1477
     },
     "flights-search": {
-      "width": 1170,
-      "height": 2392
+      "width": 720,
+      "height": 1477
     },
     "mobile-money": {
-      "width": 1170,
-      "height": 2392
+      "width": 720,
+      "height": 1477
     },
     "money-overview": {
-      "width": 1170,
-      "height": 2392
+      "width": 720,
+      "height": 1477
     },
     "my-parcels": {
-      "width": 1170,
-      "height": 2392
+      "width": 720,
+      "height": 1477
     },
     "my-trips": {
-      "width": 1170,
-      "height": 2392
+      "width": 720,
+      "height": 1477
     },
     "negotiation": {
       "width": 1170,
       "height": 2392
     },
     "parcel-ticket": {
-      "width": 1170,
-      "height": 2392
+      "width": 720,
+      "height": 1477
     },
     "parcel-tracking": {
       "width": 1170,
       "height": 2392
     },
     "publish-trip": {
-      "width": 1170,
-      "height": 2392
+      "width": 720,
+      "height": 1477
     },
     "request-step1": {
-      "width": 1170,
-      "height": 2392
+      "width": 720,
+      "height": 1477
     },
     "scan": {
-      "width": 1170,
-      "height": 2392
+      "width": 720,
+      "height": 1477
     },
     "search-map": {
-      "width": 1170,
-      "height": 2392
+      "width": 720,
+      "height": 1475
     },
     "traveler-profile": {
-      "width": 1170,
-      "height": 2392
+      "width": 720,
+      "height": 1477
     },
     "trip-detail": {
-      "width": 1170,
-      "height": 2392
+      "width": 720,
+      "height": 1335
     },
     "wallet": {
-      "width": 1170,
-      "height": 2392
+      "width": 720,
+      "height": 1477
     }
   },
   "dony": {

@@ -20,17 +20,6 @@ export interface JourneyStep {
   pose?: DonyPoseId
 }
 
-// Accueil : Awa (voyageuse) et Moussa (expéditeur) se croisent.
-export const crossedJourney: JourneyStep[] = [
-  { id: 'publish', actor: 'traveler', art: 'priceModes', pose: 'scale' },
-  { id: 'search', actor: 'sender', screen: 'search-map', pose: 'search' },
-  { id: 'negotiate', actor: 'both', art: 'negotiation', pose: 'handshake' },
-  { id: 'escrow', actor: 'sender', art: 'padlock', pose: 'padlock' },
-  { id: 'handover', actor: 'both', screen: 'scan', pose: 'scan' },
-  { id: 'flight', actor: 'both', art: 'route', pose: 'travel' },
-  { id: 'delivery', actor: 'both', art: 'timeline', pose: 'delivery' },
-]
-
 export const senderJourney: JourneyStep[] = [
   { id: 'search', actor: 'sender', screen: ['search-map', 'request-step1'] },
   { id: 'choose', actor: 'sender', screen: 'traveler-profile' },
@@ -50,6 +39,20 @@ export const travelerJourney: JourneyStep[] = [
   { id: 'arrive', actor: 'traveler', screen: 'my-trips' },
   { id: 'paid', actor: 'traveler', screen: ['money-overview', 'mobile-money'] },
 ]
+
+// La page voyageur regroupe les sept étapes en quatre temps. Chaque nombre est
+// l'index d'une étape de `travelerJourney` (et de `journeys.traveler.steps`) ;
+// `visual` est l'étape dont le visuel illustre le temps. Le scan hors ligne
+// (étape 4) et la question « Suis-je obligé d'accepter tous les colis ? » de
+// la FAQ alimentent « Vous gardez la main ».
+export const travelerTemps = [
+  { id: 'publish', steps: [0], visual: 0 },
+  { id: 'price', steps: [1], visual: 1 },
+  { id: 'poster', steps: [2, 3], visual: 2 },
+  { id: 'deliver', steps: [5, 6], visual: 6 },
+] as const
+
+export const travelerControl = { step: 4, faq: 1 } as const
 
 export const flightsJourney: JourneyStep[] = [
   { id: 'search', actor: 'traveler', screen: 'flights-search' },

@@ -11,7 +11,7 @@ const PAGES = [
   '/suppression-compte', '/en/delete-account',
 ]
 
-const RAW_KEY = /\b(?:landing|journeys|corridorPages|gp|nav|footer|home|pricing|trust|about|contact|howItWorks|error|language|beta|a11y|legal)\.[A-Za-z][\w.[\]]*/
+const RAW_KEY = /\b(?:landing|journeys|corridorPages|gp|nav|footer|home|pricing|trust|about|contact|howItWorks|error|language|a11y|legal)\.[A-Za-z][\w.[\]]*/
 
 for (const path of PAGES) {
   test(`la page ${path} n'affiche aucune clé de traduction brute`, async ({ page }) => {

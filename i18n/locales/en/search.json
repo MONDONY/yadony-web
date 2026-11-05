@@ -1,0 +1,85 @@
+{
+  "search": {
+    "form": {
+      "label": "Search for a traveler",
+      "from": "From",
+      "to": "To",
+      "when": "When",
+      "whenAny": "Any date",
+      "whenMonth": "This month",
+      "whenThreeMonths": "Within 3 months",
+      "submit": "See travelers",
+      "filters": "Filters",
+      "minKg": "≥ {kg} kg",
+      "maxPrice": "Max price (€/kg)",
+      "maxPriceField": "Max price per kg, in euros",
+      "urgent": "Urgent",
+      "plane": "Plane"
+    },
+    "card": {
+      "urgent": "Urgent",
+      "verified": "Verified identity",
+      "rating": "Rated {rating} out of 5",
+      "trips": "{count} trip | {count} trips",
+      "perKg": "/kg",
+      "details": "Details",
+      "detailsLabel": "Details of {name}'s trip, {from} to {to}",
+      "request": "Request",
+      "requestLabel": "Request {name}'s trip, {from} to {to}",
+      "mode": {
+        "PLANE": "Plane",
+        "CAR": "Car",
+        "TRAIN": "Train",
+        "BUS": "Bus",
+        "BOAT": "Boat",
+        "OTHER": "Other"
+      }
+    },
+    "handoff": {
+      "title": "To book, go through the app.",
+      "trip": "{name}'s trip, {from} to {to}, {date}",
+      "steps": [
+        "Describe your parcel and send the request",
+        "Pay securely: the money stays held",
+        "Follow every step up to the delivery code"
+      ],
+      "close": "Close"
+    },
+    "states": {
+      "loading": "Searching",
+      "empty": {
+        "title": "No traveler for {route}.",
+        "titleAny": "No traveler for this search.",
+        "text": "Try a wider date, or set up an alert in the app to be told as soon as a traveler leaves.",
+        "titleMonth": "No traveler for {route} this month.",
+        "titleAnyMonth": "No traveler this month.",
+        "widen": "See the next 3 months"
+      },
+      "error": {
+        "title": "Search is not responding right now.",
+        "text": "Try again in a moment.",
+        "retry": "Try again"
+      },
+      "rateLimited": {
+        "title": "Easy there, too many searches at once.",
+        "text": "Wait a minute, then search again."
+      }
+    },
+    "section": {
+      "title": "Find a traveler for your parcel",
+      "lead": "Search a trip, compare travelers, then make your request in the app."
+    },
+    "results": {
+      "title": "{count} traveler for {route} | {count} travelers for {route}",
+      "titleAny": "{count} traveler | {count} travelers",
+      "appLead": "The request, the held payment and the tracking all happen there, in a few taps."
+    },
+    "more": {
+      "button": "See {n} more | See {n} more",
+      "loading": "Loading…",
+      "refine": "Refine your search to see more trips.",
+      "error": "Could not load more. Try again.",
+      "loaded": "{count} more traveler shown | {count} more travelers shown"
+    }
+  }
+}

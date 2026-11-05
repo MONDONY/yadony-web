@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { renderLegalArticles } from '@/lib/legal'
+import { legalToc, renderLegalArticles } from '@/lib/legal'
 
 // Le rendu réel passe par rt() de vue-i18n ; ici l'identité suffit pour
 // vérifier la mise en forme structurelle.
@@ -32,5 +32,22 @@ describe('renderLegalArticles', () => {
   it('tolère un article sans blocs', () => {
     const result = renderLegalArticles([{ title: 'Vide' }], identity)
     expect(result[0]?.blocks).toEqual([])
+  })
+})
+
+describe('legalToc', () => {
+  it('numérote les ancres dans l’ordre des titres, sans les réécrire', () => {
+    expect(legalToc(['Article 1. Accès', 'Article 2. Paiement'])).toEqual([
+      { id: 'section-1', label: 'Article 1. Accès' },
+      { id: 'section-2', label: 'Article 2. Paiement' },
+    ])
+  })
+
+  it('accepte un préfixe d’ancre propre à la page', () => {
+    expect(legalToc(['Éditeur'], 'mention')).toEqual([{ id: 'mention-1', label: 'Éditeur' }])
+  })
+
+  it('renvoie un sommaire vide pour un texte sans titre', () => {
+    expect(legalToc([])).toEqual([])
   })
 })

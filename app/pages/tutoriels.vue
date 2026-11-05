@@ -14,13 +14,13 @@ const router = useRouter()
 useSeoMeta(
   buildSeoMeta({
     title: t('tutorials.seo.title'),
-    description: t('tutorials.seo.description'),
+    description: t('tutorials.seo.description', { count: tutorials.length }),
     path: route.path,
     locale: locale.value as 'fr' | 'en',
   }),
 )
 
-// Le HTML prérendu liste les six tutoriels ; le filtre et le lecteur ne
+// Le HTML prérendu liste tous les tutoriels ; le filtre et le lecteur ne
 // vivent que dans le navigateur.
 type Filter = 'all' | TutorialAudience
 const filters: Filter[] = ['all', 'sender', 'recipient', 'traveler']
@@ -66,7 +66,7 @@ async function close() {
 
 <template>
   <div>
-    <PageHero :title="t('tutorials.title')" :lead="t('tutorials.lead')" />
+    <PageHero :title="t('tutorials.title')" :lead="t('tutorials.lead', { count: tutorials.length })" />
 
     <UiSection tone="white">
       <UiContainer>

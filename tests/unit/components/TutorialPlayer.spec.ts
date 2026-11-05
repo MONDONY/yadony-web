@@ -10,7 +10,9 @@ import UiButton from '@/components/ui/UiButton.vue'
 import { tutorials } from '@/lib/tutorials'
 import { appStoreUrl, playStoreUrl } from '@/lib/site'
 
-const [search, track] = tutorials
+const byId = (id: string) => tutorials.find(t => t.id === id)!
+const search = byId('search')
+const track = byId('track')
 
 function mountPlayer(props: Record<string, unknown>, locale: 'fr' | 'en' = 'fr') {
   const i18n = createI18n({ legacy: false, locale, messages: { fr, en } })

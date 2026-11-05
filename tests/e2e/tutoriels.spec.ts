@@ -1,7 +1,9 @@
 import { test, expect, type Page } from './fixtures'
 import AxeBuilder from '@axe-core/playwright'
+import { tutorials } from '../../app/lib/tutorials'
 
 const VIDEOS = /\/video\/tutos\/[^/]+\.mp4/
+const parPublic = (audience: string) => tutorials.filter(t => t.audience === audience).length
 
 // Le filtre et le lecteur n'existent qu'une fois la page hydratée : on attend
 // la fin des chargements avant d'interagir, comme les autres suites.
@@ -10,7 +12,7 @@ async function ouvrirPage(page: Page, path: string) {
   await page.waitForLoadState('networkidle')
 }
 
-test('la page liste les six tutoriels dans le HTML prérendu', async ({ request }) => {
+test('la page liste tous les tutoriels dans le HTML prérendu', async ({ request }) => {
   const html = await (await request.get('/tutoriels')).text()
   expect(html).toContain('Rechercher un voyageur')
   expect(html).toContain('1 min 29')
@@ -18,14 +20,16 @@ test('la page liste les six tutoriels dans le HTML prérendu', async ({ request 
   expect(html).not.toContain('<video')
 })
 
-test('6 cartes, le filtre Voyageur n’en laisse qu’une, Tous les remet', async ({ page }) => {
+test('une carte par tutoriel, le filtre Voyageur ne garde que les leurs, Tous les remet', async ({ page }) => {
   await ouvrirPage(page, '/tutoriels')
-  await expect(page.getByTestId('tutorial-card')).toHaveCount(6)
+  await expect(page.getByTestId('tutorial-card')).toHaveCount(tutorials.length)
   await page.getByRole('button', { name: 'Voyageur', exact: true }).click()
-  await expect(page.getByTestId('tutorial-card')).toHaveCount(1)
-  await expect(page.getByTestId('tutorial-card')).toContainText('Billets d’avion'.replace('’', "'"))
+  await expect(page.getByTestId('tutorial-card')).toHaveCount(parPublic('traveler'))
+  await expect(page.locator('[data-tutorial="flights"]')).toContainText('Billets d\'avion')
+  await page.getByRole('button', { name: 'Destinataire', exact: true }).click()
+  await expect(page.getByTestId('tutorial-card')).toHaveCount(parPublic('recipient'))
   await page.getByRole('button', { name: 'Tous', exact: true }).click()
-  await expect(page.getByTestId('tutorial-card')).toHaveCount(6)
+  await expect(page.getByTestId('tutorial-card')).toHaveCount(tutorials.length)
 })
 
 test('aucune requête vidéo avant le clic ; le clic ouvre le lecteur ; Échap le ferme et rend le focus', async ({ page }) => {
@@ -67,7 +71,7 @@ test('« Vidéo suivante » passe au tutoriel suivant', async ({ page }) => {
   await ouvrirPage(page, '/tutoriels')
   await page.locator('[data-tutorial="search"]').click()
   await page.getByRole('button', { name: 'Vidéo suivante' }).click()
-  await expect(page.getByRole('dialog', { name: 'Suivre un colis' })).toBeVisible()
+  await expect(page.getByRole('dialog', { name: 'Voyageurs près de moi' })).toBeVisible()
   // Le focus revient à la carte qui a ouvert le lecteur, pas à la dernière vue.
   await page.keyboard.press('Escape')
   await expect(page.getByRole('dialog')).toBeHidden()
@@ -77,11 +81,11 @@ test('« Vidéo suivante » passe au tutoriel suivant', async ({ page }) => {
 test('à la dernière vidéo du filtre, « Vidéo suivante » disparaît et le focus passe à Fermer', async ({ page }) => {
   await ouvrirPage(page, '/tutoriels')
   await page.getByRole('button', { name: 'Expéditeur', exact: true }).click()
-  await page.locator('[data-tutorial="alerts"]').click()
-  const dialog = page.getByRole('dialog', { name: 'Alertes de trajet' })
+  await page.locator('[data-tutorial="security"]').click()
+  const dialog = page.getByRole('dialog', { name: 'Sécurité du compte' })
   await dialog.getByRole('button', { name: 'Vidéo suivante' }).focus()
   await page.keyboard.press('Enter')
-  const last = page.getByRole('dialog', { name: 'Mon affiche' })
+  const last = page.getByRole('dialog', { name: 'Litiges' })
   await expect(last).toBeVisible()
   await expect(last.getByRole('button', { name: 'Vidéo suivante' })).toHaveCount(0)
   await expect(last.getByRole('button', { name: 'Fermer' })).toBeFocused()
@@ -127,12 +131,12 @@ test('version anglaise sur /en/tutorials', async ({ page }) => {
   await ouvrirPage(page, '/en/tutorials')
   expect(videoRequests).toEqual([])
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Video tutorials')
-  await expect(page.getByTestId('tutorial-card')).toHaveCount(6)
+  await expect(page.getByTestId('tutorial-card')).toHaveCount(tutorials.length)
   await expect(page.getByTestId('tutorial-card').first()).toContainText('1 min 35 s')
   await expect(page.getByTestId('tutorial-card').first()).toContainText('Search › All routes')
   await page.getByRole('button', { name: 'Traveler', exact: true }).click()
-  await expect(page.getByTestId('tutorial-card')).toHaveCount(1)
-  await page.getByTestId('tutorial-card').click()
+  await expect(page.getByTestId('tutorial-card')).toHaveCount(parPublic('traveler'))
+  await page.locator('[data-tutorial="flights"]').click()
   const dialog = page.getByRole('dialog', { name: 'Flight tickets' })
   await expect(dialog).toBeVisible()
   await expect.poll(() => videoRequests.length).toBeGreaterThan(0)
@@ -229,7 +233,7 @@ test.describe('teaser d’accueil et lien depuis Comment ça marche', () => {
       const erreurs: string[] = []
       page.on('pageerror', error => erreurs.push(error.message))
       await ouvrirPage(page, `/tutoriels?v=${valeur}`)
-      await expect(page.getByTestId('tutorial-card')).toHaveCount(6)
+      await expect(page.getByTestId('tutorial-card')).toHaveCount(tutorials.length)
       await expect(page.getByRole('dialog')).toHaveCount(0)
       expect(erreurs).toEqual([])
     })

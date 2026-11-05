@@ -42,6 +42,7 @@ useHead({
          l'écran seulement, pour ne pas retarder l'affichage du haut de page. -->
     <LazyHomeHandoff hydrate-on-visible />
     <LazyHomeTraveler hydrate-on-visible />
+    <LazyHomeTutorials hydrate-on-visible />
     <LazyHomeToday hydrate-on-visible />
     <LazyHomeTrust hydrate-on-visible />
     <LazyHomeFaq hydrate-on-visible />

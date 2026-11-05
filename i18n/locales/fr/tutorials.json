@@ -1,0 +1,36 @@
+{
+  "tutorials": {
+    "seo": {
+      "title": "Tutoriels vidéo",
+      "description": "Six démonstrations de l'app Yadony en vidéo : chercher un trajet, suivre un colis, payer, créer une alerte, publier un colis et trouver un billet d'avion."
+    },
+    "title": "Tutoriels vidéo",
+    "lead": "Six démonstrations de l'app, de la recherche d'un trajet au suivi d'un colis. Choisissez celle qui vous concerne : la vidéo ne se charge qu'au moment où vous la lancez.",
+    "filtersLabel": "Filtrer par profil",
+    "filters": {
+      "all": "Tous",
+      "sender": "Expéditeur",
+      "recipient": "Destinataire",
+      "traveler": "Voyageur"
+    },
+    "items": {
+      "search": { "title": "Rechercher un voyageur", "path": "Rechercher › Tous les trajets" },
+      "track": { "title": "Suivre un colis", "path": "Suivi › Suivre un colis" },
+      "payments": { "title": "Moyens de paiement", "path": "Activités › ☰ › Portefeuille" },
+      "alerts": { "title": "Alertes de trajet", "path": "Activités › ☰ › Mes alertes" },
+      "poster": { "title": "Mon affiche", "path": "Activités › Mes colis › Publiés › Partager" },
+      "flights": { "title": "Billets d'avion", "path": "Activités › Billets d'avion › Tout voir" }
+    },
+    "all": "Tous les tutoriels",
+    "home": {
+      "title": "Voir avant d'essayer.",
+      "lead": "Des vidéos courtes sur l'écran réel de l'app, avec la voix."
+    },
+    "menuLabel": "Menu",
+    "pathLabel": "Dans l'app",
+    "playerLabel": "Lecteur de tutoriel",
+    "close": "Fermer",
+    "seeNext": "Vidéo suivante",
+    "demoNote": "Les vidéos sont filmées sur l'app avec des données de démonstration."
+  }
+}

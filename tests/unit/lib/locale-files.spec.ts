@@ -59,6 +59,8 @@ const identifierPaths = Array.from({ length: 8 }, (_, index) => `home.faq.items[
 const sameWordPaths = [
   'nav.contact',
   'nav.menu',
+  // Tutoriels : « Menu » lu à la place du glyphe ☰ dans le chemin dans l'app.
+  'tutorials.menuLabel',
   // Page du classement : « pts », « Points », « Tests » et « bug » sont
   // communs aux deux langues.
   'contest.points',

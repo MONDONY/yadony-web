@@ -323,6 +323,7 @@ test.describe('sections de l’accueil', () => {
     expect(headings.map(h => h.trim())).toEqual([
       'Chercher ici, réserver dans l\'app.',
       'Vous voyagez ? Vendez vos kilos libres.',
+      'Voir avant d\'essayer.',
       'Yadony aujourd\'hui.',
       'Ce qui manquait aux groupes WhatsApp',
       'Les questions qu\'on nous pose avant de télécharger',

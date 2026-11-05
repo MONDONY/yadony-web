@@ -25,7 +25,7 @@ Your backup PIN code
 Yadony never sees your full phone number or your biometric data. Firebase manages this information directly, in line with its own privacy policy and Google's security certifications (ISO 27001, SOC 2, GDPR). Google Firebase privacy policy: https://firebase.google.com/support/privacy
 3.2 Didit: identity verification (KYC)
 Identity verification, required to post a trip or a parcel request, is handled by Didit (Didit Identity Spain, S.L., Barcelona, Spain), which acts as Yadony's processor under the GDPR and hosts its data in the European Union. Didit handles:
-The photo of your identity document (national ID card or passport)
+The photo of your identity document (national identity card, passport, driving licence or residence permit)
 The selfie and the liveness check
 The comparison between your face and your official document
 The approval or rejection of the verification

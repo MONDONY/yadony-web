@@ -10,35 +10,70 @@ import {
 } from '../../../app/lib/tutorials'
 
 describe('tutorials', () => {
-  it('liste les 6 tutoriels dans l’ordre voulu, avec leur public', () => {
+  it('liste les tutoriels dans l’ordre des démos, avec leur public', () => {
     expect(tutorials.map((t) => [t.id, t.audience])).toEqual([
       ['search', 'sender'],
-      ['track', 'recipient'],
-      ['payments', 'sender'],
+      ['nearby', 'sender'],
       ['alerts', 'sender'],
+      ['saved', 'sender'],
+      ['templates', 'traveler'],
+      ['recurring', 'traveler'],
+      ['ai', 'sender'],
+      ['itemprices', 'traveler'],
       ['poster', 'sender'],
+      ['request', 'sender'],
+      ['recipients', 'sender'],
+      ['receiving', 'recipient'],
+      ['track', 'recipient'],
+      ['messages', 'sender'],
+      ['call', 'sender'],
+      ['assistant', 'sender'],
+      ['money', 'traveler'],
+      ['payments', 'sender'],
+      ['invite', 'sender'],
+      ['profile', 'sender'],
+      ['gppro', 'sender'],
+      ['security', 'sender'],
       ['flights', 'traveler'],
     ])
   })
 
-  // Durées réelles des fichiers publiés (ffprobe, arrondies à la seconde) :
-  // FR 89,0 / 42,5 / 43,5 / 81,1 / 40,0 / 34,5 ; EN 95,0 / 75,6 / 50,5 / 85,5 / 46,0 / 34,0.
+  // Durées réelles des fichiers publiés (ffprobe, arrondies à la seconde).
   it('porte la durée réelle de chaque version, en français et en anglais', () => {
     expect(
       Object.fromEntries(tutorials.map((t) => [t.id, t.durationSeconds])),
     ).toEqual({
       search: { fr: 89, en: 95 },
-      track: { fr: 43, en: 76 },
-      payments: { fr: 44, en: 51 },
+      nearby: { fr: 65, en: 66 },
       alerts: { fr: 81, en: 86 },
+      saved: { fr: 41, en: 42 },
+      templates: { fr: 192, en: 166 },
+      recurring: { fr: 52, en: 54 },
+      ai: { fr: 77, en: 83 },
+      itemprices: { fr: 49, en: 58 },
       poster: { fr: 40, en: 46 },
+      request: { fr: 118, en: 124 },
+      recipients: { fr: 57, en: 43 },
+      receiving: { fr: 22, en: 25 },
+      track: { fr: 43, en: 76 },
+      messages: { fr: 74, en: 38 },
+      call: { fr: 42, en: 45 },
+      assistant: { fr: 49, en: 48 },
+      money: { fr: 24, en: 26 },
+      payments: { fr: 44, en: 51 },
+      invite: { fr: 30, en: 28 },
+      profile: { fr: 31, en: 35 },
+      gppro: { fr: 24, en: 31 },
+      security: { fr: 41, en: 43 },
       flights: { fr: 35, en: 34 },
     })
   })
 
-  it('compte 6 tutoriels aux identifiants uniques', () => {
-    expect(tutorials).toHaveLength(6)
-    expect(new Set(tutorials.map((t) => t.id)).size).toBe(6)
+  it('a des identifiants uniques et au moins un tutoriel par public', () => {
+    expect(new Set(tutorials.map((t) => t.id)).size).toBe(tutorials.length)
+    for (const audience of ['sender', 'recipient', 'traveler']) {
+      expect(tutorials.some((t) => t.audience === audience)).toBe(true)
+    }
   })
 })
 

@@ -2,10 +2,10 @@
   "tutorials": {
     "seo": {
       "title": "Video tutorials",
-      "description": "Six Yadony app demos on video: search for a trip, track a parcel, pay, create an alert, post a parcel and find a flight ticket."
+      "description": "{count} Yadony app demos on video: search for a trip, track a parcel, pay, create an alert, post a parcel and find a flight ticket."
     },
     "title": "Video tutorials",
-    "lead": "Six demos of the app, from searching for a trip to tracking a parcel. Pick the one that fits you: the video only loads when you start it.",
+    "lead": "{count} demos of the app, from searching for a trip to tracking a parcel. Pick the one that fits you: the video only loads when you start it.",
     "filtersLabel": "Filter by profile",
     "filters": {
       "all": "All",
@@ -14,12 +14,98 @@
       "traveler": "Traveler"
     },
     "items": {
-      "search": { "title": "Find a traveler", "path": "Search › All routes" },
-      "track": { "title": "Track a parcel", "path": "Tracking › Track a parcel" },
-      "payments": { "title": "Payment methods", "path": "Activity › ☰ › Wallet" },
-      "alerts": { "title": "Route alerts", "path": "Activity › ☰ › My alerts" },
-      "poster": { "title": "My poster", "path": "Activity › My parcels › Posted › Share" },
-      "flights": { "title": "Flight tickets", "path": "Activity › Flight tickets › See all" }
+      "search": {
+        "title": "Find a traveler",
+        "path": "Search › All routes"
+      },
+      "nearby": {
+        "title": "Travelers near me",
+        "path": "Search › Map › Near me"
+      },
+      "alerts": {
+        "title": "Route alerts",
+        "path": "Activity › ☰ › My alerts"
+      },
+      "saved": {
+        "title": "Saved trips",
+        "path": "Trip details › bookmark"
+      },
+      "templates": {
+        "title": "Trip templates",
+        "path": "Activity › ☰ › Trip templates"
+      },
+      "recurring": {
+        "title": "Recurring trip",
+        "path": "Trip templates › ⋮ › Schedule the recurring trip"
+      },
+      "ai": {
+        "title": "Create with AI",
+        "path": "+ › Send a parcel › Create with AI"
+      },
+      "itemprices": {
+        "title": "Prices per item",
+        "path": "Activity › ☰ › My prices per item"
+      },
+      "poster": {
+        "title": "My poster",
+        "path": "Activity › My parcels › Posted › Share"
+      },
+      "request": {
+        "title": "Post a shipping request",
+        "path": "+ › Send a parcel"
+      },
+      "recipients": {
+        "title": "My recipients",
+        "path": "Activity › ☰ › My recipients"
+      },
+      "receiving": {
+        "title": "Receiving",
+        "path": "Tracking › Track a parcel › Receiving"
+      },
+      "track": {
+        "title": "Track a parcel",
+        "path": "Tracking › Track a parcel"
+      },
+      "messages": {
+        "title": "Messages",
+        "path": "Messages › a conversation"
+      },
+      "call": {
+        "title": "Yadony call",
+        "path": "Messages › conversation › Call"
+      },
+      "assistant": {
+        "title": "The assistant",
+        "path": "Blue star button, on every screen"
+      },
+      "money": {
+        "title": "My money",
+        "path": "Activity › My money"
+      },
+      "payments": {
+        "title": "Payment methods",
+        "path": "Activity › ☰ › Wallet"
+      },
+      "invite": {
+        "title": "Referrals",
+        "path": "Profile › My benefits › Referrals"
+      },
+      "profile": {
+        "title": "Profile and reviews",
+        "path": "Profile › My reputation"
+      },
+      "gppro": {
+        "title": "GP Pro",
+        "path": "A traveler's profile"
+      },
+      "security": {
+        "title": "Account security",
+        "path": "Activity › ☰ › Settings"
+      },
+      "flights": {
+        "title": "Flight tickets",
+        "path": "Activity › Flight tickets › See all"
+      }
     },
     "all": "All tutorials",
     "home": {

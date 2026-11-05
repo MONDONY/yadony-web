@@ -61,6 +61,8 @@ const sameWordPaths = [
   'nav.menu',
   // Tutoriels : « Menu » lu à la place du glyphe ☰ dans le chemin dans l'app.
   'tutorials.menuLabel',
+  // Tutoriels : « GP Pro » est le nom du badge, identique dans les deux langues.
+  'tutorials.items.gppro.title',
   // Page du classement : « pts », « Points », « Tests » et « bug » sont
   // communs aux deux langues.
   'contest.points',

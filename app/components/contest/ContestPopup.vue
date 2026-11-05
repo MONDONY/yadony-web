@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, nextTick, onBeforeUnmount, onMounted, ref } from 'vue'
+import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRoute } from 'vue-router'
 import donnees from '@/data/classement.json'
@@ -9,11 +9,18 @@ import { localeDates, statutPeriode } from '@/lib/classement/score'
 const { t, tm, rt, locale } = useI18n()
 const route = useRoute()
 const localePath = useLocalePath()
+const { consent, hydrated, hydrate } = useCookieConsent()
 
 // <dialog> natif : focus piégé, Échap et inertie du reste de la page gérés.
 const dialog = ref<HTMLDialogElement | null>(null)
 const visible = ref(false)
 const ouverte = ref(false)
+// Vrai tant que la fenêtre est due à ce visiteur : elle s'ouvre dès que la
+// bannière cookies n'est plus à l'écran.
+const aAfficher = ref(false)
+// L'ouverture en modal rend le reste de la page inerte, bannière comprise :
+// tant que le visiteur n'a pas tranché, la fenêtre attend.
+const bandeauVisible = computed(() => hydrated.value && consent.value === null)
 const maintenant = ref(new Date())
 let minuteur: ReturnType<typeof setInterval> | undefined
 let ouverture: ReturnType<typeof setTimeout> | undefined
@@ -52,6 +59,7 @@ function memoriserFermeture() {
 }
 
 async function ouvrir() {
+  ouverture = undefined
   visible.value = true
   await nextTick()
   dialog.value?.showModal()
@@ -59,8 +67,18 @@ async function ouvrir() {
   requestAnimationFrame(() => requestAnimationFrame(() => (ouverte.value = true)))
 }
 
+function planifier() {
+  clearTimeout(ouverture)
+  ouverture = undefined
+  if (!aAfficher.value || visible.value || !hydrated.value || bandeauVisible.value) return
+  ouverture = setTimeout(ouvrir, 1000)
+}
+
+watch([aAfficher, hydrated, bandeauVisible], planifier)
+
 function fermer() {
   memoriserFermeture()
+  aAfficher.value = false
   ouverte.value = false
   window.setTimeout(() => {
     dialog.value?.close()
@@ -88,7 +106,8 @@ onMounted(() => {
     fin: donnees.fin,
   })
   if (!afficher) return
-  ouverture = setTimeout(ouvrir, 1000)
+  if (!hydrated.value) hydrate()
+  aAfficher.value = true
   minuteur = setInterval(() => (maintenant.value = new Date()), 30_000)
 })
 
@@ -111,7 +130,7 @@ const deux = (n: number) => String(n).padStart(2, '0')
     @cancel="surAnnulation"
     @click="surClic"
   >
-    <div class="popup-card overflow-hidden rounded-[28px] bg-surface text-ink shadow-[0_0_0_1px_rgb(10_20_48/0.06),0_2px_4px_rgb(10_20_48/0.08),0_24px_64px_-12px_rgb(10_20_48/0.45)] max-sm:rounded-b-none max-sm:pb-[env(safe-area-inset-bottom,0px)]">
+    <div class="popup-card motion-fade overflow-hidden rounded-[28px] bg-surface text-ink shadow-[0_0_0_1px_rgb(10_20_48/0.06),0_2px_4px_rgb(10_20_48/0.08),0_24px_64px_-12px_rgb(10_20_48/0.45)] max-sm:rounded-b-none max-sm:pb-[env(safe-area-inset-bottom,0px)]">
       <div
         class="relative overflow-hidden px-6 pb-5 pt-6 text-white"
       >

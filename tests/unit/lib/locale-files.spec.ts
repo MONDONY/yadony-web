@@ -67,8 +67,13 @@ const sameWordPaths = [
   'contest.rules.perBug',
   // Résultat final : « 651 + 2 220 », une addition sans mot.
   'contest.final.podiumSub',
-  // Refonte : « Destinations » s'écrit pareil dans les deux langues.
-  'landing.corridors.kicker',
+  // Recherche : « Urgent » et « ≥ 16 kg » s'écrivent pareil dans les deux langues.
+  'search.form.urgent',
+  'search.form.minKg',
+  'search.card.urgent',
+  'search.card.perKg',
+  'search.card.mode.TRAIN',
+  'search.card.mode.BUS',
 ]
 
 /**
@@ -88,9 +93,6 @@ const properNounPaths = [
   'footer.routeLabel',
   // L'adresse du siège social ne se traduit pas.
   'footer.company.line1',
-  // « Commission » s'écrit pareil dans les deux langues (sous-titre de
-  // l'article 7 des CGU).
-  'legal.cgu.articles[6].blocks[3].sub',
   // Refonte : prénoms des personnages, villes, montant d'exemple, noms
   // commerciaux des opérateurs de mobile money, adresse d'un lien de suivi.
   'landing.crossed.art.negotiation.sender',
@@ -98,11 +100,9 @@ const properNounPaths = [
   'landing.crossed.art.padlock.amount',
   'landing.crossed.art.route.from',
   'landing.crossed.art.route.to',
-  'landing.payments.items[1]',
-  'landing.payments.items[2]',
-  'landing.payments.items[3]',
-  'landing.payments.items[4]',
   'landing.recipient.chat.link',
+  // Accueil : « Yadony Pro » est le nom de l'espace des professionnels.
+  'landing.today.items[5].title',
 ]
 
 /**
@@ -155,7 +155,11 @@ const markerExemptPaths = new Set([
   'journeys.screens.publish-trip',
   'journeys.screens.scan',
   'journeys.screens.trip-detail',
-  'landing.hero.screensAlt[2]',
+  // Page de suppression de compte : le nom affiché à la place de celui d'un
+  // compte supprimé est le libellé français « Utilisateur supprimé », que la
+  // version anglaise cite tel quel, suivi de sa traduction.
+  'legal.suppressionCompte.articles[3].blocks[0].ul[0]',
+  'legal.suppressionCompte.articles[4].blocks[0].ul[2]',
   // « Yaoundé » garde son accent dans la version anglaise (nom propre).
   'corridorPages.pages.parisDouala.faq[0].question',
   'corridorPages.pages.parisDouala.faq[0].answer',

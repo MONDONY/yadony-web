@@ -4,6 +4,7 @@ import AxeBuilder from '@axe-core/playwright'
 const PAGES = [
   '/', '/comment-ca-marche', '/tarifs', '/securite', '/a-propos', '/contact', '/parrainage?code=ABOU1890',
   '/envoyer-colis', '/envoyer-colis/paris-dakar', '/devenir-voyageur', '/billets-avion', '/gp/paris-dakar', '/en',
+  '/suppression-compte', '/en/delete-account',
 ]
 
 for (const path of PAGES) {
@@ -12,8 +13,8 @@ for (const path of PAGES) {
     await page.waitForLoadState('networkidle')
     // Les blocs apparaissent en fondu au défilement : un contraste mesuré en
     // pleine transition (opacité < 1) serait un faux positif. On attend la fin
-    // des animations finies ; les boucles (Dony qui flotte, défilé des moyens
-    // de paiement) ne changent pas l'opacité et sont ignorées.
+    // des animations finies ; les boucles (Dony qui flotte) ne changent pas
+    // l'opacité et sont ignorées.
     // Le fondu ne démarre qu'à l'hydratation, une image après le chargement :
     // on vérifie donc l'absence d'animation en cours sur deux relevés espacés.
     const settled = () => document.getAnimations()

@@ -1,0 +1,12 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["F5Q74US8XS.com.yadony.yadony"],
+        "components": [
+          { "/": "/ouvrir", "comment": "Boutons des e-mails de notification" }
+        ]
+      }
+    ]
+  }
+}

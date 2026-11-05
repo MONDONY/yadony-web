@@ -6,6 +6,7 @@
     "about": "About",
     "contact": "Contact",
     "download": "Download the app",
+    "downloadShort": "Download",
     "mainLabel": "Main navigation",
     "mobileLabel": "Mobile navigation",
     "menu": "Menu",
@@ -276,6 +277,13 @@
     "donyAlt": "Dony, the Yadony mascot, waiting for your message"
   },
   "legal": {
+    "layout": {
+      "home": "Home",
+      "legal": "Legal",
+      "breadcrumb": "Breadcrumb",
+      "toc": "Table of contents",
+      "tocToggle": "Contents"
+    },
     "mentionsLegales": {
       "seo": {
         "title": "Legal notice",
@@ -285,7 +293,7 @@
       "sections": {
         "editor": {
           "title": "Site publisher",
-          "text": "The yadony.com website is published by YADONY SAS, a simplified joint-stock company whose registration is in progress, with a share capital of €10, whose registered office is at 7 avenue Pablo Picasso, Appartement 375, 94120 Fontenay-sous-Bois, France. SIREN: 108 733 510, RCS Créteil 108 733 510. Contact: contact{'@'}yadony.com. DPO: dpo{'@'}yadony.com."
+          "text": "The yadony.com website is published by YADONY SAS, a simplified joint-stock company with a share capital of €10, whose registered office is at 7 avenue Pablo Picasso, Appartement 375, 94120 Fontenay-sous-Bois, France. SIREN: 108 733 510, RCS Créteil 108 733 510. Contact: contact{'@'}yadony.com. DPO: dpo{'@'}yadony.com."
         },
         "publication": {
           "title": "Publication director",
@@ -312,7 +320,7 @@
     "cgu": {
       "seo": {
         "title": "Terms of use",
-        "description": "The terms of use of the Yadony platform: roles, escrowed payment, commission, disputes, personal data and legal notice."
+        "description": "The terms of use of the Yadony platform: roles, escrowed payment, service fees, disputes, personal data and legal notice."
       },
       "title": "Terms of use",
       "intro": "YADONY SAS (\"Yadony\") publishes a mobile and web application connecting travellers leaving France for West Africa with senders wishing to send parcels to their relatives. Yadony secures these exchanges through identity verification, payment held until delivery, and parcel traceability at every step. These Terms of Use apply to any use of the platform. Signing up constitutes acceptance of these Terms. If you do not accept them, you must not use the platform. This English version is provided for convenience; the French version prevails.",
@@ -413,12 +421,13 @@
               ],
               "ul": [
                 "Bank card (Visa, Mastercard), Apple Pay or Google Pay via Stripe",
-                "Mobile Money: Wave and Orange Money"
+                "Mobile Money: Wave, Orange Money and other operators depending on the country",
+                "Cash, handed to the traveller in person when the parcel is handed over, if the traveller accepts it"
               ]
             },
             {
               "p": [
-                "Any payment made outside the platform is prohibited. The messaging system automatically blocks attempts to exchange contact details to bypass Yadony.",
+                "Except for cash agreed in the application and handed to the traveller when the parcel is handed over, any payment made outside the platform is prohibited. The messaging system automatically blocks attempts to exchange contact details to bypass Yadony.",
                 "Biometric validation (fingerprint, Face ID or PIN code) is optional before any payment."
               ]
             },
@@ -426,14 +435,33 @@
               "sub": "Money held in escrow",
               "p": [
                 "As soon as you pay, the money is immediately held by Stripe. No one can touch it before delivery is confirmed.",
+                "With cash, the money passes from hand to hand: this hold does not apply.",
                 "Delivery is confirmed by the recipient: they enter a 6-digit code received by SMS on the tracking page. The traveller is paid within the following 24 hours, at most 48 hours depending on their bank.",
                 "If the recipient does not confirm within 48 hours, the Yadony team can release the payment manually, only after a check. That action is logged. An honest traveller never waits indefinitely."
               ]
             },
             {
-              "sub": "Commission",
+              "sub": "Service fees",
               "p": [
-                "Yadony charges a service commission on each transaction, at the rate in force shown before payment. It is deducted automatically. In the event of a refund, the commission is never kept: you get back everything you paid."
+                "Yadony charges a service fee on each transaction. It is paid by the sender, on top of the traveller's price: the traveller receives the full price they set. The fee is deducted automatically. All fee amounts shown in these Terms and in the application include all taxes (VAT included).",
+                "Until 19 November 2026 inclusive, the fee is calculated at the current rate, shown before payment.",
+                "From 20 November 2026, the fee is calculated in marginal tiers: each rate applies only to the part of the traveller's price that falls within its tier, as with income tax. Crossing a threshold therefore never changes the rate applied to the whole amount. The rates are then as follows:"
+              ],
+              "ul": [
+                "7% on the part of the price up to 100 €",
+                "6% on the part of the price between 100 € and 300 €",
+                "5% on the part of the price above 300 €"
+              ]
+            },
+            {
+              "p": [
+                "From the same date, the fee is never below a minimum of 1 € (650 FCFA when the price is in CFA francs, XOF or XAF; in another currency, the equivalent amount shown in the application). For a price in a currency other than the euro, the tier thresholds are converted from the euro at a fixed rate: 655.957 FCFA for 1 € for CFA francs, and a reference rate set by Yadony for other currencies. Examples: for a traveller price of 150 €, the fee is 7 € for the first 100 euros plus 3 € for the next 50, so 10 €; for a price of 5 €, it is 1 €, the minimum.",
+                "The service fee is the same whichever payment method you use (bank card, Mobile Money, Yadony wallet or cash) and whichever currency the price is in.",
+                "With cash, the sender hands the traveller the total, service fee included. Yadony then deducts the fee from the traveller's Yadony wallet, or from their service fee card, when they accept the parcel.",
+                "The exact amount of the fee, minimum included, and the total to pay are shown before you confirm anything.",
+                "A \"free service fee\" promo code removes the fee: nothing is then charged. Any other promo code reduces the fee but cannot take it below the minimum. A referral voucher reduces the fee after the minimum has been applied.",
+                "Yadony may change this fee (rates, tiers or minimum). Any change is announced at least 30 days before it takes effect and does not apply to offers, requests and negotiations already created, which keep the fee shown when they were created.",
+                "In the event of a refund, the service fee is never kept: you get back everything you paid."
               ]
             },
             {
@@ -466,15 +494,51 @@
               ]
             },
             {
-              "sub": "The Kilo Pro badge",
+              "sub": "The GP Pro badge",
               "p": [
-                "This badge distinguishes reliable travellers. It is granted to travellers who have:"
+                "The GP Pro badge distinguishes GPs: travellers who regularly carry parcels by plane on the same corridor, often every week. It is open to individuals and businesses alike. There is a single badge, with no distinction between them.",
+                "The badge is never granted automatically. It does not depend on a number of deliveries or a minimum rating: each request is reviewed by the Yadony team."
+              ]
+            },
+            {
+              "sub": "Requesting the badge",
+              "p": [
+                "Travellers request the badge themselves, at sign-up by ticking “I am a GP”, or later from their profile. Their identity must be verified. A request made at sign-up goes to review as soon as the identity is verified.",
+                "The request states:"
               ],
               "ul": [
-                "At least 5 confirmed deliveries",
-                "An average rating of 4.0 or higher over the last 5 deliveries",
-                "No active suspension",
-                "Deliveries made to at least 5 different recipients, at least 7 days apart (to prevent gaming)"
+                "Travel frequency: every week, twice a month, once a month or less often",
+                "A trading name, if the traveller has one (optional)",
+                "Up to 4 supporting documents, always optional (photo or PDF, 10 MB maximum per file): extract from a business register (Kbis, SIRET, NINEA, RCCM or equivalent), tickets or boarding passes, a screenshot of a social media profile, or any other useful file"
+              ]
+            },
+            {
+              "p": [
+                "Travellers can cancel their request while it is under review."
+              ]
+            },
+            {
+              "sub": "Review and decision",
+              "p": [
+                "The Yadony team reviews each request case by case. It takes into account, in particular, the verified identity, published trips, completed deliveries, ratings received, disputes, reports and the age of the account.",
+                "The team accepts or refuses the request. Every refusal states its reason. After a refusal, the traveller can submit a new request straight away.",
+                "The team may also grant the badge to a traveller who has not requested it.",
+                "The decision is sent by push notification, by e-mail if the account has an e-mail address, and in the app."
+              ]
+            },
+            {
+              "sub": "Withdrawal of the badge",
+              "p": [
+                "The badge can be withdrawn at any time, always by a decision of the Yadony team. The reason for the withdrawal is sent to the traveller through the same channels as the decision to grant it.",
+                "Some situations lead the team to review a profile again: low recent ratings, a dispute, a report, 8 weeks of inactivity or an identity that is no longer verified. They never lead to automatic withdrawal."
+              ]
+            },
+            {
+              "sub": "What the badge provides",
+              "p": [
+                "The GP Pro badge is shown on the traveller's trips, profile, messages, shareable poster and offers. Senders can filter search results to show GP Pros only. All other things being equal, a GP Pro is placed ahead of another traveller in search results.",
+                "The badge carries no pricing advantage: Yadony's service fee is calculated the same way for everyone. It is independent of the Yadony PRO subscription (article 9).",
+                "The badge is not a guarantee by Yadony of the quality of the transport. It shows that the Yadony team has reviewed the traveller's profile."
               ]
             }
           ]
@@ -593,7 +657,7 @@
           "blocks": [
             {
               "p": [
-                "It is prohibited to publish false information, to contact other users off the platform to avoid paying the commission, to use Yadony for illicit purposes or to attempt to bypass the security systems.",
+                "It is prohibited to publish false information, to contact other users off the platform to avoid paying the service fee, to use Yadony for illicit purposes or to attempt to bypass the security systems.",
                 "In the event of a violation, Yadony may remove your content, suspend or permanently close your account, and report the facts to the competent authorities."
               ]
             },
@@ -635,7 +699,7 @@
           "blocks": [
             {
               "p": [
-                "These Terms are governed by French law. In the event of a dispute not resolved amicably, the courts of Paris have jurisdiction. Users residing in Europe can also use the European online dispute resolution platform: https://ec.europa.eu/consumers/odr."
+                "These Terms are governed by French law. In the event of a dispute not resolved amicably, a consumer may bring proceedings, at their choice, before any court having territorial jurisdiction under the French Code of Civil Procedure or before the court of the place where they lived when the contract was concluded or when the harmful event occurred. Between Yadony and a user acting in a professional capacity, the courts of Paris have exclusive jurisdiction."
               ]
             }
           ]
@@ -648,7 +712,7 @@
                 "The publisher's legal information:"
               ],
               "ul": [
-                "Company: YADONY SAS (registration in progress)",
+                "Company: YADONY SAS",
                 "Form: simplified joint-stock company (SAS)",
                 "Share capital: €10",
                 "Registered office: 7 avenue Pablo Picasso, Appartement 375, 94120 Fontenay-sous-Bois, France",
@@ -670,7 +734,7 @@
         "description": "How Yadony protects your data: minimal internal data, certified partners (Firebase, Stripe, Cloudflare), retention periods and GDPR rights."
       },
       "title": "Privacy policy",
-      "intro": "Last updated: October 16, 2026. Yadony is a mobile marketplace connecting travellers with spare luggage space to senders wishing to send parcels to their relatives. Our service covers corridors from Europe, the United States, Canada and Africa to all the destinations we serve. We designed Yadony around one core principle: we keep only the strict minimum of personal data internally. Sensitive data (identity, authentication, official documents) is entrusted to trusted, globally recognised specialised partners who process it with a level of security and compliance we could not reach alone. By using Yadony, you accept the practices described in this document. This English version is provided for convenience; the French version prevails.",
+      "intro": "Last updated: November 3, 2026. Yadony is a mobile marketplace connecting travellers with spare luggage space to senders wishing to send parcels to their relatives. Our service covers corridors from Europe, the United States, Canada and Africa to all the destinations we serve. We designed Yadony around one core principle: we keep only the strict minimum of personal data internally. Sensitive data (identity, authentication, official documents) is entrusted to trusted, globally recognised specialised partners who process it with a level of security and compliance we could not reach alone. By using Yadony, you accept the practices described in this document. This English version is provided for convenience; the French version prevails.",
       "articles": [
         {
           "title": "1. Who is responsible for your data?",
@@ -841,6 +905,29 @@
               "p": [
                 "The maps shown in the app and the address search (autocomplete) use Google Maps services. Google receives the addresses and places you search for, as well as the map areas displayed. Google privacy policy: https://policies.google.com/privacy"
               ]
+            },
+            {
+              "sub": "3.12 AI assistant and “Create with AI” forms",
+              "p": [
+                "The app offers an AI assistant that answers your questions about how Yadony works, based on help articles written by Yadony, and a “Create with AI” button that prepares a trip or parcel request form from what you dictate or type. What is sent to the AI provider:"
+              ],
+              "ul": [
+                "The text of your question and of the current conversation (at most the last 12 exchanges)",
+                "If your question is about one of your parcels: the facts needed to answer (trip cities and date, parcel step, status of the payment, of a cancellation or of a dispute), with no name, phone number, tracking number or code",
+                "For “Create with AI”: the text you dictate or type (transcribed on your device) and the fields of the form in progress (cities, dates, weight, price, description)",
+                "The app language"
+              ]
+            },
+            {
+              "p": [
+                "Yadony does not add your name, phone number, email address or account identifier.",
+                "Questions are processed by a third-party AI provider. At the time of writing: Anthropic, PBC (United States), through its commercial API (Claude model). This list is kept up to date on this page, including if another provider were to take over. As this provider is established outside the European Union, your questions are transferred outside the EU.",
+                "Before the first use, the app asks for your consent in a window that details these transfers. If you decline, nothing is sent; consent is asked again after you sign out.",
+                "Under its commercial terms, Anthropic does not use questions received through its API to train its models. We still ask you not to enter any personal data in the assistant: it does not need any to answer you.",
+                "Yadony does not keep the content of conversations: they stay on your device for the duration of the session and disappear when you close the app. Yadony only keeps usage counters, without the text (number of questions, answer found or not).",
+                "Exception: if you choose to \"talk to a human\", your last question and the exchange are copied into a Yadony support ticket, kept like other support requests.",
+                "You can hide the assistant bubble in Settings."
+              ]
             }
           ]
         },
@@ -864,6 +951,25 @@
               "p": [
                 "App usage data (screens viewed, actions taken, session recordings) is measured with PostHog (see article 3.6). It is linked to your account's technical identifier, never to your phone number, e-mail address or name, and the text and images in session recordings are masked on your device. In the European Union, the European Economic Area, the United Kingdom and Switzerland (or if your country cannot be determined), this measurement is only turned on with your explicit consent, requested at your first sign-in. Elsewhere, it is on by default. In every case, you can turn it off at any time in the app: Profile tab, ☰ menu, Settings, Privacy, “Usage statistics”."
               ]
+            },
+            {
+              "sub": "The GP Pro badge",
+              "p": [
+                "If you request the GP Pro badge (article 8 of the Terms of Use), Yadony processes the following data, solely to review your request and display the badge:"
+              ],
+              "ul": [
+                "The travel frequency you state",
+                "Your trading name, if you give one",
+                "The supporting documents you choose to add (optional, 4 at most)",
+                "The status of your request and the history of the team's decisions, with their reasons"
+              ]
+            },
+            {
+              "p": [
+                "To review the request, the team also relies on data Yadony already holds: the result of your identity verification, your published trips, your deliveries, your ratings, disputes, reports and the age of your account.",
+                "Supporting documents are never public. Only Yadony administrators can view them, through temporary links valid for 15 minutes. They are deleted as soon as the request is decided: acceptance, refusal, cancellation of the request or deletion of the account. A file uploaded but never attached to a request is deleted within 24 hours.",
+                "The decision and its reason are kept in the audit log. During the review, no information from your request is visible to other users. Once granted, the badge is visible to other users (article 7)."
+              ]
             }
           ]
         },
@@ -884,7 +990,9 @@
                 "App usage data: PostHog, linked to the account's technical identifier, under the consent rules of article 4",
                 "Error reports and problem reports: Sentry",
                 "Parcel and delivery photos: Cloudflare. Access only through secure temporary links",
+                "GP Pro badge request (frequency, trading name, status, decisions and reasons): Yadony (internal database). Optional supporting documents: viewable only by Yadony administrators, through a 15-minute temporary link, and deleted as soon as the decision is made",
                 "Transaction history, scans, ratings: Yadony (internal database). Access: yes, needed to run the service",
+                "AI assistant and “Create with AI”: third-party AI provider (Anthropic, Claude model), after your consent in the app, with no name, phone number, email or identifier. Yadony does not keep the content of conversations, unless you choose to talk to a human (support ticket)",
                 "Messages between users: Yadony (encrypted). Encrypted content, access restricted to disputes"
               ]
             }
@@ -904,6 +1012,7 @@
                 "Parcel scans and traceability: performance of the contract and legitimate interest",
                 "Fraud detection and security: legitimate interest",
                 "Ratings and reputation: legitimate interest",
+                "Review of GP Pro badge requests, display of the badge and record of decisions: performance of the contract (Terms of Use, article 8) and legitimate interest (reliability of the profiles highlighted)",
                 "Marketing communications: consent (revocable at any time)"
               ],
               "p": [
@@ -976,6 +1085,8 @@
                 "Scans and geolocation: 5 years, evidence in disputes",
                 "Messages in the messaging system: 2 years after the transaction, dispute resolution",
                 "Audience measurement data: 13 months, CNIL compliance",
+                "Supporting documents for a GP Pro badge request: deleted as soon as the decision is made (acceptance, refusal, cancellation or deletion of the account). Files never attached to a request: deleted within 24 hours",
+                "Decisions on the GP Pro badge and their reasons: kept in the audit log",
                 "Deleted accounts: profile data anonymised upon final deletion, 30 days after the request, except financial history kept for 5 years"
               ],
               "p": [
@@ -1020,7 +1131,7 @@
               "ul": [
                 "Right of access: obtain a copy of all the data Yadony holds about you, via Settings → My data or dpo{'@'}yadony.com",
                 "Right of rectification: correct your profile data (name, e-mail, city), directly in your profile in the application",
-                "Right to erasure: delete your account and profile data, in the app: Profile tab, ☰ menu, then “Delete my account”",
+                "Right to erasure: delete your account and profile data, in the app: Profile tab, ☰ menu, then “Delete my account”. Without the app: yadony.com/en/delete-account",
                 "Right to portability: receive your data in JSON or CSV format, on request to dpo{'@'}yadony.com",
                 "Right to object: object to processing based on legitimate interest, on request to dpo{'@'}yadony.com",
                 "Withdrawal of consent: turn off marketing or analytics, via Settings → Privacy",
@@ -1081,6 +1192,7 @@
                 "Parcel images (Cloudflare): the links become inaccessible. Files are deleted under Cloudflare's policy.",
                 "Messages in the messaging system: deleted.",
                 "Recipient address book: cleared.",
+                "Supporting documents for a GP Pro badge request: deleted.",
                 "Transaction history: kept for 5 years (statutory accounting obligation). This data is anonymised as far as possible.",
                 "If a dispute is in progress, the account is kept until the dispute is closed, then deleted."
               ],
@@ -1120,8 +1232,135 @@
               "ul": [
                 "Company name: YADONY SAS, SIREN 108 733 510",
                 "Publication director: Mr Dramane DIAKITE, President",
-                "Technical partners: Google Firebase, Stripe, Didit, pawaPay (Mobile Money: Wave, Orange Money and other operators), Cloudflare, PostHog, Sentry, Twilio, Resend, Stream, Google Maps",
+                "Technical partners: Google Firebase, Stripe, Didit, pawaPay (Mobile Money: Wave, Orange Money and other operators), Cloudflare, PostHog, Sentry, Twilio, Resend, Stream, Google Maps, Anthropic (AI assistant)",
                 "French supervisory authority: CNIL (www.cnil.fr)"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "18. Public display of trips",
+          "blocks": [
+            {
+              "p": [
+                "The trips that travelers publish on Yadony are displayed on yadony.com, in a search of upcoming trips. Any visitor to the site can view them without creating an account."
+              ]
+            },
+            {
+              "sub": "What is displayed",
+              "ul": [
+                "The route: the departure city and the arrival city",
+                "The departure date",
+                "The mode of transport",
+                "The available capacity",
+                "The price per kilo paid by the sender",
+                "The \"Urgent\" label, when the traveler has chosen it",
+                "The traveler's first name and the initial of their last name",
+                "The traveler's rating",
+                "The traveler's number of trips",
+                "The verified identity badge"
+              ]
+            },
+            {
+              "sub": "What is never displayed",
+              "ul": [
+                "The phone number",
+                "The e-mail address",
+                "The photo"
+              ]
+            },
+            {
+              "sub": "Removing a trip",
+              "p": [
+                "A traveler who does not want their trips displayed in this way can ask for their removal by writing to {email}. We handle the request within a reasonable time."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "suppressionCompte": {
+      "seo": {
+        "title": "Delete your Yadony account",
+        "description": "How to delete your Yadony account and your data, from the app or by e-mail: timing, data deleted and data kept."
+      },
+      "title": "Delete your Yadony account",
+      "intro": "You can delete your account and your data at any time, from the app or by e-mail.",
+      "privacyLink": "Read the privacy policy",
+      "articles": [
+        {
+          "title": "1. From the app",
+          "blocks": [
+            {
+              "p": [
+                "Open the “Profile” tab, tap the Menu button (☰), then “Delete my account”. You are offered two choices:"
+              ],
+              "ul": [
+                "“30-day pause” (reversible): your account is permanently deleted after 30 days. During that period, you can cancel the deletion with the “Cancel deletion” button on your profile. Logging in again does not cancel the deletion.",
+                "“Delete permanently” (irreversible): your account is deleted immediately, after you confirm."
+              ]
+            }
+          ]
+        },
+        {
+          "title": "2. Without the app",
+          "blocks": [
+            {
+              "p": [
+                "Write to dpo{'@'}yadony.com with the subject “Account deletion”, if possible from the e-mail address linked to your account, and include your account's phone number.",
+                "We check that the request really comes from the account holder before deleting the account, and we reply within one month at most, as required by the GDPR.",
+                "You can also write to us by post: Yadony, 7 avenue Pablo Picasso, Appt 375, 94120 Fontenay-sous-Bois, France."
+              ]
+            }
+          ]
+        },
+        {
+          "title": "3. Before deletion",
+          "blocks": [
+            {
+              "ul": [
+                "If one of your shipments is being delivered and its payment is held in escrow, deletion is not possible until the delivery is confirmed.",
+                "As soon as you make the request, your open shipping requests and your active trips are cancelled. The senders concerned are refunded and notified.",
+                "Balance: the refundable part of your balance is refunded to you automatically, to the original payment method (card or mobile money). Bonuses and free credits are permanently lost. The app shows you these amounts before you confirm."
+              ]
+            }
+          ]
+        },
+        {
+          "title": "4. Data deleted",
+          "blocks": [
+            {
+              "p": [
+                "When your account is deleted, we delete:"
+              ],
+              "ul": [
+                "your profile identity: name (replaced by “Utilisateur supprimé”, “deleted user”), date of birth, city, address;",
+                "your login account: phone number and e-mail address;",
+                "your identity verification file on our servers, and its photos;",
+                "attachments sent to support;",
+                "your recipient address book;",
+                "your notification tokens."
+              ]
+            }
+          ]
+        },
+        {
+          "title": "5. Data kept",
+          "blocks": [
+            {
+              "p": [
+                "Some data is kept:"
+              ],
+              "ul": [
+                "the history of payments and transactions, for our legal and accounting obligations (up to 5 years, as stated in our privacy policy);",
+                "the security log, which cannot be modified, with personal data masked;",
+                "messages already exchanged remain visible to the people you talked to, with your name replaced by “Utilisateur supprimé” (“deleted user”);",
+                "identity verification data held by our provider (Didit) is kept according to its own retention period."
+              ]
+            },
+            {
+              "p": [
+                "To learn more about your data, how long it is kept and your rights, read our privacy policy."
               ]
             }
           ]
@@ -1163,6 +1402,7 @@
     "legalNotice": "Legal notice",
     "terms": "Terms of use",
     "privacy": "Privacy policy",
+    "deleteAccount": "Delete my account",
     "copyright": "© yadony. A matching service, not a carrier.",
     "legalTitle": "Legal",
     "cookiesPolicy": "Cookie policy",
@@ -1201,27 +1441,16 @@
       "refuse": "Refuse"
     }
   },
-  "beta": {
-    "banner": {
-      "label": "Beta testing phase",
-      "badge": "Beta",
-      "text": "Yadony is being tested with its first users.",
-      "cta": "Join the WhatsApp group"
+  "openLink": {
+    "seo": {
+      "title": "Open Yadony",
+      "description": "Open this notification in the Yadony app."
     },
-    "footer": {
-      "title": "Join the beta testers",
-      "text": "The WhatsApp group brings together our first users. We announce updates there and collect feedback.",
-      "qrAlt": "QR code for the beta testers WhatsApp group",
-      "scan": "Scan this code with your phone"
-    }
-  },
-  "stores": {
-    "comingSoon": {
-      "kicker": "Coming soon",
-      "title": "The app is on its way",
-      "text": "Yadony will very soon be available on the App Store and Google Play. Check back in a few days. The website is already here.",
-      "close": "Got it"
-    }
+    "title": "Open this notification in the app",
+    "lead": "This link opens straight in the Yadony app. If nothing happens, tap the button below.",
+    "openApp": "Open in the Yadony app",
+    "install": "Don't have the app yet? Install it, then open the link from your e-mail again.",
+    "invalid": "This link is not valid. Open the Yadony app to find your notifications."
   },
   "referral": {
     "seo": {

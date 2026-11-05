@@ -90,12 +90,17 @@ const stepLabel = (n: number) => t('journeys.common.stepLabel', { n })
       </UiContainer>
     </section>
 
-    <section class="bg-surface py-14 sm:py-20">
-      <UiContainer>
-        <h2 class="sr-only">{{ t(`${base}.listLabel`) }}</h2>
-        <JourneyScene :steps="props.steps" :texts="stepTexts" :label="t(`${base}.listLabel`)" :step-label="stepLabel" />
-      </UiContainer>
-    </section>
+    <slot name="search" />
+
+    <!-- Une page peut remplacer la scène racontée par sa propre présentation. -->
+    <slot name="steps">
+      <section class="bg-surface py-14 sm:py-20">
+        <UiContainer>
+          <h2 class="sr-only">{{ t(`${base}.listLabel`) }}</h2>
+          <JourneyScene :steps="props.steps" :texts="stepTexts" :label="t(`${base}.listLabel`)" :step-label="stepLabel" />
+        </UiContainer>
+      </section>
+    </slot>
 
     <slot />
 

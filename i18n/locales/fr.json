@@ -6,6 +6,7 @@
     "about": "À propos",
     "contact": "Contact",
     "download": "Télécharger l'app",
+    "downloadShort": "Télécharger",
     "mainLabel": "Navigation principale",
     "mobileLabel": "Navigation mobile",
     "menu": "Menu",
@@ -276,6 +277,13 @@
     "donyAlt": "Dony, la mascotte de Yadony, attend votre message"
   },
   "legal": {
+    "layout": {
+      "home": "Accueil",
+      "legal": "Légal",
+      "breadcrumb": "Fil d’Ariane",
+      "toc": "Sommaire",
+      "tocToggle": "Sommaire"
+    },
     "mentionsLegales": {
       "seo": {
         "title": "Mentions légales",
@@ -285,7 +293,7 @@
       "sections": {
         "editor": {
           "title": "Éditeur du site",
-          "text": "Le site yadony.com est édité par YADONY SAS, société par actions simplifiée en cours d'immatriculation au capital de 10 €, dont le siège social est situé 7 avenue Pablo Picasso, Appartement 375, 94120 Fontenay-sous-Bois, France. SIREN : 108 733 510, RCS Créteil 108 733 510. Contact : contact{'@'}yadony.com. DPO : dpo{'@'}yadony.com."
+          "text": "Le site yadony.com est édité par YADONY SAS, société par actions simplifiée au capital de 10 €, dont le siège social est situé 7 avenue Pablo Picasso, Appartement 375, 94120 Fontenay-sous-Bois, France. SIREN : 108 733 510, RCS Créteil 108 733 510. Contact : contact{'@'}yadony.com. DPO : dpo{'@'}yadony.com."
         },
         "publication": {
           "title": "Directeur de la publication",
@@ -312,7 +320,7 @@
     "cgu": {
       "seo": {
         "title": "Conditions générales d'utilisation",
-        "description": "Les conditions générales d'utilisation de la plateforme Yadony : rôles, paiement sous séquestre, commission, litiges, données personnelles et mentions légales."
+        "description": "Les conditions générales d'utilisation de la plateforme Yadony : rôles, paiement sous séquestre, frais de service, litiges, données personnelles et mentions légales."
       },
       "title": "Conditions générales d'utilisation",
       "intro": "YADONY SAS (ci-après « Yadony ») édite une application mobile et web qui met en relation des voyageurs partant de France vers l'Afrique de l'Ouest avec des expéditeurs souhaitant envoyer des colis à leurs proches. Yadony sécurise ces échanges grâce à la vérification des identités, au blocage du paiement jusqu'à la livraison et à la traçabilité du colis à chaque étape. Les présentes Conditions Générales d'Utilisation (CGU) s'appliquent à toute utilisation de la plateforme. Toute inscription vaut acceptation de ces CGU. Si vous n'acceptez pas ces conditions, vous ne devez pas utiliser la plateforme.",
@@ -413,12 +421,13 @@
               ],
               "ul": [
                 "Carte bancaire (Visa, Mastercard), Apple Pay ou Google Pay via Stripe",
-                "Mobile Money : Wave et Orange Money"
+                "Mobile Money : Wave, Orange Money et autres opérateurs selon le pays",
+                "Espèces, remises en main propre au voyageur lors de la remise du colis, si le voyageur les accepte"
               ]
             },
             {
               "p": [
-                "Tout paiement effectué en dehors de la plateforme est interdit. La messagerie bloque automatiquement les tentatives d'échange de coordonnées pour contourner Yadony.",
+                "À l'exception des espèces convenues dans l'application et remises au voyageur lors de la remise du colis, tout paiement effectué en dehors de la plateforme est interdit. La messagerie bloque automatiquement les tentatives d'échange de coordonnées pour contourner Yadony.",
                 "Une validation biométrique (empreinte, Face ID ou code PIN) est optionnelle avant tout paiement."
               ]
             },
@@ -426,14 +435,33 @@
               "sub": "L'argent bloqué (séquestre)",
               "p": [
                 "Dès votre paiement, l'argent est immédiatement bloqué chez Stripe. Personne ne peut y toucher avant la confirmation de livraison.",
+                "En espèces, l'argent passe de main à main : ce blocage ne s'applique pas.",
                 "La livraison est confirmée par le destinataire : il saisit un code à 6 chiffres reçu par SMS sur la page de suivi. Le voyageur est payé dans les 24 heures suivantes, au plus tard 48 heures selon sa banque.",
                 "Si le destinataire ne confirme pas sous 48 heures, l'équipe Yadony peut débloquer le paiement manuellement, uniquement après une vérification. Cette action est tracée. Un voyageur honnête n'attend jamais indéfiniment."
               ]
             },
             {
-              "sub": "Commission",
+              "sub": "Frais de service",
               "p": [
-                "Yadony prélève une commission de service sur chaque transaction, au taux en vigueur affiché avant le paiement. Elle est prélevée automatiquement. En cas de remboursement, la commission n'est jamais retenue : vous récupérez la totalité de ce que vous avez payé."
+                "Yadony prélève des frais de service sur chaque transaction. Ils sont payés par l'expéditeur, en plus du prix du voyageur : le voyageur reçoit en entier le prix qu'il a fixé. Les frais sont prélevés automatiquement. Tous les montants de frais indiqués dans ces CGU et dans l'application sont toutes taxes comprises (TTC).",
+                "Jusqu'au 19 novembre 2026 inclus, les frais sont calculés au taux en vigueur, affiché avant le paiement.",
+                "À compter du 20 novembre 2026, les frais sont calculés par paliers marginaux : chaque taux ne s'applique qu'à la part du prix du voyageur comprise dans sa tranche, comme pour l'impôt sur le revenu. Passer un seuil ne fait donc jamais changer le taux appliqué à l'ensemble du montant. Les taux sont alors les suivants :"
+              ],
+              "ul": [
+                "7 % sur la part du prix jusqu'à 100 €",
+                "6 % sur la part du prix comprise entre 100 € et 300 €",
+                "5 % sur la part du prix au-delà de 300 €"
+              ]
+            },
+            {
+              "p": [
+                "À compter de la même date, les frais ne sont jamais inférieurs à un minimum de 1 € (650 FCFA lorsque le prix est en francs CFA, XOF ou XAF ; dans une autre devise, le montant équivalent affiché dans l'application). Pour un prix dans une autre devise que l'euro, les seuils des tranches sont convertis depuis l'euro à une parité fixe : 655,957 FCFA pour 1 € pour les francs CFA, et une parité de référence fixée par Yadony pour les autres devises. Exemples : pour un prix de voyageur de 150 €, les frais sont de 7 € pour les 100 premiers euros plus 3 € pour les 50 suivants, soit 10 € ; pour un prix de 5 €, ils sont de 1 €, le minimum.",
+                "Les frais de service sont les mêmes quel que soit le moyen de paiement (carte bancaire, Mobile Money, portefeuille Yadony ou espèces) et quelle que soit la devise du prix.",
+                "En espèces, l'expéditeur remet au voyageur le total, frais de service compris. Yadony prélève alors les frais sur le portefeuille Yadony du voyageur, ou sur sa carte des frais de service, quand il accepte le colis.",
+                "Le montant exact des frais, minimum compris, et le total à payer sont affichés avant toute validation.",
+                "Un code promo « frais de service offerts » supprime les frais : aucun frais n'est alors prélevé. Un autre code promo réduit les frais sans pouvoir les faire descendre sous le minimum. Un bon de parrainage réduit les frais après application du minimum.",
+                "Yadony peut modifier ces frais (taux, tranches ou minimum). Toute modification est annoncée au moins 30 jours avant son entrée en vigueur et ne s'applique pas aux offres, demandes et négociations déjà créées, qui gardent les frais affichés au moment de leur création.",
+                "En cas de remboursement, les frais de service ne sont jamais retenus : vous récupérez la totalité de ce que vous avez payé."
               ]
             },
             {
@@ -466,15 +494,51 @@
               ]
             },
             {
-              "sub": "Le badge Kilo Pro",
+              "sub": "Le badge GP Pro",
               "p": [
-                "Ce badge distingue les voyageurs fiables. Il est accordé aux voyageurs qui ont :"
+                "Le badge GP Pro distingue les GP : les voyageurs qui transportent régulièrement des colis en avion sur un même corridor, souvent chaque semaine. Il est ouvert aux particuliers comme aux entreprises. Il n'existe qu'un seul badge, sans distinction entre eux.",
+                "Le badge n'est jamais accordé automatiquement. Il ne dépend d'aucun nombre de livraisons ni d'aucune note minimale : chaque demande est examinée par l'équipe Yadony."
+              ]
+            },
+            {
+              "sub": "Demander le badge",
+              "p": [
+                "Le voyageur demande le badge lui-même, à l'inscription en cochant « Je suis GP », ou plus tard depuis son profil. Son identité doit être vérifiée. Une demande faite à l'inscription part à l'examen dès que l'identité est vérifiée.",
+                "La demande indique :"
               ],
               "ul": [
-                "Au moins 5 livraisons confirmées",
-                "Une note moyenne de 4,0 ou plus sur les 5 dernières livraisons",
-                "Aucune suspension en cours",
-                "Des livraisons faites pour au moins 5 destinataires différents, espacées de 7 jours minimum (pour éviter la triche)"
+                "La fréquence de voyage : chaque semaine, deux fois par mois, une fois par mois ou moins souvent",
+                "Un nom commercial, si le voyageur en a un (facultatif)",
+                "Jusqu'à 4 justificatifs, toujours facultatifs (photo ou PDF, 10 Mo maximum par fichier) : extrait d'un registre d'entreprise (Kbis, SIRET, NINEA, RCCM ou équivalent), billets ou cartes d'embarquement, capture d'un profil de réseau social, ou tout autre fichier utile"
+              ]
+            },
+            {
+              "p": [
+                "Le voyageur peut annuler sa demande tant qu'elle est en cours d'examen."
+              ]
+            },
+            {
+              "sub": "L'examen et la décision",
+              "p": [
+                "L'équipe Yadony examine chaque demande au cas par cas. Elle tient compte notamment de l'identité vérifiée, des trajets publiés, des livraisons effectuées, des notes reçues, des litiges, des signalements et de l'ancienneté du compte.",
+                "L'équipe accepte la demande ou la refuse. Tout refus est motivé. Après un refus, le voyageur peut déposer une nouvelle demande sans délai.",
+                "L'équipe peut aussi accorder le badge à un voyageur qui ne l'a pas demandé.",
+                "La décision est communiquée par notification push, par e-mail si le compte comporte une adresse e-mail, et dans l'application."
+              ]
+            },
+            {
+              "sub": "Le retrait du badge",
+              "p": [
+                "Le badge peut être retiré à tout moment, toujours par une décision de l'équipe Yadony. Le motif du retrait est communiqué au voyageur, par les mêmes canaux que la décision d'attribution.",
+                "Certaines situations conduisent l'équipe à réexaminer un profil : des notes récentes basses, un litige, un signalement, une inactivité de 8 semaines ou une identité qui n'est plus vérifiée. Elles n'entraînent jamais de retrait automatique."
+              ]
+            },
+            {
+              "sub": "Ce que le badge apporte",
+              "p": [
+                "Le badge GP Pro est affiché sur les trajets, le profil, la messagerie, l'affiche partageable et les offres du voyageur. Les expéditeurs peuvent filtrer les résultats de recherche pour n'afficher que les GP Pro. À critères égaux, un GP Pro est placé avant un autre voyageur dans les résultats de recherche.",
+                "Le badge n'apporte aucun avantage tarifaire : les frais de service de Yadony se calculent de la même façon pour tous. Il est indépendant de l'abonnement Yadony PRO (article 9).",
+                "Le badge n'est pas une garantie de Yadony sur la qualité du transport. Il indique que l'équipe Yadony a examiné le profil du voyageur."
               ]
             }
           ]
@@ -593,7 +657,7 @@
           "blocks": [
             {
               "p": [
-                "Il est interdit de publier de fausses informations, de contacter d'autres utilisateurs hors de la plateforme pour éviter de payer la commission, d'utiliser Yadony à des fins illicites ou de tenter de contourner les systèmes de sécurité.",
+                "Il est interdit de publier de fausses informations, de contacter d'autres utilisateurs hors de la plateforme pour éviter de payer les frais de service, d'utiliser Yadony à des fins illicites ou de tenter de contourner les systèmes de sécurité.",
                 "En cas de violation, Yadony peut supprimer votre contenu, suspendre ou fermer définitivement votre compte, et signaler les faits aux autorités compétentes."
               ]
             },
@@ -635,7 +699,7 @@
           "blocks": [
             {
               "p": [
-                "Ces CGU sont soumises au droit français. En cas de litige non résolu à l'amiable, les tribunaux de Paris sont compétents. Les utilisateurs résidant en Europe peuvent aussi utiliser la plateforme européenne de règlement des litiges : https://ec.europa.eu/consumers/odr."
+                "Ces CGU sont soumises au droit français. En cas de litige non résolu à l'amiable, le consommateur peut saisir, à son choix, l'une des juridictions territorialement compétentes en vertu du code de procédure civile ou la juridiction du lieu où il demeurait au moment de la conclusion du contrat ou de la survenance du fait dommageable. Entre Yadony et un utilisateur agissant à titre professionnel, les tribunaux de Paris sont seuls compétents."
               ]
             }
           ]
@@ -648,7 +712,7 @@
                 "Les informations légales de l'éditeur :"
               ],
               "ul": [
-                "Société : YADONY SAS (en cours d'immatriculation)",
+                "Société : YADONY SAS",
                 "Forme : Société par Actions Simplifiée",
                 "Capital : 10 €",
                 "Siège : 7 avenue Pablo Picasso, Appartement 375, 94120 Fontenay-sous-Bois, France",
@@ -670,7 +734,7 @@
         "description": "Comment Yadony protège vos données : minimum de données en interne, partenaires certifiés (Firebase, Stripe, Cloudflare), durées de conservation et droits RGPD."
       },
       "title": "Politique de confidentialité",
-      "intro": "Dernière mise à jour : 16 octobre 2026. Yadony est une place de marché mobile qui met en relation des voyageurs disposant de place dans leurs bagages avec des expéditeurs souhaitant envoyer des colis à leurs proches. Notre service couvre les corridors depuis l'Europe, les États-Unis, le Canada et l'Afrique vers toutes les destinations que nous desservons. Nous avons conçu Yadony avec un principe fondamental : nous ne conservons que le strict minimum de données personnelles en interne. Les données sensibles (identité, authentification, documents officiels) sont confiées à des partenaires spécialisés de confiance, reconnus mondialement, qui les traitent avec un niveau de sécurité et de conformité que nous ne pourrions pas atteindre seuls. En utilisant Yadony, vous acceptez les pratiques décrites dans ce document.",
+      "intro": "Dernière mise à jour : 3 novembre 2026. Yadony est une place de marché mobile qui met en relation des voyageurs disposant de place dans leurs bagages avec des expéditeurs souhaitant envoyer des colis à leurs proches. Notre service couvre les corridors depuis l'Europe, les États-Unis, le Canada et l'Afrique vers toutes les destinations que nous desservons. Nous avons conçu Yadony avec un principe fondamental : nous ne conservons que le strict minimum de données personnelles en interne. Les données sensibles (identité, authentification, documents officiels) sont confiées à des partenaires spécialisés de confiance, reconnus mondialement, qui les traitent avec un niveau de sécurité et de conformité que nous ne pourrions pas atteindre seuls. En utilisant Yadony, vous acceptez les pratiques décrites dans ce document.",
       "articles": [
         {
           "title": "1. Qui est responsable de vos données ?",
@@ -841,6 +905,29 @@
               "p": [
                 "Les cartes affichées dans l'application et la recherche d'adresses (saisie automatique) utilisent les services Google Maps. Google reçoit les adresses et les lieux que vous recherchez, ainsi que les zones de carte affichées. Politique de confidentialité de Google : https://policies.google.com/privacy"
               ]
+            },
+            {
+              "sub": "3.12 Assistant IA et formulaires « Créer avec l'IA »",
+              "p": [
+                "L'application propose un assistant IA qui répond à vos questions sur le fonctionnement de Yadony à partir de fiches d'aide rédigées par Yadony, ainsi qu'un bouton « Créer avec l'IA » qui prépare un formulaire de trajet ou de demande d'envoi à partir de ce que vous dictez ou écrivez. Ce qui est envoyé au fournisseur d'IA :"
+              ],
+              "ul": [
+                "Le texte de votre question et des échanges de la conversation en cours (au plus les 12 derniers)",
+                "Si votre question porte sur l'un de vos colis : les faits utiles pour y répondre (villes et date du trajet, étape du colis, état du paiement, d'une annulation ou d'un litige), sans nom, numéro de téléphone, numéro de suivi ni code",
+                "Pour « Créer avec l'IA » : le texte que vous dictez ou écrivez (transcrit sur votre appareil), et les champs du formulaire en cours (villes, dates, poids, prix, description)",
+                "La langue de l'application"
+              ]
+            },
+            {
+              "p": [
+                "Yadony n'y ajoute ni votre nom, ni votre numéro de téléphone, ni votre e-mail, ni votre identifiant de compte.",
+                "Les questions sont traitées par un fournisseur d'IA tiers. À ce jour : Anthropic, PBC (États-Unis), via son API professionnelle (modèle Claude). Cette liste est tenue à jour sur cette page, y compris si un autre fournisseur venait à prendre le relais. Ce fournisseur étant établi hors de l'Union européenne, vos questions sont transférées hors de l'UE.",
+                "Avant la première utilisation, l'application vous demande votre accord dans une fenêtre qui détaille ces envois. Si vous refusez, rien n'est envoyé ; l'accord est redemandé après une déconnexion.",
+                "Selon ses conditions commerciales, Anthropic n'utilise pas les questions reçues par son API pour entraîner ses modèles. Nous vous demandons tout de même de ne saisir aucune donnée personnelle dans l'assistant : il n'en a pas besoin pour vous répondre.",
+                "Yadony ne conserve pas le contenu des conversations : elles restent sur votre appareil le temps de la session et disparaissent à la fermeture de l'application. Yadony garde seulement des compteurs d'usage, sans le texte (nombre de questions, réponse trouvée ou non).",
+                "Exception : si vous choisissez de « parler à un humain », votre dernière question et l'échange sont copiés dans un ticket du support Yadony, conservé comme les autres demandes de support.",
+                "Vous pouvez masquer la bulle de l'assistant dans les Réglages."
+              ]
             }
           ]
         },
@@ -864,6 +951,25 @@
               "p": [
                 "Les données d'usage de l'application (écrans consultés, actions effectuées, enregistrements de session) sont mesurées avec PostHog (voir l'article 3.6). Elles sont rattachées à l'identifiant technique de votre compte, jamais à votre numéro de téléphone, à votre adresse e-mail ni à votre nom, et les textes et images des enregistrements de session sont masqués sur votre appareil. Dans l'Union européenne, l'Espace économique européen, au Royaume-Uni et en Suisse (ou si votre pays ne peut pas être déterminé), cette mesure n'est activée qu'avec votre consentement explicite, demandé lors de votre première connexion. Ailleurs, elle est activée par défaut. Dans tous les cas, vous pouvez la désactiver à tout moment dans l'application : onglet Moi, menu ☰, Paramètres, Confidentialité, « Statistiques d'utilisation »."
               ]
+            },
+            {
+              "sub": "Le badge GP Pro",
+              "p": [
+                "Si vous demandez le badge GP Pro (article 8 des CGU), Yadony traite les données suivantes, dans le seul but d'examiner votre demande et d'afficher le badge :"
+              ],
+              "ul": [
+                "La fréquence de voyage que vous indiquez",
+                "Votre nom commercial, si vous en donnez un",
+                "Les justificatifs que vous choisissez d'ajouter (facultatifs, 4 au maximum)",
+                "Le statut de votre demande et l'historique des décisions de l'équipe, avec leurs motifs"
+              ]
+            },
+            {
+              "p": [
+                "Pour examiner la demande, l'équipe s'appuie aussi sur des données que Yadony détient déjà : le résultat de votre vérification d'identité, vos trajets publiés, vos livraisons, vos notes, les litiges, les signalements et l'ancienneté de votre compte.",
+                "Les justificatifs ne sont jamais publics. Seuls les administrateurs Yadony peuvent les consulter, par des liens temporaires valables 15 minutes. Ils sont supprimés dès que la demande est tranchée : acceptation, refus, annulation de la demande ou suppression du compte. Un fichier envoyé mais jamais rattaché à une demande est supprimé sous 24 heures.",
+                "La décision et son motif sont conservés dans le journal d'audit. Pendant l'examen, aucune information de votre demande n'est visible des autres utilisateurs. Une fois accordé, le badge est visible des autres utilisateurs (article 7)."
+              ]
             }
           ]
         },
@@ -884,7 +990,9 @@
                 "Données d'usage de l'application : PostHog, rattachées à l'identifiant technique du compte, selon les règles de consentement de l'article 4",
                 "Rapports d'erreurs et signalements de problème : Sentry",
                 "Photos de colis, photos de livraison : Cloudflare. Accès via lien temporaire sécurisé uniquement",
+                "Demande de badge GP Pro (fréquence, nom commercial, statut, décisions et motifs) : Yadony (base de données interne). Justificatifs facultatifs : consultables uniquement par les administrateurs Yadony, par lien temporaire de 15 minutes, et supprimés dès la décision",
                 "Historique des transactions, scans, évaluations : Yadony (base de données interne). Accès : oui, nécessaire au fonctionnement du service",
+                "Assistant IA et « Créer avec l'IA » : fournisseur d'IA tiers (Anthropic, modèle Claude), après votre accord dans l'application, sans nom, téléphone, e-mail ni identifiant. Yadony ne conserve pas le contenu des conversations, sauf si vous choisissez de parler à un humain (ticket du support)",
                 "Messages entre utilisateurs : Yadony (chiffrés). Contenu chiffré, accès restreint aux litiges"
               ]
             }
@@ -904,6 +1012,7 @@
                 "Scans et traçabilité du colis : exécution du contrat et intérêt légitime",
                 "Détection de fraude et sécurité : intérêt légitime",
                 "Évaluations et réputation : intérêt légitime",
+                "Examen des demandes de badge GP Pro, affichage du badge et trace des décisions : exécution du contrat (CGU, article 8) et intérêt légitime (fiabilité des profils mis en avant)",
                 "Communications marketing : consentement (révocable à tout moment)"
               ],
               "p": [
@@ -976,6 +1085,8 @@
                 "Scans et géolocalisation : 5 ans, preuve en cas de litige",
                 "Messages dans la messagerie : 2 ans après la transaction, résolution de litiges",
                 "Données de mesure d'audience : 13 mois, conformité CNIL",
+                "Justificatifs d'une demande de badge GP Pro : supprimés dès la décision (acceptation, refus, annulation ou suppression du compte). Fichiers jamais rattachés à une demande : supprimés sous 24 heures",
+                "Décisions sur le badge GP Pro et leurs motifs : conservées dans le journal d'audit",
                 "Comptes supprimés : anonymisation des données de profil à la suppression définitive, 30 jours après la demande, sauf historique financier conservé 5 ans"
               ],
               "p": [
@@ -1020,7 +1131,7 @@
               "ul": [
                 "Droit d'accès : obtenir une copie de toutes les données Yadony sur vous, via Paramètres → Mes données ou dpo{'@'}yadony.com",
                 "Droit de rectification : corriger vos données de profil (nom, e-mail, ville), directement dans votre profil dans l'application",
-                "Droit à l'effacement : supprimer votre compte et vos données de profil, dans l'application : onglet Moi, menu ☰, puis « Supprimer mon compte »",
+                "Droit à l'effacement : supprimer votre compte et vos données de profil, dans l'application : onglet Moi, menu ☰, puis « Supprimer mon compte ». Sans l'application : yadony.com/suppression-compte",
                 "Droit à la portabilité : recevoir vos données en format JSON ou CSV, sur demande à dpo{'@'}yadony.com",
                 "Droit d'opposition : vous opposer aux traitements fondés sur l'intérêt légitime, sur demande à dpo{'@'}yadony.com",
                 "Retrait du consentement : désactiver le marketing ou les analytics, via Paramètres → Confidentialité",
@@ -1081,6 +1192,7 @@
                 "Images des colis (Cloudflare) : les liens deviennent inaccessibles. Les fichiers sont supprimés selon la politique Cloudflare.",
                 "Messages dans la messagerie : supprimés.",
                 "Carnet de destinataires : nettoyé.",
+                "Justificatifs d'une demande de badge GP Pro : supprimés.",
                 "Historique des transactions : conservé 5 ans (obligation légale comptable). Ces données sont anonymisées au maximum.",
                 "Si un litige est en cours, le compte est maintenu jusqu'à la clôture du litige, puis supprimé."
               ],
@@ -1120,8 +1232,135 @@
               "ul": [
                 "Raison sociale : YADONY SAS, SIREN 108 733 510",
                 "Directeur de la publication : M. Dramane DIAKITE, Président",
-                "Partenaires techniques : Google Firebase, Stripe, Didit, pawaPay (Mobile Money : Wave, Orange Money et autres opérateurs), Cloudflare, PostHog, Sentry, Twilio, Resend, Stream, Google Maps",
+                "Partenaires techniques : Google Firebase, Stripe, Didit, pawaPay (Mobile Money : Wave, Orange Money et autres opérateurs), Cloudflare, PostHog, Sentry, Twilio, Resend, Stream, Google Maps, Anthropic (assistant IA)",
                 "Autorité de contrôle française : CNIL (www.cnil.fr)"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "18. Affichage public des trajets",
+          "blocks": [
+            {
+              "p": [
+                "Les trajets que les voyageurs publient sur Yadony sont affichés sur yadony.com, dans une recherche des trajets à venir. Tout visiteur du site peut les consulter sans créer de compte."
+              ]
+            },
+            {
+              "sub": "Ce qui est affiché",
+              "ul": [
+                "Le trajet : la ville de départ et la ville d'arrivée",
+                "La date de départ",
+                "Le mode de transport",
+                "La capacité disponible",
+                "Le prix au kilo payé par l'expéditeur",
+                "La mention « Urgent », lorsque le voyageur l'a choisie",
+                "Le prénom du voyageur et l'initiale de son nom",
+                "La note du voyageur",
+                "Le nombre de trajets du voyageur",
+                "Le badge d'identité vérifiée"
+              ]
+            },
+            {
+              "sub": "Ce qui n'est jamais affiché",
+              "ul": [
+                "Le numéro de téléphone",
+                "L'adresse e-mail",
+                "La photo"
+              ]
+            },
+            {
+              "sub": "Retrait d'un trajet",
+              "p": [
+                "Un voyageur qui ne souhaite pas que ses trajets soient affichés ainsi peut en demander le retrait en écrivant à {email}. Nous traitons la demande dans un délai raisonnable."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "suppressionCompte": {
+      "seo": {
+        "title": "Supprimer votre compte Yadony",
+        "description": "Comment supprimer votre compte Yadony et vos données, depuis l'application ou par e-mail : délais, données supprimées et données conservées."
+      },
+      "title": "Supprimer votre compte Yadony",
+      "intro": "Vous pouvez supprimer votre compte et vos données à tout moment, depuis l'application ou par e-mail.",
+      "privacyLink": "Consulter la politique de confidentialité",
+      "articles": [
+        {
+          "title": "1. Depuis l'application",
+          "blocks": [
+            {
+              "p": [
+                "Ouvrez l'onglet « Moi », touchez le bouton Menu (☰), puis « Supprimer mon compte ». Deux choix vous sont proposés :"
+              ],
+              "ul": [
+                "« Pause 30 jours » (réversible) : votre compte est supprimé définitivement au bout de 30 jours. Pendant ce délai, vous pouvez annuler la suppression avec le bouton « Annuler la suppression » de votre profil. Se reconnecter n'annule pas la suppression.",
+                "« Supprimer définitivement » (irréversible) : votre compte est supprimé immédiatement, après votre confirmation."
+              ]
+            }
+          ]
+        },
+        {
+          "title": "2. Sans l'application",
+          "blocks": [
+            {
+              "p": [
+                "Écrivez à dpo{'@'}yadony.com avec l'objet « Suppression de compte », si possible depuis l'adresse e-mail liée à votre compte, en indiquant le numéro de téléphone de votre compte.",
+                "Nous vérifions que la demande vient bien du titulaire du compte avant de le supprimer, et nous vous répondons dans un délai d'un mois au plus, comme le prévoit le RGPD.",
+                "Vous pouvez aussi nous écrire par courrier : Yadony, 7 avenue Pablo Picasso, Appt 375, 94120 Fontenay-sous-Bois, France."
+              ]
+            }
+          ]
+        },
+        {
+          "title": "3. Avant la suppression",
+          "blocks": [
+            {
+              "ul": [
+                "Si l'un de vos envois est en cours de livraison et que son paiement est bloqué en séquestre, la suppression est impossible jusqu'à la confirmation de la livraison.",
+                "Dès votre demande, vos demandes d'envoi ouvertes et vos trajets actifs sont annulés. Les expéditeurs concernés sont remboursés et prévenus.",
+                "Solde : la part remboursable de votre solde vous est remboursée automatiquement, sur le moyen de paiement d'origine (carte ou mobile money). Les bonus et crédits gratuits sont perdus définitivement. L'application vous affiche ces montants avant votre confirmation."
+              ]
+            }
+          ]
+        },
+        {
+          "title": "4. Données supprimées",
+          "blocks": [
+            {
+              "p": [
+                "À la suppression de votre compte, nous supprimons :"
+              ],
+              "ul": [
+                "votre identité de profil : nom (remplacé par « Utilisateur supprimé »), date de naissance, ville, adresse ;",
+                "votre compte de connexion : numéro de téléphone et adresse e-mail ;",
+                "votre dossier de vérification d'identité sur nos serveurs, et ses photos ;",
+                "les pièces jointes envoyées au support ;",
+                "votre carnet de destinataires ;",
+                "vos jetons de notification."
+              ]
+            }
+          ]
+        },
+        {
+          "title": "5. Données conservées",
+          "blocks": [
+            {
+              "p": [
+                "Certaines données sont conservées :"
+              ],
+              "ul": [
+                "l'historique des paiements et des transactions, pour nos obligations légales et comptables (jusqu'à 5 ans, comme l'indique notre politique de confidentialité) ;",
+                "le journal de sécurité, non modifiable, dont les données personnelles sont masquées ;",
+                "les messages déjà échangés restent visibles par vos interlocuteurs, avec votre nom remplacé par « Utilisateur supprimé » ;",
+                "les données de vérification d'identité détenues par notre prestataire (Didit) sont conservées selon sa propre durée de conservation."
+              ]
+            },
+            {
+              "p": [
+                "Pour en savoir plus sur vos données, leurs durées de conservation et vos droits, consultez notre politique de confidentialité."
               ]
             }
           ]
@@ -1163,6 +1402,7 @@
     "legalNotice": "Mentions légales",
     "terms": "Conditions générales d'utilisation",
     "privacy": "Politique de confidentialité",
+    "deleteAccount": "Supprimer mon compte",
     "copyright": "© yadony. Service de mise en relation, pas de transport.",
     "legalTitle": "Légal",
     "cookiesPolicy": "Politique cookies",
@@ -1201,27 +1441,16 @@
       "refuse": "Refuser"
     }
   },
-  "beta": {
-    "banner": {
-      "label": "Phase de bêta test",
-      "badge": "Bêta",
-      "text": "Yadony est en test avec ses premiers utilisateurs.",
-      "cta": "Rejoindre le groupe WhatsApp"
+  "openLink": {
+    "seo": {
+      "title": "Ouvrir Yadony",
+      "description": "Ouvrez cette notification dans l'application Yadony."
     },
-    "footer": {
-      "title": "Rejoignez les bêta testeurs",
-      "text": "Le groupe WhatsApp réunit les premiers utilisateurs. On y annonce les nouveautés et on y recueille les retours.",
-      "qrAlt": "QR code du groupe WhatsApp des bêta testeurs",
-      "scan": "Scannez ce code avec votre téléphone"
-    }
-  },
-  "stores": {
-    "comingSoon": {
-      "kicker": "Tout bientôt",
-      "title": "L'application arrive",
-      "text": "Yadony sera très prochainement disponible sur l'App Store et Google Play. Revenez dans quelques jours. Le site, lui, est déjà là.",
-      "close": "Compris"
-    }
+    "title": "Ouvrez cette notification dans l'app",
+    "lead": "Ce lien s'ouvre directement dans l'application Yadony. Si rien ne se passe, touchez le bouton ci-dessous.",
+    "openApp": "Ouvrir dans l'app Yadony",
+    "install": "Pas encore l'app ? Installez-la, puis rouvrez le lien depuis votre e-mail.",
+    "invalid": "Ce lien n'est pas valide. Ouvrez l'application Yadony pour retrouver vos notifications."
   },
   "referral": {
     "seo": {

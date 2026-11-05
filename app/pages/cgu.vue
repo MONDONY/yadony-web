@@ -3,7 +3,7 @@ import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRoute } from 'vue-router'
 import { buildSeoMeta } from '@/lib/seo'
-import { renderLegalArticles } from '@/lib/legal'
+import { legalToc, renderLegalArticles } from '@/lib/legal'
 
 defineI18nRoute({ paths: { fr: '/cgu', en: '/terms' } })
 
@@ -22,28 +22,27 @@ useSeoMeta(
 const articles = computed(() =>
   renderLegalArticles(tm('legal.cgu.articles') as unknown[], (message) => rt(message as never)),
 )
+
+const toc = computed(() => legalToc(articles.value.map(article => article.title)))
 </script>
 
 <template>
-  <UiSection tone="white">
-    <UiContainer>
-      <h1 class="max-w-[24ch] text-display-xl">{{ t('legal.cgu.title') }}</h1>
-      <p class="mt-6 max-w-prose text-lg text-ink-muted">{{ t('legal.cgu.intro') }}</p>
+  <LegalLayout :title="t('legal.cgu.title')" :toc="toc">
+    <p class="max-w-prose text-lg text-ink-muted">{{ t('legal.cgu.intro') }}</p>
 
-      <ProseBlock class="mt-12">
-        <template v-for="article in articles" :key="article.title">
-          <h2>{{ article.title }}</h2>
-          <template v-for="(block, index) in article.blocks" :key="index">
-            <h3 v-if="block.sub">{{ block.sub }}</h3>
-            <p v-for="paragraph in block.p" :key="paragraph">{{ paragraph }}</p>
-            <ul v-if="block.ul.length">
-              <li v-for="item in block.ul" :key="item">{{ item }}</li>
-            </ul>
-          </template>
+    <ProseBlock class="mt-12">
+      <template v-for="(article, articleIndex) in articles" :key="article.title">
+        <h2 :id="toc[articleIndex]?.id">{{ article.title }}</h2>
+        <template v-for="(block, index) in article.blocks" :key="index">
+          <h3 v-if="block.sub">{{ block.sub }}</h3>
+          <p v-for="paragraph in block.p" :key="paragraph">{{ paragraph }}</p>
+          <ul v-if="block.ul.length">
+            <li v-for="item in block.ul" :key="item">{{ item }}</li>
+          </ul>
         </template>
-      </ProseBlock>
+      </template>
+    </ProseBlock>
 
-      <p class="mt-12 max-w-prose font-semibold">{{ t('legal.cgu.closing') }}</p>
-    </UiContainer>
-  </UiSection>
+    <p class="mt-12 max-w-prose font-semibold">{{ t('legal.cgu.closing') }}</p>
+  </LegalLayout>
 </template>

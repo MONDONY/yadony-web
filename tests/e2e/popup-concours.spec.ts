@@ -3,7 +3,7 @@ import AxeBuilder from '@axe-core/playwright'
 
 // Les autres suites partent d'un onglet où la fenêtre est déjà fermée
 // (fixture `popupDejaFermee`) ; ici, on repart d'un onglet vierge.
-test.use({ popupDejaFermee: false })
+test.use({ popupDejaFermee: false, cookiesTranches: true })
 
 const PENDANT = new Date('2026-10-06T10:00:00Z')
 const AVANT = new Date('2026-10-05T12:00:00Z')
@@ -96,4 +96,50 @@ test('la fenêtre ouverte ne présente aucune violation d’accessibilité grave
     .analyze()
   const serious = results.violations.filter(v => v.impact === 'critical' || v.impact === 'serious')
   expect(serious.map(v => `${v.id} sur ${v.nodes.length} noeud(s)`)).toEqual([])
+})
+
+test.describe('bannière cookies', () => {
+  // Ici le visiteur n'a encore rien choisi : la bannière est à l'écran.
+  test.use({ cookiesTranches: false })
+
+  test('la fenêtre attend le choix des cookies avant de s’ouvrir', async ({ page }) => {
+    await page.clock.setFixedTime(PENDANT)
+    await page.goto('/')
+    const bandeau = page.getByRole('region', { name: /cookies/i })
+    await expect(bandeau).toBeVisible()
+    await page.waitForTimeout(1500)
+    // Ouverte en modal, la fenêtre rendrait la bannière inerte : elle attend.
+    await expect(fenetre(page)).toHaveCount(0)
+
+    await bandeau.getByRole('button', { name: /refuser/i }).click()
+    await expect(bandeau).toBeHidden()
+    await expect(fenetre(page)).toBeVisible()
+  })
+
+  test('rouvrir les cookies ne rouvre pas une fenêtre déjà fermée', async ({ page }) => {
+    await page.clock.setFixedTime(PENDANT)
+    await page.goto('/')
+    const bandeau = page.getByRole('region', { name: /cookies/i })
+    await bandeau.getByRole('button', { name: /refuser/i }).click()
+    await fenetre(page).getByRole('button', { name: 'Plus tard' }).click()
+    await expect(fenetre(page)).toBeHidden()
+
+    await page.getByRole('button', { name: /gérer les cookies/i }).click()
+    await expect(bandeau).toBeVisible()
+    await page.waitForTimeout(1500)
+    await expect(fenetre(page)).toHaveCount(0)
+  })
+})
+
+test.describe('mouvement réduit', () => {
+  test('la fenêtre apparaît par un fondu court, sans déplacement', async ({ page }) => {
+    await page.emulateMedia({ reducedMotion: 'reduce' })
+    await page.clock.setFixedTime(PENDANT)
+    await page.goto('/')
+    await expect(fenetre(page)).toBeVisible()
+    const carte = fenetre(page).locator('.popup-card')
+    await expect(carte).toHaveCSS('transition-property', 'opacity')
+    await expect(carte).toHaveCSS('transition-duration', '0.2s')
+    await expect(carte).toHaveCSS('transform', 'none')
+  })
 })

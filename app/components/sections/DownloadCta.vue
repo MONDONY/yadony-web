@@ -20,7 +20,7 @@ const { t } = useI18n()
           />
           <h2 class="max-w-[18ch] text-display-lg">{{ t('landing.final.title') }}</h2>
           <p class="mt-5 max-w-prose text-lg text-white/75">{{ t('landing.final.lead') }}</p>
-          <StoreBadges size="lg" tone="dark" class="mt-9" />
+          <StoreBadges size="lg" class="mt-9" />
         </div>
         <div class="lg:col-span-5">
           <UiReveal variant="scale" class="mx-auto w-[240px] sm:w-[270px] lg:mr-6 lg:rotate-[3deg]">

@@ -734,7 +734,7 @@
         "description": "How Yadony protects your data: minimal internal data, certified partners (Firebase, Stripe, Cloudflare), retention periods and GDPR rights."
       },
       "title": "Privacy policy",
-      "intro": "Last updated: November 3, 2026. Yadony is a mobile marketplace connecting travellers with spare luggage space to senders wishing to send parcels to their relatives. Our service covers corridors from Europe, the United States, Canada and Africa to all the destinations we serve. We designed Yadony around one core principle: we keep only the strict minimum of personal data internally. Sensitive data (identity, authentication, official documents) is entrusted to trusted, globally recognised specialised partners who process it with a level of security and compliance we could not reach alone. By using Yadony, you accept the practices described in this document. This English version is provided for convenience; the French version prevails.",
+      "intro": "Last updated: November 7, 2026. Yadony is a mobile marketplace connecting travellers with spare luggage space to senders wishing to send parcels to their relatives. Our service covers corridors from Europe, the United States, Canada and Africa to all the destinations we serve. We designed Yadony around one core principle: we keep only the strict minimum of personal data internally. Sensitive data (identity, authentication, official documents) is entrusted to trusted, globally recognised specialised partners who process it with a level of security and compliance we could not reach alone. By using Yadony, you accept the practices described in this document. This English version is provided for convenience; the French version prevails.",
       "articles": [
         {
           "title": "1. Who is responsible for your data?",
@@ -867,11 +867,13 @@
               "ul": [
                 "The screens viewed and the actions taken in the app (for example posting a listing or opening a conversation)",
                 "Technical information about your device (model, operating system, app version)",
-                "Session recordings, in which all text and all images are masked on your device before being sent"
+                "Session recordings: a reconstruction of what is shown on screen, whose limits are described below"
               ]
             },
             {
               "p": [
+                "In session recordings, the text and images of non-sensitive screens (listings, trips, public profiles, lists) are visible. The following are masked on your device, before anything is sent: input fields (except search and city fields), profile photos, photos shown full screen, and the payment, wallet, payout and identity verification screens. The map appears black.",
+                "Recording is paused, with nothing sent, on sensitive screens: sign-in (number, code, e-mail, name), identity verification, payments, messaging and assistant, support, disputes, parcels in progress, contact details, addresses and recipients, profile and security settings.",
                 "This data is linked to your account's technical identifier, never to your phone number, e-mail address or name."
               ]
             },
@@ -949,7 +951,7 @@
             },
             {
               "p": [
-                "App usage data (screens viewed, actions taken, session recordings) is measured with PostHog (see article 3.6). It is linked to your account's technical identifier, never to your phone number, e-mail address or name, and the text and images in session recordings are masked on your device. In the European Union, the European Economic Area, the United Kingdom and Switzerland (or if your country cannot be determined), this measurement is only turned on with your explicit consent, requested at your first sign-in. Elsewhere, it is on by default. In every case, you can turn it off at any time in the app: Profile tab, ☰ menu, Settings, Privacy, “Usage statistics”."
+                "App usage data (screens viewed, actions taken, session recordings) is measured with PostHog (see article 3.6). It is linked to your account's technical identifier, never to your phone number, e-mail address or name, and session recordings mask personal data and sensitive screens on your device (article 3.6). In the European Union, the European Economic Area, the United Kingdom and Switzerland (or if your country cannot be determined), this measurement is only turned on with your explicit consent, requested right after you enter your verification code, then repeated at most three times, three days apart, as long as you have not answered. Elsewhere, it is on by default. In every case, you can turn it off at any time in the app: Profile tab, ☰ menu, Settings, Privacy, “Usage statistics”."
               ]
             },
             {

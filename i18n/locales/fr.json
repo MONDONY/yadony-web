@@ -734,7 +734,7 @@
         "description": "Comment Yadony protège vos données : minimum de données en interne, partenaires certifiés (Firebase, Stripe, Cloudflare), durées de conservation et droits RGPD."
       },
       "title": "Politique de confidentialité",
-      "intro": "Dernière mise à jour : 3 novembre 2026. Yadony est une place de marché mobile qui met en relation des voyageurs disposant de place dans leurs bagages avec des expéditeurs souhaitant envoyer des colis à leurs proches. Notre service couvre les corridors depuis l'Europe, les États-Unis, le Canada et l'Afrique vers toutes les destinations que nous desservons. Nous avons conçu Yadony avec un principe fondamental : nous ne conservons que le strict minimum de données personnelles en interne. Les données sensibles (identité, authentification, documents officiels) sont confiées à des partenaires spécialisés de confiance, reconnus mondialement, qui les traitent avec un niveau de sécurité et de conformité que nous ne pourrions pas atteindre seuls. En utilisant Yadony, vous acceptez les pratiques décrites dans ce document.",
+      "intro": "Dernière mise à jour : 7 novembre 2026. Yadony est une place de marché mobile qui met en relation des voyageurs disposant de place dans leurs bagages avec des expéditeurs souhaitant envoyer des colis à leurs proches. Notre service couvre les corridors depuis l'Europe, les États-Unis, le Canada et l'Afrique vers toutes les destinations que nous desservons. Nous avons conçu Yadony avec un principe fondamental : nous ne conservons que le strict minimum de données personnelles en interne. Les données sensibles (identité, authentification, documents officiels) sont confiées à des partenaires spécialisés de confiance, reconnus mondialement, qui les traitent avec un niveau de sécurité et de conformité que nous ne pourrions pas atteindre seuls. En utilisant Yadony, vous acceptez les pratiques décrites dans ce document.",
       "articles": [
         {
           "title": "1. Qui est responsable de vos données ?",
@@ -867,11 +867,13 @@
               "ul": [
                 "Les écrans consultés et les actions effectuées dans l'application (par exemple publier une annonce ou ouvrir une conversation)",
                 "Des informations techniques sur votre appareil (modèle, système, version de l'application)",
-                "Des enregistrements de session, dans lesquels tous les textes et toutes les images sont masqués sur votre appareil avant l'envoi"
+                "Des enregistrements de session : une reconstitution de ce qui s'affiche à l'écran, dont les limites sont décrites ci-dessous"
               ]
             },
             {
               "p": [
+                "Dans les enregistrements de session, les textes et les images des écrans non sensibles (annonces, trajets, profils publics, listes) sont visibles. Sont masqués sur votre appareil, avant tout envoi : les champs de saisie (sauf les champs de recherche et de ville), les photos de profil, les photos affichées en plein écran, ainsi que les écrans de paiement, de portefeuille, de versement et de vérification d'identité. La carte apparaît en noir.",
+                "L'enregistrement est suspendu, sans rien envoyer, sur les écrans sensibles : connexion (numéro, code, e-mail, nom), vérification d'identité, paiements, messagerie et assistant, support, litiges, colis en cours, coordonnées, adresses et destinataires, profil et réglages de sécurité.",
                 "Ces données sont rattachées à l'identifiant technique de votre compte, jamais à votre numéro de téléphone, à votre adresse e-mail ni à votre nom."
               ]
             },
@@ -949,7 +951,7 @@
             },
             {
               "p": [
-                "Les données d'usage de l'application (écrans consultés, actions effectuées, enregistrements de session) sont mesurées avec PostHog (voir l'article 3.6). Elles sont rattachées à l'identifiant technique de votre compte, jamais à votre numéro de téléphone, à votre adresse e-mail ni à votre nom, et les textes et images des enregistrements de session sont masqués sur votre appareil. Dans l'Union européenne, l'Espace économique européen, au Royaume-Uni et en Suisse (ou si votre pays ne peut pas être déterminé), cette mesure n'est activée qu'avec votre consentement explicite, demandé lors de votre première connexion. Ailleurs, elle est activée par défaut. Dans tous les cas, vous pouvez la désactiver à tout moment dans l'application : onglet Moi, menu ☰, Paramètres, Confidentialité, « Statistiques d'utilisation »."
+                "Les données d'usage de l'application (écrans consultés, actions effectuées, enregistrements de session) sont mesurées avec PostHog (voir l'article 3.6). Elles sont rattachées à l'identifiant technique de votre compte, jamais à votre numéro de téléphone, à votre adresse e-mail ni à votre nom, et les enregistrements de session masquent sur votre appareil les données personnelles et les écrans sensibles (article 3.6). Dans l'Union européenne, l'Espace économique européen, au Royaume-Uni et en Suisse (ou si votre pays ne peut pas être déterminé), cette mesure n'est activée qu'avec votre consentement explicite, demandé juste après la saisie de votre code de vérification, puis rappelé au plus trois fois, à trois jours d'intervalle, tant que vous n'avez pas répondu. Ailleurs, elle est activée par défaut. Dans tous les cas, vous pouvez la désactiver à tout moment dans l'application : onglet Moi, menu ☰, Paramètres, Confidentialité, « Statistiques d'utilisation »."
               ]
             },
             {

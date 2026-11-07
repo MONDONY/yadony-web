@@ -14,8 +14,12 @@ describe('apple-app-site-association', () => {
     expect(detail.appIDs).toEqual(['F5Q74US8XS.com.yadony.yadony'])
   })
 
-  it('ne couvre que /ouvrir', () => {
-    expect(detail.components.map((c: Record<string, string>) => c['/'])).toEqual(['/ouvrir'])
+  it('ne couvre que /ouvrir et les liens des affiches', () => {
+    expect(detail.components.map((c: Record<string, string>) => c['/'])).toEqual([
+      '/ouvrir',
+      '/annonce/*',
+      '/demande/*',
+    ])
   })
 })
 

@@ -4,7 +4,9 @@
       {
         "appIDs": ["F5Q74US8XS.com.yadony.yadony"],
         "components": [
-          { "/": "/ouvrir", "comment": "Boutons des e-mails de notification" }
+          { "/": "/ouvrir", "comment": "Boutons des e-mails de notification" },
+          { "/": "/annonce/*", "comment": "Lien de l'affiche d'un trajet" },
+          { "/": "/demande/*", "comment": "Lien de l'affiche d'une demande d'envoi" }
         ]
       }
     ]

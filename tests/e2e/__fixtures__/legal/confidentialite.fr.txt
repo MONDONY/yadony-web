@@ -1,5 +1,5 @@
 Politique de confidentialité
-Dernière mise à jour : 7 novembre 2026. Yadony est une place de marché mobile qui met en relation des voyageurs disposant de place dans leurs bagages avec des expéditeurs souhaitant envoyer des colis à leurs proches. Notre service couvre les corridors depuis l'Europe, les États-Unis, le Canada et l'Afrique vers toutes les destinations que nous desservons. Nous avons conçu Yadony avec un principe fondamental : nous ne conservons que le strict minimum de données personnelles en interne. Les données sensibles (identité, authentification, documents officiels) sont confiées à des partenaires spécialisés de confiance, reconnus mondialement, qui les traitent avec un niveau de sécurité et de conformité que nous ne pourrions pas atteindre seuls. En utilisant Yadony, vous acceptez les pratiques décrites dans ce document.
+Dernière mise à jour : 8 novembre 2026. Yadony est une place de marché mobile qui met en relation des voyageurs disposant de place dans leurs bagages avec des expéditeurs souhaitant envoyer des colis à leurs proches. Notre service couvre les corridors depuis l'Europe, les États-Unis, le Canada et l'Afrique vers toutes les destinations que nous desservons. Nous avons conçu Yadony avec un principe fondamental : nous ne conservons que le strict minimum de données personnelles en interne. Les données sensibles (identité, authentification, documents officiels) sont confiées à des partenaires spécialisés de confiance, reconnus mondialement, qui les traitent avec un niveau de sécurité et de conformité que nous ne pourrions pas atteindre seuls. En utilisant Yadony, vous acceptez les pratiques décrites dans ce document.
 1. Qui est responsable de vos données ?
 Responsable du traitement : YADONY SAS, société par actions simplifiée immatriculée au RCS de Créteil, SIREN 108 733 510.
 Délégué à la Protection des Données (DPO) : dpo@yadony.com. Contact général : contact@yadony.com.
@@ -87,6 +87,7 @@ Scans du colis (horodatage et géolocalisation) : traçabilité du colis à chaq
 Notes et évaluations reçues : construire la réputation des utilisateurs et garantir la qualité. Conservation : durée de vie du compte
 Messages échangés dans la messagerie interne : permettre la communication entre expéditeurs et voyageurs. Conservation : 2 ans après la transaction
 Données de connexion (date, appareil, anonymisées) : sécurité du compte et détection de fraude. Conservation : 13 mois
+Recherches de trajets, quand vous êtes connecté (villes de départ et d'arrivée, dates, nombre de trajets trouvés) : vous prévenir une seule fois si un trajet qui correspond est publié alors que votre recherche n'avait rien trouvé. Aucune coordonnée n'y est enregistrée : votre adresse e-mail est lue au moment de l'envoi. Conservation : 30 jours après la dernière recherche
 Les données d'usage de l'application (écrans consultés, actions effectuées, enregistrements de session) sont mesurées avec PostHog (voir l'article 3.6). Elles sont rattachées à l'identifiant technique de votre compte, jamais à votre numéro de téléphone, à votre adresse e-mail ni à votre nom, et les enregistrements de session masquent sur votre appareil les données personnelles et les écrans sensibles (article 3.6). Dans l'Union européenne, l'Espace économique européen, au Royaume-Uni et en Suisse (ou si votre pays ne peut pas être déterminé), cette mesure n'est activée qu'avec votre consentement explicite, demandé juste après la saisie de votre code de vérification, puis rappelé au plus trois fois, à trois jours d'intervalle, tant que vous n'avez pas répondu. Ailleurs, elle est activée par défaut. Dans tous les cas, vous pouvez la désactiver à tout moment dans l'application : onglet Moi, menu ☰, Paramètres, Confidentialité, « Statistiques d'utilisation ».
 Le badge GP Pro
 Si vous demandez le badge GP Pro (article 8 des CGU), Yadony traite les données suivantes, dans le seul but d'examiner votre demande et d'afficher le badge :
@@ -124,6 +125,7 @@ Scans et traçabilité du colis : exécution du contrat et intérêt légitime
 Détection de fraude et sécurité : intérêt légitime
 Évaluations et réputation : intérêt légitime
 Examen des demandes de badge GP Pro, affichage du badge et trace des décisions : exécution du contrat (CGU, article 8) et intérêt légitime (fiabilité des profils mis en avant)
+Suggestions de trajets selon vos recherches : intérêt légitime (vous aider à trouver un voyageur pour le trajet que vous cherchez), avec opposition possible à tout moment
 Communications marketing : consentement (révocable à tout moment)
 7. Avec qui partageons-nous vos données ?
 Yadony ne vend jamais vos données à des tiers. Les seuls partages de données qui ont lieu sont ceux décrits dans les articles 3 et 4 ci-dessus, avec nos partenaires techniques contractuellement engagés à les protéger.
@@ -154,6 +156,7 @@ Messages dans la messagerie : 2 ans après la transaction, résolution de litige
 Données de mesure d'audience : 13 mois, conformité CNIL
 Justificatifs d'une demande de badge GP Pro : supprimés dès la décision (acceptation, refus, annulation ou suppression du compte). Fichiers jamais rattachés à une demande : supprimés sous 24 heures
 Décisions sur le badge GP Pro et leurs motifs : conservées dans le journal d'audit
+Recherches de trajets retenues pour les suggestions : 30 jours après la dernière recherche, puis effacement définitif. Effacées aussi dès la suppression définitive du compte
 Comptes supprimés : anonymisation des données de profil à la suppression définitive, 30 jours après la demande, sauf historique financier conservé 5 ans
 10. Comment nous protégeons vos données
 Architecture de sécurité par conception
@@ -184,6 +187,7 @@ En cas de réponse insatisfaisante : CNIL (www.cnil.fr) en France, ARTCI en Côt
 Yadony utilise uniquement les cookies strictement nécessaires au fonctionnement de l'application (maintien de session, sécurité). La mesure d'audience de l'application (PostHog) suit les règles de consentement décrites à l'article 4. Vous pouvez la désactiver depuis Paramètres → Confidentialité.
 13. Les notifications
 Notifications transactionnelles (obligatoires) : confirmation de paiement, livraison confirmée, litige ouvert, alertes de sécurité. Envoyées via Firebase Cloud Messaging (notifications in-app) et par SMS via deux opérateurs différents pour garantir la continuité.
+Suggestions selon vos recherches (optionnelles) : quand une recherche de trajet n'a rien trouvé, Yadony peut vous prévenir par notification et par e-mail si un trajet qui correspond est publié, au plus deux fois par semaine. Pour les arrêter : lien « Ne plus recevoir ces suggestions » en bas de chaque e-mail, ou interrupteur « Selon mes recherches » dans Paramètres → Notifications.
 Communications marketing (optionnelles) : envoyées uniquement avec votre consentement. Désabonnement possible à tout moment depuis Paramètres → Notifications.
 14. Les données des mineurs
 Yadony est strictement réservé aux personnes majeures (18 ans révolus). Nous ne collectons aucune donnée concernant des mineurs. Si vous pensez qu'un mineur a créé un compte, contactez-nous à dpo@yadony.com. Nous supprimerons le compte et toutes les données associées dans les plus brefs délais.

@@ -734,7 +734,7 @@
         "description": "How Yadony protects your data: minimal internal data, certified partners (Firebase, Stripe, Cloudflare), retention periods and GDPR rights."
       },
       "title": "Privacy policy",
-      "intro": "Last updated: November 7, 2026. Yadony is a mobile marketplace connecting travellers with spare luggage space to senders wishing to send parcels to their relatives. Our service covers corridors from Europe, the United States, Canada and Africa to all the destinations we serve. We designed Yadony around one core principle: we keep only the strict minimum of personal data internally. Sensitive data (identity, authentication, official documents) is entrusted to trusted, globally recognised specialised partners who process it with a level of security and compliance we could not reach alone. By using Yadony, you accept the practices described in this document. This English version is provided for convenience; the French version prevails.",
+      "intro": "Last updated: November 8, 2026. Yadony is a mobile marketplace connecting travellers with spare luggage space to senders wishing to send parcels to their relatives. Our service covers corridors from Europe, the United States, Canada and Africa to all the destinations we serve. We designed Yadony around one core principle: we keep only the strict minimum of personal data internally. Sensitive data (identity, authentication, official documents) is entrusted to trusted, globally recognised specialised partners who process it with a level of security and compliance we could not reach alone. By using Yadony, you accept the practices described in this document. This English version is provided for convenience; the French version prevails.",
       "articles": [
         {
           "title": "1. Who is responsible for your data?",
@@ -946,7 +946,8 @@
                 "Parcel scans (timestamp and geolocation): parcel traceability at every step and evidence in disputes. Retention: 5 years",
                 "Ratings and reviews received: building user reputation and guaranteeing quality. Retention: lifetime of the account",
                 "Messages exchanged in the internal messaging system: enabling communication between senders and travellers. Retention: 2 years after the transaction",
-                "Connection data (date, device, anonymised): account security and fraud detection. Retention: 13 months"
+                "Connection data (date, device, anonymised): account security and fraud detection. Retention: 13 months",
+                "Trip searches, when you are signed in (departure and arrival cities, dates, number of trips found): letting you know once if a matching trip is posted while your search had found nothing. No contact details are stored with it: your email address is read at the time of sending. Retention: 30 days after the last search"
               ]
             },
             {
@@ -1015,6 +1016,7 @@
                 "Fraud detection and security: legitimate interest",
                 "Ratings and reputation: legitimate interest",
                 "Review of GP Pro badge requests, display of the badge and record of decisions: performance of the contract (Terms of Use, article 8) and legitimate interest (reliability of the profiles highlighted)",
+                "Trip suggestions based on your searches: legitimate interest (helping you find a traveller for the route you are looking for), which you can object to at any time",
                 "Marketing communications: consent (revocable at any time)"
               ],
               "p": [
@@ -1089,6 +1091,7 @@
                 "Audience measurement data: 13 months, CNIL compliance",
                 "Supporting documents for a GP Pro badge request: deleted as soon as the decision is made (acceptance, refusal, cancellation or deletion of the account). Files never attached to a request: deleted within 24 hours",
                 "Decisions on the GP Pro badge and their reasons: kept in the audit log",
+                "Trip searches kept for suggestions: 30 days after the last search, then permanently erased. Also erased as soon as the account is permanently deleted",
                 "Deleted accounts: profile data anonymised upon final deletion, 30 days after the request, except financial history kept for 5 years"
               ],
               "p": [
@@ -1168,6 +1171,7 @@
             {
               "p": [
                 "Transactional notifications (mandatory): payment confirmation, delivery confirmed, dispute opened, security alerts. Sent through Firebase Cloud Messaging (in-app notifications) and by SMS through two different operators to guarantee continuity.",
+                "Suggestions based on your searches (optional): when a trip search found nothing, Yadony may let you know by notification and by email if a matching trip is posted, at most twice a week. To stop them: the \"Stop these suggestions\" link at the bottom of each email, or the \"Based on my searches\" switch in Settings → Notifications.",
                 "Marketing communications (optional): sent only with your consent. You can unsubscribe at any time from Settings → Notifications."
               ]
             }

@@ -1,5 +1,5 @@
 Privacy policy
-Last updated: November 7, 2026. Yadony is a mobile marketplace connecting travellers with spare luggage space to senders wishing to send parcels to their relatives. Our service covers corridors from Europe, the United States, Canada and Africa to all the destinations we serve. We designed Yadony around one core principle: we keep only the strict minimum of personal data internally. Sensitive data (identity, authentication, official documents) is entrusted to trusted, globally recognised specialised partners who process it with a level of security and compliance we could not reach alone. By using Yadony, you accept the practices described in this document. This English version is provided for convenience; the French version prevails.
+Last updated: November 8, 2026. Yadony is a mobile marketplace connecting travellers with spare luggage space to senders wishing to send parcels to their relatives. Our service covers corridors from Europe, the United States, Canada and Africa to all the destinations we serve. We designed Yadony around one core principle: we keep only the strict minimum of personal data internally. Sensitive data (identity, authentication, official documents) is entrusted to trusted, globally recognised specialised partners who process it with a level of security and compliance we could not reach alone. By using Yadony, you accept the practices described in this document. This English version is provided for convenience; the French version prevails.
 1. Who is responsible for your data?
 Data controller: YADONY SAS, a simplified joint-stock company registered in France under SIREN number 108 733 510.
 Data Protection Officer (DPO): dpo@yadony.com. General contact: contact@yadony.com.
@@ -87,6 +87,7 @@ Parcel scans (timestamp and geolocation): parcel traceability at every step and 
 Ratings and reviews received: building user reputation and guaranteeing quality. Retention: lifetime of the account
 Messages exchanged in the internal messaging system: enabling communication between senders and travellers. Retention: 2 years after the transaction
 Connection data (date, device, anonymised): account security and fraud detection. Retention: 13 months
+Trip searches, when you are signed in (departure and arrival cities, dates, number of trips found): letting you know once if a matching trip is posted while your search had found nothing. No contact details are stored with it: your email address is read at the time of sending. Retention: 30 days after the last search
 App usage data (screens viewed, actions taken, session recordings) is measured with PostHog (see article 3.6). It is linked to your account's technical identifier, never to your phone number, e-mail address or name, and session recordings mask personal data and sensitive screens on your device (article 3.6). In the European Union, the European Economic Area, the United Kingdom and Switzerland (or if your country cannot be determined), this measurement is only turned on with your explicit consent, requested right after you enter your verification code, then repeated at most three times, three days apart, as long as you have not answered. Elsewhere, it is on by default. In every case, you can turn it off at any time in the app: Profile tab, ☰ menu, Settings, Privacy, “Usage statistics”.
 The GP Pro badge
 If you request the GP Pro badge (article 8 of the Terms of Use), Yadony processes the following data, solely to review your request and display the badge:
@@ -124,6 +125,7 @@ Parcel scans and traceability: performance of the contract and legitimate intere
 Fraud detection and security: legitimate interest
 Ratings and reputation: legitimate interest
 Review of GP Pro badge requests, display of the badge and record of decisions: performance of the contract (Terms of Use, article 8) and legitimate interest (reliability of the profiles highlighted)
+Trip suggestions based on your searches: legitimate interest (helping you find a traveller for the route you are looking for), which you can object to at any time
 Marketing communications: consent (revocable at any time)
 7. Who do we share your data with?
 Yadony never sells your data to third parties. The only data sharing that takes place is described in sections 3 and 4 above, with our technical partners contractually committed to protecting it.
@@ -154,6 +156,7 @@ Messages in the messaging system: 2 years after the transaction, dispute resolut
 Audience measurement data: 13 months, CNIL compliance
 Supporting documents for a GP Pro badge request: deleted as soon as the decision is made (acceptance, refusal, cancellation or deletion of the account). Files never attached to a request: deleted within 24 hours
 Decisions on the GP Pro badge and their reasons: kept in the audit log
+Trip searches kept for suggestions: 30 days after the last search, then permanently erased. Also erased as soon as the account is permanently deleted
 Deleted accounts: profile data anonymised upon final deletion, 30 days after the request, except financial history kept for 5 years
 10. How we protect your data
 Security by design
@@ -184,6 +187,7 @@ If you are not satisfied with the answer: CNIL (www.cnil.fr) in France, ARTCI in
 Yadony uses only the cookies strictly necessary to run the application (session persistence, security). Audience measurement in the app (PostHog) follows the consent rules described in article 4. You can turn it off from Settings → Privacy.
 13. Notifications
 Transactional notifications (mandatory): payment confirmation, delivery confirmed, dispute opened, security alerts. Sent through Firebase Cloud Messaging (in-app notifications) and by SMS through two different operators to guarantee continuity.
+Suggestions based on your searches (optional): when a trip search found nothing, Yadony may let you know by notification and by email if a matching trip is posted, at most twice a week. To stop them: the "Stop these suggestions" link at the bottom of each email, or the "Based on my searches" switch in Settings → Notifications.
 Marketing communications (optional): sent only with your consent. You can unsubscribe at any time from Settings → Notifications.
 14. Children's data
 Yadony is strictly reserved for adults (18 and over). We collect no data about minors. If you believe a minor has created an account, contact us at dpo@yadony.com. We will delete the account and all associated data as quickly as possible.

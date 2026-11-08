@@ -734,7 +734,7 @@
         "description": "Comment Yadony protège vos données : minimum de données en interne, partenaires certifiés (Firebase, Stripe, Cloudflare), durées de conservation et droits RGPD."
       },
       "title": "Politique de confidentialité",
-      "intro": "Dernière mise à jour : 7 novembre 2026. Yadony est une place de marché mobile qui met en relation des voyageurs disposant de place dans leurs bagages avec des expéditeurs souhaitant envoyer des colis à leurs proches. Notre service couvre les corridors depuis l'Europe, les États-Unis, le Canada et l'Afrique vers toutes les destinations que nous desservons. Nous avons conçu Yadony avec un principe fondamental : nous ne conservons que le strict minimum de données personnelles en interne. Les données sensibles (identité, authentification, documents officiels) sont confiées à des partenaires spécialisés de confiance, reconnus mondialement, qui les traitent avec un niveau de sécurité et de conformité que nous ne pourrions pas atteindre seuls. En utilisant Yadony, vous acceptez les pratiques décrites dans ce document.",
+      "intro": "Dernière mise à jour : 8 novembre 2026. Yadony est une place de marché mobile qui met en relation des voyageurs disposant de place dans leurs bagages avec des expéditeurs souhaitant envoyer des colis à leurs proches. Notre service couvre les corridors depuis l'Europe, les États-Unis, le Canada et l'Afrique vers toutes les destinations que nous desservons. Nous avons conçu Yadony avec un principe fondamental : nous ne conservons que le strict minimum de données personnelles en interne. Les données sensibles (identité, authentification, documents officiels) sont confiées à des partenaires spécialisés de confiance, reconnus mondialement, qui les traitent avec un niveau de sécurité et de conformité que nous ne pourrions pas atteindre seuls. En utilisant Yadony, vous acceptez les pratiques décrites dans ce document.",
       "articles": [
         {
           "title": "1. Qui est responsable de vos données ?",
@@ -946,7 +946,8 @@
                 "Scans du colis (horodatage et géolocalisation) : traçabilité du colis à chaque étape et preuve en cas de litige. Conservation : 5 ans",
                 "Notes et évaluations reçues : construire la réputation des utilisateurs et garantir la qualité. Conservation : durée de vie du compte",
                 "Messages échangés dans la messagerie interne : permettre la communication entre expéditeurs et voyageurs. Conservation : 2 ans après la transaction",
-                "Données de connexion (date, appareil, anonymisées) : sécurité du compte et détection de fraude. Conservation : 13 mois"
+                "Données de connexion (date, appareil, anonymisées) : sécurité du compte et détection de fraude. Conservation : 13 mois",
+                "Recherches de trajets, quand vous êtes connecté (villes de départ et d'arrivée, dates, nombre de trajets trouvés) : vous prévenir une seule fois si un trajet qui correspond est publié alors que votre recherche n'avait rien trouvé. Aucune coordonnée n'y est enregistrée : votre adresse e-mail est lue au moment de l'envoi. Conservation : 30 jours après la dernière recherche"
               ]
             },
             {
@@ -1015,6 +1016,7 @@
                 "Détection de fraude et sécurité : intérêt légitime",
                 "Évaluations et réputation : intérêt légitime",
                 "Examen des demandes de badge GP Pro, affichage du badge et trace des décisions : exécution du contrat (CGU, article 8) et intérêt légitime (fiabilité des profils mis en avant)",
+                "Suggestions de trajets selon vos recherches : intérêt légitime (vous aider à trouver un voyageur pour le trajet que vous cherchez), avec opposition possible à tout moment",
                 "Communications marketing : consentement (révocable à tout moment)"
               ],
               "p": [
@@ -1089,6 +1091,7 @@
                 "Données de mesure d'audience : 13 mois, conformité CNIL",
                 "Justificatifs d'une demande de badge GP Pro : supprimés dès la décision (acceptation, refus, annulation ou suppression du compte). Fichiers jamais rattachés à une demande : supprimés sous 24 heures",
                 "Décisions sur le badge GP Pro et leurs motifs : conservées dans le journal d'audit",
+                "Recherches de trajets retenues pour les suggestions : 30 jours après la dernière recherche, puis effacement définitif. Effacées aussi dès la suppression définitive du compte",
                 "Comptes supprimés : anonymisation des données de profil à la suppression définitive, 30 jours après la demande, sauf historique financier conservé 5 ans"
               ],
               "p": [
@@ -1168,6 +1171,7 @@
             {
               "p": [
                 "Notifications transactionnelles (obligatoires) : confirmation de paiement, livraison confirmée, litige ouvert, alertes de sécurité. Envoyées via Firebase Cloud Messaging (notifications in-app) et par SMS via deux opérateurs différents pour garantir la continuité.",
+                "Suggestions selon vos recherches (optionnelles) : quand une recherche de trajet n'a rien trouvé, Yadony peut vous prévenir par notification et par e-mail si un trajet qui correspond est publié, au plus deux fois par semaine. Pour les arrêter : lien « Ne plus recevoir ces suggestions » en bas de chaque e-mail, ou interrupteur « Selon mes recherches » dans Paramètres → Notifications.",
                 "Communications marketing (optionnelles) : envoyées uniquement avec votre consentement. Désabonnement possible à tout moment depuis Paramètres → Notifications."
               ]
             }

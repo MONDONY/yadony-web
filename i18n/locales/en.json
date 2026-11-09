@@ -48,7 +48,7 @@
         {
           "id": "interdits",
           "question": "What am I not allowed to send?",
-          "answer": "Drugs and narcotics, weapons, explosives and hazardous materials, counterfeits or goods prohibited by customs, live animals, official documents (passports, identity cards, residence permits), and any item prohibited by the law of the departure, destination or transit country. Before confirming a shipment you electronically sign a warning about prohibited goods and your customs liability; the traveller reviews your full declaration and can refuse a non-compliant parcel at handover."
+          "answer": "Drugs and narcotics, weapons, explosives and hazardous materials (including flammable liquids and power banks), cash and means of payment, gold and valuable jewellery, counterfeits or goods prohibited by customs, prescription medicines without a copy of the prescription, meat and dairy products sent to the European Union, live animals, official documents (passports, identity cards, residence permits), and any item prohibited by the law of the departure, destination or transit country. The full list is in article 4 of the Terms of use. Before confirming a shipment you electronically sign a warning about prohibited goods and your customs liability; the traveller reviews your full declaration and can refuse a non-compliant parcel at handover."
         },
         {
           "id": "paiement",
@@ -378,11 +378,22 @@
               ],
               "ul": [
                 "Drugs, narcotics or illicit substances",
-                "Weapons, explosives or hazardous materials",
+                "Weapons, explosives or hazardous materials, including flammable liquids and power banks",
+                "Cash and foreign currency, cheques, bank or prepaid cards, and any other means of payment",
+                "Gold, precious metals, precious stones and valuable jewellery",
                 "Counterfeits or goods prohibited by customs",
+                "Prescription medicines without a copy of the prescription, or in quantities beyond personal use",
+                "Meat, milk and dairy products sent to the European Union, which bans them in luggage (with exceptions such as infant formula)",
                 "Live animals",
                 "Official documents (passports, identity cards, residence permits)",
                 "Any item whose transport, import or export is prohibited or subject to special authorisation under the law of the departure country, destination country or any transit country"
+              ]
+            },
+            {
+              "p": [
+                "Handing money to a traveller for delivery is a money transfer, an activity reserved for licensed institutions: this is why cash and means of payment are prohibited.",
+                "Goods intended for resale must be declared as such in the parcel description. Customs duties and taxes are paid by the sender. The traveller remains free to refuse to carry them.",
+                "The following additions to this article apply from 10 December 2026: power banks; cash and means of payment; gold, precious metals, precious stones and valuable jewellery; prescription medicines; meat, milk and dairy products sent to the European Union; declaration of goods intended for resale."
               ]
             }
           ]

@@ -48,7 +48,7 @@
         {
           "id": "interdits",
           "question": "Qu'est-ce que je n'ai pas le droit d'envoyer ?",
-          "answer": "Drogues et stupéfiants, armes, explosifs et matières dangereuses, contrefaçons ou marchandises prohibées en douane, animaux vivants, documents officiels (passeports, cartes d'identité, titres de séjour), et tout article interdit par la législation du pays de départ, d'arrivée ou de transit. Avant de valider un envoi, vous signez électroniquement un avertissement sur les produits interdits et votre responsabilité douanière ; le voyageur consulte votre déclaration complète et peut refuser un colis non conforme à la remise."
+          "answer": "Drogues et stupéfiants, armes, explosifs et matières dangereuses (dont les liquides inflammables et les batteries externes), espèces et moyens de paiement, or et bijoux de valeur, contrefaçons ou marchandises prohibées en douane, médicaments sur ordonnance sans copie de l'ordonnance, viande et produits laitiers envoyés vers l'Union européenne, animaux vivants, documents officiels (passeports, cartes d'identité, titres de séjour), et tout article interdit par la législation du pays de départ, d'arrivée ou de transit. La liste complète figure à l'article 4 des CGU. Avant de valider un envoi, vous signez électroniquement un avertissement sur les produits interdits et votre responsabilité douanière ; le voyageur consulte votre déclaration complète et peut refuser un colis non conforme à la remise."
         },
         {
           "id": "paiement",
@@ -378,11 +378,22 @@
               ],
               "ul": [
                 "Drogues, stupéfiants ou substances illicites",
-                "Armes, explosifs ou matières dangereuses",
+                "Armes, explosifs ou matières dangereuses, dont les liquides inflammables et les batteries externes",
+                "Espèces et devises, chèques, cartes bancaires ou prépayées, et tout autre moyen de paiement",
+                "Or, métaux précieux, pierres précieuses et bijoux de valeur",
                 "Contrefaçons ou marchandises prohibées en douane",
+                "Médicaments sur ordonnance sans copie de l'ordonnance, ou en quantité supérieure à un usage personnel",
+                "Viande, lait et produits laitiers envoyés vers l'Union européenne, qui les interdit dans les bagages (sauf exceptions, comme le lait infantile)",
                 "Animaux vivants",
                 "Documents officiels (passeports, cartes d'identité, titres de séjour)",
                 "Tout article dont le transport, l'importation ou l'exportation est interdit ou soumis à autorisation spéciale par la législation du pays de départ, du pays de destination ou de tout pays de transit"
+              ]
+            },
+            {
+              "p": [
+                "Remettre de l'argent à un voyageur pour qu'il le livre est un transfert d'argent, une activité réservée aux établissements agréés : c'est pourquoi les espèces et les moyens de paiement sont interdits.",
+                "Les marchandises destinées à la revente doivent être déclarées comme telles dans la description du colis. Les droits et taxes de douane sont à la charge de l'expéditeur. Le voyageur reste libre de refuser de les transporter.",
+                "Les ajouts suivants à cet article s'appliquent à partir du 10 décembre 2026 : batteries externes ; espèces et moyens de paiement ; or, métaux précieux, pierres précieuses et bijoux de valeur ; médicaments sur ordonnance ; viande, lait et produits laitiers envoyés vers l'Union européenne ; déclaration des marchandises destinées à la revente."
               ]
             }
           ]

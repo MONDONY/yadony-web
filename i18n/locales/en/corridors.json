@@ -64,7 +64,7 @@
           },
           {
             "question": "What can I send to Abidjan?",
-            "answer": "Anything legal and declared: clothes, non-regulated medicines, non-official documents, everyday products. Prohibited items include drugs, weapons, counterfeits, live animals and identity documents. The traveller sees your full declaration before accepting."
+            "answer": "Anything legal and declared: clothes, non-regulated medicines, non-official documents, everyday products. Prohibited items include drugs, weapons, cash and means of payment, counterfeits, live animals and identity documents. The traveller sees your full declaration before accepting."
           },
           {
             "question": "How is the payment protected?",
@@ -194,7 +194,7 @@
           },
           {
             "question": "What can I put in a parcel for Dakar?",
-            "answer": "Anything legal and declared: clothes, shoes, beauty products, accessories, presents for the family. Drugs, weapons, counterfeit goods, live animals and identity documents are prohibited. The traveller sees your declaration and photos before accepting the parcel."
+            "answer": "Anything legal and declared: clothes, shoes, beauty products, accessories, presents for the family. Drugs, weapons, cash and means of payment, counterfeit goods, live animals and identity documents are prohibited. The traveller sees your declaration and photos before accepting the parcel."
           },
           {
             "question": "What happens if the parcel does not arrive?",
@@ -320,7 +320,7 @@
         "faq": [
           {
             "question": "Can I send car parts?",
-            "answer": "Yes, if they are legal, declared and accepted by the traveller. Describe them precisely, with photos and the actual weight: the traveller sees your declaration before accepting. Prohibited items such as weapons, drugs, counterfeit goods or live animals are refused."
+            "answer": "Yes, if they are legal, declared and accepted by the traveller. Describe them precisely, with photos and the actual weight: the traveller sees your declaration before accepting. Prohibited items such as weapons, drugs, cash, counterfeit goods or live animals are refused."
           },
           {
             "question": "How much does a Marseille–Douala shipment cost?",

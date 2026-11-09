@@ -64,7 +64,7 @@
           },
           {
             "question": "Que puis-je envoyer à Abidjan ?",
-            "answer": "Tout ce qui est légal et déclaré : vêtements, médicaments non réglementés, documents non officiels, produits du quotidien. Sont interdits notamment : drogues, armes, contrefaçons, animaux vivants et documents d'identité. Le voyageur voit votre déclaration complète avant d'accepter."
+            "answer": "Tout ce qui est légal et déclaré : vêtements, médicaments non réglementés, documents non officiels, produits du quotidien. Sont interdits notamment : drogues, armes, espèces et moyens de paiement, contrefaçons, animaux vivants et documents d'identité. Le voyageur voit votre déclaration complète avant d'accepter."
           },
           {
             "question": "Comment le paiement est-il protégé ?",
@@ -194,7 +194,7 @@
           },
           {
             "question": "Que mettre dans un colis pour Dakar ?",
-            "answer": "Tout ce qui est légal et déclaré : vêtements, chaussures, produits de beauté, accessoires, cadeaux pour la famille. Les drogues, armes, contrefaçons, animaux vivants et documents d'identité sont interdits. Le voyageur voit votre déclaration et vos photos avant d'accepter le colis."
+            "answer": "Tout ce qui est légal et déclaré : vêtements, chaussures, produits de beauté, accessoires, cadeaux pour la famille. Les drogues, armes, espèces et moyens de paiement, contrefaçons, animaux vivants et documents d'identité sont interdits. Le voyageur voit votre déclaration et vos photos avant d'accepter le colis."
           },
           {
             "question": "Que se passe-t-il si le colis n'arrive pas ?",
@@ -320,7 +320,7 @@
         "faq": [
           {
             "question": "Puis-je envoyer des pièces détachées automobiles ?",
-            "answer": "Oui, si elles sont légales, déclarées et acceptées par le voyageur. Décrivez-les précisément, avec des photos et le poids réel : le voyageur voit votre déclaration avant d'accepter. Les objets interdits, comme les armes, les drogues, les contrefaçons ou les animaux vivants, sont refusés."
+            "answer": "Oui, si elles sont légales, déclarées et acceptées par le voyageur. Décrivez-les précisément, avec des photos et le poids réel : le voyageur voit votre déclaration avant d'accepter. Les objets interdits, comme les armes, les drogues, les espèces, les contrefaçons ou les animaux vivants, sont refusés."
           },
           {
             "question": "Combien coûte un envoi Marseille–Douala ?",

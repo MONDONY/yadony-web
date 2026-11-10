@@ -745,7 +745,7 @@
         "description": "Comment Yadony protège vos données : minimum de données en interne, partenaires certifiés (Firebase, Stripe, Cloudflare), durées de conservation et droits RGPD."
       },
       "title": "Politique de confidentialité",
-      "intro": "Dernière mise à jour : 8 novembre 2026. Yadony est une place de marché mobile qui met en relation des voyageurs disposant de place dans leurs bagages avec des expéditeurs souhaitant envoyer des colis à leurs proches. Notre service couvre les corridors depuis l'Europe, les États-Unis, le Canada et l'Afrique vers toutes les destinations que nous desservons. Nous avons conçu Yadony avec un principe fondamental : nous ne conservons que le strict minimum de données personnelles en interne. Les données sensibles (identité, authentification, documents officiels) sont confiées à des partenaires spécialisés de confiance, reconnus mondialement, qui les traitent avec un niveau de sécurité et de conformité que nous ne pourrions pas atteindre seuls. En utilisant Yadony, vous acceptez les pratiques décrites dans ce document.",
+      "intro": "Dernière mise à jour : 10 novembre 2026. Yadony est une place de marché mobile qui met en relation des voyageurs disposant de place dans leurs bagages avec des expéditeurs souhaitant envoyer des colis à leurs proches. Notre service couvre les corridors depuis l'Europe, les États-Unis, le Canada et l'Afrique vers toutes les destinations que nous desservons. Nous avons conçu Yadony avec un principe fondamental : nous ne conservons que le strict minimum de données personnelles en interne. Les données sensibles (identité, authentification, documents officiels) sont confiées à des partenaires spécialisés de confiance, reconnus mondialement, qui les traitent avec un niveau de sécurité et de conformité que nous ne pourrions pas atteindre seuls. En utilisant Yadony, vous acceptez les pratiques décrites dans ce document.",
       "articles": [
         {
           "title": "1. Qui est responsable de vos données ?",
@@ -958,7 +958,8 @@
                 "Notes et évaluations reçues : construire la réputation des utilisateurs et garantir la qualité. Conservation : durée de vie du compte",
                 "Messages échangés dans la messagerie interne : permettre la communication entre expéditeurs et voyageurs. Conservation : 2 ans après la transaction",
                 "Données de connexion (date, appareil, anonymisées) : sécurité du compte et détection de fraude. Conservation : 13 mois",
-                "Recherches de trajets, quand vous êtes connecté (villes de départ et d'arrivée, dates, nombre de trajets trouvés) : vous prévenir une seule fois si un trajet qui correspond est publié alors que votre recherche n'avait rien trouvé. Aucune coordonnée n'y est enregistrée : votre adresse e-mail est lue au moment de l'envoi. Conservation : 30 jours après la dernière recherche"
+                "Recherches de trajets, quand vous êtes connecté (villes de départ et d'arrivée, dates, nombre de trajets trouvés) : vous prévenir une seule fois si un trajet qui correspond est publié alors que votre recherche n'avait rien trouvé. Aucune coordonnée n'y est enregistrée : votre adresse e-mail est lue au moment de l'envoi. Conservation : 30 jours après la dernière recherche",
+                "Rappels de vérification d'identité : nombre de rappels reçus et date d'une éventuelle désinscription, pour ne jamais vous en envoyer plus de trois par tentative ni après votre désinscription. Conservation : durée de vie du compte"
               ]
             },
             {
@@ -1028,6 +1029,7 @@
                 "Évaluations et réputation : intérêt légitime",
                 "Examen des demandes de badge GP Pro, affichage du badge et trace des décisions : exécution du contrat (CGU, article 8) et intérêt légitime (fiabilité des profils mis en avant)",
                 "Suggestions de trajets selon vos recherches : intérêt légitime (vous aider à trouver un voyageur pour le trajet que vous cherchez), avec opposition possible à tout moment",
+                "Rappels de vérification d'identité : intérêt légitime (vous aider à terminer une vérification que vous avez commencée, obligatoire pour publier), avec opposition possible à tout moment",
                 "Communications marketing : consentement (révocable à tout moment)"
               ],
               "p": [
@@ -1183,6 +1185,7 @@
               "p": [
                 "Notifications transactionnelles (obligatoires) : confirmation de paiement, livraison confirmée, litige ouvert, alertes de sécurité. Envoyées via Firebase Cloud Messaging (notifications in-app) et par SMS via deux opérateurs différents pour garantir la continuité.",
                 "Suggestions selon vos recherches (optionnelles) : quand une recherche de trajet n'a rien trouvé, Yadony peut vous prévenir par notification et par e-mail si un trajet qui correspond est publié, au plus deux fois par semaine. Pour les arrêter : lien « Ne plus recevoir ces suggestions » en bas de chaque e-mail, ou interrupteur « Selon mes recherches » dans Paramètres → Notifications.",
+                "Rappels de vérification d'identité (optionnels) : si vous commencez la vérification sans la terminer, ou si elle est refusée pour une raison que vous pouvez corriger, Yadony peut vous envoyer jusqu'à trois rappels en sept jours, par notification et par e-mail. Pour les arrêter définitivement : lien « Ne plus recevoir les rappels de vérification » en bas de l'e-mail. Les notifications et les e-mails de rappel se coupent aussi dans Paramètres → Notifications.",
                 "Communications marketing (optionnelles) : envoyées uniquement avec votre consentement. Désabonnement possible à tout moment depuis Paramètres → Notifications."
               ]
             }

@@ -507,19 +507,19 @@
             {
               "sub": "Le badge GP Pro",
               "p": [
-                "Le badge GP Pro distingue les GP : les voyageurs qui transportent régulièrement des colis en avion sur un même corridor, souvent chaque semaine. Il est ouvert aux particuliers comme aux entreprises. Il n'existe qu'un seul badge, sans distinction entre eux.",
+                "Le badge GP Pro distingue les GP professionnels : les voyageurs qui transportent régulièrement des colis en avion sur un même corridor, souvent chaque semaine, dans le cadre d'une activité professionnelle. Il est réservé aux professionnels. Il n'existe qu'un seul badge.",
                 "Le badge n'est jamais accordé automatiquement. Il ne dépend d'aucun nombre de livraisons ni d'aucune note minimale : chaque demande est examinée par l'équipe Yadony."
               ]
             },
             {
               "sub": "Demander le badge",
               "p": [
-                "Le voyageur demande le badge lui-même, à l'inscription en cochant « Je suis GP », ou plus tard depuis son profil. Son identité doit être vérifiée. Une demande faite à l'inscription part à l'examen dès que l'identité est vérifiée.",
+                "Le voyageur demande le badge lui-même : à l'inscription, plus tard depuis son profil, ou en répondant « GP Pro » à la question « Vous voyagez en tant que ? ». Son identité doit être vérifiée. Une demande faite à l'inscription part à l'examen dès que l'identité est vérifiée.",
                 "La demande indique :"
               ],
               "ul": [
                 "La fréquence de voyage : chaque semaine, deux fois par mois, une fois par mois ou moins souvent",
-                "Un nom commercial, si le voyageur en a un (facultatif)",
+                "La raison sociale de l'entreprise, son numéro d'immatriculation (SIRET, NINEA, RCCM ou équivalent) et son pays d'immatriculation",
                 "Jusqu'à 4 justificatifs, toujours facultatifs (photo ou PDF, 10 Mo maximum par fichier) : extrait d'un registre d'entreprise (Kbis, SIRET, NINEA, RCCM ou équivalent), billets ou cartes d'embarquement, capture d'un profil de réseau social, ou tout autre fichier utile"
               ]
             },
@@ -531,7 +531,7 @@
             {
               "sub": "L'examen et la décision",
               "p": [
-                "L'équipe Yadony examine chaque demande au cas par cas. Elle tient compte notamment de l'identité vérifiée, des trajets publiés, des livraisons effectuées, des notes reçues, des litiges, des signalements et de l'ancienneté du compte.",
+                "L'équipe Yadony examine chaque demande au cas par cas. Elle vérifie que le voyageur exerce à titre professionnel : identité vérifiée, raison sociale, numéro d'immatriculation et pays d'immatriculation de l'entreprise. Elle tient compte aussi des trajets publiés, des livraisons effectuées, des notes reçues, des litiges, des signalements et de l'ancienneté du compte.",
                 "L'équipe accepte la demande ou la refuse. Tout refus est motivé. Après un refus, le voyageur peut déposer une nouvelle demande sans délai.",
                 "L'équipe peut aussi accorder le badge à un voyageur qui ne l'a pas demandé.",
                 "La décision est communiquée par notification push, par e-mail si le compte comporte une adresse e-mail, et dans l'application."
@@ -540,8 +540,14 @@
             {
               "sub": "Le retrait du badge",
               "p": [
-                "Le badge peut être retiré à tout moment, toujours par une décision de l'équipe Yadony. Le motif du retrait est communiqué au voyageur, par les mêmes canaux que la décision d'attribution.",
+                "Le badge peut être retiré à tout moment par une décision de l'équipe Yadony. Le motif du retrait est communiqué au voyageur, par les mêmes canaux que la décision d'attribution. Le voyageur redevient alors particulier.",
                 "Certaines situations conduisent l'équipe à réexaminer un profil : des notes récentes basses, un litige, un signalement, une inactivité de 8 semaines ou une identité qui n'est plus vérifiée. Elles n'entraînent jamais de retrait automatique."
+              ]
+            },
+            {
+              "sub": "Redevenir particulier",
+              "p": [
+                "Un GP Pro peut redevenir particulier à tout moment, depuis son profil. Le badge est alors retiré, les informations de son entreprise sont effacées de son profil et une demande en cours d'examen est annulée. Pour retrouver le badge, il dépose une nouvelle demande."
               ]
             },
             {
@@ -550,6 +556,20 @@
                 "Le badge GP Pro est affiché sur les trajets, le profil, la messagerie, l'affiche partageable et les offres du voyageur. Les expéditeurs peuvent filtrer les résultats de recherche pour n'afficher que les GP Pro. À critères égaux, un GP Pro est placé avant un autre voyageur dans les résultats de recherche.",
                 "Le badge n'apporte aucun avantage tarifaire : les frais de service de Yadony se calculent de la même façon pour tous. Il est indépendant de l'abonnement Yadony PRO (article 9).",
                 "Le badge n'est pas une garantie de Yadony sur la qualité du transport. Il indique que l'équipe Yadony a examiné le profil du voyageur."
+              ]
+            },
+            {
+              "sub": "Les particuliers et la limite mensuelle de trajets",
+              "p": [
+                "Un voyageur qui n'a pas le badge GP Pro voyage en tant que particulier.",
+                "L'équipe Yadony peut fixer, compte par compte, une limite mensuelle de trajets publiés pour un particulier. Aucune limite ne s'applique par défaut. La limite compte les trajets publiés pendant le mois civil, hors brouillons, et repart à zéro le premier jour du mois suivant.",
+                "Quand la limite est atteinte, le particulier ne peut plus publier de trajet avant le mois suivant. S'il exerce à titre professionnel, il peut demander le badge GP Pro : il pourra publier à nouveau dès que sa demande sera acceptée.",
+                "Un voyageur qui a le badge GP Pro n'est jamais soumis à cette limite."
+              ]
+            },
+            {
+              "p": [
+                "Les règles de cet article qui réservent le badge GP Pro aux professionnels, la limite mensuelle de trajets et le retour au statut de particulier s'appliquent à partir du {effectiveDate}. Les badges GP Pro accordés avant cette date restent en place."
               ]
             }
           ]
@@ -624,12 +644,30 @@
           ]
         },
         {
+          "title": "Article 12ter. Informations fiscales (DAC7)",
+          "blocks": [
+            {
+              "p": [
+                "La loi impose à Yadony, en tant qu'opérateur de plateforme, de collecter certaines informations sur les voyageurs concernés et de déclarer chaque année à l'administration fiscale française les sommes qu'ils perçoivent via la plateforme (articles 1649 ter A à 1649 ter E du code général des impôts, issus de la directive européenne dite « DAC7 »).",
+                "Seuls les voyageurs concernés sont sollicités : ceux dont le pays de résidence, déjà connu de Yadony, est visé par cette obligation (la France, les autres pays de l'Union européenne et certains pays partenaires) et qui ont déjà reçu au moins un paiement via la plateforme. Les autres voyageurs ne reçoivent aucune demande.",
+                "Yadony demande alors au voyageur, dans l'application : son numéro d'identification fiscale (NIF), le pays qui l'a émis et, le cas échéant, son numéro de TVA. Ces informations complètent celles que Yadony ou ses prestataires de vérification d'identité et de paiement connaissent déjà sur son identité (nom, prénom, date de naissance, adresse, pays de résidence ; pour une entreprise, raison sociale et numéro d'immatriculation), qui ne lui sont pas redemandées.",
+                "Chaque année, Yadony transmet à l'administration fiscale française, pour chaque voyageur concerné, ces informations, les sommes perçues via la plateforme par trimestre, le nombre d'opérations et les frais et commissions perçus par Yadony. Le voyageur est informé des informations transmises le concernant.",
+                "La demande ne bloque pas l'utilisation du service : le voyageur peut publier, accepter des colis, être payé et retirer son argent même s'il n'a pas encore répondu. Yadony peut lui rappeler la demande par notification ou par e-mail, en respectant ses préférences de notification.",
+                "Le numéro fiscal et le numéro de TVA sont conservés chiffrés. Ils ne sont jamais visibles des autres utilisateurs et servent uniquement à cette déclaration. Le détail de ce traitement (base légale, destinataires, durée de conservation et droits) figure dans la politique de confidentialité, rubrique « L'obligation fiscale (DAC7) ».",
+                "Cette déclaration ne remplace pas celle du voyageur : il reste seul responsable de ses propres déclarations fiscales (article 12bis). Yadony ne fournit aucun conseil fiscal.",
+                "Cet article s'applique à partir du {effectiveDate}."
+              ]
+            }
+          ]
+        },
+        {
           "title": "Article 13. Vos données personnelles (RGPD)",
           "blocks": [
             {
               "p": [
                 "Yadony respecte le Règlement Européen sur la Protection des Données (RGPD). Pour toute question : dpo{'@'}yadony.com.",
                 "Nous collectons uniquement les données nécessaires au fonctionnement du service : identité (KYC), coordonnées, données de transaction, photos de livraison et données de navigation. Nous ne stockons jamais vos données bancaires (gérées directement par Stripe). Les images de votre pièce d'identité et de votre visage sont traitées par Didit, notre prestataire de vérification : Yadony n'en conserve aucune copie.",
+                "Pour les voyageurs concernés par la déclaration fiscale de l'article 12ter, Yadony collecte aussi le numéro d'identification fiscale, son pays d'émission et, le cas échéant, le numéro de TVA.",
                 "Vos données sont conservées pendant la durée d'utilisation de votre compte plus 3 ans. Les données de transaction sont conservées 5 ans (obligation légale comptable). Les documents d'identité sont conservés 5 ans après la fin de votre relation avec Yadony.",
                 "Vous pouvez à tout moment consulter, modifier, exporter ou supprimer vos données depuis les paramètres de l'application. À la suppression du compte : données anonymisées, pièces d'identité effacées, carnet de destinataires nettoyé (sauf historique de paiement conservé 5 ans).",
                 "Pour toute réclamation non résolue, vous pouvez contacter la CNIL : www.cnil.fr."
@@ -700,7 +738,8 @@
           "blocks": [
             {
               "p": [
-                "Yadony peut modifier ces CGU à tout moment. Vous en serez informé par e-mail ou notification dans l'application au moins 30 jours avant. Si vous continuez à utiliser la plateforme après cette date, vous acceptez les nouvelles CGU. Dans le cas contraire, vous pouvez fermer votre compte."
+                "Yadony peut modifier ces CGU à tout moment. Vous en serez informé par e-mail ou notification dans l'application au moins 30 jours avant. Si vous continuez à utiliser la plateforme après cette date, vous acceptez les nouvelles CGU. Dans le cas contraire, vous pouvez fermer votre compte.",
+                "Les dernières modifications de ces CGU (article 8 : badge GP Pro et limite mensuelle de trajets ; article 12ter : informations fiscales) s'appliquent à partir du {effectiveDate}."
               ]
             }
           ]

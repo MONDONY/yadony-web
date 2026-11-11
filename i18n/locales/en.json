@@ -507,19 +507,19 @@
             {
               "sub": "The GP Pro badge",
               "p": [
-                "The GP Pro badge distinguishes GPs: travellers who regularly carry parcels by plane on the same corridor, often every week. It is open to individuals and businesses alike. There is a single badge, with no distinction between them.",
+                "The GP Pro badge distinguishes professional GPs: travellers who regularly carry parcels by plane on the same corridor, often every week, as a business activity. It is reserved for professionals. There is a single badge.",
                 "The badge is never granted automatically. It does not depend on a number of deliveries or a minimum rating: each request is reviewed by the Yadony team."
               ]
             },
             {
               "sub": "Requesting the badge",
               "p": [
-                "Travellers request the badge themselves, at sign-up by ticking “I am a GP”, or later from their profile. Their identity must be verified. A request made at sign-up goes to review as soon as the identity is verified.",
+                "Travellers request the badge themselves: at sign-up, later from their profile, or by answering “GP Pro” to the question “You are traveling as…”. Their identity must be verified. A request made at sign-up goes to review as soon as the identity is verified.",
                 "The request states:"
               ],
               "ul": [
                 "Travel frequency: every week, twice a month, once a month or less often",
-                "A trading name, if the traveller has one (optional)",
+                "The company's registered name, its registration number (SIRET, NINEA, RCCM or equivalent) and its country of registration",
                 "Up to 4 supporting documents, always optional (photo or PDF, 10 MB maximum per file): extract from a business register (Kbis, SIRET, NINEA, RCCM or equivalent), tickets or boarding passes, a screenshot of a social media profile, or any other useful file"
               ]
             },
@@ -531,7 +531,7 @@
             {
               "sub": "Review and decision",
               "p": [
-                "The Yadony team reviews each request case by case. It takes into account, in particular, the verified identity, published trips, completed deliveries, ratings received, disputes, reports and the age of the account.",
+                "The Yadony team reviews each request case by case. It checks that the traveller works as a professional: verified identity, registered name, registration number and country of registration of the company. It also takes into account published trips, completed deliveries, ratings received, disputes, reports and the age of the account.",
                 "The team accepts or refuses the request. Every refusal states its reason. After a refusal, the traveller can submit a new request straight away.",
                 "The team may also grant the badge to a traveller who has not requested it.",
                 "The decision is sent by push notification, by e-mail if the account has an e-mail address, and in the app."
@@ -540,8 +540,14 @@
             {
               "sub": "Withdrawal of the badge",
               "p": [
-                "The badge can be withdrawn at any time, always by a decision of the Yadony team. The reason for the withdrawal is sent to the traveller through the same channels as the decision to grant it.",
+                "The badge can be withdrawn at any time by a decision of the Yadony team. The reason for the withdrawal is sent to the traveller through the same channels as the decision to grant it. The traveller then becomes an individual again.",
                 "Some situations lead the team to review a profile again: low recent ratings, a dispute, a report, 8 weeks of inactivity or an identity that is no longer verified. They never lead to automatic withdrawal."
+              ]
+            },
+            {
+              "sub": "Becoming an individual again",
+              "p": [
+                "A GP Pro can become an individual again at any time, from their profile. The badge is then withdrawn, their company information is erased from their profile and any request under review is cancelled. To get the badge back, they submit a new request."
               ]
             },
             {
@@ -550,6 +556,20 @@
                 "The GP Pro badge is shown on the traveller's trips, profile, messages, shareable poster and offers. Senders can filter search results to show GP Pros only. All other things being equal, a GP Pro is placed ahead of another traveller in search results.",
                 "The badge carries no pricing advantage: Yadony's service fee is calculated the same way for everyone. It is independent of the Yadony PRO subscription (article 9).",
                 "The badge is not a guarantee by Yadony of the quality of the transport. It shows that the Yadony team has reviewed the traveller's profile."
+              ]
+            },
+            {
+              "sub": "Individuals and the monthly trip limit",
+              "p": [
+                "A traveller who does not hold the GP Pro badge travels as an individual.",
+                "The Yadony team may set, account by account, a monthly limit on the trips an individual can publish. No limit applies by default. The limit counts trips published during the calendar month, excluding drafts, and resets on the first day of the following month.",
+                "Once the limit is reached, the individual cannot publish another trip before the following month. If they work as a professional, they can request the GP Pro badge: they can publish again as soon as their request is accepted.",
+                "A traveller who holds the GP Pro badge is never subject to this limit."
+              ]
+            },
+            {
+              "p": [
+                "The rules of this article reserving the GP Pro badge for professionals, the monthly trip limit and the return to individual status apply from {effectiveDate}. GP Pro badges granted before that date remain in place."
               ]
             }
           ]
@@ -624,12 +644,30 @@
           ]
         },
         {
+          "title": "Article 12ter. Tax information (DAC7)",
+          "blocks": [
+            {
+              "p": [
+                "As a platform operator, Yadony is required by law to collect certain information about the travellers concerned and to report each year to the French tax authorities the amounts they receive through the platform (articles 1649 ter A to 1649 ter E of the French General Tax Code, which implement the European directive known as “DAC7”).",
+                "Only the travellers concerned are asked: those whose country of residence, already known to Yadony, is covered by this obligation (France, the other European Union countries and certain partner countries) and who have already received at least one payment through the platform. Other travellers receive no request.",
+                "Yadony then asks the traveller, in the app, for their tax identification number (TIN), the country that issued it and, where applicable, their VAT number. This information completes the identity information already known to Yadony or to its identity verification and payment providers (first and last name, date of birth, address, country of residence; for a business, registered name and registration number), which is not asked again.",
+                "Each year, Yadony sends the French tax authorities, for each traveller concerned, this information, the amounts received through the platform per quarter, the number of transactions and the fees and commissions received by Yadony. The traveller is informed of the information sent about them.",
+                "The request does not block the use of the service: the traveller can publish, accept parcels, get paid and withdraw their money even if they have not answered yet. Yadony may remind them of the request by notification or by e-mail, in line with their notification preferences.",
+                "The tax identification number and the VAT number are stored encrypted. They are never visible to other users and are used only for this reporting. The details of this processing (legal basis, recipients, retention period and rights) are set out in the privacy policy, under “The tax obligation (DAC7)”.",
+                "This reporting does not replace the traveller's own: they remain solely responsible for their own tax returns (article 12bis). Yadony provides no tax advice.",
+                "This article applies from {effectiveDate}."
+              ]
+            }
+          ]
+        },
+        {
           "title": "Article 13. Your personal data (GDPR)",
           "blocks": [
             {
               "p": [
                 "Yadony complies with the European General Data Protection Regulation (GDPR). For any question: dpo{'@'}yadony.com.",
                 "We collect only the data needed to run the service: identity (KYC), contact details, transaction data, delivery photos and browsing data. We never store your bank details (handled directly by Stripe). Images of your ID document and your face are processed by Didit, our verification provider: Yadony keeps no copy of them.",
+                "For travellers concerned by the tax reporting in article 12ter, Yadony also collects their tax identification number, its issuing country and, where applicable, their VAT number.",
                 "Your data is kept for as long as you use your account plus 3 years. Transaction data is kept for 5 years (statutory accounting obligation). Identity documents are kept for 5 years after your relationship with Yadony ends.",
                 "You can at any time view, edit, export or delete your data from the application settings. When an account is deleted: profile data anonymised, identity documents erased, recipient address book cleared (except payment history, kept for 5 years).",
                 "For any unresolved complaint, you can contact the CNIL: www.cnil.fr."
@@ -700,7 +738,8 @@
           "blocks": [
             {
               "p": [
-                "Yadony may change these Terms at any time. You will be informed by e-mail or in-app notification at least 30 days in advance. If you continue to use the platform after that date, you accept the new Terms. Otherwise, you can close your account."
+                "Yadony may change these Terms at any time. You will be informed by e-mail or in-app notification at least 30 days in advance. If you continue to use the platform after that date, you accept the new Terms. Otherwise, you can close your account.",
+                "The latest changes to these Terms (article 8: GP Pro badge and monthly trip limit; article 12ter: tax information) apply from {effectiveDate}."
               ]
             }
           ]

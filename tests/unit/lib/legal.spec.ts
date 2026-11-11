@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { legalToc, renderLegalArticles } from '@/lib/legal'
+import { LEGAL_CHANGES_EFFECTIVE_DATE, formatEffectiveDate, legalToc, renderLegalArticles } from '@/lib/legal'
 
 // Le rendu réel passe par rt() de vue-i18n ; ici l'identité suffit pour
 // vérifier la mise en forme structurelle.
@@ -51,3 +51,33 @@ describe('legalToc', () => {
     expect(legalToc([])).toEqual([])
   })
 })
+
+describe('formatEffectiveDate', () => {
+  const pending = '[DATE À COMPLÉTER]'
+
+  it('affiche le marqueur tant que la date n’est pas fixée', () => {
+    expect(formatEffectiveDate(null, 'fr', pending)).toBe(pending)
+    expect(formatEffectiveDate(null, 'en', pending)).toBe(pending)
+  })
+
+  it('écrit la date en toutes lettres dans chaque langue', () => {
+    expect(formatEffectiveDate('2027-01-15', 'fr', pending)).toBe('15 janvier 2027')
+    expect(formatEffectiveDate('2027-01-15', 'en', pending)).toBe('15 January 2027')
+  })
+
+  it('écrit « 1er » pour le premier jour du mois en français', () => {
+    expect(formatEffectiveDate('2027-02-01', 'fr', pending)).toBe('1er février 2027')
+    expect(formatEffectiveDate('2027-02-01', 'en', pending)).toBe('1 February 2027')
+  })
+
+  it('refuse une date mal écrite ou impossible plutôt que d’afficher une date fausse', () => {
+    expect(() => formatEffectiveDate('15/01/2027', 'fr', pending)).toThrow(/AAAA-MM-JJ/)
+    expect(() => formatEffectiveDate('2027-02-30', 'fr', pending)).toThrow(/AAAA-MM-JJ/)
+    expect(() => formatEffectiveDate('2027-13-01', 'en', pending)).toThrow(/AAAA-MM-JJ/)
+  })
+
+  it('la date d’entrée en vigueur du dépôt est vide ou valide', () => {
+    expect(() => formatEffectiveDate(LEGAL_CHANGES_EFFECTIVE_DATE, 'fr', pending)).not.toThrow()
+  })
+})
+

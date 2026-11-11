@@ -3,7 +3,7 @@ import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRoute } from 'vue-router'
 import { buildSeoMeta } from '@/lib/seo'
-import { legalToc, renderLegalArticles } from '@/lib/legal'
+import { LEGAL_CHANGES_EFFECTIVE_DATE, formatEffectiveDate, legalToc, renderLegalArticles } from '@/lib/legal'
 import { contactEmail } from '@/lib/site'
 
 defineI18nRoute({ paths: { fr: '/confidentialite', en: '/privacy' } })
@@ -20,9 +20,15 @@ useSeoMeta(
   }),
 )
 
+// Date d'entrée en vigueur des dernières modifications (constante unique de
+// lib/legal.ts), ou le marqueur à compléter tant qu'elle n'est pas fixée.
+const effectiveDate = computed(() =>
+  formatEffectiveDate(LEGAL_CHANGES_EFFECTIVE_DATE, locale.value, t('legal.effectiveDatePending')),
+)
+
 const articles = computed(() =>
   renderLegalArticles(tm('legal.confidentialite.articles') as unknown[], (message) =>
-    rt(message as never, { email: contactEmail }),
+    rt(message as never, { email: contactEmail, effectiveDate: effectiveDate.value }),
   ),
 )
 

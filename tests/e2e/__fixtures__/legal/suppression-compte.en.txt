@@ -25,6 +25,7 @@ Some data is kept:
 the history of payments and transactions, for our legal and accounting obligations (up to 5 years, as stated in our privacy policy);
 the security log, which cannot be modified, with personal data masked;
 messages already exchanged remain visible to the people you talked to, with your name replaced by “Utilisateur supprimé” (“deleted user”);
+for travellers concerned by the DAC7 tax reporting, the tax identification number, its issuing country and the VAT number, for the period required by law, then erased;
 identity verification data held by our provider (Didit) is kept according to its own retention period.
 To learn more about your data, how long it is kept and your rights, read our privacy policy.
 Read the privacy policy

@@ -139,8 +139,8 @@ const markerExemptPaths = new Set([
   // traduisent pas : « Côte d'Ivoire » et « RCS Créteil » (registre du
   // commerce du siège social).
   'legal.mentionsLegales.sections.editor.text',
-  'legal.cgu.articles[13].blocks[1].p[0]',
-  'legal.cgu.articles[20].blocks[0].ul[4]',
+  'legal.cgu.articles[14].blocks[1].p[0]',
+  'legal.cgu.articles[21].blocks[0].ul[4]',
   'legal.confidentialite.articles[7].blocks[3].p[0]',
   'legal.confidentialite.articles[10].blocks[1].p[1]',
   // Noms d'aéroports et de villes accentués (Lyon-Saint-Exupéry, Bamako-Sénou,

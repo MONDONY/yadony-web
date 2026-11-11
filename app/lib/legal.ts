@@ -44,3 +44,33 @@ export interface LegalTocEntry {
 export function legalToc(titles: string[], prefix = 'section'): LegalTocEntry[] {
   return titles.map((label, index) => ({ id: `${prefix}-${index + 1}`, label }))
 }
+
+// Date d'entrée en vigueur des modifications annoncées des CGU (article 8 :
+// badge GP Pro ; article 12ter : informations fiscales DAC7) et de la
+// politique de confidentialité (obligation fiscale DAC7). L'article 18 des CGU
+// impose de prévenir les utilisateurs au moins 30 jours avant cette date.
+//
+// À COMPLÉTER par le propriétaire, une seule fois pour les deux langues, au
+// format AAAA-MM-JJ (par exemple '2027-01-15'). Tant qu'elle vaut null, les
+// textes affichent le marqueur `legal.effectiveDatePending`. Après l'avoir
+// remplie, mettre à jour les références e2e (tests/e2e/__fixtures__/legal/).
+export const LEGAL_CHANGES_EFFECTIVE_DATE: string | null = null
+
+// Date en toutes lettres (« 15 janvier 2027 », « 15 January 2027 »), ou le
+// marqueur tant que la date n'est pas fixée. Une date mal écrite ou impossible
+// fait échouer le rendu : mieux vaut un build cassé qu'une date fausse en ligne.
+export function formatEffectiveDate(isoDate: string | null, locale: string, pending: string): string {
+  if (isoDate === null) return pending
+  const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(isoDate)
+  const date = match ? new Date(Date.UTC(Number(match[1]), Number(match[2]) - 1, Number(match[3]))) : null
+  if (!match || !date || date.toISOString().slice(0, 10) !== isoDate) {
+    throw new Error(`Date d'entrée en vigueur invalide « ${isoDate} » : format attendu AAAA-MM-JJ`)
+  }
+  const options = { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' } as const
+  if (locale === 'fr') {
+    const day = date.getUTCDate()
+    const rest = new Intl.DateTimeFormat('fr-FR', { month: 'long', year: 'numeric', timeZone: 'UTC' }).format(date)
+    return `${day === 1 ? '1er' : day} ${rest}`
+  }
+  return new Intl.DateTimeFormat('en-GB', options).format(date)
+}

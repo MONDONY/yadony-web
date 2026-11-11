@@ -1,5 +1,5 @@
 Politique de confidentialité
-Dernière mise à jour : 10 novembre 2026. Yadony est une place de marché mobile qui met en relation des voyageurs disposant de place dans leurs bagages avec des expéditeurs souhaitant envoyer des colis à leurs proches. Notre service couvre les corridors depuis l'Europe, les États-Unis, le Canada et l'Afrique vers toutes les destinations que nous desservons. Nous avons conçu Yadony avec un principe fondamental : nous ne conservons que le strict minimum de données personnelles en interne. Les données sensibles (identité, authentification, documents officiels) sont confiées à des partenaires spécialisés de confiance, reconnus mondialement, qui les traitent avec un niveau de sécurité et de conformité que nous ne pourrions pas atteindre seuls. En utilisant Yadony, vous acceptez les pratiques décrites dans ce document.
+Dernière mise à jour : [DATE DE MISE EN LIGNE À COMPLÉTER]. Yadony est une place de marché mobile qui met en relation des voyageurs disposant de place dans leurs bagages avec des expéditeurs souhaitant envoyer des colis à leurs proches. Notre service couvre les corridors depuis l'Europe, les États-Unis, le Canada et l'Afrique vers toutes les destinations que nous desservons. Nous avons conçu Yadony avec un principe fondamental : nous ne conservons que le strict minimum de données personnelles en interne. Les données sensibles (identité, authentification, documents officiels) sont confiées à des partenaires spécialisés de confiance, reconnus mondialement, qui les traitent avec un niveau de sécurité et de conformité que nous ne pourrions pas atteindre seuls. En utilisant Yadony, vous acceptez les pratiques décrites dans ce document.
 1. Qui est responsable de vos données ?
 Responsable du traitement : YADONY SAS, société par actions simplifiée immatriculée au RCS de Créteil, SIREN 108 733 510.
 Délégué à la Protection des Données (DPO) : dpo@yadony.com. Contact général : contact@yadony.com.
@@ -12,6 +12,7 @@ Nom et prénom : afficher votre identité sur votre profil et dans les transacti
 Adresse e-mail : vous identifier et vous envoyer les récapitulatifs de transaction
 Date de naissance : vérifier que vous êtes majeur (18 ans minimum)
 Ville de résidence : faciliter la mise en relation avec des voyageurs proches de chez vous
+Pour les voyageurs concernés par la déclaration fiscale DAC7, Yadony conserve aussi, chiffrés et jamais affichés, leur numéro fiscal, son pays d'émission et leur numéro de TVA (article 4, « L'obligation fiscale (DAC7) »).
 C'est tout. Yadony ne stocke aucune autre donnée personnelle en interne. Le reste est géré par nos partenaires spécialisés, décrits ci-dessous.
 3. Nos partenaires et les données qu'ils gèrent à notre place
 Nous avons choisi de confier chaque type de donnée sensible au spécialiste mondial de ce domaine. Voici exactement qui gère quoi.
@@ -93,12 +94,28 @@ Les données d'usage de l'application (écrans consultés, actions effectuées, 
 Le badge GP Pro
 Si vous demandez le badge GP Pro (article 8 des CGU), Yadony traite les données suivantes, dans le seul but d'examiner votre demande et d'afficher le badge :
 La fréquence de voyage que vous indiquez
-Votre nom commercial, si vous en donnez un
+La raison sociale, le numéro d'immatriculation et le pays d'immatriculation de votre entreprise (le numéro est conservé chiffré)
 Les justificatifs que vous choisissez d'ajouter (facultatifs, 4 au maximum)
 Le statut de votre demande et l'historique des décisions de l'équipe, avec leurs motifs
 Pour examiner la demande, l'équipe s'appuie aussi sur des données que Yadony détient déjà : le résultat de votre vérification d'identité, vos trajets publiés, vos livraisons, vos notes, les litiges, les signalements et l'ancienneté de votre compte.
 Les justificatifs ne sont jamais publics. Seuls les administrateurs Yadony peuvent les consulter, par des liens temporaires valables 15 minutes. Ils sont supprimés dès que la demande est tranchée : acceptation, refus, annulation de la demande ou suppression du compte. Un fichier envoyé mais jamais rattaché à une demande est supprimé sous 24 heures.
 La décision et son motif sont conservés dans le journal d'audit. Pendant l'examen, aucune information de votre demande n'est visible des autres utilisateurs. Une fois accordé, le badge est visible des autres utilisateurs (article 7).
+Une fois le badge accordé, la raison sociale, le numéro d'immatriculation et le pays d'immatriculation de votre entreprise sont affichés sur votre profil aux autres utilisateurs de l'application. Si vous redevenez particulier, ou si le badge vous est retiré, ces informations sont effacées de votre profil.
+Pour les particuliers, Yadony enregistre la limite mensuelle de trajets que l'équipe peut fixer pour leur compte (article 8 des CGU) et compte les trajets publiés dans le mois.
+L'obligation fiscale (DAC7)
+Si vous êtes un voyageur concerné par la déclaration fiscale des plateformes (article 12ter des CGU), Yadony traite les données suivantes, dans le seul but de remplir cette obligation légale :
+Votre numéro d'identification fiscale (NIF) et le pays qui l'a émis
+Votre numéro de TVA, si vous en avez un
+Les informations d'identité déjà connues de Yadony ou de ses prestataires de vérification d'identité et de paiement : nom, prénom, date de naissance, adresse et pays de résidence (pour une entreprise : raison sociale, adresse et numéro d'immatriculation). Elles ne vous sont pas redemandées
+Les sommes perçues via la plateforme, par trimestre, le nombre d'opérations et les frais et commissions perçus par Yadony
+Le registre des demandes et des rappels qui vous ont été envoyés, et la date de votre réponse, que la loi impose de tenir
+Base légale : obligation légale (article 6.1.c du RGPD), prévue par les articles 1649 ter A à 1649 ter E du code général des impôts.
+Destinataires : l'administration fiscale française (direction générale des finances publiques, DGFiP), une fois par an. Elle peut transmettre ces informations aux administrations fiscales des autres pays de l'Union européenne et des pays partenaires concernés, comme le prévoit la directive DAC7. Aucun nouveau sous-traitant n'intervient : ces données sont conservées dans la base de données interne de Yadony, comme vos autres données de profil.
+Le numéro fiscal et le numéro de TVA sont conservés chiffrés. Ils n'apparaissent en clair que dans le fichier destiné à l'administration fiscale. Dans l'application, vous les voyez sous forme masquée et pouvez les corriger à tout moment.
+Caractère obligatoire : pour les voyageurs concernés, la loi impose de fournir ces informations. La demande ne bloque pas l'utilisation de l'application. Les voyageurs qui ne sont pas concernés ne reçoivent aucune demande.
+Durée de conservation : durée en cours de confirmation [À CONFIRMER : durée légale].
+Vos droits : vous disposez des droits décrits à l'article 11. Le droit à l'effacement est limité pour ces données : la loi impose de les conserver pendant la durée légale, y compris après la suppression de votre compte. Le droit d'opposition ne s'applique pas à un traitement imposé par la loi.
+Ce traitement s'applique à partir du [DATE D'ENTRÉE EN VIGUEUR À COMPLÉTER : au moins 30 jours après l'annonce aux utilisateurs].
 5. Résumé : qui stocke quoi ?
 Voici un récapitulatif complet pour vous donner une vision claire de l'architecture de protection de vos données.
 Nom, prénom, e-mail, date de naissance, ville : Yadony (base de données interne). Yadony y a accès : oui, données de profil uniquement
@@ -110,7 +127,8 @@ Numéro Mobile Money : pawaPay et votre opérateur (Wave, Orange Money ou autre)
 Données d'usage de l'application : PostHog, rattachées à l'identifiant technique du compte, selon les règles de consentement de l'article 4
 Rapports d'erreurs et signalements de problème : Sentry
 Photos de colis, photos de livraison : Cloudflare. Accès via lien temporaire sécurisé uniquement
-Demande de badge GP Pro (fréquence, nom commercial, statut, décisions et motifs) : Yadony (base de données interne). Justificatifs facultatifs : consultables uniquement par les administrateurs Yadony, par lien temporaire de 15 minutes, et supprimés dès la décision
+Demande de badge GP Pro (fréquence, raison sociale, numéro et pays d'immatriculation, statut, décisions et motifs) : Yadony (base de données interne). Justificatifs facultatifs : consultables uniquement par les administrateurs Yadony, par lien temporaire de 15 minutes, et supprimés dès la décision
+Numéro fiscal (NIF), pays d'émission et numéro de TVA des voyageurs concernés par la déclaration DAC7 : Yadony (base de données interne, chiffrés). Transmis une fois par an à l'administration fiscale française (DGFiP)
 Historique des transactions, scans, évaluations : Yadony (base de données interne). Accès : oui, nécessaire au fonctionnement du service
 Assistant IA et « Créer avec l'IA » : fournisseur d'IA tiers (Anthropic, modèle Claude), après votre accord dans l'application, sans nom, téléphone, e-mail ni identifiant. Yadony ne conserve pas le contenu des conversations, sauf si vous choisissez de parler à un humain (ticket du support)
 Messages entre utilisateurs : Yadony (chiffrés). Contenu chiffré, accès restreint aux litiges
@@ -128,6 +146,8 @@ Détection de fraude et sécurité : intérêt légitime
 Examen des demandes de badge GP Pro, affichage du badge et trace des décisions : exécution du contrat (CGU, article 8) et intérêt légitime (fiabilité des profils mis en avant)
 Suggestions de trajets selon vos recherches : intérêt légitime (vous aider à trouver un voyageur pour le trajet que vous cherchez), avec opposition possible à tout moment
 Rappels de vérification d'identité : intérêt légitime (vous aider à terminer une vérification que vous avez commencée, obligatoire pour publier), avec opposition possible à tout moment
+Limite mensuelle de trajets des particuliers (CGU, article 8) : exécution du contrat et intérêt légitime (distinguer l'activité occasionnelle des particuliers de l'activité professionnelle)
+Collecte des informations fiscales des voyageurs concernés et déclaration annuelle à l'administration fiscale (DAC7) : obligation légale (article 6.1.c du RGPD ; articles 1649 ter A à 1649 ter E du code général des impôts)
 Communications marketing : consentement (révocable à tout moment)
 7. Avec qui partageons-nous vos données ?
 Yadony ne vend jamais vos données à des tiers. Les seuls partages de données qui ont lieu sont ceux décrits dans les articles 3 et 4 ci-dessus, avec nos partenaires techniques contractuellement engagés à les protéger.
@@ -135,6 +155,7 @@ Autres cas de partage
 En dehors de ces partenaires :
 Entre utilisateurs : votre prénom, votre photo de profil, votre note et votre badge sont visibles par les autres utilisateurs dans le cadre normal du service.
 Avec les autorités : si la loi l'exige (réquisition judiciaire, obligation fiscale, lutte contre le blanchiment), nous sommes tenus de communiquer certaines données aux autorités compétentes.
+Avec l'administration fiscale française (DGFiP) : une fois par an, les informations fiscales des voyageurs concernés et les sommes perçues via la plateforme (article 4, « L'obligation fiscale (DAC7) »).
 En cas de litige : les preuves pertinentes (scans, lien vers les photos Cloudflare, messages) peuvent être partagées entre les parties impliquées.
 Cession de l'entreprise : en cas de fusion ou d'acquisition, vos données pourraient être transférées au repreneur. Vous en seriez informé au préalable.
 8. Les transferts internationaux de données
@@ -159,6 +180,7 @@ Données de mesure d'audience : 13 mois, conformité CNIL
 Justificatifs d'une demande de badge GP Pro : supprimés dès la décision (acceptation, refus, annulation ou suppression du compte). Fichiers jamais rattachés à une demande : supprimés sous 24 heures
 Décisions sur le badge GP Pro et leurs motifs : conservées dans le journal d'audit
 Recherches de trajets retenues pour les suggestions : 30 jours après la dernière recherche, puis effacement définitif. Effacées aussi dès la suppression définitive du compte
+Informations fiscales DAC7 (numéro fiscal, pays d'émission, numéro de TVA, sommes déclarées, registre des demandes et des rappels) : durée en cours de confirmation [À CONFIRMER : durée légale]
 Comptes supprimés : anonymisation des données de profil à la suppression définitive, 30 jours après la demande, sauf historique financier conservé 5 ans
 10. Comment nous protégeons vos données
 Architecture de sécurité par conception
@@ -185,12 +207,14 @@ Droits sur les données Firebase : accès, rectification, suppression des donné
 Droits sur les données Stripe : accès et suppression des données de paiement et d'identité, sur stripe.com/fr ou dpo@yadony.com
 Pour les données gérées par nos partenaires (Firebase, Stripe, Cloudflare), nous vous aidons à exercer vos droits auprès d'eux. Contactez-nous à dpo@yadony.com et nous ferons le lien.
 En cas de réponse insatisfaisante : CNIL (www.cnil.fr) en France, ARTCI en Côte d'Ivoire, CDP au Sénégal, Commission Nationale pour la Protection des Données Personnelles au Cameroun.
+Informations fiscales (DAC7) : vous pouvez les consulter sous forme masquée et les corriger dans l'application. Leur effacement est limité par l'obligation légale de conservation (article 4, « L'obligation fiscale (DAC7) »).
 12. Les cookies et traceurs
 Yadony utilise uniquement les cookies strictement nécessaires au fonctionnement de l'application (maintien de session, sécurité). La mesure d'audience de l'application (PostHog) suit les règles de consentement décrites à l'article 4. Vous pouvez la désactiver depuis Paramètres → Confidentialité.
 13. Les notifications
 Notifications transactionnelles (obligatoires) : confirmation de paiement, livraison confirmée, litige ouvert, alertes de sécurité. Envoyées via Firebase Cloud Messaging (notifications in-app) et par SMS via deux opérateurs différents pour garantir la continuité.
 Suggestions selon vos recherches (optionnelles) : quand une recherche de trajet n'a rien trouvé, Yadony peut vous prévenir par notification et par e-mail si un trajet qui correspond est publié, au plus deux fois par semaine. Pour les arrêter : lien « Ne plus recevoir ces suggestions » en bas de chaque e-mail, ou interrupteur « Selon mes recherches » dans Paramètres → Notifications.
 Rappels de vérification d'identité (optionnels) : si vous commencez la vérification sans la terminer, ou si elle est refusée pour une raison que vous pouvez corriger, Yadony peut vous envoyer jusqu'à trois rappels en sept jours, par notification et par e-mail. Pour les arrêter définitivement : lien « Ne plus recevoir les rappels de vérification » en bas de l'e-mail. Les notifications et les e-mails de rappel se coupent aussi dans Paramètres → Notifications.
+Demandes d'informations fiscales (voyageurs concernés par la déclaration DAC7) : Yadony peut vous demander votre numéro fiscal par notification et par e-mail, avec des rappels, en respectant vos préférences de notification. Vous recevez aussi, chaque année, le récapitulatif des informations transmises à l'administration fiscale.
 Communications marketing (optionnelles) : envoyées uniquement avec votre consentement. Désabonnement possible à tout moment depuis Paramètres → Notifications.
 14. Les données des mineurs
 Yadony est strictement réservé aux personnes majeures (18 ans révolus). Nous ne collectons aucune donnée concernant des mineurs. Si vous pensez qu'un mineur a créé un compte, contactez-nous à dpo@yadony.com. Nous supprimerons le compte et toutes les données associées dans les plus brefs délais.
@@ -205,6 +229,7 @@ Images des colis (Cloudflare) : les liens deviennent inaccessibles. Les fichiers
 Messages dans la messagerie : supprimés.
 Carnet de destinataires : nettoyé.
 Justificatifs d'une demande de badge GP Pro : supprimés.
+Informations fiscales DAC7 (voyageurs concernés) : conservées pendant la durée imposée par la loi, puis effacées.
 Historique des transactions : conservé 5 ans (obligation légale comptable). Ces données sont anonymisées au maximum.
 Si un litige est en cours, le compte est maintenu jusqu'à la clôture du litige, puis supprimé.
 16. Modifications de cette politique

@@ -784,7 +784,7 @@
         "description": "How Yadony protects your data: minimal internal data, certified partners (Firebase, Stripe, Cloudflare), retention periods and GDPR rights."
       },
       "title": "Privacy policy",
-      "intro": "Last updated: November 10, 2026. Yadony is a mobile marketplace connecting travellers with spare luggage space to senders wishing to send parcels to their relatives. Our service covers corridors from Europe, the United States, Canada and Africa to all the destinations we serve. We designed Yadony around one core principle: we keep only the strict minimum of personal data internally. Sensitive data (identity, authentication, official documents) is entrusted to trusted, globally recognised specialised partners who process it with a level of security and compliance we could not reach alone. By using Yadony, you accept the practices described in this document. This English version is provided for convenience; the French version prevails.",
+      "intro": "Last updated: [PUBLICATION DATE TO BE COMPLETED]. Yadony is a mobile marketplace connecting travellers with spare luggage space to senders wishing to send parcels to their relatives. Our service covers corridors from Europe, the United States, Canada and Africa to all the destinations we serve. We designed Yadony around one core principle: we keep only the strict minimum of personal data internally. Sensitive data (identity, authentication, official documents) is entrusted to trusted, globally recognised specialised partners who process it with a level of security and compliance we could not reach alone. By using Yadony, you accept the practices described in this document. This English version is provided for convenience; the French version prevails.",
       "articles": [
         {
           "title": "1. Who is responsible for your data?",
@@ -820,6 +820,7 @@
             },
             {
               "p": [
+                "For travellers concerned by the DAC7 tax reporting, Yadony also keeps, encrypted and never displayed, their tax identification number, its issuing country and their VAT number (article 4, “The tax obligation (DAC7)”).",
                 "That is all. Yadony stores no other personal data internally. The rest is handled by our specialised partners, described below."
               ]
             }
@@ -1013,7 +1014,7 @@
               ],
               "ul": [
                 "The travel frequency you state",
-                "Your trading name, if you give one",
+                "Your company's registered name, registration number and country of registration (the number is stored encrypted)",
                 "The supporting documents you choose to add (optional, 4 at most)",
                 "The status of your request and the history of the team's decisions, with their reasons"
               ]
@@ -1022,7 +1023,33 @@
               "p": [
                 "To review the request, the team also relies on data Yadony already holds: the result of your identity verification, your published trips, your deliveries, your ratings, disputes, reports and the age of your account.",
                 "Supporting documents are never public. Only Yadony administrators can view them, through temporary links valid for 15 minutes. They are deleted as soon as the request is decided: acceptance, refusal, cancellation of the request or deletion of the account. A file uploaded but never attached to a request is deleted within 24 hours.",
-                "The decision and its reason are kept in the audit log. During the review, no information from your request is visible to other users. Once granted, the badge is visible to other users (article 7)."
+                "The decision and its reason are kept in the audit log. During the review, no information from your request is visible to other users. Once granted, the badge is visible to other users (article 7).",
+                "Once the badge is granted, your company's registered name, registration number and country of registration are shown on your profile to other users of the app. If you become an individual again, or if the badge is withdrawn, this information is erased from your profile.",
+                "For individuals, Yadony records the monthly trip limit the team may set for their account (article 8 of the Terms of Use) and counts the trips published during the month."
+              ]
+            },
+            {
+              "sub": "The tax obligation (DAC7)",
+              "p": [
+                "If you are a traveller concerned by the platform tax reporting (article 12ter of the Terms of Use), Yadony processes the following data, solely to meet this legal obligation:"
+              ],
+              "ul": [
+                "Your tax identification number (TIN) and the country that issued it",
+                "Your VAT number, if you have one",
+                "The identity information already known to Yadony or to its identity verification and payment providers: first and last name, date of birth, address and country of residence (for a business: registered name, address and registration number). It is not asked again",
+                "The amounts received through the platform, per quarter, the number of transactions and the fees and commissions received by Yadony",
+                "The record of the requests and reminders sent to you, and the date of your answer, which the law requires us to keep"
+              ]
+            },
+            {
+              "p": [
+                "Legal basis: legal obligation (article 6.1.c of the GDPR), under articles 1649 ter A to 1649 ter E of the French General Tax Code.",
+                "Recipients: the French tax authorities (Directorate General of Public Finances, DGFiP), once a year. They may pass this information on to the tax authorities of the other European Union countries and of the partner countries concerned, as provided for by the DAC7 directive. No new processor is involved: this data is kept in Yadony's internal database, like your other profile data.",
+                "The tax identification number and the VAT number are stored encrypted. They only appear in clear in the file intended for the tax authorities. In the app, you see them in masked form and can correct them at any time.",
+                "Mandatory nature: for the travellers concerned, the law requires this information to be provided. The request does not block the use of the app. Travellers who are not concerned receive no request.",
+                "Retention period: period being confirmed [TO BE CONFIRMED: legal period].",
+                "Your rights: you have the rights described in article 11. The right to erasure is limited for this data: the law requires it to be kept for the legal period, including after your account is deleted. The right to object does not apply to processing required by law.",
+                "This processing applies from {effectiveDate}."
               ]
             }
           ]
@@ -1044,7 +1071,8 @@
                 "App usage data: PostHog, linked to the account's technical identifier, under the consent rules of article 4",
                 "Error reports and problem reports: Sentry",
                 "Parcel and delivery photos: Cloudflare. Access only through secure temporary links",
-                "GP Pro badge request (frequency, trading name, status, decisions and reasons): Yadony (internal database). Optional supporting documents: viewable only by Yadony administrators, through a 15-minute temporary link, and deleted as soon as the decision is made",
+                "GP Pro badge request (frequency, registered name, registration number and country, status, decisions and reasons): Yadony (internal database). Optional supporting documents: viewable only by Yadony administrators, through a 15-minute temporary link, and deleted as soon as the decision is made",
+                "Tax identification number (TIN), issuing country and VAT number of travellers concerned by the DAC7 reporting: Yadony (internal database, encrypted). Sent once a year to the French tax authorities (DGFiP)",
                 "Transaction history, scans, ratings: Yadony (internal database). Access: yes, needed to run the service",
                 "AI assistant and “Create with AI”: third-party AI provider (Anthropic, Claude model), after your consent in the app, with no name, phone number, email or identifier. Yadony does not keep the content of conversations, unless you choose to talk to a human (support ticket)",
                 "Messages between users: Yadony (encrypted). Encrypted content, access restricted to disputes"
@@ -1069,6 +1097,8 @@
                 "Review of GP Pro badge requests, display of the badge and record of decisions: performance of the contract (Terms of Use, article 8) and legitimate interest (reliability of the profiles highlighted)",
                 "Trip suggestions based on your searches: legitimate interest (helping you find a traveller for the route you are looking for), which you can object to at any time",
                 "Identity verification reminders: legitimate interest (helping you finish a verification you started, which is required to publish), with the right to object at any time",
+                "Monthly trip limit for individuals (Terms of Use, article 8): performance of the contract and legitimate interest (telling the occasional activity of individuals apart from professional activity)",
+                "Collection of the tax information of the travellers concerned and annual reporting to the tax authorities (DAC7): legal obligation (article 6.1.c of the GDPR; articles 1649 ter A to 1649 ter E of the French General Tax Code)",
                 "Marketing communications: consent (revocable at any time)"
               ],
               "p": [
@@ -1090,6 +1120,7 @@
               "ul": [
                 "Between users: your first name, profile photo, rating and badge are visible to other users as part of the normal service.",
                 "With the authorities: where the law requires it (judicial requisition, tax obligation, anti-money-laundering), we must disclose certain data to the competent authorities.",
+                "With the French tax authorities (DGFiP): once a year, the tax information of the travellers concerned and the amounts received through the platform (article 4, “The tax obligation (DAC7)”).",
                 "In a dispute: the relevant evidence (scans, link to the Cloudflare photos, messages) may be shared between the parties involved.",
                 "Business transfer: in the event of a merger or acquisition, your data could be transferred to the acquirer. You would be informed beforehand."
               ],
@@ -1144,6 +1175,7 @@
                 "Supporting documents for a GP Pro badge request: deleted as soon as the decision is made (acceptance, refusal, cancellation or deletion of the account). Files never attached to a request: deleted within 24 hours",
                 "Decisions on the GP Pro badge and their reasons: kept in the audit log",
                 "Trip searches kept for suggestions: 30 days after the last search, then permanently erased. Also erased as soon as the account is permanently deleted",
+                "DAC7 tax information (tax identification number, issuing country, VAT number, amounts reported, record of requests and reminders): period being confirmed [TO BE CONFIRMED: legal period]",
                 "Deleted accounts: profile data anonymised upon final deletion, 30 days after the request, except financial history kept for 5 years"
               ],
               "p": [
@@ -1202,7 +1234,8 @@
             {
               "p": [
                 "For data handled by our partners (Firebase, Stripe, Cloudflare), we help you exercise your rights with them. Contact us at dpo{'@'}yadony.com and we will make the connection.",
-                "If you are not satisfied with the answer: CNIL (www.cnil.fr) in France, ARTCI in Côte d'Ivoire, CDP in Senegal, the National Commission for the Protection of Personal Data in Cameroon."
+                "If you are not satisfied with the answer: CNIL (www.cnil.fr) in France, ARTCI in Côte d'Ivoire, CDP in Senegal, the National Commission for the Protection of Personal Data in Cameroon.",
+                "Tax information (DAC7): you can view it in masked form and correct it in the app. Its erasure is limited by the legal retention obligation (article 4, “The tax obligation (DAC7)”)."
               ]
             }
           ]
@@ -1225,6 +1258,7 @@
                 "Transactional notifications (mandatory): payment confirmation, delivery confirmed, dispute opened, security alerts. Sent through Firebase Cloud Messaging (in-app notifications) and by SMS through two different operators to guarantee continuity.",
                 "Suggestions based on your searches (optional): when a trip search found nothing, Yadony may let you know by notification and by email if a matching trip is posted, at most twice a week. To stop them: the \"Stop these suggestions\" link at the bottom of each email, or the \"Based on my searches\" switch in Settings → Notifications.",
                 "Identity verification reminders (optional): if you start the verification without finishing it, or if it is refused for a reason you can fix, Yadony may send you up to three reminders over seven days, by notification and by email. To stop them for good: the « Stop identity verification reminders » link at the bottom of the email. Reminder notifications and emails can also be switched off in Settings → Notifications.",
+                "Tax information requests (travellers concerned by the DAC7 reporting): Yadony may ask for your tax identification number by notification and by email, with reminders, in line with your notification preferences. Each year, you also receive a summary of the information sent to the tax authorities.",
                 "Marketing communications (optional): sent only with your consent. You can unsubscribe at any time from Settings → Notifications."
               ]
             }
@@ -1252,6 +1286,7 @@
                 "Messages in the messaging system: deleted.",
                 "Recipient address book: cleared.",
                 "Supporting documents for a GP Pro badge request: deleted.",
+                "DAC7 tax information (travellers concerned): kept for the period required by law, then erased.",
                 "Transaction history: kept for 5 years (statutory accounting obligation). This data is anonymised as far as possible.",
                 "If a dispute is in progress, the account is kept until the dispute is closed, then deleted."
               ],
@@ -1414,6 +1449,7 @@
                 "the history of payments and transactions, for our legal and accounting obligations (up to 5 years, as stated in our privacy policy);",
                 "the security log, which cannot be modified, with personal data masked;",
                 "messages already exchanged remain visible to the people you talked to, with your name replaced by “Utilisateur supprimé” (“deleted user”);",
+                "for travellers concerned by the DAC7 tax reporting, the tax identification number, its issuing country and the VAT number, for the period required by law, then erased;",
                 "identity verification data held by our provider (Didit) is kept according to its own retention period."
               ]
             },

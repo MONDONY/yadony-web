@@ -25,6 +25,7 @@ Certaines données sont conservées :
 l'historique des paiements et des transactions, pour nos obligations légales et comptables (jusqu'à 5 ans, comme l'indique notre politique de confidentialité) ;
 le journal de sécurité, non modifiable, dont les données personnelles sont masquées ;
 les messages déjà échangés restent visibles par vos interlocuteurs, avec votre nom remplacé par « Utilisateur supprimé » ;
+pour les voyageurs concernés par la déclaration fiscale DAC7, le numéro fiscal, son pays d'émission et le numéro de TVA, pendant la durée imposée par la loi, puis effacés ;
 les données de vérification d'identité détenues par notre prestataire (Didit) sont conservées selon sa propre durée de conservation.
 Pour en savoir plus sur vos données, leurs durées de conservation et vos droits, consultez notre politique de confidentialité.
 Consulter la politique de confidentialité

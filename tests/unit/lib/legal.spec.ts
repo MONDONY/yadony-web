@@ -86,7 +86,7 @@ describe('formatEffectiveDate', () => {
 // Le rendu réel des pages passe la date par le paramètre nommé `effectiveDate`
 // de rt() : on vérifie le mécanisme avec vue-i18n et les vrais fichiers.
 describe('date d’entrée en vigueur dans les textes légaux', () => {
-  const documents = ['legal.cgu.articles'] as const
+  const documents = ['legal.cgu.articles', 'legal.confidentialite.articles'] as const
 
   function strings(value: unknown): string[] {
     if (typeof value === 'string') return [value]

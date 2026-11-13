@@ -13,6 +13,8 @@ beforeEach(() => {
   push.mockReset()
   // `useLocalePath` est une auto-import de Nuxt : absente hors de l'app.
   vi.stubGlobal('useLocalePath', () => (path: string) => path)
+  // `useRuntimeConfig` aussi : le formulaire lit les modes ouverts au public.
+  vi.stubGlobal('useRuntimeConfig', () => ({ public: { transportModes: 'PLANE' } }))
 })
 
 function englishPaths() {

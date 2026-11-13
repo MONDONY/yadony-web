@@ -3,7 +3,10 @@ import { computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { siteUrl } from '@/lib/site'
 import type { Locale } from '@/lib/locale'
+import TransportIcon from '@/components/ui/TransportIcon.vue'
 import {
+  cardPriceUnit,
+  formatArrivalRange,
   formatCapacity,
   formatCardPrice,
   formatDepartureDate,
@@ -24,11 +27,16 @@ const mode = computed(() => {
   const value = props.card.transportMode
   return value !== undefined && MODES.includes(value) ? t(`search.card.mode.${value}`) : ''
 })
+// Bateau : fourchette d'arrivée estimée, seule ligne propre à un mode.
+const arrival = computed(() => formatArrivalRange(props.card, lang.value, (key, params) => t(key, params)))
 const capacity = computed(() => formatCapacity(props.card, lang.value))
 const price = computed(() => formatCardPrice(props.card, lang.value))
-const priceText = computed(() =>
-  props.card.pricePerKgDisplay !== undefined ? `${price.value}${t('search.card.perKg')}` : price.value,
-)
+const priceText = computed(() => {
+  const unit = cardPriceUnit(props.card)
+  if (unit === 'kg') return `${price.value}${t('search.card.perKg')}`
+  if (unit === 'm3') return `${price.value}${t('search.card.perM3')}`
+  return price.value
+})
 const name = computed(() => props.card.traveler.displayName)
 const initial = computed(() => Array.from(name.value.trim())[0]?.toUpperCase() ?? '?')
 const rating = computed(() => {
@@ -68,11 +76,17 @@ function request() {
       <span>{{ date }}</span>
       <template v-if="mode">
         <span aria-hidden="true">·</span>
-        <span data-mode>{{ mode }}</span>
+        <span data-mode class="inline-flex items-center gap-1">
+          <TransportIcon :mode="card.transportMode" class="size-4 shrink-0" />{{ mode }}
+        </span>
       </template>
       <template v-if="capacity">
         <span aria-hidden="true">·</span>
         <span data-capacity>{{ capacity }}</span>
+      </template>
+      <template v-if="arrival">
+        <span aria-hidden="true">·</span>
+        <span data-arrival>{{ arrival }}</span>
       </template>
       <template v-if="price">
         <span aria-hidden="true">·</span>

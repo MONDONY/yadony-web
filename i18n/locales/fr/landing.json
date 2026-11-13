@@ -1,8 +1,8 @@
 {
   "landing": {
     "seo": {
-      "title": "Envoyer un colis en Afrique ou vendre vos kilos de bagage",
-      "description": "Yadony relie la diaspora et ceux qui voyagent : colis confiés à un voyageur vérifié, paiement bloqué jusqu'à la livraison et suivi en direct ; kilos de valise vendus ; alertes de prix pour repérer un vol moins cher."
+      "title": "Envoyer un colis en Afrique ou rentabiliser vos kilos libres",
+      "description": "Yadony relie la diaspora et ceux qui voyagent : colis confiés à un voyageur vérifié, paiement bloqué jusqu'à la livraison et suivi en direct ; kilos libres vendus ; alertes de prix pour repérer un vol moins cher."
     },
     "searchHero": {
       "title": "Quel voyageur part vers chez vous ?",
@@ -147,7 +147,7 @@
       "lead": "Vous lui envoyez le lien de suivi sur WhatsApp. Elle voit où en est le colis, en direct, et garde le code de retrait pour le jour J.",
       "points": [
         "Une simple page web, sans compte ni mot de passe",
-        "Chaque étape avec son heure : remis, en vol, arrivé",
+        "Chaque étape avec son heure : remis, en route, arrivé",
         "Le code à 6 chiffres à donner au voyageur, et à personne d'autre"
       ],
       "chat": {

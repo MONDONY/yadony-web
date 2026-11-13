@@ -252,4 +252,25 @@ describe('fichiers de locale', () => {
       .map(([path, value]) => `${path} → ${String(value)}`)
     expect(suspicious).toEqual([])
   })
+  /**
+   * Le site parle de trajets, pas seulement d'avions : hors Billets d'avion, CGU
+   * et pages corridors (couvertes par corridor-copy.spec.ts), aucun texte ne
+   * suppose un vol. Exemptés : les définitions du GP (« dans ses bagages »,
+   * c'est le sens du mot), le récit de marque de la page À propos (sens figuré)
+   * et la liste de contacts presse (compagnies aériennes citées à dessein).
+   */
+  it('aucun texte hors Billets et CGU ne suppose l’avion', () => {
+    const skipped = /(flight|billet|legal\.|landing\.today\.items\[2\]|landing\.crossed\.art\.priceCurve|about\.paragraphs|contact\.press|corridorPages|gp\.pages\.[^.]+\.what)/i
+    const planeWords = /\b(en vol|du vol|son vol|bagages?|franchise|compagnies? a[ée]riennes?|a[ée]roport|valise|flying|flights?|airlines?|baggage|luggage|airport)\b/i
+    const offenders: string[] = []
+    for (const [lang, messages] of locales) {
+      for (const [path, value] of flattenEntries(messages)) {
+        if (typeof value !== 'string' || skipped.test(path)) continue
+        // Alertes de prix sur les billets : fonction réelle du site, hors périmètre.
+        const text = value.replace(/vol moins cher|cheaper flight|flight ticket/gi, '')
+        if (planeWords.test(text)) offenders.push(`${lang}:${path} → ${value}`)
+      }
+    }
+    expect(offenders).toEqual([])
+  })
 })

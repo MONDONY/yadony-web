@@ -4,6 +4,8 @@ import { useI18n } from 'vue-i18n'
 import { useRoute } from 'vue-router'
 import { buildSeoMeta } from '@/lib/seo'
 import { findCorridor, neighbors } from '@/lib/corridors'
+import { corridorDelayKeys } from '@/lib/transport-modes'
+import { usePublicModes } from '@/composables/usePublicModes'
 import { gpForCorridor } from '@/lib/gp'
 import { breadcrumbJsonLd, faqJsonLd } from '@/lib/structured-data'
 import { donyPose } from '@/lib/media'
@@ -50,12 +52,15 @@ useHead({
   ],
 })
 
-const sections = [
-  { titleKey: 'howTitle', textKey: 'how' },
-  { titleKey: 'priceTitle', textKey: 'price' },
-  { titleKey: 'delayTitle', textKey: 'delay' },
-  { titleKey: 'safetyTitle', textKey: 'safety' },
-] as const
+// Chaque section est une liste de clés de texte : « Délai » ajoute le paragraphe
+// route ou bateau quand ce mode est ouvert au public (jamais avant).
+const publicModes = usePublicModes()
+const sections = computed(() => [
+  { titleKey: 'howTitle', textKeys: [`corridorPages.pages.${key}.how`] },
+  { titleKey: 'priceTitle', textKeys: [`corridorPages.pages.${key}.price`] },
+  { titleKey: 'delayTitle', textKeys: corridorDelayKeys(key, publicModes.value) },
+  { titleKey: 'safetyTitle', textKeys: [`corridorPages.pages.${key}.safety`] },
+])
 
 const routeCard = ref<HTMLElement | null>(null)
 const { inView } = useInView(routeCard, { once: true })
@@ -104,7 +109,7 @@ const faqAccordion = computed(() => faqItems.map((item, index) => ({ id: `${corr
           <ProseBlock class="lg:col-span-8">
             <template v-for="section in sections" :key="section.titleKey">
               <h2>{{ t(`corridorPages.common.${section.titleKey}`) }}</h2>
-              <p>{{ t(`corridorPages.pages.${key}.${section.textKey}`) }}</p>
+              <p v-for="textKey in section.textKeys" :key="textKey">{{ t(textKey) }}</p>
             </template>
           </ProseBlock>
           <aside class="flex flex-col gap-4 lg:col-span-4">

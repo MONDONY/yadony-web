@@ -58,3 +58,14 @@ export function iconOf(mode: string | undefined): TransportIconName {
       return 'route'
   }
 }
+
+// Paragraphes de la section « Délai » d'une page corridor : le texte propre à la
+// page (délai de l'avion), puis, pour chaque mode ouvert au public autre que
+// l'avion, le paragraphe commun du mode. Rien sur la route ou le bateau tant
+// qu'ils ne sont pas ouverts.
+export function corridorDelayKeys(pageKey: string, groups: ModeGroup[]): string[] {
+  const keys = [`corridorPages.pages.${pageKey}.delay`]
+  if (groups.includes('ROAD')) keys.push('corridorPages.common.delayRoad')
+  if (groups.includes('BOAT')) keys.push('corridorPages.common.delayBoat')
+  return keys
+}

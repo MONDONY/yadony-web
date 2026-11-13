@@ -1,5 +1,7 @@
 import { describe, it, expect } from 'vitest'
 import {
+  cardPriceUnit,
+  formatArrivalRange,
   formatCapacity,
   formatCardPrice,
   formatDepartureDate,
@@ -329,5 +331,30 @@ describe('emptyStateTitle', () => {
   it('reste générique sans ville', () => {
     expect(emptyStateTitle(baseQuery, t)).toBe('search.states.empty.titleAny|')
     expect(emptyStateTitle({ ...baseQuery, quand: 'ce-mois' }, t)).toBe('search.states.empty.titleAnyMonth|')
+  })
+})
+
+describe('bateau au m³', () => {
+  const boat = card({ pricePerKgDisplay: undefined, pricePerM3Display: 180, availableVolumeM3: 12.5, currency: 'EUR' })
+
+  it('prix au m³ et unité', () => {
+    expect(formatCardPrice(boat, 'fr')).toMatch(/180/)
+    expect(cardPriceUnit(boat)).toBe('m3')
+    expect(cardPriceUnit(card({ pricePerKgDisplay: 10 }))).toBe('kg')
+    expect(cardPriceUnit(card({ pricePerKgDisplay: undefined, pricingMode: 'MIXED' }))).toBeNull()
+  })
+
+  it('capacité en m³, jamais en kilos', () => {
+    expect(formatCapacity({ ...boat, capacityUnit: 'KG_EXACT', availableKg: 5 }, 'fr')).toMatch(/12,5\sm³/)
+    expect(formatCapacity(boat, 'en')).toBe('12.5 m³')
+  })
+
+  it('fourchette d’arrivée : plage, même jour, avant, absente', () => {
+    const t = (key: string, params: Record<string, string>) => `${key}|${params.from ?? ''}|${params.to}`
+    expect(formatArrivalRange(card({ arrivalDate: '2026-12-12', arrivalDateMax: '2026-12-20' }), 'fr', t)).toMatch(/^search\.card\.arrivalRange\|.+\|.+/)
+    expect(formatArrivalRange(card({ arrivalDate: '2026-12-20', arrivalDateMax: '2026-12-20' }), 'fr', t)).toMatch(/^search\.card\.arrivalOn\|\|/)
+    expect(formatArrivalRange(card({ arrivalDateMax: '2026-12-20' }), 'fr', t)).toMatch(/^search\.card\.arrivalBefore/)
+    expect(formatArrivalRange(card({ arrivalDate: '2026-12-25', arrivalDateMax: '2026-12-20' }), 'fr', t)).toMatch(/^search\.card\.arrivalBefore/)
+    expect(formatArrivalRange(card({ arrivalDate: '2026-12-12' }), 'fr', t)).toBe('')
   })
 })

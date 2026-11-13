@@ -85,6 +85,17 @@ test.describe('recherche anonyme', () => {
     expect(calls).toHaveLength(0)
   })
 
+  test('une ancienne adresse ?mode=PLANE reste valide : résultats sans erreur, plus de puce « Avion »', async ({ page }) => {
+    await respondWith(page, ok(THREE))
+    const calls = apiCalls(page)
+    await page.goto('/envoyer-colis?mode=PLANE&depart=Paris')
+    await page.waitForLoadState('networkidle')
+    await expect(page.getByRole('article')).toHaveCount(3)
+    await expect(page.getByRole('button', { name: 'Avion', exact: true })).toHaveCount(0)
+    await expect(page.locator('[data-mode-filter]')).toHaveCount(0)
+    expect(calls.at(-1)!.searchParams.get('transportMode')).toBe('PLANE')
+  })
+
   test('une recherche Paris → Abidjan affiche trois cartes et un compteur', async ({ page }) => {
     await respondWith(page, ok(THREE))
     const calls = apiCalls(page)

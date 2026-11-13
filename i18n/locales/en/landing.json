@@ -1,8 +1,8 @@
 {
   "landing": {
     "seo": {
-      "title": "Send a parcel to Africa or sell your spare baggage kilos",
-      "description": "Yadony brings the diaspora and travellers together: parcels carried by a verified traveller, payment held until delivery and live tracking; spare suitcase kilos sold; price alerts to spot a cheaper flight."
+      "title": "Send a parcel to Africa or earn from your spare kilos",
+      "description": "Yadony brings the diaspora and travellers together: parcels carried by a verified traveller, payment held until delivery and live tracking; spare kilos sold; price alerts to spot a cheaper flight."
     },
     "searchHero": {
       "title": "Which traveler is heading your way?",
@@ -107,7 +107,7 @@
         },
         "timeline": [
           "Handed over",
-          "In the air",
+          "On the way",
           "Arrived",
           "Delivered"
         ]
@@ -147,7 +147,7 @@
       "lead": "You send her the tracking link on WhatsApp. She sees where the parcel is, live, and keeps the pickup code for the big day.",
       "points": [
         "A simple web page, no account or password needed",
-        "Every step with its time: handed over, in the air, arrived",
+        "Every step with its time: handed over, on the way, arrived",
         "The 6-digit code to give to the traveller, and to no one else"
       ],
       "chat": {
@@ -159,7 +159,7 @@
     },
     "final": {
       "title": "Install Yadony before your next trip",
-      "lead": "Whether you are flying home or sending a parcel there, it all starts in the app.",
+      "lead": "Whether you are travelling home or sending a parcel there, it all starts in the app.",
       "donyAlt": "Dony, the Yadony mascot, celebrating a successful delivery",
       "video": {
         "description": "Promotional video for the Yadony app.",

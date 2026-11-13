@@ -38,7 +38,7 @@
         {
           "id": "delai",
           "question": "How long does a parcel take to arrive?",
-          "answer": "The length of the flight, plus the time it takes to agree a meeting with the recipient. You see the traveller's departure and arrival dates before you book: you are the one choosing the trip that suits you. We do not advertise a standard delivery time, because there is no delivery round behind it: there is a flight, taken by a real person."
+          "answer": "The length of the journey, plus the time it takes to agree a meeting with the recipient. You see the traveller's departure and arrival dates before you book: you are the one choosing the trip that suits you. We do not advertise a standard delivery time, because there is no delivery round behind it: there is a journey, made by a real person."
         },
         {
           "id": "prix",
@@ -139,7 +139,7 @@
         },
         {
           "title": "You travel as usual",
-          "text": "The parcel travels in your luggage, within your airline's baggage allowance. A transit scan is possible but optional; on arrival, you mark your trip as arrived."
+          "text": "The parcel travels with you, within the space you announced. A transit scan is possible but optional; on arrival, you mark your trip as arrived."
         },
         {
           "title": "You deliver and you get paid",
@@ -224,7 +224,7 @@
       },
       "limits": {
         "title": "What we do not guarantee",
-        "text": "We do not carry parcels: the parcel stays in a traveller's luggage, subject to the ups and downs of their flight and airline. A flight delay, a strike or a customs check are outside our control. We do not search parcels for you: the traveller checks the contents at handover, and the sender is accountable for their declaration. We are not an insurer either: the fee includes no parcel insurance, and any refund remains capped. What we do guarantee is narrower and easier to verify: paid by card, the money is not released to the traveller until delivery is confirmed, and a dispute is decided on time-stamped evidence. Finally, a shipment arranged outside the app gives no recourse: without scans and without a payment through the platform, there is no record and no leverage."
+        "text": "We do not carry parcels: the parcel stays in a traveller's hands, subject to the ups and downs of their trip. A delay, a cancellation, a strike or a customs check are outside our control. We do not search parcels for you: the traveller checks the contents at handover, and the sender is accountable for their declaration. We are not an insurer either: the fee includes no parcel insurance, and any refund remains capped. What we do guarantee is narrower and easier to verify: paid by card, the money is not released to the traveller until delivery is confirmed, and a dispute is decided on time-stamped evidence. Finally, a shipment arranged outside the app gives no recourse: without scans and without a payment through the platform, there is no record and no leverage."
       }
     },
     "donyAlt": "Dony, the Yadony mascot, all smiles"
@@ -259,7 +259,7 @@
     },
     "press": {
       "title": "Press and partnerships",
-      "text": "Journalists, travel agencies, diaspora associations, airlines. Tell us who you are and what you have in mind. We read everything."
+      "text": "Journalists, travel agencies, diaspora associations, airlines, road and sea carriers. Tell us who you are and what you have in mind. We read everything."
     },
     "form": {
       "legend": "Your message",
@@ -1416,7 +1416,7 @@
     }
   },
   "footer": {
-    "pitch": "Yadony connects travellers who have room in their suitcase with people who have a parcel to send. Verified identity, scans at every step, payment released on delivery.",
+    "pitch": "Yadony connects travellers who have room on their trip with people who have a parcel to send. Verified identity, scans at every step, payment released on delivery.",
     "navLabel": "Footer navigation",
     "legalLabel": "Legal information",
     "legalNotice": "Legal notice",

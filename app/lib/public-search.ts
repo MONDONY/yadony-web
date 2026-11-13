@@ -20,8 +20,16 @@ export interface PublicAnnouncementCard {
   arrivalCity: string
   /** Date ISO `YYYY-MM-DD`. */
   departureDate: string
+  /** Arrivée estimée au plus tôt (début de fourchette en bateau). */
+  arrivalDate?: string
+  /** Fin de la fourchette d'arrivée estimée (bateau) ; absente hors bateau. */
+  arrivalDateMax?: string
   availableKg?: number
+  /** Bateau au m³ : volume restant en m³ ; absent sinon (et absent d'un ancien back). */
+  availableVolumeM3?: number
   pricePerKgDisplay?: number
+  /** Bateau au m³ : prix au m³ payé par l'expéditeur (frais inclus) ; absent sinon. */
+  pricePerM3Display?: number
   currency: string
   transportMode?: string
   urgent: boolean
@@ -185,13 +193,26 @@ const labels = {
 // par article. Rend '' quand il n'y a rien à afficher.
 export function formatCardPrice(card: PublicAnnouncementCard, locale: Locale): string {
   if (card.pricePerKgDisplay !== undefined) return formatPrice(card.pricePerKgDisplay, card.currency, locale)
+  if (card.pricePerM3Display !== undefined) return formatPrice(card.pricePerM3Display, card.currency, locale)
   return card.pricingMode === 'MIXED' ? labels[locale].pricePerItem : ''
+}
+
+// Unité du prix affiché : au kilo, au m³ (bateau) ou aucune (grille par article).
+export function cardPriceUnit(card: PublicAnnouncementCard): 'kg' | 'm3' | null {
+  if (card.pricePerKgDisplay !== undefined) return 'kg'
+  if (card.pricePerM3Display !== undefined) return 'm3'
+  return null
 }
 
 // Capacité alignée sur la carte de l'app (tripKgFree, tripCapacitySuitcase*).
 // Seul KG_EXACT porte un nombre de kilos : pour KG_FREE, availableKg est une
 // valeur technique, et sans capacityUnit la quantité n'est pas fiable.
 export function formatCapacity(card: PublicAnnouncementCard, locale: Locale): string {
+  // Trajet vendu au volume (bateau) : des m³, jamais des kilos.
+  if (card.availableVolumeM3 !== undefined) {
+    const m3 = new Intl.NumberFormat(locale === 'fr' ? 'fr-FR' : 'en-GB', { maximumFractionDigits: 1 }).format(card.availableVolumeM3)
+    return `${m3} m³`
+  }
   switch (card.capacityUnit) {
     case 'KG_EXACT': {
       if (card.availableKg === undefined) return ''
@@ -221,6 +242,22 @@ export function formatDepartureDate(iso: string, locale: Locale): string {
     month: 'short',
     timeZone: 'UTC',
   }).format(date)
+}
+
+// Fourchette d'arrivée estimée (bateau) : « Arrivée du 12 déc. au 20 déc. ».
+// Rend '' sans fin de fourchette : les autres modes n'affichent pas de ligne.
+export function formatArrivalRange(
+  card: PublicAnnouncementCard,
+  locale: Locale,
+  t: (key: string, params: Record<string, string>) => string,
+): string {
+  const max = card.arrivalDateMax
+  if (max === undefined) return ''
+  const to = formatDepartureDate(max, locale)
+  const min = card.arrivalDate
+  if (min === undefined || min > max) return t('search.card.arrivalBefore', { to })
+  if (min === max) return t('search.card.arrivalOn', { to })
+  return t('search.card.arrivalRange', { from: formatDepartureDate(min, locale), to })
 }
 
 function fold(text: string): string {

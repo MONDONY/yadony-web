@@ -62,7 +62,7 @@
         },
         {
           "title": "Track it in real time",
-          "text": "Handed over, in the air, arrived: every step is time-stamped. Share the tracking link and your loved one can follow along without installing the app."
+          "text": "Handed over, on the way, arrived: every step is time-stamped. Share the tracking link and your loved one can follow along without installing the app."
         },
         {
           "title": "Delivery against the code",
@@ -78,7 +78,7 @@
       "faq": [
         {
           "question": "I can't find a traveller on my dates. What should I do?",
-          "answer": "Post a shipping request: route, weight, photos and budget. Travellers flying your route see it and make you an offer. You can also set an alert on your route to hear as soon as a traveller posts a trip."
+          "answer": "Post a shipping request: route, weight, photos and budget. Travellers on your route see it and make you an offer. You can also set an alert on your route to hear as soon as a traveller posts a trip."
         },
         {
           "question": "Can I negotiate the price?",
@@ -96,17 +96,17 @@
     },
     "traveler": {
       "seo": {
-        "title": "Sell your luggage space and make your trip to Africa pay",
-        "description": "Flying to Africa? Sell your spare baggage allowance to verified senders: per kilo, open to offers or per item, with payment held and released on delivery."
+        "title": "Sell your spare kilos: make your trip pay",
+        "description": "Travelling to Africa? Sell your spare space to verified senders: per kilo, open to offers or per item, with payment held and released on delivery."
       },
       "kicker": "Travellers",
       "title": "Sell your kilos, make your trip pay",
-      "lead": "Your suitcase leaves with room to spare. Post your trip, set your price and carry parcels for verified senders: you get paid on delivery.",
+      "lead": "Your trip has room to spare. Post your trip, set your price and carry parcels for verified senders: you get paid on delivery.",
       "listLabel": "The steps of a trip",
       "steps": [
         {
           "title": "Post your trip in three steps",
-          "text": "Route, places and capacity, price and conditions. Plane, car or boat, with stopovers or several legs. What you accept and what you turn down: you decide."
+          "text": "Route, places and capacity, price and conditions. A trip with several legs is posted in one go. What you accept and what you turn down: you decide."
         },
         {
           "title": "Choose how you price",
@@ -122,7 +122,7 @@
         },
         {
           "title": "Scan at handover, even offline",
-          "text": "You check the contents, scan the QR code and take a photo. No signal at the airport? The scan is saved and sent as soon as you are back online."
+          "text": "You check the contents, scan the QR code and take a photo. No signal? The scan is saved and sent as soon as you are back online."
         },
         {
           "title": "Arrived: let the recipients know",

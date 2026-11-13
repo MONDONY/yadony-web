@@ -38,7 +38,7 @@
         {
           "id": "delai",
           "question": "Combien de temps met un colis pour arriver ?",
-          "answer": "Le temps du vol, plus le temps de convenir d'un rendez-vous avec le destinataire. Vous voyez la date de départ et la date d'arrivée du voyageur avant de réserver : c'est vous qui choisissez le trajet qui vous arrange. Nous n'affichons pas de délai standard, parce qu'il n'y a pas de tournée derrière : il y a un vol, celui d'une personne réelle."
+          "answer": "Le temps du trajet, plus le temps de convenir d'un rendez-vous avec le destinataire. Vous voyez la date de départ et la date d'arrivée du voyageur avant de réserver : c'est vous qui choisissez le trajet qui vous arrange. Nous n'affichons pas de délai standard, parce qu'il n'y a pas de tournée derrière : il y a un trajet, celui d'une personne réelle."
         },
         {
           "id": "prix",
@@ -139,7 +139,7 @@
         },
         {
           "title": "Vous voyagez normalement",
-          "text": "Le colis part dans votre bagage, dans la limite de la franchise accordée par votre compagnie. Un scan de transit est possible mais facultatif ; à l'arrivée, vous marquez votre trajet comme arrivé."
+          "text": "Le colis voyage avec vous, dans la limite de la place que vous avez annoncée. Un scan de transit est possible mais facultatif ; à l'arrivée, vous marquez votre trajet comme arrivé."
         },
         {
           "title": "Vous livrez et vous êtes payé",
@@ -224,7 +224,7 @@
       },
       "limits": {
         "title": "Ce que nous ne garantissons pas",
-        "text": "Nous ne transportons pas : le colis reste dans le bagage d'un voyageur, soumis aux aléas de son vol et de sa compagnie. Un retard d'avion, une grève ou un contrôle douanier ne relèvent pas de nous. Nous ne fouillons pas les colis à votre place : c'est le voyageur qui vérifie le contenu à la remise, et l'expéditeur qui répond de sa déclaration. Nous ne sommes pas assureur non plus : la commission ne comprend aucune assurance du colis, et un remboursement éventuel reste plafonné. Ce que nous garantissons est plus étroit et plus vérifiable : payé par carte, l'argent n'est pas versé au voyageur tant que la livraison n'est pas confirmée, et un litige est instruit sur des preuves horodatées. Enfin, un envoi convenu en dehors de l'application n'ouvre aucun recours : sans scan et sans paiement passé par la plateforme, il n'y a ni trace ni levier."
+        "text": "Nous ne transportons pas : le colis reste entre les mains d'un voyageur, soumis aux aléas de son trajet. Un retard, une annulation, une grève ou un contrôle douanier ne relèvent pas de nous. Nous ne fouillons pas les colis à votre place : c'est le voyageur qui vérifie le contenu à la remise, et l'expéditeur qui répond de sa déclaration. Nous ne sommes pas assureur non plus : la commission ne comprend aucune assurance du colis, et un remboursement éventuel reste plafonné. Ce que nous garantissons est plus étroit et plus vérifiable : payé par carte, l'argent n'est pas versé au voyageur tant que la livraison n'est pas confirmée, et un litige est instruit sur des preuves horodatées. Enfin, un envoi convenu en dehors de l'application n'ouvre aucun recours : sans scan et sans paiement passé par la plateforme, il n'y a ni trace ni levier."
       }
     },
     "donyAlt": "Dony, la mascotte de Yadony, tout sourire"
@@ -259,7 +259,7 @@
     },
     "press": {
       "title": "Presse et partenariats",
-      "text": "Journalistes, agences de voyage, associations de la diaspora, compagnies aériennes. Dites-nous qui vous êtes et ce que vous avez en tête. Nous lisons tout."
+      "text": "Journalistes, agences de voyage, associations de la diaspora, compagnies aériennes, transporteurs routiers et maritimes. Dites-nous qui vous êtes et ce que vous avez en tête. Nous lisons tout."
     },
     "form": {
       "legend": "Votre message",
@@ -1416,7 +1416,7 @@
     }
   },
   "footer": {
-    "pitch": "Yadony met en relation les voyageurs qui ont de la place dans leur valise et les personnes qui ont un colis à faire partir. Identité vérifiée, scans à chaque étape, paiement libéré à la livraison.",
+    "pitch": "Yadony met en relation les voyageurs qui ont de la place sur leur trajet et les personnes qui ont un colis à faire partir. Identité vérifiée, scans à chaque étape, paiement libéré à la livraison.",
     "navLabel": "Navigation du pied de page",
     "legalLabel": "Informations légales",
     "legalNotice": "Mentions légales",

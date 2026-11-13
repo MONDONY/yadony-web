@@ -14,7 +14,13 @@
       "maxPrice": "Max price (€/kg)",
       "maxPriceField": "Max price per kg, in euros",
       "urgent": "Urgent",
-      "plane": "Plane"
+      "mode": {
+        "label": "Transport",
+        "all": "All",
+        "PLANE": "Plane",
+        "BOAT": "Boat",
+        "ROAD": "Road"
+      }
     },
     "card": {
       "urgent": "Urgent",
@@ -28,12 +34,16 @@
       "requestLabel": "Request {name}'s trip, {from} to {to}",
       "mode": {
         "PLANE": "Plane",
-        "CAR": "Car",
+        "CAR": "Road",
         "TRAIN": "Train",
-        "BUS": "Bus",
+        "BUS": "Road",
         "BOAT": "Boat",
         "OTHER": "Other"
-      }
+      },
+      "perM3": "/m³",
+      "arrivalRange": "Arrives {from} to {to}",
+      "arrivalBefore": "Arrives by {to}",
+      "arrivalOn": "Arrives {to}"
     },
     "handoff": {
       "title": "To book, go through the app.",

@@ -96,14 +96,45 @@ describe('SearchResultCard', () => {
 
   it.each([
     ['PLANE', 'Avion', 'Plane'],
-    ['CAR', 'Voiture', 'Car'],
+    ['CAR', 'Route', 'Road'],
     ['TRAIN', 'Train', 'Train'],
-    ['BUS', 'Bus', 'Bus'],
+    ['BUS', 'Route', 'Road'],
     ['BOAT', 'Bateau', 'Boat'],
     ['OTHER', 'Autre', 'Other'],
   ])('traduit le mode de transport %s', (mode, frLabel, enLabel) => {
     expect(mountCard(card({ transportMode: mode })).find('[data-mode]').text()).toBe(frLabel)
     expect(mountCard(card({ transportMode: mode }), 'en').find('[data-mode]').text()).toBe(enLabel)
+  })
+
+  it.each([
+    ['PLANE', 'plane'],
+    ['BOAT', 'ship'],
+    ['CAR', 'car'],
+    ['BUS', 'car'],
+    ['TRAIN', 'route'],
+    ['OTHER', 'route'],
+  ])('mode %s : icône %s à côté du libellé', (mode, icon) => {
+    const wrapper = mountCard(card({ transportMode: mode }))
+    expect(wrapper.find(`[data-mode] [data-icon="${icon}"]`).exists()).toBe(true)
+  })
+
+  it('bateau au m³ : prix au m³, volume et fourchette d’arrivée, sans kilos', () => {
+    const wrapper = mountCard(card({
+      transportMode: 'BOAT',
+      availableVolumeM3: 12.5,
+      pricePerM3Display: 180,
+      arrivalDate: '2026-12-12',
+      arrivalDateMax: '2026-12-20',
+    }))
+    expect(wrapper.find('[data-price]').text()).toMatch(/180.*\/m³$/)
+    expect(wrapper.find('[data-capacity]').text()).toMatch(/12,5\sm³/)
+    expect(wrapper.find('[data-arrival]').text()).toMatch(/^Arrivée du .* au /)
+    expect(wrapper.text()).not.toMatch(/\bkg\b/)
+    expect(mountCard(card({ transportMode: 'BOAT', arrivalDateMax: '2026-12-20' }), 'en').find('[data-arrival]').text()).toMatch(/^Arrives by /)
+  })
+
+  it('hors bateau (ancien back compris) : aucune ligne d’arrivée', () => {
+    expect(mountCard(card({ transportMode: 'PLANE' })).find('[data-arrival]').exists()).toBe(false)
   })
 
   it('n’affiche aucun mode quand il est absent ou inconnu', () => {

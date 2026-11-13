@@ -51,6 +51,10 @@ export default defineNuxtConfig({
       // API publique du back (recherche de trajets) : production sur main,
       // staging sur les aperçus de branche, NUXT_PUBLIC_API_BASE prioritaire.
       apiBase: resolveApiBase(process.env),
+      // Modes de transport ouverts au public (liste séparée par des virgules,
+      // PLANE toujours présent). Allumer la route ou le bateau : interrupteur du
+      // back d'abord, puis cette variable (Cloudflare Pages) et une reconstruction.
+      transportModes: process.env.NUXT_PUBLIC_TRANSPORT_MODES ?? 'PLANE',
     },
   },
   site: { url: 'https://yadony.com', name: 'Yadony' },

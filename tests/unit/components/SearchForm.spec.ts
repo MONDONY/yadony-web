@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest'
+import { afterEach, describe, expect, it, vi } from 'vitest'
 import { mount } from '@vue/test-utils'
 import { createI18n } from 'vue-i18n'
 import { en, fr } from '../helpers/messages'
@@ -7,6 +7,13 @@ import UiButton from '@/components/ui/UiButton.vue'
 import type { SearchQuery } from '@/lib/public-search'
 
 const empty: SearchQuery = { depart: '', arrivee: '', quand: '', page: 0 }
+
+// `useRuntimeConfig` est une auto-import de Nuxt : absente hors de l'app.
+function stubModes(modes: string | undefined) {
+  vi.stubGlobal('useRuntimeConfig', () => ({ public: { transportModes: modes } }))
+}
+stubModes(undefined)
+afterEach(() => stubModes(undefined))
 
 function mountForm(modelValue: SearchQuery = empty, locale: 'fr' | 'en' = 'fr', filters?: boolean) {
   const i18n = createI18n({ legacy: false, locale, messages: { fr, en } })
@@ -69,12 +76,11 @@ describe('SearchForm', () => {
     expect(wrapper.emitted('submit')!.at(-1)).toEqual([{ ...empty, urgent: true }])
 
     await chip('≥ 16 kg').trigger('click')
-    await chip(fr.search.form.plane).trigger('click')
-    expect(wrapper.emitted('submit')!.at(-1)).toEqual([{ ...empty, urgent: true, minKg: 16, mode: 'PLANE' }])
+    expect(wrapper.emitted('submit')!.at(-1)).toEqual([{ ...empty, urgent: true, minKg: 16 }])
 
     await chip('Urgent').trigger('click')
     expect(chip('Urgent').attributes('aria-pressed')).toBe('false')
-    expect(wrapper.emitted('submit')!.at(-1)).toEqual([{ ...empty, minKg: 16, mode: 'PLANE' }])
+    expect(wrapper.emitted('submit')!.at(-1)).toEqual([{ ...empty, minKg: 16 }])
   })
 
   it('sans filtres, ne rend ni puce ni groupe de filtres, et le bouton principal reste', async () => {
@@ -88,8 +94,8 @@ describe('SearchForm', () => {
   })
 
   it('rend les puces par défaut (page de recherche)', () => {
-    expect(mountForm().findAll('button[aria-pressed]')).toHaveLength(4)
-    expect(mountForm(empty, 'fr', true).findAll('button[aria-pressed]')).toHaveLength(4)
+    expect(mountForm().findAll('button[aria-pressed]')).toHaveLength(3)
+    expect(mountForm(empty, 'fr', true).findAll('button[aria-pressed]')).toHaveLength(3)
   })
 
   it('affiche un champ pour le prix max quand la chip est enfoncée', async () => {
@@ -158,7 +164,7 @@ describe('SearchForm', () => {
     const wrapper = mountForm({ ...empty, depart: 'Paris', minKg: 16, maxPrix: 8, urgent: true, mode: 'PLANE' })
     expect((wrapper.find('input[name="depart"]').element as HTMLInputElement).value).toBe('Paris')
     const pressed = wrapper.findAll('button[aria-pressed="true"]').map((b) => b.text())
-    expect(pressed).toEqual(['≥ 16 kg', fr.search.form.maxPrice, 'Urgent', fr.search.form.plane])
+    expect(pressed).toEqual(['≥ 16 kg', fr.search.form.maxPrice, 'Urgent'])
     expect((wrapper.find('input[name="maxPrix"]').element as HTMLInputElement).value).toBe('8')
 
     await wrapper.setProps({ modelValue: { ...empty, arrivee: 'Dakar' } })
@@ -170,7 +176,58 @@ describe('SearchForm', () => {
   it('traduit le formulaire en anglais', () => {
     const wrapper = mountForm(empty, 'en')
     expect(wrapper.text()).toContain(en.search.form.submit)
-    expect(wrapper.text()).toContain(en.search.form.plane)
+  })
+
+  describe('sélecteur de mode', () => {
+    const radios = (w: ReturnType<typeof mountForm>) => w.findAll('[data-mode-filter] [role="radio"]')
+    const labels = (w: ReturnType<typeof mountForm>) => radios(w).map((r) => r.text())
+    const checked = (w: ReturnType<typeof mountForm>) => radios(w).filter((r) => r.attributes('aria-checked') === 'true').map((r) => r.text())
+
+    it('avion seul public : aucun sélecteur de mode', () => {
+      stubModes('PLANE')
+      expect(mountForm().find('[data-mode-filter]').exists()).toBe(false)
+      stubModes(undefined)
+      expect(mountForm().find('[data-mode-filter]').exists()).toBe(false)
+    })
+
+    it('route publique : Tous / Avion / Route, clic Route envoie mode=CAR, Tous l’efface', async () => {
+      stubModes('PLANE,ROAD')
+      const w = mountForm()
+      expect(labels(w)).toEqual(['Tous', 'Avion', 'Route'])
+      expect(w.get('[data-mode-filter]').attributes('role')).toBe('radiogroup')
+      expect(checked(w)).toEqual(['Tous'])
+      await radios(w)[2]!.trigger('click')
+      expect(w.emitted('submit')!.at(-1)).toEqual([{ ...empty, mode: 'CAR' }])
+      expect(checked(w)).toEqual(['Route'])
+      await radios(w)[1]!.trigger('click')
+      expect(w.emitted('submit')!.at(-1)).toEqual([{ ...empty, mode: 'PLANE' }])
+      await radios(w)[0]!.trigger('click')
+      expect(w.emitted('submit')!.at(-1)).toEqual([empty])
+    })
+
+    it('trois modes publics, en anglais', () => {
+      stubModes('BOAT,ROAD')
+      expect(labels(mountForm(empty, 'en'))).toEqual(['All', 'Plane', 'Boat', 'Road'])
+    })
+
+    it('ancienne URL mode=BUS : « Route » coché ; mode=PLANE : « Avion »', () => {
+      stubModes('PLANE,ROAD')
+      expect(checked(mountForm({ ...empty, mode: 'BUS' }))).toEqual(['Route'])
+      expect(checked(mountForm({ ...empty, mode: 'PLANE' }))).toEqual(['Avion'])
+    })
+
+    it('ancienne URL mode=TRAIN : seul « Tous » est coché, la recherche reste', async () => {
+      stubModes('PLANE,ROAD')
+      const w = mountForm({ ...empty, mode: 'TRAIN' })
+      expect(checked(w)).toEqual(['Tous'])
+      await w.get('form').trigger('submit')
+      expect(w.emitted('submit')!.at(-1)).toEqual([{ ...empty, mode: 'TRAIN' }])
+    })
+
+    it('sans filtres, aucun sélecteur', () => {
+      stubModes('PLANE,ROAD')
+      expect(mountForm(empty, 'fr', false).find('[data-mode-filter]').exists()).toBe(false)
+    })
   })
 
   it('donne un nom accessible à chaque champ et expose un rôle de recherche', () => {

@@ -14,7 +14,13 @@
       "maxPrice": "Prix max (€/kg)",
       "maxPriceField": "Prix max par kg, en euros",
       "urgent": "Urgent",
-      "plane": "Avion"
+      "mode": {
+        "label": "Transport",
+        "all": "Tous",
+        "PLANE": "Avion",
+        "BOAT": "Bateau",
+        "ROAD": "Route"
+      }
     },
     "card": {
       "urgent": "Urgent",

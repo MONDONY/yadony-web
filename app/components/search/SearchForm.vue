@@ -2,8 +2,11 @@
 import { computed, ref, useId, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { parseSearchQuery, suggestCities, type SearchQuery } from '@/lib/public-search'
+import { groupOf, wireModeOf, type ModeGroup } from '@/lib/transport-modes'
+import { usePublicModes } from '@/composables/usePublicModes'
 
-// `filters` : les puces de filtre (≥ 16 kg, prix max, urgent, avion). Chaque puce
+// `filters` : les puces de filtre (≥ 16 kg, prix max, urgent) et, seulement si
+// au moins deux modes sont ouverts au public, le sélecteur de mode. Chaque puce
 // relance la recherche à l'instant ; l'accueil, où aucune ville n'est encore
 // saisie, n'en montre donc pas.
 const props = withDefaults(defineProps<{ modelValue: SearchQuery; filters?: boolean }>(), { filters: true })
@@ -63,7 +66,20 @@ function toggle(apply: (query: SearchQuery) => void) {
 
 const minKgOn = computed(() => draft.value.minKg === MIN_KG_FILTER)
 const urgentOn = computed(() => draft.value.urgent === true)
-const planeOn = computed(() => draft.value.mode === 'PLANE')
+
+// Sélecteur de mode : montré seulement quand un mode autre que l'avion est
+// ouvert au public. Un mode lu dans l'adresse sans groupe (TRAIN, OTHER) laisse
+// « Tous » coché sans toucher à la recherche.
+const publicModes = usePublicModes()
+const modeFilterOn = computed(() => publicModes.value.length >= 2)
+const currentGroup = computed(() => groupOf(draft.value.mode))
+
+function pickMode(group: ModeGroup | null) {
+  toggle((q) => {
+    if (group === null) delete q.mode
+    else q.mode = wireModeOf(group)
+  })
+}
 
 function toggleMinKg() {
   toggle((q) => {
@@ -76,13 +92,6 @@ function toggleUrgent() {
   toggle((q) => {
     if (urgentOn.value) delete q.urgent
     else q.urgent = true
-  })
-}
-
-function togglePlane() {
-  toggle((q) => {
-    if (planeOn.value) delete q.mode
-    else q.mode = 'PLANE'
   })
 }
 
@@ -115,7 +124,11 @@ const chips = computed(() => [
   { key: 'minKg', label: t('search.form.minKg', { kg: MIN_KG_FILTER }), on: minKgOn.value, click: toggleMinKg },
   { key: 'maxPrice', label: t('search.form.maxPrice'), on: priceOpen.value, click: togglePrice },
   { key: 'urgent', label: t('search.form.urgent'), on: urgentOn.value, click: toggleUrgent },
-  { key: 'plane', label: t('search.form.plane'), on: planeOn.value, click: togglePlane },
+])
+
+const modeOptions = computed(() => [
+  { key: 'ALL', group: null, label: t('search.form.mode.all') },
+  ...publicModes.value.map(group => ({ key: group, group, label: t(`search.form.mode.${group}`) })),
 ])
 </script>
 
@@ -166,6 +179,23 @@ const chips = computed(() => [
     </div>
 
     <div v-if="filters" role="group" :aria-label="t('search.form.filters')" class="flex flex-wrap items-center gap-2">
+      <div
+        v-if="modeFilterOn"
+        data-mode-filter
+        role="radiogroup"
+        :aria-label="t('search.form.mode.label')"
+        class="flex flex-wrap items-center gap-2"
+      >
+        <button
+          v-for="option in modeOptions"
+          :key="option.key"
+          type="button"
+          role="radio"
+          :aria-checked="currentGroup === option.group ? 'true' : 'false'"
+          :class="[chipBase, currentGroup === option.group ? chipOn : chipOff]"
+          @click="pickMode(option.group)"
+        >{{ option.label }}</button>
+      </div>
       <button
         v-for="chip in chips"
         :key="chip.key"

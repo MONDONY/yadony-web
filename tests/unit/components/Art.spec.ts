@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { mount } from '@vue/test-utils'
 import ArtNegotiation from '@/components/art/ArtNegotiation.vue'
+import ArtRouteLine from '@/components/art/ArtRouteLine.vue'
 import ArtTrackingTimeline from '@/components/art/ArtTrackingTimeline.vue'
 import ArtPadlock from '@/components/art/ArtPadlock.vue'
 import ArtPriceModes from '@/components/art/ArtPriceModes.vue'
@@ -33,6 +34,25 @@ describe('ArtTrackingTimeline', () => {
     })
     expect(wrapper.findAll('[data-done="true"]')).toHaveLength(3)
     expect(wrapper.get('[data-fill]').attributes('style')).toContain('66.6')
+  })
+
+  it('un colis suit la frise, pas un avion', () => {
+    const wrapper = mount(ArtTrackingTimeline, {
+      props: { labels: ['Remis', 'En route', 'Arrivé', 'Livré'], progress: 1 },
+    })
+    expect(wrapper.find('[data-glyph="parcel"]').exists()).toBe(true)
+    expect(wrapper.html()).not.toContain('M21 16v-2l-8-5V3.5')
+  })
+})
+
+describe('ArtRouteLine', () => {
+  it('un colis suit le tracé, sans rotation, pas un avion', () => {
+    const wrapper = mount(ArtRouteLine, { props: { from: 'Paris', to: 'Dakar', drawn: true } })
+    expect(wrapper.find('[data-glyph="parcel"]').exists()).toBe(true)
+    expect(wrapper.html()).not.toContain('M-12 -2.2h15')
+    expect(wrapper.html()).toContain('offset-rotate: 0deg')
+    expect(wrapper.text()).toContain('Paris')
+    expect(wrapper.text()).toContain('Dakar')
   })
 })
 

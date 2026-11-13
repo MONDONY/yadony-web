@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
-// Frise de suivi du colis (Remis → En vol → Arrivé → Livré), comme dans
+// Frise de suivi du colis (Remis → En route → Arrivé → Livré), comme dans
 // l'écran « Mes colis » de l'app. `progress` = index du dernier jalon atteint.
 const props = defineProps<{ labels: string[]; progress: number }>()
 
@@ -20,12 +20,15 @@ const fill = computed(() => {
         :style="{ width: fill }"
       />
       <svg
+        data-glyph="parcel"
         viewBox="0 0 24 24"
-        class="absolute top-1/2 size-6 -translate-x-1/2 -translate-y-1/2 text-accent transition-[left] duration-page ease-dony"
+        class="absolute top-1/2 size-6 -translate-x-1/2 -translate-y-1/2 transition-[left] duration-page ease-dony"
         :style="{ left: fill }"
-        fill="currentColor"
         aria-hidden="true"
-      ><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z" /></svg>
+      >
+        <rect x="3" y="5" width="18" height="14" rx="4" fill="rgb(var(--accent))" />
+        <rect x="10" y="5" width="4" height="14" fill="rgb(var(--primary))" />
+      </svg>
     </div>
     <ol class="mt-6 grid list-none text-center text-xs font-semibold" :style="{ gridTemplateColumns: `repeat(${labels.length}, minmax(0, 1fr))` }">
       <li v-for="(label, index) in labels" :key="label" :data-done="index <= progress" class="flex flex-col items-center gap-2">

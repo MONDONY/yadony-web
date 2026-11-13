@@ -1,6 +1,7 @@
 <script setup lang="ts">
-// Trajet qui se dessine entre deux villes, avec un avion qui suit la courbe
-// (offset-path). `drawn` déclenche le tracé ; sans animation, le trajet
+// Trajet qui se dessine entre deux villes, avec un colis qui suit la courbe
+// (offset-path), sans mode de transport dessiné : l'illustration vaut pour
+// tous les trajets. `drawn` déclenche le tracé ; sans animation, le trajet
 // apparaît directement dessiné.
 defineProps<{ from: string; to: string; drawn: boolean }>()
 
@@ -23,9 +24,12 @@ const path = 'M40 150 C 130 30, 270 30, 360 120'
     />
     <g
       class="transition-[offset-distance] duration-[1400ms] ease-dony motion-reduce:transition-none"
-      :style="{ offsetPath: `path('${path}')`, offsetDistance: drawn ? '100%' : '0%', offsetRotate: 'auto' }"
+      :style="{ offsetPath: `path('${path}')`, offsetDistance: drawn ? '100%' : '0%', offsetRotate: '0deg' }"
     >
-      <path d="M-12 -2.2h15l8 2.2-8 2.2h-15zM-1 -2.2l-6-9h3.5l8 9zM-1 2.2l-6 9h3.5l8-9zM-12 -2.2l-3.5-5h2.5l4 5zM-12 2.2l-3.5 5h2.5l4-5z" fill="rgb(var(--primary))" transform="scale(1.4)" />
+      <g data-glyph="parcel">
+        <rect x="-10" y="-8.5" width="20" height="17" rx="4" fill="rgb(var(--primary))" />
+        <rect x="-2" y="-8.5" width="4" height="17" fill="rgb(var(--accent))" />
+      </g>
     </g>
     <circle cx="40" cy="150" r="7" fill="rgb(var(--primary))" />
     <circle cx="360" cy="120" r="7" fill="rgb(var(--accent))" />

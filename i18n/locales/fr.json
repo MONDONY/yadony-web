@@ -472,14 +472,36 @@
                 "Le montant exact des frais, minimum compris, et le total à payer sont affichés avant toute validation.",
                 "Un code promo « frais de service offerts » supprime les frais : aucun frais n'est alors prélevé. Un autre code promo réduit les frais sans pouvoir les faire descendre sous le minimum. Un bon de parrainage réduit les frais après application du minimum.",
                 "Yadony peut modifier ces frais (taux, tranches ou minimum). Toute modification est annoncée au moins 30 jours avant son entrée en vigueur et ne s'applique pas aux offres, demandes et négociations déjà créées, qui gardent les frais affichés au moment de leur création.",
-                "En cas de remboursement, les frais de service ne sont jamais retenus : vous récupérez la totalité de ce que vous avez payé."
+                "En cas de remboursement, les frais de service ne sont jamais retenus : vous récupérez la totalité de ce que vous avez payé, sous réserve des frais d'annulation à la charge de l'expéditeur décrits plus bas."
               ]
             },
             {
               "sub": "Annulations et remboursements",
               "p": [
                 "Si le voyageur annule son trajet : remboursement intégral automatique de tous les expéditeurs (3 à 5 jours ouvrés). Yadony vous propose un voyageur de remplacement dans les 72 heures.",
-                "Si l'expéditeur annule avant la remise, il est remboursé intégralement."
+                "Si l'expéditeur annule avant que le voyageur n'ait accepté le colis, il est remboursé intégralement. Après acceptation, des frais d'annulation peuvent s'appliquer à compter du [DATE D'ENTRÉE EN VIGUEUR À FIXER] (voir ci-dessous) ; pour les colis créés avant cette date, l'expéditeur est remboursé intégralement."
+              ]
+            },
+            {
+              "sub": "Frais d'annulation à la charge de l'expéditeur",
+              "p": [
+                "À compter du [DATE D'ENTRÉE EN VIGUEUR À FIXER], et uniquement pour les colis créés à partir de cette date, l'expéditeur qui annule un colis déjà accepté par le voyageur, ou qui ne remet pas son colis, peut devoir des frais d'annulation. Ces frais ne s'ajoutent pas à ce que vous avez payé : ils sont retenus sur votre remboursement.",
+                "Les frais dépendent du temps qui reste avant l'heure de départ du trajet (et non avant la date limite de dépôt), au moment de l'annulation. Ils sont calculés en pourcentage du montant payé, frais de service compris :"
+              ],
+              "ul": [
+                "plus de 5 jours avant le départ : aucun frais",
+                "de 5 jours à 3 jours avant le départ : 10 %",
+                "de 3 jours à 1 jour avant le départ : 20 %",
+                "moins d'un jour avant le départ, le jour du départ ou après : 30 %"
+              ]
+            },
+            {
+              "p": [
+                "Les frais sont plafonnés à 30 € par colis (ou l'équivalent dans la devise du colis).",
+                "Ces frais s'appliquent dans trois cas : l'expéditeur annule un colis accepté par le voyageur ; l'expéditeur annule après la remise du colis au voyageur, avant le départ ; l'absence de l'expéditeur à la remise est signalée par le voyageur puis confirmée, par l'expéditeur ou par l'équipe Yadony.",
+                "Aucun frais d'annulation n'est dû dans les cas suivants : paiement en espèces ; colis payé mais pas encore accepté par le voyageur ; annulation par le voyageur, qu'il annule son trajet, annule le colis ou ne se présente pas ; trajet reporté par le voyageur suivi du retrait de l'expéditeur ; annulation par Yadony ; colis créé avant la date d'application ci-dessus. Le voyageur ne paie jamais de frais d'annulation.",
+                "Le montant exact des frais et la somme remboursée sont affichés dans l'application avant que vous confirmiez l'annulation. Si votre absence à la remise est confirmée sans action de votre part, vous êtes informé du montant par notification.",
+                "Les frais d'annulation dédommagent le voyageur qui avait réservé de la place pour votre colis. Il les reçoit après déduction des frais du prestataire de paiement et de la commission Yadony, sur son compte de paiement (carte) ou son compte Mobile Money. Yadony peut modifier ce barème dans les conditions de l'article 18, avec un préavis d'au moins 30 jours."
               ]
             },
             {

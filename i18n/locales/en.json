@@ -472,14 +472,36 @@
                 "The exact amount of the fee, minimum included, and the total to pay are shown before you confirm anything.",
                 "A \"free service fee\" promo code removes the fee: nothing is then charged. Any other promo code reduces the fee but cannot take it below the minimum. A referral voucher reduces the fee after the minimum has been applied.",
                 "Yadony may change this fee (rates, tiers or minimum). Any change is announced at least 30 days before it takes effect and does not apply to offers, requests and negotiations already created, which keep the fee shown when they were created.",
-                "In the event of a refund, the service fee is never kept: you get back everything you paid."
+                "In the event of a refund, the service fee is never kept: you get back everything you paid, subject to the cancellation fee charged to the sender described below."
               ]
             },
             {
               "sub": "Cancellations and refunds",
               "p": [
                 "If the traveller cancels their trip: automatic full refund of all senders (3 to 5 business days). Yadony offers you a replacement traveller within 72 hours.",
-                "If the sender cancels before handover, they are refunded in full."
+                "If the sender cancels before the traveller has accepted the parcel, they are refunded in full. After acceptance, a cancellation fee may apply from [EFFECTIVE DATE TO BE SET] (see below); for parcels created before that date, the sender is refunded in full."
+              ]
+            },
+            {
+              "sub": "Cancellation fee charged to the sender",
+              "p": [
+                "From [EFFECTIVE DATE TO BE SET], and only for parcels created from that date, a sender who cancels a parcel the traveller has already accepted, or who does not hand over their parcel, may owe a cancellation fee. This fee is not added to what you paid: it is deducted from your refund.",
+                "The fee depends on the time left before the trip's departure time (not before the drop-off deadline) at the moment of cancellation. It is calculated as a percentage of the amount paid, service fee included:"
+              ],
+              "ul": [
+                "more than 5 days before departure: no fee",
+                "from 5 days to 3 days before departure: 10%",
+                "from 3 days to 1 day before departure: 20%",
+                "less than 1 day before departure, on the day of departure or after: 30%"
+              ]
+            },
+            {
+              "p": [
+                "The fee is capped at €30 per parcel (or the equivalent in the parcel's currency).",
+                "The fee applies in three cases: the sender cancels a parcel accepted by the traveller; the sender cancels after the parcel has been handed to the traveller, before departure; the sender's absence at handover is reported by the traveller and then confirmed, by the sender or by the Yadony team.",
+                "No cancellation fee is due in the following cases: cash payment; parcel paid but not yet accepted by the traveller; cancellation by the traveller, whether they cancel their trip, cancel the parcel or do not show up; trip rescheduled by the traveller followed by the sender's withdrawal; cancellation by Yadony; parcel created before the date of application above. The traveller never pays a cancellation fee.",
+                "The exact amount of the fee and the amount refunded are shown in the application before you confirm the cancellation. If your absence at handover is confirmed without any action on your part, you are told the amount by notification.",
+                "The cancellation fee compensates the traveller who had set aside space for your parcel. They receive it after deduction of the payment provider's fees and the Yadony commission, on their payment account (card) or their Mobile Money account. Yadony may change this scale under the conditions of article 18, with at least 30 days' notice."
               ]
             },
             {
